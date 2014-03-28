@@ -521,20 +521,32 @@ ul.gform_fields {
 .icon-mail {
   font-size: 5rem;
 }
+.icon-thumbs-up:before {
+  content: "\e001";
+}
 body,
 html {
   height: 100%;
 }
 body {
   background: #ed6d62 url('images/bg-checkered.png') repeat;
-  font-family: 'Whitney SSm A', 'Whitney SSm B', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+  font-family: "proxima-nova", 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
 }
 h1,
 h2 {
-  font-family: 'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+  font-family: "proxima-nova", 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
 }
 h1 {
-  font-weight: 500;
+  font-weight: 600;
+}
+.home {
+  visibility: hidden;
+}
+.wf-active .home {
+  visibility: visible;
+}
+.no-js .home {
+  visibility: visible;
 }
 h2 {
   font-weight: 500;
@@ -544,7 +556,7 @@ h2 {
 p {
   margin: 0 0 1.62rem 0;
   color: #555555;
-  line-height: 1.62;
+  line-height: 1.5;
 }
 a {
   text-decoration: none;
@@ -557,15 +569,23 @@ ul {
 }
 .mailing-list {
   margin: 0 auto;
+  position: relative;
 }
 .mailing-list .wrapper {
   padding: 2rem;
   margin: 0 auto;
   background: #f5f5f5;
+  position: relative;
+  z-index: 1;
 }
 @media only screen and (min-width: 500px) {
   .mailing-list {
-    max-width: 420px;
+    max-width: 490px;
+  }
+}
+@media only screen and (min-width: 860px) {
+  .mailing-list.shared .icon-thumbs-up {
+    left: 100%;
   }
 }
 h1 {
@@ -574,9 +594,9 @@ h1 {
   margin: 0;
 }
 .site-title + h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #fafbfb;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   text-shadow: 0 2px 0 #d35d54;
 }
 .site-title {
@@ -601,7 +621,7 @@ h1 {
   display: inline-block;
   position: relative;
   z-index: 1;
-  top: 130px;
+  top: 113px;
   line-height: 1;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -620,10 +640,10 @@ h1 {
     display: inline-block;
   }
   #masthead {
-    height: 355px;
+    height: 350px;
   }
   #masthead.expanded {
-    height: 910px;
+    height: 880px;
   }
   #masthead.expanded #how-it-works {
     top: 292px;
@@ -641,6 +661,8 @@ h1 {
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: 0 -17px 40px -20px #e44e00 inset;
+  -moz-box-shadow: 0 -17px 40px -20px #e44e00 inset;
   box-shadow: 0 -17px 40px -20px #e44e44 inset;
 }
 #masthead img {
@@ -704,4 +726,16 @@ footer a:hover {
   footer ul li {
     display: inline-block;
   }
+}
+.icon-thumbs-up {
+  font-size: 4rem;
+  bottom: 0;
+  color: #A4A2A2;
+  font-size: 11rem;
+  left: 2%;
+  position: absolute;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }

@@ -9,8 +9,9 @@ function affwp_share_box() {
 	$twitter_default_text = 'Introducing AffiliateWP';
 
 	// URL to share
-	$share_url = 'http://affiliatewp.com';
+	$share_url = get_home_url();
 
+	//echo $share_url;
 	ob_start();
 
 ?>
@@ -163,7 +164,7 @@ function affwp_social_scripts() {
 
 		jQuery(document).on( 'productShared', function(e) {
 
-			if( e.url == window.location.href ) {
+		//	if( e.url == window.location.href ) {
 
 		    	var postData = {
 		            action: 'share_thanks',
@@ -184,7 +185,6 @@ function affwp_social_scripts() {
 	                       console.log( share_response );
 
 	                       jQuery('.mailing-list > h2').html( share_response.success_title );
-	                   //    jQuery('.mailing-list > p').html( share_response.success_message );
 
 	                       // add CSS class so the box can be styled
 	                       jQuery('.mailing-list').addClass('shared');
@@ -202,7 +202,7 @@ function affwp_social_scripts() {
 	            console.log( data );
 	        });
 
-			}
+		//	}
 		});
 	});
 	</script>

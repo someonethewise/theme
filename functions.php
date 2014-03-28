@@ -16,14 +16,22 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'gforms.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'ajax-functions.php' );
 
 /**
- * Cloud typography fonts
- *
- * @since 1.0
-*/
+ * Typekit fonts
+ * @return [type] [description]
+ */
 function affwp_webfonts() { ?>
-	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6988232/608824/css/fonts.css" />
+	<script type="text/javascript">
+  (function(d) {
+    var config = {
+      kitId: 'llz0jhz',
+      scriptTimeout: 3000
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
 <?php }
 add_action( 'wp_head', 'affwp_webfonts', 5 );
+
 
 /**
  * Create a nicely formatted and more specific title element text for output
@@ -54,7 +62,7 @@ function affwp_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentyfourteen' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'affwp' ), max( $paged, $page ) );
 	}
 
 	return $title;

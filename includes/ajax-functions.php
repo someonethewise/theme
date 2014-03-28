@@ -14,7 +14,6 @@ function affwp_share_thanks() {
 	$return = array(
 		'msg'				=> 'valid',
 		'success_title'		=> 'Thanks for sharing!',
-		'success_message'	=> 'You are awesome!',
 	);
 
 	echo json_encode( $return );

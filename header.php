@@ -38,7 +38,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
 			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<a title="<?php echo get_bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<img src="<?php echo get_stylesheet_directory_uri() . '/images/logo-affiliatewp.png'; ?>">
 				</a>
 			</h1>

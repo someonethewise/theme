@@ -44,22 +44,3 @@ function affwp_gform_pre_enqueue_scripts() { ?>
 	<i class="icon icon-mail"></i>
 <?php }
 add_action( 'gform_post_submission', 'affwp_gform_pre_enqueue_scripts' );
-
-/**
- * Gravity Forms - confirmation message
- * I'm too lazy to do it from the settings
- *
- * @since 1.0
-*/
-function affwp_gform_confirmation( $confirmation, $form, $lead, $ajax ) {
-	ob_start();
-
-	?>
-	<p>Awesome! We'll let you know as soon as it's ready. In the meantime, why not spread the word?</p>
-<?php 
-	
-	//echo affwp_share_box();
-
-	return ob_get_clean();
-}
-add_filter( 'gform_confirmation', 'affwp_gform_confirmation', 10, 4 );
