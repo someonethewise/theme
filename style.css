@@ -484,6 +484,10 @@ ul.gform_fields {
   right: 20px;
   top: 20px;
 }
+.gform_confirmation_message {
+  width: 88%;
+  margin: 0 auto;
+}
 @font-face {
   font-family: "affiliatewp";
   src: url("fonts/affiliatewp.eot");
