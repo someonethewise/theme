@@ -1,0 +1,103 @@
+input:focus, 
+textarea:focus {
+  outline: 0;
+}
+
+input  {  
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  color: @body-text-color;
+  background: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eee;
+}
+
+button {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }        
+    
+}
+
+
+.no-spam {
+	position: relative;
+	font-size: 0.875rem;
+	font-weight: 300;
+	font-style: italic;
+	margin: 0.5rem 0 0 0;
+	color: #9A9A9A;
+	display: block;
+	font-family: 'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; 
+}
+
+// gravity forms
+
+.gfield_required {
+	display: none;
+}
+
+ul.gform_fields {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gform_button {
+	background: #e44e44;
+	padding: 1rem;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.ginput_container {
+	margin-bottom: 0.5rem;
+}
+
+.validation_error {
+	margin-bottom: 2rem;
+	color: #ED6D62;
+	font-weight: 500;
+}
+
+.gfield_label {
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.validation_message {
+	margin: 0.5rem 0;
+	color: #e44e44;
+	font-weight: 500;
+}
+
+.gform_footer {
+	position: relative;
+}
+.gform_ajax_spinner {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}

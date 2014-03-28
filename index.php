@@ -1,28 +1,49 @@
 <?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme and one
+ * of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query,
+ * e.g., it puts together the home page when no home.php file exists.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ * @since AffiliateWP 1.0
+ */
 
 get_header(); ?>
 
+<div id="main-content" class="main-content">
 
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 
-<div class="mailing-list">
+		<?php
+			if ( have_posts() ) :
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
 
+					/*
+					 * Include the post format-specific template for the content. If you want to
+					 * use this in a child theme, then include a file called called content-___.php
+					 * (where ___ is the post format) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
 
+				endwhile;
 
-	<div id="mc_embed_signup">
-	<form action="http://sumobi.us6.list-manage1.com/subscribe/post?u=3a843a577e28ff40486b2fd51&amp;id=152d4d8ebe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-		<h2>Subscribe to our mailing list</h2>
-	<div class="mc-field-group">
-		<label for="mce-EMAIL">Email Address </label>
-		<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-	</div>
-		<div id="mce-responses" class="clear">
-			<div class="response" id="mce-error-response" style="display:none"></div>
-			<div class="response" id="mce-success-response" style="display:none"></div>
-		</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-	    <div style="position: absolute; left: -5000px;"><input type="text" name="b_3a843a577e28ff40486b2fd51_152d4d8ebe" value=""></div>
-		<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-	</form>
-	</div>
+			else :
+				// If no content, include the "No posts found" template.
+				get_template_part( 'content', 'none' );
 
-</div>
-<?php get_footer(); ?>
+			endif;
+		?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+	<?php get_sidebar( 'content' ); ?>
+</div><!-- #main-content -->
+
+<?php
+get_sidebar();
+get_footer();

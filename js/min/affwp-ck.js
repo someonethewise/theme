@@ -1,1 +1,0 @@
-jQuery(document).ready(function(){jQuery("#how-it-works").click(function(){jQuery("#masthead").toggleClass("expanded")})});

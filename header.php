@@ -24,6 +24,7 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
@@ -38,13 +39,15 @@
 		<div class="wrapper">
 			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php echo get_stylesheet_directory_uri() .'/images/logo-affiliatewp.png'; ?>">
+					<img src="<?php echo get_stylesheet_directory_uri() . '/images/logo-affiliatewp.png'; ?>">
 				</a>
 			</h1>
 
-			<h1>Affiliate marketing for WordPress you’ll love</h1>
+			<h1>Affiliate marketing for WordPress <span>you'll love</span></h1>
 			<a id="how-it-works" href="#">See how it works</a>
-			<img src="<?php echo get_stylesheet_directory_uri() .'/images/how-it-works.png'; ?>">
+			<figure>
+				<img src="<?php echo get_stylesheet_directory_uri() .'/images/how-it-works.png'; ?>">
+			</figure>
 		</div>
 		
 
@@ -53,3 +56,5 @@
 
 
 	<div id="content">
+
+
