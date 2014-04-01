@@ -13,11 +13,7 @@
 
 get_header(); ?>
 
-<div id="main-content" class="main-content">
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+<div id="primary" class="content-area">
 		<?php
 			if ( have_posts() ) :
 				// Start the Loop.
@@ -39,11 +35,8 @@ get_header(); ?>
 			endif;
 		?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
-	<?php get_sidebar( 'content' ); ?>
-</div><!-- #main-content -->
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
