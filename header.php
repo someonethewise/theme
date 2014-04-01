@@ -5,8 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
+ * @since AffiliateWP 1.0
  */
 ?><!DOCTYPE html>
 <!--[if IE 7]>
@@ -36,25 +35,42 @@
 <div id="site" class="hfeed">
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="wrapper">
+		<div class="logo-wrapper">
 			<h1 class="site-title">
-				<a title="<?php echo get_bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php echo get_stylesheet_directory_uri() . '/images/logo-affiliatewp.png'; ?>">
-				</a>
+				<a class="logo" title="<?php echo get_bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">AffiliateWP</a>
 			</h1>
 
-			<h1>Affiliate marketing for WordPress <span>you'll love</span></h1>
-			<a id="how-it-works" href="#">See how it works</a>
-			<figure>
-				<img src="<?php echo get_stylesheet_directory_uri() .'/images/how-it-works.png'; ?>">
-			</figure>
+			<?php if ( current_user_can( 'manage_options' ) ) : ?>
+			<nav id="main" class="site-navigation primary-navigation" role="navigation">
+			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'affwp' ); ?></a>
+			<?php
+				wp_nav_menu(
+				  array(
+				    'menu' 				=> 'main_nav',
+				    'menu_class' 		=> 'menu',
+				    'theme_location' 	=> 'primary',
+				    'container' 		=> '',
+				    'container_id' 		=> 'main',
+				    'depth' 			=> '3',
+				  )
+				);
+			?>
+			</nav>
+			<?php endif; ?>
 		</div>
 		
-
+		<?php if ( is_front_page() ) : ?>
+			<div class="wrapper">
+				<h1 class="intro">Affiliate marketing for WordPress you'll love</h1>
+				<a id="how-it-works" href="#">See how it works</a>
+				<figure>
+					<img src="<?php echo get_stylesheet_directory_uri() . '/images/how-it-works.png'; ?>">
+				</figure>
+			</div>		
+		<?php endif; ?>
 		
 	</header><!-- #masthead -->
 
-
 	<div id="content">
-
+		<div class="wrapper">
 

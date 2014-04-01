@@ -4,6 +4,8 @@
  */
 ?>
 
+</div> <!-- .wrapper -->
+
 </div> <!-- #content -->
 
 	<footer>
