@@ -36,6 +36,13 @@ function affwp_enqueue_scripts() {
 	wp_register_script( 'respondjs', get_template_directory_uri() . '/js/respond.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
 	wp_enqueue_script( 'respondjs' );
 
+	/**
+	 * Fittext
+	 * This makes media queries work in IE 8
+	 */
+	wp_register_script( 'fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
+	wp_enqueue_script( 'fittext' );
+
 
 }
 endif;
