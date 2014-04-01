@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
        
     	jQuery(this).html( jQuery(this).text() === "OK, got it" ? "See how it works" : "OK, got it" );
     });
-
+    
 });
 
 

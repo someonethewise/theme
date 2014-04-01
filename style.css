@@ -671,6 +671,13 @@ li.menu-item.checkout > a:before {
   opacity: 1;
   bottom: 0.5rem;
 }
+li.menu-item.checkout:hover > a:before {
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
 .home #main ul.menu > li > a:hover {
   color: #fff;
 }

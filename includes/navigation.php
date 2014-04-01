@@ -26,7 +26,7 @@ function affwp_nav_account() {
 	get_currentuserinfo();
 
 //	$account_page_id = ( get_theme_mod( 'account_page' ) ) ? get_theme_mod( 'account_page' ) : '';
-	$account_page_id = 57;
+	$account_page_id = 45;
 
 	$account_link_text = 'Account';
 
@@ -43,7 +43,7 @@ function affwp_nav_account() {
 			<a title="<?php echo $account_link_text; ?>" href="<?php echo get_permalink( $account_page_id ); ?>"><?php echo $account_link_text; ?></a>
 			<ul class="sub-menu">
 				<li>
-					<a title="<?php _e( 'Affiliates', 'affwp' ); ?>" href="/affiliates"><?php _e( 'Affiliates', 'affwp' ); ?></a>
+					<a title="<?php _e( 'Affiliates', 'affwp' ); ?>" href="/account/affiliates"><?php _e( 'Affiliates', 'affwp' ); ?></a>
 				</li>
 				<li>
 					<a title="<?php _e( 'Log out', 'affwp' ); ?>" href="<?php echo wp_logout_url( add_query_arg( 'logout', 'success', get_permalink( $account_page_id ) ) ); ?>"><?php _e( 'Log out', 'affwp' ); ?></a>

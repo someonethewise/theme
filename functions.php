@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'EDD_DISABLE_ARCHIVE' ) )
+ 	define( 'EDD_DISABLE_ARCHIVE', true );
+	
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
 	define( 'AFFWP_THEME_VERSION', '1.0' );
 
@@ -60,6 +63,8 @@ function affwp_setup() {
 }
 endif; // affwp_setup
 add_action( 'after_setup_theme', 'affwp_setup' );
+
+
 
 
 /**
