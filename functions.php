@@ -71,7 +71,7 @@ function affwp_fittext() {
 ?>
 	<script type="text/javascript">
 	 jQuery(document).ready(function($) {
-	 	jQuery("h1.intro").fitText( 2.1, { maxFontSize: '56px' });	
+	 	jQuery("h1.intro").fitText( 0.5, { maxFontSize: '56px' });	
 
 	 });
 	</script>
