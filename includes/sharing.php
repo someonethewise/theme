@@ -6,7 +6,7 @@
 function affwp_share_box() {
 	global $edd_options;
 	
-	$twitter_default_text = 'Introducing AffiliateWP';
+	$twitter_default_text = 'Introducing AffiliateWP, an affiliate marketing for WordPress you\'ll love';
 
 	// URL to share
 	$share_url = get_home_url();
@@ -23,7 +23,7 @@ function affwp_share_box() {
 			$twitter_button_size = 'medium';
 		?>
 		<div class="share twitter">
-			<a href="https://twitter.com/share" data-lang="en" class="twitter-share-button" data-count="<?php echo $twitter_count_box; ?>" data-size="<?php echo $twitter_button_size; ?>" data-counturl="<?php echo $share_url; ?>" data-url="<?php echo $share_url; ?>" data-text="<?php echo $twitter_default_text; ?>" data-via="<?php echo $twitter_username; ?>" data-related="">
+			<a href="https://twitter.com/share" data-lang="en" class="twitter-share-button" data-count="<?php echo $twitter_count_box; ?>" data-size="<?php echo $twitter_button_size; ?>" data-counturl="<?php echo $share_url; ?>" data-url="<?php echo $share_url; ?>" data-text="<?php echo $twitter_default_text; ?>" data-via="<?php echo $twitter_username; ?>" data-related="pippinsplugins, sumobi_">
 				Share
 			</a>
 		</div>
