@@ -1,0 +1,374 @@
+// navigation
+
+@secondary-color: #E44E44;
+
+li.menu-item > a:before {
+//  font-weight: bold;
+  font-size: 2rem;
+  font-family: "affiliatewp" !important;
+  speak: none;
+  line-height: 1;
+  display: block;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+   bottom: 1rem;
+   opacity: 0;
+   color: #E44E44;
+  -webkit-transition: all 0.25s ease-in-out; 
+  -moz-transition: all 0.25s ease-in-out; 
+  -o-transition: all 0.25s ease-in-out; 
+  transition: all 0.25s ease-in-out;
+  
+}
+
+// icon glyphs
+li.home > a:before {
+  content: "\e005";
+}
+
+li.about > a:before {
+  content: "\e00b";
+}
+
+li.pricing > a:before {
+  content: "\e00a";
+}
+
+li.support > a:before {
+  content: "\e002";
+}
+
+li.blog > a:before {
+  content: "\e003";
+}
+
+li.account > a:before {
+  content: "\e006";
+}
+
+li.purchase > a:before {
+   content: "\e008";
+}
+
+li.checkout > a:before {
+   content: "\e009";
+}
+
+
+
+
+
+
+
+
+
+// checkout icon should always be visible
+li.menu-item.purchase > a:before,
+li.menu-item.checkout > a:before {
+   color: #fff;
+   opacity: 1;
+  bottom: 0.5rem;
+}
+
+.home #main ul.menu > li > a:hover {
+  color: #fff;
+}
+
+// hover effect for icons
+li:hover > a:before {
+  color: #E44E44;
+  bottom: 0.5rem;
+  opacity: 1;
+}
+
+.home li:hover > a:before,
+li.has-sub-menu:hover > a:before {
+  color: #fff;
+}
+
+
+// li.about:hover > a:before {
+//   color: #E44E44;
+//   bottom: 0.5rem;
+//   opacity: 1;
+// }
+
+// show icon when page is selected
+li.current-menu-ancestor > a:before,
+li.current-menu-item > a:before {
+  opacity: 1;
+  color: #E44E44;
+  bottom: 0.5rem;
+}
+
+
+// li.support.current-menu-item > a:before {
+//   opacity: 0;
+//   color: #fff;
+//   bottom: 1rem;
+// }
+
+// .icon-mail:before {
+//   content: "\e000";
+// }
+
+#main {
+  margin-top: -1rem;
+}
+
+#main .button {
+	background: #e44e44;
+}
+
+.home #main ul.menu > li > a {
+  color: #fff;
+}
+
+
+#main ul.menu > li > a.button {
+  color: #fff;
+}
+
+#main ul.menu > li.action:hover > a {
+  color: #fff;
+}
+
+// purchase/checkout button
+#main ul.menu > li.action {
+  margin-left: 1rem;
+}
+
+
+
+// defaults are very simple so we can override them easier
+
+// sub menus
+
+
+
+//********************************************************************************
+// Mobile navigation styles. Displayed up until the desktop nav takes over
+//********************************************************************************
+
+
+@media only screen and ( max-width: 481px ) {
+
+  .sub-menu {
+    margin-bottom:0;
+    display: none;
+  }
+
+  #main ul.menu {
+    list-style-type: none;
+    border-bottom: none;
+    
+    li {
+   //   display: inline-block;
+    }
+
+  li a {
+  //  text-align: left;
+  }
+
+    > li a { 
+      display: block;
+      padding: 8px;
+      padding: 0.5rem;
+    //  background: @menu-sub-menu-mobile-nav-background-color;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .sub-menu li a {
+      padding-left: 2em;
+    }
+
+
+  } // end ul.menu
+
+} // end mobile nav styles
+
+ 
+//********************************************************************************
+// Desktop sized navigation
+//********************************************************************************
+
+
+
+@media only screen and ( min-width: 728px ) {
+
+// animated menu
+ ul.menu {
+  
+  // initial state of submenu
+  ul {
+  -khtml-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+
+  display: none;
+     top: 100%;
+  }
+
+    // on <li> hover show menu
+    li:hover {
+
+      > ul {
+        top: 100%;
+        display: block;
+        //   .opacity(100);
+        -khtml-opacity: 100;
+        -moz-opacity: 100;
+        opacity: 100; 
+      }   
+  
+    } 
+ } // end ul.menu
+
+
+
+
+  #main ul.menu {
+    z-index: 100;
+    position: relative;
+    display: block;
+    zoom: 1; 
+
+     > li {
+      margin:0;
+       
+      // only the first level parent items
+      &.active, 
+      &.current-page-ancestor,
+      &.current_page_ancestor,
+      &.current_page_parent,
+      &.current-menu-item,
+      &.current_page_item {
+
+        > a {
+          color: #E44E44;
+        }
+      }
+
+      > a {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #222;
+        line-height: 1rem;
+      //  text-shadow: 0 2px 0 #E44E44;
+      }
+
+      &:hover {
+      }
+    }
+   
+    // sub menus
+    ul {
+      position: absolute;
+      width: auto;
+//      min-width: 120%;
+      min-width: 100%; 
+      background: @secondary-color;
+      z-index: 100; 
+      margin-bottom:0;
+
+      // anchors in sub menu
+      a {
+        text-align: left;
+        color: #fff;
+        text-decoration:none;
+       
+
+      }
+
+      // sub menu list items
+      li {
+        margin: 0;
+        display: block;
+        
+        &:hover > a {
+        //  background-color: #fff;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      
+      // sub-sub menus
+      ul {
+        position: absolute;
+        left: 100%;
+        top: 0;
+      }
+    }
+
+    // has-sub-menu
+      > li.has-sub-menu {
+
+        // no transition effects
+        a {
+          -webkit-transition: none; 
+          -moz-transition: none; 
+          -o-transition: none; 
+          transition: none;
+        }
+
+        &:hover {
+            > a {
+               background-color: @secondary-color;
+            } 
+        }
+      }
+    
+
+      // only for the first <li> that has a sub menu
+      > li.has-sub-menu:hover > a {
+       color: #fff;
+      }
+      
+
+    // all list items
+    li {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+      line-height: 1; // fixes gaps in ie7 
+      list-style-type: none;
+      float: left;
+
+      // when the child page is active
+      ul li.current_page_ancestor > a,
+      ul li.current-menu-item > a,
+      ul li.current_page_item > a,
+      ul li.active > a {
+      //  color: red;
+      }
+      
+      &:hover {
+        
+         // main level hover
+        > a {
+          text-decoration: none;
+        //  background: @secondary-color;
+          color: @secondary-color;
+        }
+      
+      } 
+    }
+    
+    // all anchor links
+    a {
+      display: block;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+      padding: 1rem 1rem 1rem 1rem;
+      font-size: 0.875rem;
+      -webkit-transition: all 0.25s ease-in-out; 
+      -moz-transition: all 0.25s ease-in-out; 
+      -o-transition: all 0.25s ease-in-out; 
+      transition: all 0.25s ease-in-out;
+    }
+  }
+} // end media query

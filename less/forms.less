@@ -3,6 +3,11 @@ textarea:focus {
   outline: 0;
 }
 
+input[type="checkbox"], 
+input[type="radio"] {
+	width: auto;
+}
+
 input  {  
   display: inline-block;
   width: 100%;
@@ -49,7 +54,6 @@ button {
 	margin: 0.5rem 0 0 0;
 	color: #9A9A9A;
 	display: block;
-	font-family: 'Gotham A', 'Gotham B', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; 
 }
 
 // gravity forms
@@ -99,10 +103,11 @@ ul.gform_fields {
 .gform_ajax_spinner {
 	position: absolute;
 	right: 20px;
-	top: 20px;
+	top: 13px;
 }
 
 .gform_confirmation_message {
-	width: 88%;
 	margin: 0 auto;
+	line-height: 1.62;
+	color: #696969;
 }

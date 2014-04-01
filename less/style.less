@@ -3,9 +3,17 @@
 @import 'helpers';
 @import 'forms';
 @import 'icons';
+@import 'fonts';
+@import 'navigation';
+@import 'structure';
+@import 'typography';
+@import 'edd';
+@import 'buttons';
+@import 'page-templates';
 
-@body-text-color: #555;
-@breakpoint: 1148px;
+@button-color: #E44E44;
+@body-text-color: #565656;
+@breakpoint: 820px;
 
 body, html {
 	height: 100%;
@@ -13,62 +21,54 @@ body, html {
 
 body {
 	background: #ed6d62 url( 'images/bg-checkered.png' ) repeat;
-	font-family: "proxima-nova", 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
 }
 
 
-h1, h2 {
-	font-family: "proxima-nova", 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+
+
+.entry-header {
+	margin-bottom: 2rem;
 }
 
-h1 {
-	font-weight: 600;
+
+.intro {
+	 width: 100%;
+	 margin: 0 auto;
+	 color: #fff;
+	 text-shadow: 0 4px 0 #d2625a;
+	 font-weight: 500;
+	 text-align: center;
 }
 
-// .wf-loading h1 {
-// 	//visibility: hidden;
-// 	opacity: 0;
-// 	-webkit-transition: all 1s ease-in-out; 
-// 	-moz-transition: all 1s ease-in-out; 
-// 	-o-transition: all 1s ease-in-out; 
-// 	transition: all 1s ease-in-out; 
-// }
 
-// .wf-active h1 {
-// 	opacity: 1;
-// 	//visibility: visible;
 
-// }
-
-.home {
-	 visibility: hidden;
-	// -webkit-transition: all 1s ease-in-out; 
-	// -moz-transition: all 1s ease-in-out; 
-	// -o-transition: all 1s ease-in-out; 
-	// transition: all 1s ease-in-out; 
-}
-
-.wf-active .home {
-  visibility: visible;
+.entry-content {
+	text-align: left;
 }
 
 .no-js {
-	.home {
-		visibility: visible;
+
+	.home #masthead {
+		height: auto;
+		padding-bottom: 2rem;
+	}
+
+	#how-it-works,
+	.home #masthead figure {
+		display: none;
+	
 	}
 }
 
 
-h2 {
-	font-weight: 500;
-	font-size: 2rem;
-	letter-spacing: -1px;
-}
 
 p {
 	margin: 0 0 1.62rem 0;
 	color: @body-text-color;
-	line-height: 1.5;
+	line-height: 1.62;
+	font-weight: 300;
+	font-size: 1.1rem;
 }
 
 a {
@@ -82,9 +82,37 @@ ul {
 	padding: 0;
 }
 
+
+// masthead
+.logo-wrapper {
+    text-align: justify;
+    font-size: 0.1px;
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.site-title {
+	padding: 0.5rem 0;
+}
+
+.site-title, 
+#main {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#main {
+	font-size: 1rem;
+}
+
 .mailing-list {
 	margin: 0 auto;
 	position: relative;
+	text-align: center;
+
+	h2 {
+		font-weight: 500;
+	}
 
 	.wrapper {
 		padding: 2rem;
@@ -109,29 +137,43 @@ ul {
 	}
 }
 
-h1 {
-	text-align: center;
-	color: #fff;
-	margin: 0;
+// sidebar
+#sidebar {
+	li a {
+		display: block;
+    	padding: 0.5rem 0;
+	}
 }
 
-.site-title + h1 {
-	font-size: 3.5rem;
-	color: #fafbfb;
-	letter-spacing: -1px;
-//	font-weight: normal;
-//	margin-bottom: 2rem;
-	text-shadow: 0 2px 0 #d35d54;
 
-	span {
-	//	font-style: italic;
-	}
+
+#masthead {
+	background: #fff;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.home #masthead {
+	background: transparent;
+	-webkit-box-shadow: 0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
+	-moz-box-shadow: 0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
+	box-shadow: 0 -17px 40px -20px rgba( 228, 78, 68, 1 ) inset;
+}
+
+.home .site-title a {
+	background: url( 'images/logo-home.png' ) no-repeat 0 0;
 }
 
 .site-title {
 	text-align: left;
-	max-width: 200px;
-	margin-bottom: 2rem;
+//	max-width: 250px;
+	
+	a {
+		background: url( 'images/logo.png' ) no-repeat 0 0;
+		width: 196px;
+		height: 32px;
+	}
 
 	a, img {
 		display: block;
@@ -145,14 +187,14 @@ h1 {
 #how-it-works {
 	background: #e44e44;
 	padding: 1rem;
-	font-weight: 600;
+	font-weight: 500;
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
 	display: inline-block;
 	position: relative;
 	z-index: 1;
-	top: 113px;
+	top: 106px;
 	line-height: 1;
 	 -webkit-transition: all 0.2s ease-in-out; 
 	-moz-transition: all 0.2s ease-in-out; 
@@ -164,23 +206,56 @@ h1 {
     margin: 0 auto;
 }
 
+h1.intro,
 #how-it-works,
 #masthead figure {
 	display: none;
 }
 
-@media only screen and ( min-width: @breakpoint ) {
+// @media only screen 
+// and (min-device-width : 768px) 
+// and (max-device-width : 1024px) 
+// and (orientation : landscape) {
 
+// 	#how-it-works {
+// 		display: inline-block;
+// 	}
+
+// 	#masthead figure {
+// 		display: block;
+// 	}
+
+// }
+
+
+
+
+@media only screen and ( min-width: 820px ),
+only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px ) {
+
+	.home .logo-wrapper {
+		margin-bottom: 2rem;
+	}
 
 	#how-it-works {
 		display: inline-block;
 	}
 
-	#masthead {
+	h1.intro,
+	#masthead figure {
+		display: block;
+	}
+
+	.home #masthead {
 		height: 350px;
 
 		&.expanded {	
 			height: 880px;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
 
 			#how-it-works {
 				top: 292px;
@@ -188,10 +263,17 @@ h1 {
 
 		}
 	}
+	
+}
 
-	#masthead figure {
-		display: block;
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px ) {
+
+	.intro {
+		width: 90%;	
 	}
+
 }
 
 #site {
@@ -199,14 +281,12 @@ h1 {
 }
 
 #masthead {
-	padding: 2rem;
+	padding: 1rem 2rem;
 	-webkit-transition: all 0.2s ease-in-out; 
 	-moz-transition: all 0.2s ease-in-out; 
 	-o-transition: all 0.2s ease-in-out; 
 	transition: all 0.2s ease-in-out; 
-	-webkit-box-shadow:0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
-	-moz-box-shadow:0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
-	box-shadow:0 -17px 40px -20px rgba( 228, 78, 68, 1 ) inset;
+
 
 	img {
 		
@@ -226,17 +306,25 @@ h1 {
 	}
 }
 
+.logo {
+	text-indent: -9999px;
+}
+
 #content {
 	background: #fff;
 	position: relative;
-	min-height: 520px;
-	padding: 2rem 2rem 6rem;
+//	min-height: 520px;
+	padding: 2rem 2rem 3rem;
 	margin: 0 auto;
-	text-align: center;
+}
+
+.home .wrapper {
+//	max-width: 1280px;
 }
 
 .wrapper {
-	max-width: 1280px;
+
+	max-width: 1220px;
 	margin: 0 auto;
 }
 
@@ -299,3 +387,24 @@ footer {
     -o-transition: all 0.5s ease-in-out; 
     transition: all 0.5s ease-in-out; 
 }
+
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    
+    .site-title a {
+      background-size: 196px 32px;
+      background-image: url('images/logo@2x.png');
+    }
+
+    .home .site-title a {
+    	background-image: url( 'images/logo-home@2x.png' );
+    	 background-size: 196px 32px;
+    }
+
+
+}	
