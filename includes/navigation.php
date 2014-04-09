@@ -26,31 +26,37 @@ function affwp_nav_account() {
 	get_currentuserinfo();
 
 //	$account_page_id = ( get_theme_mod( 'account_page' ) ) ? get_theme_mod( 'account_page' ) : '';
-	$account_page_id = 45;
+//	$account_page_id = 45;
 
-	$account_link_text = 'Account';
-
-	$active = is_page( $account_page_id ) ? ' current-menu-item' : '';
+	$account_link_text 	= 'Account';
+	$account_page 		= '/account';
+	$affiliates_page 	= '/affiliates';
+	$active 			= is_page( 'account' ) || is_page( 'affiliates' ) ? ' current-menu-item' : '';
 
 
 	 ob_start();
 	?>
 
-	<?php if( ! is_user_logged_in() ) : ?>
-		<li class="account"><a class="button" title="<?php _e( 'Login', 'affwp' ); ?>" href="<?php echo get_permalink( $account_page_id ); ?>">Login</a></li>
-	<?php else: ?>
+
 		<li class="menu-item has-sub-menu account<?php echo $active; ?>">
-			<a title="<?php echo $account_link_text; ?>" href="<?php echo get_permalink( $account_page_id ); ?>"><?php echo $account_link_text; ?></a>
+			<a title="<?php echo $account_link_text; ?>" href="<?php echo site_url( $account_page ); ?>"><?php echo $account_link_text; ?></a>
 			<ul class="sub-menu">
 				<li>
-					<a title="<?php _e( 'Affiliates', 'affwp' ); ?>" href="/account/affiliates"><?php _e( 'Affiliates', 'affwp' ); ?></a>
+					<a title="<?php _e( 'Affiliates', 'affwp' ); ?>" href="<?php echo site_url( $account_page . $affiliates_page ); ?>"><?php _e( 'Affiliates', 'affwp' ); ?></a>
 				</li>
-				<li>
-					<a title="<?php _e( 'Log out', 'affwp' ); ?>" href="<?php echo wp_logout_url( add_query_arg( 'logout', 'success', get_permalink( $account_page_id ) ) ); ?>"><?php _e( 'Log out', 'affwp' ); ?></a>
-				</li>
+				<?php if( ! is_user_logged_in() ) : ?>
+					<li>
+						<a title="<?php _e( 'Log in', 'affwp' ); ?>" href="<?php echo site_url( $account_page ); ?>"><?php _e( 'Log in', 'affwp' ); ?></a>
+					</li>
+				<?php else: ?>
+					<li>
+						<a title="<?php _e( 'Log out', 'affwp' ); ?>" href="<?php echo wp_logout_url( add_query_arg( 'logout', 'success', site_url( $account_page ) ) ); ?>"><?php _e( 'Log out', 'affwp' ); ?></a>
+					</li>
+				<?php endif; ?>		
+
+				
 			</ul>
 		</li>
-	<?php endif; ?>
 
 	<?php $content = ob_get_contents();
     ob_end_clean();

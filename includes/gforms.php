@@ -33,7 +33,8 @@ function affwp_gform_submit_button( $button_input, $form ) {
 	<?php 
 	return $button_input . ob_get_clean();
 }
-add_filter( 'gform_submit_button', 'affwp_gform_submit_button', 10, 2 );
+// only applies to form #1
+add_filter( 'gform_submit_button_1', 'affwp_gform_submit_button', 10, 2 );
 
 /**
  * Gravity Forms - add icon after email submission

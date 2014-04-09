@@ -1,5 +1,6 @@
 @import 'theme-info';
 @import 'reset';
+@import 'mixins';
 @import 'helpers';
 @import 'forms';
 @import 'icons';
@@ -10,9 +11,28 @@
 @import 'edd';
 @import 'buttons';
 @import 'page-templates';
+@import 'documentation';
+@import 'pricing';
+//@import 'animation';
+@import 'home';
+@import 'lists';
+@import 'general';
+@import 'affiliates';
+@import 'fancybox';
+@import 'alerts';
+@import 'blog';
+//@import 'testimonials';
+@import 'flexslider';
+@import 'columns';
+@import 'about';
+@import 'footer';
 
-@button-color: #E44E44;
-@body-text-color: #565656;
+
+@primary-color: #ED6D62;
+@accent-color: #e44e44;
+@light-grey: #f7f7f7;
+
+@body-text-color: #787878;
 @breakpoint: 820px;
 
 body, html {
@@ -20,11 +40,20 @@ body, html {
 }
 
 body {
-	background: #ed6d62 url( 'images/bg-checkered.png' ) repeat;
+	background: #ed6d62;
 	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
 }
 
+#site {
+	word-wrap: break-word;
+}
 
+blockquote {
+	footer {
+		color: @body-text-color;
+
+	}
+}
 
 
 .entry-header {
@@ -32,14 +61,6 @@ body {
 }
 
 
-.intro {
-	 width: 100%;
-	 margin: 0 auto;
-	 color: #fff;
-	 text-shadow: 0 4px 0 #d2625a;
-	 font-weight: 500;
-	 text-align: center;
-}
 
 
 
@@ -47,6 +68,7 @@ body {
 	text-align: left;
 }
 
+// no JS styles
 .no-js {
 
 	.home #masthead {
@@ -54,6 +76,7 @@ body {
 		padding-bottom: 2rem;
 	}
 
+	.filters,
 	#how-it-works,
 	.home #masthead figure {
 		display: none;
@@ -61,15 +84,11 @@ body {
 	}
 }
 
-
-
-p {
-	margin: 0 0 1.62rem 0;
-	color: @body-text-color;
-	line-height: 1.62;
-	font-weight: 300;
-	font-size: 1.1rem;
+#primary li {
+	padding: 0.5rem 0;
 }
+
+
 
 a {
 	text-decoration: none;
@@ -85,18 +104,22 @@ ul {
 
 // masthead
 .logo-wrapper {
-    text-align: justify;
+    text-align: center;
     font-size: 0.1px;
     margin: 0 auto;
     max-width: 1220px;
 }
 
+
 .site-title {
-	padding: 0.5rem 0;
+//	padding: 0.5rem 0;
+	// padding: 1rem 0;
+	// margin: 0;
 }
 
-.site-title, 
-#main {
+.site-title {
+	padding: 1rem 0;
+	margin: 0;
     display: inline-block;
     vertical-align: bottom;
 }
@@ -105,40 +128,14 @@ ul {
 	font-size: 1rem;
 }
 
-.mailing-list {
-	margin: 0 auto;
-	position: relative;
-	text-align: center;
 
-	h2 {
-		font-weight: 500;
-	}
 
-	.wrapper {
-		padding: 2rem;
-		margin: 0 auto;
-		background: #f5f5f5;
-		position: relative;
-		z-index: 1;
-	}
-}
 
-@media only screen and ( min-width: 500px ) {
-	.mailing-list {
-		max-width: 490px;
-	}
 
-}
 
-@media only screen and ( min-width: 860px ) {
-
-	.mailing-list.shared .icon-thumbs-up {
-		left: 100%;
-	}
-}
 
 // sidebar
-#sidebar {
+#secondary {
 	li a {
 		display: block;
     	padding: 0.5rem 0;
@@ -152,18 +149,32 @@ ul {
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+
+	.wrapper {
+		padding: 2rem 0;
+		position: relative;
+	}
 }
 
-.home #masthead {
-	background: transparent;
-	-webkit-box-shadow: 0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
-	-moz-box-shadow: 0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
-	box-shadow: 0 -17px 40px -20px rgba( 228, 78, 68, 1 ) inset;
+.home {
+	#masthead {
+//		background: transparent;
+		-webkit-box-shadow: 0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
+		-moz-box-shadow: 0 -17px 40px -20px rgba(228, 78, 0, 1) inset;
+		box-shadow: 0 -17px 40px -20px rgba( 228, 78, 68, 1 ) inset;
+	}
+
+	.site-title a {
+		background: url( 'images/logo-home.png' ) no-repeat 0 0;
+	}
+
+	#content {
+		padding-top: 4rem;
+	}
 }
 
-.home .site-title a {
-	background: url( 'images/logo-home.png' ) no-repeat 0 0;
-}
+
+
 
 .site-title {
 	text-align: left;
@@ -193,8 +204,8 @@ ul {
 	text-transform: uppercase;
 	display: inline-block;
 	position: relative;
-	z-index: 1;
-	top: 106px;
+//	z-index: 1;
+//	top: 106px;
 	line-height: 1;
 	 -webkit-transition: all 0.2s ease-in-out; 
 	-moz-transition: all 0.2s ease-in-out; 
@@ -209,7 +220,7 @@ ul {
 h1.intro,
 #how-it-works,
 #masthead figure {
-	display: none;
+//	display: none;
 }
 
 // @media only screen 
@@ -236,11 +247,11 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px ) {
 
 	.home .logo-wrapper {
-		margin-bottom: 2rem;
+	//	margin-bottom: 2rem;
 	}
 
 	#how-it-works {
-		display: inline-block;
+	//	display: inline-block;
 	}
 
 	h1.intro,
@@ -248,21 +259,8 @@ and (max-device-width : 1024px ) {
 		display: block;
 	}
 
-	.home #masthead {
-		height: 330px;
 
-		&.expanded {	
-			height: 880px;
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
-			box-shadow: none;
 
-			#how-it-works {
-				top: 292px;
-			}
-
-		}
-	}
 	
 }
 
@@ -281,7 +279,7 @@ and (max-device-width : 1024px ) {
 }
 
 #masthead {
-	padding: 1rem 2rem;
+	padding: 1rem;
 	-webkit-transition: all 0.2s ease-in-out; 
 	-moz-transition: all 0.2s ease-in-out; 
 	-o-transition: all 0.2s ease-in-out; 
@@ -314,13 +312,10 @@ and (max-device-width : 1024px ) {
 	background: #fff;
 	position: relative;
 //	min-height: 520px;
-	padding: 2rem 2rem 3rem;
+	padding: 1rem;
 	margin: 0 auto;
 }
 
-.home .wrapper {
-//	max-width: 1280px;
-}
 
 .wrapper {
 
@@ -338,42 +333,7 @@ and (max-device-width : 1024px ) {
 	}
 }
 
-footer {
-	color: #fff;
-	padding: 2rem;
-	text-align: center;
 
-	ul {
-		li {
-			display: block;
-			margin: 0 0.5rem 1rem 0.5rem;
-		}
-	}
-
-	a {
-		color: #fff;
-		font-size: 0.875rem;
-		border: 3px solid #FFFFFF;
-		display: block;
-		font-weight: 600;
-		padding: 0.5rem 1rem;
-		text-transform: uppercase;
-		-webkit-transition: all 0.2s ease-in-out; 
-		-moz-transition: all 0.2s ease-in-out; 
-		-o-transition: all 0.2s ease-in-out; 
-		transition: all 0.2s ease-in-out; 
-
-		&:hover {
-			box-shadow: 0 0 0 1px #FFFFFF inset;
-		}
-	}
-}
-
-@media only screen and ( min-width: 420px ) {
-	footer ul li {
-		display: inline-block;
-	}
-}
 
 .icon-thumbs-up {
 	font-size: 4rem;
@@ -407,4 +367,39 @@ footer {
     }
 
 
-}	
+}
+
+@media only screen and ( min-width: 1024px ) {
+
+	.site-title {
+		padding: 40px 0 0.5rem;
+	}
+
+	.logo-wrapper {
+		text-align: justify;
+	}
+
+	// logo is centered on checkout page
+	.checkout .logo-wrapper {
+		text-align: center;
+	}
+
+	#main {
+	    display: inline-block;
+	    vertical-align: bottom;
+	}
+
+}
+
+@media only screen and ( min-width: 500px ) {
+
+	#content {
+		padding: 2rem 2rem 6rem;
+	}
+
+
+	#masthead {
+		padding: 0 2rem;
+	}
+
+}

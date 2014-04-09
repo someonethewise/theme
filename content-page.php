@@ -12,7 +12,10 @@
 	<?php
 		// Page thumbnail and title.
 		affwp_post_thumbnail();
-		the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+
+		affwp_the_title();
+		
+		
 	?>
 
 	<div class="entry-content">

@@ -2,15 +2,63 @@ h1, h2 {
 	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
 	color: #373737;
 	font-weight: 300;
+	margin: 0;
+	line-height: 1.3;
 }
 
 h1 {
-	margin: 0;
 	font-size: 3rem;
+	margin-bottom: 1rem;
 //	font-weight: 400;
 }
 
 h2 {
-	
 	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1rem;
+	line-height: 1.3;
+}
+
+code {
+	color: #373737;
+	word-wrap: break-word;
+}
+
+// custom headings
+
+section.section.docs,
+section.section.used-by,
+section.section.featured,
+section.section.subscribe {
+	h1 {
+		margin-bottom: 0.5rem;
+		
+		span {
+			font-weight: 600;
+		}
+	}
+}
+
+p {
+	margin: 0 0 1.62rem 0;
+	line-height: 1.62;
+	font-weight: 300;
+	
+}
+
+p, ul, ol {
+	color: @body-text-color;
+	font-size: 1.1rem;
+}
+
+.entry-content {
+	ul, 
+	ol {
+		color: @body-text-color;
+		line-height: 1.62;
+		font-weight: 300;
+	}
 }

@@ -2,84 +2,101 @@
 
 @secondary-color: #E44E44;
 
-li.menu-item > a:before {
-//  font-weight: bold;
-  font-size: 2rem;
-  font-family: "affiliatewp" !important;
-  speak: none;
-  line-height: 1;
-  display: block;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-   bottom: 1rem;
-   opacity: 0;
-   color: #E44E44;
-  -webkit-transition: all 0.25s ease-in-out; 
-  -moz-transition: all 0.25s ease-in-out; 
-  -o-transition: all 0.25s ease-in-out; 
-  transition: all 0.25s ease-in-out;
-  
+@media only screen and ( min-width: 1024px ) {
+
+
+  // purchase/checkout button
+  #main ul.menu > li.action {
+    margin-left: 1rem;
+  }
+
+
+  #main {
+ //   margin-top: -1rem;
+  }
+
+  #main ul.menu li {
+    float: left;
+  }
+
+  li.menu-item > a:before {
+  //  font-weight: bold;
+    font-size: 2rem;
+    font-family: "affiliatewp" !important;
+    speak: none;
+    line-height: 1;
+    display: block;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+     bottom: 1rem;
+     opacity: 0;
+     color: #E44E44;
+    -webkit-transition: all 0.25s ease-in-out; 
+    -moz-transition: all 0.25s ease-in-out; 
+    -o-transition: all 0.25s ease-in-out; 
+    transition: all 0.25s ease-in-out;
+    
+  }
+
+  // icon glyphs
+  li.home > a:before {
+    content: "\e005";
+  }
+
+  li.about > a:before {
+   content: "\e004";
+  }
+
+  li.pricing > a:before {
+    content: "\e00a";
+  }
+
+  li.support > a:before {
+    content: "\e002";
+  }
+
+  li.blog > a:before {
+    content: "\e003";
+  }
+
+  li.account > a:before {
+    content: "\e006";
+  }
+
+  li.purchase > a:before {
+     content: "\e008";
+  }
+
+  li.checkout > a:before {
+     content: "\e009";
+  }
+
+
+
+
+
+
+  // checkout icon should always be visible
+  li.menu-item.purchase > a:before,
+  li.menu-item.checkout > a:before {
+    color: #fff;
+    opacity: 1;
+    bottom: 0.5rem;
+  }
+
+
+  li.menu-item.checkout:hover > a:before {
+    -webkit-transform:rotate( 15deg );
+    -moz-transform:rotate( 15deg );
+    -ms-transform:rotate( 15deg );
+    -o-transform:rotate( 15deg );
+    transform:rotate( 15deg );
+  }
 }
 
-// icon glyphs
-li.home > a:before {
-  content: "\e005";
-}
 
-li.about > a:before {
-  content: "\e00b";
-}
-
-li.pricing > a:before {
-  content: "\e00a";
-}
-
-li.support > a:before {
-  content: "\e002";
-}
-
-li.blog > a:before {
-  content: "\e003";
-}
-
-li.account > a:before {
-  content: "\e006";
-}
-
-li.purchase > a:before {
-   content: "\e008";
-}
-
-li.checkout > a:before {
-   content: "\e009";
-}
-
-
-
-
-
-
-
-
-
-// checkout icon should always be visible
-li.menu-item.purchase > a:before,
-li.menu-item.checkout > a:before {
-   color: #fff;
-   opacity: 1;
-  bottom: 0.5rem;
-}
-
-
-li.menu-item.checkout:hover > a:before {
-  -webkit-transform:rotate( 15deg );
-  -moz-transform:rotate( 15deg );
-  -ms-transform:rotate( 15deg );
-  -o-transform:rotate( 15deg );
-  transform:rotate( 15deg );
-}
 
 
 .home #main ul.menu > li > a:hover {
@@ -93,17 +110,10 @@ li:hover > a:before {
   opacity: 1;
 }
 
-.home li:hover > a:before,
+.home #main li:hover > a:before,
 li.has-sub-menu:hover > a:before {
   color: #fff;
 }
-
-
-// li.about:hover > a:before {
-//   color: #E44E44;
-//   bottom: 0.5rem;
-//   opacity: 1;
-// }
 
 // show icon when page is selected
 li.current-menu-ancestor > a:before,
@@ -113,20 +123,6 @@ li.current-menu-item > a:before {
   bottom: 0.5rem;
 }
 
-
-// li.support.current-menu-item > a:before {
-//   opacity: 0;
-//   color: #fff;
-//   bottom: 1rem;
-// }
-
-// .icon-mail:before {
-//   content: "\e000";
-// }
-
-#main {
-  margin-top: -1rem;
-}
 
 #main .button {
 	background: #e44e44;
@@ -145,11 +141,6 @@ li.current-menu-item > a:before {
   color: #fff;
 }
 
-// purchase/checkout button
-#main ul.menu > li.action {
-  margin-left: 1rem;
-}
-
 
 
 // defaults are very simple so we can override them easier
@@ -162,64 +153,37 @@ li.current-menu-item > a:before {
 // Mobile navigation styles. Displayed up until the desktop nav takes over
 //********************************************************************************
 
-
 @media only screen and ( max-width: 481px ) {
-
-  .sub-menu {
-    margin-bottom:0;
-    display: none;
+  #main ul.menu li {
+     display: inline-block;
+     float: none;
+     width: 48%;
   }
 
-  #main ul.menu {
-    list-style-type: none;
-    border-bottom: none;
-    
-    li {
-   //   display: inline-block;
-    }
 
-  li a {
-  //  text-align: left;
+  // purchase/checkout button
+  #main ul.menu > li.action {
+    width: 100%;
   }
 
-    > li a { 
-      display: block;
-      padding: 8px;
-      padding: 0.5rem;
-    //  background: @menu-sub-menu-mobile-nav-background-color;
-      color: #fff;
-      text-decoration: none;
-    }
 
-    .sub-menu li a {
-      padding-left: 2em;
-    }
-
-
-  } // end ul.menu
-
-} // end mobile nav styles
-
+}
  
 //********************************************************************************
 // Desktop sized navigation
 //********************************************************************************
-
-
-
-@media only screen and ( min-width: 728px ) {
 
 // animated menu
  ul.menu {
   
   // initial state of submenu
   ul {
-  -khtml-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
 
-  display: none;
-     top: 100%;
+    display: none;
+    top: 100%;
   }
 
     // on <li> hover show menu
@@ -297,11 +261,13 @@ li.current-menu-item > a:before {
       li {
         margin: 0;
         display: block;
-        
+        width: 100%;
+
         &:hover > a {
         //  background-color: #fff;
           color: #fff;
           text-decoration: none;
+           background: darken( @accent-color, 3% );
         }
       }
       
@@ -327,6 +293,7 @@ li.current-menu-item > a:before {
         &:hover {
             > a {
                background-color: @secondary-color;
+
             } 
         }
       }
@@ -335,6 +302,7 @@ li.current-menu-item > a:before {
       // only for the first <li> that has a sub menu
       > li.has-sub-menu:hover > a {
        color: #fff;
+
       }
       
 
@@ -342,10 +310,11 @@ li.current-menu-item > a:before {
     li {
       position: relative;
       display: inline-block;
+     
       white-space: nowrap;
       line-height: 1; // fixes gaps in ie7 
       list-style-type: none;
-      float: left;
+      
 
       // when the child page is active
       ul li.current_page_ancestor > a,
@@ -360,6 +329,7 @@ li.current-menu-item > a:before {
          // main level hover
         > a {
           text-decoration: none;
+
         //  background: @secondary-color;
           color: @secondary-color;
         }
@@ -381,4 +351,3 @@ li.current-menu-item > a:before {
       transition: all 0.25s ease-in-out;
     }
   }
-} // end media query

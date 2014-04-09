@@ -67,6 +67,9 @@ function affwp_share_box() {
 */
 function affwp_social_scripts() {
 
+	if ( ! is_front_page() )
+		return;
+	
 	?>
 	<script type="text/javascript">
 

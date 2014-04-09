@@ -2,26 +2,26 @@
 
 // add to cart buttons
 
+// #affwp_save_notifications_wrap input[type="submit"],
+
 .button-secondary,
-#affwp_referral_url_submit_wrap input[type="submit"],
 #edd-purchase-button,
 .edd-add-to-cart,
 .edd-submit,
-.button {
-  background: @button-color;
+.edd_submit,
+.affwp_submit,
+.button,
+#submit {
+  background: @accent-color;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   text-transform: uppercase;
-  padding: 0.875rem 1rem;
-  font-size: 0.875rem;
   font-weight: 500;
   border-radius: 0px; // EDD override
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  line-height: 1.33;
-
   background-image: none;
   border: none;
   -webkit-user-select: none;
@@ -30,20 +30,54 @@
   -o-user-select: none;
   user-select: none;
   outline: none;
-  
-  
+  .transition ( all 0.2s linear );
+}
+
+// #affwp_referral_url_submit_wrap input[type="submit"],
+//.affwp_submit,
+
+#edd-purchase-button,
+.edd-add-to-cart,
+.edd-submit,
+.edd_submit,
+
+.button {
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.33;
+
+  &.get-started {
+    font-size: 1.25rem;
+    padding: 0.875rem 1.25rem;
+  }
 
   &:hover,
   &:focus {
     text-decoration: none;
+    color: #fff;
+    background: darken( @accent-color, 5% ); 
   }        
     
 }
 
+.affiliates {
+  .button {
+    width:auto;
+  }
+}
+
 .button-secondary {
-//  border: 2px solid @button-color;
-//  display: inline-block;
+  padding: 0.75rem 0.875rem;
   width: auto;
+  font-size: 0.75rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: #fff;
+    background: darken( @accent-color, 5% ); 
+  }  
+
 }
 
 

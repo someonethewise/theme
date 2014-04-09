@@ -1,19 +1,90 @@
 #primary {
     margin-bottom: 0;
-    width: 64.8%;
 }
 
-#sidebar {
-    width: 29.5%;
+#primary,
+#secondary {
+  text-align: left;
 }
 
 #content {
   text-align: justify;
 }
 
-#primary,
-#sidebar {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
+// wider areas
+.pricing {
+	#primary {
+		width: 100%;
+	}
+
+	#content > .wrapper {
+		max-width: 980px;
+	}
+}
+
+.support,
+.full-width {
+	#content {
+		text-align: center;
+	}
+}
+
+.about,
+.account {
+	#primary {
+		width: 100%;
+	}
+}
+
+ // nested columns
+  .about .columns.about {
+    padding: 0;
+  }
+
+// skinny pages
+
+
+.single-docs,
+.blog,
+.single-post,
+.checkout,
+.account-logged-out,
+.affiliates,
+.support {
+	#primary {
+		width: 100%;
+	}
+
+	#content > .wrapper {
+		max-width: 585px;
+	}
+
+}
+
+.error404 {
+	.wrapper {
+		text-align: center;
+	}
+}
+
+
+
+
+@media only screen and ( min-width: 1024px ) {
+	
+	#primary,
+	#secondary {
+	  display: inline-block;
+	  vertical-align: top;
+	  text-align: left;
+	}
+
+	#primary {
+	    width: 64.8%;
+	}
+
+	#secondary {
+	    width: 29.5%;
+	}
+
 }

@@ -40,7 +40,7 @@
 				<a class="logo" title="<?php echo get_bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">AffiliateWP</a>
 			</h1>
 
-			<?php if ( current_user_can( 'manage_options' ) ) : ?>
+			<?php if ( ! edd_is_checkout() ) : ?>
 			<nav id="main" class="site-navigation primary-navigation" role="navigation">
 			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'affwp' ); ?></a>
 			<?php
@@ -57,20 +57,25 @@
 			?>
 			</nav>
 			<?php endif; ?>
+			
 		</div>
 		
 		<?php if ( is_front_page() ) : ?>
 			<div class="wrapper">
-				<h1 class="intro">Affiliate marketing for WordPress you'll love</h1>
-				<a id="how-it-works" href="#">See how it works</a>
-				<figure>
-					<img src="<?php echo get_stylesheet_directory_uri() . '/images/how-it-works.png'; ?>">
-				</figure>
+				<h1 class="intro">
+				The best affiliate marketing plugin for WordPress
+				</h1>
+
+				<div id="mascot"></div>
+				<?php echo affwp_button_get_started( 'Start Your Affiliate Network' ); ?>
 			</div>		
 		<?php endif; ?>
-		
+		<div class="share-button"></div>
+
 	</header><!-- #masthead -->
 
+	<?php do_action( 'affwp_content_before' ); ?>
 	<div id="content">
+		<?php do_action( 'affwp_content_start' ); ?>
 		<div class="wrapper">
-
+			

@@ -5,17 +5,69 @@
 ?>
 
 </div> <!-- .wrapper -->
-
+<?php do_action( 'affwp_content_end' ); ?>
 </div> <!-- #content -->
+<?php do_action( 'affwp_content_after' ); ?>
 
-	<footer>
-		<div class="wrapper">
-		<ul>
-			<li><a href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
-			<li><a href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
-			<li><a href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
-		</ul>
-		</div>
+	<footer id="footer">
+		<div id="mascot-2"></div>
+
+		<?php if ( ! edd_is_checkout() ) : ?>
+		<section class="section alt columns columns-4">
+			<div class="wrapper">
+				<div class="item">
+				<!-- <h3>Links</h3> -->
+					<ul>
+						<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
+						<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>
+						<li><a href="<?php echo site_url( 'blog' ); ?>" title="Blog">Blog</a></li>
+
+					</ul>
+				</div>
+
+				<div class="item">
+				<!-- <h3>Links</h3> -->
+					<ul>
+						<li><a href="<?php echo site_url( 'support' ); ?>" title="Support">Support</a></li>
+						<li><a href="<?php echo site_url( 'support/documentation' ); ?>" title="Documentation">Documentation</a></li>
+						<li><a href="<?php echo site_url( 'account' ); ?>" title="Account">Account</a></li>
+						<li><a href="<?php echo site_url( 'account/affiliates' ); ?>" title="Affiliates">Affiliates</a></li>
+					</ul>
+				</div>
+
+				<div class="item">
+				<h3>Follow Us</h3>
+
+				
+				<ul>
+					<li><a class="link" href="http://twitter.com/pippinsplugins" title="Pippin's Plugins" target="_blank">@pippinsplugins</a></li>
+					<li><a class="link" href="http://twitter.com/sumobi_" title="Sumobi" target="_blank">@sumobi_</a></li>
+				</ul>
+
+				</div>
+
+				<div class="item">
+				<h3>Our Sites</h3>
+					<ul>
+						<li><a class="link" href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
+						<li><a class="link" href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
+						<li><a class="link" href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
+					</ul>
+				</div>
+
+				
+			</div>
+
+		</section>
+		<?php endif; ?>
+		
+		<section class="section alt copyright">
+			<div class="wrapper">
+					Copyright &copy; 2014, AffiliateWP
+			</div>
+
+		</section>
+
 	</footer>
 </div> <!-- #site -->	
 

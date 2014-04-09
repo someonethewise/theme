@@ -1,0 +1,54 @@
+
+footer#footer {
+
+	color: #fff;
+	text-align: center;
+	position: relative;
+
+	ul {
+		li {
+			display: block;
+			margin: 0 0 1rem 0rem;
+			padding: 0;
+		}
+	}
+
+	a {
+		color: #fff;
+	}
+
+	a.link {
+		color: #fff;
+		font-size: 0.875rem;
+		border: 3px solid #FFFFFF;
+		display: block;
+		font-weight: 600;
+		padding: 0.5rem 1rem;
+		text-transform: uppercase;
+		-webkit-transition: all 0.2s ease-in-out; 
+		-moz-transition: all 0.2s ease-in-out; 
+		-o-transition: all 0.2s ease-in-out; 
+		transition: all 0.2s ease-in-out; 
+
+		&:hover {
+			box-shadow: 0 0 0 1px #FFFFFF inset;
+		}
+	}
+}
+
+@media only screen and ( min-width: 420px ) {
+
+	#mascot-2 {
+		width: 200px;
+		height: 132px;
+		background-size: 200px 264px;
+		top: -132px;
+		left: 50%;
+		position: absolute;
+		background-image: url('images/mascot-2.png');
+		margin-left: -100px;
+		.transition ( top 0.1s ease-in-out );
+	}
+
+	#footer:hover #mascot-2 { background-position: 0 -132px; }
+}

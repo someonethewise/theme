@@ -20,6 +20,14 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'ajax-functions.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'navigation.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'template-tags.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'post-types.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'documentation.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'home.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'account.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'functions.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'checkout.php' );
+
+
 
 if ( ! function_exists( 'affwp_setup' ) ) :
 /**
@@ -39,6 +47,7 @@ function affwp_setup() {
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
+
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
@@ -64,24 +73,15 @@ function affwp_setup() {
 endif; // affwp_setup
 add_action( 'after_setup_theme', 'affwp_setup' );
 
-
-
-
 /**
- * Fittext
+ * Remove and deactivate all styling included with EDD. Theme uses unique styling
  *
  * @since 1.0
-*/
-function affwp_fittext() { 
-?>
-	<script type="text/javascript">
-	 jQuery(document).ready(function($) {
-	 	jQuery("h1.intro").fitText( 0.5, { maxFontSize: '56px' });	
+ */
+remove_action( 'wp_enqueue_scripts', 'edd_register_styles' );
 
-	 });
-	</script>
-<?php }
-add_action( 'wp_footer', 'affwp_fittext', 50 );
+
+
 
 /**
  * Filter menu and add 'has-sub-menu' class to parent
@@ -116,6 +116,9 @@ add_filter( 'wp_nav_menu_objects', 'affwp_add_has_sub_menu_parent_class' );
 function affwp_body_classes( $classes ) {
 	global $post;
 
+	// removed via JS
+	//$classes[] = 'loading';
+
 	// Adds a class of 'has-featured-image' if the current post has a featured image
 	if ( isset( $post->ID ) && get_the_post_thumbnail( $post->ID ) )
 		$classes[] = 'has-featured-image';
@@ -128,9 +131,38 @@ function affwp_body_classes( $classes ) {
 	if ( is_page_template( 'page-templates/blog.php' ) )
 		$classes[] = 'blog';
 
+	if ( is_page_template( 'page-templates/docs.php' ) )
+		$classes[] = 'documentation';
+
 	if ( is_page_template( 'page-templates/full-width.php' ) )
 		$classes[] = 'full-width';
 	
+	if ( is_page_template( 'page-templates/pricing.php' ) )
+		$classes[] = 'pricing';
+
+	if ( is_page_template( 'page-templates/support.php' ) )
+		$classes[] = 'support';
+
+	if ( is_page_template( 'page-templates/about.php' ) )
+		$classes[] = 'about';
+
+	if ( edd_is_checkout() )
+		$classes[] = 'checkout';
+
+	if ( is_page_template( 'page-templates/account.php' ) ) {
+		$classes[] = 'account';
+	
+		if ( ! is_user_logged_in() ) {
+			$classes[] = 'account-logged-out';
+		}
+		else {
+			$classes[] = 'account-logged-in';
+		}
+	}
+
+	if ( is_page_template( 'page-templates/affiliates.php' ) )
+		$classes[] = 'affiliates';
+
 	return $classes;
 }
 add_filter( 'body_class', 'affwp_body_classes' );

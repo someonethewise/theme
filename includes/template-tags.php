@@ -7,6 +7,37 @@
  * @since AffiliateWP 1.0
  */
 
+/**
+ * Get started now button
+ * @param  string $text [description]
+ * @return [type]       [description]
+ */
+function affwp_button_get_started( $text = 'Get started now' ) { ?>
+	<a class="button large get-started" href="/pricing"><?php echo $text; ?></a>
+<?php }
+
+/**		
+ * Render the_title
+ * @since 1.0
+*/
+function affwp_the_title() { 
+?>
+	<?php if ( edd_is_checkout() ) : ?>
+		<h1 class="page-title">Nice choice!</h1>
+	<?php elseif( ! is_front_page() && is_page() ) : ?>
+		<h1 class="page-title"><?php the_title(); ?></h1>
+	<?php elseif( is_singular('download') ) : ?>
+		<h1 class="download-title"><?php the_title(); ?></h1>
+	<?php elseif( is_tax( 'download_category' ) ) : ?>
+		<h1 class="page-title">
+            <?php printf( __( '%s', 'affwp' ), single_term_title( '', false ) ); ?>
+        </h1>
+	<?php else : ?>
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+	<?php endif; ?>
+
+<?php }	
+
 if ( ! function_exists( 'affwp_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
@@ -82,13 +113,15 @@ function affwp_post_nav() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'affwp' ); ?></h1>
-		<div class="nav-links">
+		<div class="nav-links columns columns-2">
 			<?php
 			if ( is_attachment() ) :
-				previous_post_link( '%link', __( '<span class="meta-nav">Published In</span>%title', 'affwp' ) );
+				previous_post_link( '%link', __( '<span class="meta-nav item">Published In</span>%title', 'affwp' ) );
 			else :
-				previous_post_link( '%link', __( '<span class="meta-nav">Previous Post</span>%title', 'affwp' ) );
-				next_post_link( '%link', __( '<span class="meta-nav">Next Post</span>%title', 'affwp' ) );
+				previous_post_link('<div class="item">%link</div>');
+				next_post_link('<div class="item">%link</div>');
+				// previous_post_link( '%link', __( '<span class="meta-nav item">%title</span>', 'affwp' ) );
+				// next_post_link( '%link', __( '<span class="meta-nav item">%title</span>', 'affwp' ) );
 			endif;
 			?>
 		</div><!-- .nav-links -->
@@ -111,12 +144,24 @@ function affwp_posted_on() {
 	}
 
 	// Set up and print post meta information.
-	printf( '<span class="entry-date"><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="%4$s" rel="author">%5$s</a></span></span>',
-		esc_url( get_permalink() ),
+	// printf( '<span class="entry-date"><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="%4$s" rel="author">%5$s</a></span></span>',
+	// 	esc_url( get_permalink() ),
+	// 	esc_attr( get_the_date( 'c' ) ),
+	// 	esc_html( get_the_date() ),
+	// 	esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+	// 	get_the_author()
+	// );
+
+	// printf( '<span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="%3$s" rel="author">%4$s</a></span></span>',
+	// 	esc_attr( get_the_date( 'c' ) ),
+	// 	esc_html( get_the_date() ),
+	// 	esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+	// 	get_the_author()
+	// );
+
+	printf( '<div class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></div>',
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		get_the_author()
+		esc_html( get_the_date() )
 	);
 }
 endif;

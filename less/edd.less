@@ -11,10 +11,102 @@
 	}
 }
 
+.edd_errors {
+	margin-bottom: 1rem;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.edd_error {
+		color: @accent-color;
+	}
+}
+
+
+#edd_checkout_cart {
+	border: 1px solid darken( @light-grey, 3% );
+
+	.edd_cart_header_row th {
+	    background: @light-grey;
+	}
+
+	.edd_cart_total {
+		text-align: right;
+	}
+
+	th, 
+	td {
+	    border: 1px solid @light-grey;
+	//    color: #666666;
+	    padding: 0.5rem 1rem;
+	    text-align: left;
+	}
+
+	.edd_cart_actions {
+		text-align: right;
+	}
+
+	
+}
+
+#edd_checkout_form_wrap {
+	
+	fieldset {
+	    border: 1px solid @light-grey;
+	    margin: 0 0 1.5rem;
+	    padding: 1.5rem;
+	    background: @light-grey;
+		border: 1px solid darken( @light-grey, 3% );
+
+		#edd_agree_to_terms {
+			float: left;
+			margin-right: 1rem;
+		}
+
+		#edd_terms_agreement {
+			background: none;
+			border: none;
+			padding: 0;
+		}
+	}
+
+	.edd-label {
+		font-weight: 500;
+	}
+
+	.edd-description {
+		display: block;
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#edd_checkout_wrap {
+	margin-bottom: 4rem;
+}
+
+// hide terms on checkout page
+#affwp-refund-policy {
+	display: none;
+}
+
 // add to cart buttons
 .edd-add-to-cart,
 .edd-submit {
-	background: @button-color;
+	background: @accent-color;
 }
 
 // ajax add to cart
@@ -26,4 +118,35 @@
 #edd_checkout_form_wrap label {
 	font-size: 1rem;
     font-weight: 400;
+}
+
+#edd_profile_editor_form {
+	
+	p {
+		margin-bottom: 1rem;
+		font-size: 1rem;
+	}
+
+	label {
+		margin-bottom: 0.5rem;
+	//	font-size: 1rem;
+	}
+
+	legend {
+		margin-bottom: 2rem;
+		font-weight: 500;
+		color: @body-text-color;
+	}
+
+	select {
+		width: 100%;
+	}
+
+	div {
+		margin-bottom: 4rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }

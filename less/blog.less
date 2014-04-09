@@ -1,0 +1,183 @@
+section.section.blog {
+	background: @light-grey;
+
+	.box {
+		background: #fff;
+	}
+}
+
+// featured image
+.item a.post-thumbnail {
+	display: block;
+	margin: 0 -2rem 2rem -2rem;
+}
+
+.post-thumbnail {
+	margin-bottom: 2rem;
+	display: block;
+
+	img {
+		display: block;
+	}
+}
+
+// entry-meta
+.entry-meta {
+	margin-bottom: 2rem;
+}
+
+// alignment 
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	margin: 0 0 1.5rem 1.5rem;
+}
+
+img.alignleft {
+	margin: 0 1.5rem 1.5rem 0;
+}
+
+img.aligncenter {
+	margin: 0 0 1.5rem 0;
+}
+
+// post navigation
+.post-navigation .wrapper {
+	div + div {
+		text-align: right;
+	}
+}
+
+// date
+.entry-date {
+	margin-bottom: 0.5rem;
+	color: @body-text-color;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+}
+
+#respond .form-allowed-tags,
+.form-allowed-tags,
+.form-allowed-tags code {
+	font-size: 0.875rem;
+	color: @body-text-color;
+}
+
+
+#comments {
+	margin-top: 2rem;
+}
+
+// nav links
+.columns.nav-links {
+	a {
+		display: inline-block;
+	}
+
+	div + div {
+		text-align: right;
+	}
+}
+
+// comment list
+#primary .comment-list {
+	list-style-type: none;
+	padding: 0;
+
+	.comment {
+		padding: 1rem 0;
+		border-top: 2px solid @light-grey;
+	}
+	.comment-author {
+		margin-bottom: 1rem;
+	}
+
+	.comment-metadata {
+		font-size: 0.875rem;
+	}
+
+	.comment-author b {
+		font-size: 1.2rem;
+		font-weight: 300;
+		margin-bottom: 1rem;
+	}
+
+	.comment-reply-title {
+		font-weight: 300;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	.comment-meta {
+		position: relative;
+		margin-bottom: 1rem;
+	}
+
+	.avatar {
+		position: absolute;
+		left: -5rem;
+		top: 0;
+	}
+
+	.says {
+		display: none;
+	}
+
+	.children {
+		list-style-type: none;
+		margin-top: 1rem;
+	}
+}
+
+
+
+// 2 columns
+@media all and ( min-width: 600px ) {
+	
+	#docs .filters {
+		display: block;
+		margin: -1rem 0 1rem 0;
+	}
+
+
+	#docs-container .gap,
+	#docs-container .item {
+		width: 48%;
+	}
+}
+
+// 3 columns
+@media all and ( min-width: 840px ) {
+	#docs-container .gap,
+	#docs-container .item {
+		width: 31%;
+	}
+}
+
+// 4 columns
+@media all and ( min-width: 1220px ) {
+
+	#docs {
+		padding: 2rem 4rem;
+	}
+
+	#docs-container .gap,
+	#docs-container .item {
+		width: 22.5%;
+	}
+}

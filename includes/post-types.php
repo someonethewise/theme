@@ -42,18 +42,14 @@ function affwp_post_types() {
 		'labels'    			=> $labels,
 		'public'    			=> true, 
 		'publicly_queryable' 	=> true,
-		'exclude_from_search' 	=> true,
 		'show_ui'    			=> true,
 		'show_in_menu'  		=> true,
 		'query_var'   			=> true,
 		'rewrite' 				=> array( 'slug' => 'docs', 'with_front' => false ),
-	//	'capability_type'  		=> 'manage_options',
-	//	'map_meta_cap' 			=> true, 
-		'has_archive'   		=> true,
-		'show_in_nav_menus'   	=> true,
-		'can_export'          	=> true,
-		'hierarchical'   		=> true,
-		'supports'    			=> array( 'title', 'editor', 'page-attributes', 'revisions', 'comments' ),
+		'map_meta_cap' 			=> true, 
+		'has_archive'   		=> false,
+		'hierarchical'   		=> false,
+		'supports'    			=> array( 'title', 'editor', 'page-attributes', 'revisions', 'comments', 'excerpt' ),
 	);
 
 	register_post_type( 'docs', $args );
@@ -136,7 +132,7 @@ function affwp_setup_taxonomies() {
 
 	$labels = array(
 		'name' 				=> _x( 'Category', 'taxonomy general name', 'affwp' ),
-		'singular_name' 	=> _x( 'Theme', 'taxonomy singular name', 'affwp' ),
+		'singular_name' 	=> _x( 'Category', 'taxonomy singular name', 'affwp' ),
 		'search_items' 		=> __( 'Search Categories', 'affwp'  ),
 		'all_items' 		=> __( 'All Categories', 'affwp'  ),
 		'parent_item' 		=> __( 'Parent Category', 'affwp'  ),
@@ -149,14 +145,14 @@ function affwp_setup_taxonomies() {
 	);
 
 	$args = array(
-			'hierarchical' 	=> true,
-			'labels' 		=> $labels,
-			'show_ui' 		=> true,
-			'query_var' 	=> 'theme',
-			'public'		=> true,
-			'rewrite' 		=> array( 'slug' => 'docs' . '/theme', 'with_front' => false, 'hierarchical' => true  )
+		'hierarchical' 	=> true,
+		'labels' 		=> $labels,
+		'show_ui' 		=> true,
+		'query_var' 	=> 'doc_category',
+		'public'		=> true,
+		'rewrite' 		=> array( 'slug' => 'docs' . '/section', 'with_front' => false, 'hierarchical' => true  )
 	);
-	
+
 	register_taxonomy( 'doc_category', array( 'docs' ), $args );
 }
 add_action( 'init', 'affwp_setup_taxonomies', 10 );
