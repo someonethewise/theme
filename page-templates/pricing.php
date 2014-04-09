@@ -89,16 +89,16 @@ get_header(); ?>
 		</div>
 
 		<div class="item">
+			<h4>Do you offer support if I need help?</h4>
+			<p>Yes! We believe that top-notch support is key for a quality product and will do our very best to resolve any issues you encounter via our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+		</div>
+		<div class="item">
 			<h4>Does AffiliateWP work on WordPress.com?</h4>
 			<p>No, AffiliateWP does not work on WordPress.com, only self-hosted WordPress installs.</p>
 		</div>
 		<div class="item">
 			<h4>I have other pre-sale questions, can you help?</h4>
 			<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
-		</div>
-		<div class="item">
-			<h4>Do you offer support if I need help?</h4>
-			<p>Yes! We believe that top-notch support is key for a quality product and will do our very best to resolve any issues you encounter via our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
 		</div>
 		
 
