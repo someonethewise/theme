@@ -26,7 +26,7 @@ get_header(); ?>
 
 				<h1>Pippin Williamson</h1>
 				<img alt="Pippin Williamson" src="<?php echo get_stylesheet_directory_uri() . '/images/about-pippin.png'; ?>">
-				<p>Pippin Williamson is an avid WordPress plugin developer from Hutchinson, Kansas and the lead developer for AffiliateWP. Along with AffiliateWP, Pippin is the founder of of Easy Digital Downloads, a complete e-commerce plugin for selling digital products through WordPress, and Restrict Content Pro, a plugin for managing and selling memberships to premium content.</p>
+				<p>Pippin Williamson is an avid WordPress plugin developer from Hutchinson, Kansas and the lead developer for AffiliateWP. Along with AffiliateWP, Pippin is the founder of Easy Digital Downloads, a complete e-commerce plugin for selling digital products through WordPress, and Restrict Content Pro, a plugin for managing and selling memberships to premium content.</p>
 
 				<p>Beyond the world of WordPress, Pippin is a devoted father and husband. He thoroughly enjoys brewing coffee varieties from around the world, indulging in craft beers, and riding his bicycle from point A to point B whenever possible.</p>
 				
