@@ -191,6 +191,13 @@ function affwp_home_how_it_works() {
 		        </blockquote>
 			</div>
 
+			<div class="item">
+				 <blockquote>
+		          <p>I spend all day in my WordPress dashboard so I wanted, nay, needed an affiliate solution that integrated flawlessly with WordPress. AffiliateWP was set up in minutes, is completely accurate, and helps me grow my business. It doesn't hurt that it's built by people you can trust either.</p>
+		          <footer>James Laws, Ninja Forms</footer>
+		        </blockquote>
+			</div>
+
 		</div>	
 	</section>
 
