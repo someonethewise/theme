@@ -953,6 +953,13 @@ ul.menu li:hover > ul {
 .about .columns.about {
   padding: 0;
 }
+.account #primary {
+  width: 100%;
+}
+.account #content > .wrapper {
+  max-width: 720px;
+}
+.slim #primary,
 .single-docs #primary,
 .blog #primary,
 .single-post #primary,
@@ -962,6 +969,7 @@ ul.menu li:hover > ul {
 .support #primary {
   width: 100%;
 }
+.slim #content > .wrapper,
 .single-docs #content > .wrapper,
 .blog #content > .wrapper,
 .single-post #content > .wrapper,
@@ -1707,6 +1715,13 @@ th,
 td {
   font-weight: normal;
   text-align: left;
+}
+.affwp-notice {
+  border: 1px solid #E6DB55;
+  margin: 0 0 21px 0;
+  padding: 0.5rem 1rem;
+  background: #FFFFE0;
+  color: #373737;
 }
 .affiliates {
   text-align: justify;
