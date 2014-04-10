@@ -2096,7 +2096,6 @@ td {
   }
 }
 .alert {
-  color: #787878;
   font-weight: 400;
   font-size: 1rem;
   margin-bottom: 2rem;
@@ -2134,6 +2133,9 @@ section.section.blog {
 }
 section.section.blog .box {
   background: #fff;
+}
+.blog #content {
+  padding-bottom: 19rem;
 }
 .item a.post-thumbnail {
   display: block;
