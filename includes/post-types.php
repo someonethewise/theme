@@ -49,7 +49,7 @@ function affwp_post_types() {
 		'map_meta_cap' 			=> true, 
 		'has_archive'   		=> false,
 		'hierarchical'   		=> false,
-		'supports'    			=> array( 'title', 'editor', 'page-attributes', 'revisions', 'comments', 'excerpt' ),
+		'supports'    			=> array( 'title', 'editor', 'page-attributes', 'revisions', 'comments', 'excerpt', 'thumbnail' ),
 	);
 
 	register_post_type( 'docs', $args );

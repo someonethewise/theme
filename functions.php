@@ -52,7 +52,9 @@ function affwp_setup() {
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
+
 	add_image_size( 'affwp-full-width', 1038, 576, true );
+	add_image_size( 'affwp-post-thumbnail', 279, 174, false );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
