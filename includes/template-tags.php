@@ -8,6 +8,15 @@
  */
 
 /**
+ * Limit excerpt length to 20 characters
+ */
+function affwp_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'affwp_excerpt_length' );
+
+
+/**
  * Get started now button
  * @param  string $text [description]
  * @return [type]       [description]
