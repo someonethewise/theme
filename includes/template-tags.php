@@ -44,11 +44,11 @@ function affwp_button_get_started( $text = 'Get started now' ) { ?>
  * Render the_title
  * @since 1.0
 */
-function affwp_the_title() { 
+function affwp_the_title() {
+	if ( edd_is_checkout() )
+		return;
 ?>
-	<?php if ( edd_is_checkout() ) : ?>
-		<h1 class="page-title">Nice choice!</h1>
-	<?php elseif( ! is_front_page() && is_page() ) : ?>
+	<?php if( ! is_front_page() && is_page() ) : ?>
 		<h1 class="page-title"><?php the_title(); ?></h1>
 	<?php elseif( is_singular('download') ) : ?>
 		<h1 class="download-title"><?php the_title(); ?></h1>
