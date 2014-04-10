@@ -1601,20 +1601,20 @@ section.section figure {
   section.section.used-by {
     text-align: center;
   }
-  section.section.used-by ul {
-    max-width: 1000px;
-  }
   section.section.used-by li {
     display: inline-block;
-    width: 38%;
   }
-  section.section.used-by li:first-child {
-    text-align: left;
-    width: 25%;
+  section.section.used-by li.ninja-forms {
+    width: 20%;
   }
-  section.section.used-by li:last-child {
-    text-align: right;
-    width: 22%;
+  section.section.used-by li.edd {
+    width: 31%;
+  }
+  section.section.used-by li.searchwp {
+    width: 18%;
+  }
+  section.section.used-by li.wpsessions {
+    width: 21%;
   }
 }
 @media all and (min-width: 1024px) {
@@ -2603,10 +2603,12 @@ section.used-by ul:after,
   }
 }
 footer#footer {
-  margin-top: 10rem;
   color: #fff;
   text-align: center;
   position: relative;
+}
+footer#footer h3 {
+  margin-top: 0;
 }
 footer#footer ul li {
   display: block;
@@ -2633,6 +2635,9 @@ footer#footer a.link:hover {
   box-shadow: 0 0 0 1px #FFFFFF inset;
 }
 @media only screen and (min-width: 720px) {
+  footer#footer {
+    margin-top: 10rem;
+  }
   #mascot-2 {
     width: 200px;
     height: 132px;
