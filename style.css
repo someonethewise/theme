@@ -1676,6 +1676,11 @@ section.testimonials .wrapper,
   -webkit-transform: translateY(40px);
   transform: translateY(40px);
 }
+.no-js #masthead .get-started {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
 .loaded #masthead .get-started {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -2665,7 +2670,6 @@ blockquote footer {
 }
 .no-js .home #masthead {
   height: auto;
-  padding-bottom: 2rem;
 }
 .no-js .filters,
 .no-js #how-it-works,
