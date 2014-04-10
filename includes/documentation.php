@@ -440,10 +440,10 @@ function affwp_docs_singular() {
 		                        	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		                    	</h2>
 
-							    <?php 
-							 		$excerpt = $post->post_excerpt ? the_excerpt() : '';
-							 		echo $excerpt;
-								?>	
+							   <?php 
+						   	 		affwp_post_thumbnail();
+						   	 		the_excerpt();
+						   	 	?>
 		                 </div>
 		                <?php endwhile; wp_reset_query(); ?>
 		             
