@@ -22,7 +22,11 @@ get_header(); ?>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header>
-
+	<?php 
+		 		affwp_post_thumbnail();
+		 		
+		 		the_excerpt();
+		 	?>
 				<div class="entry-content">
 					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'affwp' ) ); ?>
 				</div>
