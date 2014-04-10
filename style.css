@@ -2140,6 +2140,8 @@ section.section.blog .box {
 }
 .post-thumbnail img {
   display: block;
+  border-top: 2px solid #f7f7f7;
+  border-bottom: 2px solid #f7f7f7;
 }
 .entry-meta {
   margin-bottom: 2rem;

@@ -277,7 +277,6 @@ function affwp_docs_tax() {
 }
 add_action( 'affwp_content_after', 'affwp_docs_tax' );
 
-
 /**
  * Documentation posts
  */
