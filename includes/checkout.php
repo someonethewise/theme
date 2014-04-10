@@ -32,7 +32,7 @@ function affwp_show_refund_policy() {
 
 	?>
 
-	<div id="affwp-refund-policy">
+	<div id="affwp-refund-policy" class="entry-content">
 		<h1><?php echo $post->post_title; ?></h1>
 		<?php echo wpautop( $post->post_content, true ); ?>
 	</div>
