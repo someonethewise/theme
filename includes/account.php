@@ -34,7 +34,7 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 	// user is not logged in
 	if ( ! is_user_logged_in() ) : ?>
 		<p>
-			<a href="<?php site_url( 'account/affiliates'); ?>">Looking for our affiliate area?</a>
+			<a href="<?php echo site_url( 'account/affiliates' ); ?>">Looking for our affiliate area?</a>
 		</p>
 
 		<?php echo edd_login_form( add_query_arg( array('login' => 'success', 'logout' => false ), site_url( $_SERVER['REQUEST_URI'] ) ) ); ?>
