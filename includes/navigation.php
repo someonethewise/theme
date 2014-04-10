@@ -41,6 +41,11 @@ function affwp_nav_account() {
 		<li class="menu-item has-sub-menu account<?php echo $active; ?>">
 			<a title="<?php echo $account_link_text; ?>" href="<?php echo site_url( $account_page ); ?>"><?php echo $account_link_text; ?></a>
 			<ul class="sub-menu">
+				<?php if (  is_user_logged_in() ) : ?>
+					<li>
+						<a title="<?php echo $account_link_text; ?>" href="<?php echo site_url( $account_page ); ?>"><?php echo $account_link_text; ?></a>
+					</li>
+				<?php endif; ?>	
 				<li>
 					<a title="<?php _e( 'Affiliates', 'affwp' ); ?>" href="<?php echo site_url( $account_page . $affiliates_page ); ?>"><?php _e( 'Affiliates', 'affwp' ); ?></a>
 				</li>
@@ -49,6 +54,7 @@ function affwp_nav_account() {
 						<a title="<?php _e( 'Log in', 'affwp' ); ?>" href="<?php echo site_url( $account_page ); ?>"><?php _e( 'Log in', 'affwp' ); ?></a>
 					</li>
 				<?php else: ?>
+					
 					<li>
 						<a title="<?php _e( 'Log out', 'affwp' ); ?>" href="<?php echo wp_logout_url( add_query_arg( 'logout', 'success', site_url( $account_page ) ) ); ?>"><?php _e( 'Log out', 'affwp' ); ?></a>
 					</li>
