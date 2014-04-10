@@ -1063,6 +1063,22 @@ ol {
 .edd-payment-icons {
   margin-bottom: 1.5rem;
 }
+#edd_sl_license_sites {
+  margin: 2rem 0;
+}
+#edd_sl_license_sites + form {
+  margin-bottom: 2rem;
+}
+#edd_sl_license_sites + form span {
+  margin-bottom: 1rem;
+  display: block;
+}
+#edd_sl_license_sites + form input {
+  margin-bottom: 1rem;
+}
+#edd_sl_license_sites + form .button {
+  width: auto;
+}
 .edd_errors {
   border: 1px solid #E6DB55;
   margin: 0 0 21px 0;
