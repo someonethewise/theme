@@ -34,7 +34,7 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 	// user is not logged in
 	if ( ! is_user_logged_in() ) : ?>
 		<p>
-			<a href="/account/affiliates">Looking for our affiliate area?</a>
+			<a href="<?php site_url( 'account/affiliates'); ?>">Looking for our affiliate area?</a>
 		</p>
 
 		<?php echo edd_login_form( add_query_arg( array('login' => 'success', 'logout' => false ), site_url( $_SERVER['REQUEST_URI'] ) ) ); ?>
@@ -43,33 +43,20 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 	// user is logged in
 	else : ?>
 
-	<div class="columns columns-2">
-		<div class="wrapper">
+	<?php 
+		// purchase history
+		echo '<h2>' . __( 'Purchase History', 'affwp' ) . '</h2>';
+		echo edd_purchase_history();
 
-			<div class="item">
-				<?php 
-
-				// purchase history
-				echo '<h2>' . __( 'Purchase History', 'affwp' ) . '</h2>';
-				echo edd_purchase_history();
-
-				// download history
-				echo '<h2>' . __( 'Download History', 'affwp' ) . '</h2>';
-				echo edd_download_history();
-
-
-				?>
-			</div>
-
-			<div class="item">
-				<?php // profile editor
-				echo '<h2>' . __( 'Edit your profile', 'affwp' ) . '</h2>';
-				echo do_shortcode( '[edd_profile_editor]' ); 
-				?>
-			</div>
-		</div>
-	</div>
-
+		// download history
+		echo '<h2>' . __( 'Download History', 'affwp' ) . '</h2>';
+		echo edd_download_history();
+		
+		// profile editor
+		echo '<h2>' . __( 'Edit your profile', 'affwp' ) . '</h2>';
+		echo do_shortcode( '[edd_profile_editor]' ); 
+	?>
+	
 	<?php endif; ?>
 
 <?php }

@@ -250,20 +250,16 @@ function affwp_docs_tax() {
 			 <div class="item box" data-myorder="<?php echo $count; ?>">
 
 			 <h2 class="entry-title">
-			 	 <a href="<?php the_permalink(); ?>">
-		 		<?php the_title(); ?>
-
+			 	<a href="<?php the_permalink(); ?>">
+		 			<?php the_title(); ?>
 		 		</a>
 			 </h2>
 
 		 	<?php 
-		 		$excerpt = $post->post_excerpt ? the_excerpt() : '';
-		 		echo $excerpt;
-			?>		 		
-
-		 	<?php /*
-			<a title="View" class="button" href="<?php the_permalink(); ?>">View</a>
-			*/ ?>
+		 		affwp_post_thumbnail();
+		 		
+		 		the_excerpt();
+		 	?>
 		
 			</div>
 

@@ -432,8 +432,8 @@ a:hover {
 .hide {
   display: none;
 }
-#affwp_register_form,
-#affwp_login_form,
+#affwp-register-form,
+#affwp-login-form,
 .edd_form,
 .box {
   background: #f7f7f7;
@@ -953,9 +953,11 @@ ul.menu li:hover > ul {
 .about .columns.about {
   padding: 0;
 }
+.affiliates #primary,
 .account #primary {
   width: 100%;
 }
+.affiliates #content > .wrapper,
 .account #content > .wrapper {
   max-width: 720px;
 }
@@ -965,7 +967,6 @@ ul.menu li:hover > ul {
 .single-post #primary,
 .checkout #primary,
 .account-logged-out #primary,
-.affiliates #primary,
 .support #primary {
   width: 100%;
 }
@@ -975,7 +976,6 @@ ul.menu li:hover > ul {
 .single-post #content > .wrapper,
 .checkout #content > .wrapper,
 .account-logged-out #content > .wrapper,
-.affiliates #content > .wrapper,
 .support #content > .wrapper {
   max-width: 585px;
 }
@@ -1731,20 +1731,25 @@ td {
 }
 .affiliates label {
   margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .affiliates .description,
 .affiliates input[type="text"],
 .affiliates input[type="email"] {
   margin-bottom: 1rem;
 }
-.affwp_form p {
+.affwp-form p {
   font-size: 1rem;
 }
-#affwp_register_form,
-#affwp_login_form {
+#affwp-register-form,
+#affwp-login-form {
   width: 46%;
   display: inline-block;
   vertical-align: top;
+}
+#affwp-register-form input,
+#affwp-login-form input {
+  margin-bottom: 0;
 }
 #affwp_referral_url_wrap .description {
   margin: 1rem 0;
@@ -2561,6 +2566,10 @@ section.columns {
     width: 23%;
   }
 }
+.affiliates .entry-content {
+  text-align: justify;
+}
+.affiliates .entry-content:after,
 section.columns:after,
 .affiliates:after,
 #slider-nav:after,
@@ -2587,6 +2596,7 @@ section.used-by ul:after,
   }
 }
 footer#footer {
+  margin-top: 10rem;
   color: #fff;
   text-align: center;
   position: relative;
@@ -2615,7 +2625,7 @@ footer#footer a.link {
 footer#footer a.link:hover {
   box-shadow: 0 0 0 1px #FFFFFF inset;
 }
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 720px) {
   #mascot-2 {
     width: 200px;
     height: 132px;
@@ -2640,11 +2650,7 @@ html {
   height: 100%;
 }
 body {
-  background: #ed6d62;
   font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-}
-#site {
-  word-wrap: break-word;
 }
 blockquote footer {
   color: #787878;
@@ -2762,6 +2768,7 @@ ul {
 }
 #site {
   height: 100%;
+  word-wrap: break-word;
 }
 #masthead {
   padding: 1rem;
@@ -2842,7 +2849,7 @@ ul {
 }
 @media only screen and (min-width: 500px) {
   #content {
-    padding: 2rem 2rem 6rem;
+    padding: 2rem 2rem 2rem;
   }
   #masthead {
     padding: 0 2rem;

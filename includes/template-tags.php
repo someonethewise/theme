@@ -246,12 +246,13 @@ function affwp_post_thumbnail() {
 	?>
 	</div>
 
+
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
-			the_post_thumbnail( 'affwp-full-width' );
+			the_post_thumbnail();
 		} else {
 			the_post_thumbnail();
 		}
