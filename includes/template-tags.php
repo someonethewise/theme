@@ -15,6 +15,21 @@ function affwp_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'affwp_excerpt_length' );
 
+/**
+ * Make doc category pags show all posts
+ */
+function affwp_pre_get_posts( $query ) {
+	if ( is_admin() || ! $query->is_main_query() )
+		return;
+ 	
+ 	// Make doc category pags show all posts
+	if ( $query->is_tax( 'doc_category' ) ) {
+
+		$query->set( 'posts_per_page', -1 );
+			return;
+	}
+}
+add_action( 'pre_get_posts', 'affwp_pre_get_posts' );
 
 /**
  * Get started now button
@@ -249,7 +264,7 @@ function affwp_post_thumbnail() {
 
 	<?php else : ?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
+	<a title="<?php the_title_attribute(); ?>" class="post-thumbnail" href="<?php the_permalink(); ?>">
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
 			the_post_thumbnail();
