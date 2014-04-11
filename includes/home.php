@@ -224,7 +224,7 @@ function affwp_home_how_it_works() {
 				?>
 
 			</div>
-			<i class="icon icon-thumbs-up"></i>
+			
 		</div>
 	</section>
 
