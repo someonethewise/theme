@@ -111,15 +111,28 @@ add_filter( 'wp_nav_menu_objects', 'affwp_add_has_sub_menu_parent_class' );
 
 
 /**
+ * Remove unwanted class names from homepage
+ */
+function affwp_remove_body_classes( $wp_classes, $extra_classes ) {
+	if ( ! is_home() )
+		return;
+
+    $blacklist = array( 'blog' );
+
+    $wp_classes = array_diff( $wp_classes, $blacklist );
+
+    // Add the extra classes back untouched
+    return array_merge( $wp_classes, (array) $extra_classes );
+}
+add_filter( 'body_class', 'affwp_remove_body_classes', 10, 2 );
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @since 1.0
  */
 function affwp_body_classes( $classes ) {
 	global $post;
-
-	// removed via JS
-	//$classes[] = 'loading';
 
 	// Adds a class of 'has-featured-image' if the current post has a featured image
 	if ( isset( $post->ID ) && get_the_post_thumbnail( $post->ID ) )
