@@ -200,6 +200,14 @@ function affwp_home_how_it_works() {
 		        </blockquote>
 			</div>
 
+			<div class="item">
+				 <blockquote>
+		          <p>Honestly, I'm super picky about what plugins I'll run on my sites. I've wanted to set up an affiliate program for a while, but all of the plugins I tried were buggy, overloaded with options, and difficult to use. When I heard Pippin was going to build one, I couldn't wait to try it. </p><p>Now that I've used it, I can honestly say that he's completely outdone himself. AffiliateWP is by far the most well-coded and easiest-to-use affiliate management plugin ever made for WordPress. There's no crazy setup or clunky dashboard to deal with.</p> <p>Everything works exactly like it should; just like core WordPress features. You literally install AffiliateWP, pick an option or two, and within a few minutes you've got a fully-functioning affiliate program. It doesn't get much better than that.</p>
+		          <footer>Audit WP</footer>
+		        </blockquote>
+			</div>
+
+
 		</div>	
 	</section>
 
@@ -212,7 +220,7 @@ function affwp_home_how_it_works() {
 	</section>
 
 	<section class="section subscribe">
-		<h1>And we're just getting started also</h1>
+		<h1>We're just getting started too</h1>
 		<h2>Signup below and we'll keep you in the loop</h2>
 		<div class="mailing-list">
 

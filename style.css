@@ -1517,7 +1517,7 @@ section.section.used-by ul {
 }
 section.section.used-by ul li {
   vertical-align: middle;
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 1rem 2rem 1rem;
 }
 section.testimonials .wrapper {
   text-align: justify;
@@ -1528,7 +1528,6 @@ section.testimonials blockquote {
   margin: 0;
 }
 section.testimonials blockquote p {
-  font-size: 1.3rem;
   color: #787878;
   font-weight: 300;
   margin: 0 0 2rem;
