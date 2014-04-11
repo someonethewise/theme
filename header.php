@@ -28,6 +28,7 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+	<script src="//cdn.optimizely.com/js/595951729.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
