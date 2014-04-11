@@ -211,7 +211,7 @@ function affwp_home_how_it_works() {
 	</section>
 
 	<section class="section subscribe">
-		<h1>And we're just getting started</h1>
+		<h1>And we're just getting started also</h1>
 		<h2>Signup below and we'll keep you in the loop</h2>
 		<div class="mailing-list">
 
