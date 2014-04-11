@@ -664,8 +664,35 @@ button:focus {
   font-size: 30rem;
   color: #e44e44;
 }
-.icon {
-  display: block;
+.icon-support:before {
+  content: "\e002";
+}
+.icon-affwp:before {
+  content: "\e007";
+}
+.icon-unlimited-affiliates2:before {
+  content: "\e013";
+}
+.icon-unlimited-affiliates:before {
+  content: "\e014";
+}
+.icon-moderated-registration:before {
+  content: "\e015";
+}
+.icon-extensive-docs:before {
+  content: "\e016";
+}
+.icon-easy-setup2:before {
+  content: "\e017";
+}
+.icon-reliable-tracking:before {
+  content: "\e018";
+}
+.icon-translation-ready:before {
+  content: "\e019";
+}
+.icon-easy-setup:before {
+  content: "\ea";
 }
 @font-face {
   font-family: 'Graphik Web';
@@ -1503,6 +1530,11 @@ section.section.more-features .item {
 }
 section.section.more-features h3 {
   color: #6A6A6A;
+}
+section.section.more-features i {
+  font-size: 3rem;
+  color: #e44e44;
+  text-align: center;
 }
 section.section.used-by {
   padding: 2rem 2rem 0rem 2rem;

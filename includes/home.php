@@ -92,42 +92,52 @@ function affwp_home_how_it_works() {
 		<div class="wrapper">
 			
 			<div class="item">
+				
+				<i class="icon-reliable-tracking"></i>
+				
 				<h3>Reliable Affiliate Tracking</h3>	
 				<p>AffiliateWP tracks affiliate's referrals reliably, even on servers with aggressive caching.</p>
 			</div>
 
 		
 			<div class="item">
+				<i class="icon-easy-setup"></i>
 				<h3>Easy Setup</h3>	
 				<p>Just install and activate and you've got your very own affiliate network within minutes.</p>
 			</div>
 			
 			<div class="item">
+				<i class="icon-unlimited-affiliates"></i>
 				<h3>Unlimited Affiliates</h3>	
 				<p>Have an unlimited number of affiliates actively promoting your products and services.</p>
 			</div>
 
 			<div class="item">
+				<i class="icon-moderated-registration"></i>
 				<h3>Moderated Registration</h3>
 				<p>Affiliates registrations can be moderated or fully open, you can even create accounts manually.</p>
 			</div>
 
 			<div class="item">
+				<i class="icon-extensive-docs"></i>
 				<h3>Extensive Documentation</h3>	
 				<p>We've got all the videos and documentation you need to quickly get up and running.</p>
 			</div>
 
 			<div class="item">
+				<i class="icon-support"></i>
 				<h3>World Class Support</h3>	
 				<p>If you require assistance, our support is considered to be the best in the industry.</p>
 			</div>
 
 			<div class="item">
+				<i class="icon-translation-ready"></i>
 				<h3>Fully localized/Translation Ready</h3>	
 				<p>AffiliateWP is ready to be translated into your language. As always, translations are welcome!</p>
 			</div>
 
 			<div class="item">
+				<i class="icon-affwp"></i>
 				<h3>And More!</h3>	
 				<p>Join us on our journey to create the best affiliate platform for WordPress.</p>
 			</div>
