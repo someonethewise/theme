@@ -208,7 +208,6 @@ section.section.used-by {
 
 		li {
 			vertical-align: middle;
-//			margin-bottom: 1rem;
 			margin: 0 1rem 2rem 1rem;
 		}
 
@@ -219,7 +218,19 @@ section.section.used-by {
 
 // testimonials
 
-section.testimonials {
+section.columns.testimonials {
+	font-size: 1rem;
+	text-align: center;
+	
+	h1 {
+		margin-bottom: 2rem;	
+	}
+
+	h1 + a {
+		margin-bottom: 2rem;
+		display: inline-block;
+	}
+
 	.wrapper {
 		text-align: justify;
 	}
@@ -231,7 +242,6 @@ section.testimonials {
 	}
 
 	blockquote p {
-	//    font-size: 1.3rem;
 	    color: @body-text-color;
 	    font-weight: 300;
 	    margin: 0 0 2rem;

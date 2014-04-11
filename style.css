@@ -1519,25 +1519,36 @@ section.section.used-by ul li {
   vertical-align: middle;
   margin: 0 1rem 2rem 1rem;
 }
-section.testimonials .wrapper {
+section.columns.testimonials {
+  font-size: 1rem;
+  text-align: center;
+}
+section.columns.testimonials h1 {
+  margin-bottom: 2rem;
+}
+section.columns.testimonials h1 + a {
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+section.columns.testimonials .wrapper {
   text-align: justify;
 }
-section.testimonials blockquote {
+section.columns.testimonials blockquote {
   background: #f7f7f7;
   padding: 2rem;
   margin: 0;
 }
-section.testimonials blockquote p {
+section.columns.testimonials blockquote p {
   color: #787878;
   font-weight: 300;
   margin: 0 0 2rem;
   line-height: 1.62;
 }
-section.testimonials blockquote footer {
+section.columns.testimonials blockquote footer {
   font-size: 1.2rem;
   color: #e44e44;
 }
-section.testimonials blockquote footer:before {
+section.columns.testimonials blockquote footer:before {
   content: '― ';
 }
 section.section {
