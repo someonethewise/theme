@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_DISABLE_ARCHIVE' ) )
  	define( 'EDD_DISABLE_ARCHIVE', true );
 	
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.0' );
+	define( 'AFFWP_THEME_VERSION', '1.0.1' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -114,9 +114,6 @@ add_filter( 'wp_nav_menu_objects', 'affwp_add_has_sub_menu_parent_class' );
  * Remove unwanted class names from homepage
  */
 function affwp_remove_body_classes( $wp_classes, $extra_classes ) {
-	if ( ! is_home() )
-		return;
-
     $blacklist = array( 'blog' );
 
     $wp_classes = array_diff( $wp_classes, $blacklist );
