@@ -151,7 +151,8 @@ function affwp_home_how_it_works() {
 				<li class="ninja-forms"><img alt="Used by Ninja Forms" src="<?php echo get_stylesheet_directory_uri() . '/images/ninja-forms.png'; ?>"></li>
 				<li class="edd"><img alt="Used by Easy Digital Downloads" src="<?php echo get_stylesheet_directory_uri() . '/images/edd.png'; ?>"></li>
 				<li class="searchwp"><img alt="Used by SearchWP" src="<?php echo get_stylesheet_directory_uri() . '/images/searchwp.png'; ?>"></li>
-				<li class="wpsessions"><img alt="WPSessions" src="<?php echo get_stylesheet_directory_uri() . '/images/wpsessions.png'; ?>"></li>
+				<li class="wpsessions"><img alt="Used by WPSessions" src="<?php echo get_stylesheet_directory_uri() . '/images/wpsessions.png'; ?>"></li>
+				<li class="audit-wp"><img alt="Used by Audit WP" src="<?php echo get_stylesheet_directory_uri() . '/images/audit-wp.png'; ?>"></li>
 			</ul>
 
 		</div>	

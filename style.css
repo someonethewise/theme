@@ -1505,7 +1505,7 @@ section.section.more-features h3 {
   color: #6A6A6A;
 }
 section.section.used-by {
-  padding: 2rem 4rem;
+  padding: 2rem 2rem 0rem 2rem;
 }
 section.section.used-by div div {
   text-transform: uppercase;
@@ -1513,12 +1513,11 @@ section.section.used-by div div {
   color: #787878;
 }
 section.section.used-by ul {
-  text-align: justify;
   margin: 0 auto;
 }
 section.section.used-by ul li {
   vertical-align: middle;
-  margin-bottom: 1rem;
+  margin: 0 2rem 2rem 2rem;
 }
 section.testimonials .wrapper {
   text-align: justify;
@@ -1619,18 +1618,6 @@ section.section figure {
   section.section.used-by li {
     display: inline-block;
   }
-  section.section.used-by li.ninja-forms {
-    width: 20%;
-  }
-  section.section.used-by li.edd {
-    width: 31%;
-  }
-  section.section.used-by li.searchwp {
-    width: 18%;
-  }
-  section.section.used-by li.wpsessions {
-    width: 21%;
-  }
 }
 @media all and (min-width: 1024px) {
   .flexslider img {
@@ -1652,9 +1639,6 @@ section.section figure {
     right: 0;
     position: absolute;
     background-image: url('images/mascot.png');
-  }
-  section.section.used-by ul li {
-    margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 500px) {
