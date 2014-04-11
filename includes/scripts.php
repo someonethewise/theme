@@ -7,7 +7,7 @@
 function affwp_enqueue_scripts() {
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'eddplugins-style', get_stylesheet_uri(), array(), '1.0' );
+	wp_enqueue_style( 'affwp-style', get_stylesheet_uri(), array(), AFFWP_THEME_VERSION );
 
 	$custom_js = get_stylesheet_directory() . '/js/affwp.js';
 
