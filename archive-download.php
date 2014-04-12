@@ -7,11 +7,11 @@ get_header(); ?>
 
 
 <?php if ( have_posts() ) : ?>
-<section class="section columns columns-3 addons">
+<section class="section columns columns-2 addons">
 
 	<div class="wrapper">
 		<h1>Official Developer Add-ons</h1>
-		<h2>Coming soon</h2>
+		<h2>Shown below are what we have currently planned. <br/>More will be added soon.</h2>
 	</div>	
 
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -41,6 +41,8 @@ get_header(); ?>
 	<div class="gap"></div>
 	<div class="gap"></div>
 	<?php endif; ?>
+
+	
 </section>
 
 <?php get_footer();
