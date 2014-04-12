@@ -1310,7 +1310,7 @@ p.edd_error {
 }
 .tax-doc_category section.columns.docs,
 .documentation section.columns.docs {
-  padding-top: 2rem;
+  padding: 2rem 2rem 1rem 2rem;
 }
 .tax-doc_category #content,
 .documentation #content {
@@ -1482,7 +1482,7 @@ section.section.featured .wrapper {
 }
 section.section.features {
   text-align: justify;
-  padding-top: 0;
+  padding: 0 2rem 0 2rem;
   position: relative;
   z-index: 2;
 }
@@ -1531,8 +1531,7 @@ section.section.features .item.flex-active h2:before {
 }
 section.section.more-features {
   text-align: justify;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 2rem;
   border-top: 2px solid #f7f7f7;
   z-index: 2;
   position: relative;
