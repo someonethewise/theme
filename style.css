@@ -2194,7 +2194,7 @@ section.section.blog .box {
 .blog #content {
   padding-bottom: 19rem;
 }
-.item a.post-thumbnail {
+.item .post-thumbnail {
   display: block;
   margin: 0 -2rem 2rem -2rem;
 }

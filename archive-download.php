@@ -16,18 +16,23 @@ get_header(); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box' ) ); ?>> 
-		    <h2>
+		    
 		    	<?php if ( current_user_can( 'manage_options' ) ) : ?>
-					<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
-			    		<?php the_title(); ?>
-			    	</a>
+					<h2>
+						<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
+				    		<?php the_title(); ?>
+				    	</a>
+			    	</h2>
+			    	<?php affwp_post_thumbnail(); ?>
 				<?php else : ?>
-						<?php the_title(); ?>
+						<h2><?php the_title(); ?></h2>
+						<div class="post-thumbnail">
+							<?php the_post_thumbnail(); ?>
+						</div>
 				<?php endif; ?>	
 
-		    </h2>	
+		   	
 		       	<?php 
-			 		affwp_post_thumbnail();
 			 		the_excerpt();
 			 	?>
 		</article>
