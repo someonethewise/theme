@@ -37,6 +37,17 @@ function affwp_pre_add_to_cart( $download_id ) {
 add_action( 'edd_pre_add_to_cart', 'affwp_pre_add_to_cart' );
 
 /**
+ * Output custom icons - favicon & apple touch icon
+ * @link https://github.com/audreyr/favicon-cheat-sheet
+ */
+function affwp_favicons() {
+?>
+	<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri() . '/images/favicon-152.png'; ?>">
+	<?php 
+}
+add_action( 'wp_head', 'affwp_favicons' );
+
+/**
  * Make doc category pags show all posts
  */
 function affwp_pre_get_posts( $query ) {
