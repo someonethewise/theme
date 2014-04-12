@@ -36,8 +36,6 @@ function affwp_home_how_it_works() {
 
 	<section class="section featured">
 
-		
-
 		<div class="wrapper">
 		<h1>Introducing <span>AffiliateWP</span></h1>	
 		<h2>Complete Integration</h2>
@@ -212,7 +210,7 @@ function affwp_home_how_it_works() {
 		</div>
 	</section>
 
-	<section class="section home">
+	<section class="section">
 		<div class="wrapper">
 			<div class="action">
 				<?php echo affwp_button_get_started(); ?>
