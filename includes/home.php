@@ -40,7 +40,7 @@ function affwp_home_how_it_works() {
 
 		<div class="wrapper">
 		<h1>Introducing <span>AffiliateWP</span></h1>	
-		<h2>Complete integration</h2>
+		<h2>Complete Integration</h2>
 
 			<div class="flexslider">
 				<ul class="slides">
