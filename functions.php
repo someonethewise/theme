@@ -1,10 +1,15 @@
 <?php
 
-if ( ! defined( 'EDD_DISABLE_ARCHIVE' ) )
- 	define( 'EDD_DISABLE_ARCHIVE', true );
-	
+// if ( ! defined( 'EDD_DISABLE_ARCHIVE' ) )
+//  	define( 'EDD_DISABLE_ARCHIVE', true );
+
+
+
+if ( ! defined( 'EDD_SLUG' ) )
+	define( 'EDD_SLUG', 'addons' );
+
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.0.2' );
+	define( 'AFFWP_THEME_VERSION', '1.0.3' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -142,6 +147,9 @@ function affwp_body_classes( $classes ) {
 	// Adds a class of 'blog' if the blog template is being used. The homepage when used as a blog also has this class already
 	if ( is_page_template( 'page-templates/blog.php' ) )
 		$classes[] = 'blog';
+
+	if ( is_post_type_archive( 'download' ) )
+		$classes[] = 'addons';
 
 	if ( is_page_template( 'page-templates/docs.php' ) )
 		$classes[] = 'documentation';
