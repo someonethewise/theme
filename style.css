@@ -1308,8 +1308,7 @@ p.edd_error {
   margin-bottom: 1rem;
   display: inline-block;
 }
-.tax-doc_category section.columns.docs,
-.documentation section.columns.docs {
+section.docs {
   padding: 2rem 2rem 1rem 2rem;
 }
 .tax-doc_category #content,
