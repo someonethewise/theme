@@ -1333,9 +1333,6 @@ section.docs {
 section.section.docs {
   background: #f7f7f7;
 }
-section.section.docs .box {
-  background: #fff;
-}
 section.section.docs .wrapper {
   text-align: center;
 }
@@ -2196,10 +2193,9 @@ section.section.blog .box {
 }
 .item .post-thumbnail {
   display: block;
-  margin: 0 -2rem 2rem -2rem;
+  margin: 0 -2rem 0 -2rem;
 }
 .post-thumbnail {
-  margin-bottom: 2rem;
   display: block;
 }
 .post-thumbnail img {
@@ -2600,9 +2596,6 @@ section.columns {
 .columns .item .recent + ul li:last-child a {
   border: none;
 }
-.columns .post-thumbnail {
-  margin-bottom: 2rem;
-}
 .columns .item h2 {
   font-size: 1.5rem;
 }
@@ -2656,9 +2649,6 @@ section.used-by ul:after,
     margin: 0 2rem 1.5rem -2.5rem;
     border-left: 8px solid #e44e44;
   }
-}
-.addons #content > .wrapper {
-  max-width: 720px;
 }
 .addons #content {
   background: #f7f7f7;
@@ -2727,6 +2717,24 @@ footer#footer a.link:hover {
   #footer:hover #mascot-2 {
     background-position: 0 -132px;
   }
+}
+.item.box {
+  background: #fff;
+  padding-bottom: 0;
+}
+.item.box h2 {
+  margin-bottom: 0;
+}
+.item.box h2 + .post-thumbnail {
+  margin-top: 2rem;
+}
+.item.box ul:last-child,
+.item.box p:last-child,
+.item.box h2:last-child {
+  padding-bottom: 2rem;
+}
+.item.box p {
+  margin-top: 2rem;
 }
 body,
 html {

@@ -44,11 +44,7 @@ get_header(); ?>
 			<div class="price">$199</div>
 			<div class="count">Unlimited sites</div>
 			
-			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-				<div>Access to all official  <a href="<?php echo get_post_type_archive_link( 'download' ); ?>">add-ons</a></div>
-			<?php else : ?>
-				<div>Access to all official add-ons</div>
-			<?php endif; ?>	
+			<div>Access to all official  <a href="<?php echo get_post_type_archive_link( 'download' ); ?>">add-ons</a></div>
 
 			<div>1 Year of Updates &amp; Support *</div>
 
