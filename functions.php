@@ -31,6 +31,7 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'account.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'functions.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'checkout.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'edd.php' );
 
 
 
