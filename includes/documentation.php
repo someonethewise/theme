@@ -112,7 +112,7 @@ function affwp_docs_getting_started() {
 	
 	    	<section class="section columns columns-4 docs">
 	    		<div class="wrapper">
-					<h1>Getting started</h1>
+					<h1>Getting Started</h1>
 					<h2>Everything you need to get up and running, fast</h2>
 				</div>
 
@@ -183,7 +183,8 @@ function affwp_docs_getting_started() {
 											 	?>
 					                    </div>
 					                <?php endwhile; wp_reset_query(); ?>
-					               
+						               	<div class="gap"></div>
+			        					<div class="gap"></div>
 					               
 					            <?php endif; ?>
 					       
@@ -367,9 +368,6 @@ function affwp_docs() {
 
 		           
 
-		            <?php /*
-			 <a class="button" href="<?php echo get_term_link( $term, $term->slug ); ?>">View</a>
-			*/ ?>
 		        </div>
 		       
 		        

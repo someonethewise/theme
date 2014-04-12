@@ -45,7 +45,7 @@ function affwp_home_how_it_works() {
 			<div class="flexslider">
 				<ul class="slides">
 					<li>
-						<img alt="Complete integration" src="<?php echo get_stylesheet_directory_uri() . '/images/home-1.png'; ?>">
+						<img alt="Complete Integration" src="<?php echo get_stylesheet_directory_uri() . '/images/home-1.png'; ?>">
 					</li>
 					<li>
 						<img alt="Manage Your Affiliates" src="<?php echo get_stylesheet_directory_uri() . '/images/home-2.png'; ?>">
@@ -54,7 +54,7 @@ function affwp_home_how_it_works() {
 						<img alt="A Dashboard For Your Affiliates" src="<?php echo get_stylesheet_directory_uri() . '/images/home-3.png'; ?>">
 					</li>
 					<li>
-						<img alt="Real time reporting" src="<?php echo get_stylesheet_directory_uri() . '/images/home-4.png'; ?>">
+						<img alt="Real Time Reporting" src="<?php echo get_stylesheet_directory_uri() . '/images/home-4.png'; ?>">
 					</li>
 
 				</ul>
@@ -65,7 +65,7 @@ function affwp_home_how_it_works() {
 	<section id="slider-nav" class="columns columns-4 section features">
 		<div class="wrapper">
 			<div class="item">
-				<h3>Complete integration</h3>	
+				<h3>Complete Integration</h3>	
 				<p>AffiliateWP has complete integration with all major WordPress ecommerce and membership plugins.</p>
 			</div>
 
@@ -80,7 +80,7 @@ function affwp_home_how_it_works() {
 			</div>
 
 			<div class="item">
-				<h3>Real Time Reporting</h3>	
+				<h3>Real Time <br />Reporting</h3>	
 				<p>View graphs of referrals over time, easily seeing your site's affiliate marketing performance.</p>
 			</div>
 		</div>	
@@ -96,7 +96,7 @@ function affwp_home_how_it_works() {
 				<i class="icon-reliable-tracking"></i>
 				
 				<h3>Reliable Affiliate Tracking</h3>	
-				<p>AffiliateWP tracks affiliate's referrals reliably, even on servers with aggressive caching.</p>
+				<p>AffiliateWP tracks affiliate referrals reliably, even on servers with aggressive caching.</p>
 			</div>
 
 		
@@ -115,7 +115,7 @@ function affwp_home_how_it_works() {
 			<div class="item">
 				<i class="icon-moderated-registration"></i>
 				<h3>Moderated Registration</h3>
-				<p>Affiliates registrations can be moderated or fully open, you can even create accounts manually.</p>
+				<p>Affiliates' registrations can be moderated or fully open, you can even create accounts manually.</p>
 			</div>
 
 			<div class="item">
@@ -139,7 +139,7 @@ function affwp_home_how_it_works() {
 			<div class="item">
 				<i class="icon-affwp"></i>
 				<h3>And More!</h3>	
-				<p>Join us on our journey to create the best affiliate platform for WordPress.</p>
+				<p>Join us on our journey to create the best affiliate plugin for WordPress.</p>
 			</div>
 		</div>	
 	</section>
@@ -168,16 +168,16 @@ function affwp_home_how_it_works() {
 		</div>	
 	</section>
 
-	<section class="section alt">
+	<section class="section home alt">
 		<div class="wrapper">
-			<h1>How affiliate marketing works</h1>	
+			<h1>How Affiliate Marketing works</h1>	
 			<figure>
 				<img src="<?php echo get_stylesheet_directory_uri() . '/images/how-it-works.png'; ?>">
 			</figure>
 		</div>
 	</section>
 
-	<section class="section columns-2 columns testimonials">
+	<section class="section home columns-2 columns testimonials">
 		<h1>A few of our happy customers</h1>
 		<a title="Testimonials" href="<?php echo site_url( 'testimonials' ); ?>">View more testimonials</a>
 
@@ -212,7 +212,7 @@ function affwp_home_how_it_works() {
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section home">
 		<div class="wrapper">
 			<div class="action">
 				<?php echo affwp_button_get_started(); ?>
@@ -220,9 +220,9 @@ function affwp_home_how_it_works() {
 		</div>
 	</section>
 
-	<section class="section subscribe">
-		<h1>We're just getting started too</h1>
-		<h2>Signup below and we'll keep you in the loop</h2>
+	<section class="section home subscribe">
+		<h1>We’re only just getting started</h1>
+		<h2>Sign up below and we'll keep you in the loop</h2>
 		<div class="mailing-list">
 
 			<div class="wrapper box">

@@ -43,7 +43,13 @@ get_header(); ?>
 			<h2>Developer</h2>
 			<div class="price">$199</div>
 			<div class="count">Unlimited sites</div>
-			<div>Access to all official add-ons</div>
+			
+			<?php if ( current_user_can( 'manage_options' ) ) : ?>
+				<div>Access to all official  <a href="<?php echo get_post_type_archive_link( 'download' ); ?>">add-ons</a></div>
+			<?php else : ?>
+				<div>Access to all official add-ons</div>
+			<?php endif; ?>	
+
 			<div>1 Year of Updates &amp; Support *</div>
 
 			<a title="Buy now" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">Buy now</a>
