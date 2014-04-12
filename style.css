@@ -369,6 +369,14 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+::selection {
+  background: #ed6d62;
+  color: #fff;
+}
+::-moz-selection {
+  background: #ed6d62;
+  color: #fff;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -990,8 +998,9 @@ ul.menu li:hover > ul {
 }
 .slim #primary,
 .single-docs #primary,
-.blog #primary,
+.single-download #primary,
 .single-post #primary,
+.blog #primary,
 .checkout #primary,
 .account-logged-out #primary,
 .support #primary {
@@ -999,8 +1008,9 @@ ul.menu li:hover > ul {
 }
 .slim #content > .wrapper,
 .single-docs #content > .wrapper,
-.blog #content > .wrapper,
+.single-download #content > .wrapper,
 .single-post #content > .wrapper,
+.blog #content > .wrapper,
 .checkout #content > .wrapper,
 .account-logged-out #content > .wrapper,
 .support #content > .wrapper {
@@ -1046,6 +1056,10 @@ h3 {
 code {
   color: #373737;
   word-wrap: break-word;
+}
+b,
+strong {
+  font-weight: 500;
 }
 section.section.docs h1,
 section.section.used-by h1,
@@ -1300,7 +1314,7 @@ p.edd_error {
 }
 .tax-doc_category #content,
 .documentation #content {
-  padding: 2rem 0 0 0;
+  padding: 0;
 }
 .tax-doc_category #content > .wrapper,
 .documentation #content > .wrapper {
@@ -1443,6 +1457,9 @@ section.section.benefits .item i {
   font-size: 6rem;
   color: #e44e44;
 }
+h1 + figure {
+  margin-top: 2rem;
+}
 @media only screen and (min-width: 1024px) {
   section.section.benefits .item {
     padding: 2rem;
@@ -1460,6 +1477,7 @@ section.section.featured .wrapper {
   max-width: none;
 }
 #slider-nav {
+  background: #fff;
   font-size: 0;
 }
 section.section.features {
@@ -1518,6 +1536,7 @@ section.section.more-features {
   border-top: 2px solid #f7f7f7;
   z-index: 2;
   position: relative;
+  background: #fff;
 }
 section.section.more-features .wrapper {
   max-width: 1220px;
@@ -1555,9 +1574,6 @@ section.columns.testimonials {
   font-size: 1rem;
   text-align: center;
 }
-section.columns.testimonials h1 {
-  margin-bottom: 2rem;
-}
 section.columns.testimonials h1 + a {
   margin-bottom: 2rem;
   display: inline-block;
@@ -1585,16 +1601,16 @@ section.columns.testimonials blockquote footer:before {
 }
 section.section {
   position: relative;
-  padding: 2rem 2rem;
-  background: #fff;
   text-align: center;
 }
 section.section div.action {
   text-align: center;
 }
+section.section.home {
+  padding: 2rem;
+}
 section.section h1 {
   text-align: center;
-  margin-bottom: 4rem;
 }
 section.section h2 {
   color: #787878;
@@ -1616,7 +1632,6 @@ section.section p {
 }
 section.section figure {
   text-align: center;
-  margin: 0;
 }
 .mailing-list {
   margin: 0 auto;
@@ -2188,11 +2203,6 @@ section.section.blog .box {
 }
 .post-thumbnail img {
   display: block;
-  border-top: 2px solid #f7f7f7;
-  border-bottom: 2px solid #f7f7f7;
-}
-.entry-meta {
-  margin-bottom: 2rem;
 }
 .alignleft {
   float: left;
@@ -2242,6 +2252,7 @@ img.aligncenter {
   list-style-type: none;
   padding: 0;
 }
+#primary .comment-list .pingback,
 #primary .comment-list .comment {
   padding: 1rem 0;
   border-top: 2px solid #f7f7f7;
@@ -2591,7 +2602,7 @@ section.columns {
 .columns .post-thumbnail {
   margin-bottom: 2rem;
 }
-.columns h2 {
+.columns .item h2 {
   font-size: 1.5rem;
 }
 @media all and (min-width: 600px) {
@@ -2645,10 +2656,26 @@ section.used-by ul:after,
     border-left: 8px solid #e44e44;
   }
 }
+.addons #content > .wrapper {
+  max-width: 720px;
+}
+.addons #content {
+  background: #f7f7f7;
+  padding-top: 2rem;
+}
+.addons #content .box {
+  background: #fff;
+}
+.addons #content .wrapper {
+  text-align: center;
+}
 footer#footer {
   color: #fff;
   text-align: center;
   position: relative;
+}
+footer#footer section {
+  padding: 2rem;
 }
 footer#footer h3 {
   margin-top: 0;
@@ -2903,9 +2930,12 @@ ul {
 }
 @media only screen and (min-width: 500px) {
   #content {
-    padding: 2rem 2rem 2rem;
+    padding: 0 2rem 2rem;
+  }
+  .home #masthead {
+    padding-bottom: 0;
   }
   #masthead {
-    padding: 0 2rem;
+    padding: 0 2rem 2rem 2rem;
   }
 }

@@ -29,6 +29,12 @@ section.section.benefits {
 
 }
 
+// h1 followed by image
+h1 + figure {
+	margin-top: 2rem;
+}
+
+
 @media only screen and ( min-width: 1024px ) {
 	section.section.benefits {
 		.item {
@@ -69,7 +75,7 @@ section.section.featured {
 }
 
 #slider-nav {
-//	background: #ED6D62;
+	background: #fff;
 	font-size: 0;
 }
 
@@ -173,6 +179,7 @@ section.section.more-features {
 	border-top: 2px solid @light-grey;
 	z-index: 2;
 	position: relative;
+	background: #fff;
 	
 	.wrapper {
 		max-width: 1220px;
@@ -228,7 +235,7 @@ section.columns.testimonials {
 	text-align: center;
 	
 	h1 {
-		margin-bottom: 2rem;	
+	//	margin-bottom: 2rem;	
 	}
 
 	h1 + a {
@@ -270,17 +277,21 @@ section.columns.testimonials {
 section.section {
 	position: relative;
 //	padding: 4rem 2rem;
-	padding: 2rem 2rem;
-	background: #fff;
+	
+//	background: #fff;
 	text-align: center;
 
 	div.action {
 		text-align: center;
 	}
 
+	&.home {
+		padding: 2rem;
+	}
+
 	h1 {
 		text-align: center;
-		margin-bottom: 4rem;
+	//	margin-bottom: 4rem;
 	}
 
 	// h2 {
@@ -313,7 +324,7 @@ section.section {
 
 	figure {
 		text-align: center;
-		margin: 0;
+	//	margin: 0;
 	}
 
 	.wrapper {
