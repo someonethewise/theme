@@ -64,7 +64,7 @@ function affwp_home_how_it_works() {
 		<div class="wrapper">
 			<div class="item">
 				<h3>Complete Integration</h3>	
-				<p>AffiliateWP has complete integration with all major WordPress ecommerce and membership plugins.</p>
+				<p>AffiliateWP has complete integration with all major WordPress ecommerce and membership plugins. </p>
 			</div>
 
 			<div class="item">
@@ -80,6 +80,14 @@ function affwp_home_how_it_works() {
 			<div class="item">
 				<h3>Real Time <br />Reporting</h3>	
 				<p>View graphs of referrals over time, easily seeing your site's affiliate marketing performance.</p>
+			</div>
+		</div>	
+	</section>
+
+	<section class="columns columns-4 section feature-links">
+		<div class="wrapper">
+			<div class="item">
+				<p><a title="View all integrations" href="<?php echo site_url( 'docs/section/integrations' ); ?>">View all integrations</a></p>
 			</div>
 		</div>	
 	</section>

@@ -22,7 +22,7 @@ get_header();
 			 * Displays the most recent post
 			 */
 			$args = array(
-				'posts_per_page' => 1,
+				'posts_per_page' => -1,
 			);
 
 			$temp = $wp_query; // assign original query to temp variable for later use  
@@ -32,7 +32,7 @@ get_header();
 			if ( have_posts() ) : ?>
 				
 				<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-					
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php
 						global $more;
 						$more = 0;
@@ -49,6 +49,7 @@ get_header();
 					?>	
 
 					<a href="<?php the_permalink(); ?>" class="button">Read now</a>
+					</article>
 				<?php endwhile; ?>
 
 			<?php endif; 

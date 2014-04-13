@@ -1479,6 +1479,12 @@ section.section.featured .wrapper {
   background: #fff;
   font-size: 0;
 }
+section.section.feature-links {
+  padding: 0 2rem 0 2rem;
+}
+section.section.feature-links .item {
+  padding: 0 1rem 0 1rem;
+}
 section.section.features {
   text-align: justify;
   padding: 0 2rem 0 2rem;
@@ -2188,8 +2194,8 @@ section.section.blog {
 section.section.blog .box {
   background: #fff;
 }
-.blog #content {
-  padding-bottom: 19rem;
+article.post {
+  margin-bottom: 4rem;
 }
 .item .post-thumbnail {
   display: block;
