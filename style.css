@@ -1525,15 +1525,15 @@ section.section.features .item {
   margin-bottom: 0;
   position: relative;
   padding: 1rem;
+}
+section.section.features .item div {
+  border-top: 5px solid #fff;
+  cursor: pointer;
   -webkit-transition: all 0.1s ease-in;
   -moz-transition: all 0.1s ease-in;
   -ms-transition: all 0.1s ease-in;
   -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
-}
-section.section.features .item div {
-  border-top: 5px solid #fff;
-  cursor: pointer;
 }
 section.section.features .item p {
   font-weight: 400 !important;
