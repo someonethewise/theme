@@ -63,31 +63,33 @@ function affwp_home_how_it_works() {
 	<section id="slider-nav" class="columns columns-4 section features">
 		<div class="wrapper">
 			<div class="item">
-				<h3>Complete Integration</h3>	
-				<p>AffiliateWP has complete integration with all major WordPress ecommerce and membership plugins. </p>
+				<div>
+					<h3>Complete Integration</h3>	
+					<p>AffiliateWP has complete integration with all major WordPress ecommerce and membership plugins. </p>
+				</div>
+				<p><a class="feature-link" title="View all integrations" href="<?php echo site_url( 'docs/section/integrations' ); ?>">View all integrations</a></p>
+
 			</div>
 
 			<div class="item">
-				<h3>Manage Your Affiliates</h3>
-				<p>See your top earning affiliates, view affiliate reports, and even moderate affiliate registrations.</p>
+				<div>
+					<h3>Manage Your Affiliates</h3>
+					<p>See your top earning affiliates, view affiliate reports, and even moderate affiliate registrations.</p>
+				</div>
 			</div>
 			
 			<div class="item">
-				<h3>A Dashboard For Your Affiliates</h3>
-			<p>Affiliates can easily see how much they have earned, how much is awaiting payment, and even how their referral URLs have done over time.</p>
+				<div>
+					<h3>Affiliate Dashboard</h3>
+					<p>Affiliates can easily see how much they have earned, how much is awaiting payment, and even how their referral URLs have done over time.</p>
+				</div>
 			</div>
 
 			<div class="item">
-				<h3>Real Time <br />Reporting</h3>	
-				<p>View graphs of referrals over time, easily seeing your site's affiliate marketing performance.</p>
-			</div>
-		</div>	
-	</section>
-
-	<section class="columns columns-4 section feature-links">
-		<div class="wrapper">
-			<div class="item">
-				<p><a title="View all integrations" href="<?php echo site_url( 'docs/section/integrations' ); ?>">View all integrations</a></p>
+				<div>
+					<h3>Real Time Reporting</h3>	
+					<p>View graphs of referrals over time, easily seeing your site's affiliate marketing performance.</p>
+				</div>
 			</div>
 		</div>	
 	</section>

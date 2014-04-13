@@ -79,13 +79,18 @@ section.section.featured {
 	font-size: 0;
 }
 
-section.section.feature-links {
-	padding: 0 2rem 0 2rem;
+// section.section.feature-links {
+// 	padding: 0 2rem 0 2rem;
 
-	.item {
-		padding: 0 1rem 0 1rem;
-	}
-}
+// 	.item {
+// 		padding: 0 1rem 0 1rem;
+// 	}
+// }
+
+// .feature-link {
+// 	z-index: 9999;
+// 	position: relative;
+// }
 
 section.section.features {
 	text-align: justify;
@@ -97,8 +102,10 @@ section.section.features {
 	h3 {
 		margin-bottom: 1rem;
 		color: #6A6A6A;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 		margin-top: 0;
+		padding-top: 1rem;
+		font-weight: 500;
 	//	font-size: 1rem;
 	//	display: none;
 	}
@@ -118,16 +125,22 @@ section.section.features {
 		font-weight: 400;
 		margin-bottom: 0;
 		position: relative;
-		cursor: pointer;
-		padding: 2rem 1rem 1rem 1rem;
+		padding: 1rem;
 		.transition ( all 0.1s ease-in );
 	//	text-align: center;
 	//	min-height: 22rem;
-		border-top: 5px solid #fff;
+		
+		div {
+			border-top: 5px solid #fff;
+			cursor: pointer;
+		}
 
 		p {
 			font-weight: 400 !important;
+			margin-bottom: 1.5rem;
 		}
+
+	
 	}
 
 	// .item:hover h2:before {
@@ -151,11 +164,11 @@ section.section.features {
 	// 	}
 	// }
 
-	.item:hover,
-	.item.flex-active {
+	.item div:hover,
+	.item div.flex-active {
 	//	background: @light-grey;
 	//	background: @accent-color;
-	border-top: 5px solid @accent-color;
+		border-top: 5px solid @accent-color;
 
 		p {
 		//	color: #fff;
@@ -164,17 +177,17 @@ section.section.features {
 		}
 	}
 
-	.item.flex-active h2:before {
-		font-family: "affiliatewp";
-		content: "\e007";
-		top: -4.5rem;
-		opacity: 1;
-		left: 50%;
-		margin-left: -24px;
-		font-size: 3rem;
-		.transition ( all 0.2s ease-out );
+	// .item.flex-active h2:before {
+	// 	font-family: "affiliatewp";
+	// 	content: "\e007";
+	// 	top: -4.5rem;
+	// 	opacity: 1;
+	// 	left: 50%;
+	// 	margin-left: -24px;
+	// 	font-size: 3rem;
+	// 	.transition ( all 0.2s ease-out );
 
-	}
+	// }
 
 	
 }

@@ -167,7 +167,7 @@ function affwp_flexslider() {
 			jQuery('.flexslider').flexslider({
 				animation: "fade",
 			//	easing: "easeInOutQuad",
-				manualControls: "#slider-nav .item",
+				manualControls: "#slider-nav .item div",
 				directionNav: false,
 				animationSpeed: 250,
 				pauseOnHover: true,

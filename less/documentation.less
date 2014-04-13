@@ -125,3 +125,42 @@ section.section.docs {
 #docs-container.list .item:before {
   padding-top: 40px;
 }
+
+// control the responsiveness of the docs
+@media only screen and ( min-width: 600px ) {
+  .docs.columns-4 {
+    .gap,
+    .item {
+      width: 48%;
+    }
+  }
+}
+
+@media only screen and ( min-width: 720px ) {
+  .docs.columns-4 {
+    .gap,
+    .item {
+      width: 48%;
+    }
+  }
+}
+
+// 4 columns
+@media only screen and ( min-width: 1220px ) {
+  .docs.columns-4 {
+    .gap,
+    .item {
+      width: 31%;
+    }
+  }
+}
+
+// 4 columns
+@media only screen and ( min-width: 1500px ) {
+  .docs.columns-4 {
+    .gap,
+    .item {
+      width: 23%;
+    }
+  }
+}
