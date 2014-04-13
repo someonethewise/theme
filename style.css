@@ -2643,9 +2643,6 @@ section.used-by ul:after,
     border-left: 8px solid #e44e44;
   }
 }
-.addons #content > .wrapper {
-  max-width: 800px;
-}
 .addons #content {
   background: #f7f7f7;
   padding-top: 2rem;
