@@ -390,66 +390,64 @@ function affwp_docs_singular() {
 
 	global $post;
 	
-	?>
-	
-	<!-- <section class="section" id="docs"> -->
+  	$taxonomy = 'doc_category';
+  	$terms = get_the_terms( get_the_ID(), $taxonomy );
+
+  	$terms = wp_list_pluck( $terms, 'term_id' );
+  	$terms = array_values( $terms );
+
+      $args = array(
+          'post_type' => 'docs',
+          'posts_per_page' => -1,
+          'post__not_in' => array( get_the_ID() ), // hide the currently viewed post
+          'tax_query' => array(
+              array(
+                  'taxonomy' => 'doc_category',
+                  'field' => 'id',
+                  'terms' => $terms
+              )
+          )
+      );
+
+    	$wp_query = new WP_Query( $args );
+
+    	// return if there are no related docs
+    	if ( ! $wp_query->found_posts )
+    		return;
+    ?>	
+
+
 	<section class="section columns columns-4 docs">
+     
 		<div class="wrapper">
 			<h1>Related docs</h1>
 			<h2>These are rather helpful also</h2>
 		</div>
 
-		<?php //echo affwp_docs_filters(); ?>
-
-		<?php 
-			$taxonomy = 'doc_category';
-			$terms = get_the_terms( get_the_ID(), $taxonomy );
-
-			//var_dump( $terms );
-
-			$terms = wp_list_pluck( $terms, 'term_id' );
-			$terms = array_values( $terms );
-
-		?>
-		
 		<div id="docs-container">
-	          <?php 
-	              $args = array(
-	                  'post_type' => 'docs',
-	                  'posts_per_page' => -1,
-	                  'post__not_in' => array( get_the_ID() ), // hide the currently viewed post
-	                  'tax_query' => array(
-	                      array(
-	                          'taxonomy' => 'doc_category',
-	                          'field' => 'id',
-	                          'terms' => $terms
-	                      )
-	                  )
-	              );
+	      
+	       <?php if ( $wp_query->have_posts() ) : ?>
+	               
+	                <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>  
+	                     <div class="item box" data-myorder="">
+	                     	
+	                        <h2>
+	                        	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+	                    	</h2>
 
-		            $wp_query = new WP_Query( $args );
-		          		
-		          	if ( $wp_query->have_posts() ) : ?>
-		               
-		                <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>  
-		                     <div class="item box" data-myorder="">
-		                     	
-		                        <h2>
-		                        	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		                    	</h2>
-
-							   <?php 
-						   	 		affwp_post_thumbnail();
-						   	 		the_excerpt();
-						   	 	?>
-		                 </div>
-		                <?php endwhile; wp_reset_query(); ?>
-		             
-		            <?php endif; ?>
+						   <?php 
+					   	 		affwp_post_thumbnail();
+					   	 		the_excerpt();
+					   	 	?>
+	                 </div>
+	                <?php endwhile; wp_reset_query(); ?>
+	             
+	            <?php endif; ?>
 
 		 		<div class="gap"></div>
 		        <div class="gap"></div>
 		</div>
+
 	</section>
 	<?php
 }
