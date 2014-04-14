@@ -1,15 +1,10 @@
 <?php
 
-// if ( ! defined( 'EDD_DISABLE_ARCHIVE' ) )
-//  	define( 'EDD_DISABLE_ARCHIVE', true );
-
-
-
 if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.0.9' );
+	define( 'AFFWP_THEME_VERSION', '1.1.0' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */

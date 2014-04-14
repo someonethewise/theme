@@ -2214,6 +2214,7 @@ article.post {
   margin: 0 -2rem 0 -2rem;
 }
 .post-thumbnail {
+  margin-bottom: 2rem;
   display: block;
 }
 .post-thumbnail img {
