@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 <?php if ( have_posts() ) : ?>
-<section class="section columns columns-4 addons">
+<section class="section columns columns-2 addons">
 
 	<div class="wrapper">
 		<h1>Official Developer Add-ons</h1>
