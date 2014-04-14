@@ -58,8 +58,15 @@ get_header(); ?>
 		        </blockquote>
 			</div>
 
+			<div class="item">
+				 <blockquote>
+		          <p>AffiliateWP is hands-down the easiest affiliate system I have ever seen or worked with. With just a few clicks I had it installed and configured to my specific needs. The only thing easier than actually using this plugin was the decision to buy it. How can you say 'no' to something that was built by two of the most respected developers in the community and has a 100% refund policy?</p>
+		          <footer>Brian, WPSessions</footer>
+		        </blockquote>
+			</div>
 
-		</div>	
+	</div>
+		
 	</section>
 
 <?php
