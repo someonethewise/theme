@@ -66,7 +66,7 @@ get_header(); ?>
 			</div>
 
 	</div>
-		
+	<a class="button large" href="<?php echo site_url( 'pricing'); ?>" title="Join These Happy Customers">Join These Happy Customers</a>
 	</section>
 
 <?php

@@ -1268,11 +1268,11 @@ p.edd_error {
   font-size: 0.875rem;
   line-height: 1.33;
 }
-#edd-purchase-button.get-started,
-.edd-add-to-cart.get-started,
-.edd-submit.get-started,
-.edd_submit.get-started,
-.button.get-started {
+#edd-purchase-button.large,
+.edd-add-to-cart.large,
+.edd-submit.large,
+.edd_submit.large,
+.button.large {
   font-size: 1.25rem;
   padding: 0.875rem 1.25rem;
 }
@@ -1288,7 +1288,7 @@ p.edd_error {
 .button:focus {
   text-decoration: none;
   color: #fff;
-  background: #e1392e;
+  background: #d62a1f;
 }
 .affiliates .button {
   width: auto;
