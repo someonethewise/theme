@@ -188,6 +188,7 @@ function affwp_post_nav() {
 			else :
 				previous_post_link('<div class="item">%link</div>');
 				next_post_link('<div class="item">%link</div>');
+				
 				// previous_post_link( '%link', __( '<span class="meta-nav item">%title</span>', 'affwp' ) );
 				// next_post_link( '%link', __( '<span class="meta-nav item">%title</span>', 'affwp' ) );
 			endif;
@@ -197,6 +198,36 @@ function affwp_post_nav() {
 	<?php
 }
 endif;
+
+/**
+ * Display navigation to next/previous post when applicable.
+ *
+ * @since 1.1.1
+ *
+ * @return void
+ */
+function affwp_single_post_nav() {
+	?>
+
+	<nav class="nav-links columns columns-2">
+
+	<?php
+		$prev_post = get_adjacent_post( false, '', true );
+
+		if ( ! empty( $prev_post ) ) {
+			echo '<div class="nav-previous item"><a href="' . get_permalink( $prev_post->ID ) . '" title="' . $prev_post->post_title . '"><i class="icon-arrow-left"></i><span>' . $prev_post->post_title . '</span></a></div>';
+		}
+
+		$next_post = get_adjacent_post( false, '', false );
+
+		if ( ! empty( $next_post ) ) {
+			echo ' <div class="nav-next item"><a href="' . get_permalink( $next_post->ID ) . '" title="' . $next_post->post_title . '"><span>' . $next_post->post_title . '</span><i class="icon-arrow-right"></i></a></div>';
+		}
+	?>
+	</nav>
+	<?php
+}
+
 
 if ( ! function_exists( 'affwp_posted_on' ) ) :
 /**

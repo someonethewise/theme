@@ -70,6 +70,8 @@ img.aligncenter {
 	div + div {
 		text-align: right;
 	}
+
+
 }
 
 // date
@@ -94,11 +96,74 @@ img.aligncenter {
 
 // nav links
 .columns.nav-links {
+	font-size: 0;
+	border-bottom: 2px solid @light-grey;
+	padding-bottom: 1rem;
+
+	.item {
+		margin-bottom: 0;
+	}
+
 	a {
-		display: inline-block;
+		// display: inline-block;
+		// vertical-align: top;
+
+		position: relative;
+
+		span, i {
+			 .transition ( all 0.2s linear );
+		}
+
+		&:hover {
+			span {
+			//	margin-right: 1.5rem;
+			}
+
+			i {
+				.opacity(100);
+			}
+		}
 	}
 
 	div + div {
+		text-align: right;
+	}
+
+	i {
+		color: @body-text-color;
+		vertical-align: middle;
+		position: absolute;
+		
+		top: 0;
+		.opacity(0);
+	}
+
+	.nav-previous {
+
+		a {
+			&:hover span { margin-left: 1.5rem; }
+		}
+
+		i {
+			margin-right: 0.5rem;
+			left: 0;
+		}
+	}
+
+	.nav-next {
+
+		a {
+			&:hover span { margin-right: 1.5rem; }
+		}
+
+		i {
+			margin-left: 0.5rem;
+			right: 0;
+		}
+	}
+
+	.nav-next:first-child {
+		width: 100%;
 		text-align: right;
 	}
 }

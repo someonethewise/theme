@@ -1,14 +1,24 @@
 <?php
+
+
+
+
+function new_default_avatar ( $avatar_defaults ) {
+	var_dump($avatar_defaults);
+		//Set the URL where the image file for your avatar is located
+		$new_avatar_url = site_url() . '/images/default-gravatar.gif';
+		//Set the text that will appear to the right of your avatar in Settings>>Discussion
+		$avatar_defaults[$new_avatar_url] = 'Your New Default Avatar';
+		return $avatar_defaults;
+}
+add_filter( 'avatar_defaults', 'new_default_avatar' );
+
 /**
- * Documentation posts
+ * Blog posts
  */
 
 function affwp_blog() {
 
-
-
-	
-	
 
 	// is_page_template( 'page-templates/blog.php' ) )
 	if ( 
@@ -169,9 +179,9 @@ function affwp_blog_singular() {
 			<div class="gap"></div>
 		        <div class="gap"></div>
 
-		        <p>
+		       <!--  <p>
 			 <a href="/blog">All posts</a>
-			 </p>
+			 </p> -->
 
 	</div>
 	</section>
