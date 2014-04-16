@@ -1795,12 +1795,9 @@ td {
   font-weight: normal;
   text-align: left;
 }
+.affwp-error,
 .affwp-notice {
-  border: 1px solid #E6DB55;
-  margin: 0 0 21px 0;
-  padding: 0.5rem 1rem;
-  background: #FFFFE0;
-  color: #373737;
+  margin-bottom: 0;
 }
 .affiliates {
   text-align: justify;
@@ -1820,14 +1817,12 @@ td {
 .affwp-form p {
   font-size: 1rem;
 }
-#affwp-register-form,
-#affwp-login-form {
+.affiliates .entry-content > .item {
   width: 46%;
   display: inline-block;
   vertical-align: top;
 }
-#affwp-register-form input,
-#affwp-login-form input {
+.affiliates .entry-content > .item input {
   margin-bottom: 0;
 }
 #affwp_referral_url_wrap .description {
@@ -2181,26 +2176,29 @@ td {
 .success a {
   color: #2f668f;
 }
+.affwp-notice,
 .notice,
 .success,
 .error {
   padding: 0.5rem 1rem;
   width: 100%;
 }
+.affwp-notice,
 .notice {
   background: #ffffe0;
   border: 1px solid #E6DB55;
 }
+.affwp-errors,
 .error {
   background: #ffebe8;
   border: 1px solid #CC0000;
   margin: 0 0 1em 0;
+  padding: 1rem;
 }
+.affwp-errors p,
 .error p {
   margin-bottom: 0;
-}
-label.error {
-  margin: 1em 0 0 0;
+  font-size: 1rem;
 }
 section.section.blog {
   background: #f7f7f7;

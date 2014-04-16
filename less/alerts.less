@@ -16,6 +16,8 @@
 	}
 }
 
+
+.affwp-notice,
 .notice,
 .success,
 .error {
@@ -23,24 +25,23 @@
 	width: 100%;
 }
 
+.affwp-notice,
 .notice {
 	@bg: #FFFFE0;
 	background: @bg;
 	border: 1px solid #E6DB55;
 }
 
+.affwp-errors,
 .error {
 	@bg: #FFEBE8;
 	background: @bg;
 	border: 1px solid #CC0000;
 	margin: 0 0 1em 0;
+	padding: 1rem;
 
 	p {
 		margin-bottom: 0;
+		font-size: 1rem;
 	}
-}
-
-// add margin to top instead because these will be placed under input fields
-label.error {
-	margin: 1em 0 0 0;
 }
