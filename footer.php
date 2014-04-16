@@ -15,19 +15,29 @@
 		<?php if ( ! edd_is_checkout() ) : ?>
 		<section class="section alt columns columns-4">
 			<div class="wrapper">
-				<div class="item">
-				<!-- <h3>Links</h3> -->
-					<ul>
-						<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
-						<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>
-						<li><a href="<?php echo site_url( 'blog' ); ?>" title="Blog">Blog</a></li>
+			<?php 
+			$current_version = get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_version', true );
 
-					</ul>
+			?>
+				<div class="item">
+					<h3>Current Release</h3> 
+					<a class="button current-version" href="<?php echo site_url( 'changelog' ); ?>"><i class="icon-affwp"></i>v<?php echo $current_version; ?></a>
+
+					<?php if ( ! is_home() ) : ?>
+					<h3>Stay up to date</h3> 
+					<?php 
+						if ( function_exists( 'gravity_form' ) ) {
+							gravity_form( 1, false, false, false, '', true );
+						}
+					?>
+					<?php endif; ?>
 				</div>
 
 				<div class="item">
-				<!-- <h3>Links</h3> -->
-					<ul>
+					<ul class="page-links">
+						<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
+						<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>
+						<li><a href="<?php echo site_url( 'blog' ); ?>" title="Blog">Blog</a></li>
 						<li><a href="<?php echo site_url( 'support' ); ?>" title="Support">Support</a></li>
 						<li><a href="<?php echo site_url( 'support/documentation' ); ?>" title="Documentation">Documentation</a></li>
 						<li><a href="<?php echo site_url( 'account' ); ?>" title="Account">Account</a></li>
@@ -39,19 +49,19 @@
 				<h3>Follow Us</h3>
 
 				
-				<ul>
-					<li><a class="link" href="http://twitter.com/pippinsplugins" title="Pippin's Plugins" target="_blank">@pippinsplugins</a></li>
-					<li><a class="link" href="http://twitter.com/sumobi_" title="Sumobi" target="_blank">@sumobi_</a></li>
+				<ul class="links">
+					<li><a href="http://twitter.com/pippinsplugins" title="Pippin's Plugins" target="_blank">@pippinsplugins</a></li>
+					<li><a href="http://twitter.com/sumobi_" title="Sumobi" target="_blank">@sumobi_</a></li>
 				</ul>
 
 				</div>
 
 				<div class="item">
 				<h3>Our Sites</h3>
-					<ul>
-						<li><a class="link" href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
-						<li><a class="link" href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
-						<li><a class="link" href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
+					<ul class="links">
+						<li><a href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
+						<li><a href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
+						<li><a href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
 					</ul>
 				</div>
 

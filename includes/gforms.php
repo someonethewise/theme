@@ -26,9 +26,13 @@ add_filter( 'gform_ajax_spinner_url', 'affwp_gform_ajax_spinner_url', 10, 2 );
  * @since 1.0
 */
 function affwp_gform_submit_button( $button_input, $form ) {
+
 	ob_start();
 ?>
-	<span class="no-spam">(we hate spam just as much as you)</span>
+	<?php if ( is_home() ) : ?>
+		<span class="no-spam">(we hate spam just as much as you)</span>
+
+	<?php endif; ?>
 
 	<?php 
 	return $button_input . ob_get_clean();

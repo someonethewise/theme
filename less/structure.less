@@ -1,5 +1,37 @@
+// no max-width (full width)
+
+.tax-doc_category,
+.documentation,
+.page.testimonials,
+.about.page {
+	#content > .wrapper {
+		max-width: none;
+	}
+}
+
+// 980px
+.page.pricing,
+.addons {
+
+	#content > .wrapper {
+		max-width: 980px;
+	}
+}
+
+// 585px
+
+.category,
+.single,
+.page {
+	#content > .wrapper {
+		max-width: 585px;
+	}
+}
+
+
 #primary {
     margin-bottom: 0;
+    width: 100%;
 }
 
 #primary,
@@ -12,15 +44,7 @@
 }
 
 // wider areas
-.pricing {
-	#primary {
-		width: 100%;
-	}
 
-	#content > .wrapper {
-		max-width: 980px;
-	}
-}
 
 .support,
 .full-width {
@@ -28,6 +52,8 @@
 		text-align: center;
 	}
 }
+
+
 
 .about,
 .account {
@@ -41,38 +67,34 @@
     padding: 0;
   }
 
-.affiliates,
-.account {
-	#primary {
-		width: 100%;
-	}
+// .affiliates,
+// .account {
+// 	#primary {
+// 		width: 100%;
+// 	}
 
-	#content > .wrapper {
-		max-width: 720px;
-	}
+// 	#content > .wrapper {
+// 		max-width: 720px;
+// 	}
 
-}
+// }
 
-// skinny pages
+// // skinny pages
 
-.category-affiliatewp,
-.slim,
-.single-docs,
-.single-download,
-.single-post,
-.blog,
-.checkout,
-.account-logged-out,
-.support {
-	#primary {
-		width: 100%;
-	}
 
-	#content > .wrapper {
-		max-width: 585px;
-	}
+// .category-affiliatewp,
+// .slim,
+// .blog,
+// .checkout,
+// .account-logged-out,
+// {
 
-}
+
+// 	#content > .wrapper {
+// 		max-width: 585px;
+// 	}
+
+// }
 
 .error404 {
 	.wrapper {
@@ -93,11 +115,11 @@
 	}
 
 	#primary {
-	    width: 64.8%;
+	//    width: 64.8%;
 	}
 
 	#secondary {
-	    width: 29.5%;
+	//    width: 29.5%;
 	}
 
 }

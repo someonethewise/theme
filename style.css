@@ -961,8 +961,24 @@ ul.menu li:hover > ul {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
+.tax-doc_category #content > .wrapper,
+.documentation #content > .wrapper,
+.page.testimonials #content > .wrapper,
+.about.page #content > .wrapper {
+  max-width: none;
+}
+.page.pricing #content > .wrapper,
+.addons #content > .wrapper {
+  max-width: 980px;
+}
+.category #content > .wrapper,
+.single #content > .wrapper,
+.page #content > .wrapper {
+  max-width: 585px;
+}
 #primary {
   margin-bottom: 0;
+  width: 100%;
 }
 #primary,
 #secondary {
@@ -970,12 +986,6 @@ ul.menu li:hover > ul {
 }
 #content {
   text-align: justify;
-}
-.pricing #primary {
-  width: 100%;
-}
-.pricing #content > .wrapper {
-  max-width: 980px;
 }
 .support #content,
 .full-width #content {
@@ -988,36 +998,6 @@ ul.menu li:hover > ul {
 .about .columns.about {
   padding: 0;
 }
-.affiliates #primary,
-.account #primary {
-  width: 100%;
-}
-.affiliates #content > .wrapper,
-.account #content > .wrapper {
-  max-width: 720px;
-}
-.category-affiliatewp #primary,
-.slim #primary,
-.single-docs #primary,
-.single-download #primary,
-.single-post #primary,
-.blog #primary,
-.checkout #primary,
-.account-logged-out #primary,
-.support #primary {
-  width: 100%;
-}
-.category-affiliatewp #content > .wrapper,
-.slim #content > .wrapper,
-.single-docs #content > .wrapper,
-.single-download #content > .wrapper,
-.single-post #content > .wrapper,
-.blog #content > .wrapper,
-.checkout #content > .wrapper,
-.account-logged-out #content > .wrapper,
-.support #content > .wrapper {
-  max-width: 585px;
-}
 .error404 .wrapper {
   text-align: center;
 }
@@ -1027,12 +1007,6 @@ ul.menu li:hover > ul {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-  }
-  #primary {
-    width: 64.8%;
-  }
-  #secondary {
-    width: 29.5%;
   }
 }
 h1,
@@ -1054,6 +1028,7 @@ h2 {
 h3 {
   font-size: 1rem;
   line-height: 1.3;
+  font-weight: 500;
 }
 code {
   color: #373737;
@@ -1074,6 +1049,9 @@ section.section.used-by h1 span,
 section.section.featured h1 span,
 section.section.subscribe h1 span {
   font-weight: 600;
+}
+h1.page-title {
+  margin-bottom: 3rem;
 }
 p {
   margin: 0 0 1.62rem 0;
@@ -1319,12 +1297,7 @@ section.docs {
 }
 .tax-doc_category #content > .wrapper,
 .documentation #content > .wrapper {
-  max-width: none;
   font-size: 0;
-}
-.tax-doc_category #content #primary,
-.documentation #content #primary {
-  width: 100%;
 }
 .change-layout {
   font-size: 2rem;
@@ -1816,9 +1789,10 @@ td {
 }
 .affwp-form p {
   font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 .affiliates .entry-content > .item {
-  width: 46%;
+  width: 48%;
   display: inline-block;
   vertical-align: top;
 }
@@ -2654,6 +2628,9 @@ section.columns {
   }
 }
 @media all and (min-width: 1220px) {
+  .testimonials .item.wide {
+    width: 74.5%;
+  }
   .columns-4 .gap,
   .columns-4 .item {
     width: 23%;
@@ -2691,9 +2668,6 @@ section.used-by ul:after,
     border-left: 8px solid #e44e44;
   }
 }
-.addons #content > .wrapper {
-  max-width: 820px;
-}
 .addons #content {
   background: #f7f7f7;
   padding-top: 2rem;
@@ -2709,21 +2683,58 @@ footer#footer {
   text-align: center;
   position: relative;
 }
+footer#footer .no-spam {
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
+footer#footer .gform_wrapper {
+  width: 80%;
+}
+footer#footer .gform_confirmation_message {
+  color: #fff;
+}
+footer#footer .validation_message {
+  display: none;
+}
 footer#footer section {
   padding: 2rem;
 }
 footer#footer h3 {
   margin-top: 0;
 }
+footer#footer ul {
+  font-size: 1rem;
+}
 footer#footer ul li {
   display: block;
-  margin: 0 0 1rem 0rem;
+  margin: 0;
   padding: 0;
 }
-footer#footer a {
-  color: #fff;
+footer#footer .current-version.button {
+  text-transform: lowercase;
 }
-footer#footer a.link {
+footer#footer i {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+footer#footer .current-version,
+footer#footer .page-links {
+  margin-bottom: 2rem;
+}
+footer#footer .page-links a {
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  border-left: 5px solid #ed6d62;
+}
+footer#footer .page-links a:hover {
+  border-left: 5px solid #e44e44;
+}
+footer#footer .links li {
+  margin-bottom: 1rem;
+}
+footer#footer .links a {
   color: #fff;
   font-size: 0.875rem;
   border: 3px solid #FFFFFF;
@@ -2736,7 +2747,7 @@ footer#footer a.link {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-footer#footer a.link:hover {
+footer#footer .links a:hover {
   box-shadow: 0 0 0 1px #FFFFFF inset;
 }
 @media only screen and (min-width: 720px) {
