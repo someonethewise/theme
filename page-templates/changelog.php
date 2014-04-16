@@ -8,22 +8,21 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<div class="wrapper">
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php
+				// Page thumbnail and title.
+				affwp_post_thumbnail();
 
-		<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
+				affwp_the_title();
+			?>
 
-				// Include the page content template.
-				get_template_part( 'content', 'page' );
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-			endwhile;
-
-			$changelog  = get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_changelog', true );
-			echo wpautop( $changelog, false );
-		?>
+			<div class="entry-content">
+				<?php
+					$changelog = get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_changelog', true );
+					echo wpautop( $changelog, true );
+				?>
+			</div>
+		</article>
 	</div>
 </div>
 <?php

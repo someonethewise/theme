@@ -34,6 +34,7 @@
 				</div>
 
 				<div class="item">
+				<h3>Links</h3>
 					<ul class="page-links">
 						<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
 						<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>
@@ -48,7 +49,6 @@
 				<div class="item">
 				<h3>Follow Us</h3>
 
-				
 				<ul class="links">
 					<li><a href="http://twitter.com/pippinsplugins" title="Pippin's Plugins" target="_blank">@pippinsplugins</a></li>
 					<li><a href="http://twitter.com/sumobi_" title="Sumobi" target="_blank">@sumobi_</a></li>
