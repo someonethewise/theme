@@ -2722,6 +2722,9 @@ footer#footer .current-version,
 footer#footer .page-links {
   margin-bottom: 2rem;
 }
+footer#footer .page-links {
+  margin-left: -13px;
+}
 footer#footer .page-links a {
   color: #fff;
   padding: 0.25rem 0.5rem;
