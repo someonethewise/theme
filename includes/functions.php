@@ -7,9 +7,11 @@
  */
 function affwp_get_post_by_title( $page_title, $post_type = 'post' , $output = OBJECT ) {
     global $wpdb;
-        $post = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_title = %s AND post_type= %s", $page_title, $post_type) );
-        if ( $post )
-            return get_post($post, $output);
+    $post = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_title = %s AND post_type= %s", $page_title, $post_type) );
+
+    if ( $post ) {
+        return get_post($post, $output);
+    }
 
     return null;
 }
@@ -23,12 +25,12 @@ function affwp_get_affiliatewp_id() {
 	$id = affwp_get_post_by_title( 'affiliatewp', 'download' );
 	$id = $id->ID;
 
-	if ( $id )
+	if ( $id ) {
 		return $id;
+	}
 
 	return null;
 }
-
 
 /**
  * Determine if the download is coming soon or not
@@ -39,8 +41,9 @@ function affwp_get_affiliatewp_id() {
 function affwp_addon_is_coming_soon( $download_id ) {
 	$coming_soon = get_post_meta( $download_id, '_affwp_addon_coming_soon', true );
 
-	if ( $coming_soon )
+	if ( $coming_soon ) {
 		return (bool) true;
+	}
 
 	return (bool) false;
 }

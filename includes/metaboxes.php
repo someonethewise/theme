@@ -1,6 +1,7 @@
 <?php
 /**		
  * Metaboxes
+ * @since 1.1.9
 */
 
 // Exit if accessed directly
@@ -8,17 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 /**
- * Add Download Type Meta Box.
+ * Add-on meta Box
  *
- * @since 1.0
+ * @since 1.1.9
  */
 function affwp_add_meta_box() {
 	add_meta_box( 'affwp_addon_meta_box', esc_html__( 'Add-on Information', 'affwp' ), 'affwp_addon_meta_box', 'download', 'side' );
 }
 add_action( 'add_meta_boxes', 'affwp_add_meta_box' );
-
-
-
 
 /**		
  * Metabox callback
@@ -50,21 +48,21 @@ function affwp_addon_meta_box( $post_id ) {
 		<input class="widefat" type="text" name="affwp_addon_requires" id="affwp_addon_requires" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_requires', true ) ); ?>" size="30" />
 	</p>
 
+	<p><strong><?php _e( 'Release Date', 'affwp' ); ?></strong></p>
+	<p>
+		<label for="affwp_addon_release_date" class="screen-reader-text">
+			<?php _e( 'Release Date', 'affwp' ); ?>
+		</label>
+		<input class="widefat" type="text" name="affwp_addon_release_date" id="affwp_addon_release_date" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_release_date', true ) ); ?>" size="30" />
+	</p>
+
 	<p><strong><?php _e( 'Changelog', 'affwp' ); ?></strong></p>
 	<p>
 		<label for="affwp_addon_changelog" class="screen-reader-text">
 			<?php _e( 'Changelog', 'affwp' ); ?>
 		</label>
 		<textarea name="affwp_addon_changelog" id="affwp_addon_changelog" rows="20" style="width: 100%;"><?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_changelog', true ) ); ?></textarea>
-	</p>
-
-	<p><strong><?php _e( 'Release Date', 'affwp' ); ?></strong></p>
-		<p>
-			<label for="affwp_addon_release_date" class="screen-reader-text">
-				<?php _e( 'Release Date', 'affwp' ); ?>
-			</label>
-			<input class="widefat" type="text" name="affwp_addon_release_date" id="affwp_addon_release_date" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_release_date', true ) ); ?>" size="30" />
-		</p>
+	</p>	
 
 	<?php wp_nonce_field( 'affwp_addon_metaboxes', 'affwp_addon_metaboxes' ); ?>
 
@@ -78,8 +76,6 @@ function affwp_addon_meta_box( $post_id ) {
 */
 function affwp_addon_save_post( $post_id ) {
 
-	// First we need to check if the current user is authorised to do this action. 
-	
 	if ( ( isset( $_POST['post_type'] ) && 'download' == $_POST['post_type'] )  ) {
 		if ( ! current_user_can( 'edit_page', $post_id ) )
 	    	return;

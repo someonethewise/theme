@@ -53,6 +53,7 @@
 				<ul class="links">
 					<li><a href="http://twitter.com/pippinsplugins" title="Pippin's Plugins" target="_blank">@pippinsplugins</a></li>
 					<li><a href="http://twitter.com/sumobi_" title="Sumobi" target="_blank">@sumobi_</a></li>
+					<li><a href="http://twitter.com/affwp" title="AffiliateWP" target="_blank">@affwp</a></li>
 				</ul>
 
 				</div>

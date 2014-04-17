@@ -11,14 +11,14 @@ get_header(); ?>
 
 	<div class="wrapper">
 		<h1>Official Developer Add-ons</h1>
-		<h2>Add-ons currently planned with more coming soon</h2>
+		<h2>Currently planned Add-ons. More coming soon!</h2>
+
+		<?php /*
 
 		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 			
-
 			<p>Hi developer license holder! All of the add-ons below are available from your <a title="Available from your account page" href="<?php echo site_url( 'account' ); ?>">account page</a>.</p>
 		
-
 		<?php
 			// if the user is logged and has purchased a lower license, show a link to upgrade their license 
 			elseif ( is_user_logged_in() && 
@@ -32,7 +32,8 @@ get_header(); ?>
 			<p>These add-ons are only available to <a title="Developer License Holders" href="<?php echo site_url( 'pricing' ); ?>">developer license</a> holders</p>
 			
 		<?php endif; ?>
-
+		*/ ?>
+	
 	</div>	
 
 	<?php while ( have_posts() ) : the_post(); ?>
