@@ -6,9 +6,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 	
-	<?php
-
-	?>
 	<a class="back" href="<?php echo site_url( 'addons' ); ?>">Back to add-ons</a>
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -24,6 +21,28 @@ get_header(); ?>
 			</article>
 
 		<?php endwhile; ?>
+
+		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+			<p>user has purchased dev license</p>
+
+			<a title="Get this add-on" href="<?php echo site_url( 'account' ); ?>" class="button large">Get this add-on</a>
+
+		<?php
+			// if the user is logged and has purchased a lower license, show a link to upgrade their license 
+			elseif ( is_user_logged_in() && 
+				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 )  ||
+				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) )
+		: ?>
+			<p>This add-on will become immediately available to you after you <a title="Upgrade Your License" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>">upgrade your license</a>.</p>
+			<a title="Upgrade Your License" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>" class="button large">Upgrade license</a>
+		<?php else : // user is logged in and has not purchased, or is logged out. Direct link to purchase dev license 
+			$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
+		?>
+			<p>This add-on is only available to <a title="Developer License" href="<?php echo site_url( 'pricing' ); ?>">developer license</a> holders</p>
+			<a title="Purchase developer license" class="button" href="<?php echo $purchase_url;?>">Purchase developer license</a>
+		<?php endif; ?>
+
+		
 	</div>
 
 <?php
