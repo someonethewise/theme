@@ -25,7 +25,7 @@ add_action( 'edd_purchase_form_before_submit', 'affwp_edd_terms_agreement' );
  * Terms and conditions
  */
 function affwp_show_refund_policy() {
-	if ( ! edd_is_checkout() )
+	if ( function_exists( 'edd_is_checkout' ) || ! edd_is_checkout() )
 		return;
 
 	$post = affwp_get_post_by_title( 'refund policy', 'page' );
