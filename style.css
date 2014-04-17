@@ -807,6 +807,9 @@ button:focus {
   li.checkout > a:before {
     content: "\e009";
   }
+  li.add-ons > a:before {
+    content: "\e01c";
+  }
   li.menu-item.purchase > a:before,
   li.menu-item.checkout > a:before {
     color: #fff;
