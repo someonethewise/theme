@@ -56,14 +56,6 @@ function affwp_addon_meta_box( $post_id ) {
 		<input class="widefat" type="text" name="affwp_addon_release_date" id="affwp_addon_release_date" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_release_date', true ) ); ?>" size="30" />
 	</p>
 
-	<p><strong><?php _e( 'Changelog', 'affwp' ); ?></strong></p>
-	<p>
-		<label for="affwp_addon_changelog" class="screen-reader-text">
-			<?php _e( 'Changelog', 'affwp' ); ?>
-		</label>
-		<textarea name="affwp_addon_changelog" id="affwp_addon_changelog" rows="20" style="width: 100%;"><?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_changelog', true ) ); ?></textarea>
-	</p>	
-
 	<?php wp_nonce_field( 'affwp_addon_metaboxes', 'affwp_addon_metaboxes' ); ?>
 
 <?php }
@@ -106,7 +98,6 @@ function affwp_addon_save_post( $post_id ) {
 			'affwp_addon_release_date',
 			'affwp_addon_version',
 			'affwp_addon_requires',
-			'affwp_addon_changelog',
 		)
 	);
 	

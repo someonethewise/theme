@@ -16,8 +16,6 @@ get_header(); ?>
 			</div>
 			
 			<div class="item primary">
-				<!-- <div class="content-area"> -->
-				
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -30,12 +28,6 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 
-					
-
-
-					
-				<!-- </div> -->
-
 			</div>
 
 			<div class="item right">
@@ -45,12 +37,6 @@ get_header(); ?>
 			</div>
 		
 	</section>
-
-
-
-
-	
-	
 
 <?php
 get_sidebar();
