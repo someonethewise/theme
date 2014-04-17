@@ -43,6 +43,7 @@
 						<li><a href="<?php echo site_url( 'support/documentation' ); ?>" title="Documentation">Documentation</a></li>
 						<li><a href="<?php echo site_url( 'account' ); ?>" title="Account">Account</a></li>
 						<li><a href="<?php echo site_url( 'account/affiliates' ); ?>" title="Affiliates">Affiliates</a></li>
+						<li><a href="<?php echo site_url( 'testimonials' ); ?>" title="Testimonials">Testimonials</a></li>
 					</ul>
 				</div>
 

@@ -22,18 +22,12 @@ get_header(); ?>
 			<div class="wrapper">
 				
 				
-					 <blockquote>
-			          <p>Honestly, I'm super picky about what plugins I'll run on my sites. I've wanted to set up an affiliate program for a while, but all of the plugins I tried were buggy, overloaded with options, and difficult to use. When I heard Pippin was going to build one, I couldn't wait to try it. </p><p>Now that I've used it, I can honestly say that he's completely outdone himself. AffiliateWP is by far the most well-coded and easiest-to-use affiliate management plugin ever made for WordPress. There's no crazy setup or clunky dashboard to deal with.</p> <p>Everything works exactly like it should; just like core WordPress features. You literally install AffiliateWP, pick an option or two, and within a few minutes you've got a fully-functioning affiliate program. It doesn't get much better than that.</p>
-			          <footer>Audit WP</footer>
-			        </blockquote>
-				
-					
-				
-
-				<div class="gap"></div>
-				<div class="gap"></div>
+			 <blockquote>
+	          <p>Honestly, I'm super picky about what plugins I'll run on my sites. I've wanted to set up an affiliate program for a while, but all of the plugins I tried were buggy, overloaded with options, and difficult to use. When I heard Pippin was going to build one, I couldn't wait to try it. </p><p>Now that I've used it, I can honestly say that he's completely outdone himself. AffiliateWP is by far the most well-coded and easiest-to-use affiliate management plugin ever made for WordPress. There's no crazy setup or clunky dashboard to deal with.</p> <p>Everything works exactly like it should; just like core WordPress features. You literally install AffiliateWP, pick an option or two, and within a few minutes you've got a fully-functioning affiliate program. It doesn't get much better than that.</p>
+	          <footer>Audit WP</footer>
+	        </blockquote>
 		</div>
-		
+			
 		</section>
 
 		<section class="section columns-2 columns testimonials">
@@ -72,6 +66,15 @@ get_header(); ?>
 				          <footer>Brian, WPSessions</footer>
 				        </blockquote>
 					</div>
+
+					<div class="item">
+						 <blockquote>
+				          <p>AffiliateWP is an exceptional plugin. It's easy to use, well-written, and just plain works.</p>
+				          <footer>Matt Gibbs, FacetWP</footer>
+				        </blockquote>
+					</div>
+
+					
 
 					<div class="gap"></div>
 					<div class="gap"></div>
