@@ -87,7 +87,12 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 				$requires 	= get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
 			?>
 			<tr>
-				<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+				<td>
+					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					<?php if( affwp_addon_is_coming_soon( get_the_ID() ) : ?>
+						- coming soon
+					<?php endif; ?>
+				</td>
 				<td><?php echo esc_attr( $version ); ?></td>
 				<td><?php echo esc_attr( $requires ); ?></td>
 				<td>
