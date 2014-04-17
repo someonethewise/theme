@@ -13,7 +13,7 @@ get_header(); ?>
 		<h1>Official Developer Add-ons</h1>
 		<h2>Currently planned Add-ons. More coming soon!</h2>
 
-		<?php /*
+	
 
 		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 			
@@ -32,7 +32,7 @@ get_header(); ?>
 			<p>These add-ons are only available to <a title="Developer License Holders" href="<?php echo site_url( 'pricing' ); ?>">developer license</a> holders</p>
 			
 		<?php endif; ?>
-		*/ ?>
+		
 	
 	</div>	
 
