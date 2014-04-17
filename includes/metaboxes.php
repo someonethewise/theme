@@ -32,14 +32,6 @@ function affwp_addon_meta_box( $post_id ) {
 		</label>
 	</p>
 
-	<p><strong><?php _e( 'Version', 'affwp' ); ?></strong></p>
-	<p>
-		<label for="affwp_addon_version" class="screen-reader-text">
-			<?php _e( 'Version', 'affwp' ); ?>
-		</label>
-		<input class="widefat" type="text" name="affwp_addon_version" id="affwp_addon_version" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_version', true ) ); ?>" size="30" />
-	</p>
-
 	<p><strong><?php _e( 'AffiliateWP Version Required', 'affwp' ); ?></strong></p>
 	<p>
 		<label for="affwp_addon_requires" class="screen-reader-text">
@@ -96,7 +88,6 @@ function affwp_addon_save_post( $post_id ) {
 	$fields = apply_filters( 'affwp_addon_metabox_fields_save', array(
 			'affwp_addon_coming_soon',
 			'affwp_addon_release_date',
-			'affwp_addon_version',
 			'affwp_addon_requires',
 		)
 	);
@@ -104,10 +95,6 @@ function affwp_addon_save_post( $post_id ) {
 	foreach ( $fields as $field ) {
 
 		$new = ( isset( $_POST[ $field ] ) ? esc_attr( $_POST[ $field ] ) : '' );
-		
-		// make number and do from filter
-		if ( $field == 'affwp_addon_version' )
-			$new = esc_attr( $_POST[ $field ] );
 
 		$new = apply_filters( 'affwp_addon_save_' . $field, $new );
 
