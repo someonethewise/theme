@@ -60,7 +60,7 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 				array(
 					'taxonomy' => 'download_category',
 					'field' => 'slug',
-					'terms' => 'add-on'
+					'terms' => 'add-ons'
 				)
 			)
 	);
