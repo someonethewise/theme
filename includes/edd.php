@@ -55,7 +55,7 @@ function affwp_process_license_upgrade() {
 	edd_empty_cart();
 
 	// Add the dev license
-	edd_add_to_cart( $affwp_id, array( 'price_id' => 2 ) ) {
+	edd_add_to_cart( $affwp_id, array( 'price_id' => 2 ) );
 	EDD()->fees->add_fee( $discount * -1, 'License Upgrade Discount' );
 	//EDD()->session->set( 'is_upgrade', '1' );
 
