@@ -1,3 +1,53 @@
+// SSL
+
+// #edd_secure_site_wrapper span.padlock:before { 
+// 	font-family: 'padlock'; 
+// 	font-style: normal; 
+// 	font-weight: normal; 
+// 	speak: none; display: inline-block; 
+// 	text-decoration: inherit; 
+// 	width: 1em; 
+// 	margin-right: 0.2em; 
+// 	text-align: center;  
+// 	line-height: 1em; 
+// 	margin-left: 0.2em; 
+// 	font-size: 120%; 
+// 	text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); 
+// 	content: '🔒';
+// }
+
+// .icon-padlock:before {
+//   content: "\e013";
+// }
+
+#edd_secure_site_wrapper {
+	position: relative;
+	margin-bottom: 1rem;
+
+	span {
+		font-weight: 500;
+		 color: @accent-color;
+	}
+}
+
+#edd_secure_site_wrapper span.padlock:before {
+	 content: "\e013";
+	 font-family: "affiliatewp" !important;
+	 font-style: normal !important;
+	 font-weight: normal !important;
+	 font-variant: normal !important;
+	 text-transform: none !important;
+	 speak: none;
+	 line-height: 1;
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+	 color: @accent-color;
+	 font-size: 4rem;
+	 position: absolute;
+	 left: -6rem;
+	 top: -2rem;
+}
+
 // price options
 .edd_price_options {
 	li label {
