@@ -1145,12 +1145,18 @@ p.edd_error {
 #edd_checkout_cart .edd_cart_actions {
   text-align: right;
 }
-#edd_checkout_form_wrap fieldset {
-  border: 1px solid #f7f7f7;
-  margin: 0 0 1.5rem;
+#edd_purchase_form > fieldset {
   padding: 1.5rem;
+}
+#edd_purchase_form_wrap fieldset {
+  padding: 1.5rem;
+}
+#edd_purchase_form_wrap fieldset fieldset {
+  padding: 0;
+}
+#edd_checkout_form_wrap fieldset {
+  margin: 0 0 1.5rem;
   background: #f7f7f7;
-  border: 1px solid #efefef;
 }
 #edd_checkout_form_wrap fieldset #edd_agree_to_terms {
   float: left;

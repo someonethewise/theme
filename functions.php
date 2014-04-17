@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.1.6' );
+	define( 'AFFWP_THEME_VERSION', '1.1.7' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -28,6 +28,22 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'functions.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'checkout.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'edd.php' );
 
+/**
+ * EDD Default labels
+ * Set back to downloads which is changed by using EDD_SLUG constant
+ *
+ * @since  1.1.7
+ */
+function affwp_edd_get_default_labels( $defaults ) {
+	
+	$defaults = array(
+	   'singular' => __( 'Download', 'affwp' ),
+	   'plural' => __( 'Downloads', 'affwp')
+	);
+
+	return $defaults;
+}
+add_filter( 'edd_default_downloads_name', 'affwp_edd_get_default_labels' );
 
 
 if ( ! function_exists( 'affwp_setup' ) ) :
