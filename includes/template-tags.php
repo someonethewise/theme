@@ -366,8 +366,6 @@ function affwp_get_dev_license_upgrade_url() {
 		return home_url( '/pricing' );
 	}
 
-	$key  = 
-
 	$args = array(
 		'edd_action' => 'upgrade_affwp_license',
 	);
