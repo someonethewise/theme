@@ -89,7 +89,7 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 			<tr>
 				<td>
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<?php if( affwp_addon_is_coming_soon( get_the_ID() ) : ?>
+					<?php if( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
 						- coming soon
 					<?php endif; ?>
 				</td>
