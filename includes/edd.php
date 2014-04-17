@@ -91,7 +91,7 @@ function affwp_process_add_on_download() {
 
 	$affwp_id = affwp_get_affiliatewp_id();
 
-	if( edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
+	if( ! edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
 		wp_die( 'You need to have a Developer\'s license key to download this add-on' );
 	}
 
