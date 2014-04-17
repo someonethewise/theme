@@ -36,8 +36,11 @@ get_header(); ?>
 	
 	</div>	
 
-	<?php while ( have_posts() ) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box' ) ); ?>> 
+	<?php while ( have_posts() ) : the_post(); 
+
+	$coming_soon = affwp_addon_is_coming_soon( get_the_ID() ) ? 'coming-soon' : '';
+	?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box', $coming_soon ) ); ?>> 
 		    
 				<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 

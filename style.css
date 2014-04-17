@@ -2713,6 +2713,9 @@ section.used-by ul:after,
 .addons #content .box {
   background: #fff;
 }
+.addons #content .box.coming-soon {
+  opacity: 0.6;
+}
 .addons #content .wrapper {
   text-align: center;
 }
