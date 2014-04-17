@@ -406,5 +406,22 @@ function affwp_get_dev_license_upgrade_url() {
 		'edd_action' => 'upgrade_affwp_license',
 	);
 
-	return add_query_arg( $upgrade_url, edd_get_checkout_uri() );
+	return add_query_arg( $args, edd_get_checkout_uri() );
+}
+
+/**
+ * Returns the URL to download an add on
+ *
+ * @since AffiliateWP 1.x
+ *
+ * @return string
+*/
+function affwp_get_add_on_download_url( $add_on_id = 0 ) {
+
+	$args = array(
+		'edd_action' => 'add_on_download',
+		'add_on'     => $add_on_id,
+	);
+
+	return add_query_arg( $args, home_url() );
 }
