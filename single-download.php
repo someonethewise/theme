@@ -23,10 +23,10 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
-			<p>user has purchased dev license</p>
 
-			<a title="Get this add-on" href="<?php echo site_url( 'account' ); ?>" class="button large">Get this add-on</a>
-
+			<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
+				<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button large">Get this add-on</a>
+			<?php endif; ?>
 		<?php
 			// if the user is logged and has purchased a lower license, show a link to upgrade their license 
 			elseif ( is_user_logged_in() && 
