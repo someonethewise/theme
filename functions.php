@@ -184,7 +184,7 @@ function affwp_body_classes( $classes ) {
 	if ( is_page_template( 'page-templates/slim.php' ) )
 		$classes[] = 'slim';
 	
-	if ( edd_is_checkout() )
+	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() )
 		$classes[] = 'checkout';
 
 	if ( is_page_template( 'page-templates/account.php' ) ) {
