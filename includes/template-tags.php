@@ -351,3 +351,24 @@ function affwp_post_thumbnail() {
 
 	<?php endif; // End is_singular()
 }
+
+
+/**
+ * Returns the URL to upgrade personal or business license to a dev license
+ *
+ * @since AffiliateWP 1.x
+ *
+ * @return string
+*/
+function affwp_get_dev_license_upgrade_url() {
+
+	if( ! function_exists( 'edd_get_checkout_uri' ) ) {
+		return home_url( '/pricing' );
+	}
+
+	$args = array(
+		'edd_action' => 'upgrade_affwp_license'
+	);
+
+	return add_query_arg( $upgrade_url, edd_get_checkout_uri() );
+}
