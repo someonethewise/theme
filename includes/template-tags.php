@@ -396,8 +396,6 @@ function affwp_post_thumbnail() {
 */
 function affwp_get_dev_license_upgrade_url() {
 
-	$upgrade_url = '';
-
 	if( ! function_exists( 'edd_get_checkout_uri' ) ) {
 		return home_url( '/pricing' );
 	}
