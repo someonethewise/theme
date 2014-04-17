@@ -213,10 +213,9 @@ add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
  */
 function affwp_add_on_info( $position = '' ) {
 
-	$version 	= get_post_meta( get_the_ID(), '_affwp_addon_version', true );
+	$version 	= get_post_meta( get_the_ID(), '_edd_sl_version', true );
 	$requires 	= get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
 	$released	= get_post_meta( get_the_ID(), '_affwp_addon_release_date', true );
-//	$changelog	= get_post_meta( get_the_ID(), '_affwp_addon_changelog', true );
 
 	?>
 	<aside class="add-on-info<?php echo ' ' . $position; ?>">
