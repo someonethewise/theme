@@ -226,7 +226,7 @@ function affwp_add_on_info( $position = '' ) {
 		<?php endif; ?>	
 
 		<?php if ( $requires ) : ?>
-			<p><span>Required AffiliateWP</span><br />v<?php echo esc_attr( $requires ); ?></p>
+			<p><span>Requires AffiliateWP</span><br />v<?php echo esc_attr( $requires ); ?></p>
 		<?php endif; ?>
 
 		<?php if ( $released ) : ?>
