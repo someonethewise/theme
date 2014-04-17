@@ -18,8 +18,8 @@ get_header(); ?>
 
 			<div class="entry-content">
 				<?php
-					$changelog = get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_changelog', true );
-					echo wpautop( $changelog, true );
+					$changelog = wpautop( get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_changelog', true ), true );
+					echo apply_filters( 'the_content', $changelog );
 				?>
 			</div>
 		</article>
