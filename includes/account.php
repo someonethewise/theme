@@ -44,7 +44,7 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 	else : ?>
 
 
-	<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+
 
 	<h2>Developer Add-ons</h2>
 	<?php 
@@ -89,7 +89,7 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 			<tr>
 				<td>
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<?php if( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+					<?php if ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
 						- coming soon
 					<?php endif; ?>
 				</td>
@@ -97,7 +97,15 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 				<td><?php echo esc_attr( $requires ); ?></td>
 				<td>
 					<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
-						<a href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>">Download add-on</a>
+
+						<?php if ( ! edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+							<a title="Upgrade License To Download" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>">Upgrade License To Download</a>
+						<?php else : ?>
+							<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+								<a href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>">Download add-on</a>
+							<?php endif; ?>
+						<?php endif; ?>
+
 					<?php endif; ?>
 				</td>
 			</tr>
@@ -107,7 +115,6 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 	<?php endif; wp_reset_postdata(); ?>
 		</tbody>
 	</table>
-	<?php endif; ?>
 
 	<?php
 		// purchase history
