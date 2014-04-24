@@ -25,7 +25,7 @@ get_header(); ?>
 				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 )  ||
 				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) )
 		: ?>
-			<p>These add-ons (once finished) will become available to you when you <a title="Upgrade License" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>">upgrade your license</a>.</p>
+			<p>These add-ons (once finished) will become available to you when you <a title="Upgrade License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">upgrade your license</a>.</p>
 		<?php else : // user is logged in and has not purchased, or is logged out. Direct link to purchase dev license 
 			$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
 		?>

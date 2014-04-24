@@ -99,7 +99,7 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 					<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
 
 						<?php if ( ! edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
-							<a title="Upgrade License To Download" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>">Upgrade License To Download</a>
+							<a title="Upgrade License To Download" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade License To Download</a>
 						<?php else : ?>
 							<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 								<a href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>">Download add-on</a>
@@ -115,6 +115,22 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 	<?php endif; wp_reset_postdata(); ?>
 		</tbody>
 	</table>
+
+	<h2>Your License</h2>
+	<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 ) ) : // user is on personal license ?>
+		<p>You currently have the <strong>Personal License</strong> (1 site)<br/>
+		
+			<a title="Upgrade to Business License" href="<?php echo affwp_get_license_upgrade_url( 'business' ); ?>">Upgrade to Business License (3 sites)</a><br/>
+			<a title="Upgrade to Developer License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade to Developer License (unlimited sites)</a>
+		</p>
+	<?php elseif ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) ) : ?>
+		<p>You currently have the <strong>Business License</strong> (3 sites)<br/>
+		<a title="Upgrade to Developer License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade to Developer License (unlimited sites)</a>
+		</p>
+	<?php elseif ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+		<p>You currently have the <strong>Developer License</strong> (unlimited sites).</p>
+	<?php endif; ?>	
+	
 
 	<?php
 		// purchase history

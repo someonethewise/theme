@@ -23,39 +23,66 @@ add_filter( 'edd_default_downloads_name', 'affwp_edd_default_downloads_name');
  */
 function affwp_process_license_upgrade() {
 
-	if( ! is_user_logged_in() ) {
+	// get type. business or developer
+	$type = isset( $_GET['type'] ) ? $_GET['type'] : '';
+
+	if ( ! is_user_logged_in() || ! ( 'business' == $type || 'developer' == $type ) ) {
 		// Isn't logged in, so go back to pricing
 		wp_redirect( home_url( '/pricing' ) ); exit;
 	}
 
 	$affwp_id = affwp_get_affiliatewp_id();
 
-	if( edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
+	switch ( $type ) {
 
-		wp_die( 'You already have a Developer\'s license' );
+		case 'developer':
+			// user has developer license already
+			if ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
+				wp_die( 'You already have a Developer\'s license', '', array( 'back_link' => true ) );
+			} 
+			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
+				// Has a business license
+				$discount = 99;
+			} 
+			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id ) ) {
+				// Has a personal license
+				$discount = 49;
+			} 
+			else {
+				// Hasn't purchased, so go back to pricing
+				wp_redirect( home_url( '/pricing' ) ); exit;
+			}
 
-	} elseif( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
+			$price_id = 2;
 
-		// Has a business license
-		$discount = 99;
+			break;
 
-	} elseif( edd_has_user_purchased( get_current_user_id(), $affwp_id ) ) {
+		case 'business':
+			// user has developer license already
+			if ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
+				wp_die( 'You already have a Business license', '', array( 'back_link' => true ) );
+			} 
+			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 0 ) ) {
+				// Has a personal license
+				$discount = 49;
+			}
+			else {
+				// Hasn't purchased, so go back to pricing
+				wp_redirect( home_url( '/pricing' ) ); exit;
+			}
 
-		// Has a personal license
-		$discount = 49;
+			$price_id = 1;
 
-	} else {
+			break;
 
-		// Hasn't purchased, so go back to pricing
-		wp_redirect( home_url( '/pricing' ) ); exit;
-
-	}
+	} // end switch
 
 	// Remove anything in the cart
 	edd_empty_cart();
 
-	// Add the dev license
-	edd_add_to_cart( $affwp_id, array( 'price_id' => 2 ) );
+	// Add the correct license
+	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id ) );
+
 	EDD()->fees->add_fee( $discount * -1, 'License Upgrade Discount' );
 	//EDD()->session->set( 'is_upgrade', '1' );
 
@@ -250,7 +277,7 @@ function affwp_add_on_info( $position = '' ) {
 			$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
 		?>
 			
-			<a title="Buy Developer License" class="button" href="<?php echo $purchase_url;?>">Buy Developer License</a>
+			<a title="Buy Developer License" class="button" href="<?php echo $purchase_url; ?>">Buy Developer License</a>
 			<p>This add-on is only available to <a title="Developer License" href="<?php echo site_url( 'pricing' ); ?>">Developer License</a> holders</p>
 		<?php endif; ?>
 
