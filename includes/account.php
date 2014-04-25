@@ -129,6 +129,9 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 		</p>
 	<?php elseif ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 		<p>You currently have the <strong>Developer License</strong> (unlimited sites).</p>
+
+	<?php else : ?>
+		<p>You do not have a <a title="You do not have a license yet" href="<?php echo site_url( 'pricing' ); ?>">license</a> yet.</p>	
 	<?php endif; ?>	
 	
 

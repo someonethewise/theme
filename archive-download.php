@@ -5,9 +5,8 @@
 
 get_header(); ?>
 
-
 <?php if ( have_posts() ) : ?>
-<section class="section columns columns-2 addons">
+<section class="section columns columns-3 addons">
 
 	<div class="wrapper">
 		<h1>Official Developer Add-ons</h1>
@@ -75,4 +74,68 @@ get_header(); ?>
 	
 </section>
 
+<section class="section columns columns-3 addons">
+
+	<div class="wrapper">
+		<h1>Official Free Add-ons</h1>
+		<h2>Free to all license holders</h2>
+	</div>
+		
+<?php 
+
+  $args = array(
+      'post_type' => 'download',
+      'posts_per_page' => -1,
+      'tax_query' => array(
+          array(
+              'taxonomy' => 'download_category',
+              'field' => 'slug',
+              'terms' => 'free'
+          )
+      )
+  );
+
+  $wp_query = new WP_Query( $args );
+?>
+
+<?php if ( $wp_query->have_posts() ) : ?>
+    
+    <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+	    $coming_soon = affwp_addon_is_coming_soon( get_the_ID() ) ? 'coming-soon' : '';
+    ?>  
+      
+        <article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box', $coming_soon ) ); ?>> 
+        		    
+			<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
+
+	    		<h2>
+					<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
+			    		<?php the_title(); ?>
+			    	</a>
+		    	</h2>
+
+		    	<?php affwp_post_thumbnail(); ?>
+
+		    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+		    		  	
+	    		<h2><?php the_title(); ?></h2>
+	    		<div class="post-thumbnail">
+	    			<?php the_post_thumbnail(); ?>
+	    		</div>
+
+			<?php endif; ?>	
+
+	   	
+	       	<?php 
+		 		the_excerpt();
+		 	?>
+	</article>
+       
+    <?php endwhile; wp_reset_query(); ?>
+   	
+   	<div class="gap"></div>
+	<div class="gap"></div>
+
+<?php endif; ?>
+</section>
 <?php get_footer();
