@@ -240,9 +240,13 @@ add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
  */
 function affwp_add_on_info( $position = '' ) {
 
-	$version 	= get_post_meta( get_the_ID(), '_edd_sl_version', true );
-	$requires 	= get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
-	$released	= get_post_meta( get_the_ID(), '_affwp_addon_release_date', true );
+	$version 				= get_post_meta( get_the_ID(), '_edd_sl_version', true );
+	$requires 				= get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
+	$released				= get_post_meta( get_the_ID(), '_affwp_addon_release_date', true );
+	$edd_version_required 	= get_post_meta( get_the_ID(), '_affwp_addon_edd_version_required', true );
+	$external_download_url 	= get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
+
+	
 
 	?>
 	<aside class="add-on-info<?php echo ' ' . $position; ?>">
@@ -255,9 +259,19 @@ function affwp_add_on_info( $position = '' ) {
 			<p><span>Requires AffiliateWP</span><br />v<?php echo esc_attr( $requires ); ?></p>
 		<?php endif; ?>
 
-		<?php if ( $released ) : ?>
-			<p><span>Released:</span><br /><?php echo esc_attr( $released ); ?></p>
+		<?php if ( $edd_version_required ) : ?>
+			<p><span>Requires<br /><a title="Easy Digital Downloads" target="_blank" href="http://easydigitaldownloads.com">Easy Digital Downloads</a></span><br />v<?php echo esc_attr( $edd_version_required ); ?></p>
 		<?php endif; ?>
+
+		<?php if ( $released ) : ?>
+			<p><span>Released</span><br /><?php echo esc_attr( $released ); ?></p>
+		<?php endif; ?>
+
+
+		<?php if ( $external_download_url ) : ?>
+			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
+		<?php endif; ?>
+
 
 		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 

@@ -971,8 +971,7 @@ ul.menu li:hover > ul {
   max-width: none;
 }
 .page.account-logged-in #content > .wrapper,
-.page.pricing #content > .wrapper,
-.addons #content > .wrapper {
+.page.pricing #content > .wrapper {
   max-width: 980px;
 }
 .single.single-download #content > .wrapper {

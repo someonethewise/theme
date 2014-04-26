@@ -32,6 +32,14 @@ function affwp_addon_meta_box( $post_id ) {
 		</label>
 	</p>
 
+	<p><strong><?php _e( 'Release Date', 'affwp' ); ?></strong></p>
+	<p>
+		<label for="affwp_addon_release_date" class="screen-reader-text">
+			<?php _e( 'Release Date', 'affwp' ); ?>
+		</label>
+		<input class="widefat" type="text" name="affwp_addon_release_date" id="affwp_addon_release_date" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_release_date', true ) ); ?>" size="30" />
+	</p>
+
 	<p><strong><?php _e( 'AffiliateWP Version Required', 'affwp' ); ?></strong></p>
 	<p>
 		<label for="affwp_addon_requires" class="screen-reader-text">
@@ -40,12 +48,20 @@ function affwp_addon_meta_box( $post_id ) {
 		<input class="widefat" type="text" name="affwp_addon_requires" id="affwp_addon_requires" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_requires', true ) ); ?>" size="30" />
 	</p>
 
-	<p><strong><?php _e( 'Release Date', 'affwp' ); ?></strong></p>
+	<p><strong><?php _e( 'EDD Version Required', 'affwp' ); ?></strong></p>
 	<p>
-		<label for="affwp_addon_release_date" class="screen-reader-text">
-			<?php _e( 'Release Date', 'affwp' ); ?>
+		<label for="affwp-addon-requires-edd" class="screen-reader-text">
+			<?php _e( 'Requires', 'affwp' ); ?>
 		</label>
-		<input class="widefat" type="text" name="affwp_addon_release_date" id="affwp_addon_release_date" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_release_date', true ) ); ?>" size="30" />
+		<input class="widefat" type="text" name="affwp_addon_edd_version_required" id="affwp-addon-requires-edd" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_edd_version_required', true ) ); ?>" size="30" />
+	</p>
+
+	<p><strong><?php _e( 'External Download URL', 'affwp' ); ?></strong></p>
+	<p>
+		<label for="affwp-addon-download-url" class="screen-reader-text">
+			<?php _e( 'External Download URL', 'affwp' ); ?>
+		</label>	
+		<input class="widefat" type="text" name="affwp_addon_download_url" id="affwp-addon-download-url" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_download_url', true ) ); ?>" size="30" />
 	</p>
 
 	<?php wp_nonce_field( 'affwp_addon_metaboxes', 'affwp_addon_metaboxes' ); ?>
@@ -89,12 +105,18 @@ function affwp_addon_save_post( $post_id ) {
 			'affwp_addon_coming_soon',
 			'affwp_addon_release_date',
 			'affwp_addon_requires',
+			'affwp_addon_edd_version_required',
+			'affwp_addon_download_url'
 		)
 	);
 	
 	foreach ( $fields as $field ) {
 
 		$new = ( isset( $_POST[ $field ] ) ? esc_attr( $_POST[ $field ] ) : '' );
+
+		// http
+		if ( $field == 'affwp_addon_download_url' )
+			$new = esc_url_raw( $_POST[ $field ] );
 
 		$new = apply_filters( 'affwp_addon_save_' . $field, $new );
 
