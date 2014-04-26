@@ -140,7 +140,7 @@ function affwp_home_how_it_works() {
 
 			<div class="item">
 				<i class="icon-translation-ready"></i>
-				<h3>Fully localized/Translation Ready</h3>	
+				<h3>Fully Internationalized</h3>	
 				<p>AffiliateWP is ready to be translated into your language. As always, translations are welcome!</p>
 			</div>
 
