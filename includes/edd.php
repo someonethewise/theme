@@ -272,28 +272,31 @@ function affwp_add_on_info( $position = '' ) {
 			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
 		<?php endif; ?>
 
+		<?php if ( ! has_term( 'free', 'download_category' ) ) : ?>
+				<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 
-		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
-
-			<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
-				<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
-			<?php endif; ?>
-		<?php
-			// if the user is logged and has purchased a lower license, show a link to upgrade their license 
-			elseif ( is_user_logged_in() && 
-				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 )  ||
-				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) )
-		: ?>
-			
-			<a title="License Upgrade Required" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>" class="button">License Upgrade Required</a>
-			<p>This add-on will become immediately available to you after you <a title="Upgrade Your License" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>">upgrade your license</a>.</p>
-		<?php else : // user is logged in and has not purchased, or is logged out. Direct link to purchase dev license 
-			$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
-		?>
-			
-			<a title="Buy Developer License" class="button" href="<?php echo $purchase_url; ?>">Buy Developer License</a>
-			<p>This add-on is only available to <a title="Developer License" href="<?php echo site_url( 'pricing' ); ?>">Developer License</a> holders</p>
+					<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
+						<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
+					<?php endif; ?>
+				<?php
+					// if the user is logged and has purchased a lower license, show a link to upgrade their license 
+					elseif ( is_user_logged_in() && 
+						edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 )  ||
+						edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) )
+				: ?>
+					
+					<a title="License Upgrade Required" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>" class="button">License Upgrade Required</a>
+					<p>This add-on will become immediately available to you after you <a title="Upgrade Your License" href="<?php echo affwp_get_dev_license_upgrade_url(); ?>">upgrade your license</a>.</p>
+				<?php else : // user is logged in and has not purchased, or is logged out. Direct link to purchase dev license 
+					$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
+				?>
+					
+					<a title="Buy Developer License" class="button" href="<?php echo $purchase_url; ?>">Buy Developer License</a>
+					<p>This add-on is only available to <a title="Developer License" href="<?php echo site_url( 'pricing' ); ?>">Developer License</a> holders</p>
+				<?php endif; ?>
 		<?php endif; ?>
+		
+		
 
 	</aside>
 	<?php
