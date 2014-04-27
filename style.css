@@ -2286,12 +2286,20 @@ img.aligncenter {
   font-size: 0;
   border-bottom: 2px solid #f7f7f7;
   padding-bottom: 1rem;
+  line-height: 1.62;
 }
 .columns.nav-links .item {
   margin-bottom: 0;
 }
 .columns.nav-links a {
+  display: inline-block;
   position: relative;
+}
+.columns.nav-links a span {
+  display: inline-block;
+}
+.columns.nav-links a i {
+  vertical-align: middle;
 }
 .columns.nav-links a span,
 .columns.nav-links a i {
@@ -2311,7 +2319,7 @@ img.aligncenter {
   color: #787878;
   vertical-align: middle;
   position: absolute;
-  top: 0;
+  top: 3px;
   opacity: 0;
 }
 .columns.nav-links .nav-previous a:hover span {

@@ -117,16 +117,25 @@ img.aligncenter {
 	font-size: 0;
 	border-bottom: 2px solid @light-grey;
 	padding-bottom: 1rem;
+	line-height: 1.62;
 
 	.item {
 		margin-bottom: 0;
 	}
 
 	a {
-		// display: inline-block;
+		display: inline-block;
 		// vertical-align: top;
 
 		position: relative;
+
+		span {
+			display: inline-block;
+		}
+
+		i {
+			vertical-align: middle;
+		}
 
 		span, i {
 			 .transition ( all 0.2s linear );
@@ -152,7 +161,7 @@ img.aligncenter {
 		vertical-align: middle;
 		position: absolute;
 		
-		top: 0;
+		top: 3px;
 		.opacity(0);
 	}
 
