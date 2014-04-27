@@ -2211,6 +2211,19 @@ td {
   margin-bottom: 0;
   font-size: 1rem;
 }
+.wp-caption {
+  max-width: 100%;
+  margin-bottom: 2rem;
+  color: #767676;
+  text-align: center;
+}
+.wp-caption-text {
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+}
+.wp-caption img[class*="wp-image-"] {
+  border: 1px solid #f7f7f7;
+}
 section.section.blog {
   background: #f7f7f7;
 }
