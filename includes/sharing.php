@@ -48,7 +48,7 @@ function affwp_share_box() {
 			$linkedin_counter = 'top';
 		?>
 		<div class="share linkedin">
-		<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+		<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
 		<script type="IN/Share" data-counter="<?php echo $linkedin_counter; ?>" data-onSuccess="share" data-url="<?php echo $share_url; ?>"></script>
 		</div>
 
