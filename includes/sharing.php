@@ -6,7 +6,8 @@
 function affwp_share_box() {
 	global $edd_options;
 	
-	$twitter_default_text = 'Introducing AffiliateWP, an affiliate marketing for WordPress you\'ll love';
+	// Introducing AffiliateWP, an affiliate marketing for WordPress you'll love http://affiliatewp.dev
+	$twitter_default_text = 'I just purchased @affwp, the best affiliate marketing plugin for WordPress!';
 
 	// URL to share
 	$share_url = get_home_url();
@@ -29,7 +30,7 @@ function affwp_share_box() {
 		</div>
 
 		<?php
-			$data_share = 'false';
+			$data_share = 'true';
 			$facebook_button_layout = 'box_count';
 		?>
 		
@@ -66,8 +67,9 @@ function affwp_share_box() {
  * @since 2.0
 */
 function affwp_social_scripts() {
+	$success_page = edd_get_option( 'success_page' ) ? is_page( edd_get_option( 'success_page' ) ) : false;
 
-	if ( ! is_front_page() )
+	if ( ! $success_page )
 		return;
 	
 	?>
