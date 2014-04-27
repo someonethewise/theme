@@ -4,15 +4,12 @@
  * Main share box that is displayed on the page
  */
 function affwp_share_box() {
-	global $edd_options;
 	
-	// Introducing AffiliateWP, an affiliate marketing for WordPress you'll love http://affiliatewp.dev
-	$twitter_default_text = 'I just purchased @affwp, the best affiliate marketing plugin for WordPress!';
+	$twitter_default_text = 'I just purchased AffiliateWP, the best affiliate marketing plugin for WordPress! @affwp';
 
 	// URL to share
 	$share_url = get_home_url();
 
-	//echo $share_url;
 	ob_start();
 
 ?>
@@ -87,16 +84,6 @@ function affwp_social_scripts() {
 	  return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
 	}(document, "script", "twitter-wjs"));
 
-	twttr.ready(function (twttr) {
-	    twttr.events.bind('tweet', function (event) {
-	        jQuery.event.trigger({
-	            type: "productShared",
-	            url: event.target.baseURI
-	        });
-	    });
-	});
-
-
 	<?php 
 	/**
 	 * Google +
@@ -112,28 +99,6 @@ function affwp_social_scripts() {
 	    po.src = 'https://apis.google.com/js/plusone.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 	  })();
-
-	function plusOned(obj) {
-		console.log(obj);
-		jQuery.event.trigger({
-		    type: "productShared",
-		    url: obj.href
-		});
-	}
-
-	<?php 
-	/**
-	 * LinkedIn
-	*/
-	?>
-	function share(url) {
-		console.log(url);
-	 	jQuery.event.trigger({
-            type: "productShared",
-            url: url
-        });
-	}
-
 
 	<?php
 	/**
@@ -157,59 +122,8 @@ function affwp_social_scripts() {
 	      xfbml		: true                              
 	    });
 
-	    FB.Event.subscribe('edge.create', function(href, widget) {
-	        jQuery.event.trigger({
-	            type: "productShared",
-	            url: href
-	        });     
-	    });
 	};
 
-	jQuery(document).ready(function ($) {
-
-		jQuery(document).on( 'productShared', function(e) {
-
-		//	if( e.url == window.location.href ) {
-
-		    	var postData = {
-		            action: 'share_thanks',
-		            nonce: affwp_scripts.ajax_nonce
-		        };
-
-		    	$.ajax({
-	            type: "POST",
-	            data: postData,
-	            dataType: "json",
-	            url: affwp_scripts.ajaxurl,
-	            success: function ( share_response ) {
-
-	                if( share_response ) {
-	                	
-	                    if ( share_response.msg == 'valid' ) {
-	                       console.log('successfully shared');
-	                       console.log( share_response );
-
-	                       jQuery('.mailing-list > h2').html( share_response.success_title );
-
-	                       // add CSS class so the box can be styled
-	                       jQuery('.mailing-list').addClass('shared');
-	                    } 
-	                    else {
-	                        console.log('failed to share');
-	                        console.log( share_response );
-	                    }
-	                } 
-	                else {
-	                    console.log( share_response );
-	                }
-	            }
-	        }).fail(function (data) {
-	            console.log( data );
-	        });
-
-		//	}
-		});
-	});
 	</script>
 	<?php
 }
