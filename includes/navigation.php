@@ -21,12 +21,8 @@ add_filter( 'wp_nav_menu_items', 'affwp_wp_nav_menu_items', 10, 2 );
  * @return [type] [description]
  */
 function affwp_nav_account() { 
-
 	global $current_user;
 	get_currentuserinfo();
-
-//	$account_page_id = ( get_theme_mod( 'account_page' ) ) ? get_theme_mod( 'account_page' ) : '';
-//	$account_page_id = 45;
 
 	$account_link_text 	= 'Account';
 	$account_page 		= '/account';
@@ -103,9 +99,6 @@ function affwp_nav_buy_now() {
 	
 	$cart_items = edd_get_cart_contents();
 
-	//var_dump( $cart_items ); wp_die();
-
-	// $text = $cart_items ? 'Checkout' : 'Buy';
 	?>
 	
 	<?php if ( $cart_items ) : ?>
