@@ -248,7 +248,7 @@ function affwp_home_how_it_works() {
 	</section>
 
 		
-	<section class="section home share">
+	<section class="section home share" id="sharing-home">
 		<?php echo affwp_share_box( '', 'AffiliateWP - The best affiliate marketing plugin for WordPress' ); ?>
 	</section>
 		

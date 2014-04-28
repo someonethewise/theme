@@ -54,8 +54,7 @@ function affwp_share_box( $url = '', $twitter_text = '' ) {
 			$linkedin_counter = 'top';
 		?>
 		<div class="share linkedin">
-		<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-		<script type="IN/Share" data-counter="<?php echo $linkedin_counter; ?>" data-onSuccess="share" data-url="<?php echo $share_url; ?>"></script>
+			<script type="IN/Share" data-counter="<?php echo $linkedin_counter; ?>" data-onSuccess="share" data-url="<?php echo $share_url; ?>"></script>
 		</div>
 
 	</div>
@@ -74,12 +73,12 @@ function affwp_social_scripts() {
 
 	$success_page = edd_get_option( 'success_page' ) ? is_page( edd_get_option( 'success_page' ) ) : false;
 
-	if ( ! ( $success_page || is_front_page() ) )
+	if ( ! $success_page )
 		return;
 	
 	?>
 	<script type="text/javascript">
-		jQuery(document).ready(function() {
+		jQuery(document).ready(function($) {
 
 			<?php 
 			/**
@@ -131,6 +130,18 @@ function affwp_social_scripts() {
 			    });
 
 			};
+
+			<?php
+			/**
+			 * LinkedIn
+			*/
+			?>
+	       	if ( typeof (IN) != 'undefined' ) {
+	       	    IN.parse();
+	       	} 
+	       	else {
+	       	   $.getScript("https://platform.linkedin.com/in.js");
+	       	}
 		});	
 	</script>
 	<?php

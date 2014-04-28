@@ -45,11 +45,20 @@ function affwp_enqueue_scripts() {
 	wp_register_script( 'respondjs', get_template_directory_uri() . '/js/respond.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
 	wp_enqueue_script( 'respondjs' );
 
+	/**
+	 * Waypoints
+	 */
+	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
+	
+	if ( is_front_page() ) {
+		wp_enqueue_script( 'waypoints' );
+	}
+
 
 	/**
 	 * Fancybox
 	 */
-	wp_register_script( 'fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
+	wp_register_script( 'fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
 	wp_enqueue_script( 'fancybox' );
 
 	/**
@@ -57,8 +66,6 @@ function affwp_enqueue_scripts() {
 	 */
 	//wp_register_script( 'fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
 	//wp_enqueue_script( 'fittext' );
-
-
 
 	/**
 	 * Flexslider
@@ -169,3 +176,85 @@ function affwp_fancybox() {
 	</script>
 <?php }
 //add_action( 'wp_footer', 'affwp_fancybox', 100 );
+
+/**
+ * Home JS
+ */
+function affwp_home_js() {
+
+	if ( ! is_front_page() )
+		return;
+	?>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+
+	      $("#sharing-home").waypoint(function( direction ) {
+
+	       	// LinkedIn
+	       	if ( typeof (IN) != 'undefined' ) {
+	       	    IN.parse();
+	       	} 
+	       	else {
+	       	   $.getScript("https://platform.linkedin.com/in.js");
+	       	}
+
+	        	<?php 
+	        	/**
+	        	 * Twitter
+	        	*/
+	        	?>
+	          	window.twttr = (function (d,s,id) {
+	        	  var t, js, fjs = d.getElementsByTagName(s)[0];
+	        	  if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+	        	  js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+	        	  return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+	        	}(document, "script", "twitter-wjs"));
+
+	        	<?php 
+	        	/**
+	        	 * Google +
+	        	*/
+	        	?>
+	        	window.___gcfg = {
+	        	  lang: 'en-US',
+	        	  parsetags: 'onload'
+	        	};
+
+	        	(function() {
+	        	    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	        	    po.src = 'https://apis.google.com/js/plusone.js';
+	        	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	        	  })();
+
+	        	<?php
+	        	/**
+	        	 * Facebook
+	        	*/
+	        	?>
+	        	(function(d, s, id) {
+	        	     var js, fjs = d.getElementsByTagName(s)[0];
+	        	     if (d.getElementById(id)) {return;}
+	        	     js = d.createElement(s); js.id = id;
+	        	     js.src = "//connect.facebook.net/en_US/all.js";
+	        	     fjs.parentNode.insertBefore(js, fjs);
+	        	 }(document, 'script', 'facebook-jssdk'));
+
+	        	window.fbAsyncInit = function() {
+	        	    // init the FB JS SDK
+	        	    FB.init({
+	        	      status	: true,
+	        	      cookie	: true,                               
+	        	      xfbml		: true                              
+	        	    });
+
+	        	};
+
+	      },{
+	        offset: 'bottom-in-view'
+	      });
+
+		});
+	</script>
+<?php }
+add_action( 'wp_footer', 'affwp_home_js', 100 );
