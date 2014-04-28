@@ -49,12 +49,6 @@ function affwp_enqueue_scripts() {
 	/**
 	 * Fancybox
 	 */
-	wp_register_script( 'share', get_template_directory_uri() . '/js/share.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
-//	wp_enqueue_script( 'share' );
-
-	/**
-	 * Fancybox
-	 */
 	wp_register_script( 'fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
 	wp_enqueue_script( 'fancybox' );
 
@@ -67,9 +61,11 @@ function affwp_enqueue_scripts() {
 	/**
 	 * Share
 	 */
-	//wp_register_script( 'fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
+	wp_register_script( 'share', get_template_directory_uri() . '/js/share.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
 
-	//wp_enqueue_script( 'fittext' );
+	if ( is_front_page() )
+		wp_enqueue_script( 'share' );
+
 	/**
 	 * Flexslider
 	 */
@@ -125,31 +121,21 @@ function affwp_fittext() {
 function affwp_home_share() { 
 ?>
 <script>
- // jQuery('#share-button-top').share();
-
-	jQuery(document).ready(function() {
- 		new Share('.share-button');
-
- 	});
-  // new Share(".share-button", {
-  //   networks: {
-  //     facebook: {
-  //       before: function(element) {
-  //         this.url = element.getAttribute("data-url");
-  //         return this
-  //       },
-  //       after: function() {
-  //         console.log("User shared:", this.url);
-  //       }
-  //     }
-  //   }
-  // });
-
+  var share_button_top = new Share(".share-button", {
+    title: "Share AffiliateWP",
+    ui: {
+      flyout: "top center"
+    },
+    networks: {
+      facebook: {
+        app_id: "693716954026127",
+      }
+    }
+  });
 </script>
 
-	
 <?php }
-//add_action( 'wp_footer', 'affwp_home_share', 100 );
+add_action( 'wp_footer', 'affwp_home_share', 100 );
  
 
 /**
@@ -212,29 +198,3 @@ function affwp_fancybox() {
 	</script>
 <?php }
 //add_action( 'wp_footer', 'affwp_fancybox', 100 );
-
-/**
- * We don't use the shortcode so frontend.js never loads
- * @since  1.0
- */
-function affwp_frontend_styling() {
-
-	global $post;
-
-	if( ! is_object( $post ) ) {
-		return;
-	}
-
-	if ( is_page_template( 'page-templates/affiliates.php' ) ) {
-		wp_enqueue_script( 'affwp-frontend', AFFILIATEWP_PLUGIN_URL . 'assets/js/frontend.js', array( 'jquery' ), AFFILIATEWP_VERSION );
-		wp_localize_script( 'affwp-frontend', 'affwp_vars', array(
-			'affwp_version' => AFFILIATEWP_VERSION,
-			'permalinks'    => get_option( 'permalink_structure' ),
-			'currency_sign' => affwp_currency_filter(''),
-			'currency_pos'  => affiliate_wp()->settings->get( 'currency_position', 'before' ),
-		));
-	}
-
-}
-//add_action( 'wp_enqueue_scripts', 'affwp_frontend_styling' );
-

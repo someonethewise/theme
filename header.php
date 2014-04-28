@@ -71,7 +71,10 @@
 				<?php echo affwp_button_get_started( 'Start Your Affiliate Network' ); ?>
 			</div>		
 		<?php endif; ?>
-		<div class="share-button"></div>
+
+		<?php if ( current_user_can( 'manage_options' ) ) : ?>
+			<div class="share-button"></div>
+		<?php endif; ?>
 
 	</header><!-- #masthead -->
 

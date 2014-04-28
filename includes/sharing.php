@@ -3,12 +3,16 @@
 /**
  * Main share box that is displayed on the page
  */
-function affwp_share_box() {
+function affwp_share_box( $url = '' ) {
 	
 	$twitter_default_text = 'I just purchased AffiliateWP, the best affiliate marketing plugin for WordPress! @affwp';
 
 	// URL to share
-	$share_url = get_home_url();
+
+	if ( $url )
+		$share_url = $url;
+	else
+	$share_url = get_home_url( '', '', 'http' );
 
 	ob_start();
 
@@ -31,10 +35,11 @@ function affwp_share_box() {
 			$facebook_button_layout = 'box_count';
 		?>
 		
+		<?php /* */ ?>
 		<div class="share facebook">
 			<div class="fb-like" data-href="<?php echo $share_url; ?>" data-send="true" data-action="like" data-layout="<?php echo $facebook_button_layout; ?>" data-share="<?php echo $data_share; ?>" data-width="" data-show-faces="false"></div>
 		</div>
-
+		
 		<?php 
 			$googleplus_button_size = 'tall';
 			$google_button_annotation = 'bubble';
@@ -64,6 +69,8 @@ function affwp_share_box() {
  * @since 2.0
 */
 function affwp_social_scripts() {
+	global $post;
+
 	$success_page = edd_get_option( 'success_page' ) ? is_page( edd_get_option( 'success_page' ) ) : false;
 
 	if ( ! $success_page )
