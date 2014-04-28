@@ -180,10 +180,10 @@ function affwp_fancybox() {
 /**
  * Home JS
  */
-function affwp_home_js() {
+function affwp_social_js() {
 
-	if ( ! is_front_page() )
-		return;
+	if ( is_front_page() ) :
+	
 	?>
 
 	<script type="text/javascript">
@@ -256,5 +256,11 @@ function affwp_home_js() {
 
 		});
 	</script>
+	<?php endif; ?>
+
+	<?php if ( ! is_front_page() ) : ?>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<?php endif; ?>
+
 <?php }
-add_action( 'wp_footer', 'affwp_home_js', 100 );
+add_action( 'wp_footer', 'affwp_social_js', 100 );

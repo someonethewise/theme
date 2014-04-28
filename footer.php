@@ -51,9 +51,20 @@
 				<h3>Follow Us</h3>
 
 				<ul class="links">
-					<li><a href="http://twitter.com/pippinsplugins" title="Pippin's Plugins" target="_blank">@pippinsplugins</a></li>
-					<li><a href="http://twitter.com/sumobi_" title="Sumobi" target="_blank">@sumobi_</a></li>
-					<li><a href="http://twitter.com/affwp" title="AffiliateWP" target="_blank">@affwp</a></li>
+					
+					<li>
+						<a href="https://twitter.com/affwp" class="twitter-follow-button" data-show-count="false" data-size="large" data-lang="en">@affwp</a>
+				    </li>
+
+					<li>
+						<a href="https://twitter.com/pippinsplugins" class="twitter-follow-button" data-show-count="false" data-size="large" data-lang="en">@pippinsplugins</a>
+				    </li>
+
+			    	<li>
+			    		<a href="https://twitter.com/sumobi_" class="twitter-follow-button" data-show-count="false" data-size="large" data-lang="en">@sumobi_</a>
+			        </li>
+
+					
 				</ul>
 
 				</div>
