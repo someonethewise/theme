@@ -247,5 +247,12 @@ function affwp_home_how_it_works() {
 		</div>
 	</section>
 
+		
+	<section class="section home share">
+		<?php echo affwp_share_box( '', 'AffiliateWP - The best affiliate marketing plugin for WordPress' ); ?>
+	</section>
+		
+
+	
 <?php }
 add_action( 'affwp_content_before', 'affwp_home_how_it_works' );

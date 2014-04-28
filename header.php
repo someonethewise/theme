@@ -72,9 +72,7 @@
 			</div>		
 		<?php endif; ?>
 
-		<?php if ( current_user_can( 'manage_options' ) ) : ?>
-			<div class="share-button"></div>
-		<?php endif; ?>
+
 
 	</header><!-- #masthead -->
 

@@ -1471,6 +1471,12 @@ section.section.pre-sale-questions h4 {
     min-height: 25rem;
   }
 }
+section.section.home.share {
+  padding: 0 2rem;
+}
+section.section.home.share .sharing {
+  margin-bottom: 0;
+}
 section.section.benefits {
   text-align: justify;
   padding: 4rem 2rem;

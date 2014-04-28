@@ -58,13 +58,7 @@ function affwp_enqueue_scripts() {
 	//wp_register_script( 'fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
 	//wp_enqueue_script( 'fittext' );
 
-	/**
-	 * Share
-	 */
-	wp_register_script( 'share', get_template_directory_uri() . '/js/share.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
 
-	if ( is_front_page() )
-		wp_enqueue_script( 'share' );
 
 	/**
 	 * Flexslider
@@ -113,30 +107,7 @@ function affwp_fittext() {
 <?php }
 //add_action( 'wp_footer', 'affwp_fittext', 50 );
 
-/**
- * Share
- *
- * @since 1.0
-*/
-function affwp_home_share() { 
-?>
-<script>
-  var share_button_top = new Share(".share-button", {
-    title: "Share AffiliateWP",
-    ui: {
-      flyout: "top center"
-    },
-    networks: {
-      facebook: {
-        app_id: "693716954026127",
-      }
-    }
-  });
-</script>
 
-<?php }
-add_action( 'wp_footer', 'affwp_home_share', 100 );
- 
 
 /**
  * Fittext

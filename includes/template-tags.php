@@ -31,7 +31,7 @@ function affwp_show_sharing_buttons_after_purchase( $atts, $content = null ) {
 	if ( ! $success_page )
 		return;
 
-	$content = affwp_share_box();
+	$content = affwp_share_box( '', 'I just purchased AffiliateWP, the best affiliate marketing plugin for WordPress!' );
 
 	return $content;
 }
@@ -39,7 +39,7 @@ add_shortcode( 'affwp_share_purchase', 'affwp_show_sharing_buttons_after_purchas
 
 /**
  * Add Twitter Card meta tags
- */
+ */ 
 function affwp_twitter_card_meta() {
 	?>
 	<meta name="twitter:card" content="product">

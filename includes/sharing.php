@@ -3,16 +3,17 @@
 /**
  * Main share box that is displayed on the page
  */
-function affwp_share_box( $url = '' ) {
+function affwp_share_box( $url = '', $twitter_text = '' ) {
 	
-	$twitter_default_text = 'I just purchased AffiliateWP, the best affiliate marketing plugin for WordPress! @affwp';
+	
+	//$twitter_text = isset( $twitter_text ) ? $twitter_text : 'I just purchased AffiliateWP, the best affiliate marketing plugin for WordPress!';
 
 	// URL to share
 
 	if ( $url )
 		$share_url = $url;
 	else
-	$share_url = get_home_url( '', '', 'http' );
+		$share_url = get_home_url( '', '', 'http' );
 
 	ob_start();
 
@@ -20,12 +21,12 @@ function affwp_share_box( $url = '' ) {
 	<div class="sharing">
 
 		<?php 
-			$twitter_username = '';
+			$twitter_username = 'affwp';
 			$twitter_count_box = 'vertical';
 			$twitter_button_size = 'medium';
 		?>
 		<div class="share twitter">
-			<a href="https://twitter.com/share" data-lang="en" class="twitter-share-button" data-count="<?php echo $twitter_count_box; ?>" data-size="<?php echo $twitter_button_size; ?>" data-counturl="<?php echo $share_url; ?>" data-url="<?php echo $share_url; ?>" data-text="<?php echo $twitter_default_text; ?>" data-via="<?php echo $twitter_username; ?>" data-related="pippinsplugins, sumobi_">
+			<a href="https://twitter.com/share" data-lang="en" class="twitter-share-button" data-count="<?php echo $twitter_count_box; ?>" data-size="<?php echo $twitter_button_size; ?>" data-counturl="<?php echo $share_url; ?>" data-url="<?php echo $share_url; ?>" data-text="<?php echo $twitter_text; ?>" data-via="<?php echo $twitter_username; ?>" data-related="pippinsplugins, sumobi_">
 				Share
 			</a>
 		</div>
@@ -73,7 +74,7 @@ function affwp_social_scripts() {
 
 	$success_page = edd_get_option( 'success_page' ) ? is_page( edd_get_option( 'success_page' ) ) : false;
 
-	if ( ! $success_page )
+	if ( ! ( $success_page || is_front_page() ) )
 		return;
 	
 	?>
