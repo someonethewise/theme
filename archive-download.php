@@ -55,7 +55,12 @@ get_header(); ?>
 			    		  	
 		    		<h2><?php the_title(); ?></h2>
 		    		<div class="post-thumbnail">
-		    			<?php the_post_thumbnail(); ?>
+		    			<?php if ( current_user_can( 'manage_options' ) ) : ?>
+		    				<?php the_post_thumbnail(); ?>
+		    			<?php else : ?>
+		    				<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
+		    			<?php endif; ?>	
+		    			
 		    		</div>
 
 				<?php endif; ?>	
