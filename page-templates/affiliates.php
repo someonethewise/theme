@@ -39,9 +39,6 @@ get_header(); ?>
 				</article><!-- #post-## -->
 
 
-
-
-
 				<?php
 
 				// If comments are open or we have at least one comment, load up the comment template.
@@ -62,6 +59,3 @@ get_header(); ?>
 </div>
 <?php
 get_footer();
-
-
-
