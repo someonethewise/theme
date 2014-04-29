@@ -242,7 +242,8 @@ function affwp_add_on_info( $position = '' ) {
 
 	$version 				= get_post_meta( get_the_ID(), '_edd_sl_version', true );
 	$requires 				= get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
-	$released				= get_post_meta( get_the_ID(), '_affwp_addon_release_date', true );
+	$released 				= get_the_date();
+	$updated 				= intval ( get_post_meta( get_the_ID(), '_affwp_addon_last_updated', true ) );
 	$edd_version_required 	= get_post_meta( get_the_ID(), '_affwp_addon_edd_version_required', true );
 	$external_download_url 	= get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
 
@@ -267,7 +268,10 @@ function affwp_add_on_info( $position = '' ) {
 			<p><span>Released</span><br /><?php echo esc_attr( $released ); ?></p>
 		<?php endif; ?>
 
-
+		<?php if ( $updated ) : ?>
+		<p><span>Last Updated</span><br/><?php echo date( 'F j, Y', $updated ); ?>
+		<?php endif; ?>
+			
 		<?php if ( $external_download_url ) : ?>
 			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
 		<?php endif; ?>

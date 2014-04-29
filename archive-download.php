@@ -65,7 +65,6 @@ get_header(); ?>
 
 				<?php endif; ?>	
 
-		   	
 		       	<?php 
 			 		the_excerpt();
 			 	?>

@@ -32,14 +32,6 @@ function affwp_addon_meta_box( $post_id ) {
 		</label>
 	</p>
 
-	<p><strong><?php _e( 'Release Date', 'affwp' ); ?></strong></p>
-	<p>
-		<label for="affwp_addon_release_date" class="screen-reader-text">
-			<?php _e( 'Release Date', 'affwp' ); ?>
-		</label>
-		<input class="widefat" type="text" name="affwp_addon_release_date" id="affwp_addon_release_date" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_release_date', true ) ); ?>" size="30" />
-	</p>
-
 	<p><strong><?php _e( 'AffiliateWP Version Required', 'affwp' ); ?></strong></p>
 	<p>
 		<label for="affwp_addon_requires" class="screen-reader-text">
@@ -100,6 +92,7 @@ function affwp_addon_save_post( $post_id ) {
 		return;
 	}
 
+	
 
 	$fields = apply_filters( 'affwp_addon_metabox_fields_save', array(
 			'affwp_addon_coming_soon',
@@ -110,6 +103,17 @@ function affwp_addon_save_post( $post_id ) {
 		)
 	);
 	
+	$edd_sl_version = $_POST['edd_sl_version'];
+
+	// software licensing version number
+	if ( isset( $edd_sl_version ) ) {
+		$current = get_post_meta( $post_id, '_edd_sl_version', true );
+		
+		if ( $edd_sl_version !== $current ) {
+			update_post_meta( $post_id, '_affwp_addon_last_updated', current_time( 'timestamp' ) );
+		}
+	}
+
 	foreach ( $fields as $field ) {
 
 		$new = ( isset( $_POST[ $field ] ) ? esc_attr( $_POST[ $field ] ) : '' );
@@ -139,4 +143,4 @@ function affwp_addon_save_post( $post_id ) {
 		
 	}
 }
-add_action( 'save_post', 'affwp_addon_save_post' );
+add_action( 'save_post', 'affwp_addon_save_post', 1 );
