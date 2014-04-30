@@ -6,7 +6,14 @@ get_header(); ?>
 	
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<h2>Allow your affiliates to easily share generated referral URLs, right from the affiliate dashboard</h2>
+
+		<?php
+		$excerpt = get_the_excerpt();
+		
+		if ( $excerpt )
+			echo '<h2>' . $excerpt . '</h2>';
+		?>
+
 	</header>
 
 <section class="section columns-3 columns">

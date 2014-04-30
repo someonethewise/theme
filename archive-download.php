@@ -19,7 +19,7 @@ get_header(); ?>
 
 		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 			
-			<p>Hi developer license holder! All of the add-ons below (once finished) will be available from your <a title="Available from your account page" href="<?php echo site_url( 'account' ); ?>">account page</a>.</p>
+			<p>Hi developer license holder! You can download the finished add-ons below from your <a title="Available from your account page" href="<?php echo site_url( 'account' ); ?>">account page</a>.</p>
 		
 		<?php
 			// if the user is logged and has purchased a lower license, show a link to upgrade their license 

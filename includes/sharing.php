@@ -24,6 +24,7 @@ function affwp_share_display_repositioning() {
 	if ( is_singular( 'download' ) ) {
 		// remove default sharing buttons
 		remove_filter( 'the_content', 'sharing_display', 19 );
+		remove_filter( 'the_excerpt', 'sharing_display', 19 );
 		// add ours
 		add_action( 'affwp_single_download_right_column', 'affwp_sharing_display', 20 );
 	}
