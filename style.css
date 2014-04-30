@@ -964,6 +964,7 @@ ul.menu li:hover > ul {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
+.single.single-download #content > .wrapper,
 .tax-doc_category #content > .wrapper,
 .documentation #content > .wrapper,
 .page.testimonials #content > .wrapper,
@@ -974,8 +975,14 @@ ul.menu li:hover > ul {
 .page.pricing #content > .wrapper {
   max-width: 980px;
 }
-.single.single-download #content > .wrapper {
+.single.single-download .entry-header {
+  background: #f7f7f7;
+  margin: 0 -2rem 2rem -2rem;
+  padding: 4rem;
+}
+.single.single-download .columns-3 {
   max-width: 1220px;
+  margin: 0 auto;
 }
 .category #content > .wrapper,
 .single #content > .wrapper,
@@ -1043,6 +1050,15 @@ code {
 b,
 strong {
   font-weight: 500;
+}
+.entry-header h1 {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.entry-header h2 {
+  color: #787878;
+  margin: 0 auto;
+  font-size: 1.5rem;
 }
 section.section.docs h1,
 section.section.used-by h1,

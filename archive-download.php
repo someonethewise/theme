@@ -9,8 +9,11 @@ get_header(); ?>
 <section class="section columns columns-3 addons">
 
 	<div class="wrapper">
-		<h1>Official Developer Add-ons</h1>
-		<h2>Currently planned Add-ons. More coming soon!</h2>
+	
+	<header class="entry-header">
+		<h1 class="entry-title">Official Developer Add-ons</h1>
+		<h2>Free to <a title="Developer License Holders" href="<?php echo site_url( 'pricing' ); ?>">developer</a> license holders</h2>
+	</header>
 
 	
 
@@ -81,8 +84,11 @@ get_header(); ?>
 <section class="section columns columns-3 addons">
 
 	<div class="wrapper">
-		<h1>Official Free Add-ons</h1>
-		<h2>Free to all license holders</h2>
+		<header class="entry-header">
+			<h1 class="entry-title">Official Free Add-ons</h1>
+			<h2>Free to all license holders</h2>
+		</header>
+
 	</div>
 		
 <?php 

@@ -269,7 +269,7 @@ function affwp_add_on_info( $position = '' ) {
 		<?php endif; ?>
 
 		<?php if ( $updated ) : ?>
-		<p><span>Last Updated</span><br/><?php echo date( 'F j, Y', $updated ); ?>
+		<p><span>Last Updated</span><br/><?php echo date( 'F j, Y', $updated ); ?></p>
 		<?php endif; ?>
 			
 		<?php if ( $external_download_url ) : ?>

@@ -61,6 +61,12 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 					'taxonomy' => 'download_category',
 					'field' => 'slug',
 					'terms' => 'add-ons'
+				),
+				array(
+					'taxonomy' => 'download_category',
+					'field' => 'slug',
+					'terms' => 'free', // remove free items from this table
+					'operator' => 'NOT IN'
 				)
 			)
 	);
@@ -83,15 +89,19 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 			<?php while ( $add_ons->have_posts() ) : $add_ons->the_post(); ?>
 			
 			<?php
-				$version 	= get_post_meta( get_the_ID(), '_affwp_addon_version', true );
+
+				$version 	= get_post_meta( get_the_ID(), '_edd_sl_version', true );
 				$requires 	= get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
 			?>
 			<tr>
 				<td>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<?php if ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
-						- coming soon
+					<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					<?php else : ?>		
+					
+						<?php the_title(); ?> - coming soon
 					<?php endif; ?>
+					
 				</td>
 				<td><?php echo esc_attr( $version ); ?></td>
 				<td><?php echo esc_attr( $requires ); ?></td>
@@ -102,7 +112,13 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 							<a title="Upgrade License To Download" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade License To Download</a>
 						<?php else : ?>
 							<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
-								<a href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>">Download add-on</a>
+								
+								<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
+
+									<a href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>">Download add-on</a>
+
+								<?php endif; ?>	
+
 							<?php endif; ?>
 						<?php endif; ?>
 

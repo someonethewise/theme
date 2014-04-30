@@ -54,7 +54,6 @@ function affwp_enqueue_scripts() {
 		wp_enqueue_script( 'waypoints' );
 	}
 
-
 	/**
 	 * Fancybox
 	 */

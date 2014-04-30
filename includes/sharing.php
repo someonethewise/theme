@@ -1,6 +1,37 @@
 <?php
 
 /**
+ * Load ShareDaddy buttons
+ *
+ * @since 1.0
+*/
+function affwp_sharing_display() {
+	if ( function_exists('sharing_display') ) {
+		echo sharing_display();
+	}
+	?>
+	<script src="http://managewp.org/share.js" data-type="small" data-title="" data-url=""></script>
+	<?php
+}
+
+
+/**
+ * Load sharing icons
+ *
+ * @since 1.0
+*/
+function affwp_share_display_repositioning() {
+	if ( is_singular( 'download' ) ) {
+		// remove default sharing buttons
+		remove_filter( 'the_content', 'sharing_display', 19 );
+		// add ours
+		add_action( 'affwp_single_download_right_column', 'affwp_sharing_display', 20 );
+	}
+}
+add_action( 'template_redirect', 'affwp_share_display_repositioning' );
+
+
+/**
  * Main share box that is displayed on the page
  */
 function affwp_share_box( $url = '', $twitter_text = '' ) {
