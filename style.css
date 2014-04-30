@@ -1475,6 +1475,9 @@ section.section.pre-sale-questions h4 {
   padding: 2rem;
 }
 @media all and (min-width: 840px) {
+  .pricing-chart {
+    margin-top: 3rem;
+  }
   .pricing-chart li {
     width: 33%;
     min-height: 21rem;
