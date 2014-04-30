@@ -109,7 +109,9 @@ if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
 					<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
 
 						<?php if ( ! edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+							<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 							<a title="Upgrade License To Download" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade License To Download</a>
+							<?php endif; ?>	
 						<?php else : ?>
 							<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 								

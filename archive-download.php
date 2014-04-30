@@ -12,30 +12,29 @@ get_header(); ?>
 	
 	<header class="entry-header">
 		<h1 class="entry-title">Official Developer Add-ons</h1>
-		<h2>Free to <a title="Developer License Holders" href="<?php echo site_url( 'pricing' ); ?>">developer</a> license holders</h2>
-	</header>
-
-	
-
-		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
-			
-			<p>Hi developer license holder! You can download the finished add-ons below from your <a title="Available from your account page" href="<?php echo site_url( 'account' ); ?>">account page</a>.</p>
 		
+		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+			<h2>Download any available add-ons below from your <a title="Available from your account page" href="<?php echo site_url( 'account' ); ?>">account page</a></h2>
+
 		<?php
 			// if the user is logged and has purchased a lower license, show a link to upgrade their license 
 			elseif ( is_user_logged_in() && 
 				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 )  ||
 				edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) )
 		: ?>
-			<p>These add-ons (once finished) will become available to you when you <a title="Upgrade License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">upgrade your license</a>.</p>
+		<h2>Available once you upgrade to a <a title="Upgrade to a developer license" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">developer license</a></h2>
+
 		<?php else : // user is logged in and has not purchased, or is logged out. Direct link to purchase dev license 
-			$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
+			//$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
 		?>
+		<?php /*
 			<p>These add-ons are only available to <a title="Developer License Holders" href="<?php echo site_url( 'pricing' ); ?>">developer license</a> holders</p>
-			
+			*/ ?>
+			<h2>Free to <a title="developer license" href="<?php echo site_url( 'pricing' ); ?>">developer license</a> holders</h2>
 		<?php endif; ?>
-		
-	
+
+	</header>
+
 	</div>	
 
 	<?php while ( have_posts() ) : the_post(); 
