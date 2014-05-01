@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.2.9' );
+	define( 'AFFWP_THEME_VERSION', '1.3' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -22,12 +22,13 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'template-tags.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'post-types.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'documentation.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'home.php' );
-require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'account.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'functions.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'checkout.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'edd.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'metaboxes.php' );
+
+//require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
 
 /**
  * Set up the content width value based on the theme's design.
@@ -75,6 +76,7 @@ function affwp_setup() {
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
+	add_post_type_support( 'page', 'excerpt' );
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
@@ -191,9 +193,12 @@ function affwp_body_classes( $classes ) {
 	if ( is_page_template( 'page-templates/about.php' ) )
 		$classes[] = 'about';
 
-	if ( is_page_template( 'page-templates/slim.php' ) )
-		$classes[] = 'slim';
+	// if ( is_page_template( 'page-templates/slim.php' ) )
+	// 	$classes[] = 'slim';
 	
+	if ( is_page_template( 'page-templates/changelog.php' ) )
+		$classes[] = 'changelog';
+
 	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() )
 		$classes[] = 'checkout';
 

@@ -181,10 +181,18 @@ function affwp_button_get_started( $text = 'Get started now' ) { ?>
  * @since 1.0
 */
 function affwp_the_title() {
-	if ( edd_is_checkout() || is_page_template( 'page-templates/pricing.php' ) )
+	if ( edd_is_checkout() || is_page_template( 'page-templates/pricing.php' ) || is_page_template( 'page-templates/about.php' ) )
 		return;
 ?>
-	<?php if( ! is_front_page() && is_page() ) : ?>
+	
+	<?php if( is_page_template( 'page-templates/support.php' ) ) : ?>
+	<h1 id="rotate">
+		<div>Something not working?</div>
+		<div>Have a pre-sale question?</div>
+		<div>Want to request a feature?</div>
+	</h1>
+
+	<?php elseif( ! is_front_page() && is_page() ) : ?>
 		<h1 class="page-title"><?php the_title(); ?></h1>
 	<?php elseif( is_singular('download') ) : ?>
 		<h1 class="download-title"><?php the_title(); ?></h1>

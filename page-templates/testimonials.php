@@ -6,6 +6,18 @@
 
 get_header(); ?>
 
+<header class="entry-header">
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<h2><a href="<?php echo site_url( 'pricing'); ?>" title="Join These Happy Customers">Join these happy customers</a></h2>
+	<?php
+	$excerpt = get_the_excerpt();
+	
+	if ( $excerpt )
+		echo '<h2>' . $excerpt . '</h2>';
+	?>
+
+</header>
+
 <div id="primary" class="content-area">
 	<div class="wrapper">
 		<?php

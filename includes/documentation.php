@@ -112,8 +112,15 @@ function affwp_docs_getting_started() {
 	
 	    	<section class="section columns columns-4 docs">
 	    		<div class="wrapper">
-					<h1>Getting Started</h1>
+	    		<header class="entry-header">
+						<h1>Getting Started</h1>
 					<h2>Everything you need to get up and running, fast</h2>
+
+				</header>
+
+
+
+				
 				</div>
 
 					<div id="docs-container">
@@ -224,12 +231,10 @@ function affwp_docs_tax() {
 	<!-- <section id="docs"> -->
 	<section class="section columns columns-4 docs">	
 	<div class="wrapper">
-				<h1 class="page-title">
-					<?php printf( __( '%s', 'affwp' ), single_term_title( '', false ) ); ?>
-				</h1>
-
 				
-		        <?php
+				<header class="entry-header">
+				<h1><?php printf( __( '%s', 'affwp' ), single_term_title( '', false ) ); ?></h1>
+				 <?php
 		            $category_description = category_description();
 
 		            if ( ! empty( $category_description ) )  {
@@ -238,6 +243,9 @@ function affwp_docs_tax() {
 		           // echo apply_filters( 'category_archive_meta', '<div class="intro-meta">' . $category_description . '</div>' );
 		            }
 		        ?>
+		</header>
+				
+		       
 	</div>
 		
 		
@@ -291,8 +299,12 @@ function affwp_docs() {
 		<?php //echo affwp_docs_filters(); ?>
 
 		<div class="wrapper">
-			<h1>Everything Else</h1>
-			<h2>Other things that will be helpful to know</h2>
+			
+		<header class="entry-header">
+				<h1>Everything Else</h1>
+				<h2>Other things that will be helpful to know</h2>
+		</header>
+
 		</div>
 
 		<div id="docs-container">
@@ -420,9 +432,15 @@ function affwp_docs_singular() {
 	<section class="section columns columns-4 docs">
      
 		<div class="wrapper">
-			<h1>Related docs</h1>
-			<h2>These are rather helpful also</h2>
+			<header class="entry-header">
+						<h1>Related docs</h1>
+					<h2>These are rather helpful also</h2>
+				</header>
 		</div>
+
+
+	
+
 
 		<div id="docs-container">
 	      

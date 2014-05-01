@@ -964,29 +964,94 @@ ul.menu li:hover > ul {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-.single.single-download #content > .wrapper,
-.tax-doc_category #content > .wrapper,
-.documentation #content > .wrapper,
-.page.testimonials #content > .wrapper,
-.about.page #content > .wrapper {
-  max-width: none;
+.home .wrapper,
+.addons .wrapper,
+#footer .wrapper {
+  max-width: 1220px;
 }
-.page.account-logged-in #content > .wrapper,
+.page.account-logged-in #content {
+  text-align: center;
+}
+.page.account-logged-in #primary {
+  max-width: 980px;
+}
 .page.pricing #content > .wrapper {
   max-width: 980px;
 }
+.tax-doc_category .entry-header,
+.category .entry-header,
+.blog .entry-header,
+.single-post .entry-header,
+.single-docs .entry-header,
+.page .entry-header,
+.addons .entry-header,
 .single.single-download .entry-header {
   background: #f7f7f7;
   margin: 0 -2rem 2rem -2rem;
   padding: 4rem;
 }
+.tax-doc_category .entry-header h1,
+.category .entry-header h1,
+.blog .entry-header h1,
+.single-post .entry-header h1,
+.single-docs .entry-header h1,
+.page .entry-header h1,
+.addons .entry-header h1,
+.single.single-download .entry-header h1,
+.tax-doc_category .entry-header h2,
+.category .entry-header h2,
+.blog .entry-header h2,
+.single-post .entry-header h2,
+.single-docs .entry-header h2,
+.page .entry-header h2,
+.addons .entry-header h2,
+.single.single-download .entry-header h2 {
+  margin-bottom: 0;
+}
+.tax-doc_category .entry-header .button,
+.category .entry-header .button,
+.blog .entry-header .button,
+.single-post .entry-header .button,
+.single-docs .entry-header .button,
+.page .entry-header .button,
+.addons .entry-header .button,
+.single.single-download .entry-header .button {
+  margin-top: 2rem;
+}
 .single.single-download .columns-3 {
   max-width: 1220px;
   margin: 0 auto;
 }
-.category #content > .wrapper,
-.single #content > .wrapper,
-.page #content > .wrapper {
+.about #content,
+.page.testimonials #content {
+  text-align: center;
+}
+.about #primary,
+.page.testimonials #primary {
+  max-width: 1220px;
+}
+.account.account-logged-out #content,
+.affiliates #content,
+.single-docs #content,
+.changelog #content,
+.checkout #content,
+.single-post #content,
+.category #content,
+.page.support #content,
+.page.blog #content,
+.page-template-default #content {
+  text-align: center;
+}
+.account.account-logged-out #primary,
+.affiliates #primary,
+.single-docs #primary,
+.changelog #primary,
+.checkout #primary,
+.single-post #primary,
+.category #primary,
+.page.support #primary,
+.page.blog #primary,
+.page-template-default #primary {
   max-width: 585px;
 }
 #primary {
@@ -1060,13 +1125,11 @@ strong {
   margin: 0 auto;
   font-size: 1.5rem;
 }
-section.section.docs h1,
 section.section.used-by h1,
 section.section.featured h1,
 section.section.subscribe h1 {
   margin-bottom: 0.5rem;
 }
-section.section.docs h1 span,
 section.section.used-by h1 span,
 section.section.featured h1 span,
 section.section.subscribe h1 span {
@@ -1342,7 +1405,7 @@ p.edd_error {
   display: inline-block;
 }
 section.docs {
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 0 2rem;
 }
 .tax-doc_category #content,
 .documentation #content {
@@ -2252,6 +2315,15 @@ section.section.blog {
 section.section.blog .box {
   background: #fff;
 }
+.blog .entry-header h1 a {
+  color: #373737;
+}
+.blog .entry-header h1 a:hover {
+  color: #e44e44;
+}
+.blog h2 {
+  margin-bottom: 2rem;
+}
 article.post {
   margin-bottom: 4rem;
 }
@@ -2692,6 +2764,10 @@ section.columns {
   font-size: 1.5rem;
 }
 @media all and (min-width: 600px) {
+  .about .columns-2 .gap,
+  .about .columns-2 .item {
+    width: 46%;
+  }
   .columns-2 .gap,
   .columns-2 .item {
     width: 48%;
@@ -2750,7 +2826,6 @@ section.used-by ul:after,
 }
 .addons #content {
   background: #f7f7f7;
-  padding-top: 2rem;
 }
 .addons #content .box {
   background: #fff;
@@ -2760,6 +2835,9 @@ section.used-by ul:after,
 }
 .addons #content .wrapper {
   text-align: center;
+}
+.addons .entry-header {
+  margin-bottom: 0;
 }
 .single-download .entry-header {
   text-align: center;
@@ -3079,7 +3157,6 @@ ul {
   margin: 0 auto;
 }
 .wrapper {
-  max-width: 1220px;
   margin: 0 auto;
 }
 .sharing {

@@ -5,10 +5,16 @@
 
 get_header(); ?>
 
+<header class="entry-header">
+	<?php affwp_the_title(); ?>
+
+	<h2>
+		<?php printf( __( 'Welcome %s', 'affwp' ), $current_user->display_name ); ?>
+	</h2>
+</header>
+
 <div id="primary" class="content-area">
 	<div class="wrapper">
-
-	
 
 		<?php
 			// Start the Loop.
@@ -18,14 +24,6 @@ get_header(); ?>
 				?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php
-						// Page thumbnail and title.
-						affwp_post_thumbnail();
-
-						affwp_the_title();
-						
-						
-					?>
 
 					<?php affiliate_wp()->login->print_errors(); ?>
 					

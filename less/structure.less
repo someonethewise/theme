@@ -1,3 +1,12 @@
+// wide
+
+.home .wrapper,
+
+.addons .wrapper,
+#footer .wrapper {
+	max-width: 1220px;
+}
+
 // no max-width (full width)
 
 .single.single-download,
@@ -6,12 +15,23 @@
 .page.testimonials,
 .about.page {
 	#content > .wrapper {
-		max-width: none;
+	//	max-width: none;
+	}
+}
+
+.page.account-logged-in {
+
+	#content {
+		text-align: center;
+	}
+
+	#primary {
+		max-width: 980px;
 	}
 }
 
 // 980px
-.page.account-logged-in,
+//.page.account-logged-in,
 .page.pricing {
 
 	#content > .wrapper {
@@ -20,16 +40,35 @@
 }
 
 
+// grey headers
+.tax-doc_category,
+.category,
+.blog,
+.single-post,
+.single-docs,
+.page,
+.addons,
 .single.single-download {
-
 	.entry-header {
 		background: @light-grey;
 		margin: 0 -2rem 2rem -2rem;
 		padding: 4rem;
 
-		
+		h1, h2 {
+			margin-bottom: 0;
+		}
+
+		.button {
+			margin-top: 2rem;
+		}
 	}
 
+}
+
+
+
+
+.single.single-download {
 
 	// #content > .wrapper {
 	// 	max-width: 1220px;
@@ -42,19 +81,51 @@
 	.columns-3 {
 		max-width: 1220px;
 		margin: 0 auto;
-
 	}
+}
+
+
+// 1220
+.about,
+.page.testimonials {
+
+	#content {
+		text-align: center;
+	}
+	#primary {
+		max-width: 1220px;
+	}
+
 }
 
 // 585px
-
+.account.account-logged-out,
+.affiliates,
+.single-docs,
+.changelog,
+.checkout,
+.single-post,
 .category,
-.single,
-.page {
-	#content > .wrapper {
+.page.support,
+.page.blog,
+.page-template-default {
+
+	#content {
+		text-align: center;
+	}
+	#primary {
 		max-width: 585px;
 	}
+
 }
+
+//.single,
+// .category,
+// .page {
+// 	#content > .wrapper {
+// 		max-width: 585px;
+// 	}
+// }
 
 
 #primary {

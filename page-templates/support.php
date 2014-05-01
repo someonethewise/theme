@@ -9,6 +9,17 @@
 
 get_header(); ?>
 
+<header class="entry-header">
+	<?php affwp_the_title(); ?>
+
+	<?php
+	$excerpt = get_the_excerpt();
+	
+	if ( $excerpt )
+		echo '<h2>' . $excerpt . '</h2>';
+	?>
+</header>
+
 <div id="primary" class="content-area">
 	<div class="wrapper">
 

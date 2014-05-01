@@ -18,17 +18,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 	</p>
 <?php } ?>
 
-	<?php
-/**
- * Login message
- */
-if ( isset( $_GET['login'] ) && $_GET['login'] == 'success' ) { ?>
-	
-	<p class="alert success">
-		<?php printf( __( 'Welcome %s', 'affwp' ), $current_user->display_name ); ?>
-	</p>
 
-<?php } ?>
 
 	<?php 
 	// user is not logged in

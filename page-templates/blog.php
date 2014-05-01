@@ -7,6 +7,58 @@ get_header();
 
 ?>
 
+<header class="entry-header">
+
+<?php
+	/**
+	 * Displays the most recent post
+	 */
+	$args = array(
+		'posts_per_page' => 1,
+	);
+
+	$temp = $wp_query; // assign original query to temp variable for later use  
+	$wp_query = null;
+	$wp_query = new WP_Query( $args ); 
+
+	if ( have_posts() ) : ?>
+		
+		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+			
+			<?php
+				global $more;
+				$more = 0;
+			?>
+			<?php affwp_post_thumbnail(); ?>
+			<?php affwp_posted_on(); ?>
+			<h1>
+            	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        	</h1>
+        	
+        	<?php 
+		 		$excerpt = get_the_excerpt();
+		 		//echo '<h2>' . $excerpt . '</h2>';
+
+		 		if ( $excerpt )
+					echo '<h2>' . $excerpt . '</h2>';
+			?>	
+
+			<a href="<?php the_permalink(); ?>" class="button large">Read now</a>
+			
+		<?php endwhile; ?>
+
+	<?php endif; 
+
+	$wp_query = $temp; //reset back to original query 
+?>
+
+
+
+
+	
+
+</header>
+
 <section id="primary">
 	<div class="wrapper">
 
@@ -22,7 +74,8 @@ get_header();
 			 * Displays the most recent post
 			 */
 			$args = array(
-				'posts_per_page' => -1,
+				'posts_per_page' => 5,
+				'offset'		=> 1
 			);
 
 			$temp = $wp_query; // assign original query to temp variable for later use  

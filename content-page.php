@@ -8,7 +8,7 @@
 	<?php
 		// Page thumbnail and title.
 		affwp_post_thumbnail();
-		affwp_the_title();
+	//	affwp_the_title();
 	?>
 
 	<div class="entry-content">

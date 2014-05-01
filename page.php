@@ -12,6 +12,19 @@
 
 get_header(); ?>
 
+<header class="entry-header">
+	<?php affwp_the_title(); ?>
+
+	<?php
+	$excerpt = $post->post_excerpt;
+	
+	//var_dump( $post );
+
+	if ( $excerpt )
+		echo '<h2>' . $excerpt . '</h2>';
+	?>
+</header>
+
 <div id="primary" class="content-area">
 	
 		<?php

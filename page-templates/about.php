@@ -5,6 +5,17 @@
 
 get_header(); ?>
 
+<header class="entry-header">
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<?php
+	$excerpt = get_the_excerpt();
+	
+	if ( $excerpt )
+		echo '<h2>' . $excerpt . '</h2>';
+	?>
+
+</header>
+
 <div id="primary" class="content-area">
 	<div class="wrapper">
 
@@ -22,7 +33,7 @@ get_header(); ?>
 		<section class="section columns columns-2 about">
 		<div class="wrapper">
 			
-			<div class="item box">
+			<div class="item">
 
 				<h1>Pippin Williamson</h1>
 				<img alt="Pippin Williamson" src="<?php echo get_stylesheet_directory_uri() . '/images/about-pippin.png'; ?>">
@@ -37,7 +48,7 @@ get_header(); ?>
 			</div>
 
 		
-			<div class="item box">
+			<div class="item">
 
 				<h1>Andrew Munro</h1>
 				<img alt="Andrew Munro" src="<?php echo get_stylesheet_directory_uri() . '/images/about-andrew.png'; ?>">

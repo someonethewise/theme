@@ -7,7 +7,27 @@
  * @since Twenty Fourteen 1.0
  */
 
-get_header(); ?>
+get_header(); 
+
+global $current_user;
+get_currentuserinfo();
+?>
+
+<header class="entry-header">
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+	<h2>
+		<?php if ( is_user_logged_in() ) : ?>
+			<?php printf( __( 'Welcome %s', 'affwp' ), $current_user->display_name ); ?>
+		<?php else : ?>
+			<?php _e( 'Come on in!', 'affwp' ); ?>
+		<?php endif; ?>
+
+		
+	</h2>
+
+
+</header>
 
 <div id="primary" class="content-area">
 	<div class="wrapper">

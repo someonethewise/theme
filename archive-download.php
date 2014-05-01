@@ -6,11 +6,8 @@
 get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
-<section class="section columns columns-3 addons">
 
-	<div class="wrapper">
-	
-	<header class="entry-header">
+		<header class="entry-header">
 		<h1 class="entry-title">Official Developer Add-ons</h1>
 		
 		<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
@@ -34,6 +31,12 @@ get_header(); ?>
 		<?php endif; ?>
 
 	</header>
+
+
+<section class="section columns columns-3 addons">
+
+	<div class="wrapper">
+	
 
 	</div>	
 
