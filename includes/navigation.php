@@ -17,6 +17,21 @@ function affwp_wp_nav_menu_items( $items, $args ) {
 add_filter( 'wp_nav_menu_items', 'affwp_wp_nav_menu_items', 10, 2 );
 
 /**
+ * Highlight add-ons menu item if on single download page
+ */
+function affwp_highlight_menu_item( $classes ) {
+
+	if ( is_singular( 'download' ) ) {
+	    if ( in_array ( 'add-ons', $classes ) ) {
+	      $classes[] = 'current-menu-item';
+	    }
+	} 
+
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'affwp_highlight_menu_item' );
+
+/**
  * Append account to main navigation
  * @return [type] [description]
  */

@@ -197,9 +197,6 @@ function affwp_body_classes( $classes ) {
 	if ( has_shortcode( $post->post_content, 'purchase_history' ) )
 		$classes[] = 'purchase-history';
 
-	// if ( is_page_template( 'page-templates/slim.php' ) )
-	// 	$classes[] = 'slim';
-	
 	if ( is_page_template( 'page-templates/changelog.php' ) )
 		$classes[] = 'changelog';
 

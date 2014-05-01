@@ -2841,33 +2841,34 @@ section.used-by ul:after,
 .addons .entry-header {
   margin-bottom: 0;
 }
-.single-download .entry-header {
+.single.single-download .entry-header {
   text-align: center;
+  margin-bottom: 3rem;
 }
-.single-download .item .post-thumbnail {
+.single.single-download .item .post-thumbnail {
   margin: 0 0 2rem 0;
 }
-.single-download .columns-3 .item.left {
+.single.single-download .columns-3 .item.left {
   display: none;
 }
-.single-download .columns-3 .item {
+.single.single-download .columns-3 .item {
   width: 100%;
   max-width: 585px;
   display: block;
   margin: 0 auto;
 }
-.single-download .columns-3 .item.primary {
+.single.single-download .columns-3 .item.primary {
   margin-bottom: 2rem;
 }
-.single-download .add-on-info p {
+.single.single-download .add-on-info p {
   margin-bottom: 1rem;
 }
-.single-download .add-on-info span {
+.single.single-download .add-on-info span {
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 500;
 }
-.single-download .add-on-info .button {
+.single.single-download .add-on-info .button {
   margin: 1rem 0;
 }
 @media only screen and (min-width: 1024px) {
