@@ -397,7 +397,7 @@ add_action( 'affwp_content_after', 'affwp_docs' );
  * Documentation posts
  */
 function affwp_docs_singular() {
-	if ( ! is_singular( 'docs' )  )
+	if ( ! is_singular( 'docs' ) )
 		return;
 
 	global $post;
@@ -405,6 +405,9 @@ function affwp_docs_singular() {
   	$taxonomy = 'doc_category';
   	$terms = get_the_terms( get_the_ID(), $taxonomy );
 
+  	if ( ! $terms )
+  		return;
+  	
   	$terms = wp_list_pluck( $terms, 'term_id' );
   	$terms = array_values( $terms );
 

@@ -206,6 +206,37 @@ function affwp_the_title() {
 
 <?php }	
 
+/**
+ * Show shortcode without shortcode activating
+ */
+function affwp_show_shortcode( $atts, $content = '' ) {
+	return $content;
+}
+add_shortcode( 'show_shortcode', 'affwp_show_shortcode' );
+
+
+// /**
+//  * Filter the page titles
+//  *
+//  * @since 1.0
+// */
+// function affwp_wl_the_title( $title, $id = '' ) {
+
+// 	// prevent the title from changing
+// 	if ( edd_wl_is_private_list() )
+// 		return $title;
+
+// 	// View page - replace the main page title with the name of the list
+// 	if ( edd_wl_is_view_page() && get_query_var( 'view' ) && in_the_loop() && $id == get_the_ID() ) {
+// 		$title = get_the_title( get_query_var( 'view' ) );
+// 	}	
+
+//     return $title;
+// }
+// add_filter( 'the_title', 'affwp_wl_the_title', 10, 2 );
+
+
+
 if ( ! function_exists( 'affwp_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
