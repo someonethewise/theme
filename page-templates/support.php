@@ -13,7 +13,7 @@ get_header(); ?>
 	<?php affwp_the_title(); ?>
 
 	<?php
-	$excerpt = get_the_excerpt();
+	$excerpt = $post->post_excerpt;
 	
 	if ( $excerpt )
 		echo '<h2>' . $excerpt . '</h2>';

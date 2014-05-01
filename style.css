@@ -969,9 +969,11 @@ ul.menu li:hover > ul {
 #footer .wrapper {
   max-width: 1220px;
 }
+.page.purchase-history #content,
 .page.account-logged-in #content {
   text-align: center;
 }
+.page.purchase-history #primary,
 .page.account-logged-in #primary {
   max-width: 980px;
 }

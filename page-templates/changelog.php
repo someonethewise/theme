@@ -6,6 +6,17 @@
 
 get_header(); ?>
 
+<header class="entry-header">
+	<?php affwp_the_title(); ?>
+
+	<?php
+	$excerpt = $post->post_excerpt;
+	
+	if ( $excerpt )
+		echo '<h2>' . $excerpt . '</h2>';
+	?>
+</header>
+
 <div id="primary" class="content-area">
 	<div class="wrapper">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -13,7 +24,7 @@ get_header(); ?>
 				// Page thumbnail and title.
 				affwp_post_thumbnail();
 
-				affwp_the_title();
+			//	affwp_the_title();
 			?>
 
 			<div class="entry-content">

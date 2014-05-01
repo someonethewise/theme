@@ -193,6 +193,10 @@ function affwp_body_classes( $classes ) {
 	if ( is_page_template( 'page-templates/about.php' ) )
 		$classes[] = 'about';
 
+
+	if ( has_shortcode( $post->post_content, 'purchase_history' ) )
+		$classes[] = 'purchase-history';
+
 	// if ( is_page_template( 'page-templates/slim.php' ) )
 	// 	$classes[] = 'slim';
 	

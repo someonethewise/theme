@@ -181,7 +181,7 @@ function affwp_button_get_started( $text = 'Get started now' ) { ?>
  * @since 1.0
 */
 function affwp_the_title() {
-	if ( edd_is_checkout() || is_page_template( 'page-templates/pricing.php' ) || is_page_template( 'page-templates/about.php' ) )
+	if ( edd_is_checkout() || is_page_template( 'page-templates/pricing.php' ) )
 		return;
 ?>
 	
