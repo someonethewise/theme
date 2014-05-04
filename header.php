@@ -41,7 +41,7 @@
 				<a class="logo" title="<?php echo get_bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">AffiliateWP</a>
 			</h1>
 
-			<?php if ( ! edd_is_checkout() ) : ?>
+			<?php if ( function_exists( 'edd_is_checkout' ) && ! edd_is_checkout() ) : ?>
 			<nav id="main" class="site-navigation primary-navigation" role="navigation">
 			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'affwp' ); ?></a>
 			<?php

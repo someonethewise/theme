@@ -1055,6 +1055,7 @@ ul.menu li:hover > ul {
 .page.blog #primary,
 .page-template-default #primary {
   max-width: 585px;
+  margin: 0 auto;
 }
 #primary {
   margin-bottom: 0;
@@ -1177,10 +1178,15 @@ ol {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #e44e44;
-  font-size: 4rem;
-  position: absolute;
-  left: -6rem;
-  top: -2rem;
+  font-size: 2rem;
+}
+@media only screen and (min-width: 1024px) {
+  #edd_secure_site_wrapper span.padlock:before {
+    font-size: 4rem;
+    position: absolute;
+    left: -6rem;
+    top: -2rem;
+  }
 }
 .edd_price_options li label {
   padding: 0.5rem 0;

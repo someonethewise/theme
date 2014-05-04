@@ -15,12 +15,6 @@ function affwp_enqueue_scripts() {
 		wp_enqueue_script( 'affwp-js', get_stylesheet_directory_uri() . '/js/affwp.js',  array( 'jquery' ), AFFWP_THEME_VERSION, true );
 	}
 
-	wp_localize_script( 'affwp-js', 'affwp_scripts', array(
-			'ajaxurl'                 => edd_get_ajax_url(),
-			'ajax_nonce'              => wp_create_nonce( 'affwp_ajax_nonce' )
-		)
-	);
-
 	/**
 	 * Mixitup
 	 */

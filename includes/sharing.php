@@ -103,7 +103,7 @@ function affwp_share_box( $url = '', $twitter_text = '' ) {
 function affwp_social_scripts() {
 	global $post;
 
-	$success_page = edd_get_option( 'success_page' ) ? is_page( edd_get_option( 'success_page' ) ) : false;
+	$success_page =  function_exists( 'edd_get_option' ) && edd_get_option( 'success_page' ) ? is_page( edd_get_option( 'success_page' ) ) : false;
 
 	if ( ! $success_page )
 		return;
