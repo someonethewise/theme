@@ -211,7 +211,6 @@ samp {
 button,
 input,
 optgroup,
-select,
 textarea {
   color: inherit;
   /* 1 */
@@ -1247,6 +1246,7 @@ p.edd_error {
 }
 #edd_checkout_cart {
   border: 1px solid #efefef;
+  width: 100%;
 }
 #edd_checkout_cart .edd_cart_header_row th {
   background: #f7f7f7;
