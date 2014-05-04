@@ -1163,6 +1163,9 @@ ol {
   line-height: 1.62;
   font-weight: 300;
 }
+.purchase-confirmation .sharing {
+  margin-top: 3rem;
+}
 #edd_secure_site_wrapper {
   position: relative;
   margin-bottom: 1rem;
@@ -3172,9 +3175,6 @@ ul {
 }
 .wrapper {
   margin: 0 auto;
-}
-.sharing {
-  margin-bottom: 2rem;
 }
 .sharing .share {
   display: inline-block;

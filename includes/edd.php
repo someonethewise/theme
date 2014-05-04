@@ -16,7 +16,86 @@ function affwp_edd_default_downloads_name( $defaults ) {
 
 	return $defaults;
 }
-add_filter( 'edd_default_downloads_name', 'affwp_edd_default_downloads_name');
+add_filter( 'edd_default_downloads_name', 'affwp_edd_default_downloads_name' );
+
+/**
+ * Get's the customer's first name from purchase session
+ * @return [type] [description]
+ */
+function affwp_edd_purchase_get_first_name() {
+	// get purchase session
+	$purchase_session = edd_get_purchase_session();
+
+	// get the key
+	$purchase_key = $purchase_session['purchase_key'];
+
+	// get the payment ID from the purchase key
+	$payment_id = edd_get_purchase_id_by_key( $purchase_key );
+
+	$user_info = edd_get_payment_meta_user_info( $payment_id );
+	$first_name = $user_info['first_name'];
+
+	return $first_name;
+}
+
+/**
+ * Thank the customer for purchasing
+ */
+function affwp_edd_thank_customer() {
+	if ( function_exists( 'edd_is_success_page' ) && ! edd_is_success_page() )
+		return;
+
+	if ( edd_get_purchase_session() ) {
+		$message = '<h2>' . affwp_edd_purchase_get_first_name() . ', thanks for your purchase!</h2>';
+	}
+	// no purchase session
+	else {
+		$message = '<h2>Thanks for your purchase!</h2>';
+	}
+	
+	if ( $message )
+		return $message;
+
+	return null;
+}
+
+/**
+ * Modify the sub heading on the success page
+ */
+function affwp_edd_modify_excerpt( $sub_header ) {
+	if ( function_exists( 'edd_is_success_page' ) && ! edd_is_success_page() )
+		return $sub_header;
+
+	$sub_header = affwp_edd_thank_customer();
+
+	return $sub_header;
+}
+add_filter( 'affwp_excerpt', 'affwp_edd_modify_excerpt' );
+
+/**
+ * Add social sharing to purchase confirmation header
+ */
+function affwp_edd_purchase_confirmation_sharing() {
+	if ( function_exists( 'edd_is_success_page' ) && ! edd_is_success_page() )
+		return;
+	
+	echo affwp_share_box( '', 'I just purchased AffiliateWP, the best affiliate marketing plugin for WordPress!' );
+}
+add_action( 'affwp_page_header_end', 'affwp_edd_purchase_confirmation_sharing' );
+
+
+/**
+ * Add message above sharing boxes on purchase confirmation page
+ */
+function affwp_edd_purchase_confirmation_message() {
+	if ( function_exists( 'edd_is_success_page' ) && ! edd_is_success_page() )
+		return;
+	?>
+	<p>Now tell the world you have the best affiliate marketing plugin for WordPress!</p>
+	<?php
+}
+add_action( 'affwp_share_box_start', 'affwp_edd_purchase_confirmation_message' );
+
 
 /**
  * Processes the license upgrade

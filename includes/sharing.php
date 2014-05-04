@@ -51,6 +51,7 @@ function affwp_share_box( $url = '', $twitter_text = '' ) {
 
 ?>
 	<div class="sharing">
+	<?php do_action( 'affwp_share_box_start' ); ?>
 
 		<?php 
 			$twitter_username = 'affwp';

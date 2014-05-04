@@ -5,16 +5,7 @@
 
 get_header(); ?>
 
-<header class="entry-header">
-	<?php affwp_the_title(); ?>
-	<?php
-	$excerpt = $post->post_excerpt;
-	
-	if ( $excerpt )
-		echo '<h2>' . $excerpt . '</h2>';
-	?>
-
-</header>
+<?php affwp_page_header(); ?>
 
 <div id="primary" class="content-area">
 	<div class="wrapper">

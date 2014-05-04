@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.3.2' );
+	define( 'AFFWP_THEME_VERSION', '1.3.3' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -202,6 +202,9 @@ function affwp_body_classes( $classes ) {
 
 	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() )
 		$classes[] = 'checkout';
+
+	if ( function_exists( 'edd_is_success_page' ) && edd_is_success_page() )
+		$classes[] = 'purchase-confirmation';
 
 	if ( is_page_template( 'page-templates/account.php' ) ) {
 		$classes[] = 'account';

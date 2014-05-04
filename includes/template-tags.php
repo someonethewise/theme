@@ -214,13 +214,36 @@ function affwp_show_shortcode( $atts, $content = '' ) {
 }
 add_shortcode( 'show_shortcode', 'affwp_show_shortcode' );
 
+/**
+ * Page header
+ */
+function affwp_page_header() {
+	global $post;
+	?>
+
+	<header class="entry-header">
+		<?php affwp_the_title(); ?>
+
+		<?php
+			$excerpt = $post->post_excerpt;
+
+			$sub_header = $excerpt ? '<h2>' . $excerpt . '</h2>' : '';
+			echo apply_filters( 'affwp_excerpt', $sub_header );
+		?>
+
+		<?php do_action( 'affwp_page_header_end' ); ?>
+
+	</header>
+<?php }
+
+
 
 /**
  * Filter the page titles
  *
  * @since 1.0
 */
-function affwp_wl_show_the_title( $title, $id ) {
+function affwp_show_the_title( $title, $id ) {
 
 	if ( 'page-templates/about.php' == get_post_meta( $id, '_wp_page_template', true ) ) {
 		$title = __( 'Who we are', 'affwp' );
@@ -228,7 +251,7 @@ function affwp_wl_show_the_title( $title, $id ) {
 
     return $title;
 }
-add_filter( 'the_title', 'affwp_wl_show_the_title', 10, 2 );
+add_filter( 'the_title', 'affwp_show_the_title', 10, 2 );
 
 
 
