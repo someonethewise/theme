@@ -16,6 +16,12 @@ get_header(); ?>
 		echo '<h2>' . $excerpt . '</h2>';
 	?>
 
+
+	<a class="twitter-timeline" href="https://twitter.com/affwp/timelines/458773013576417280" data-widget-id="458774486909595648" data-border-color="#F7F7F7">Word on the street</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
 </header>
 
 <div id="primary" class="content-area">
@@ -33,19 +39,23 @@ get_header(); ?>
 		<section class="section columns-2 columns testimonials">
 			<div class="wrapper">
 
+					<div class="item">
+						 <blockquote>
+				          <p>AffiliateWP is hands-down the easiest affiliate system I have ever seen or worked with. With just a few clicks I had it installed and configured to my specific needs. The only thing easier than actually using this plugin was the decision to buy it. How can you say 'no' to something that was built by two of the most respected developers in the community and has a 100% refund policy?</p>
+				          <footer>Brian, WPSessions</footer>
+				        </blockquote>
+					</div>
+
+					<div class="item">
+						 <blockquote>
+				          <p>AffiliateWP is an exceptional plugin. It's easy to use, well-written, and just plain works.</p>
+				          <footer>Matt Gibbs, FacetWP</footer>
+				        </blockquote>
+					</div>	
+
 				
 
-				<div class="item">
-					<blockquote>
-			          <p>Honestly, I'm super picky about what plugins I'll run on my sites. I've wanted to set up an affiliate program for a while, but all of the plugins I tried were buggy, overloaded with options, and difficult to use. When I heard Pippin was going to build one, I couldn't wait to try it. </p><p>Now that I've used it, I can honestly say that he's completely outdone himself. AffiliateWP is by far the most well-coded and easiest-to-use affiliate management plugin ever made for WordPress. There's no crazy setup or clunky dashboard to deal with.</p> <p>Everything works exactly like it should; just like core WordPress features. You literally install AffiliateWP, pick an option or two, and within a few minutes you've got a fully-functioning affiliate program. It doesn't get much better than that.</p>
-			          <footer>Audit WP</footer>
-			        </blockquote>
-				</div>
-
-				<div class="item">
-					<a class="twitter-timeline" href="https://twitter.com/affwp/timelines/458773013576417280" data-widget-id="458774486909595648">Testimonials</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</div>
+				
 				
 			</div>
 
@@ -81,21 +91,25 @@ get_header(); ?>
 				          <footer>James Laws, Ninja Forms</footer>
 				        </blockquote>
 					</div>
-					<div class="item">
-						 <blockquote>
-				          <p>AffiliateWP is hands-down the easiest affiliate system I have ever seen or worked with. With just a few clicks I had it installed and configured to my specific needs. The only thing easier than actually using this plugin was the decision to buy it. How can you say 'no' to something that was built by two of the most respected developers in the community and has a 100% refund policy?</p>
-				          <footer>Brian, WPSessions</footer>
-				        </blockquote>
-					</div>
-
-					<div class="item">
-						 <blockquote>
-				          <p>AffiliateWP is an exceptional plugin. It's easy to use, well-written, and just plain works.</p>
-				          <footer>Matt Gibbs, FacetWP</footer>
-				        </blockquote>
-					</div>
-
 					
+						<div class="item">
+							<blockquote>
+					          <p>Honestly, I'm super picky about what plugins I'll run on my sites. I've wanted to set up an affiliate program for a while, but all of the plugins I tried were buggy, overloaded with options, and difficult to use. When I heard Pippin was going to build one, I couldn't wait to try it. </p><p>Now that I've used it, I can honestly say that he's completely outdone himself. AffiliateWP is by far the most well-coded and easiest-to-use affiliate management plugin ever made for WordPress. There's no crazy setup or clunky dashboard to deal with.</p> <p>Everything works exactly like it should; just like core WordPress features. You literally install AffiliateWP, pick an option or two, and within a few minutes you've got a fully-functioning affiliate program. It doesn't get much better than that.</p>
+					          <footer>Audit WP</footer>
+					        </blockquote>
+						</div>
+					
+						<div class="item">
+							 <blockquote>
+					          <p>Wow! You guys have done it again! I never cease to be impressed by the quality and ingenuity that comes from this team. AffiliateWP is feature packed right out the door and ridiculously easy to set up and use. So easy in fact, that after about a 5 minute install and configuration I had to scratch my head and say 'wait, what? That can't be it can it?'. Amazing. Simply Amazing.</p>
+
+					          <p>What this plugin does for WordPress far surpasses any affiliate solution that I have found. Everything that I've used up to this point has been over polluted and unnecessarily complicated, but AffiliateWP is simple, clean, easy to use and here's the best part, it just works. No bull, no smoke and mirrors, out of the box it works, beautifully.</p>
+
+					          <p>On top of all that, it is supported by an industry changing team that is beyond comparison. Never will you find a group of developers more committed to excellence and future development than these guys. Truly a great plugin and an amazing resource. Thank you!</p>
+					          <footer>Janna Gilleland</footer>
+					        </blockquote>
+						</div>
+
 
 					<div class="gap"></div>
 					<div class="gap"></div>

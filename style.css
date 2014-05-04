@@ -1019,6 +1019,12 @@ ul.menu li:hover > ul {
 .single.single-download .entry-header .button {
   margin-top: 2rem;
 }
+.page.testimonials .entry-header {
+  padding-bottom: 0;
+}
+.page.testimonials .entry-header h2 {
+  margin-bottom: 3rem;
+}
 .single.single-download .columns-3 {
   max-width: 1220px;
   margin: 0 auto;
@@ -1703,7 +1709,6 @@ section.columns.testimonials .wrapper {
   text-align: justify;
 }
 section.columns.testimonials blockquote {
-  background: #f7f7f7;
   padding: 2rem;
   margin: 0;
 }
