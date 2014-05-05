@@ -85,12 +85,17 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 			?>
 			<tr>
 				<td>
-					<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					<?php else : ?>		
-					
+					<?php if ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
 						<?php the_title(); ?> - coming soon
+					<?php elseif ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) || current_user_can( 'manage_options' ) ) : ?>	
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					
+					<?php else : ?>	
+						<?php the_title(); ?>
 					<?php endif; ?>
+
+
+
 					
 				</td>
 				<td><?php echo esc_attr( $version ); ?></td>
