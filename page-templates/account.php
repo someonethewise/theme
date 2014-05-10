@@ -29,7 +29,7 @@ get_currentuserinfo();
 
 </header>
 
-<div id="primary" class="content-area">
+<div class="primary content-area">
 	<div class="wrapper">
 		<?php
 			// Start the Loop.

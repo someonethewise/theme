@@ -22,12 +22,15 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-	<h2 class="comments-title">
-		<?php
-			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'twentyfourteen' ),
-				number_format_i18n( get_comments_number() ), get_the_title() );
-		?>
-	</h2>
+	<header class="entry-header">
+		<h1 class="entry-title">
+			<?php
+				printf( _n( 'One thought so far', '%1$s thoughts so far', get_comments_number(), 'affwp' ),
+					number_format_i18n( get_comments_number() ), get_the_title() );
+			?>
+		</h1>
+		<h2><a title="Have your day" href="#leave-a-reply">Have your say</a></h2>
+	</header>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
@@ -38,14 +41,8 @@ if ( post_password_required() ) {
 	<?php endif; // Check for comment navigation. ?>
 
 	<ol class="comment-list">
-		<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-				'avatar_size'=> 64,
-			) );
-		?>
-	</ol><!-- .comment-list -->
+		<?php wp_list_comments( array( 'callback' => 'affwp_comment' ) ); ?>
+	</ol>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
@@ -61,6 +58,17 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
+	<header id="leave-a-reply" class="entry-header">
+		<h1 class="entry-title">Leave a reply</h1>
+		<h2>Join the discussion</h2>
+	</header>
 
-</div><!-- #comments -->
+	<section class="section columns-3 columns">
+		<div class="item left"></div>
+		<div class="primary item content-area">
+			<?php comment_form(); ?>
+		</div>
+		<div class="item right"></div>
+	</section>
+
+</div>

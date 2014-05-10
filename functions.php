@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.3.4' );
+	define( 'AFFWP_THEME_VERSION', '1.3.5' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -24,11 +24,13 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'documentation.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'home.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'account.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'functions.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'comment.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'checkout.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'edd.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'metaboxes.php' );
 
-//require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
+
 
 /**
  * Set up the content width value based on the theme's design.
@@ -194,7 +196,7 @@ function affwp_body_classes( $classes ) {
 		$classes[] = 'about';
 
 
-	if ( has_shortcode( $post->post_content, 'purchase_history' ) )
+	if ( is_user_logged_in() && has_shortcode( $post->post_content, 'purchase_history' ) )
 		$classes[] = 'purchase-history';
 
 	if ( is_page_template( 'page-templates/changelog.php' ) )

@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<div class="primary content-area">
 
 <?php /*
     <header class="page-header">

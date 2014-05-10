@@ -9,40 +9,39 @@
 
 get_header(); ?>
 
-	<header class="entry-header">
+<?php affwp_page_header(); ?>
+
+<section class="section columns-3 columns">
+	<div class="item left bdr">
+		<p>
+		<span>Created</span>
+		<?php if ( 'post' == get_post_type() ) : ?>
+			<?php printf( '<time datetime="%1$s">%2$s</time>',
+				esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date() )
+			); ?>
+		<?php endif; ?>
+		</p>
+
+		<?php the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
 		
-		<div class="entry-meta">
-			<?php
-				if ( 'post' == get_post_type() )
-					affwp_posted_on();
+		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && affwp_categorized_blog() ) : ?>
+			<p><span>Categories</span>
+			<?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'affwp' ) ); ?>
+			</p>
+		<?php endif; ?>
 
-				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
-			?>
+		<p>
+			<span>Comments</span>
 			
-			<?php
-				endif;
-
-				//edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
-			?>
-
-		</div><!-- .entry-meta -->
-		<?php
-
-			affwp_the_title();
+			<?php comments_popup_link( __( 'Leave a comment', 'affwp' ), __( '1', 'affwp' ), __( '%', 'affwp' ) ); ?>
 			
-			// if ( is_single() ) :
-			// 	the_title( '<h1 class="entry-title">', '</h1>' );
-			// else :
-			// 	the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-			// endif;
-		?>
+		</p>
 
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyfourteen' ), __( '1 Comment', 'twentyfourteen' ), __( '% Comments', 'twentyfourteen' ) ); ?></span>
+	</div>
 
-		
-	</header><!-- .entry-header -->
-	
-	<div id="primary" class="content-area">
+
+	<div class="primary item content-area">
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
@@ -55,20 +54,41 @@ get_header(); ?>
 					get_template_part( 'content', get_post_format() );
 
 					// Previous/next post navigation.
-				//	affwp_post_nav();
-					affwp_single_post_nav();
+				//	affwp_single_post_nav();
 					?>
 
 
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
+					// if ( comments_open() || get_comments_number() ) {
+					// 	comments_template();
+					// }
 				endwhile;
 			?>
-	</div><!-- #primary -->
+	</div>
+
+	<div class="item right bdr">
+		<?php /*
+		<a title="Blog" class="back" href="<?php echo site_url( 'blog' ); ?>">Back to blog</a>
+		*/ ?>
+	
+		<?php do_action( 'affwp_single_right_column' ); ?>
+	</div>
+		
+	</section>
+
+<?php do_action( 'affwp_single_content_after' ); ?>
+
+<?php while ( have_posts() ) : the_post(); ?>
+
+	<?php if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	} ?>
+
+<?php endwhile; ?>
+
+
 
 <?php
 get_sidebar();

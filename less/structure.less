@@ -1,23 +1,23 @@
 // wide
 
 .home .wrapper,
-
 .addons .wrapper,
 #footer .wrapper {
 	max-width: 1220px;
 }
 
-// no max-width (full width)
 
-.single.single-download,
-.tax-doc_category,
-.documentation,
-.page.testimonials,
-.about.page {
-	#content > .wrapper {
-	//	max-width: none;
+// .single.single-post,
+// .single.single-download {
+
+.single {
+	.columns-3 {
+		max-width: 1220px;
+		margin: 0 auto;
 	}
 }
+
+
 
 .page.purchase-history,
 .page.account-logged-in {
@@ -26,7 +26,7 @@
 		text-align: center;
 	}
 
-	#primary {
+	.primary {
 		max-width: 980px;
 	}
 }
@@ -40,62 +40,6 @@
 	}
 }
 
-
-// grey headers
-.tax-doc_category,
-.category,
-.blog,
-.single-post,
-.single-docs,
-.page,
-.addons,
-.single.single-download {
-	.entry-header {
-		background: @light-grey;
-		margin: 0 -2rem 2rem -2rem;
-		padding: 4rem;
-
-		h1, h2 {
-			margin-bottom: 0;
-		}
-
-		.button {
-			margin-top: 2rem;
-		}
-	}
-
-}
-
-.page.testimonials { 
-	
-
-	 .entry-header {
-	 	padding-bottom: 0;
-
-	 	h2 {
-	 		margin-bottom: 3rem;
-	 	}
-	 }
-}
-
-
-.single.single-download {
-
-	// #content > .wrapper {
-	// 	max-width: 1220px;
-	// }
-	#content {
-		// padding-left: 0;
-		// padding-right: 0;
-	}
-
-	.columns-3 {
-		max-width: 1220px;
-		margin: 0 auto;
-	}
-}
-
-
 // 1220
 .about,
 .page.testimonials {
@@ -103,7 +47,7 @@
 	#content {
 		text-align: center;
 	}
-	#primary {
+	.primary {
 		max-width: 1220px;
 	}
 
@@ -124,28 +68,19 @@
 	#content {
 		text-align: center;
 	}
-	#primary {
+	.primary {
 		max-width: 585px;
 		margin: 0 auto;
 	}
 
 }
 
-//.single,
-// .category,
-// .page {
-// 	#content > .wrapper {
-// 		max-width: 585px;
-// 	}
-// }
-
-
-#primary {
+.primary {
     margin-bottom: 0;
     width: 100%;
 }
 
-#primary,
+.primary,
 #secondary {
   text-align: left;
 }
@@ -165,72 +100,17 @@
 }
 
 
-
-.about,
-.account {
-	#primary {
-		width: 100%;
-	}
-}
-
- // nested columns
-  .about .columns.about {
-    padding: 0;
-  }
-
-// .affiliates,
-// .account {
-// 	#primary {
-// 		width: 100%;
-// 	}
-
-// 	#content > .wrapper {
-// 		max-width: 720px;
-// 	}
-
-// }
-
-// // skinny pages
-
-
-// .category-affiliatewp,
-// .slim,
-// .blog,
-// .checkout,
-// .account-logged-out,
-// {
-
-
-// 	#content > .wrapper {
-// 		max-width: 585px;
-// 	}
-
-// }
-
 .error404 {
 	.wrapper {
 		text-align: center;
 	}
 }
 
-
-
-
 @media only screen and ( min-width: 1024px ) {
-	
-	#primary,
+	.primary,
 	#secondary {
 	  display: inline-block;
 	  vertical-align: top;
 	  text-align: left;
 	}
-
-	#primary {
-	//    width: 64.8%;
-	}
-
-	#secondary {
-	//    width: 29.5%;
-	}
-
 }

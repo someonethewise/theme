@@ -21,6 +21,17 @@ add_filter( 'excerpt_length', 'affwp_excerpt_length' );
 remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
 
 /**
+ * Filter comment form
+ */
+function affwp_comment_form_defaults( $defaults ) {
+	$defaults['title_reply'] 	= '';
+	$defaults['label_submit']	= 'Go for it';
+
+	return $defaults;
+}
+add_filter( 'comment_form_defaults', 'affwp_comment_form_defaults', 1 );
+
+/**
  * Share purchase shortcode
  */
 function affwp_show_sharing_buttons_after_purchase( $atts, $content = null ) {
@@ -179,6 +190,7 @@ function affwp_button_get_started( $text = 'Get started now' ) { ?>
 /**		
  * Render the_title
  * @since 1.0
+ * Add filter similar to subheader to make modify title easier
 */
 function affwp_the_title() {
 	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() || is_page_template( 'page-templates/pricing.php' ) )
@@ -217,8 +229,9 @@ add_shortcode( 'show_shortcode', 'affwp_show_shortcode' );
 /**
  * Page header
  */
-function affwp_page_header() {
+function affwp_page_header( $args = array() ) {
 	global $post;
+
 	?>
 
 	<header class="entry-header">
@@ -227,7 +240,14 @@ function affwp_page_header() {
 		<?php
 			$excerpt = $post->post_excerpt;
 
-			$sub_header = $excerpt ? '<h2>' . $excerpt . '</h2>' : '';
+			if ( isset( $args['subheader'] ) ) {
+				$sub_header = '<h2>' . $args['subheader'] . '</h2>';
+			}
+			else {
+				$sub_header = $excerpt ? '<h2>' . $excerpt . '</h2>' : '';
+			}
+			
+
 			echo apply_filters( 'affwp_excerpt', $sub_header );
 		?>
 
@@ -236,7 +256,33 @@ function affwp_page_header() {
 	</header>
 <?php }
 
+/**
+ * Add twitter custom timeline to testimonials page
+ */
+function affwp_testimonials_twitter_feed() {
+	if ( ! is_page_template( 'page-templates/testimonials.php' ) )
+		return;
+	?>
 
+	<a class="twitter-timeline" href="https://twitter.com/affwp/timelines/458773013576417280" data-widget-id="458774486909595648" data-border-color="#F7F7F7">Word on the street</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+	<?php
+}
+add_action( 'affwp_page_header_end', 'affwp_testimonials_twitter_feed' );
+
+/**
+ * Modify the sub heading on the testimonials page
+ */
+function affwp_testimonials_sub_header( $sub_header ) {
+	if ( ! is_page_template( 'page-templates/testimonials.php' ) )
+		return $sub_header;
+
+	$sub_header = '<h2><a href="' . site_url( 'pricing' ) .'" title="Join these happy customers">Join these happy customers</a></h2>';
+
+	return $sub_header;
+}
+add_filter( 'affwp_excerpt', 'affwp_testimonials_sub_header' );
 
 /**
  * Filter the page titles
@@ -417,6 +463,11 @@ function affwp_posted_on() {
 	// 	esc_html( get_the_date() ),
 	// 	esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 	// 	get_the_author()
+	// );
+
+	// printf( '<div class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></div>',
+	// 	esc_attr( get_the_date( 'c' ) ),
+	// 	esc_html( get_the_date() )
 	// );
 
 	printf( '<div class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></div>',

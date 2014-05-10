@@ -13,7 +13,7 @@ get_header(); ?>
 	</h2>
 </header>
 
-<div id="primary" class="content-area">
+<div class="primary content-area">
 	<div class="wrapper">
 
 		<?php

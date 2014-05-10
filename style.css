@@ -968,73 +968,27 @@ ul.menu li:hover > ul {
 #footer .wrapper {
   max-width: 1220px;
 }
+.single .columns-3 {
+  max-width: 1220px;
+  margin: 0 auto;
+}
 .page.purchase-history #content,
 .page.account-logged-in #content {
   text-align: center;
 }
-.page.purchase-history #primary,
-.page.account-logged-in #primary {
+.page.purchase-history .primary,
+.page.account-logged-in .primary {
   max-width: 980px;
 }
 .page.pricing #content > .wrapper {
   max-width: 980px;
 }
-.tax-doc_category .entry-header,
-.category .entry-header,
-.blog .entry-header,
-.single-post .entry-header,
-.single-docs .entry-header,
-.page .entry-header,
-.addons .entry-header,
-.single.single-download .entry-header {
-  background: #f7f7f7;
-  margin: 0 -2rem 2rem -2rem;
-  padding: 4rem;
-}
-.tax-doc_category .entry-header h1,
-.category .entry-header h1,
-.blog .entry-header h1,
-.single-post .entry-header h1,
-.single-docs .entry-header h1,
-.page .entry-header h1,
-.addons .entry-header h1,
-.single.single-download .entry-header h1,
-.tax-doc_category .entry-header h2,
-.category .entry-header h2,
-.blog .entry-header h2,
-.single-post .entry-header h2,
-.single-docs .entry-header h2,
-.page .entry-header h2,
-.addons .entry-header h2,
-.single.single-download .entry-header h2 {
-  margin-bottom: 0;
-}
-.tax-doc_category .entry-header .button,
-.category .entry-header .button,
-.blog .entry-header .button,
-.single-post .entry-header .button,
-.single-docs .entry-header .button,
-.page .entry-header .button,
-.addons .entry-header .button,
-.single.single-download .entry-header .button {
-  margin-top: 2rem;
-}
-.page.testimonials .entry-header {
-  padding-bottom: 0;
-}
-.page.testimonials .entry-header h2 {
-  margin-bottom: 3rem;
-}
-.single.single-download .columns-3 {
-  max-width: 1220px;
-  margin: 0 auto;
-}
 .about #content,
 .page.testimonials #content {
   text-align: center;
 }
-.about #primary,
-.page.testimonials #primary {
+.about .primary,
+.page.testimonials .primary {
   max-width: 1220px;
 }
 .account.account-logged-out #content,
@@ -1049,24 +1003,24 @@ ul.menu li:hover > ul {
 .page-template-default #content {
   text-align: center;
 }
-.account.account-logged-out #primary,
-.affiliates #primary,
-.single-docs #primary,
-.changelog #primary,
-.checkout #primary,
-.single-post #primary,
-.category #primary,
-.page.support #primary,
-.page.blog #primary,
-.page-template-default #primary {
+.account.account-logged-out .primary,
+.affiliates .primary,
+.single-docs .primary,
+.changelog .primary,
+.checkout .primary,
+.single-post .primary,
+.category .primary,
+.page.support .primary,
+.page.blog .primary,
+.page-template-default .primary {
   max-width: 585px;
   margin: 0 auto;
 }
-#primary {
+.primary {
   margin-bottom: 0;
   width: 100%;
 }
-#primary,
+.primary,
 #secondary {
   text-align: left;
 }
@@ -1077,18 +1031,11 @@ ul.menu li:hover > ul {
 .full-width #content {
   text-align: center;
 }
-.about #primary,
-.account #primary {
-  width: 100%;
-}
-.about .columns.about {
-  padding: 0;
-}
 .error404 .wrapper {
   text-align: center;
 }
 @media only screen and (min-width: 1024px) {
-  #primary,
+  .primary,
   #secondary {
     display: inline-block;
     vertical-align: top;
@@ -1104,11 +1051,11 @@ h2 {
   line-height: 1.3;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 h3 {
@@ -1131,7 +1078,7 @@ strong {
 .entry-header h2 {
   color: #787878;
   margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 section.section.used-by h1,
 section.section.featured h1,
@@ -1142,9 +1089,6 @@ section.section.used-by h1 span,
 section.section.featured h1 span,
 section.section.subscribe h1 span {
   font-weight: 600;
-}
-h1.page-title {
-  margin-bottom: 3rem;
 }
 p {
   margin: 0 0 1.62rem 0;
@@ -1162,6 +1106,49 @@ ol {
   color: #787878;
   line-height: 1.62;
   font-weight: 300;
+}
+@media only screen and (min-width: 720px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .entry-header h2 {
+    font-size: 1.5rem;
+  }
+}
+.entry-header {
+  background: #f7f7f7;
+  margin: 0 -2rem 3rem -2rem;
+  padding: 4rem;
+}
+.entry-header h1,
+.entry-header h2 {
+  margin: 0 auto;
+}
+.entry-header h2 {
+  max-width: 980px;
+}
+.entry-header .button {
+  margin-top: 2rem;
+}
+.entry-header .post-thumbnail {
+  display: inline-block;
+}
+.documentation .entry-header,
+.documentation .entry-header h2 {
+  margin-bottom: 0;
+}
+.single .docs .entry-header,
+.addons .entry-header {
+  margin-bottom: 0;
+}
+.page.testimonials .entry-header {
+  padding-bottom: 0;
+}
+.page.testimonials .entry-header h2 {
+  margin-bottom: 3rem;
 }
 .purchase-confirmation .sharing {
   margin-top: 3rem;
@@ -1418,7 +1405,7 @@ p.edd_error {
   background: #e1392e;
 }
 .back {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   display: inline-block;
 }
 section.docs {
@@ -1551,7 +1538,7 @@ section.section.pre-sale-questions h4 {
 .pricing-chart li.developer h2 {
   font-size: 2.5rem;
 }
-#primary .pricing-chart li {
+.primary .pricing-chart li {
   padding: 2rem;
 }
 @media all and (min-width: 840px) {
@@ -1738,13 +1725,13 @@ section.section div.action {
 section.section.home {
   padding: 4rem 2rem;
 }
-section.section h1 {
-  text-align: center;
-}
-section.section h2 {
+section.section.home h2 {
   color: #787878;
   font-weight: 300;
   margin-bottom: 3rem;
+}
+section.section h1 {
+  text-align: center;
 }
 section.section.alt {
   background: #ed6d62;
@@ -1889,17 +1876,17 @@ section.testimonials .wrapper,
   content: " - ";
 }
 /* Tables */
-.checkout #primary table td {
+.checkout .primary table td {
   padding: 1rem;
 }
-#primary table {
+.primary table {
   font-size: 0.875rem;
   line-height: 2;
   margin-bottom: 2rem;
   width: 100%;
   border-bottom: 1px solid #f7f7f7;
 }
-#primary table td {
+.primary table td {
   padding: 0.5rem 0 0.5rem 0;
   border-top: 1px solid #f7f7f7;
 }
@@ -1960,7 +1947,7 @@ td {
   margin-bottom: 2.5%;
   position: relative;
 }
-#primary .stats li {
+.primary .stats li {
   padding: 1.5rem 1rem;
 }
 .stats div {
@@ -2318,18 +2305,22 @@ td {
   color: #767676;
   text-align: center;
 }
+.sd-title {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #787878;
+}
 .wp-caption-text {
   font-size: 0.875rem;
   margin: 0.5rem 0;
 }
+.single.single-post .related-posts .item .post-thumbnail {
+  margin: 2rem -2rem 0 -2rem;
+}
 .wp-caption img[class*="wp-image-"] {
   border: 1px solid #f7f7f7;
-}
-section.section.blog {
-  background: #f7f7f7;
-}
-section.section.blog .box {
-  background: #fff;
 }
 .blog .entry-header h1 a {
   color: #373737;
@@ -2389,9 +2380,6 @@ img.aligncenter {
   font-size: 0.875rem;
   color: #787878;
 }
-#comments {
-  margin-top: 2rem;
-}
 .columns.nav-links {
   font-size: 0;
   border-bottom: 2px solid #f7f7f7;
@@ -2450,47 +2438,70 @@ img.aligncenter {
   width: 100%;
   text-align: right;
 }
-#primary .comment-list {
+.comment-list {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
-#primary .comment-list .pingback,
-#primary .comment-list .comment {
-  padding: 1rem 0;
-  border-top: 2px solid #f7f7f7;
+.comment-list .comment {
+  padding: 2rem 0 0;
+  border-top: 5px solid #f7f7f7;
 }
-#primary .comment-list .comment-author {
+.comment-list .comment .comment {
+  border-top: none;
+  padding: 0;
+  margin: 0;
+}
+.comment-list .comment .comment .fn,
+.comment-list .comment .comment p {
+  font-size: 1rem;
+}
+.comment-list .comment.depth-2 {
   margin-bottom: 1rem;
 }
-#primary .comment-list .comment-metadata {
+.comment-list .comment.depth-2 .primary {
+  border-left: 4px solid #f7f7f7;
+  padding-left: 1rem;
+}
+.comment-list .comment.depth-2 .children {
+  margin-left: 4rem;
+}
+.comment-list .depth-3 .primary {
+  border-left: 4px solid #f7f7f7;
+  padding-left: 1rem;
+}
+.comment-list .fn {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  display: block;
+  font-weight: 300;
+}
+.comment-list .avatar-wrap {
+  text-align: right;
+}
+.comment-list .comment-author {
+  margin-bottom: 1rem;
+}
+.comment-list .comment-metadata {
   font-size: 0.875rem;
 }
-#primary .comment-list .comment-author b {
+.comment-list .comment-author b {
   font-size: 1.2rem;
   font-weight: 300;
   margin-bottom: 1rem;
 }
-#primary .comment-list .comment-reply-title {
+.comment-list .comment-reply-title {
   font-weight: 300;
 }
-#primary .comment-list p {
-  font-size: 1rem;
-}
-#primary .comment-list .comment-meta {
+.comment-list .comment-meta {
   position: relative;
   margin-bottom: 1rem;
 }
-#primary .comment-list .avatar {
-  position: absolute;
-  left: -5rem;
-  top: 0;
-}
-#primary .comment-list .says {
+.comment-list .says {
   display: none;
 }
-#primary .comment-list .children {
+.comment-list .children {
   list-style-type: none;
-  margin-top: 1rem;
 }
 /*
  * jQuery FlexSlider v2.2.0
@@ -2852,56 +2863,51 @@ section.used-by ul:after,
 .addons #content .wrapper {
   text-align: center;
 }
-.addons .entry-header {
-  margin-bottom: 0;
-}
-.single.single-download .entry-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.single.single-download .item .post-thumbnail {
-  margin: 0 0 2rem 0;
-}
-.single.single-download .columns-3 .item.left {
-  display: none;
-}
-.single.single-download .columns-3 .item {
-  width: 100%;
-  max-width: 585px;
-  display: block;
-  margin: 0 auto;
-}
-.single.single-download .columns-3 .item.primary {
-  margin-bottom: 2rem;
-}
-.single.single-download .add-on-info p {
-  margin-bottom: 1rem;
-}
-.single.single-download .add-on-info span {
+.single .item.left span,
+.single .item.right span {
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 500;
 }
-.single.single-download .add-on-info .button {
+.single .item.left .button,
+.single .item.right .button {
   margin: 1rem 0;
 }
+.single .entry-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.single .item .post-thumbnail {
+  margin: 0 0 2rem 0;
+}
+.single .item.primary {
+  margin-bottom: 2rem;
+}
 @media only screen and (min-width: 1024px) {
-  .single.single-download .columns-3 .add-on-info.right {
+  .page .columns-3 .item span,
+  .single .columns-3 .item span {
+    display: block;
+  }
+  .page .columns-3 .add-on-info.right,
+  .single .columns-3 .add-on-info.right {
     display: none;
   }
-  .single.single-download .columns-3 .item.left,
-  .single.single-download .columns-3 .item.right {
+  .page .columns-3 .item.bdr,
+  .single .columns-3 .item.bdr {
     border-top: 5px solid #e44e44;
     padding-top: 1rem;
   }
-  .single.single-download .columns-3 .item.left {
+  .page .columns-3 .item.left,
+  .single .columns-3 .item.left {
     display: inline-block;
   }
-  .single.single-download .columns-3 .item {
+  .page .columns-3 .item,
+  .single .columns-3 .item {
     width: 20%;
     display: inline-block;
   }
-  .single.single-download .columns-3 .item.primary {
+  .page .columns-3 .primary.item,
+  .single .columns-3 .primary.item {
     width: 50%;
   }
 }
@@ -3021,6 +3027,37 @@ footer#footer .links a:hover {
 .item.box p {
   margin-top: 2rem;
 }
+@media only screen and (max-width: 1023px) {
+  .sharedaddy li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  #comments .item.left {
+    display: none;
+  }
+  .single.single-download .columns-3 .item.left {
+    display: none;
+  }
+  .addons .columns-3 .item,
+  .single .columns-4 .item,
+  .single .columns-3 .item {
+    width: 100%;
+    max-width: 585px;
+    display: block;
+    margin: 0 auto 2rem auto;
+  }
+  .addons .columns-3 .item.left p,
+  .single .columns-4 .item.left p,
+  .single .columns-3 .item.left p,
+  .addons .columns-3 .item.right p,
+  .single .columns-4 .item.right p,
+  .single .columns-3 .item.right p {
+    margin-bottom: 0;
+  }
+  .single .columns-4 .item {
+    margin: 0 auto 2rem auto;
+  }
+}
 body,
 html {
   height: 100%;
@@ -3030,9 +3067,6 @@ body {
 }
 blockquote footer {
   color: #787878;
-}
-.entry-header {
-  margin-bottom: 2rem;
 }
 .entry-content {
   text-align: left;
@@ -3045,7 +3079,7 @@ blockquote footer {
 .no-js .home #masthead figure {
   display: none;
 }
-#primary li {
+.primary li {
   padding: 0.5rem 0;
 }
 a {

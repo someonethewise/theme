@@ -1,0 +1,54 @@
+// mobile only styles
+
+
+@media only screen and ( max-width: 1023px ) {
+	
+	// sharedaddy (jetpack)
+	.sharedaddy {
+		li {
+			display: inline-block;
+			margin-right: 1rem;
+		}
+	}
+
+	// hide comment avatars at small resolutions
+	#comments {
+		.item.left { display: none; }
+	}
+
+	// hide left column at mobile resolutions for add-ons
+	.single.single-download {
+
+	  .columns-3 {
+	    .item.left {
+	      display: none;
+	    }
+	  }
+
+	  .add-on-info {
+
+	  }
+	}
+
+	// related posts on single posts pages
+	// main 3 columns layout
+	.addons .columns-3 .item,
+	.single .columns-4 .item,
+	.single .columns-3 .item {
+		width: 100%;
+		max-width: 585px;
+		display: block;
+		margin: 0 auto 2rem auto;
+
+		// left and right sidebars
+		&.left, &.right { 
+			p { margin-bottom: 0; }
+		}
+	}
+
+	// related posts on single posts pages
+	.single .columns-4 .item {
+		margin: 0 auto 2rem auto;
+	}
+
+}

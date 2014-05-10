@@ -35,10 +35,6 @@ get_header(); ?>
 
 <section class="section columns columns-3 addons">
 
-	<div class="wrapper">
-	
-
-	</div>	
 
 	<?php while ( have_posts() ) : the_post(); 
 

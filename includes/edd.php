@@ -89,6 +89,7 @@ function affwp_edd_purchase_confirmation_sharing() {
 add_action( 'affwp_page_header_end', 'affwp_edd_purchase_confirmation_sharing' );
 
 
+
 /**
  * Add message above sharing boxes on purchase confirmation page
  */
@@ -337,23 +338,23 @@ function affwp_add_on_info( $position = '' ) {
 	<aside class="add-on-info<?php echo ' ' . $position; ?>">
 		
 		<?php if ( $version ) : ?>
-			<p><span>Version</span><br />v<?php echo esc_attr( $version ); ?></p>
+			<p><span>Version</span> v<?php echo esc_attr( $version ); ?></p>
 		<?php endif; ?>	
 
 		<?php if ( $requires ) : ?>
-			<p><span>Requires AffiliateWP</span><br />v<?php echo esc_attr( $requires ); ?></p>
+			<p><span>Requires AffiliateWP</span> v<?php echo esc_attr( $requires ); ?></p>
 		<?php endif; ?>
 
 		<?php if ( $edd_version_required ) : ?>
-			<p><span>Requires<br /><a title="Easy Digital Downloads" target="_blank" href="http://easydigitaldownloads.com">Easy Digital Downloads</a></span><br />v<?php echo esc_attr( $edd_version_required ); ?></p>
+			<p><span>Requires <a title="Easy Digital Downloads" target="_blank" href="http://easydigitaldownloads.com">Easy Digital Downloads</a></span> v<?php echo esc_attr( $edd_version_required ); ?></p>
 		<?php endif; ?>
 
 		<?php if ( $released ) : ?>
-			<p><span>Released</span><br /><?php echo esc_attr( $released ); ?></p>
+			<p><span>Released </span><?php echo esc_attr( $released ); ?></p>
 		<?php endif; ?>
 
 		<?php if ( $updated ) : ?>
-		<p><span>Last Updated</span><br/><?php echo date( 'F j, Y', $updated ); ?></p>
+		<p><span>Last Updated</span><?php echo date( 'F j, Y', $updated ); ?></p>
 		<?php endif; ?>
 			
 		<?php if ( $external_download_url ) : ?>

@@ -7,7 +7,7 @@
 
 ?>
 
-<div id="primary" class="content-area">
+<div class="primary content-area">
     <?php while ( have_posts() ) : the_post();
             // Include the page content template.
           //  get_template_part( 'content', 'page' );

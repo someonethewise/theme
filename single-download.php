@@ -4,24 +4,15 @@
  */
 get_header(); ?>
 	
-<header class="entry-header">
-	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-	<?php
-	$excerpt = $post->post_excerpt;
-	
-	if ( $excerpt )
-		echo '<h2>' . $excerpt . '</h2>';
-	?>
-
-</header>
+<?php affwp_page_header(); ?>
 
 <section class="section columns-3 columns">
-	<div class="item left">
+	<div class="item left bdr">
 		<?php echo affwp_add_on_info( 'left' ); ?>	
 	</div>
 	
-	<div class="item primary">
+	<div class="primary item">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -36,15 +27,14 @@ get_header(); ?>
 
 	</div>
 
-	<div class="item right">
+	<div class="item right bdr">
 		<a class="back" href="<?php echo site_url( 'addons' ); ?>">Back to add-ons</a>
 
 		<?php echo affwp_add_on_info( 'right' ); ?>
 
-		<?php do_action( 'affwp_single_download_right_column' ); ?>
+		<?php do_action( 'affwp_single_right_column' ); ?>
 	</div>
 		
-	</section>
+</section>
 <?php
-get_sidebar();
 get_footer();

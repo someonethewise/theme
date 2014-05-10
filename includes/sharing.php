@@ -10,7 +10,9 @@ function affwp_sharing_display() {
 		echo sharing_display();
 	}
 	?>
-	<script src="http://managewp.org/share.js" data-type="small" data-title="" data-url=""></script>
+	<?php
+	/* <script src="http://managewp.org/share.js" data-type="small" data-title="" data-url=""></script>
+	*/ ?>
 	<?php
 }
 
@@ -21,12 +23,12 @@ function affwp_sharing_display() {
  * @since 1.0
 */
 function affwp_share_display_repositioning() {
-	if ( is_singular( 'download' ) ) {
+	if ( is_singular() ) {
 		// remove default sharing buttons
 		remove_filter( 'the_content', 'sharing_display', 19 );
 		remove_filter( 'the_excerpt', 'sharing_display', 19 );
 		// add ours
-		add_action( 'affwp_single_download_right_column', 'affwp_sharing_display', 20 );
+		add_action( 'affwp_single_right_column', 'affwp_sharing_display', 20 );
 	}
 }
 add_action( 'template_redirect', 'affwp_share_display_repositioning' );

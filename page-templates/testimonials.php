@@ -6,25 +6,9 @@
 
 get_header(); ?>
 
-<header class="entry-header">
-	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	<h2><a href="<?php echo site_url( 'pricing'); ?>" title="Join These Happy Customers">Join these happy customers</a></h2>
-	<?php
-	$excerpt = $post->post_excerpt;
-	
-	if ( $excerpt )
-		echo '<h2>' . $excerpt . '</h2>';
-	?>
+<?php affwp_page_header(); ?>
 
-
-	<a class="twitter-timeline" href="https://twitter.com/affwp/timelines/458773013576417280" data-widget-id="458774486909595648" data-border-color="#F7F7F7">Word on the street</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-
-</header>
-
-<div id="primary" class="content-area">
+<div class="primary content-area">
 	<div class="wrapper">
 		<?php
 			// Start the Loop.

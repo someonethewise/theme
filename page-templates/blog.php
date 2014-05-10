@@ -43,8 +43,11 @@ get_header();
 					echo '<h2>' . $excerpt . '</h2>';
 			?>	
 
+			
+
 			<a href="<?php the_permalink(); ?>" class="button large">Read now</a>
 			
+
 		<?php endwhile; ?>
 
 	<?php endif; 
@@ -59,7 +62,7 @@ get_header();
 
 </header>
 
-<section id="primary">
+<section class="primary">
 	<div class="wrapper">
 
 	

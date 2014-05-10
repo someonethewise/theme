@@ -202,13 +202,6 @@ function affwp_docs_getting_started() {
 
 	    	
 <?php }
-
-
-
-
-
-
-
 add_action( 'affwp_content_after', 'affwp_docs_getting_started', 1 );
 
 

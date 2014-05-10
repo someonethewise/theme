@@ -7,13 +7,12 @@ h1, h2 {
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: 1.5rem;
 	margin-bottom: 1rem;
-//	font-weight: 400;
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 1.25rem;
 	margin-bottom: 1rem;
 }
 
@@ -41,9 +40,8 @@ b, strong {
 
 	h2 {
 		color: @body-text-color;
-	//	max-width: 48%;
 		margin: 0 auto;
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 }
 
@@ -61,9 +59,9 @@ section.section.subscribe {
 	}
 }
 
-h1.page-title {
-	margin-bottom: 3rem;
-}
+// h1.page-title {
+// 	margin-bottom: 3rem;
+// }
 
 p {
 	margin: 0 0 1.62rem 0;
@@ -83,5 +81,23 @@ p, ul, ol {
 		color: @body-text-color;
 		line-height: 1.62;
 		font-weight: 300;
+	}
+}
+
+
+@media only screen and ( min-width: 720px ) {
+	h1 {
+		font-size: 3rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	.entry-header {
+
+		h2 {
+			font-size: 1.5rem;
+		}
 	}
 }

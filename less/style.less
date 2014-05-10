@@ -8,6 +8,7 @@
 @import 'navigation';
 @import 'structure';
 @import 'typography';
+@import 'entry-header';
 @import 'edd';
 @import 'buttons';
 @import 'page-templates';
@@ -26,6 +27,7 @@
 @import 'addons';
 @import 'footer';
 @import 'box';
+@import 'mobile';
 
 
 @primary-color: #ED6D62;
@@ -40,23 +42,18 @@ body, html {
 }
 
 body {
-//	background: #ed6d62;
 	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
 }
-
 
 
 blockquote {
 	footer {
 		color: @body-text-color;
-
 	}
 }
 
 
-.entry-header {
-	margin-bottom: 2rem;
-}
+
 
 
 .entry-content {
@@ -79,7 +76,7 @@ blockquote {
 	}
 }
 
-#primary li {
+.primary li {
 	padding: 0.5rem 0;
 }
 
@@ -122,8 +119,6 @@ ul {
 #main {
 	font-size: 1rem;
 }
-
-
 
 
 

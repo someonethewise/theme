@@ -27,7 +27,7 @@ get_header(); ?>
 	?>
 </header>
 
-<div id="primary" class="content-area">
+<div class="primary content-area">
 		<?php
 			if ( have_posts() ) :
 				// Start the Loop.

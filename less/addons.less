@@ -1,6 +1,5 @@
 .addons #content {
 	background: @light-grey;
-//	padding-top: 2rem;
 	
 	.box {
 		background: #fff;
@@ -15,12 +14,41 @@
 	}
 }
 
-.addons .entry-header {
-	margin-bottom: 0;
+
+
+// .single.single-post,
+// .single.single-download
+
+
+.single {
+
+	.item.left,
+	.item.right {	
+		span {
+			text-transform: uppercase;
+			font-size: 0.875rem;
+			font-weight: 500;
+		}
+		
+		.button {
+			margin: 1rem 0;
+		}
+	}
+
+}
+
+@media only screen and ( min-width: 1024px ) {
+
 }
 
 
-.single.single-download {
+
+
+// .single.single-post,
+// .single.single-download
+
+// blog posts, add-ons, documentation
+.single {
 
 	.entry-header {
 		text-align: center;
@@ -31,104 +59,59 @@
 		margin: 0 0 2rem 0;
 	}
 
-	.columns-3 {
-		
-		.item.left {
-		//	margin-top: 4rem;
-			display: none;
-		}
-		
-		.item {
-			width: 100%;
-			max-width: 585px;
-			display: block;
-			margin: 0 auto;
-		//	background: @light-grey;
-		}
+	// .item {
+	// 	width: 100%;
+	// 	max-width: 585px;
+	// 	display: block;
+	// 	margin: 0 auto;
+	// }
 
-		.item.primary {
-			margin-bottom: 2rem;
-		//	background: red;
-		}
-
+	.item.primary {
+		margin-bottom: 2rem;
 	}
-	
-
-	.add-on-info {
-		
-
-		p { margin-bottom: 1rem; }
-
-		span {
-			text-transform: uppercase;
-			font-size: 0.875rem;
-			font-weight: 500;
-		}
-		
-		.button {
-			margin: 1rem 0;
-		}
-		
-		
-	}
-
-	
-
-	
 }
 
 
 
+// addon and single download 3 columns
 @media only screen and ( min-width: 1024px ) {
-	
-	.single.single-download {
-		
-		
+  
+  // .single.single-post,
+  // .single.single-download {
+    
+  	.page,
+  	.single {  
 
-		.columns-3 {
+	    .columns-3 {
 
+	    	.item span {
+	    		display: block;
+	    	}
+
+	    	// hides add on info box
 			.add-on-info.right {
 				display: none;
 			}
 
-			.item.left,
-			.item.right {
-				border-top: 5px solid @accent-color;
-				padding-top: 1rem;
-			}
+	      .item.bdr {
+	        border-top: 5px solid @accent-color;
+	        padding-top: 1rem;
+	      }
 
-			.item.left {
-				display: inline-block;
-			}
+	      .item.left {
+	        display: inline-block;
+	      }
 
-			.item {
-				width: 20%;
-				
-				display: inline-block;
-			}
+	      .item {
+	        width: 20%;
+	        display: inline-block;
+	      }
 
-			// main column
-			.item.primary {
-				width: 50%;
-			//	background: red;
-			}
-		}
-		
-
-		.add-on-info {
-		//	position: absolute;
-		//	left: 0;
-		//	top: 0;
-		//	background: red;
-			// float: left;
-		//	 width: 23%;
-			// margin-right: 4%;
-		}
-
-		#primary {
-			
-		//	width: 100%;
-		}
-	}
+	      // main column
+	      .primary.item {
+	        width: 50%;
+	      }
+	    }
+  }
 
 }
