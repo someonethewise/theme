@@ -991,18 +991,6 @@ ul.menu li:hover > ul {
 .page.testimonials .primary {
   max-width: 1220px;
 }
-.account.account-logged-out #content,
-.affiliates #content,
-.single-docs #content,
-.changelog #content,
-.checkout #content,
-.single-post #content,
-.category #content,
-.page.support #content,
-.page.blog #content,
-.page-template-default #content {
-  text-align: center;
-}
 .account.account-logged-out .primary,
 .affiliates .primary,
 .single-docs .primary,
@@ -1122,6 +1110,9 @@ ol {
   background: #f7f7f7;
   margin: 0 -2rem 3rem -2rem;
   padding: 4rem;
+  text-align: center;
+  -webkit-box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.025) inset;
+  box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.025) inset;
 }
 .entry-header h1,
 .entry-header h2 {
@@ -1149,6 +1140,17 @@ ol {
 }
 .page.testimonials .entry-header h2 {
   margin-bottom: 3rem;
+}
+.tax-doc_category .entry-header,
+.documentation .entry-header {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.sub-header {
+  text-align: center;
+}
+.sub-header h2 {
+  margin-bottom: 2rem;
 }
 .purchase-confirmation .sharing {
   margin-top: 3rem;
@@ -1673,12 +1675,15 @@ section.section.more-features i {
   text-align: center;
 }
 section.section.used-by {
-  padding: 2rem 2rem 0rem 2rem;
+  padding: 4rem 2rem 2rem 2rem;
 }
 section.section.used-by div div {
   text-transform: uppercase;
   margin-bottom: 1rem;
   color: #787878;
+}
+section.section.used-by h2 {
+  margin-bottom: 3rem;
 }
 section.section.used-by ul {
   margin: 0 auto;
@@ -1784,7 +1789,7 @@ section.section figure {
 .home #masthead {
   background: #ed6d62;
 }
-@media all and (min-width: 840px) {
+@media all and (min-width: 540px) {
   section.section.used-by {
     text-align: center;
   }
@@ -2316,6 +2321,14 @@ td {
   font-size: 0.875rem;
   margin: 0.5rem 0;
 }
+.related-posts {
+  background: #f7f7f7;
+  margin: 0 -2rem;
+  padding: 2rem;
+}
+.related-posts .wrapper > h2 {
+  text-align: center;
+}
 .single.single-post .related-posts .item .post-thumbnail {
   margin: 2rem -2rem 0 -2rem;
 }
@@ -2443,9 +2456,17 @@ img.aligncenter {
   padding: 0;
   margin: 0;
 }
+.comment-list .pingback {
+  border-bottom: 5px solid #f7f7f7;
+}
 .comment-list .comment {
   padding: 2rem 0 0;
+}
+.comment-list .comment ~ .comment {
   border-top: 5px solid #f7f7f7;
+}
+.comment-list li.comment:first-of-type {
+  border: none;
 }
 .comment-list .comment .comment {
   border-top: none;
@@ -2873,10 +2894,6 @@ section.used-by ul:after,
 .single .item.right .button {
   margin: 1rem 0;
 }
-.single .entry-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
 .single .item .post-thumbnail {
   margin: 0 0 2rem 0;
 }
@@ -3026,6 +3043,11 @@ footer#footer .links a:hover {
 }
 .item.box p {
   margin-top: 2rem;
+}
+@media only screen and (max-width: 499px) {
+  .entry-header {
+    margin: 0 -1rem 3rem -1rem;
+  }
 }
 @media only screen and (max-width: 1023px) {
   .sharedaddy li {
@@ -3206,6 +3228,7 @@ ul {
   position: relative;
   padding: 1rem;
   margin: 0 auto;
+  text-align: center;
 }
 .wrapper {
   margin: 0 auto;

@@ -1,25 +1,12 @@
 // the entry header used for headings and subheadings
-
-
-
-// grey headers
-// .tax-doc_category,
-// .category,
-// .blog,
-// .single-post,
-// .single-docs,
-// .single.single-download,
-// .page,
-// .addons
-//  {
-
 .entry-header {
 	background: @light-grey;
 	margin: 0 -2rem 3rem -2rem;
 	padding: 4rem;
+	text-align: center;
+	.box-shadow( 0 -30px 30px -30px rgba(0, 0, 0, 0.025) inset );
 
 	h1, h2 {
-		
 		margin: 0 auto;
 	}
 
@@ -44,19 +31,11 @@
 	}
 }
 
-// don't ned margin
+// don't need margin
 .single .docs .entry-header,
 .addons .entry-header {
 	margin-bottom: 0;
 }
-
-
-
-//}
-
-// .entry-header {
-// 	margin-bottom: 2rem;
-// }
 
 .page.testimonials { 
 	
@@ -67,4 +46,21 @@
 	 		margin-bottom: 3rem;
 	 	}
 	 }
+}
+
+// turn off box-shadow
+.tax-doc_category,
+.documentation {
+	.entry-header {
+		.box-shadow( none );
+	}
+}
+
+// sub headers
+.sub-header {
+	text-align: center;
+
+	h2 {
+		margin-bottom: 2rem;
+	}
 }

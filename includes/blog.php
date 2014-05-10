@@ -55,8 +55,8 @@ function affwp_blog() {
 	
 
 	<section class="section columns columns-4 related-posts">
-	<header class="entry-header">
-		<h1 class="entry-title">Recommended reading</h1>
+	<header class="sub-header">
+		<h2>We also recommend</h2>
 	</header>
 
 		<div class="wrapper">

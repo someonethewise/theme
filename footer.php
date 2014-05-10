@@ -21,7 +21,7 @@
 			?>
 				<div class="item">
 					<h3>Current Release</h3> 
-					<a class="button current-version" href="<?php echo site_url( 'changelog' ); ?>"><i class="icon-affwp"></i>v<?php echo $current_version; ?></a>
+					<a title="View the changelog" class="button current-version" href="<?php echo site_url( 'changelog' ); ?>"><i class="icon-affwp"></i>v<?php echo $current_version; ?></a>
 
 					<?php if ( ! is_home() ) : ?>
 					<h3>Stay up to date</h3> 

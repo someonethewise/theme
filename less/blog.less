@@ -19,8 +19,21 @@
 	margin: 0.5rem 0;
 }
 
+// related posts on single post
+.related-posts {
+	background: @light-grey;
+	margin: 0 -2rem;
+	padding: 2rem;
+	
 
+	.wrapper {
+		
 
+		> h2 {
+			text-align: center;
+		}
+	}
+}
 
 .single.single-post .related-posts .item .post-thumbnail {
 	margin: 2rem -2rem 0 -2rem;
@@ -234,21 +247,26 @@ img.aligncenter {
 	padding: 0;
 	margin: 0;
 
-	.comment {
-	//	position: relative;
-	//	min-height: 10rem;
-	}
 
 	.pingback {
-
+		border-bottom: 5px solid @light-grey;
 	}
-
 
 	.comment {
 		padding: 2rem 0 0;
-		border-top: 5px solid @light-grey;
-//		border-top: 3px solid @accent-color;
+		
 	}
+
+	.comment ~ .comment {
+	//	border: none;
+		border-top: 5px solid @light-grey;
+	}
+
+	li.comment:first-of-type {
+			border: none;
+		}
+
+	
 
 	.comment .comment {
 		border-top: none;
@@ -259,9 +277,6 @@ img.aligncenter {
 			font-size: 1rem;
 		}
 
-		p {
-
-		}
 	}
 
 	.comment.depth-2 {
@@ -270,13 +285,10 @@ img.aligncenter {
 			border-left: 4px solid @light-grey;
 			padding-left: 1rem;
 		}
-		
 
-	//	background: @light-grey;
 		margin-bottom: 1rem;
 
 		.children {
-		//	background: @light-grey;
 			margin-left: 4rem;
 		}
 	}
