@@ -192,31 +192,54 @@ function affwp_button_get_started( $text = 'Get started now' ) { ?>
  * @since 1.0
  * Add filter similar to subheader to make modify title easier
 */
-function affwp_the_title() {
-	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() || is_page_template( 'page-templates/pricing.php' ) )
-		return;
-?>
+function affwp_the_title( $header = '' ) {
+	$header = $header ? $header : get_the_title();
+	echo apply_filters( 'affwp_the_title', '<h1>' . $header . '</h1>'  );
+}	
+
+/**
+ * Filter the title for specific pages
+ */
+function affwp_the_title_filters( $title ) {
+	global $wp_query;
+
+	// search query
+	if ( get_search_query() ) {
+		if ( in_the_loop() ) {
+			$title = the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		}
+		else {
+			$title = __( '<h1>Search Results</h1>', 'affwp' );
+		}
+	}
+
+	// download category pages
+	if ( is_tax( 'download_category' ) ) {
+		if ( in_the_loop() ) {
+			$title = the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		}
+		else {
+			$title = sprintf( __( '<h1>%s</h1>', 'affwp' ), single_cat_title( '', false ) );
+		}
+
+	}
+
+	// normal category pages
+	if ( is_category() ) {
+		if ( in_the_loop() ) {
+			$title = the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		}
+		else {
+			$title = sprintf( __( '<h1>%s</h1>', 'affwp' ), single_cat_title( '', false ) );
+		}
+	}
+
+	return $title;
 	
-	<?php if( is_page_template( 'page-templates/support.php' ) ) : ?>
-	<h1 id="rotate">
-		<div>Something not working?</div>
-		<div>Have a pre-sale question?</div>
-		<div>Want to request a feature?</div>
-	</h1>
+}
+add_filter( 'affwp_the_title', 'affwp_the_title_filters' );
 
-	<?php elseif( ! is_front_page() && is_page() ) : ?>
-		<h1 class="page-title"><?php the_title(); ?></h1>
-	<?php elseif( is_singular('download') ) : ?>
-		<h1 class="download-title"><?php the_title(); ?></h1>
-	<?php elseif( is_tax( 'download_category' ) ) : ?>
-		<h1 class="page-title">
-            <?php printf( __( '%s', 'affwp' ), single_term_title( '', false ) ); ?>
-        </h1>
-	<?php else : ?>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	<?php endif; ?>
 
-<?php }	
 
 /**
  * Show shortcode without shortcode activating
@@ -229,25 +252,19 @@ add_shortcode( 'show_shortcode', 'affwp_show_shortcode' );
 /**
  * Page header
  */
-function affwp_page_header( $args = array() ) {
+function affwp_page_header( $header = '', $sub_header = '' ) {
 	global $post;
-
 	?>
-
 	<header class="entry-header">
-		<?php affwp_the_title(); ?>
+		<?php affwp_the_title( $header ); ?>
 
 		<?php
-			$excerpt = $post->post_excerpt;
 
-			if ( isset( $args['subheader'] ) ) {
-				$sub_header = '<h2>' . $args['subheader'] . '</h2>';
-			}
-			else {
+			if ( ! $sub_header ) {
+				$excerpt = isset( $post->post_excerpt ) ? $post->post_excerpt : '';
 				$sub_header = $excerpt ? '<h2>' . $excerpt . '</h2>' : '';
 			}
 			
-
 			echo apply_filters( 'affwp_excerpt', $sub_header );
 		?>
 
@@ -255,6 +272,42 @@ function affwp_page_header( $args = array() ) {
 
 	</header>
 <?php }
+
+
+/**
+ * Filter the subheadings
+ */
+function affwp_modify_excerpts( $sub_header ) {
+	global $wp_query;
+
+	// search query
+	if ( get_search_query() ) {
+		$sub_header = sprintf( __( '<h2>Your searched for <strong>%s</strong></h2>', 'affwp' ), get_search_query() );
+	}
+
+	// normal category pages
+	if ( is_category() ) {
+		$term = $wp_query->queried_object;
+		$sub_header = $term->description ? sprintf( '<h2>%s</h2>', $term->description ) : '';
+	}
+
+	if ( is_tax( 'download_category' ) ) {
+		$term = $wp_query->queried_object;
+
+		if ( $term->description ) {
+			$sub_header = sprintf( '<h2>%s</h2>', $term->description );
+		}
+	}
+
+	return $sub_header;
+}
+add_filter( 'affwp_excerpt', 'affwp_modify_excerpts' );
+
+
+
+
+
+
 
 /**
  * Add twitter custom timeline to testimonials page
@@ -270,46 +323,6 @@ function affwp_testimonials_twitter_feed() {
 	<?php
 }
 add_action( 'affwp_page_header_end', 'affwp_testimonials_twitter_feed' );
-
-/**
- * Modify the sub heading on the testimonials page
- */
-function affwp_testimonials_sub_header( $sub_header ) {
-	if ( ! is_page_template( 'page-templates/testimonials.php' ) )
-		return $sub_header;
-
-	$sub_header = '<h2><a href="' . site_url( 'pricing' ) .'" title="Join these happy customers">Join these happy customers</a></h2>';
-
-	return $sub_header;
-}
-add_filter( 'affwp_excerpt', 'affwp_testimonials_sub_header' );
-
-/**
- * Filter the page titles
- *
- * @since 1.0
-*/
-function affwp_show_the_title( $title, $id ) {
-
-	// about
-	if ( 'page-templates/about.php' == get_post_meta( $id, '_wp_page_template', true ) ) {
-		$title = __( 'Who we are', 'affwp' );
-	}
-
-	// purchase confirmation
-	if ( function_exists( 'edd_is_success_page' ) && edd_is_success_page() && $id == get_the_ID() ) {
-		if ( edd_get_purchase_session() ) {
-			$title = sprintf( __( 'Thanks %s!', 'affwp' ), affwp_edd_purchase_get_first_name() );
-		}
-		// no purchase session
-		else {
-			$title = __( 'Thanks!', 'affwp' );
-		}
-	}
-
-    return $title;
-}
-add_filter( 'the_title', 'affwp_show_the_title', 10, 2 );
 
 
 

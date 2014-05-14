@@ -15,18 +15,15 @@ get_header(); ?>
 <?php affwp_page_header(); ?>
 
 <div class="primary content-area">
-	
-		<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
+	<?php
+		// Start the Loop.
+		while ( have_posts() ) : the_post();
 
-				// Include the page content template.
-				get_template_part( 'content', 'page' );
+			// Include the page content template.
+			get_template_part( 'content', 'page' );
 
-				
-			endwhile;
-		?>
-
+		endwhile;
+	?>
 </div>
 
 <?php
@@ -36,5 +33,4 @@ get_header(); ?>
 ?>
 
 <?php
-//get_sidebar();
 get_footer();

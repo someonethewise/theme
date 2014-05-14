@@ -28,6 +28,7 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'comment.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'checkout.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'edd.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'metaboxes.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'custom-filters.php' );
 
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
 
@@ -196,7 +197,7 @@ function affwp_body_classes( $classes ) {
 		$classes[] = 'about';
 
 
-	if ( is_user_logged_in() && has_shortcode( $post->post_content, 'purchase_history' ) )
+	if ( is_user_logged_in() && isset( $post->post_content ) && has_shortcode( $post->post_content, 'purchase_history' ) )
 		$classes[] = 'purchase-history';
 
 	if ( is_page_template( 'page-templates/changelog.php' ) )

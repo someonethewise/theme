@@ -10,7 +10,15 @@ get_header(); ?>
 
 <section class="section columns-3 columns">
 	<div class="item left bdr">
-		<?php echo affwp_add_on_info( 'left' ); ?>	
+		<p>
+				<span>Published</span>
+				<?php if ( 'docs' == get_post_type() ) : ?>
+					<?php printf( '<time datetime="%1$s">%2$s</time>',
+						esc_attr( get_the_date( 'c' ) ),
+						esc_html( get_the_date() )
+					); ?>
+				<?php endif; ?>
+				</p>
 	</div>
 	
 	<div class="primary item">

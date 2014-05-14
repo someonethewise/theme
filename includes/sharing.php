@@ -1,5 +1,32 @@
 <?php
 
+
+/**
+ * Add social sharing to purchase confirmation header
+ */
+function affwp_edd_purchase_confirmation_sharing() {
+	if ( function_exists( 'edd_is_success_page' ) && ! edd_is_success_page() )
+		return;
+	
+	echo affwp_share_box( '', 'I just purchased AffiliateWP, the best affiliate marketing plugin for WordPress!' );
+}
+//add_action( 'affwp_page_header_end', 'affwp_edd_purchase_confirmation_sharing' );
+
+
+
+/**
+ * Add message above sharing boxes on purchase confirmation page
+ */
+function affwp_edd_purchase_confirmation_message() {
+	if ( function_exists( 'edd_is_success_page' ) && ! edd_is_success_page() )
+		return;
+	?>
+	<p>Now tell the world you have the best affiliate marketing plugin for WordPress</p>
+	<?php
+}
+//add_action( 'affwp_share_box_start', 'affwp_edd_purchase_confirmation_message' );
+
+
 /**
  * Load ShareDaddy buttons
  *
@@ -181,4 +208,9 @@ function affwp_social_scripts() {
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'affwp_social_scripts', 9999 );
+//add_action( 'wp_footer', 'affwp_social_scripts', 9999 );
+
+
+
+
+

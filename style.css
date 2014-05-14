@@ -482,13 +482,14 @@ label[for="affwp_tos"] {
 input,
 textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 0.95rem;
   color: #787878;
   background: #fff;
   border: 1px solid #efefef;
 }
 input {
   display: inline-block;
+  line-height: 1;
 }
 button {
   display: inline-block;
@@ -593,6 +594,21 @@ button:focus {
 .gfield_radio input[type="text"] {
   width: auto;
   margin-left: 0.5rem;
+}
+.search-form {
+  position: relative;
+}
+.search-form .search-field {
+  padding-right: 8rem;
+}
+.search-form label {
+  display: block;
+}
+.search-form .button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7rem;
 }
 @media all and (min-width: 980px) {
   .support .gform_wrapper form .ginput_complex span {
@@ -997,7 +1013,8 @@ ul.menu li:hover > ul {
 .changelog .primary,
 .checkout .primary,
 .single-post .primary,
-.category .primary,
+.search .primary,
+.archive .primary,
 .page.support .primary,
 .page.blog .primary,
 .page-template-default .primary {
@@ -1366,9 +1383,9 @@ p.edd_error {
 .edd-submit,
 .edd_submit,
 .button {
-  padding: 0.875rem 1rem;
-  font-size: 0.875rem;
-  line-height: 1.33;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 1rem;
 }
 #edd-purchase-button.large,
 .edd-add-to-cart.large,

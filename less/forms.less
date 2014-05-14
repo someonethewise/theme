@@ -53,7 +53,7 @@ label {
 input,
 textarea {
 	width: 100%;
-	padding: 1rem;
+	padding: 0.95rem;
 	color: @body-text-color;
 	background: #fff;
 	border: 1px solid darken( @light-grey, 3% );
@@ -61,7 +61,7 @@ textarea {
 
 input  {  
   display: inline-block;
-  
+  line-height: 1;
 }
 
 button {
@@ -216,7 +216,25 @@ button {
 // support form
 
 
+// search form
+.search-form {
+	position: relative;
 
+	.search-field {
+		padding-right: 8rem;
+	}
+
+	label {
+		display: block;
+	}
+
+	.button {
+		position: absolute;
+		top: 0;
+		right:0;
+		width: 7rem;
+	}
+}
 
 
 @media all and ( min-width: 980px ) {

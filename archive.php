@@ -1,31 +1,12 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme and one
- * of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query,
- * e.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- * @since AffiliateWP 1.0
+ * Archive.php
+ * controls styling for categories, tags etc
  */
 
 get_header(); ?>
 
-<header class="entry-header">
-	<?php //affwp_the_title(); ?>
-	<h1>
-		<?php printf( __( '%s', 'affwp' ), single_cat_title( '', false ) ); ?>
-	</h1>
-
-	<?php
-		$term = $wp_query->queried_object;
-		if ( $term->description ) {
-			printf( '<h2>%s</h2>', $term->description);
-		}
-	?>
-</header>
+<?php affwp_page_header(); ?>
 
 <div class="primary content-area">
 		<?php

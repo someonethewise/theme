@@ -13,11 +13,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		affwp_post_thumbnail();	
+		affwp_the_title();
 		
-		if ( is_category() ) {
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		//	affwp_the_title();
-		}
+
+		
 	?>
 
 	<?php if ( is_search() ) : ?>

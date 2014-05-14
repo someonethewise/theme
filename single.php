@@ -14,7 +14,7 @@ get_header(); ?>
 <section class="section columns-3 columns">
 	<div class="item left bdr">
 		<p>
-		<span>Created</span>
+		<span>Published</span>
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php printf( '<time datetime="%1$s">%2$s</time>',
 				esc_attr( get_the_date( 'c' ) ),
@@ -23,14 +23,13 @@ get_header(); ?>
 		<?php endif; ?>
 		</p>
 
-		<?php the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
-		
 		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && affwp_categorized_blog() ) : ?>
 			<p><span>Categories</span>
 			<?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'affwp' ) ); ?>
 			</p>
 		<?php endif; ?>
 
+		<?php the_tags( '<p><span>Tags</span> ', ', ', '</p>' ); ?>
 		<p>
 			<span>Comments</span>
 			

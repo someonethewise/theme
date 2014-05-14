@@ -1,18 +1,11 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other 'pages' on your WordPress site will use a different template.
- *
- * @package WordPress
- * @since AffiliateWP 1.0
+ * 404 page
  */
 
 get_header(); ?>
+<?php affwp_page_header( '<h1>Oops</h1>', '<h2>You\'ve made quite the mess</h2>' ); ?>
 
-<h1>Naughty, what did you do?!</h1>
 <i class="icon icon-404"></i>
 
 <?php
