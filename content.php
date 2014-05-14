@@ -13,10 +13,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		affwp_post_thumbnail();	
-		affwp_the_title();
 		
-
-		
+		if ( ! is_singular() ) {
+			affwp_the_title();
+		}
+	
 	?>
 
 	<?php if ( is_search() ) : ?>
