@@ -2918,8 +2918,10 @@ section.used-by ul:after,
   margin-bottom: 2rem;
 }
 @media only screen and (min-width: 1024px) {
-  .page .columns-3 .item span,
-  .single .columns-3 .item span {
+  .page .columns-3 .item.left span,
+  .single .columns-3 .item.left span,
+  .page .columns-3 .item.right span,
+  .single .columns-3 .item.right span {
     display: block;
   }
   .page .columns-3 .add-on-info.right,
