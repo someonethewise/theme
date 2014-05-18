@@ -1158,6 +1158,7 @@ ol {
 .page.testimonials .entry-header h2 {
   margin-bottom: 3rem;
 }
+.addons .entry-header,
 .tax-doc_category .entry-header,
 .documentation .entry-header {
   -webkit-box-shadow: none;
