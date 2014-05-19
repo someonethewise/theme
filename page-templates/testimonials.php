@@ -18,18 +18,11 @@ get_header(); ?>
 				get_template_part( 'content', 'page' );
 
 			endwhile;
-		?>
+		?>			
 
 		<section class="section columns-2 columns testimonials">
-			<div class="wrapper">
-
-					<div class="item">
-						 <blockquote>
-				          <p>AffiliateWP is hands-down the easiest affiliate system I have ever seen or worked with. With just a few clicks I had it installed and configured to my specific needs. The only thing easier than actually using this plugin was the decision to buy it. How can you say 'no' to something that was built by two of the most respected developers in the community and has a 100% refund policy?</p>
-				          <footer>Brian, WPSessions</footer>
-				        </blockquote>
-					</div>
-
+				<div class="wrapper">
+					
 					<div class="item">
 						 <blockquote>
 				          <p>AffiliateWP is an exceptional plugin. It's easy to use, well-written, and just plain works.</p>
@@ -37,17 +30,14 @@ get_header(); ?>
 				        </blockquote>
 					</div>	
 
-				
+						
+					<div class="item">
+						 <blockquote>
+				          <p>AffiliateWP has allowed us to stop worrying about our affiliate program management every month and get on with building our business.</p>
+				          <footer>Adam W. Warner, FooPlugins</footer>
+				        </blockquote>
+					</div>
 
-				
-				
-			</div>
-
-		</section>			
-
-		<section class="section columns-2 columns testimonials">
-				<div class="wrapper">
-					
 					<div class="item">
 						<blockquote>
 				          <p>Affiliates can have a huge impact on sales, but the solutions out there are clunky. I wanted something self hosted, well written, and built on WordPress’ foundation. Coming from something dated, slow, and unstable: AffiliateWP is a breath of fresh air.</p>
@@ -62,10 +52,11 @@ get_header(); ?>
 				        </blockquote>
 					</div>
 					
+					
 					<div class="item">
 						 <blockquote>
-				          <p>I needed a simple, user friendly referral system to help promote my digital products on my site. AffiliateWP provides this for me along with an easy integration with my store. No other affiliate system available is better.</p>
-				          <footer>Sebs Studio</footer>
+				          <p>AffiliateWP is hands-down the easiest affiliate system I have ever seen or worked with. With just a few clicks I had it installed and configured to my specific needs. The only thing easier than actually using this plugin was the decision to buy it. How can you say 'no' to something that was built by two of the most respected developers in the community and has a 100% refund policy?</p>
+				          <footer>Brian, WPSessions</footer>
 				        </blockquote>
 					</div>
 
@@ -94,6 +85,14 @@ get_header(); ?>
 					        </blockquote>
 						</div>
 
+						
+
+					<div class="item">
+						 <blockquote>
+				          <p>I needed a simple, user friendly referral system to help promote my digital products on my site. AffiliateWP provides this for me along with an easy integration with my store. No other affiliate system available is better.</p>
+				          <footer>Sebs Studio</footer>
+				        </blockquote>
+					</div>
 
 					<div class="gap"></div>
 					<div class="gap"></div>
