@@ -35,7 +35,7 @@ get_header(); ?>
 			<div class="count">3 sites</div>
 			<div>1 Year of Updates &amp; Support *</div>
 
-			<a title="Buy now" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=1">Buy now</a>
+			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=1">Purchase</a>
 			
 		</li>
 
@@ -48,7 +48,7 @@ get_header(); ?>
 
 			<div>1 Year of Updates &amp; Support *</div>
 
-			<a title="Buy now" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">Buy now</a>
+			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">Purchase</a>
 		</li>
 
 		<li class="personal">
@@ -57,7 +57,7 @@ get_header(); ?>
 			<div class="count">1 site</div>
 			<div>1 Year of Updates &amp; Support *</div>
 			
-			<a title="Buy now" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Buy now</a>
+			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
 		</li>
 
 	</ul>
