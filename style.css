@@ -1753,9 +1753,6 @@ section.section.home h2 {
   font-weight: 300;
   margin-bottom: 3rem;
 }
-section.section h1 {
-  text-align: center;
-}
 section.section.alt {
   background: #ed6d62;
 }
@@ -2902,6 +2899,9 @@ section.used-by ul:after,
 .addons #content .wrapper {
   text-align: center;
 }
+.single .left .avatar {
+  margin-bottom: 1rem;
+}
 .single .item.left span,
 .single .item.right span {
   text-transform: uppercase;
@@ -3111,6 +3111,10 @@ blockquote footer {
   color: #787878;
 }
 .entry-content {
+  text-align: left;
+}
+.entry-content h1,
+.entry-content h2 {
   text-align: left;
 }
 .no-js .home #masthead {

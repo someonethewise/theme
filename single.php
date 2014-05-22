@@ -13,8 +13,9 @@ get_header(); ?>
 
 <section class="section columns-3 columns">
 	<div class="item left bdr">
+		<?php echo get_avatar( get_the_author_meta('email'), '80' ); ?>
 		<p>
-		<span>Published</span>
+		<span>Written by <?php the_author(); ?></span>
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php printf( '<time datetime="%1$s">%2$s</time>',
 				esc_attr( get_the_date( 'c' ) ),
