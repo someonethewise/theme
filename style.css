@@ -984,6 +984,7 @@ ul.menu li:hover > ul {
 #footer .wrapper {
   max-width: 1220px;
 }
+.page.support .columns-3,
 .single .columns-3 {
   max-width: 1220px;
   margin: 0 auto;
@@ -999,10 +1000,6 @@ ul.menu li:hover > ul {
 .page.pricing #content > .wrapper {
   max-width: 980px;
 }
-.about #content,
-.page.testimonials #content {
-  text-align: center;
-}
 .about .primary,
 .page.testimonials .primary {
   max-width: 1220px;
@@ -1015,7 +1012,6 @@ ul.menu li:hover > ul {
 .single-post .primary,
 .search .primary,
 .archive .primary,
-.page.support .primary,
 .page.blog .primary,
 .page-template-default .primary {
   max-width: 585px;
@@ -3080,6 +3076,7 @@ footer#footer .links a:hover {
   .single.single-download .columns-3 .item.left {
     display: none;
   }
+  .page.support .columns-3 .item,
   .addons .columns-3 .item,
   .single .columns-4 .item,
   .single .columns-3 .item {
@@ -3088,9 +3085,11 @@ footer#footer .links a:hover {
     display: block;
     margin: 0 auto 2rem auto;
   }
+  .page.support .columns-3 .item.left p,
   .addons .columns-3 .item.left p,
   .single .columns-4 .item.left p,
   .single .columns-3 .item.left p,
+  .page.support .columns-3 .item.right p,
   .addons .columns-3 .item.right p,
   .single .columns-4 .item.right p,
   .single .columns-3 .item.right p {

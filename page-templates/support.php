@@ -11,9 +11,11 @@ get_header(); ?>
 
 <?php affwp_page_header(); ?>
 
-<div class="primary content-area">
-	<div class="wrapper">
+<section class="section columns-3 columns">
+	<div class="item left">
+	</div>
 
+	<div class="primary item content-area">
 		<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
@@ -27,6 +29,18 @@ get_header(); ?>
 			endwhile;
 		?>
 	</div>
-</div>
+
+	<div class="item right bdr">
+		<h2>Have you seen these?</h2>
+		<ul>
+			<li><a href="/support/documentation/">Documentation</a></li>
+			<li><a href="/docs/section/getting-started/">Getting Started</a></li>
+			<li><a href="/docs/section/integrations/">Integrations</a></li>
+			<li><a href="/docs/section/faq/">FAQ</a></li>
+		</ul>
+	</div>
+		
+	</section>
+
 <?php
 get_footer();
