@@ -19,6 +19,12 @@
 			$current_version = get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_version', true );
 
 			?>
+
+			<div class="item">
+					<a href="http://2014.nyc.wordcamp.org/sponsors/#wcorg-sponsor-104262" title="Proud Sponsor of WordCamp NYC – August 2-3, 2014"><img alt="Proud Sponsor of WordCamp NYC – August 2-3, 2014" src="http://2014.nyc.wordcamp.org/files/2014/04/wcnyc14_badge_sponsor_250.png" /></a>
+				
+				</div>
+
 				<div class="item">
 					<h3>Current Release</h3> 
 					<a title="View the changelog" class="button current-version" href="<?php echo site_url( 'changelog' ); ?>"><i class="icon-affwp"></i>v<?php echo $current_version; ?></a>
@@ -31,6 +37,8 @@
 						}
 					?>
 					<?php endif; ?>
+
+
 				</div>
 
 				<div class="item">
@@ -67,16 +75,17 @@
 					
 				</ul>
 
-				</div>
-
-				<div class="item">
 				<h3>Our Sites</h3>
 					<ul class="links">
 						<li><a href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
 						<li><a href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
 						<li><a href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
 					</ul>
+
 				</div>
+
+				
+
 
 				
 			</div>

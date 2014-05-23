@@ -27,7 +27,7 @@ get_header(); ?>
 			<div class="item">
 
 				<h1>Pippin Williamson</h1>
-				<img alt="Pippin Williamson" src="<?php echo get_stylesheet_directory_uri() . '/images/about-pippin.png'; ?>">
+				<img class="profile" alt="Pippin Williamson" src="<?php echo get_stylesheet_directory_uri() . '/images/about-pippin.png'; ?>">
 				<p>Pippin Williamson is an avid WordPress plugin developer from Hutchinson, Kansas and the lead developer for AffiliateWP. Along with AffiliateWP, Pippin is the founder of Easy Digital Downloads, a complete e-commerce plugin for selling digital products through WordPress, and Restrict Content Pro, a plugin for managing and selling memberships to premium content.</p>
 
 				<p>Beyond the world of WordPress, Pippin is a devoted father and husband. He thoroughly enjoys brewing coffee varieties from around the world, indulging in craft beers, and riding his bicycle from point A to point B whenever possible.</p>
@@ -42,7 +42,7 @@ get_header(); ?>
 			<div class="item">
 
 				<h1>Andrew Munro</h1>
-				<img alt="Andrew Munro" src="<?php echo get_stylesheet_directory_uri() . '/images/about-andrew.png'; ?>">
+				<img class="profile" alt="Andrew Munro" src="<?php echo get_stylesheet_directory_uri() . '/images/about-andrew.png'; ?>">
 				<p>Andrew Munro lives on the other side of the world in New Zealand, which is typically associated with Hobbits and occasionally left off world maps because of its size and location.
 
 <p>With a self-professed love for eCommerce, Andrew happily spends his days building plugins for EDD (Easy Digital Downloads), contributing code to EDD, or helping customers in the EDD support forums.</p>
