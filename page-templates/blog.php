@@ -37,7 +37,6 @@ get_header();
         	
         	<?php 
 		 		$excerpt = get_the_excerpt();
-		 		//echo '<h2>' . $excerpt . '</h2>';
 
 		 		if ( $excerpt )
 					echo '<h2>' . $excerpt . '</h2>';
@@ -56,10 +55,6 @@ get_header();
 ?>
 
 
-
-
-	
-
 </header>
 
 
@@ -74,7 +69,7 @@ get_header();
 			 * Displays the most recent post
 			 */
 			$args = array(
-				'posts_per_page' => 5,
+				'posts_per_page' => 10,
 				'offset'		=> 1
 			);
 
@@ -89,7 +84,7 @@ get_header();
 
 					<section class="section columns-3 columns">
 						<div class="item left bdr">
-							<?php echo get_avatar( get_the_author_meta('email'), '80' ); ?>
+							<?php echo get_avatar( get_the_author_meta( 'email' ), '80' ); ?>
 							<p>
 							<span>Written by <?php the_author(); ?></span>
 							<?php if ( 'post' == get_post_type() ) : ?>
@@ -113,7 +108,6 @@ get_header();
 							*/ ?>
 						
 						</div>
-
 
 						<div class="primary item content-area">
 								<?php
@@ -143,22 +137,12 @@ get_header();
 							
 					</section>
 
-
-
-
-
-					
 				<?php endwhile; ?>
 
 			<?php endif; 
 
 			$wp_query = $temp; //reset back to original query 
 		?>
-<section class="primary">
-	<div class="wrapper">
-
-	 </div>
-</section>
 
 
 <?php get_sidebar(); ?>
