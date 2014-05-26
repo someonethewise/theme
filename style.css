@@ -1420,6 +1420,21 @@ p.edd_error {
   color: #fff;
   background: #e1392e;
 }
+.assets-and-banners .entry-header {
+  background: #fff;
+}
+.assets-and-banners #content {
+  background: #f7f7f7;
+}
+.assets-and-banners section.section {
+  padding: 2rem;
+}
+.assets-and-banners section.section h2 {
+  margin-bottom: 1rem;
+}
+.assets-and-banners section.section img {
+  margin: 0 1rem 1rem 1rem;
+}
 .back {
   margin-bottom: 2rem;
   display: inline-block;

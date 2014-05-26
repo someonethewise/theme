@@ -184,6 +184,9 @@ function affwp_body_classes( $classes ) {
 	if ( is_page_template( 'page-templates/docs.php' ) )
 		$classes[] = 'documentation';
 
+	if ( is_page_template( 'page-templates/assets-and-banners.php' ) )
+		$classes[] = 'assets-and-banners';
+
 	if ( is_page_template( 'page-templates/full-width.php' ) )
 		$classes[] = 'full-width';
 	
