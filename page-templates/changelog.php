@@ -1,7 +1,6 @@
 <?php
 /**
  * Template Name: Changelog
- *
  */
 
 get_header(); ?>
@@ -14,13 +13,11 @@ get_header(); ?>
 			<?php
 				// Page thumbnail and title.
 				affwp_post_thumbnail();
-
-			//	affwp_the_title();
 			?>
 
 			<div class="entry-content">
 				<?php
-					$changelog = wpautop( get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_changelog', true ), true );
+					$changelog = stripslashes( wpautop( get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_changelog', true ), true ) );
 					echo apply_filters( 'the_content', $changelog );
 				?>
 			</div>
