@@ -62,10 +62,7 @@ get_header();
 
 </header>
 
-<section class="primary">
-	<div class="wrapper">
 
-	
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'page' ); ?>
@@ -88,30 +85,77 @@ get_header();
 			if ( have_posts() ) : ?>
 				
 				<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php
-						global $more;
-						$more = 0;
-					?>
-					<?php affwp_post_thumbnail(); ?>
-					<?php affwp_posted_on(); ?>
-					<h2>
-		            	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		        	</h2>
-		        	
-		        	<?php 
-				 		$excerpt = $post->post_excerpt ? the_excerpt() : '';
-				 		echo $excerpt;
-					?>	
 
-					<a href="<?php the_permalink(); ?>" class="button">Read now</a>
-					</article>
+
+					<section class="section columns-3 columns">
+						<div class="item left bdr">
+							<?php echo get_avatar( get_the_author_meta('email'), '80' ); ?>
+							<p>
+							<span>Written by <?php the_author(); ?></span>
+							<?php if ( 'post' == get_post_type() ) : ?>
+								<?php printf( '<time datetime="%1$s">%2$s</time>',
+									esc_attr( get_the_date( 'c' ) ),
+									esc_html( get_the_date() )
+								); ?>
+							<?php endif; ?>
+							</p>
+
+							
+							<p>
+								<span>Comments</span>
+								
+								<?php comments_popup_link( __( 'Leave a comment', 'affwp' ), __( '1', 'affwp' ), __( '%', 'affwp' ) ); ?>
+								
+							</p>
+
+							<?php /*
+							<a href="<?php the_permalink(); ?>" class="button">Read now</a>
+							*/ ?>
+						
+						</div>
+
+
+						<div class="primary item content-area">
+								<?php
+									global $more;
+									$more = 0;
+								?>
+								
+								<h2>
+					            	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					        	</h2>
+					        	
+					        	<?php 
+							 		$excerpt = $post->post_excerpt ? the_excerpt() : '';
+							 		echo $excerpt;
+								?>	
+
+								<p><a href="<?php the_permalink(); ?>" class="">Read more</a></p>
+
+								<?php affwp_post_thumbnail(); ?>
+								
+						</div>
+
+						<div class="item right">
+							
+							
+						</div>
+							
+					</section>
+
+
+
+
+
+					
 				<?php endwhile; ?>
 
 			<?php endif; 
 
 			$wp_query = $temp; //reset back to original query 
 		?>
+<section class="primary">
+	<div class="wrapper">
 
 	 </div>
 </section>

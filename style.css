@@ -984,6 +984,7 @@ ul.menu li:hover > ul {
 #footer .wrapper {
   max-width: 1220px;
 }
+.page.blog .columns-3,
 .page.support .columns-3,
 .single .columns-3 {
   max-width: 1220px;
@@ -1435,6 +1436,9 @@ p.edd_error {
 }
 .assets-and-banners section.section img {
   margin: 0 1rem 1rem 1rem;
+}
+.page.blog .columns-3 {
+  margin-bottom: 4rem;
 }
 .back {
   margin-bottom: 2rem;
@@ -2356,6 +2360,9 @@ td {
 .related-posts .wrapper > h2 {
   text-align: center;
 }
+.left .avatar {
+  margin-bottom: 1rem;
+}
 .single.single-post .related-posts .item .post-thumbnail {
   margin: 2rem -2rem 0 -2rem;
 }
@@ -2370,6 +2377,9 @@ td {
 }
 .blog h2 {
   margin-bottom: 2rem;
+}
+.blog .item .post-thumbnail {
+  margin: 0 0 1rem 0;
 }
 article.post {
   margin-bottom: 4rem;
@@ -2911,16 +2921,17 @@ section.used-by ul:after,
 .addons #content .wrapper {
   text-align: center;
 }
-.single .left .avatar {
-  margin-bottom: 1rem;
-}
+.blog .item.left span,
 .single .item.left span,
+.blog .item.right span,
 .single .item.right span {
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 500;
 }
+.blog .item.left .button,
 .single .item.left .button,
+.blog .item.right .button,
 .single .item.right .button {
   margin: 1rem 0;
 }
@@ -3095,7 +3106,8 @@ footer#footer .links a:hover {
   .page.support .columns-3 .item,
   .addons .columns-3 .item,
   .single .columns-4 .item,
-  .single .columns-3 .item {
+  .single .columns-3 .item,
+  .blog .columns-3 .item {
     width: 100%;
     max-width: 585px;
     display: block;
@@ -3105,10 +3117,12 @@ footer#footer .links a:hover {
   .addons .columns-3 .item.left p,
   .single .columns-4 .item.left p,
   .single .columns-3 .item.left p,
+  .blog .columns-3 .item.left p,
   .page.support .columns-3 .item.right p,
   .addons .columns-3 .item.right p,
   .single .columns-4 .item.right p,
-  .single .columns-3 .item.right p {
+  .single .columns-3 .item.right p,
+  .blog .columns-3 .item.right p {
     margin-bottom: 0;
   }
   .single .columns-4 .item {
