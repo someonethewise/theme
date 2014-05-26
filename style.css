@@ -1000,6 +1000,7 @@ ul.menu li:hover > ul {
 .page.pricing #content > .wrapper {
   max-width: 980px;
 }
+.assets-and-banners .primary,
 .about .primary,
 .page.testimonials .primary {
   max-width: 1220px;
