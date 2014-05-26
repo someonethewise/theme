@@ -27,6 +27,12 @@ function affwp_highlight_menu_item( $classes ) {
 	    }
 	}
 
+	if ( is_singular( 'docs' ) ) {
+	    if ( in_array ( 'support', $classes ) ) {
+	      $classes[] = 'current-menu-item';
+	    }
+	}
+
 	if ( is_singular( 'post' ) ) {
 	    if ( in_array ( 'blog', $classes ) ) {
 	      $classes[] = 'current-menu-item';
