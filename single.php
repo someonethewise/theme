@@ -74,7 +74,7 @@ get_header(); ?>
 		<?php do_action( 'affwp_single_right_column' ); ?>
 	</div>
 		
-	</section>
+</section>
 
 <?php do_action( 'affwp_single_content_after' ); ?>
 

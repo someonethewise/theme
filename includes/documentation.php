@@ -5,6 +5,38 @@
 
 
 /**
+ * Add doc category column
+ */
+function affwpt_docs_columns( $columns ) {
+	// unset WPSEO columns
+	unset( $columns['wpseo-metadesc'] );
+	unset( $columns['wpseo-focuskw'] );
+	unset( $columns['wpseo-title'] );
+
+	// add category
+	$columns['doc_category'] = __( 'Categories', 'affwp' );
+
+	return $columns;
+}
+add_filter( 'manage_edit-docs_columns', 'affwpt_docs_columns' );
+
+/**
+ * Render categories
+ */
+function affwpt_render_docs_columns( $column_name, $post_id ) {
+	if ( get_post_type( $post_id ) == 'docs' ) {
+
+		switch ( $column_name ) {
+			case 'doc_category':
+				echo get_the_term_list( $post_id, 'doc_category', '', ', ', '');
+				break;
+		}
+	}
+}
+add_action( 'manage_posts_custom_column', 'affwpt_render_docs_columns', 10, 2 );
+
+
+/**
  * Mixitup
  */
 function affwp_mixitup() {
