@@ -1158,6 +1158,7 @@ ol {
 }
 .addons .entry-header,
 .tax-doc_category .entry-header,
+.docs .entry-header,
 .documentation .entry-header {
   -webkit-box-shadow: none;
   box-shadow: none;

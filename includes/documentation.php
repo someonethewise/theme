@@ -461,13 +461,10 @@ function affwp_docs_singular() {
      
 		<div class="wrapper">
 			<header class="entry-header">
-						<h1>Related docs</h1>
-					<h2>These are rather helpful also</h2>
-				</header>
+					<h1>Related docs</h1>
+				<h2>These are rather helpful also</h2>
+			</header>
 		</div>
-
-
-	
 
 
 		<div id="docs-container">
