@@ -11,14 +11,20 @@ get_header(); ?>
 <section class="section columns-3 columns">
 	<div class="item left bdr">
 		<p>
-				<span>Published</span>
-				<?php if ( 'docs' == get_post_type() ) : ?>
-					<?php printf( '<time datetime="%1$s">%2$s</time>',
-						esc_attr( get_the_date( 'c' ) ),
-						esc_html( get_the_date() )
-					); ?>
-				<?php endif; ?>
-				</p>
+		<span>Published</span>
+		<?php if ( 'docs' == get_post_type() ) : ?>
+			<?php printf( '<time datetime="%1$s">%2$s</time>',
+				esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date() )
+			); ?>
+		<?php endif; ?>
+		</p>
+
+		<?php if ( in_array( 'doc_category', get_object_taxonomies( get_post_type() ) ) && affwp_categorized_blog() ) : ?>
+			<p><span>Categories</span>
+			<?php echo get_the_term_list( get_the_ID(), 'doc_category', '', '<br/>' ); ?>
+			</p>
+		<?php endif; ?>
 	</div>
 	
 	<div class="primary item">
