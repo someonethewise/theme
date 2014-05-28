@@ -1074,6 +1074,17 @@ b,
 strong {
   font-weight: 500;
 }
+.using-code {
+  padding: 1.5rem;
+  background: #FFF6DA;
+  margin-bottom: 2rem;
+}
+.using-code p {
+  font-size: 0.875rem;
+}
+.using-code h3 {
+  margin-top: 0;
+}
 .entry-header h1 {
   font-weight: 600;
   margin-bottom: 0;

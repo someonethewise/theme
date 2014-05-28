@@ -45,7 +45,15 @@ get_header(); ?>
 	<div class="item right bdr">
 		<a class="back" href="<?php echo site_url( 'support/documentation' ); ?>">Back to documentation</a>
 
+		<?php if ( has_term( 'tutorials', 'doc_category', get_the_ID() ) ) : ?>
+		<div class="using-code">
+			<h3>Using code examples</h3>
+			<p>Copy and paste the code example into your child theme's functions.php or place inside a custom plugin you have made.</p>
+		</div>
+		<?php endif; ?>
+
 		<?php do_action( 'affwp_single_right_column' ); ?>
+
 	</div>
 		
 </section>
