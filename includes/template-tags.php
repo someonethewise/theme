@@ -262,10 +262,10 @@ function affwp_page_header( $header = '', $sub_header = '' ) {
 		<?php affwp_the_title( $header ); ?>
 
 		<?php
-
+			
 			if ( ! $sub_header ) {
-				$excerpt = isset( $post->post_excerpt ) ? $post->post_excerpt : '';
-				$sub_header = $excerpt ? '<h2>' . $excerpt . '</h2>' : '';
+			//	$excerpt = isset( $post->post_excerpt ) ? $post->post_excerpt : '';
+				$sub_header = function_exists( 'get_the_subheading' ) && get_the_subheading() ? '<h2>' . get_the_subheading() . '</h2>' : '';
 			}
 			
 			echo apply_filters( 'affwp_excerpt', $sub_header );
@@ -275,7 +275,6 @@ function affwp_page_header( $header = '', $sub_header = '' ) {
 
 	</header>
 <?php }
-
 
 /**
  * Filter the subheadings
