@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * Prevent tabbing from one form to another accidentally
+ *
+ * @since 1.4.8
+*/
+add_filter( 'gform_tabindex', '__return_false' );
+
+/**
  * Gravity Forms - remove validation message
  *
  * @since 1.0
