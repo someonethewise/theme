@@ -1882,14 +1882,14 @@ section.testimonials .wrapper,
   -webkit-justify-content: space-between;
   -webkit-align-content: flex-start;
 }
-.get-started {
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+#masthead .wrapper span {
+  color: #FFFFFF;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
-#masthead .get-started {
+#masthead .wrapper .button {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -ms-transition: all 0.25s ease-in-out;
@@ -1899,12 +1899,12 @@ section.testimonials .wrapper,
   -webkit-transform: translateY(40px);
   transform: translateY(40px);
 }
-.no-js #masthead .get-started {
+.no-js #masthead .wrapper .button {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-.loaded #masthead .get-started {
+.loaded #masthead .wrapper .button {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);

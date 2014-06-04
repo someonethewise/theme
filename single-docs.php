@@ -48,7 +48,7 @@ get_header(); ?>
 		<?php if ( has_term( 'tutorials', 'doc_category', get_the_ID() ) ) : ?>
 		<div class="using-code">
 			<h3>Using code examples</h3>
-			<p>Copy and paste the code example into your child theme's functions.php or place inside a custom plugin you have made.</p>
+			<p>Copy and paste the code example into your child theme's functions.php or place inside a custom plugin.</p>
 		</div>
 		<?php endif; ?>
 

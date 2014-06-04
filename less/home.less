@@ -516,29 +516,39 @@ section.testimonials .wrapper,
 }
 
 
-
-
-.get-started {
-	.transition ( all 0.2s ease-out );
+#masthead .wrapper span {
+	color: #FFFFFF;
+	font-weight: 500;
+	margin: 0 0.5rem;
+	text-transform: uppercase;
+	vertical-align: middle;
 }
 
-#masthead .get-started {
+#masthead .wrapper .button {
 	.transition ( all 0.25s ease-in-out );
+
+
 	.opacity(0);
 	-webkit-transform: translateY(40px);
     transform: translateY(40px);
 }
 
-.no-js #masthead .get-started {
+
+.no-js #masthead .wrapper .button {
 	.opacity(100);
 	-webkit-transform: translateY(0);
-    	transform: translateY(0);
+    transform: translateY(0);
 }
 
 .loaded {
-	#masthead .get-started {
+	#masthead .wrapper .button {
 		.opacity(100);
 		-webkit-transform: translateY(0);
     	transform: translateY(0);
+
+    	// &:last-child.delay {
+    	// 	transition-delay: 0.25s;
+    	//     -webkit-transition-delay: 0.25s;
+    	// }
 	}
 }

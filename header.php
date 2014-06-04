@@ -68,7 +68,9 @@
 				</h1>
 
 				<div id="mascot"></div>
-				<?php echo affwp_button_get_started( 'Start Your Affiliate Network' ); ?>
+				<?php echo affwp_button( 'Get Started', site_url( 'pricing' ) ); ?>
+				<span>or</span>
+				<a class="button large" href="http://demo.affiliatewp.com" target="_blank">View Demo</a>
 			</div>		
 		<?php endif; ?>
 

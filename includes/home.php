@@ -155,7 +155,7 @@ function affwp_home_how_it_works() {
 	<section class="section">
 		<div class="wrapper">
 			<div class="action">
-				<?php echo affwp_button_get_started(); ?>
+				<?php echo affwp_button( 'Get Started', site_url( 'pricing' ) ); ?>
 			</div>	
 		</div>
 	</section>
@@ -224,7 +224,7 @@ function affwp_home_how_it_works() {
 	<section class="section">
 		<div class="wrapper">
 			<div class="action">
-				<?php echo affwp_button_get_started(); ?>
+				<?php echo affwp_button( 'Get Started', site_url( 'pricing' ) ); ?>
 			</div>	
 		</div>
 	</section>

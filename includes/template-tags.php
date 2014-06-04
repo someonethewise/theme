@@ -183,8 +183,11 @@ add_action( 'pre_get_posts', 'affwp_pre_get_posts' );
  * @param  string $text [description]
  * @return [type]       [description]
  */
-function affwp_button_get_started( $text = 'Get started now' ) { ?>
-	<a class="button large get-started" href="/pricing"><?php echo $text; ?></a>
+function affwp_button( $text = '', $url = '', $size = 'large' ) {
+	if ( ! ( $text && $url ) )
+		return;
+?>
+	<a class="button <?php echo $size; ?>" href="<?php echo $url; ?>"><?php echo $text; ?></a>
 <?php }
 
 /**		

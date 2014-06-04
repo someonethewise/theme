@@ -74,16 +74,23 @@ get_header(); ?>
 </div>
 
 <section class="section columns columns-2 pre-sale-questions">
-	
+		
 		<div class="item">
-			<h4>Do you have a refund policy?</h4>
-			<p><a title="Refund Policy" href="<?php echo site_url( 'refund-policy' ); ?>">Yes we do</a>! We firmly believe in and stand behind the quality of our product and will refund 100% of your money if you are unhappy with the plugin.</p>
+			<h4>Is there a live demo I can try?</h4>
+			<p>There sure is. You can <a href="http://demo.affiliatewp.com" target="_blank">try out AffiliateWP</a> live in your browser before you decide to purchase.</p>
 		</div>
 
 		<div class="item">
 			<h4>Do I get updates for the plugin?</h4>
 			<p>Yes! Automatic updates are delivered 100% free of charge to all users with a valid license key.</p>
 		</div>
+
+		<div class="item">
+			<h4>Do you have a refund policy?</h4>
+			<p><a title="Refund Policy" href="<?php echo site_url( 'refund-policy' ); ?>">Yes we do</a>! We firmly believe in and stand behind the quality of our product and will refund 100% of your money if you are unhappy with the plugin.</p>
+		</div>
+
+		
 
 		<div class="item">
 			<h4>Do I need to renew my license?</h4>
