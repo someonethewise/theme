@@ -36,13 +36,10 @@ get_header();
         	</h1>
         	
         	<?php 
-		 		$excerpt = get_the_excerpt();
-
-		 		if ( $excerpt )
-					echo '<h2>' . $excerpt . '</h2>';
+		 		if ( function_exists( 'get_the_subheading' ) && get_the_subheading() )
+					echo '<h2>' . get_the_subheading() . '</h2>';
 			?>	
 
-			
 
 			<a href="<?php the_permalink(); ?>" class="button large">Read now</a>
 			
