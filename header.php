@@ -68,9 +68,9 @@
 				</h1>
 
 				<div id="mascot"></div>
-				<?php echo affwp_button( 'Get Started', site_url( 'pricing' ) ); ?>
+				<?php echo affwp_button( 'Get Started Now', site_url( 'pricing' ) ); ?>
 				<span>or</span>
-				<a class="button large" href="http://demo.affiliatewp.com" target="_blank">View Demo</a>
+				<a class="button large" href="http://demo.affiliatewp.com" target="_blank">Try The Demo</a>
 			</div>		
 		<?php endif; ?>
 
