@@ -155,7 +155,7 @@ function affwp_home_how_it_works() {
 	<section class="section">
 		<div class="wrapper">
 			<div class="action">
-				<?php echo affwp_button( 'Get Started', site_url( 'pricing' ) ); ?>
+				<a class="button huge" href="<?php echo site_url( 'pricing' ); ?>">Get Started</a>
 			</div>	
 		</div>
 	</section>
@@ -221,11 +221,11 @@ function affwp_home_how_it_works() {
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section home alt2 guarantee">
 		<div class="wrapper">
-			<div class="action">
-				<?php echo affwp_button( 'Get Started', site_url( 'pricing' ) ); ?>
-			</div>	
+			<h1><span>30 Day Money Back Guarantee</span></h1>
+			<p>If you are unhappy with your purchase, or you have an issue that we are unable to resolve that makes the system unusable, we are more than happy to provide a complete refund within 30 days of your original purchase. See our complete <a title="refund-policy" href="<?php echo site_url( 'refund-policy' ); ?>">refund policy</a>.</p>
+			<a class="button huge" href="<?php echo site_url( 'pricing' ); ?>">Get Started</a>
 		</div>
 	</section>
 

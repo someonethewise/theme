@@ -1094,11 +1094,13 @@ strong {
   margin: 0 auto;
   font-size: 1.25rem;
 }
+section.section.guarantee h1,
 section.section.used-by h1,
 section.section.featured h1,
 section.section.subscribe h1 {
   margin-bottom: 0.5rem;
 }
+section.section.guarantee h1 span,
 section.section.used-by h1 span,
 section.section.featured h1 span,
 section.section.subscribe h1 span {
@@ -1406,6 +1408,14 @@ p.edd_error {
   font-size: 1.25rem;
   padding: 0.875rem 1.25rem;
 }
+#edd-purchase-button.huge,
+.edd-add-to-cart.huge,
+.edd-submit.huge,
+.edd_submit.huge,
+.button.huge {
+  font-size: 1.5rem;
+  padding: 1.5rem 6rem;
+}
 #edd-purchase-button:hover,
 .edd-add-to-cart:hover,
 .edd-submit:hover,
@@ -1611,6 +1621,9 @@ section.section.home.share {
 section.section.home.share .sharing {
   margin-bottom: 0;
 }
+section.section.guarantee p {
+  max-width: 744px;
+}
 section.section.benefits {
   text-align: justify;
   padding: 4rem 2rem;
@@ -1790,6 +1803,9 @@ section.section.alt p {
 }
 section.section.alt p {
   font-weight: 400;
+}
+section.section.alt2 {
+  background: #f7f7f7;
 }
 section.section p {
   margin: 0 auto 1.62rem auto;
