@@ -129,7 +129,7 @@ function affwp_home_how_it_works() {
 			<div class="item">
 				<i class="icon-extensive-docs"></i>
 				<h3>Extensive Documentation</h3>	
-				<p>We've got all the videos and documentation you need to quickly get up and running.</p>
+				<p>We've got all the documentation you need to quickly get up and running.</p>
 			</div>
 
 			<div class="item">
@@ -145,9 +145,9 @@ function affwp_home_how_it_works() {
 			</div>
 
 			<div class="item">
-				<i class="icon-affwp"></i>
-				<h3>And More!</h3>	
-				<p>Join us on our journey to create the best affiliate plugin for WordPress.</p>
+				<i class="icon-coupon-tracking"></i>
+				<h3>Coupon Tracking</h3>	
+				<p>Affiliate coupon tracking for WooCommerce, Easy Digital Downloads, and Restrict Content Pro.</p>
 			</div>
 		</div>	
 	</section>

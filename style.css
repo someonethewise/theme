@@ -717,6 +717,9 @@ button:focus {
 .icon-easy-setup:before {
   content: "\ea";
 }
+.icon-coupon-tracking:before {
+  content: "\e01d";
+}
 @font-face {
   font-family: 'Graphik Web';
   src: url('fonts/Graphik-Light-Web.eot');
