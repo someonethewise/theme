@@ -91,7 +91,11 @@ function affwp_home_how_it_works() {
 					<p>View graphs of referrals over time, easily seeing your site's affiliate marketing performance.</p>
 				</div>
 			</div>
-		</div>	
+		</div>
+
+		<div class="wrapper see-features">
+			<p><a title="See a full list of features" href="<?php echo site_url( 'features' ); ?>">See a full list of features &rarr;</a></p>	
+		</div>
 	</section>
 
 	<section class="section columns-4 columns more-features">
@@ -149,14 +153,14 @@ function affwp_home_how_it_works() {
 				<h3>Coupon Tracking</h3>	
 				<p>Affiliate coupon tracking for WooCommerce, Easy Digital Downloads, and Restrict Content Pro.</p>
 			</div>
-		</div>	
+		</div>
+
 	</section>
 
 	<section class="section">
 		<div class="wrapper">
-			<div class="action">
-				<a class="button huge" href="<?php echo site_url( 'pricing' ); ?>">Get Started</a>
-			</div>	
+
+			<a class="button huge" href="<?php echo site_url( 'pricing' ); ?>">Get Started</a>
 		</div>
 	</section>
 

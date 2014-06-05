@@ -1116,15 +1116,26 @@ p {
 }
 p,
 ul,
-ol {
+ol,
+dl {
   color: #787878;
   font-size: 1.1rem;
 }
 .entry-content ul,
-.entry-content ol {
+.entry-content ol,
+.entry-content dl {
   color: #787878;
   line-height: 1.62;
   font-weight: 300;
+}
+.entry-content dl {
+  margin: 0 0 1.62rem 1.62rem;
+}
+.entry-content dl dt {
+  font-weight: 400;
+}
+.entry-content dl dd {
+  margin: 0 0 1.62rem 0;
 }
 @media only screen and (min-width: 720px) {
   h1 {
@@ -1618,6 +1629,10 @@ section.section.pre-sale-questions h4 {
     min-height: 25rem;
   }
 }
+.wrapper.see-features {
+  text-align: center;
+  margin-top: 1rem;
+}
 section.section.home.share {
   padding: 0 2rem;
 }
@@ -1704,7 +1719,6 @@ section.section.features .item div {
   transition: all 0.1s ease-in;
 }
 section.section.features .item p {
-  font-weight: 400 !important;
   margin-bottom: 1.5rem;
 }
 section.section.features .item div:hover,
