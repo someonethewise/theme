@@ -1159,6 +1159,7 @@ dl {
 .entry-header h1,
 .entry-header h2 {
   margin: 0 auto;
+  max-width: 1220px;
 }
 .entry-header h2 {
   max-width: 980px;
