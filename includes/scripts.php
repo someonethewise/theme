@@ -9,72 +9,12 @@ function affwp_enqueue_scripts() {
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'affwp-style', get_stylesheet_uri(), array(), AFFWP_THEME_VERSION );
 
-	$custom_js = get_stylesheet_directory() . '/js/affwp.js';
-
-	if ( file_exists( $custom_js ) ) {
-		wp_enqueue_script( 'affwp-js', get_stylesheet_directory_uri() . '/js/affwp.js',  array( 'jquery' ), AFFWP_THEME_VERSION, true );
-	}
-
 	/**
-	 * Mixitup
+	 * AffiliateWP JS
+	 * Modernizer, FancyBox, Respond.js, affwp.js
 	 */
-	wp_register_script( 'mixitup', get_template_directory_uri() . '/js/jquery.mixitup.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
-	
-	// if ( is_page_template( 'page-templates/docs.php' ) || is_tax( 'doc_category' ) || is_singular( 'docs' ) ) {
-	// 	wp_enqueue_script( 'mixitup' );
-	// }
-
-	/**
-	 * Modernizr (includes html5 shim)
-	 * This can be overrided on a child theme basis by including the same file in the child theme's /js folder
-	 * Needs to be loaded in the header or IE 8 will freak out
-	 */
-	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
-	wp_enqueue_script( 'modernizr' );
-
-	/**
-	 * Respond.js
-	 * This makes media queries work in IE 8
-	 */
-	wp_register_script( 'respondjs', get_template_directory_uri() . '/js/respond.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
-	wp_enqueue_script( 'respondjs' );
-
-	/**
-	 * Waypoints
-	 */
-	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
-	
-	if ( is_front_page() ) {
-		wp_enqueue_script( 'waypoints' );
-	}
-
-	/**
-	 * Fancybox
-	 */
-	wp_register_script( 'fancybox', get_template_directory_uri() . '/js/jquery.fancybox.pack.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
-	wp_enqueue_script( 'fancybox' );
-
-	/**
-	 * Fittext
-	 */
-	//wp_register_script( 'fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
-	//wp_enqueue_script( 'fittext' );
-
-	/**
-	 * Flexslider
-	 */
-	//wp_register_script( 'easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
-	wp_register_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
-
-	/**
-	 * Testimonials
-	 */
-	wp_register_script( 'testimonials', get_template_directory_uri() . '/js/testimonials.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
-
-	if ( is_front_page() ) {
-//		wp_enqueue_script( 'testimonials' );
-		wp_enqueue_script( 'flexslider' );
-	}
+	wp_register_script( 'affiliatewp', get_template_directory_uri() . '/js/affiliatewp.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
+	wp_enqueue_script( 'affiliatewp' );
 
 	/**
 	 * Comments
@@ -87,25 +27,8 @@ function affwp_enqueue_scripts() {
 
 	// dequeue AffiliateWP's form.css stylesheet
 	wp_dequeue_style( 'affwp-forms' );
-
 }
 add_action( 'wp_enqueue_scripts', 'affwp_enqueue_scripts' );
-
-/**
- * Fittext
- *
- * @since 1.0
-*/
-function affwp_fittext() { 
-?>
-	<script type="text/javascript">
-	 jQuery(document).ready(function($) {
-	 	jQuery("h1.intro").fitText( 0.5, { maxFontSize: '56px' });	
-
-	 });
-	</script>
-<?php }
-//add_action( 'wp_footer', 'affwp_fittext', 50 );
 
 
 
@@ -123,7 +46,7 @@ function affwp_flexslider() {
 		jQuery(window).load(function() {
 			jQuery('.flexslider').flexslider({
 				animation: "fade",
-			//	easing: "easeInOutQuad",
+				easing: "easeInOutQuad",
 				manualControls: "#slider-nav .item div",
 				directionNav: false,
 				animationSpeed: 250,
@@ -168,7 +91,7 @@ function affwp_fancybox() {
 		});
 	</script>
 <?php }
-//add_action( 'wp_footer', 'affwp_fancybox', 100 );
+add_action( 'wp_footer', 'affwp_fancybox', 100 );
 
 /**
  * Home JS

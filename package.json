@@ -1,0 +1,15 @@
+{
+  "name": "affiliatewp",
+  "version": "1.5.2",
+  "Dependencies": {
+     "grunt-cli": "latest"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-watch": "latest",
+    "matchdep": "*",
+    "grunt-banner": "^0.2.3"
+  }
+}

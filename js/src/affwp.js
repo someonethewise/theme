@@ -39,5 +39,5 @@ jQuery(window).load(function() {
 })(jQuery);
  
 jQuery(document).ready(function($) {
-        $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed: 5000});
- });
+  $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed: 5000});
+});

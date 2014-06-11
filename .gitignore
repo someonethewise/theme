@@ -2,3 +2,5 @@
 *.codekit
 
 fonts/*
+
+/node_modules/

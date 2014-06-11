@@ -42,7 +42,7 @@
 				</div>
 
 				<div class="item">
-				<h3>Pages</h3>
+				<h3>AffiliateWP</h3>
 					<ul class="page-links">
 						<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
 						<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>

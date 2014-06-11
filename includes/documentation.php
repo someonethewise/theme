@@ -258,6 +258,7 @@ function affwp_docs_tax() {
 	<div class="wrapper">
 				
 				<header class="entry-header">
+				
 				<h1><?php printf( __( '%s', 'affwp' ), single_term_title( '', false ) ); ?></h1>
 				 <?php
 		            $category_description = category_description();
