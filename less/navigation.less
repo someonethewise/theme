@@ -146,12 +146,6 @@ li.current-menu-item > a:before {
 
 
 
-// defaults are very simple so we can override them easier
-
-// sub menus
-
-
-
 //********************************************************************************
 // Mobile navigation styles. Displayed up until the desktop nav takes over
 //********************************************************************************
@@ -176,8 +170,60 @@ li.current-menu-item > a:before {
 // Desktop sized navigation
 //********************************************************************************
 
-// animated menu
- ul.menu {
+// styles only for devices that you can't touch
+// styles should be also active when JS is disabled
+.no-touch, .no-js {
+
+  ul.menu {
+    li:hover {
+
+      > ul {
+        top: 100%;
+        display: block;
+        //   .opacity(100);
+        -khtml-opacity: 100;
+        -moz-opacity: 100;
+        opacity: 100; 
+      }   
+    
+    }  
+  }
+
+  #main ul.menu {
+    // has-sub-menu
+      > li.has-sub-menu {
+
+        // no transition effects
+        a {
+          -webkit-transition: none; 
+          -moz-transition: none; 
+          -o-transition: none; 
+          transition: none;
+        }
+
+        &:hover {
+            > a {
+               background-color: @secondary-color;
+            } 
+        }
+      }
+
+      ul li:hover > a {
+        color: #fff;
+        text-decoration: none;
+        background: darken( @accent-color, 3% );
+      }
+
+      // only for the first <li> that has a sub menu
+      > li.has-sub-menu:hover > a {
+        color: #fff;
+      }
+
+  }
+
+}
+
+ul.menu {
   
   // initial state of submenu
   ul {
@@ -189,20 +235,7 @@ li.current-menu-item > a:before {
     top: 100%;
   }
 
-    // on <li> hover show menu
-    li:hover {
-
-      > ul {
-        top: 100%;
-        display: block;
-        //   .opacity(100);
-        -khtml-opacity: 100;
-        -moz-opacity: 100;
-        opacity: 100; 
-      }   
-  
-    } 
- } // end ul.menu
+} // end ul.menu
 
 
 
@@ -234,18 +267,17 @@ li.current-menu-item > a:before {
         font-weight: 500;
         color: #222;
         line-height: 1rem;
-      //  text-shadow: 0 2px 0 #E44E44;
       }
 
-      &:hover {
-      }
     }
-   
+    
+
+
+
     // sub menus
     ul {
       position: absolute;
       width: auto;
-//      min-width: 120%;
       min-width: 100%; 
       background: @secondary-color;
       z-index: 100; 
@@ -256,8 +288,6 @@ li.current-menu-item > a:before {
         text-align: left;
         color: #fff;
         text-decoration:none;
-       
-
       }
 
       // sub menu list items
@@ -266,12 +296,6 @@ li.current-menu-item > a:before {
         display: block;
         width: 100%;
 
-        &:hover > a {
-        //  background-color: #fff;
-          color: #fff;
-          text-decoration: none;
-           background: darken( @accent-color, 3% );
-        }
       }
       
       // sub-sub menus
@@ -282,58 +306,27 @@ li.current-menu-item > a:before {
       }
     }
 
-    // has-sub-menu
-      > li.has-sub-menu {
-
-        // no transition effects
-        a {
-          -webkit-transition: none; 
-          -moz-transition: none; 
-          -o-transition: none; 
-          transition: none;
-        }
-
-        &:hover {
-            > a {
-               background-color: @secondary-color;
-
-            } 
-        }
-      }
-    
-
-      // only for the first <li> that has a sub menu
-      > li.has-sub-menu:hover > a {
-       color: #fff;
-
-      }
-      
-
     // all list items
     li {
       position: relative;
       display: inline-block;
-     
       white-space: nowrap;
       line-height: 1; // fixes gaps in ie7 
       list-style-type: none;
       
 
       // when the child page is active
-      ul li.current_page_ancestor > a,
-      ul li.current-menu-item > a,
-      ul li.current_page_item > a,
-      ul li.active > a {
-      //  color: red;
-      }
+      // ul li.current_page_ancestor > a,
+      // ul li.current-menu-item > a,
+      // ul li.current_page_item > a,
+      // ul li.active > a {
+      // }
       
       &:hover {
         
          // main level hover
         > a {
           text-decoration: none;
-
-        //  background: @secondary-color;
           color: @secondary-color;
         }
       
