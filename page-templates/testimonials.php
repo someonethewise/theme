@@ -97,7 +97,7 @@ get_header(); ?>
 					<div class="gap"></div>
 					<div class="gap"></div>
 			</div>
-			<a class="button large" href="<?php echo site_url( 'pricing'); ?>" title="Join These Happy Customers">Join These Happy Customers</a>
+			<a class="button huge" href="<?php echo site_url( 'pricing'); ?>" title="Join These Happy Customers">Join These Happy Customers</a>
 			</section>
 
 			
