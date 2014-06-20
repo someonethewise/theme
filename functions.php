@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.5.5' );
+	define( 'AFFWP_THEME_VERSION', '1.5.6' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -185,6 +185,9 @@ function affwp_body_classes( $classes ) {
 
 	if ( is_page_template( 'page-templates/assets-and-banners.php' ) )
 		$classes[] = 'assets-and-banners';
+
+	if ( is_page_template( 'page-templates/brand-assets.php' ) )
+		$classes[] = 'brand-assets';
 
 	if ( is_page_template( 'page-templates/full-width.php' ) )
 		$classes[] = 'full-width';

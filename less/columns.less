@@ -114,6 +114,49 @@ section.columns {
 
 
 
+// addon and single download 3 columns
+@media only screen and ( min-width: 1024px ) {
+  
+    .page,
+    .single {  
+
+      .columns-3 {
+
+         .item.left,
+         .item.right {
+           span {
+            display: block;
+          }
+          }
+
+        // hides add on info box
+      .add-on-info.right {
+        display: none;
+      }
+
+        .item.bdr {
+          border-top: 5px solid @accent-color;
+          padding-top: 1rem;
+        }
+
+        .item.left {
+          display: inline-block;
+        }
+
+        .item {
+          width: 20%;
+          display: inline-block;
+        }
+
+        // main column
+        .primary.item {
+          width: 50%;
+        }
+      }
+  }
+
+}
+
 
 
 // 4 columns

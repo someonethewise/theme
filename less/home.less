@@ -325,14 +325,24 @@ section.columns.testimonials {
 
 section.section {
 	position: relative;
-//	padding: 4rem 2rem;
-	
-//	background: #fff;
+	padding: 4rem 2rem;
 	text-align: center;
 
 	div.action {
 		text-align: center;
 	}
+
+	// nested sections
+	.section {
+		padding: 0;
+	}
+
+	.wrapper.slim {
+		max-width: 585px;
+		text-align: left;
+		margin-bottom: 2rem;
+	}
+	
 
 	&.home {
 		padding: 4rem 2rem;
@@ -417,7 +427,7 @@ section.section {
 }
 
 
-.intro {
+.home .intro {
 	
 	 margin: 0 auto 2rem auto;
 	 color: #fff;
@@ -483,7 +493,7 @@ section.section {
 		}
 	}
 
-	.intro {
+	.home .intro {
 		width: 80%;
 	}
 
