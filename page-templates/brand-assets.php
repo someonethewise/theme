@@ -165,7 +165,7 @@ get_header(); ?>
 <section class="section text columns columns-4">
 	<div class="wrapper slim">
 		<h1>It's AffiliateWP</h1>
-		<p>AffiliateWP is one word, just like the above. Capitalize the <strong>A</strong>, <strong>W</strong>, and <strong>P</strong>. The only exception to this rule is when it's used in code, or for filenames where lowercase is preferred.</p>
+		<p>AffiliateWP is one word, just like the above. Capitalize the <strong>A</strong>, <strong>W</strong>, and <strong>P</strong>.</p>
 	</div>
 	
 	<div class="wrapper">
