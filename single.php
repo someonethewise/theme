@@ -87,5 +87,4 @@ get_header(); ?>
 <?php endwhile; ?>
 
 <?php
-get_sidebar();
 get_footer();

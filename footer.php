@@ -10,97 +10,92 @@
 <?php do_action( 'affwp_content_after' ); ?>
 
 	<footer id="footer">
+		<div class="wrapper">
+
 		<div id="mascot-2"></div>
 
 		<?php if ( function_exists( 'edd_is_checkout' ) && ! edd_is_checkout() ) : ?>
-		<section class="section alt columns columns-4">
-			<div class="wrapper">
-			<?php 
-			$current_version = get_post_meta( affwp_get_affiliatewp_id(), '_edd_sl_version', true );
 
-			?>
+		<section class="section columns columns-4">
 
 			<div class="item">
-					<a href="http://2014.nyc.wordcamp.org/sponsors/#wcorg-sponsor-104262" title="Proud Sponsor of WordCamp NYC – August 2-3, 2014"><img alt="Proud Sponsor of WordCamp NYC – August 2-3, 2014" src="http://2014.nyc.wordcamp.org/files/2014/04/wcnyc14_badge_sponsor_250.png" /></a>
-				
-				</div>
+				<h3>AffiliateWP</h3>
+				<ul class="page-links">
+					<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
+					<li><a href="<?php echo site_url( 'features' ); ?>" title="Features">Features</a></li>
+					<li><a href="<?php echo site_url( 'addons' ); ?>" title="Add-ons">Add-ons</a></li>
+					<li><a href="<?php echo site_url( 'testimonials' ); ?>" title="Testimonials">Testimonials</a></li>
+					<li><a href="<?php echo site_url( 'changelog' ); ?>" title="View the changelog">Changelog</a></li>
+					<li><a href="<?php echo site_url( 'refund-policy' ); ?>" title="Refund Policy">Refund Policy</a></li>
+					<li><a href="<?php echo site_url( 'brand-assets' ); ?>" title="Brand Assets">Brand Assets</a></li>
+					<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>
+					<li><a href="<?php echo site_url( 'blog' ); ?>" title="Blog">Blog</a></li>
+				</ul>
+			</div>
 
-				<div class="item">
-					<h3>Current Release</h3> 
-					<a title="View the changelog" class="button current-version" href="<?php echo site_url( 'changelog' ); ?>"><i class="icon-affwp"></i>v<?php echo $current_version; ?></a>
+			<div class="item">
+				<h3>Support</h3>
+				<ul class="page-links">
+					<li><a href="<?php echo site_url( 'support' ); ?>" title="Support">Contact</a></li>
+					<li><a href="<?php echo site_url( 'support/documentation' ); ?>" title="Documentation">Documentation</a></li>
+					<li><a href="<?php echo site_url( 'docs/section/getting-started' ); ?>" title="Getting Started">Getting Started</a></li>
+					<li><a href="<?php echo site_url( 'docs/section/integrations' ); ?>" title="Integrations">Integrations</a></li>
+					<li><a href="<?php echo site_url( 'docs/section/shortcodes' ); ?>" title="Shortcodes">Shortcodes</a></li>
+					<li><a href="<?php echo site_url( 'docs/section/tutorials' ); ?>" title="Tutorials">Tutorials</a></li>
+					<li><a href="<?php echo site_url( 'docs/section/faq' ); ?>" title="FAQ">FAQ</a></li>
 
-					<?php if ( ! is_home() ) : ?>
+					<?php /*
+					<li><a href="<?php echo site_url( 'account' ); ?>" title="Account">Account</a></li>
+					<li><a href="<?php echo site_url( 'account/affiliates' ); ?>" title="Affiliates">Affiliates</a></li>
+					*/ ?>
+				</ul>
+			</div>
+
+			<div class="item">
+				<h3>Follow Us</h3>
+					<ul class="page-links">
+						<li><a href="https://twitter.com/affwp" target="_blank">AffiliateWP</a></li>
+						<li><a href="https://twitter.com/pippinsplugins" target="_blank">Pippin Williamson</a></li>
+						<li><a href="https://twitter.com/sumobi_" target="_blank">Andrew Munro</a></li>
+					</ul>
+
+				<h3>Our sites</h3>	
+				<ul class="page-links">
+					<li><a href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
+					<li><a href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
+					<li><a href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
+				</ul>
+			</div>
+
+			<div class="item">
+				<div class="wrap">
+				<?php if ( ! is_home() ) : ?>
 					<h3>Stay up to date</h3> 
 					<?php 
 						if ( function_exists( 'gravity_form' ) ) {
 							gravity_form( 1, false, false, false, '', true );
 						}
 					?>
-					<?php endif; ?>
+				<?php endif; ?>
 
-
+				<a href="http://2014.nyc.wordcamp.org/sponsors/#wcorg-sponsor-104262" title="Proud Sponsor of WordCamp NYC – August 2-3, 2014" target="_blank">
+					<img alt="Proud Sponsor of WordCamp NYC – August 2-3, 2014" src="http://2014.nyc.wordcamp.org/files/2014/04/wcnyc14_badge_sponsor_250.png" />
+				</a>
 				</div>
 
-				<div class="item">
-				<h3>AffiliateWP</h3>
-					<ul class="page-links">
-						<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
-						<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>
-						<li><a href="<?php echo site_url( 'blog' ); ?>" title="Blog">Blog</a></li>
-						<li><a href="<?php echo site_url( 'support' ); ?>" title="Support">Support</a></li>
-						<li><a href="<?php echo site_url( 'support/documentation' ); ?>" title="Documentation">Documentation</a></li>
-						<li><a href="<?php echo site_url( 'account' ); ?>" title="Account">Account</a></li>
-						<li><a href="<?php echo site_url( 'account/affiliates' ); ?>" title="Affiliates">Affiliates</a></li>
-						<li><a href="<?php echo site_url( 'testimonials' ); ?>" title="Testimonials">Testimonials</a></li>
-						<li><a href="<?php echo site_url( 'refund-policy' ); ?>" title="Refund Policy">Refund Policy</a></li>
-					</ul>
-				</div>
-
-				<div class="item">
-				<h3>Follow Us</h3>
-
-				<ul class="links">
-					
-					<li>
-						<a href="https://twitter.com/affwp" class="twitter-follow-button" data-show-count="false" data-size="large" data-lang="en">@affwp</a>
-				    </li>
-
-					<li>
-						<a href="https://twitter.com/pippinsplugins" class="twitter-follow-button" data-show-count="false" data-size="large" data-lang="en">@pippinsplugins</a>
-				    </li>
-
-			    	<li>
-			    		<a href="https://twitter.com/sumobi_" class="twitter-follow-button" data-show-count="false" data-size="large" data-lang="en">@sumobi_</a>
-			        </li>
-
-					
-				</ul>
-
-				<h3>Our Sites</h3>
-					<ul class="links">
-						<li><a href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
-						<li><a href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
-						<li><a href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
-					</ul>
-
-				</div>
-
-				
-
-
-				
 			</div>
 
 		</section>
+
 		<?php endif; ?>
 		
-		<section class="section alt copyright">
+		<section class="section copyright">
 			<div class="wrapper">
-					Copyright &copy; 2014, AffiliateWP
+				Copyright &copy; <?php echo date('Y') . ', ' . get_bloginfo('name'); ?>
 			</div>
-
 		</section>
 
+		</div>
 	</footer>
 </div> <!-- #site -->	
 

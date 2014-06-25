@@ -2,6 +2,20 @@ footer#footer {
 	color: #fff;
 	text-align: center;
 	position: relative;
+	background: #ed6d62;
+	font-size: 0.875rem;
+
+	.copyright {
+		text-align: left;
+	}
+
+	.item {
+		display: inline-block;
+	}
+
+	> .columns-2 .item + .item {
+		text-align: right;
+	}
 
 	.no-spam {
 		color: #fff;
@@ -10,7 +24,7 @@ footer#footer {
 	}
 
 	.gform_wrapper {
-		width: 80%;
+		margin-bottom: 2rem;
 	}
 
 	.gform_confirmation_message {
@@ -20,12 +34,14 @@ footer#footer {
 	.validation_message {
 		display: none;
 	}
-	section {
-		padding: 2rem;
-		
+
+	> .wrapper {
+		padding: 4rem 2rem;	
 	}
+
 	h3 {
 		margin-top: 0;
+		font-size: 1.1rem;
 	}
 	
 	ul {
@@ -37,66 +53,35 @@ footer#footer {
 		}
 	}
 
-	.current-version.button {
-		text-transform: lowercase;
-	//	font-weight: 500;
+	.wrap {
+		max-width: 250px;
 	}
 
-	i {
-		margin-right: 0.5rem;
-		vertical-align: middle;
-	}
-
-
-
-	.current-version,
 	.page-links {
 		margin-bottom: 2rem;
 	}
 
 	.page-links {
-		margin-left: -13px;
+		margin-left: -8px;
 	}
 	
 	.page-links a {
 		color: #fff;
 		padding: 0.25rem 0.5rem;
 		display: block;
-		border-left: 5px solid @primary-color;
+		border-left: 0px solid @primary-color;
+		font-size: 0.875rem;
 
 		&:hover {
-			border-left: 5px solid @accent-color;
-		}
-	}
-
-	.links {
-
-		li {
-			margin-bottom: 1rem;
-		}
-
-		a {
-			color: #fff;
-			font-size: 0.875rem;
-			border: 3px solid #FFFFFF;
-			display: block;
-			font-weight: 600;
-			padding: 0.5rem 1rem;
-			text-transform: uppercase;
-			-webkit-transition: all 0.2s ease-in-out; 
-			-moz-transition: all 0.2s ease-in-out; 
-			-o-transition: all 0.2s ease-in-out; 
-			transition: all 0.2s ease-in-out; 
-
-			&:hover {
-				box-shadow: 0 0 0 1px #FFFFFF inset;
-			}
+			border-left: 3px solid @accent-color;
 		}
 	}
 
 }
 
+
 @media only screen and ( min-width: 720px ) {
+
 	footer#footer {
 		margin-top: 10rem;
 	}
@@ -114,4 +99,55 @@ footer#footer {
 	}
 
 	#footer:hover #mascot-2 { background-position: 0 -132px; }
+
+	
+}
+
+@media only screen and ( min-width: 572px ) {
+	#footer .columns-4 {
+		.gap,
+		.item {
+		  width: 48%;
+		}	
+	}
+
+}
+
+// // 3 columns
+@media only screen and ( min-width: 860px ) {
+
+
+}
+
+// addon and single download 3 columns
+@media only screen and ( min-width: 1024px ) {
+  
+	#footer .columns-4 {
+		text-align: left;
+		
+		.gap,
+		.item {
+		  width: 18%;
+		}
+
+		.item:last-child {
+			float: right;
+			width: auto;
+		}
+	}
+
+}
+
+
+@media all and ( min-width: 1220px ) {
+	#footer .columns-4 {
+	  .gap,
+	  .item {
+	    width: 18%;
+	  }
+	}
+
+	.wrap {
+		margin: 0 0 0 auto;
+	}
 }
