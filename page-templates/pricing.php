@@ -31,9 +31,12 @@ get_header(); ?>
 
 		<li class="business">
 			<h2>Business</h2>
-			<div class="price">$99</div>
-			<div class="count">3 sites</div>
-			<div>1 Year of Updates &amp; Support *</div>
+
+			<ul>
+				<li class="price">$99</li>
+				<li class="count">3 sites</li>
+				<li>1 Year of Updates &amp; Support *</li>
+			</ul>
 
 			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=1">Purchase</a>
 			
@@ -41,30 +44,31 @@ get_header(); ?>
 
 		<li class="developer">
 			<h2>Developer</h2>
-			<div class="price">$199</div>
-			<div class="count">Unlimited sites</div>
-			
-			<div>Access to all official  <a href="<?php echo get_post_type_archive_link( 'download' ); ?>">add-ons</a></div>
 
-			<div>1 Year of Updates &amp; Support *</div>
+			<ul>
+				<li class="price">$199</li>
+				<li class="count">Unlimited sites</li>
+				<li class="highlight">Access to all official  <a href="<?php echo get_post_type_archive_link( 'download' ); ?>">add-ons</a></li>
+				<li>1 Year of Updates &amp; Support *</li>
+			</ul>
 
 			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">Purchase</a>
 		</li>
 
 		<li class="personal">
 			<h2>Personal</h2>
-			<div class="price">$49</div>
-			<div class="count">1 site</div>
-			<div>1 Year of Updates &amp; Support *</div>
-			
+
+			<ul>
+				<li class="price">$49</li>
+				<li class="count">1 site</li>
+				<li>1 Year of Updates &amp; Support *</li>
+			</ul>
 			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
 		</li>
 
 	</ul>
 
-	<p>*You must renew the license after one calendar year for continued updates and support. Discounted renewal rates available. See information below for details. All purchases are subject to our terms and condition of use.</p>
-
-	
+	<p class="clause">* You must renew the license after one calendar year for continued updates and support. Discounted renewal rates available. See information below for details. All purchases are subject to our terms and condition of use.</p>
 
 </section>
 
@@ -73,46 +77,56 @@ get_header(); ?>
 	</div>
 </div>
 
-<section class="section columns columns-2 pre-sale-questions">
-		
+<section class="section columns columns-3 pre-sale-questions">
+	<div class="wrapper">
+
 		<div class="item">
-			<h4>Is there a live demo I can try?</h4>
-			<p>There sure is. You can <a href="http://demo.affiliatewp.com" target="_blank">try out AffiliateWP</a> live in your browser before you decide to purchase.</p>
+			<article>
+				<h4>Is there a live demo I can try?</h4>
+				<p>There sure is. You can <a href="http://demo.affiliatewp.com" target="_blank">try out AffiliateWP</a> live in your browser before you decide to purchase.</p>
+			</article>
+
+			
+			<article>
+				<h4>Do I need to renew my license?</h4>
+				<p>The license key is valid for one year from the purchase date. An active license key is needed for access to automatic updates and support. Your license can be renewed each year at a 40% discount of the current price.</p>
+			</article>
+			
 		</div>
 
 		<div class="item">
-			<h4>Do I get updates for the plugin?</h4>
-			<p>Yes! Automatic updates are delivered 100% free of charge to all users with a valid license key.</p>
+
+			<article>
+				<h4>Do you have a refund policy?</h4>
+				<p><a title="Refund Policy" href="<?php echo site_url( 'refund-policy' ); ?>">Yes we do</a>! We firmly believe in and stand behind the quality of our product and will refund 100% of your money if you are unhappy with the plugin.</p>
+			</article>
+
+			<article>
+				<h4>Do I get updates for the plugin?</h4>
+				<p>Yes! Automatic updates are delivered 100% free of charge to all users with a valid license key.</p>
+			</article>
+
+			
 		</div>
 
 		<div class="item">
-			<h4>Do you have a refund policy?</h4>
-			<p><a title="Refund Policy" href="<?php echo site_url( 'refund-policy' ); ?>">Yes we do</a>! We firmly believe in and stand behind the quality of our product and will refund 100% of your money if you are unhappy with the plugin.</p>
-		</div>
+			<article>
+				<h4>Do you offer support if I need help?</h4>
+				<p>Yes! We believe that top-notch support is key for a quality product and will do our very best to resolve any issues you encounter via our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+			</article>
 
-		
+			<article>
+				<h4>Will AffiliateWP work on WordPress.com?</h4>
+				<p>No, AffiliateWP will not work on WordPress.com. It only works on self-hosted WordPress installs.</p>
+			</article>
 
-		<div class="item">
-			<h4>Do I need to renew my license?</h4>
-			<p>The license key is valid for one year from the purchase date. An active license key is needed for access to automatic updates and support. Your license can be renewed each year at a 40% discount of the current price.</p>
+			<article>
+				<h4>I have other pre-sale questions, can you help?</h4>
+				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+			</article>
 		</div>
-
-		<div class="item">
-			<h4>Do you offer support if I need help?</h4>
-			<p>Yes! We believe that top-notch support is key for a quality product and will do our very best to resolve any issues you encounter via our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
-		</div>
-		<div class="item">
-			<h4>Does AffiliateWP work on WordPress.com?</h4>
-			<p>No, AffiliateWP does not work on WordPress.com, only self-hosted WordPress installs.</p>
-		</div>
-		<div class="item">
-			<h4>I have other pre-sale questions, can you help?</h4>
-			<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
-		</div>
-		
-
-
-	</section>
+	</div>	
+</section>
 
 <?php
 get_footer();
