@@ -171,9 +171,8 @@ get_header(); ?>
 	<div class="wrapper">
 		<header class="entry-header">
 			<h1 class="entry-title">3rd Party Add-ons</h1>
-			<h2>Free add-ons created by other developers</h2>
+			<h2>Free or paid add-ons created by other developers</h2>
 		</header>
-
 	</div>
 
 <?php if ( $wp_query->have_posts() ) : ?>
