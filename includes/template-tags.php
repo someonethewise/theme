@@ -159,15 +159,15 @@ function affwp_pre_get_posts( $query ) {
 		// remove affiliateWP from showing
 		$query->set( 'post__not_in', array( affwp_get_affiliatewp_id() ) );
 
-		// remove free addons assigned to the "free" category
-		$term = get_term_by( 'slug', 'free', 'download_category' );
-		
+		// only show developer add-ons
+		$term = get_term_by( 'slug', 'developer-add-ons', 'download_category' );
+
 		$args = array(
 	       array(
 	           'taxonomy' => 'download_category',
 	           'field' => 'id',
 	           'terms' => array( $term->term_id ),
-	           'operator'=> 'NOT IN'
+	           'operator'=> 'IN'
 	       )
 	    );
 

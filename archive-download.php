@@ -98,7 +98,7 @@ get_header(); ?>
           array(
               'taxonomy' => 'download_category',
               'field' => 'slug',
-              'terms' => 'free'
+              'terms' => 'official-free'
           )
       )
   );
@@ -146,4 +146,74 @@ get_header(); ?>
 
 <?php endif; ?>
 </section>
+
+<?php 
+
+  $args = array(
+      'post_type' => 'download',
+      'posts_per_page' => -1,
+      'tax_query' => array(
+          array(
+              'taxonomy' => 'download_category',
+              'field' => 'slug',
+              'terms' => '3rd-party'
+          )
+      )
+  );
+
+  $wp_query = new WP_Query( $args );
+
+?>
+
+<?php if ( $wp_query->found_posts > 0 ) : ?>
+<section class="section columns columns-3 addons">
+
+	<div class="wrapper">
+		<header class="entry-header">
+			<h1 class="entry-title">3rd Party Add-ons</h1>
+			<h2>Free add-ons created by other developers</h2>
+		</header>
+
+	</div>
+
+<?php if ( $wp_query->have_posts() ) : ?>
+    <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
+	    $coming_soon = affwp_addon_is_coming_soon( get_the_ID() ) ? 'coming-soon' : '';
+    ?>  
+        <article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box', $coming_soon ) ); ?>> 
+        		    
+			<?php 
+			$external_download_url = get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
+
+			if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
+
+	    		<h2>
+					<a href="<?php echo esc_attr( $external_download_url ); ?>" title="<?php the_title_attribute(); ?>" target="_blank">
+			    		<?php the_title(); ?>
+			    	</a>
+		    	</h2>
+
+		    	<?php affwp_post_thumbnail(); ?>
+
+		    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+		    		  	
+	    		<h2><?php the_title(); ?></h2>
+	    		<div class="post-thumbnail">
+	    			<?php the_post_thumbnail(); ?>
+	    		</div>
+
+			<?php endif; ?>	
+
+	       	<?php the_excerpt(); ?>
+	</article>
+       
+    <?php endwhile; wp_reset_query(); ?>
+   	
+   	<div class="gap"></div>
+	<div class="gap"></div>
+
+<?php endif; ?>
+</section>
+<?php endif; ?>
+
 <?php get_footer();

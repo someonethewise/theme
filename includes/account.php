@@ -50,14 +50,8 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 				array(
 					'taxonomy' => 'download_category',
 					'field' => 'slug',
-					'terms' => 'add-ons'
+					'terms' => 'developer-add-ons'
 				),
-				array(
-					'taxonomy' => 'download_category',
-					'field' => 'slug',
-					'terms' => 'free', // remove free items from this table
-					'operator' => 'NOT IN'
-				)
 			)
 	);
 
