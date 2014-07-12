@@ -103,7 +103,7 @@ function affwp_addon_save_post( $post_id ) {
 		)
 	);
 	
-	$edd_sl_version = $_POST['edd_sl_version'];
+	$edd_sl_version = isset( $_POST['edd_sl_version'] ) ? $_POST['edd_sl_version'] : '';
 
 	// software licensing version number
 	if ( isset( $edd_sl_version ) ) {

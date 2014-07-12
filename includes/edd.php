@@ -316,7 +316,9 @@ function affwp_add_on_info( $position = '' ) {
 			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
 		<?php endif; ?>
 
-		<?php if ( ! has_term( 'free', 'download_category' ) ) : ?>
+
+		<?php if ( has_term( 'developer-add-ons', 'download_category' ) ) : ?>
+
 				<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 
 					<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
@@ -338,6 +340,7 @@ function affwp_add_on_info( $position = '' ) {
 					<a title="Buy Developer License" class="button" href="<?php echo $purchase_url; ?>">Buy Developer License</a>
 					<p>This add-on is only available to <a title="Developer License" href="<?php echo site_url( 'pricing' ); ?>">Developer License</a> holders</p>
 				<?php endif; ?>
+
 		<?php endif; ?>
 		
 		
