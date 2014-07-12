@@ -23,9 +23,9 @@ function affwp_get_post_by_title( $page_title, $post_type = 'post' , $output = O
  */
 function affwp_get_affiliatewp_id() {
 	$id = affwp_get_post_by_title( 'affiliatewp', 'download' );
-	$id = $id->ID;
-
+	
 	if ( $id ) {
+		$id = $id->ID;
 		return $id;
 	}
 
