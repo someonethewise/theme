@@ -279,17 +279,14 @@ add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
  * @since  1.1.9
  */
 function affwp_add_on_info( $position = '' ) {
-
-	$version 				= get_post_meta( get_the_ID(), '_edd_sl_version', true );
-	$requires 				= get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
-	$released 				= get_the_date();
-	$updated 				= intval ( get_post_meta( get_the_ID(), '_affwp_addon_last_updated', true ) );
-	$edd_version_required 	= get_post_meta( get_the_ID(), '_affwp_addon_edd_version_required', true );
-	$external_download_url 	= get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
-
-	
-
-	?>
+	$version               = get_post_meta( get_the_ID(), '_edd_sl_version', true );
+	$requires              = get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
+	$released              = get_the_date();
+	$updated               = intval ( get_post_meta( get_the_ID(), '_affwp_addon_last_updated', true ) );
+	$edd_version_required  = get_post_meta( get_the_ID(), '_affwp_addon_edd_version_required', true );
+	$external_download_url = get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
+	$developer             = get_post_meta( get_the_ID(), '_affwp_addon_developer', true );
+?>
 	<aside class="add-on-info<?php echo ' ' . $position; ?>">
 		
 		<?php if ( $version ) : ?>
@@ -311,7 +308,11 @@ function affwp_add_on_info( $position = '' ) {
 		<?php if ( $updated ) : ?>
 		<p><span>Last Updated</span><?php echo date( 'F j, Y', $updated ); ?></p>
 		<?php endif; ?>
-			
+		
+		<?php if ( $developer ) : ?>
+			<p><span>Developer </span><?php echo esc_attr( $developer ); ?></p>
+		<?php endif; ?>
+
 		<?php if ( $external_download_url ) : ?>
 			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
 		<?php endif; ?>

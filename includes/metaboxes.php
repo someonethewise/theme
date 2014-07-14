@@ -56,6 +56,14 @@ function affwp_addon_meta_box( $post_id ) {
 		<input class="widefat" type="text" name="affwp_addon_download_url" id="affwp-addon-download-url" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_download_url', true ) ); ?>" size="30" />
 	</p>
 
+	<p><strong><?php _e( 'Developer', 'affwp' ); ?></strong></p>
+	<p>
+		<label for="affwp-addon-download-developer" class="screen-reader-text">
+			<?php _e( 'Developer', 'affwp' ); ?>
+		</label>	
+		<input class="widefat" type="text" name="affwp_addon_developer" id="affwp-addon-developer" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_developer', true ) ); ?>" size="30" />
+	</p>
+
 	<?php wp_nonce_field( 'affwp_addon_metaboxes', 'affwp_addon_metaboxes' ); ?>
 
 <?php }
@@ -92,14 +100,13 @@ function affwp_addon_save_post( $post_id ) {
 		return;
 	}
 
-	
-
 	$fields = apply_filters( 'affwp_addon_metabox_fields_save', array(
 			'affwp_addon_coming_soon',
 			'affwp_addon_release_date',
 			'affwp_addon_requires',
 			'affwp_addon_edd_version_required',
-			'affwp_addon_download_url'
+			'affwp_addon_download_url',
+			'affwp_addon_developer'
 		)
 	);
 	

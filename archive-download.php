@@ -187,7 +187,7 @@ get_header(); ?>
 			if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 
 	    		<h2>
-					<a href="<?php echo esc_attr( $external_download_url ); ?>" title="<?php the_title_attribute(); ?>" target="_blank">
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 			    		<?php the_title(); ?>
 			    	</a>
 		    	</h2>
