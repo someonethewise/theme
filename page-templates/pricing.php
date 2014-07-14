@@ -92,6 +92,11 @@ get_header(); ?>
 				<p>The license key is valid for one year from the purchase date. An active license key is needed for access to automatic updates and support. Your license can be renewed each year at a 40% discount of the current price.</p>
 			</article>
 			
+			<article>
+				<h4>Can I upgrade my license?</h4>
+				<p>Yes, we offer a 1-click upgrade process from your <a href="<?php echo site_url( 'account' ); ?>" title="Account" >account</a> page.</p>
+			</article>
+
 		</div>
 
 		<div class="item">
@@ -106,6 +111,10 @@ get_header(); ?>
 				<p>Yes! Automatic updates are delivered 100% free of charge to all users with a valid license key.</p>
 			</article>
 
+			<article>
+				<h4>I have other pre-sale questions, can you help?</h4>
+				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+			</article>
 			
 		</div>
 
@@ -120,10 +129,7 @@ get_header(); ?>
 				<p>No, AffiliateWP will not work on WordPress.com. It only works on self-hosted WordPress installs.</p>
 			</article>
 
-			<article>
-				<h4>I have other pre-sale questions, can you help?</h4>
-				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
-			</article>
+			
 		</div>
 	</div>	
 </section>
