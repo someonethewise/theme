@@ -64,6 +64,14 @@ function affwp_addon_meta_box( $post_id ) {
 		<input class="widefat" type="text" name="affwp_addon_developer" id="affwp-addon-developer" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_developer', true ) ); ?>" size="30" />
 	</p>
 
+	<p><strong><?php _e( 'Developer URL', 'affwp' ); ?></strong></p>
+	<p>
+		<label for="affwp-addon-download-developer-url" class="screen-reader-text">
+			<?php _e( 'Developer URL', 'affwp' ); ?>
+		</label>	
+		<input class="widefat" type="text" name="affwp_addon_developer_url" id="affwp-addon-developer-url" value="<?php echo esc_attr( get_post_meta( get_the_ID(), '_affwp_addon_developer_url', true ) ); ?>" size="30" />
+	</p>
+
 	<?php wp_nonce_field( 'affwp_addon_metaboxes', 'affwp_addon_metaboxes' ); ?>
 
 <?php }
@@ -106,7 +114,8 @@ function affwp_addon_save_post( $post_id ) {
 			'affwp_addon_requires',
 			'affwp_addon_edd_version_required',
 			'affwp_addon_download_url',
-			'affwp_addon_developer'
+			'affwp_addon_developer',
+			'affwp_addon_developer_url'
 		)
 	);
 	
@@ -126,7 +135,7 @@ function affwp_addon_save_post( $post_id ) {
 		$new = ( isset( $_POST[ $field ] ) ? esc_attr( $_POST[ $field ] ) : '' );
 
 		// http
-		if ( $field == 'affwp_addon_download_url' )
+		if ( $field == 'affwp_addon_download_url' || $field == 'affwp_addon_developer_url' )
 			$new = esc_url_raw( $_POST[ $field ] );
 
 		$new = apply_filters( 'affwp_addon_save_' . $field, $new );

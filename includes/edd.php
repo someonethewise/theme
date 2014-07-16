@@ -286,6 +286,7 @@ function affwp_add_on_info( $position = '' ) {
 	$edd_version_required  = get_post_meta( get_the_ID(), '_affwp_addon_edd_version_required', true );
 	$external_download_url = get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
 	$developer             = get_post_meta( get_the_ID(), '_affwp_addon_developer', true );
+	$developer_url         = get_post_meta( get_the_ID(), '_affwp_addon_developer_url', true );
 ?>
 	<aside class="add-on-info<?php echo ' ' . $position; ?>">
 		
@@ -310,8 +311,17 @@ function affwp_add_on_info( $position = '' ) {
 		<?php endif; ?>
 		
 		<?php if ( $developer ) : ?>
-			<p><span>Developer </span><?php echo esc_attr( $developer ); ?></p>
+
+			<?php if ( $developer_url ) : ?>
+				<p><span>Developer </span><a href="<?php echo esc_url( $developer_url ); ?>" title="<?php echo esc_attr( $developer ); ?>" target="_blank"><?php echo esc_attr( $developer ); ?></a></p>
+			
+			<?php else : ?>
+				<p><span>Developer </span><?php echo esc_attr( $developer ); ?></p>
+			<?php endif; ?>
+
 		<?php endif; ?>
+
+
 
 		<?php if ( $external_download_url ) : ?>
 			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
