@@ -4,6 +4,21 @@
  */
 
 /**
+ * Redirect to pricing page when cart at checkout is empty.
+ * @return void
+ */
+function affwp_empty_cart_redirect() {
+	$cart     = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : false;
+	$redirect = site_url('pricing');
+ 
+	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() && ! $cart ) {
+		wp_redirect( $redirect, 301 ); 
+		exit;
+	}
+}
+add_action( 'template_redirect', 'affwp_empty_cart_redirect' );
+
+/**
  * Change labels
  */
 function affwp_edd_default_downloads_name( $defaults ) {

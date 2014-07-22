@@ -1,27 +1,17 @@
-// SSL
-
-// #edd_secure_site_wrapper span.padlock:before { 
-// 	font-family: 'padlock'; 
-// 	font-style: normal; 
-// 	font-weight: normal; 
-// 	speak: none; display: inline-block; 
-// 	text-decoration: inherit; 
-// 	width: 1em; 
-// 	margin-right: 0.2em; 
-// 	text-align: center;  
-// 	line-height: 1em; 
-// 	margin-left: 0.2em; 
-// 	font-size: 120%; 
-// 	text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); 
-// 	content: '🔒';
-// }
-
-// .icon-padlock:before {
-//   content: "\e013";
-// }
-
 .purchase-confirmation .sharing {
 	margin-top: 3rem;
+}
+
+#edd_checkout_cart .edd_cart_discount {
+	text-align: right;
+}
+
+.edd_discount_remove {
+    background: url("images/xit.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 10px;
+    position: relative;
+    width: 10px;
 }
 
 #edd_secure_site_wrapper {
@@ -31,6 +21,8 @@
 	span {
 		font-weight: 500;
 		 color: @accent-color;
+		 display: block;
+		 line-height: 1.62;
 	}
 }
 
@@ -47,17 +39,6 @@
 	 -moz-osx-font-smoothing: grayscale;
 	 color: @accent-color;
 	 font-size: 2rem;
-}
-
-@media only screen and ( min-width: 1024px ) {
-
-	#edd_secure_site_wrapper span.padlock:before {
-		 font-size: 4rem;
-		 position: absolute;
-		 left: -7.5rem;
-		 top: -2rem;
-	}
-
 }
 
 // price options
@@ -79,7 +60,6 @@
 
 .edd-payment-icons {
 	margin-bottom: 1.5rem;
-//	padding: 0 1.5rem;
 }
 
 // software licensing
@@ -102,11 +82,41 @@
 	}
 }
 
-.edd_errors { border: 1px solid #E6DB55; margin: 0 0 21px 0; background: #FFFFE0; color: #333; }
-.edd_error { padding: 1rem; }
-p.edd_error { margin: 0 !important; }
+.edd_errors { 
+	border: 1px solid #E6DB55; 
+	margin: 0 0 1rem 0; 
+	background: #FFFFE0; 
+	color: #333;
+
+	padding: 1rem;
+	display: block;
+}
+
+input.error {
+	margin-bottom: 0;
+}
+
+#edd-discount-error-wrap {
+	margin: 1rem 0 0 0;
+}
+
+// margins for fieldsets
+#edd_cc_address, 
+#edd_cc_fields,
+#edd_checkout_user_info {
+	margin-bottom: 2rem;
+}
 
 #edd_payment_mode_select {
+	margin-bottom: 1.5rem;
+}
+
+#edd_login_fields {
+	margin-bottom: 4rem;
+}
+
+#edd_payment_mode_select {
+	
 	.edd-payment-mode-label {
 		display: block;
 	}
@@ -126,9 +136,6 @@ p.edd_error { margin: 0 !important; }
 		margin-bottom: 0;
 	}
 
-	.edd_error {
-	//	color: @accent-color;
-	}
 }
 
 
@@ -147,7 +154,6 @@ p.edd_error { margin: 0 !important; }
 	th, 
 	td {
 	    border: 1px solid @light-grey;
-	//    color: #666666;
 	    padding: 0.5rem 1rem;
 	    text-align: left;
 	}
@@ -169,8 +175,7 @@ p.edd_error { margin: 0 !important; }
 
 
 #edd_purchase_form {
-	fieldset {
-		 padding: 1.5rem 0 2rem 0;
+	fieldset fieldset {
 		 margin-bottom: 2rem;
 	}
 
@@ -180,26 +185,12 @@ p.edd_error { margin: 0 !important; }
 	}
 }
 
-#edd_purchase_form_wrap {
-//	fieldset { padding: 1.5rem; }
-	fieldset fieldset { padding: 0; }
-}
 
-#edd_register_fields {
-	
-}
+
 #edd_checkout_form_wrap {
 	
-	
-
 	fieldset {
-	//    border: 1px solid @light-grey;
-	   // margin: 0 0 1.5rem;
-	    margin: 0;
-	//   
 	    background: @light-grey;
-	//	border: 1px solid darken( @light-grey, 3% );
-
 		#edd_agree_to_terms {
 			float: left;
 			margin-right: 1rem;
@@ -213,7 +204,8 @@ p.edd_error { margin: 0 !important; }
 		}
 	}
 
-	.edd-label {
+	label {
+		color: #787878;
 		font-weight: 500;
 	}
 
@@ -225,14 +217,9 @@ p.edd_error { margin: 0 !important; }
 }
 
 
-
-
-
-
-
-
-
-
+#edd_checkout_form_wrap label {
+	font-size: 1rem;
+}
 
 
 
@@ -257,9 +244,9 @@ p.edd_error { margin: 0 !important; }
 	display: block;
 }
 
-#edd_checkout_form_wrap label {
-	font-size: 1rem;
-    font-weight: 400;
+.edd-gateway-option {
+	margin-bottom: 0.5rem;
+	display: block;
 }
 
 #edd_profile_editor_form {
@@ -271,7 +258,6 @@ p.edd_error { margin: 0 !important; }
 
 	label {
 		margin-bottom: 0.5rem;
-	//	font-size: 1rem;
 	}
 
 	legend {
@@ -291,4 +277,27 @@ p.edd_error { margin: 0 !important; }
 			margin-bottom: 0;
 		}
 	}
+}
+
+@media only screen and ( min-width: 680px ) {
+	#edd-discount {
+		width: 79%;
+		vertical-align: top;
+		font-size: 1rem;
+	}
+
+	input.edd-apply-discount {
+		width: 20%;
+	}
+}
+
+@media only screen and ( min-width: 1024px ) {
+
+	#edd_secure_site_wrapper span.padlock:before {
+		 font-size: 4rem;
+		 position: absolute;
+		 left: -7.5rem;
+		 top: -2rem;
+	}
+
 }
