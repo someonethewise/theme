@@ -78,9 +78,6 @@
 					?>
 				<?php endif; ?>
 
-				<a href="http://2014.nyc.wordcamp.org/sponsors/#wcorg-sponsor-104262" title="Proud Sponsor of WordCamp NYC – August 2-3, 2014" target="_blank">
-					<img alt="Proud Sponsor of WordCamp NYC – August 2-3, 2014" src="http://2014.nyc.wordcamp.org/files/2014/04/wcnyc14_badge_sponsor_250.png" />
-				</a>
 				</div>
 
 			</div>
