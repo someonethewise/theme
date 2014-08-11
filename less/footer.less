@@ -105,7 +105,7 @@ footer#footer {
 }
 
 @media only screen and ( min-width: 572px ) {
-	#footer .columns-4 {
+	#footer .columns-5 {
 		.gap,
 		.item {
 		  width: 48%;
@@ -116,24 +116,29 @@ footer#footer {
 
 // // 3 columns
 @media only screen and ( min-width: 860px ) {
-
+	.item:last-child {
+	//	float: right;
+	}
 
 }
 
 // addon and single download 3 columns
 @media only screen and ( min-width: 1024px ) {
   
-	#footer .columns-4 {
-		text-align: left;
+	#footer .columns-5 {
+	//	text-align: left;
 		
 		.gap,
 		.item {
-		  width: 18%;
+		  width: 15%;
 		}
 
+		// .item.last {
+
+		// }
+
 		.item:last-child {
-			float: right;
-			width: auto;
+			width: 32%;
 		}
 	}
 
@@ -141,10 +146,10 @@ footer#footer {
 
 
 @media all and ( min-width: 1220px ) {
-	#footer .columns-4 {
+	#footer .columns-5 {
 	  .gap,
 	  .item {
-	    width: 18%;
+	    width: 15%;
 	  }
 	}
 

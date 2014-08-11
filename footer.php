@@ -16,7 +16,7 @@
 
 		<?php if ( function_exists( 'edd_is_checkout' ) && ! edd_is_checkout() ) : ?>
 
-		<section class="section columns columns-4">
+		<section class="section columns columns-5">
 
 			<div class="item">
 				<h3>AffiliateWP</h3>
@@ -59,15 +59,24 @@
 						<li><a href="https://twitter.com/sumobi_" target="_blank">Andrew Munro</a></li>
 					</ul>
 
-				<h3>Our sites</h3>	
+				
+			</div>
+
+			<div class="item">
+				<h3>Our Sites</h3>	
 				<ul class="page-links">
 					<li><a href="http://pippinsplugins.com" title="Pippin's Plugins" target="_blank">Pippin's Plugins</a></li>
 					<li><a href="http://sumobi.com" title="Sumobi" target="_blank">Sumobi</a></li>
 					<li><a href="http://easydigitaldownloads.com" title="Easy Digital Downloads" target="_blank">Easy Digital Downloads</a></li>
 				</ul>
+
+				
 			</div>
 
-			<div class="item">
+			
+
+
+			<div class="item last">
 				<div class="wrap">
 				<?php if ( ! is_home() ) : ?>
 					<h3>Stay up to date</h3> 

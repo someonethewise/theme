@@ -25,7 +25,7 @@ function affwp_home_how_it_works() {
 				<p>Higher visibility means more people will visit your website, and see your products and services.</p>
 			</div>
 
-			<div class="item">
+			<div class="item last">
 				<i class="icon-benefit-3"></i>
 				<h1>Increased Sales</h1>
 				<p>More traffic to your website means an increased likelihood of converting them into real customers.</p>
@@ -175,13 +175,13 @@ function affwp_home_how_it_works() {
 				<li class="searchwp"><img alt="Used by SearchWP" src="<?php echo get_stylesheet_directory_uri() . '/images/searchwp.png'; ?>"></li>
 				<li class="wpsessions"><img alt="Used by WPSessions" src="<?php echo get_stylesheet_directory_uri() . '/images/wpsessions.png'; ?>"></li>
 				<li class="audit-wp"><img alt="Used by Audit WP" src="<?php echo get_stylesheet_directory_uri() . '/images/audit-wp.png'; ?>"></li>
-				<li class="facetwp"><img alt="Used by FacetWP" src="<?php echo get_stylesheet_directory_uri() . '/images/facetwp.png'; ?>"></li>
+				<li class="facetwp last"><img alt="Used by FacetWP" src="<?php echo get_stylesheet_directory_uri() . '/images/facetwp.png'; ?>"></li>
 			</ul>
 
 		</div>	
 	</section>
 
-	<section class="section home alt">
+	<section class="section home alt how-it-works">
 		<div class="wrapper">
 			<h1>How Affiliate Marketing works</h1>	
 			<figure>
@@ -216,7 +216,7 @@ function affwp_home_how_it_works() {
 		        </blockquote>
 			</div>
 
-			<div class="item">
+			<div class="item last">
 				 <blockquote>
 		          <p>I spend all day in my WordPress dashboard so I wanted, nay, needed an affiliate solution that integrated flawlessly with WordPress. AffiliateWP was set up in minutes, is completely accurate, and helps me grow my business. It doesn't hurt that it's built by people you can trust either.</p>
 		          <footer>James Laws, Ninja Forms</footer>
