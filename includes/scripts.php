@@ -94,6 +94,16 @@ function affwp_fancybox() {
 add_action( 'wp_footer', 'affwp_fancybox', 100 );
 
 /**
+ * Try Disco scripts
+ */
+function affwp_try_disco_js() {
+	$amount = edd_is_success_page() ? '?amount=49' : '';
+ ?>
+	<script src="//trydisco.com/thanks-h.js<?php echo $amount; ?>" async></script>
+<?php }
+add_action( 'wp_footer', 'affwp_try_disco_js', 100 );
+
+/**
  * Home JS
  */
 function affwp_social_js() {
