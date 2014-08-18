@@ -99,7 +99,7 @@ add_action( 'wp_footer', 'affwp_fancybox', 100 );
 function affwp_try_disco_js() {
 
 	// get purchase session
-	$purchase_session = edd_get_purchase_session();
+	$purchase_session = function_exists( 'edd_get_purchase_session' ) ? edd_get_purchase_session() : '';
 	// get the key
 	$purchase_key     = $purchase_session['purchase_key'];
 	// get the payment ID from the purchase key
