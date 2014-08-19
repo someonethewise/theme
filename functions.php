@@ -287,3 +287,16 @@ function affwp_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'affwp_wp_title', 10, 2 );
+
+/**
+ * Registers a connection between Downloads and Documentation for Posts 2 Posts
+ */
+function affwp_connection_types() {
+	p2p_register_connection_type( array(
+		'name' => 'download_to_docs',
+		'from' => 'download',
+		'to' => 'docs',
+		'reciprocal' => true
+	) );
+}
+add_action( 'p2p_init', 'affwp_connection_types' );
