@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.6.9' );
+	define( 'AFFWP_THEME_VERSION', '1.7.0' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -14,6 +14,7 @@ if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
  * @since 1.0
 */
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'scripts.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'gallery.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'sharing.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'gforms.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'ajax-functions.php' );
@@ -92,13 +93,14 @@ function affwp_setup() {
 		'primary'   => __( 'Primary menu', 'affwp' ),
 	) );
 
-	/*
+		/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list',
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
+
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
