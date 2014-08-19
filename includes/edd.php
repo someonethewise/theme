@@ -347,7 +347,7 @@ function affwp_add_on_info( $position = '' ) {
 
 			// Find connected posts
 			$docs = new WP_Query( array(
-				'connected_type' => 'extensions_to_docs',
+				'connected_type' => 'download_to_docs',
 				'connected_items' => get_queried_object(),
 				'nopaging' => true,
 				'post_status' => 'publish'
