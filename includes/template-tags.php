@@ -32,6 +32,14 @@ function affwp_comment_form_defaults( $defaults ) {
 add_filter( 'comment_form_defaults', 'affwp_comment_form_defaults', 1 );
 
 /**
+ * Filter excerpt
+ */
+function affwp_custom_excerpt_more( $more ) {
+	return '&hellip;';
+}
+add_filter( 'excerpt_more', 'affwp_custom_excerpt_more' );
+
+/**
  * Share purchase shortcode
  */
 function affwp_show_sharing_buttons_after_purchase( $atts, $content = null ) {

@@ -95,14 +95,8 @@ get_header();
 							
 							<p>
 								<span>Comments</span>
-								
 								<?php comments_popup_link( __( 'Leave a comment', 'affwp' ), __( '1', 'affwp' ), __( '%', 'affwp' ) ); ?>
-								
 							</p>
-
-							<?php /*
-							<a href="<?php the_permalink(); ?>" class="button">Read now</a>
-							*/ ?>
 						
 						</div>
 
@@ -116,10 +110,7 @@ get_header();
 					            	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					        	</h2>
 					        	
-					        	<?php 
-							 		$excerpt = $post->post_excerpt ? the_excerpt() : '';
-							 		echo $excerpt;
-								?>	
+					        	<?php the_excerpt(); ?>	
 
 								<p><a href="<?php the_permalink(); ?>" class="">Read more</a></p>
 

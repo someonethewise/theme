@@ -192,7 +192,7 @@ function affwp_home_how_it_works() {
 
 	<section class="section home columns-2 columns testimonials">
 		<h1>A few of our happy customers</h1>
-		<a title="Testimonials" href="<?php echo site_url( 'testimonials' ); ?>">View more testimonials</a>
+		<a href="<?php echo site_url( 'testimonials' ); ?>" class="button" title="Read testimonials">Read testimonials</a>
 
 		<div class="wrapper">
 			<div class="item">
@@ -223,6 +223,8 @@ function affwp_home_how_it_works() {
 		        </blockquote>
 			</div>
 		</div>
+
+
 	</section>
 
 	<section class="section home alt2 guarantee">

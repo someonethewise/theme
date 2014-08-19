@@ -79,19 +79,20 @@ function affwp_fancybox() {
 ?>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
+		//	jQuery("a:has(img)[href$='.jpg'], a:has(img)[href$='.png'], a:has(img)[href$='.gif']").fancybox({
 			jQuery(".fancybox").fancybox({
 				helpers: {
-				    overlay: {
-				      locked: false
-				    }
+				    overlay: null
 				  },
 				openEffect	: 'elastic',
 				closeEffect	: 'elastic'
 			});
+
 		});
 	</script>
 <?php }
 add_action( 'wp_footer', 'affwp_fancybox', 100 );
+
 
 /**
  * Try Disco scripts
