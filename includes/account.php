@@ -26,6 +26,9 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 		<p>
 			<a href="<?php echo site_url( 'account/affiliates' ); ?>">Looking for our affiliate area?</a>
 		</p>
+		<p>
+			<a href="<?php echo site_url( 'account/register' ); ?>">Need to register an account?</a>
+		</p>
 
 		<?php echo edd_login_form( add_query_arg( array('login' => 'success', 'logout' => false ), site_url( $_SERVER['REQUEST_URI'] ) ) ); ?>
 		
