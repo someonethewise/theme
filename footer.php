@@ -30,6 +30,7 @@
 					<li><a href="<?php echo site_url( 'brand-assets' ); ?>" title="Brand Assets">Brand Assets</a></li>
 					<li><a href="<?php echo site_url( 'about' ); ?>" title="About">About</a></li>
 					<li><a href="<?php echo site_url( 'blog' ); ?>" title="Blog">Blog</a></li>
+					<li><a href="<?php echo site_url( 'consultants' ); ?>" title="Consultants">Consultants</a></li>
 				</ul>
 			</div>
 
