@@ -397,3 +397,22 @@ function affwp_add_on_info( $position = '' ) {
 	</aside>
 	<?php
 }
+
+function affwp_edd_optimizely_revenue_tracking() {
+
+	$session = edd_get_purchase_session();
+	if( ! $session ) {
+		return;
+	}
+
+	$payment_id = edd_get_purchase_id_by_key( $session['purchase_key'] );
+
+?>
+<script>
+	var price = <?php echo edd_get_payment_amount( $payment_id ); ?> 
+    window.optimizely = window.optimizely || [];
+    window.optimizely.push(['trackEvent', 'purchase_complete', {'revenue': price * 100}]);
+</script>
+<?php
+}
+add_action( 'wp_head', 'affwp_edd_optimizely_revenue_tracking');
