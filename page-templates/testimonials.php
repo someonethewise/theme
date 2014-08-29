@@ -94,6 +94,14 @@ get_header(); ?>
 				        </blockquote>
 					</div>
 
+						<div class="item">
+						 <blockquote>
+				          <p>I've tried a couple of other affiliate plugins for WooCommerce and AffiliateWP is definitely the best one: its minimal dashboard interface makes it very easy to setup and use, but still provides a lot of flexibility (such as per-affiliate and per-product rates) and the signup process for new affiliates is very smooth and streamlined. Plus, Pippin provides an awesome customer service.</p>
+				          <footer>Enrico Cassinelli</footer>
+				        </blockquote>
+					</div>
+					
+
 					<div class="gap"></div>
 					<div class="gap"></div>
 			</div>
