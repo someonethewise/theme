@@ -81,11 +81,12 @@ get_header(); ?>
 	<div class="wrapper">
 
 		<div class="item">
+			<?php /*
 			<article>
 				<h4>Is there a live demo I can try?</h4>
 				<p>There sure is. You can <a href="http://demo.affiliatewp.com" target="_blank">try out AffiliateWP</a> live in your browser before you decide to purchase.</p>
 			</article>
-
+		*/ ?>
 			
 			<article>
 				<h4>Do I need to renew my license?</h4>
@@ -97,6 +98,11 @@ get_header(); ?>
 				<p>Yes, we offer a 1-click upgrade process from your <a href="<?php echo site_url( 'account' ); ?>" title="Account" >account</a> page.</p>
 			</article>
 
+			<article>
+				<h4>I have other pre-sale questions, can you help?</h4>
+				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+			</article>
+			
 		</div>
 
 		<div class="item">
@@ -111,10 +117,7 @@ get_header(); ?>
 				<p>Yes! Automatic updates are delivered 100% free of charge to all users with a valid license key.</p>
 			</article>
 
-			<article>
-				<h4>I have other pre-sale questions, can you help?</h4>
-				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
-			</article>
+			
 			
 		</div>
 
