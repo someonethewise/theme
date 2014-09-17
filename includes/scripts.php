@@ -77,10 +77,11 @@ add_action( 'wp_footer', 'affwp_flexslider', 50 );
  */
 function affwp_fancybox() {
 ?>
+
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
-		//	jQuery("a:has(img)[href$='.jpg'], a:has(img)[href$='.png'], a:has(img)[href$='.gif']").fancybox({
-			jQuery(".fancybox").fancybox({
+			jQuery("a:has(img)[href$='.jpg'], a:has(img)[href$='.png'], a:has(img)[href$='.gif']").fancybox({
+		//	jQuery(".fancybox").fancybox({
 				helpers: {
 				    overlay: null
 				  },
