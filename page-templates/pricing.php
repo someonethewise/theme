@@ -106,7 +106,7 @@ $developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
 
 			<article>
 				<h4>Do all license holders have access to add-ons?</h4>
-				<p>Yes, there are <a title="Free add-ons" href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> official free and 3rd party add-ons</a> available for the Personal and Business license holders.</p><p>In addition, our developer license holders receive access to <a title="Official developer add-ons" href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>">5 official developer add-ons</a> as a special perk, including any we release in the future.</p>
+				<p>Yes, there are <a title="Free add-ons" href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> official free and 3rd party add-ons</a> available for the Personal and Business license holders.</p><p>In addition, our developer license holders receive access to <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a> as a special perk, including any we release in the future.</p>
 			</article>
 			
 		</div>
@@ -120,7 +120,7 @@ $developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
 
 			<article>
 				<h4>What are the benefits of a developer license?</h4>
-				<p>In addition to being able to use AffiliateWP on an unlimited number of sites, a developer license also gives you access to all <a title="Official developer add-ons" href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>">5 official developer add-ons</a>, including any we release in the future. This makes it a considerably valuable license to hold.</p>
+				<p>In addition to being able to use AffiliateWP on an unlimited number of sites, a developer license also gives you access to all <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a>, including any we release in the future. This makes it a considerably valuable license to hold.</p>
 			</article>
 
 			<article>
