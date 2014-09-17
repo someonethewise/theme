@@ -4,7 +4,9 @@
  *
  */
 
-get_header(); ?>
+get_header(); 
+
+?>
 
 <div class="primary content-area">
 	<div class="wrapper">
@@ -18,6 +20,22 @@ get_header(); ?>
 			endwhile;
 		?>
 
+<section class="columns">
+<div class="item">
+<?php
+// get total number of official free and 3rd party add-ons
+
+$free_add_ons = affwp_get_add_on_count( '3rd-party' ) + affwp_get_add_on_count( 'official-free' );
+echo $free_add_ons;
+
+$developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
+
+
+// get total number of official developer add-ons
+// 
+?>
+</div>
+</section>
 
 <section class="pricing">
 	<?php
@@ -35,6 +53,7 @@ get_header(); ?>
 			<ul>
 				<li class="price">$99</li>
 				<li class="count">3 sites</li>
+				<li class="highlight">Access to <a href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> free add-ons</a></li>
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
 
@@ -48,7 +67,7 @@ get_header(); ?>
 			<ul>
 				<li class="price">$199</li>
 				<li class="count">Unlimited sites</li>
-				<li class="highlight">Access to all official  <a href="<?php echo get_post_type_archive_link( 'download' ); ?>">add-ons</a></li>
+				<li class="highlight">Access to <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a></li>
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
 
@@ -61,6 +80,7 @@ get_header(); ?>
 			<ul>
 				<li class="price">$49</li>
 				<li class="count">1 site</li>
+				<li class="highlight">Access to <a href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> free add-ons</a></li>
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
 			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
@@ -99,8 +119,8 @@ get_header(); ?>
 			</article>
 
 			<article>
-				<h4>I have other pre-sale questions, can you help?</h4>
-				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+				<h4>Do all license holders have access to the add-ons?</h4>
+				<p>Yes, there are <a title="Free add-ons" href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> official free and 3rd party add-ons</a> available for the Personal and Business licenses.</p><p>In addition, our developer license holders receive access to <a title="Official developer add-ons" href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>">5 official developer add-ons</a> as a special perk, including any we release in the future.</p>
 			</article>
 			
 		</div>
@@ -110,6 +130,11 @@ get_header(); ?>
 			<article>
 				<h4>Do you have a refund policy?</h4>
 				<p><a title="Refund Policy" href="<?php echo site_url( 'refund-policy' ); ?>">Yes we do</a>! We firmly believe in and stand behind the quality of our product and will refund 100% of your money if you are unhappy with the plugin.</p>
+			</article>
+
+			<article>
+				<h4>What does the developer license give me?</h4>
+				<p>In addition to being able to use AffiliateWP on any number of sites, a developer license also gives you access to all <a title="Official developer add-ons" href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>">5 official developer add-ons</a>, including any we release in the future. This makes it a considerably valuable license to hold.</p>
 			</article>
 
 			<article>
@@ -133,6 +158,12 @@ get_header(); ?>
 			</article>
 
 			
+			
+			<article>
+				<h4>I have other pre-sale questions, can you help?</h4>
+				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+			</article>
+
 		</div>
 	</div>	
 </section>

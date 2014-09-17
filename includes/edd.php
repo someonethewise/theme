@@ -4,6 +4,33 @@
  */
 
 /**
+ * Get number of add-ons in each category
+ * @return string number of add-ons
+ */
+function affwp_get_add_on_count( $add_on_category = '' ) {
+	
+	if ( ! $add_on_category ) {
+		return;
+	}
+
+	$args = array(
+		'type'     => 'download',
+		'taxonomy' => 'download_category',
+	); 
+
+	$categories = get_categories( $args );
+
+	foreach ( $categories as $category ) {
+		if ( $category->slug == $add_on_category ) {
+			$count = $category->count;
+		}
+	}
+
+	return $count;
+}
+
+
+/**
  * Redirect to pricing page when cart at checkout is empty.
  * @return void
  */
