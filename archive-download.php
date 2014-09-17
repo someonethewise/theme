@@ -33,7 +33,7 @@ get_header(); ?>
 	</header>
 
 
-<section class="section columns columns-3 addons">
+<section id="official-developer-add-ons" class="section columns columns-3 addons">
 
 
 	<?php while ( have_posts() ) : the_post(); 
@@ -79,7 +79,7 @@ get_header(); ?>
 	
 </section>
 
-<section class="section columns columns-3 addons">
+<section id="official-free-add-ons" class="section columns columns-3 addons">
 
 	<div class="wrapper">
 		<header class="entry-header">
@@ -171,7 +171,7 @@ get_header(); ?>
 ?>
 
 <?php if ( $wp_query->found_posts > 0 ) : ?>
-<section class="section columns columns-3 addons">
+<section id="third-party-add-ons" class="section columns columns-3 addons">
 
 	<div class="wrapper">
 		<header class="entry-header">
