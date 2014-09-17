@@ -6,6 +6,9 @@
 
 get_header(); 
 
+$free_add_ons = affwp_get_add_on_count( '3rd-party' ) + affwp_get_add_on_count( 'official-free' );
+$developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
+
 ?>
 
 <div class="primary content-area">
@@ -19,23 +22,6 @@ get_header();
 
 			endwhile;
 		?>
-
-<section class="columns">
-<div class="item">
-<?php
-// get total number of official free and 3rd party add-ons
-
-$free_add_ons = affwp_get_add_on_count( '3rd-party' ) + affwp_get_add_on_count( 'official-free' );
-echo $free_add_ons;
-
-$developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
-
-
-// get total number of official developer add-ons
-// 
-?>
-</div>
-</section>
 
 <section class="pricing">
 	<?php
