@@ -6,8 +6,10 @@
 
 get_header(); 
 
-$free_add_ons = affwp_get_add_on_count( '3rd-party' ) + affwp_get_add_on_count( 'official-free' );
-$developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
+$developer_add_ons     = affwp_get_add_on_count( 'developer-add-ons' );
+$official_free_add_ons = affwp_get_add_on_count( 'official-free' );
+$third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
+
 
 ?>
 
@@ -39,7 +41,6 @@ $developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
 			<ul>
 				<li class="price">$99</li>
 				<li class="count">3 sites</li>
-				<li class="highlight">Access to <a href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> free add-ons</a></li>
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
 
@@ -66,7 +67,6 @@ $developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
 			<ul>
 				<li class="price">$49</li>
 				<li class="count">1 site</li>
-				<li class="highlight">Access to <a href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> free add-ons</a></li>
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
 			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
@@ -106,7 +106,7 @@ $developer_add_ons = affwp_get_add_on_count( 'developer-add-ons' );
 
 			<article>
 				<h4>Do all license holders have access to add-ons?</h4>
-				<p>Yes, there are <a title="Free add-ons" href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $free_add_ons; ?> official free and 3rd party add-ons</a> available for the Personal and Business license holders.</p><p>In addition, our developer license holders receive access to <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a> as a special perk, including any we release in the future.</p>
+				<p>Yes, there are <a title="Offical Free add-ons" href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $official_free_add_ons; ?> official free</a> add-ons and <a title="Third Party add-ons" href="<?php echo site_url( 'addons/#third-party-add-ons' ); ?>"><?php echo $third_party_add_ons; ?> third party</a> (free and paid) add-ons available for all license holders.</p><p>In addition, our developer license holders receive access to <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a> as a special perk, including any we release in the future.</p>
 			</article>
 			
 		</div>

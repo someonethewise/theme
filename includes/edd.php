@@ -23,10 +23,11 @@ function affwp_get_add_on_count( $add_on_category = '' ) {
 	foreach ( $categories as $category ) {
 		if ( $category->slug == $add_on_category ) {
 			$count = $category->count;
+			return $count;
 		}
 	}
 
-	return $count;
+	
 }
 
 
