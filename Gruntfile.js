@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         files: ['js/src/**/*.js'],
         tasks: ['concat:js', 'uglify:js'],
         options: {
-          livereload: true,
+      //    livereload: true,
         }
       },
       // CSS
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         files: ['less/*.less'],
         tasks: ['less:style'],
         options: {
-          livereload: true,
+       //   livereload: true,
         }
       },
       // Add banner
