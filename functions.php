@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.7.4' );
+	define( 'AFFWP_THEME_VERSION', '1.7.5' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */

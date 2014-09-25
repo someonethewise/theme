@@ -67,10 +67,20 @@ get_header(); ?>
 	</div>
 
 	<div class="item right bdr">
+
+
 		<?php /*
 		<a title="Blog" class="back" href="<?php echo site_url( 'blog' ); ?>">Back to blog</a>
 		*/ ?>
-	
+		
+
+		<?php if ( has_category( 'developer-add-ons', get_the_ID() ) ) : ?>
+		<div class="note">
+			<h3>Note</h3>
+			<p>This add-on is only available for developer license holders.</p><p>If you don’t have a developer’s license, you can upgrade with just a couple of clicks from your <a href="<?php echo site_url( 'account' ); ?>">account</a> page.</p>
+		</div>
+		<?php endif; ?>
+
 		<?php do_action( 'affwp_single_right_column' ); ?>
 	</div>
 		
