@@ -108,6 +108,15 @@ get_header(); ?>
 				        </blockquote>
 					</div>
 
+
+					<div class="item">
+						 <blockquote>
+				          <p>We switched to AffiliateWP because we were looking for a well-coded, reliable affiliate program. So far it has proved to be just what we needed. The backend is very easy to use and reduces the time we spend on the affiliate program each month. The affiliate area is nicely designed and very useful for our affiliates. We like the fact that AffiliateWP only needs one plugin and works straight out of the box, whereas other affiliate programs require several different plugins to work. And most importantly, the support from the AffiliateWP team has been excellent.</p>
+				          <footer>James Wilkinson</footer>
+				        </blockquote>
+					</div>
+
+
 					
 
 					<div class="gap"></div>
