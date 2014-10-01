@@ -174,7 +174,7 @@ function affwp_home_how_it_works() {
 				<li class="edd"><img alt="Used by Easy Digital Downloads" src="<?php echo get_stylesheet_directory_uri() . '/images/edd.png'; ?>"></li>
 				<li class="searchwp"><img alt="Used by SearchWP" src="<?php echo get_stylesheet_directory_uri() . '/images/searchwp.png'; ?>"></li>
 				<li class="wpsessions"><img alt="Used by WPSessions" src="<?php echo get_stylesheet_directory_uri() . '/images/wpsessions.png'; ?>"></li>
-				<li class="audit-wp"><img alt="Used by Audit WP" src="<?php echo get_stylesheet_directory_uri() . '/images/audit-wp.png'; ?>"></li>
+				<li class="foo-plugins"><img alt="Used by Foo Plugins" src="<?php echo get_stylesheet_directory_uri() . '/images/foo-plugins.png'; ?>"></li>
 				<li class="facetwp last"><img alt="Used by FacetWP" src="<?php echo get_stylesheet_directory_uri() . '/images/facetwp.png'; ?>"></li>
 			</ul>
 
