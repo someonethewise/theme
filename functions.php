@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.7.5' );
+	define( 'AFFWP_THEME_VERSION', '1.7.6' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -80,6 +80,9 @@ function affwp_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	add_post_type_support( 'page', 'excerpt' );
+
+	// This theme styles the visual editor to resemble the theme style.
+	add_editor_style( 'css/editor-style.css' );
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
