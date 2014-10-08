@@ -460,7 +460,7 @@ function affwp_add_on_changelog() {
 				jQuery("#show-changelog").fancybox({
 					type: 'inline',
 				//	padding: 32,
-					maxWidth: 720,
+					maxWidth: 820,
 					helpers: {
 				    overlay: null
 				  },
