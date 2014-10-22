@@ -9,6 +9,13 @@ function affwp_account() { ?>
 	global $current_user;
 	get_currentuserinfo();
 
+
+
+	$has_personal_license  = edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 );	
+	$has_business_license  = edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 );
+	$has_developer_license = edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 );
+
+
 /**
  * Logout message
  */
@@ -96,12 +103,12 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 				<td>
 					<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
 
-						<?php if ( ! edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+						<?php if ( ! $has_developer_license ) : ?>
 							<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 							<a title="Upgrade License To Download" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade License To Download</a>
 							<?php endif; ?>	
 						<?php else : ?>
-							<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
+							<?php if ( $has_developer_license ) : ?>
 								
 								<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 
@@ -122,23 +129,38 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 		</tbody>
 	</table>
 
+	
+
+
+
 	<h2>Your License</h2>
-	<?php if ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 ) ) : // user is on personal license ?>
-		<p>You currently have the <strong>Personal License</strong> (1 site)<br/>
+
+	<?php if ( $has_developer_license ) : // user has developer license ?>
+		<p><strong>Developer License</strong> (unlimited sites).</p>
+	<?php endif; ?>
+
+
+	<?php if ( $has_business_license ) : // user has business license ?>
+		<p><strong>Business License</strong> (3 sites)<br/>
+		<a title="Upgrade to Developer License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade to Developer License (unlimited sites)</a>
+		</p>
+	<?php endif; ?>
+
+	<?php if ( $has_personal_license ) : // user is on personal license ?>
+
+		<p><strong>Personal License</strong> (1 site)<br/>
 		
 			<a title="Upgrade to Business License" href="<?php echo affwp_get_license_upgrade_url( 'business' ); ?>">Upgrade to Business License (3 sites)</a><br/>
 			<a title="Upgrade to Developer License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade to Developer License (unlimited sites)</a>
 		</p>
-	<?php elseif ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) ) : ?>
-		<p>You currently have the <strong>Business License</strong> (3 sites)<br/>
-		<a title="Upgrade to Developer License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">Upgrade to Developer License (unlimited sites)</a>
-		</p>
-	<?php elseif ( edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
-		<p>You currently have the <strong>Developer License</strong> (unlimited sites).</p>
+	<?php endif; ?>
 
-	<?php else : ?>
+	<?php if ( ! ( $has_personal_license || $has_business_license || $has_developer_license ) ) : // no license  ?>
 		<p>You do not have a <a title="You do not have a license yet" href="<?php echo site_url( 'pricing' ); ?>">license</a> yet.</p>	
 	<?php endif; ?>	
+
+
+
 	
 
 	<?php

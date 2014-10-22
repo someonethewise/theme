@@ -46,6 +46,22 @@ function affwp_empty_cart_redirect() {
 }
 add_action( 'template_redirect', 'affwp_empty_cart_redirect' );
 
+
+/**
+ * If cart is empty and checkout is directly accessed
+ * @return void
+ */
+function affwp_add_to_cart_if_empty() {
+	$cart = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : false;
+ 	
+	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() && ! $cart ) {
+		edd_add_to_cart( affwp_get_affiliatewp_id(), array( 'price_id' => 0 ) );
+	}
+}
+//add_action( 'template_redirect', 'affwp_add_to_cart_if_empty', 9 );
+
+
+
 /**
  * Change labels
  */
