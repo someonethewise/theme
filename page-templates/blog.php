@@ -125,7 +125,20 @@ get_header();
 							
 					</section>
 
+
 				<?php endwhile; ?>
+
+				<nav id="nav-below" class="nav-links columns columns-2">
+					<span class="nav-previous item">
+						<?php next_posts_link( __( '&larr; Older', 'affwp' ) ); ?>
+					</span>
+
+					<span class="nav-next item">
+						<?php previous_posts_link( __( 'Newer &rarr;', 'affwp' ) ); ?>
+					</span>
+
+					
+				</nav>
 
 			<?php endif; 
 
