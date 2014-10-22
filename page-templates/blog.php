@@ -62,14 +62,22 @@ get_header();
 		<?php endwhile;  wp_reset_postdata(); // end of the loop. ?>
 		
 		<?php
+
 			/**
 			 * Displays the most recent post
 			 */
+			
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
 			$args = array(
 				'posts_per_page' => 10,
-				'offset'		=> 1
+				'paged'          => $paged,
 			);
 
+			if ( $paged >= 2 ) {
+				$args['offet'] = 1;
+			}
+			
 			$temp = $wp_query; // assign original query to temp variable for later use  
 			$wp_query = null;
 			$wp_query = new WP_Query( $args ); 
