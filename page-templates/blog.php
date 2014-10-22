@@ -7,60 +7,7 @@ get_header();
 
 ?>
 
-<header class="entry-header">
 
-<?php
-	/**
-	 * Displays the most recent post
-	 */
-	$args = array(
-		'posts_per_page' => 1,
-	);
-
-	$temp = $wp_query; // assign original query to temp variable for later use  
-	$wp_query = null;
-	$wp_query = new WP_Query( $args ); 
-
-	if ( have_posts() ) : ?>
-		
-		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-			
-			<?php
-				global $more;
-				$more = 0;
-			?>
-			<?php affwp_post_thumbnail(); ?>
-			<?php affwp_posted_on(); ?>
-			<h1>
-            	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        	</h1>
-        	
-        	<?php 
-		 		if ( function_exists( 'get_the_subheading' ) && get_the_subheading() )
-					echo '<h2>' . get_the_subheading() . '</h2>';
-			?>	
-
-
-			<a href="<?php the_permalink(); ?>" class="button large">Read now</a>
-			
-
-		<?php endwhile; ?>
-
-	<?php endif; 
-
-	$wp_query = $temp; //reset back to original query 
-?>
-
-
-</header>
-
-
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( 'content', 'page' ); ?>
-
-		<?php endwhile;  wp_reset_postdata(); // end of the loop. ?>
-		
 		<?php
 
 			/**
@@ -73,19 +20,32 @@ get_header();
 				'posts_per_page' => 10,
 				'paged'          => $paged,
 			);
-
-			if ( $paged >= 2 ) {
-				$args['offet'] = 1;
-			}
 			
 			$temp = $wp_query; // assign original query to temp variable for later use  
 			$wp_query = null;
 			$wp_query = new WP_Query( $args ); 
 		
-			if ( have_posts() ) : ?>
+			if ( have_posts() ) : $count = 0; ?>
 				
-				<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+				<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); $count++; ?>
 
+					<?php if ( $count == 1 ) : ?>
+						<header class="entry-header">
+							<?php affwp_post_thumbnail(); ?>
+							<?php affwp_posted_on(); ?>
+							<h1>
+				            	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				        	</h1>
+
+	        	        	<?php 
+	        			 		if ( function_exists( 'get_the_subheading' ) && get_the_subheading() )
+	        						echo '<h2>' . get_the_subheading() . '</h2>';
+	        				?>	
+
+
+	        				<a href="<?php the_permalink(); ?>" class="button large">Read now</a>
+						</header>
+					<?php else : ?>
 
 					<section class="section columns-3 columns">
 						<div class="item left bdr">
@@ -132,7 +92,7 @@ get_header();
 						</div>
 							
 					</section>
-
+				<?php endif; ?>
 
 				<?php endwhile; ?>
 
