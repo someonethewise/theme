@@ -20,7 +20,7 @@ get_header(); ?>
 		<?php endif; ?>
 		</p>
 
-		<?php if ( in_array( 'doc_category', get_object_taxonomies( get_post_type() ) ) && affwp_categorized_blog() ) : ?>
+		<?php if ( in_array( 'doc_category', get_object_taxonomies( get_post_type() ) ) && affwp_categorized_blog() && has_term( '', 'doc_category' ) ) : ?>
 			<p><span>Categories</span>
 			<?php echo get_the_term_list( get_the_ID(), 'doc_category', '', '<br/>' ); ?>
 			</p>
