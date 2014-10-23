@@ -386,6 +386,29 @@ function affwp_add_on_info( $position = '' ) {
 		<p><span>Last Updated</span><?php echo date( 'F j, Y', $updated ); ?></p>
 		<?php endif; ?>
 		
+		<?php
+		if ( function_exists('p2p_register_connection_type') ) :
+
+			// Find connected posts
+			$docs = new WP_Query( array(
+				'connected_type' => 'download_to_docs',
+				'connected_items' => get_queried_object(),
+				'nopaging' => true,
+				'post_status' => 'publish'
+			) );
+
+			if ( $docs->have_posts() ) {
+				// Display connected posts
+				if ( $docs->have_posts() ) :
+					while ( $docs->have_posts() ) : $docs->the_post(); ?>
+						<p><span>Documentation</span><a href="<?php the_permalink(); ?>">View Documentation</a></p>
+					<?php endwhile;
+				wp_reset_postdata();
+				endif;
+			}
+		endif;
+		?>
+
 		<?php if ( $developer ) : ?>
 
 			<?php if ( $developer_url ) : ?>
@@ -403,28 +426,7 @@ function affwp_add_on_info( $position = '' ) {
 			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
 		<?php endif; ?>
 
-		<?php
-		if ( function_exists('p2p_register_connection_type') ) :
-
-			// Find connected posts
-			$docs = new WP_Query( array(
-				'connected_type' => 'download_to_docs',
-				'connected_items' => get_queried_object(),
-				'nopaging' => true,
-				'post_status' => 'publish'
-			) );
-
-			if ( $docs->have_posts() ) {
-				// Display connected posts
-				if ( $docs->have_posts() ) :
-					while ( $docs->have_posts() ) : $docs->the_post(); ?>
-						<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-					<?php endwhile;
-				wp_reset_postdata();
-				endif;
-			}
-		endif;
-		?>
+		
 
 
 		<?php if ( has_term( 'developer-add-ons', 'download_category' ) ) : ?>
