@@ -37,7 +37,7 @@ jQuery(window).load(function($) {
         }
     });
 })(jQuery);
- 
+
 jQuery(document).ready(function($) {
 
   $('.checkout-option').click(function(e) {
