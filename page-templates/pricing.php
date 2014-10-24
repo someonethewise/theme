@@ -44,8 +44,12 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
 
-			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=1">Purchase</a>
-			
+			<div class="option_a">
+				<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=1">Purchase</a>
+			</div>	
+			<div class="option_b" style="display:none">
+				<a title="Purchase" class="button checkout-option" data-price-id="1" href="#">Purchase</a>
+			</div>	
 		</li>
 
 		<li class="developer">
@@ -58,7 +62,12 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
 
-			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">Purchase</a>
+			<div class="option_a">
+				<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">Purchase</a>
+			</div>
+			<div class="option_b" style="display:none">
+				<a title="Purchase" class="button checkout-option" data-price-id="2" href="#">Purchase</a>
+			</div>
 		</li>
 
 		<li class="personal">
@@ -69,10 +78,19 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 				<li class="count">1 site</li>
 				<li>1 Year of Updates &amp; Support *</li>
 			</ul>
-			<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
+			<div class="option_a">
+				<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
+			</div>
+			<div class="option_b" style="display:none">
+				<a title="Purchase" class="button checkout-option" data-price-id="0" href="#">Purchase</a>
+			</div>
 		</li>
 
 	</ul>
+
+	<div id="stripe-checkout-wrap" style="display:none;">
+		<?php echo edd_get_purchase_link( array( 'download_id' => 17, 'direct' => true ) ); ?>
+	</div>
 
 	<p class="clause">* You must renew the license after one calendar year for continued updates and support. Discounted renewal rates available. See information below for details. All purchases are subject to our terms and condition of use.</p>
 
