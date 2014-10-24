@@ -512,3 +512,43 @@ function affwp_edd_optimizely_revenue_tracking() {
 <?php
 }
 add_action( 'wp_head', 'affwp_edd_optimizely_revenue_tracking');
+
+function affwp_edd_auto_create_user( $payment_id, $payment_data ) {
+
+	if( is_user_logged_in() ) {
+		return;
+	}
+
+	if( get_user_by( 'email', $payment_data['user_email'] ) ) {
+		return;
+	}
+
+	if( ! is_array( $payment_data['cart_details'] ) ) {
+		return;
+	}
+
+	foreach( $payment_data['cart_details'] as $item ) {
+		if( ! isset( $item['item_number']['options'] ) ) {
+			return;
+		}
+
+		if( 2 !== (int) $item['item_number']['options']['price_id'] ) ) {
+			return;
+		}
+	}
+
+	$user_args = array(
+		'user_login'      => $payment_data['user_email'],
+		'user_pass'       => wp_generate_password( 24 ),
+		'user_email'      => $payment_data['user_email'],
+		'user_registered' => date( 'Y-m-d H:i:s' ),
+		'role'            => get_option( 'default_role' )
+	);
+
+	// Insert new user
+	$user_id = wp_insert_user( $user_args );
+
+	// Login new user
+	edd_log_user_in( $user_id, $payment_data['user_email'], $user_args['user_pass'] );
+}
+add_action( 'edd_insert_payment', 'affwp_edd_auto_create_user', 10, 2 );
