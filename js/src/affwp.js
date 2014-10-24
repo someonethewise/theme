@@ -1,15 +1,6 @@
 // add loaded class
 jQuery(window).load(function($) {
-   $('body').addClass('loaded');
-   $('.checkout-option').click(function(e) {
-      e.preventDefault();
-      var price_id = $(this).data('price-id');
-      $('#edd_purchase_form_17 #edd_price_option_17').each(function() {
-        $(this).attr('checked', false);
-      });
-      $('#edd_purchase_form_17 #edd_price_option_17_' + price_id ).attr( 'checked', true );
-      $('#edd_purchase_form_17').trigger('submit');
-   });
+   jQuery('body').addClass('loaded');
 });
 
 
@@ -48,5 +39,21 @@ jQuery(window).load(function($) {
 })(jQuery);
  
 jQuery(document).ready(function($) {
+
+  $('.checkout-option').click(function(e) {
+
+     e.preventDefault();
+     var price_id = $(this).data('price-id');
+
+     $('#edd_purchase_17 input').each(function() {
+       $(this).attr('checked', false);
+     });
+
+     console.log( price_id );
+
+     $('#edd_purchase_17 #edd_price_option_17_' + price_id ).attr( 'checked', true );
+     $('#edd_purchase_17').trigger('submit');
+  });
+
   $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed: 5000});
 });
