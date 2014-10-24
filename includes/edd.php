@@ -536,7 +536,7 @@ function affwp_edd_auto_create_user( $payment_id, $payment_data ) {
 			return;
 		}
 
-		if( 2 !== (int) $item['item_number']['options']['price_id'] ) ) {
+		if( 2 !== (int) $item['item_number']['options']['price_id'] ) {
 			return;
 		}
 	}
