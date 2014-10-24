@@ -519,6 +519,10 @@ function affwp_edd_auto_create_user( $payment_id, $payment_data ) {
 		return;
 	}
 
+	if( $payment_data['user_info']['id'] > 0 ) {
+		return;
+	}
+
 	if( get_user_by( 'email', $payment_data['user_email'] ) ) {
 		return;
 	}
