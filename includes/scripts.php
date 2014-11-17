@@ -79,21 +79,29 @@ function affwp_fancybox() {
 ?>
 
 	<script type="text/javascript">
-		jQuery(document).ready(function() {
-			jQuery("a:has(img)[href$='.jpg'], a:has(img)[href$='.png'], a:has(img)[href$='.gif']").fancybox({
-		//	jQuery(".fancybox").fancybox({
-				helpers: {
-				    overlay: null
-				  },
-				openEffect	: 'elastic',
-				closeEffect	: 'elastic'
-			});
+			jQuery(document).ready(function($) {
+				
+				// single images
+				$("a:has(img)[href$='.jpg'], a:has(img)[href$='.png'], a:has(img)[href$='.gif']").not(".gallery a").addClass('zoom').magnificPopup({
+					type: 'image',
+					mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+					closeOnContentClick: true,
+					closeBtnInside: true,
+					zoom: {
+						enabled: true,
+						duration: 250,
+						easing: 'ease-in-out',
+						opener: function(openerElement) {
+							return openerElement.is('img') ? openerElement : openerElement.find('img');
+						}
+					}
 
-		});
-	</script>
+				});
+
+			});
+		</script>
 <?php }
 add_action( 'wp_footer', 'affwp_fancybox', 100 );
-
 
 /**
  * Magnific Popup
