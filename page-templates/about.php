@@ -26,7 +26,7 @@ get_header(); ?>
 			<div class="item">
 				<div class="wrapper">
 				
-				<img class="profile" alt="Pippin Williamson" src="<?php echo get_stylesheet_directory_uri() . '/images/about-pippin.png'; ?>">
+				<img class="profile" alt="Pippin Williamson" src="<?php echo get_stylesheet_directory_uri() . '/images/about-pippin.jpg'; ?>">
 				<h2>Pippin Williamson</h2>
 
 				<p class="about-details">
@@ -44,7 +44,7 @@ get_header(); ?>
 			<div class="item">
 				<div class="wrapper">
 				
-					<img class="profile" alt="Andrew Munro" src="<?php echo get_stylesheet_directory_uri() . '/images/about-andrew.png'; ?>">
+					<img class="profile" alt="Andrew Munro" src="<?php echo get_stylesheet_directory_uri() . '/images/about-andrew.jpg'; ?>">
 					<h2>Andrew Munro</h2>
 
 					<p class="about-details">
@@ -64,7 +64,7 @@ get_header(); ?>
 			<div class="item">
 				<div class="wrapper">
 				
-				<img class="profile" alt="Rami Abraham" src="<?php echo get_stylesheet_directory_uri() . '/images/about-andrew.png'; ?>">
+				<img class="profile" alt="Rami Abraham" src="<?php echo get_stylesheet_directory_uri() . '/images/about-rami.jpg'; ?>">
 				<h2>Rami Abraham</h2>
 				
 				<p class="about-details">
