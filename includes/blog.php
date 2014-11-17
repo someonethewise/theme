@@ -36,29 +36,28 @@ function affwp_blog() {
 
 	<section class="section columns columns-3 related-posts grid">
 
-	<header class="sub-header">
-		<h2>We also recommend</h2>
-	</header>
+		<header class="sub-header">
+			<h2>We also recommend</h2>
+		</header>
 
 		<div class="wrapper">
 		<?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
-			 <div class="item box">
-			 <?php affwp_post_thumbnail( 'thumbnail', true ); ?>
-			<?php
-				global $more;
-				$more = 0;
-			?>
-				<?php affwp_posted_on(); ?>
-				<h2><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	        	
-	        	
-
-	        	
-	        	<?php  
-			 		$excerpt = $post->post_excerpt ? the_excerpt() : '';
-			 		echo $excerpt;
-				?>	
+			 <div class="item box<?php if ( has_post_thumbnail() ) { echo ' has-post-thumbnail'; } ?><?php if ( has_excerpt() ) { echo ' has-excerpt'; } ?>">
+			 
+			 <div class="item-wrapper">
+				<?php affwp_post_thumbnail( 'thumbnail', true ); ?>
 				
+					<?php affwp_posted_on(); ?>
+					<h2><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	        	
+		        	<?php  
+				 		$excerpt = $post->post_excerpt ? the_excerpt() : '';
+				 		echo $excerpt;
+					?>
+			</div>	
+	       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
+	    		Read More  &rarr;
+	    	</a>	
 			</div>
 
 		<?php endwhile; ?>

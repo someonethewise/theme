@@ -16,7 +16,7 @@ get_header(); ?>
 		$coming_soon = affwp_addon_is_coming_soon( get_the_ID() ) ? 'coming-soon' : '';
 		?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box', $coming_soon ) ); ?>> 
-			    
+			    <div class="item-wrapper">
 					<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 
 				    	<?php affwp_post_thumbnail( 'thumbnail', true ); ?>
@@ -42,7 +42,7 @@ get_header(); ?>
 					<?php endif; ?>	
 
 			       	<?php the_excerpt(); ?>
-
+			    </div>
 			       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
 	 		    		Learn More  &rarr;
 	 		    	</a>
@@ -84,33 +84,34 @@ get_header(); ?>
 	    ?>  
 	      
 	        <article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box', $coming_soon ) ); ?>> 
-	        		    
-				<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
+	        	<div class="item-wrapper">	    
+					<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 
-					<?php affwp_post_thumbnail( 'thumbnail', true ); ?>
+						<?php affwp_post_thumbnail( 'thumbnail', true ); ?>
 
-		    		<h2>
-						<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
-				    		<?php the_title(); ?>
-				    	</a>
-			    	</h2>
+			    		<h2>
+							<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
+					    		<?php the_title(); ?>
+					    	</a>
+				    	</h2>
 
-			    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
-			    	
-			    	<div class="post-thumbnail">
-			    		<?php if ( current_user_can( 'manage_options' ) ) : ?>
-			    			<?php the_post_thumbnail(); ?>
-			    		<?php else : ?>
-			    			<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
-			    		<?php endif; ?>	
-			    		
-			    	</div>
+				    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+				    	
+				    	<div class="post-thumbnail">
+				    		<?php if ( current_user_can( 'manage_options' ) ) : ?>
+				    			<?php the_post_thumbnail(); ?>
+				    		<?php else : ?>
+				    			<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
+				    		<?php endif; ?>	
+				    		
+				    	</div>
 
-			    	<h2><?php the_title(); ?></h2>
+				    	<h2><?php the_title(); ?></h2>
 
-				<?php endif; ?>	
+					<?php endif; ?>	
 
-		       	<?php the_excerpt(); ?>
+			       	<?php the_excerpt(); ?>
+			    </div>
 
 	       		<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
  		    		Learn More  &rarr;
@@ -155,38 +156,39 @@ get_header(); ?>
 		    $coming_soon = affwp_addon_is_coming_soon( get_the_ID() ) ? 'coming-soon' : '';
 	    ?>  
 	        <article id="post-<?php the_ID(); ?>" <?php post_class( array( 'item', 'box', $coming_soon ) ); ?>> 
-	        		    
-				<?php 
-				$external_download_url = get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
+	        	<div class="item-wrapper">		    
+					<?php 
+					$external_download_url = get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
 
-				if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
+					if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
 
-					<?php affwp_post_thumbnail( 'thumbnail', true ); ?>
+						<?php affwp_post_thumbnail( 'thumbnail', true ); ?>
 
-		    		<h2>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				    		<?php the_title(); ?>
-				    	</a>
-			    	</h2>
+			    		<h2>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					    		<?php the_title(); ?>
+					    	</a>
+				    	</h2>
 
-			    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
-			    	
-			    	<div class="post-thumbnail">
-			    		<?php if ( current_user_can( 'manage_options' ) ) : ?>
-			    			<?php the_post_thumbnail(); ?>
-			    		<?php else : ?>
-			    			<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
-			    		<?php endif; ?>	
+				    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+				    	
+				    	<div class="post-thumbnail">
+				    		<?php if ( current_user_can( 'manage_options' ) ) : ?>
+				    			<?php the_post_thumbnail(); ?>
+				    		<?php else : ?>
+				    			<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
+				    		<?php endif; ?>	
+				    		
+				    	</div>
+
+			    		<h2><?php the_title(); ?></h2>
 			    		
-			    	</div>
 
-		    		<h2><?php the_title(); ?></h2>
-		    		
+					<?php endif; ?>	
 
-				<?php endif; ?>	
-
-		       	<?php the_excerpt(); ?>
-
+			       	<?php the_excerpt(); ?>
+		       	</div>
+		       	
 		       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
  		    		Learn More  &rarr;
  		    	</a>
