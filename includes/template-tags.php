@@ -286,6 +286,7 @@ function affwp_page_header( $header = '', $sub_heading = '' ) {
 		<?php do_action( 'affwp_page_header_end' ); ?>
 
 	</header>
+	<?php do_action( 'affwp_page_header_after' ); ?>
 <?php }
 
 /**

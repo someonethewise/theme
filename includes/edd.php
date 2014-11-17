@@ -4,6 +4,34 @@
  */
 
 /**
+ * Add sad alf to failed transaction page
+ */
+function affwp_pricing_text() {
+	if ( ! edd_is_failed_transaction_page() )
+		return;
+	?>
+	<img id="mascot-sad" alt="" src="<?php echo get_stylesheet_directory_uri() . '/images/alf-sad.png'; ?>">
+	
+	<?php
+}
+add_action( 'affwp_page_header_after', 'affwp_pricing_text' );
+
+
+/**
+ * Filter subheading on failed transaction page
+ */
+function affwp_failed_transaction_excerpt( $sub_heading ) {
+	if ( edd_is_failed_transaction_page() ) {
+		return '<h2>Your transaction failed. Please try again or <a href="/support">contact support</a>.</h2>';
+	}
+
+	return $sub_heading;
+}
+add_filter( 'affwp_excerpt', 'affwp_failed_transaction_excerpt' );
+
+
+
+/**
  * Get number of add-ons in each category
  * @return string number of add-ons
  */

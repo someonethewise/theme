@@ -12,7 +12,7 @@
 	<footer id="footer">
 		<div class="wrapper">
 
-		<?php if ( ! is_404() ) : ?>	
+		<?php if ( ! ( is_404() || edd_is_failed_transaction_page() ) ) : ?>	
 		<div id="mascot-2"></div>
 		<?php endif; ?>
 

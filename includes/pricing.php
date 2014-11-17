@@ -1,27 +1,5 @@
 <?php
 
-
-/**
- * Add twitter custom timeline to testimonials page
- */
-function affwp_pricing_text() {
-	if ( ! is_page_template( 'page-templates/pricing.php' ) )
-		return;
-	?>
-
-	<p>
-		If you are unhappy with your purchase, or you have an issue that we are unable to resolve that makes the system unusable, we are more than happy to provide a complete refund within 30 days of your original purchase.
-	<a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">View full refund policy</a>.
-	</p>
-	
-	
-
-	<?php
-}
-//add_action( 'affwp_page_header_end', 'affwp_pricing_text' );
-
-
-
 /**
  * Refund policy
  */
