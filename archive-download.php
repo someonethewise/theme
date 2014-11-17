@@ -41,9 +41,11 @@ get_header(); ?>
 
 					<?php endif; ?>	
 
-			       	<?php 
-				 		the_excerpt();
-				 	?>
+			       	<?php the_excerpt(); ?>
+
+			       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
+	 		    		Learn More  &rarr;
+	 		    	</a>
 			</article>
 
 		<?php endwhile; ?>
@@ -109,6 +111,10 @@ get_header(); ?>
 				<?php endif; ?>	
 
 		       	<?php the_excerpt(); ?>
+
+	       		<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
+ 		    		Learn More  &rarr;
+ 		    	</a>
 		</article>
 	       
 	    <?php endwhile; wp_reset_query(); ?>
@@ -180,6 +186,10 @@ get_header(); ?>
 				<?php endif; ?>	
 
 		       	<?php the_excerpt(); ?>
+
+		       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
+ 		    		Learn More  &rarr;
+ 		    	</a>
 		</article>
 	       
 	    <?php endwhile; wp_reset_query(); ?>
