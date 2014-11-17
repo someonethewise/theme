@@ -61,6 +61,27 @@ module.exports = function(grunt) {
       }
     },
 
+    svgstore: {
+      options: {
+        prefix : 'icon-', // This will prefix each <g> ID
+         svg : {
+            'xmlns:sketch' : 'http://www.bohemiancoding.com/sketch/ns',
+            'xmlns:dc': "http://purl.org/dc/elements/1.1/",
+            'xmlns:cc': "http://creativecommons.org/ns#",
+            'xmlns:rdf': "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            'xmlns:svg': "http://www.w3.org/2000/svg",
+            'xmlns': "http://www.w3.org/2000/svg",
+            'xmlns:sodipodi': "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd",
+            'xmlns:inkscape': "http://www.inkscape.org/namespaces/inkscape"
+        }
+      },
+      default : {
+        files: {
+          'images/svg-defs.svg': ['svgs/*.svg'],
+        }
+      }
+    },
+
     // watch our project for changes
     watch: {
       // JS
@@ -70,6 +91,10 @@ module.exports = function(grunt) {
         options: {
       //    livereload: true,
         }
+      },
+       svgstore: {
+         files: ['svgs/*.svg'],
+         tasks: ['svgstore:default']
       },
       // CSS
       css: {
@@ -94,5 +119,5 @@ module.exports = function(grunt) {
   // Saves having to declare each dependency
   require( "matchdep" ).filterDev( "grunt-*" ).forEach( grunt.loadNpmTasks );
 
-  grunt.registerTask('default', ['concat', 'uglify', 'less', 'usebanner']);
+  grunt.registerTask('default', ['concat', 'uglify', 'less', 'usebanner', 'svgstore' ]);
 };

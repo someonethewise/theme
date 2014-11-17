@@ -19,22 +19,32 @@
 @import 'lists';
 @import 'general';
 @import 'affiliates';
-@import 'fancybox';
+//@import 'fancybox';
+
+@import 'animation';
+
+@import 'magnific-popup';
+@import 'magnific-custom';
+
 @import 'alerts';
 @import 'blog';
 @import 'flexslider';
 @import 'columns';
+@import 'columns-overrides';
 @import 'about';
 @import 'gallery';
 @import 'addons';
 @import 'footer';
 @import 'box';
+@import 'grid';
 @import 'mobile';
 
 
 @primary-color: #ED6D62;
 @accent-color: #e34f43;
 @light-grey: #f7f7f7;
+
+@heading-color: #373737;
 
 @body-text-color: #787878;
 @breakpoint: 820px;
@@ -67,20 +77,20 @@ blockquote {
 }
 
 // no JS styles
-.no-js {
+// .no-js {
 
-	.home #masthead {
-		height: auto;
-	//	padding-bottom: 2rem;
-	}
+// 	.home #masthead {
+// 		height: auto;
+// 	//	padding-bottom: 2rem;
+// 	}
 
-	.filters,
-	#how-it-works,
-	.home #masthead figure {
-		display: none;
+// 	.filters,
+// 	#how-it-works,
+// 	.home #masthead figure {
+// 		display: none;
 	
-	}
-}
+// 	}
+// }
 
 
 
@@ -158,9 +168,6 @@ a {
 		background: url( 'images/logo-home.png' ) no-repeat 0 0;
 	}
 
-	#content {
-		padding-top: 4rem;
-	}
 }
 
 
@@ -329,6 +336,9 @@ and (max-device-width : 1024px ) {
 	}
 }
 
+#mascot-404 {
+	margin-top: -85px;
+}
 
 
 .icon-thumbs-up {
@@ -390,7 +400,8 @@ and (max-device-width : 1024px ) {
 @media only screen and ( min-width: 500px ) {
 
 	#content {
-		padding: 0 2rem 2rem;
+//		padding: 0 2rem 2rem;
+		padding: 0 2rem 12rem 2rem;
 	}
 
 	.home #masthead {
@@ -402,3 +413,5 @@ and (max-device-width : 1024px ) {
 	}
 
 }
+
+

@@ -1,0 +1,117 @@
+// grid component. Adds margin to all nested .cols and applies flexbox attributes
+
+.col-image,
+.col-info {
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+}
+
+.columns-1 .item {
+	margin-bottom: 64px;
+}
+
+.col-image a {
+	display: block;
+}
+
+.grid.columns {
+//	font-size: 1rem;
+}
+
+.grid .post-thumbnail {
+	margin: -2rem -2rem 2rem -2rem;
+}
+
+.grid article.post {
+	padding: 24px;
+}
+
+.grid .date {
+//	color: @medium-grey;
+}
+
+.grid .item {
+	margin-bottom: 2rem;
+	position: relative;
+}
+
+.grid.row .action {
+	margin-top: 4rem;
+}
+
+
+// .grid.columns .item {
+// 	-webkit-transition: box-shadow 0.1s linear;
+// 	transition: box-shadow 0.1s linear;
+// }
+
+// no touch styles
+.no-touch {
+	.grid.columns .col:hover {
+	//	.box-shadow( 0 0px 0px 10px rgba( 116, 215, 191, 0.3 ) );
+	}
+}
+
+
+// product grid
+// IE9 falls back to using the display-inline-block in our columns.less
+.grid .wrapper {
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-flex-flow: row wrap;
+	-webkit-justify-content: space-between;
+	-webkit-align-content: flex-start;
+
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-content: flex-start;
+
+}
+
+.grid.columns .item {
+
+		display: -ms-flexbox;   // MID: IE 10
+		display: -webkit-flex;  // NEW, Chrome 21–28, Safari 6.1+
+		display: flex;          // NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+
+
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+
+		// default is row (allows vertical centering)
+		-webkit-flex-flow: column;
+		flex-flow: column;
+
+	  // align the p tag to the top
+			
+		// IE 11 only
+	  	a.post-thumbnail {
+	  		-webkit-flex: 0 0 auto;
+	  		flex: 0 0 auto;
+	  	}
+
+		p, ul {
+	  		-webkit-flex: 1 0 auto;
+	  	//	-ms-flex: 1 1 auto;
+			flex: 1 0 auto;
+			width: 100%;
+		}
+
+		h2 {
+		//	margin-bottom: 1rem;
+		}
+
+
+}
+
+@media only screen and ( min-width: 768px ) {
+	.grid .wrapper {
+		max-width: 1220px;
+	}
+
+	// remove margins in 1 row
+	.grid.row .item {
+		margin-bottom: 0;
+	}
+}

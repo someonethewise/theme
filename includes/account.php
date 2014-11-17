@@ -60,13 +60,13 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 				array(
 					'taxonomy' => 'download_category',
 					'field' => 'slug',
-					'terms' => 'developer-add-ons'
+					'terms' => 'pro-add-ons'
 				),
 			)
 	);
 
 	$add_ons = new WP_Query( $args ); ?>
-	<table id="edd-developer-add-ons">
+	<table id="edd-pro-add-ons">
 		<thead>
 			<tr>
 				<th><?php _e( 'Name', 'affwp' ); ?></th>

@@ -6,12 +6,12 @@
 
 get_header(); 
 
-$developer_add_ons     = affwp_get_add_on_count( 'developer-add-ons' );
+$professional_add_ons  = affwp_get_add_on_count( 'pro-add-ons' );
 $official_free_add_ons = affwp_get_add_on_count( 'official-free' );
 $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
-
-
 ?>
+
+<?php affwp_page_header( '30 Day Money Back Guarantee', '<h2>We stand behind our product 100% - <a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">see our refund policy</a></h2>' ); ?>
 
 <div class="primary content-area">
 	<div class="wrapper">
@@ -24,93 +24,38 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 
 			endwhile;
 		?>
+		
+		<?php affwp_pricing_options(); ?>
+		
+		<?php 
+		$refund_policy = get_page_by_title( 'refund policy' );
+		?>
+		<div id="refund-policy" class="popup entry-content mfp-with-anim mfp-hide">
+			<h1>
+				<?php echo $refund_policy->post_title; ?>
+			</h1>
 
-<section class="pricing">
-	<?php
-	// get ID of download by slug
-	$id = affwp_get_post_by_title( 'affiliatewp', 'download' );
-	$download_id = $id->ID;
-	$download_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . $download_id;
+			<?php echo stripslashes( wpautop( $refund_policy->post_content, true ) ); ?>
+		</div>
 
-	?>
-	<ul class="pricing-chart">
+		<div id="stripe-checkout-wrap" style="display:none;">
+			<?php echo edd_get_purchase_link( array( 'download_id' => affwp_get_affiliatewp_id(), 'direct' => true ) ); ?>
+		</div>
 
-		<li class="business">
-			<h2>Business</h2>
+		<p class="clause">* You must renew the license after one calendar year for continued updates and support. Discounted renewal rates available. See information below for details. All purchases are subject to our terms and condition of use.</p>
 
-			<ul>
-				<li class="price">$99</li>
-				<li class="count">3 sites</li>
-				<li>1 Year of Updates &amp; Support *</li>
-			</ul>
+		
 
-			<div class="option_a">
-				<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=1">Purchase</a>
-			</div>	
-			<div class="option_b" style="display:none;">
-				<a title="Purchase" class="button checkout-option" data-price-id="1" href="#">Purchase</a>
-			</div>	
-		</li>
-
-		<li class="developer">
-			<h2>Developer</h2>
-
-			<ul>
-				<li class="price">$199</li>
-				<li class="count">Unlimited sites</li>
-				<li class="highlight">Access to <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a></li>
-				<li>1 Year of Updates &amp; Support *</li>
-			</ul>
-
-			<div class="option_a">
-				<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">Purchase</a>
-			</div>
-			<div class="option_b" style="display:none;">
-				<a title="Purchase" class="button checkout-option" data-price-id="2" href="#">Purchase</a>
-			</div>
-		</li>
-
-		<li class="personal">
-			<h2>Personal</h2>
-
-			<ul>
-				<li class="price">$49</li>
-				<li class="count">1 site</li>
-				<li>1 Year of Updates &amp; Support *</li>
-			</ul>
-			<div class="option_a">
-				<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
-			</div>
-			<div class="option_b" style="display:none;">
-				<a title="Purchase" class="button checkout-option" data-price-id="0" href="#">Purchase</a>
-			</div>
-		</li>
-
-	</ul>
-
-	<div id="stripe-checkout-wrap" style="display:none;">
-		<?php echo edd_get_purchase_link( array( 'download_id' => $download_id, 'direct' => true ) ); ?>
-	</div>
-
-	<p class="clause">* You must renew the license after one calendar year for continued updates and support. Discounted renewal rates available. See information below for details. All purchases are subject to our terms and condition of use.</p>
-
-</section>
-
-
+		<?php affwp_add_on_popups(); ?>			
 
 	</div>
 </div>
 
-<section class="section columns columns-3 pre-sale-questions">
+<section class="section columns columns-2 pre-sale-questions">
 	<div class="wrapper">
 
 		<div class="item">
-			<?php /*
-			<article>
-				<h4>Is there a live demo I can try?</h4>
-				<p>There sure is. You can <a href="http://demo.affiliatewp.com" target="_blank">try out AffiliateWP</a> live in your browser before you decide to purchase.</p>
-			</article>
-		*/ ?>
+			
 			
 			<article>
 				<h4>Do I need to renew my license?</h4>
@@ -123,8 +68,14 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 			</article>
 
 			<article>
-				<h4>Do all license holders have access to add-ons?</h4>
-				<p>Yes, there are <a title="Offical Free add-ons" href="<?php echo site_url( 'addons/#official-free-add-ons' ); ?>"><?php echo $official_free_add_ons; ?> official free</a> add-ons and <a title="Third Party add-ons" href="<?php echo site_url( 'addons/#third-party-add-ons' ); ?>"><?php echo $third_party_add_ons; ?> third party</a> (free and paid) add-ons available for all license holders.</p><p>In addition, our developer license holders receive access to <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a> as a special perk, including any we release in the future.</p>
+				<h4>Do I get access to add-ons?</h4>
+				<p>There are <a href="#modal-offical-free-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $official_free_add_ons; ?> official free add-ons</a> and <a href="#modal-third-party-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $third_party_add_ons; ?> third party add-ons</a> (free and paid) available for all license holders.</p>
+				<p>Those lucky enough to have either an ultimate or professional license receive free access to <a href="#modal-pro-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $professional_add_ons; ?> pro add-ons</a> as a special perk, including any we release in the future.</p>
+			</article>
+
+			<article>
+				<h4>Will AffiliateWP work on WordPress.com?</h4>
+				<p>No, AffiliateWP will not work on WordPress.com. It only works on self-hosted WordPress installs.</p>
 			</article>
 			
 		</div>
@@ -133,33 +84,27 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 
 			<article>
 				<h4>Do you have a refund policy?</h4>
-				<p><a title="Refund Policy" href="<?php echo site_url( 'refund-policy' ); ?>">Yes we do</a>! We firmly believe in and stand behind the quality of our product and will refund 100% of your money if you are unhappy with the plugin.</p>
+				<p><a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">Yes we do</a>! We firmly believe in and stand behind the quality of our product and will refund 100% of your money if you are unhappy with the plugin.</p>
 			</article>
 
+			<?php /*
 			<article>
-				<h4>What are the benefits of a developer license?</h4>
-				<p>In addition to being able to use AffiliateWP on an unlimited number of sites, a developer license also gives you access to all <a href="<?php echo site_url( 'addons/#official-developer-addons' ); ?>"><?php echo $developer_add_ons; ?> official developer add-ons</a>, including any we release in the future. This makes it a considerably valuable license to hold.</p>
+				<h4>What are the benefits of the developer license?</h4>
+				<p>In addition to being able to use AffiliateWP on an unlimited number of sites, a developer license also gives you access to all <a href="#modal-pro-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $professional_add_ons; ?> pro add-ons</a>, including any we release in the future. This makes it a considerably valuable license to hold.</p>
 			</article>
-
+			*/ ?>
+		
 			<article>
 				<h4>Do I get updates for the plugin?</h4>
 				<p>Yes! Automatic updates are delivered 100% free of charge to all users with a valid license key.</p>
 			</article>
 
-			
-			
-		</div>
-
-		<div class="item">
 			<article>
 				<h4>Do you offer support if I need help?</h4>
 				<p>Yes! We believe that top-notch support is key for a quality product and will do our very best to resolve any issues you encounter via our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
 			</article>
 
-			<article>
-				<h4>Will AffiliateWP work on WordPress.com?</h4>
-				<p>No, AffiliateWP will not work on WordPress.com. It only works on self-hosted WordPress installs.</p>
-			</article>
+		
 
 			
 			
@@ -167,9 +112,15 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 				<h4>I have other pre-sale questions, can you help?</h4>
 				<p>Yes! You are welcome to ask any question you wish from our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
 			</article>
-
+			
 		</div>
-	</div>	
+
+		
+	</div>
+
+	<div class="align-center">
+		<a href="#site" class="scroll button huge">Ready to increase sales?</a>
+	</div>
 </section>
 
 <?php

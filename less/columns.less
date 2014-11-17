@@ -144,10 +144,13 @@ section.columns {
           display: inline-block;
         }
 
-        .item {
-          width: 20%;
-          display: inline-block;
+        .item.left,
+        .item.right {
+            width: 20%;
+            display: inline-block;
         }
+
+
 
         // main column
         .primary.item {
@@ -156,11 +159,7 @@ section.columns {
         }
       }
 
-      &.pricing {
-        .item {
-          width: 31%;
-        }
-      }
+
   }
 
 }
@@ -197,6 +196,7 @@ section.columns .wrapper {
   // -webkit-align-content: flex-start;
 }
 
+//  #content .wrapper:after,
 
 // clearfix
 .affiliates .entry-content:after,
@@ -208,7 +208,6 @@ section.used-by ul:after,
 .pre-sale:after,
 .pricing-chart:after,
 #docs-container:after,
-#content .wrapper:after,
 #masthead .logo-wrapper:after {
   content: "";
   display: inline-block;

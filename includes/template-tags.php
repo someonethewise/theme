@@ -168,7 +168,7 @@ function affwp_pre_get_posts( $query ) {
 		$query->set( 'post__not_in', array( affwp_get_affiliatewp_id() ) );
 
 		// only show developer add-ons
-		$term = get_term_by( 'slug', 'developer-add-ons', 'download_category' );
+		$term = get_term_by( 'slug', 'pro-add-ons', 'download_category' );
 
 		$args = array(
 	       array(
@@ -263,20 +263,24 @@ add_shortcode( 'show_shortcode', 'affwp_show_shortcode' );
 /**
  * Page header
  */
-function affwp_page_header( $header = '', $sub_header = '' ) {
+function affwp_page_header( $header = '', $sub_heading = '' ) {
 	global $post;
 	?>
 	<header class="entry-header">
 		<?php affwp_the_title( $header ); ?>
 
 		<?php
-			
-			if ( ! $sub_header ) {
-			//	$excerpt = isset( $post->post_excerpt ) ? $post->post_excerpt : '';
-				$sub_header = function_exists( 'get_the_subheading' ) && get_the_subheading() ? '<h2>' . get_the_subheading() . '</h2>' : '';
+
+
+
+			if ( $sub_heading ) {
+				$sub_heading = $sub_heading;
+			}
+			elseif ( false !== $sub_heading ) {
+				$sub_heading = function_exists( 'get_the_subheading' ) && get_the_subheading() ? '<h2>' . get_the_subheading() . '</h2>' : '';
 			}
 			
-			echo apply_filters( 'affwp_excerpt', $sub_header );
+			echo apply_filters( 'affwp_excerpt', $sub_heading );
 		?>
 
 		<?php do_action( 'affwp_page_header_end' ); ?>
@@ -553,7 +557,7 @@ add_action( 'save_post',     'affwp_category_transient_flusher' );
  *
  * @return void
 */
-function affwp_post_thumbnail() {
+function affwp_post_thumbnail2() {
 	if ( post_password_required() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -587,6 +591,29 @@ function affwp_post_thumbnail() {
 	<?php endif; // End is_singular()
 }
 
+/**
+ * Display an optional post thumbnail.
+ * 
+ * @return void
+*/
+function affwp_post_thumbnail( $size = 'thumbnail', $link = false ) {
+
+	if ( post_password_required() || ! has_post_thumbnail() ) {
+		return;
+	}
+
+	if ( $link ) : ?>
+	
+	<a title="<?php the_title_attribute(); ?>" class="post-thumbnail" href="<?php the_permalink(); ?>">
+		<?php the_post_thumbnail( $size ); ?>
+	</a>
+
+
+	<?php else : ?>
+		<?php the_post_thumbnail( $size ); ?>
+	
+	<?php endif; 
+}
 
 /**
  * Returns the URL to upgrade a license from personal -> business or dev, or from business -> dev

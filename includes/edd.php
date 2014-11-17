@@ -360,14 +360,18 @@ function affwp_add_on_info( $position = '' ) {
 		<?php if ( $version ) : ?>
 			<p><span>Version</span> v<?php echo esc_attr( $version ); ?>
 			<?php if ( $changelog ) : ?>
-				<br /><a id="show-changelog" href="#changelog">View changelog</a>
-
-				<div id="changelog" class="entry-content" style="display: none;">
-					<h1>Changelog</h1>
-					<?php echo $changelog; ?>
-				</div>
+				<br /><a href="#changelog" class="popup-content" data-effect="mfp-move-from-bottom">View changelog</a>
 			<?php endif; ?>
 			</p>
+
+			<?php if ( $changelog ) : ?>
+			<div id="changelog" class="popup entry-content mfp-with-anim mfp-hide">
+
+				<h1>Changelog</h1>
+				<?php echo $changelog; ?>
+			</div>
+			<?php endif; ?>
+
 		<?php endif; ?>	
 
 		<?php if ( $requires ) : ?>
@@ -429,7 +433,7 @@ function affwp_add_on_info( $position = '' ) {
 		
 
 
-		<?php if ( has_term( 'developer-add-ons', 'download_category' ) ) : ?>
+		<?php if ( has_term( 'pro-add-ons', 'download_category' ) ) : ?>
 
 				<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
 
@@ -461,36 +465,7 @@ function affwp_add_on_info( $position = '' ) {
 	<?php
 }
 
-/**
- * Changelog
- */
-function affwp_add_on_changelog() {
 
-	$changelog = get_post_meta( get_the_ID(), '_edd_sl_changelog', true );
-
-	if ( ! is_singular( 'download' ) || ! $changelog ) {
-		return;
-	}
-
-	?>
-	<script type="text/javascript">
-			jQuery(document).ready(function() {
-				jQuery("#show-changelog").fancybox({
-					type: 'inline',
-				//	padding: 32,
-					maxWidth: 820,
-					helpers: {
-				    overlay: null
-				  },
-				openEffect	: 'elastic',
-				closeEffect	: 'elastic'
-				});
-			});
-		</script>
-
-	<?php
-}
-add_action( 'wp_footer', 'affwp_add_on_changelog', 100 );
 
 
 

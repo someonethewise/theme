@@ -22,7 +22,6 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'navigation.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'template-tags.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'post-types.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'documentation.php' );
-require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'home.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'account.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'functions.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'comment.php' );
@@ -31,6 +30,7 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'edd.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'metaboxes.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'custom-filters.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'pricing.php' );
 
 
 /**

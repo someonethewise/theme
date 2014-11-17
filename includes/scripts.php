@@ -96,6 +96,61 @@ add_action( 'wp_footer', 'affwp_fancybox', 100 );
 
 
 /**
+ * Magnific Popup
+ */
+function affwp_magnific_popup() {
+	
+	$changelog = get_post_meta( get_the_ID(), '_edd_sl_changelog', true );
+
+	//$changelog = get_post_meta( get_the_ID(), '_edd_sl_changelog', true );
+	//$affiliate_area = function_exists( 'affiliate_wp' ) ? is_page( affiliate_wp()->settings->get( 'affiliates_page' ) ) : '';
+
+	if ( ! ( is_page( 'pricing' ) || is_front_page() || is_singular( 'download' ) ) ) {
+		return;
+	}
+
+	if ( is_singular( 'download' ) && ! $changelog ) {
+		return;
+	}
+
+	// if ( ! ( is_singular( 'download' ) || $changelog || edd_is_checkout() || is_front_page() || $affiliate_area ) ) {
+	// 	return;
+	//}
+
+	?>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+
+		// inline
+		$('.popup-content').magnificPopup({
+			type: 'inline',
+			fixedContentPos: true,
+			fixedBgPos: true,
+			overflowY: 'scroll',
+			closeBtnInside: true,
+			preloader: false,
+			callbacks: {
+				beforeOpen: function() {
+				this.st.mainClass = this.st.el.attr('data-effect');
+				}
+			},
+			midClick: true,
+			removalDelay: 300
+        });
+
+		});
+	</script>
+
+	<?php
+}
+add_action( 'wp_footer', 'affwp_magnific_popup', 100 );
+
+
+
+
+
+/**
  * Try Disco scripts
  */
 function affwp_try_disco_js() {
