@@ -11,7 +11,7 @@ get_header(); ?>
 
 <?php affwp_page_header(); ?>
 
-<section class="section columns-3 columns">
+<section class="section columns-3 columns main">
 	<div class="item left bdr">
 		<?php echo get_avatar( get_the_author_meta('email'), '80' ); ?>
 		<p>
