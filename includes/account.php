@@ -171,7 +171,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 			<p><strong>Plus License</strong> (3 sites)</p>
 			<ul>
 				<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate' ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
-				<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'profesional' ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
+				<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'professional' ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
 			</ul>
 		</div>
 		<?php endif; ?>
@@ -181,7 +181,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 			<p><strong>Personal License</strong> (1 site)</p>
 			<ul>
 				<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate' ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
-				<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'profesional' ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
+				<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'professional' ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
 				<li><a title="Upgrade to Plus license" href="<?php echo affwp_get_license_upgrade_url( 'plus' ); ?>">Upgrade to Plus license (3 sites)</a></li>
 			</ul>
 		</div>	
