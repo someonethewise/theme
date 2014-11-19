@@ -283,7 +283,7 @@ function affwp_pricing_options() {
 				<h2>Ultimate</h2>
 
 				<ul class="list">
-					<li class="price"><span><sup>$</sup>349</span></li>
+					<li class="price"><span><sup>$</sup>449</span></li>
 					<li><span class="highlight">Unlimited</span> site licenses</li>
 					<li><span class="highlight">Unlimited</span> updates</li>
 					<li><span class="highlight">Unlimited</span> support</li>
