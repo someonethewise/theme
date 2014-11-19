@@ -160,23 +160,25 @@ function affwp_process_license_upgrade() {
 
 	$affwp_id = affwp_get_affiliatewp_id();
 
+	$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
+	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
+	$has_plus_license         = in_array( 'plus', affwp_get_users_licenses() );
+	$has_personal_license     = in_array( 'personal', affwp_get_users_licenses() );
+
 	switch ( $type ) {
 
 		case 'ultimate':
 			// user has an ultimate license already
-			if ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 3 ) ) {
+			if ( $has_ultimate_license ) {
 				wp_die( 'You already have an Ultimate license', '', array( 'back_link' => true ) );
 			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
-				// Has a professional license
+			elseif ( $has_professional_license ) {
 				$discount = 199;
 			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
-				// Has a plus license
+			elseif ( $has_plus_license ) {
 				$discount = 99;
 			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id ) ) {
-				// Has a personal license
+			elseif ( $has_personal_license ) {
 				$discount = 49;
 			} 
 			else {
@@ -190,15 +192,13 @@ function affwp_process_license_upgrade() {
 
 		case 'professional':
 			// user has professional license already
-			if ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
-				wp_die( 'You already have the professional license', '', array( 'back_link' => true ) );
+			if ( $has_professional_license ) {
+				wp_die( 'You already have a professional license', '', array( 'back_link' => true ) );
 			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
-				// Has a plus license
+			elseif ( $has_plus_license ) {
 				$discount = 99;
 			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id ) ) {
-				// Has a personal license
+			elseif ( $has_personal_license ) {
 				$discount = 49;
 			} 
 			else {
@@ -212,11 +212,10 @@ function affwp_process_license_upgrade() {
 
 		case 'plus':
 			// user has plus license already
-			if ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
+			if ( $has_plus_license ) {
 				wp_die( 'You already have a Plus license', '', array( 'back_link' => true ) );
 			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 0 ) ) {
-				// Has a personal license
+			elseif ( $has_personal_license ) {
 				$discount = 49;
 			}
 			else {
@@ -269,10 +268,11 @@ function affwp_process_add_on_download() {
 		return;
 	}
 
-	$affwp_id = affwp_get_affiliatewp_id();
+	$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
+	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
 
-	if( ! edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
-		wp_die( 'You need to have either an Ultimate or Professional license to download this add-on' );
+	if ( ! ( $has_ultimate_license || $has_professional_license ) ) {
+		wp_die( 'You need either an Ultimate or Professional license to download this add-on' );
 	}
 
 	$user_info = array();
