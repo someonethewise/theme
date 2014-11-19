@@ -68,7 +68,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 			<tr>
 				<th><?php _e( 'Name', 'affwp' ); ?></th>
 				<th><?php _e( 'Version', 'affwp' ); ?></th>
-				<th><?php _e( 'Affiliate WP version required', 'affwp' ); ?></th>
+				<th><?php _e( 'AffiliateWP version required', 'affwp' ); ?></th>
 				<th><?php _e( 'Download', 'affwp' ); ?></th>
 			</tr>
 		</thead>
