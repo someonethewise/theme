@@ -167,7 +167,7 @@ function affwp_pre_get_posts( $query ) {
 		// remove affiliateWP from showing
 		$query->set( 'post__not_in', array( affwp_get_affiliatewp_id() ) );
 
-		// only show developer add-ons
+		// only show pro add-ons
 		$term = get_term_by( 'slug', 'pro-add-ons', 'download_category' );
 
 		$args = array(

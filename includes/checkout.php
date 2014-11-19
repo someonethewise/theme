@@ -87,13 +87,13 @@ function affwp_show_refund_policy() {
 add_action( 'wp_footer', 'affwp_show_refund_policy' );
 
 /**
- * Force account creation if developer license
+ * Force account creation if professional or ultimate license
  *
  * @since 1.1.7
  */
 function affwp_force_account_creation( $ret ) {
 
-	if ( edd_item_in_cart( affwp_get_affiliatewp_id(), array( 'price_id' => 2 ) ) )
+	if ( edd_item_in_cart( affwp_get_affiliatewp_id(), array( 'price_id' => 2 ) ) || edd_item_in_cart( affwp_get_affiliatewp_id(), array( 'price_id' => 3 ) ) )
 		$ret = (bool) true;
 
 	return $ret;
