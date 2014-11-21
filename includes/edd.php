@@ -266,6 +266,31 @@ function affwp_cart_details_item_discount( $discount, $item ) {
 add_filter( 'edd_get_cart_content_details_item_discount_amount', 'affwp_cart_details_item_discount', 10, 2 );
 
 /**
+ * Displays the upgrade discount row on the cart
+ *
+ * @return void
+ */
+function affwp_cart_items_upgrade_row() {
+
+	if( ! edd_sl_renewals_allowed() ) {
+		return;
+	}
+
+	if( ! EDD()->session->get( 'is_upgrade' ) ) {
+		return;
+	}
+
+	$renewal_discount = edd_get_option( 'upgrade_discount', false );
+
+?>
+	<tr class="edd_cart_footer_row edd_sl_renewal_row">
+		<td colspan="3"><?php printf( __( 'License upgrade discount: %s', 'edd_sl' ), $renewal_discount . '%' ); ?></td>
+	</tr>
+<?php
+}
+add_action( 'edd_cart_items_after', 'affwp_cart_items_upgrade_row' );
+
+/**
  * Process add-on Downloads
  *
  * Handles the file download process for add-ons.
