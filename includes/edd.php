@@ -274,11 +274,11 @@ function affwp_cart_items_upgrade_row() {
 		return;
 	}
 
-	$discount = edd_get_option( 'upgrade_discount', false );
+	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
 
 ?>
 	<tr class="edd_cart_footer_row edd_sl_renewal_row">
-		<td colspan="3"><?php printf( __( 'License upgrade discount: %s', 'edd_sl' ), $discount . '%' ); ?></td>
+		<td colspan="3"><?php printf( __( 'License upgrade discount: $%s', 'edd_sl' ), $upgrade_discount ); ?></td>
 	</tr>
 <?php
 }
