@@ -143,8 +143,6 @@ function affwp_edd_thank_customer() {
 }
 
 
-
-
 /**
  * Processes the license upgrade
  */
