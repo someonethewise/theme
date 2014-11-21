@@ -253,7 +253,6 @@ function affwp_cart_details_item_discount( $discount, $item ) {
 		return $discount;
 	}
 
-	$license_id = edd_software_licensing()->get_license_by_key( $key );
 	$price_id   = EDD()->session->get( 'upgrade_price_id' );
 	$discount   = EDD()->session->get( 'upgrade_discount' );
 
