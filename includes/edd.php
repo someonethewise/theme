@@ -272,19 +272,15 @@ add_filter( 'edd_get_cart_content_details_item_discount_amount', 'affwp_cart_det
  */
 function affwp_cart_items_upgrade_row() {
 
-	if( ! edd_sl_renewals_allowed() ) {
-		return;
-	}
-
 	if( ! EDD()->session->get( 'is_upgrade' ) ) {
 		return;
 	}
 
-	$renewal_discount = edd_get_option( 'upgrade_discount', false );
+	$discount = edd_get_option( 'upgrade_discount', false );
 
 ?>
 	<tr class="edd_cart_footer_row edd_sl_renewal_row">
-		<td colspan="3"><?php printf( __( 'License upgrade discount: %s', 'edd_sl' ), $renewal_discount . '%' ); ?></td>
+		<td colspan="3"><?php printf( __( 'License upgrade discount: %s', 'edd_sl' ), $discount . '%' ); ?></td>
 	</tr>
 <?php
 }
