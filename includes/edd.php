@@ -253,18 +253,12 @@ function affwp_cart_details_item_discount( $discount, $item ) {
 		return $discount;
 	}
 
-	$price_id   = EDD()->session->get( 'upgrade_price_id' );
-	$discount   = EDD()->session->get( 'upgrade_discount' );
+	$price_id = EDD()->session->get( 'upgrade_price_id' );
+	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
 
-	if( $discount ) {
+	if( $upgrade_discount ) {
 
-		if( $discount > 1 ) {
-			$discount /= 100;
-		}
-
-		$discount = ( $price * $discount );
-		$discount = number_format( $discount, 2, '.', '' );
-		$discount += $discount;
+		$discount = $upgrade_discount;
 	}
 
 	return $discount;
