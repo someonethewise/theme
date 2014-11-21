@@ -170,18 +170,14 @@ function affwp_process_license_upgrade() {
 		case 'ultimate':
 			// user has an ultimate license already
 			if ( $has_ultimate_license ) {
-				wp_die( 'You already have an Ultimate license', '', array( 'back_link' => true ) );
-			} 
-			elseif ( $has_professional_license ) {
+				wp_die( 'You already have an Ultimate license', '', array( 'back_link' => true, 'response' => 405 ) );
+			} elseif ( $has_professional_license ) {
 				$discount = 199;
-			} 
-			elseif ( $has_plus_license ) {
+			} elseif ( $has_plus_license ) {
 				$discount = 99;
-			} 
-			elseif ( $has_personal_license ) {
+			} elseif ( $has_personal_license ) {
 				$discount = 49;
-			} 
-			else {
+			} else {
 				// Hasn't purchased, so go back to pricing
 				wp_redirect( home_url( '/pricing' ) ); exit;
 			}
@@ -193,15 +189,12 @@ function affwp_process_license_upgrade() {
 		case 'professional':
 			// user has professional license already
 			if ( $has_professional_license ) {
-				wp_die( 'You already have a professional license', '', array( 'back_link' => true ) );
-			} 
-			elseif ( $has_plus_license ) {
+				wp_die( 'You already have a professional license', '', array( 'back_link' => true, 'response' => 405 ) );
+			} elseif ( $has_plus_license ) {
 				$discount = 99;
-			} 
-			elseif ( $has_personal_license ) {
+			} elseif ( $has_personal_license ) {
 				$discount = 49;
-			} 
-			else {
+			} else {
 				// Hasn't purchased, so go back to pricing
 				wp_redirect( home_url( '/pricing' ) ); exit;
 			}
@@ -213,9 +206,8 @@ function affwp_process_license_upgrade() {
 		case 'plus':
 			// user has plus license already
 			if ( $has_plus_license ) {
-				wp_die( 'You already have a Plus license', '', array( 'back_link' => true ) );
-			} 
-			elseif ( $has_personal_license ) {
+				wp_die( 'You already have a Plus license', '', array( 'back_link' => true, 'response' => 405 ) );
+			} elseif ( $has_personal_license ) {
 				$discount = 49;
 			}
 			else {
