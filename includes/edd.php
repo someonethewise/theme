@@ -228,7 +228,7 @@ function affwp_process_license_upgrade() {
 	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id ) );
 
 	EDD()->fees->add_fee( $discount * -1, 'License Upgrade Discount' );
-	//EDD()->session->set( 'is_upgrade', '1' );
+	EDD()->session->set( 'is_upgrade', '1' );
 
 	wp_redirect( edd_get_checkout_uri() ); exit;
 
