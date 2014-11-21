@@ -227,13 +227,50 @@ function affwp_process_license_upgrade() {
 	// Add the correct license
 	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id ) );
 
-	EDD()->fees->add_fee( $discount * -1, 'License Upgrade Discount' );
 	EDD()->session->set( 'is_upgrade', '1' );
+	EDD()->session->set( 'upgrade_price_id', $price_id );
+	EDD()->session->set( 'upgrade_discount', $discount );
 
 	wp_redirect( edd_get_checkout_uri() ); exit;
 
 }
 add_action( 'edd_upgrade_affwp_license', 'affwp_process_license_upgrade' );
+
+/**
+ * Sets the discount amount based on the upgrade fee
+ *
+ * @param $discount float The discount amount
+ * @param $item array the cart item array
+ * @return float
+ */
+function affwp_cart_details_item_discount( $discount, $item ) {
+
+	if( ! function_exists( 'EDD' ) ) {
+		return $discount;
+	}
+
+	if( ! EDD()->session->get( 'is_upgrade' ) ) {
+		return $discount;
+	}
+
+	$license_id = edd_software_licensing()->get_license_by_key( $key );
+	$price_id   = EDD()->session->get( 'upgrade_price_id' )
+	$discount   = EDD()->session->get( 'upgrade_discount' )
+
+	if( $discount ) {
+
+		if( $discount > 1 ) {
+			$discount /= 100;
+		}
+
+		$discount = ( $price * $discount );
+		$discount = number_format( $discount, 2, '.', '' );
+		$discount += $discount;
+	}
+
+	return $discount;
+}
+add_filter( 'edd_get_cart_content_details_item_discount_amount', 'affwp_cart_details_item_discount', 10, 2 );
 
 /**
  * Process add-on Downloads
