@@ -278,7 +278,7 @@ function affwp_pricing_options() {
 
 		<div class="wrapper pricing-options">
 
-			<div class="ultimate col box pricing best-value">
+			<div class="ultimate box pricing best-value">
 
 				<h2>Ultimate</h2>
 
@@ -298,7 +298,7 @@ function affwp_pricing_options() {
 				</div>
 			</div>
 
-			<div class="professional col box pricing highlight">
+			<div class="professional box pricing highlight">
 				
 				<svg width="165px" height="33px">
 				   <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svg-defs.svg#icon-recommended'; ?>"></use>
@@ -322,7 +322,7 @@ function affwp_pricing_options() {
 				</div>
 			</div>
 
-			<div class="plus col box pricing">
+			<div class="plus box pricing">
 
 				<h2>Plus</h2>
 
@@ -342,16 +342,18 @@ function affwp_pricing_options() {
 
 			</div>
 
-			<div class="personal col box pricing">
-				<h2>Personal</h2>
+			<div class="personal box pricing">
+				<div class="flex-wrapper">
+					<h2>Personal</h2>
 
-				<ul class="list">
-					<li class="price"><span><sup>$</sup>49</span></li>
-					<li>1 site license</li>
-					<li>1 year of updates *</li>
-					<li>1 year of support *</li>
-				</ul>	
+					<ul class="list">
+						<li class="price"><span><sup>$</sup>49</span></li>
+						<li>1 site license</li>
+						<li>1 year of updates *</li>
+						<li>1 year of support *</li>
+					</ul>	
 
+				</div>
 				<div class="option_a">
 					<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=0">Purchase</a>
 				</div>	
