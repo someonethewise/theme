@@ -33,9 +33,12 @@
 
 <body <?php body_class(); ?>>
 
+<?php do_action( 'affwp_site_before' ); ?>
+
 <div id="site" class="hfeed">
 
 	<header id="masthead" class="site-header" role="banner">
+	<?php do_action( 'affwp_masthead_start' ); ?>
 		<div class="logo-wrapper">
 			<h1 class="site-title">
 				<a class="logo" title="<?php echo get_bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">AffiliateWP</a>
