@@ -11,7 +11,6 @@ function affwp_account() { ?>
 	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
 	$has_plus_license         = in_array( 'plus', affwp_get_users_licenses() );
 	$has_personal_license     = in_array( 'personal', affwp_get_users_licenses() );
-	
 
 /**
  * Logout message

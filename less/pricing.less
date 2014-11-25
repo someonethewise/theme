@@ -50,8 +50,6 @@
 
 
 
-
-
 // loaded
 // .loaded div.pricing {
 // 	left: 0;
@@ -117,6 +115,18 @@ div.pricing {
 	width: 100%;
 	position: relative;
 	
+	display: -ms-flexbox;   // MID: IE 10
+	display: -webkit-flex;  // NEW, Chrome 21–28, Safari 6.1+
+	display: flex;          // NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+
+
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+
+	// default is row (allows vertical centering)
+	-webkit-flex-flow: column;
+	flex-flow: column;
+
+
 //	top: 0;
 	
 	//-webkit-transition: left 0.25s cubic-bezier( .31, 1.12, .53, 1.16 ), opacity 0.25s linear;
@@ -278,6 +288,14 @@ section.pre-sale-questions {
 	}
 }
 
+@media all and ( max-width: 639px ) {
+
+  div.pricing.highlight {
+  		margin-top: 4rem;
+  }
+
+
+}
 
 @media all and ( min-width: 640px ) {
 
@@ -290,7 +308,8 @@ section.pre-sale-questions {
 @media all and ( max-width: 1024px ) {
 
   div.pricing {
-  	margin-bottom: 1rem;
+  	margin-bottom: 2rem;
+
   }
 
 
