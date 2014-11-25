@@ -88,12 +88,14 @@ get_header(); ?>
 		</div>
 
 		<div class="wrapper see-features">
-			<p><a title="See a full list of features" href="<?php echo site_url( 'features' ); ?>">See a full list of features &rarr;</a></p>	
+			<p>
+				<a title="See a full list of features" href="<?php echo site_url( 'features' ); ?>">See a full list of features &rarr;</a>
+			</p>	
 		</div>
+
 	</section>
 
 	<section class="section columns-4 columns more-features">
-		<!-- <h1>More Goodies</h1> -->
 
 		<div class="wrapper">
 			
