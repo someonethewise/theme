@@ -323,16 +323,17 @@ function affwp_pricing_options() {
 			</div>
 
 			<div class="plus box pricing">
+				<div class="flex-wrapper">
+					<h2>Plus</h2>
 
-				<h2>Plus</h2>
-
-				<ul class="list">
-					<li class="price"><span><sup>$</sup>99</span></li>
-					<li>3 site licenses</li>
-					<li>1 year of updates *</li>
-					<li>1 year of support *</li>
-				</ul>	
-
+					<ul class="list">
+						<li class="price"><span><sup>$</sup>99</span></li>
+						<li>3 site licenses</li>
+						<li>1 year of updates *</li>
+						<li>1 year of support *</li>
+					</ul>	
+				</div>
+				
 				<div class="option_a">
 					<a title="Purchase" class="button" href="<?php echo $download_url; ?>&amp;edd_options[price_id]=1">Purchase</a>
 				</div>	
