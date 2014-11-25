@@ -11,7 +11,7 @@ get_header(); ?>
 
 <?php affwp_page_header(); ?>
 
-<section class="section columns-3 columns">
+<section class="section columns-3 columns main">
 	<div class="item left bdr">
 		<?php echo get_avatar( get_the_author_meta('email'), '80' ); ?>
 		<p>
@@ -74,10 +74,10 @@ get_header(); ?>
 		*/ ?>
 		
 
-		<?php if ( has_category( 'developer-add-ons', get_the_ID() ) ) : ?>
+		<?php if ( has_category( 'pro-add-ons', get_the_ID() ) ) : ?>
 		<div class="note">
 			<h3>Note</h3>
-			<p>This add-on is only available for developer license holders.</p><p>If you don’t have a developer’s license, you can upgrade with just a couple of clicks from your <a href="<?php echo site_url( 'account' ); ?>">account</a> page.</p>
+			<p>This add-on is only available for ultimate or professional license holders.</p><p>If you don’t have one of these licenses, you can upgrade with just a couple of clicks from your <a href="<?php echo site_url( 'account' ); ?>">account</a> page.</p>
 		</div>
 		<?php endif; ?>
 

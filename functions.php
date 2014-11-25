@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '1.8.4' );
+	define( 'AFFWP_THEME_VERSION', '1.9' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -22,7 +22,6 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'navigation.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'template-tags.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'post-types.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'documentation.php' );
-require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'home.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'account.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'functions.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'comment.php' );
@@ -31,6 +30,14 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'edd.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'metaboxes.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'custom-filters.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'pricing.php' );
+require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'notices.php' );
+
+
+
+
+
+
 
 
 /**

@@ -4,7 +4,7 @@
  */
 ?>
 
-</div> <!-- .wrapper -->
+
 <?php do_action( 'affwp_content_end' ); ?>
 </div> <!-- #content -->
 <?php do_action( 'affwp_content_after' ); ?>
@@ -12,7 +12,9 @@
 	<footer id="footer">
 		<div class="wrapper">
 
+		<?php if ( ! ( is_404() || edd_is_failed_transaction_page() ) ) : ?>	
 		<div id="mascot-2"></div>
+		<?php endif; ?>
 
 		<?php if ( function_exists( 'edd_is_checkout' ) && ! edd_is_checkout() ) : ?>
 

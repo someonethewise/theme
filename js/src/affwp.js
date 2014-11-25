@@ -1,6 +1,9 @@
 // add loaded class
 jQuery(window).load(function($) {
-   jQuery('body').addClass('loaded');
+ 
+  jQuery('body').addClass('loaded');
+ // jQuery('.pricing-options').removeClass('animate');
+
 });
 
 
@@ -39,6 +42,27 @@ jQuery(window).load(function($) {
 })(jQuery);
 
 jQuery(document).ready(function($) {
+
+  $('.scroll').click(function(event){
+    event.preventDefault();
+    var offset = $($(this).attr('href')).offset().top;
+    $('html, body').animate({scrollTop:offset}, 800);
+  });
+
+  // $(function() {
+  //   $('a[href*=#]:not([href=#])',':not.mfp-with-anim').click(function() {
+  //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  //       var target = $(this.hash);
+  //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  //       if (target.length) {
+  //         $('html,body').animate({
+  //           scrollTop: target.offset().top
+  //         }, 1000);
+  //         return false;
+  //       }
+  //     }
+  //   });
+  // });
 
   $('.checkout-option').click(function(e) {
 

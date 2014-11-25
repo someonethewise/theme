@@ -37,85 +37,6 @@ add_action( 'manage_posts_custom_column', 'affwpt_render_docs_columns', 10, 2 );
 
 
 /**
- * Mixitup
- */
-function affwp_mixitup() {
-	if ( ! ( is_page_template( 'page-templates/docs.php' ) || is_tax( 'doc_category' ) || is_singular( 'docs' ) ) )
-		return;
-		
-	?>
-	<script>
-		jQuery(document).ready(function() {
-
-		
-    	  var layout = 'grid', 							// Store the current layout as a variable
-    	      $container = jQuery('#docs-container'), 			// Cache the MixItUp container
-    	      $changeLayout = jQuery('.change-layout'); 	// Cache the changeLayout button
-    	  
-    	  // Instantiate MixItUp with some custom options:
-    	  $container.mixItUp({
-    	    animation: {
-    	      animateChangeLayout: true, 				// Animate the positions of targets as the layout changes
-    	      animateResizeTargets: true, 				// Animate the width/height of targets as the layout changes
-    	   //   effects: 'fade rotateX(-40deg) translateZ(-100px)'
-    	    },
-    	    layout: {
-    	      containerClass: 'grid' 					// Add the class 'grid' to the container on load
-    	    },
-    	    selectors: {
-				target: '.item'
-			}
-    	  });
-    	  
-    	  // MixItUp does not provide a default "change layout" button, so we need to make our own and bind it with a click handler:
-    	  
-    	  $changeLayout.on('click', function() {
-    	    
-
-    	    // If the current layout is a grid, change to list:
-    	    
-    	    if ( layout == 'list' ) {
-    	      layout = 'grid';
-    	      
-    	      console.log( layout );
-
-    	      $changeLayout.html( '<span class="hide">List</span>' ).prepend('<i class="icon icon-list"></i>'); // Update the button text
-    	      //jQuery( '#change-layout i' ).attr( 'class', 'icon-list' );
-    	      
-    	     
-
-    	      $container.mixItUp( 'changeLayout', {
-    	        containerClass: layout // change the container class to "list"
-    	      });
-    	      
-    	    // Else if the current layout is a list, change to grid:  
-    	    
-    	    } else {
-
-    	      layout = 'list';
-    	      
-    	      console.log( layout );
-
-    	      $changeLayout.html( '<span class="hide">Grid</span>' ).prepend('<i class="icon icon-grid"></i>'); // Update the button text
-    	      //jQuery( '#change-layout i' ).attr( 'class', 'icon-grid' );
-
-    	      $container.mixItUp( 'changeLayout', {
-    	        containerClass: layout // Change the container class to 'list'
-    	      });
-
-    	    }
-    	  });
-	    	
-		});
-
-
-
-	</script>
-<?php //endif;
-}
-//add_action( 'wp_footer', 'affwp_mixitup', 100 );
-
-/**
  * Filters
  * @return [type] [description]
  */
@@ -155,7 +76,7 @@ function affwp_docs_getting_started() {
 				
 				</div>
 
-					<div id="docs-container">
+					<div class="docs-container">
 				<?php
 				/*
 				 * Loop through Categories and Display Posts within
@@ -234,7 +155,7 @@ function affwp_docs_getting_started() {
 
 	    	
 <?php }
-add_action( 'affwp_content_after', 'affwp_docs_getting_started', 1 );
+add_action( 'affwp_content_end', 'affwp_docs_getting_started', 1 );
 
 
 
@@ -277,7 +198,7 @@ function affwp_docs_tax() {
 		
 		<?php //echo affwp_docs_filters(); ?>
 
-		<div id="docs-container">
+		<div class="docs-container">
 		  <?php
 		  $count = 0;
 			while ( have_posts() ) : the_post(); $count++; ?>
@@ -309,7 +230,7 @@ function affwp_docs_tax() {
 	</section>
 	<?php
 }
-add_action( 'affwp_content_after', 'affwp_docs_tax' );
+add_action( 'affwp_content_end', 'affwp_docs_tax' );
 
 /**
  * Documentation posts
@@ -333,7 +254,7 @@ function affwp_docs() {
 
 		</div>
 
-		<div id="docs-container">
+		<div class="docs-container">
 
 	    		
 	    		
@@ -417,7 +338,7 @@ function affwp_docs() {
 	</section>
 	<?php
 }
-add_action( 'affwp_content_after', 'affwp_docs' );
+add_action( 'affwp_content_end', 'affwp_docs' );
 
 /**
  * Documentation posts
@@ -468,7 +389,7 @@ function affwp_docs_singular() {
 		</div>
 
 
-		<div id="docs-container">
+		<div class="docs-container">
 	      
 	       <?php if ( $wp_query->have_posts() ) : ?>
 	               
@@ -495,4 +416,4 @@ function affwp_docs_singular() {
 	</section>
 	<?php
 }
-add_action( 'affwp_content_after', 'affwp_docs_singular', 1 );
+add_action( 'affwp_content_end', 'affwp_docs_singular', 1 );

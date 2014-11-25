@@ -4,6 +4,34 @@
  */
 
 /**
+ * Add sad alf to failed transaction page
+ */
+function affwp_pricing_text() {
+	if ( ! edd_is_failed_transaction_page() )
+		return;
+	?>
+	<img id="mascot-sad" alt="" src="<?php echo get_stylesheet_directory_uri() . '/images/alf-sad.png'; ?>">
+	
+	<?php
+}
+add_action( 'affwp_page_header_after', 'affwp_pricing_text' );
+
+
+/**
+ * Filter subheading on failed transaction page
+ */
+function affwp_failed_transaction_excerpt( $sub_heading ) {
+	if ( edd_is_failed_transaction_page() ) {
+		return '<h2>Your transaction failed. Please try again or <a href="/support">contact support</a>.</h2>';
+	}
+
+	return $sub_heading;
+}
+add_filter( 'affwp_excerpt', 'affwp_failed_transaction_excerpt' );
+
+
+
+/**
  * Get number of add-ons in each category
  * @return string number of add-ons
  */
@@ -115,39 +143,56 @@ function affwp_edd_thank_customer() {
 }
 
 
-
-
 /**
  * Processes the license upgrade
  */
 function affwp_process_license_upgrade() {
 
-	// get type. business or developer
+	// get type. plus, professional or ultimate
 	$type = isset( $_GET['type'] ) ? $_GET['type'] : '';
 
-	if ( ! is_user_logged_in() || ! ( 'business' == $type || 'developer' == $type ) ) {
+	if ( ! is_user_logged_in() || ! ( 'plus' == $type || 'professional' == $type || 'ultimate' == $type ) ) {
 		// Isn't logged in, so go back to pricing
 		wp_redirect( home_url( '/pricing' ) ); exit;
 	}
 
 	$affwp_id = affwp_get_affiliatewp_id();
 
+	$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
+	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
+	$has_plus_license         = in_array( 'plus', affwp_get_users_licenses() );
+	$has_personal_license     = in_array( 'personal', affwp_get_users_licenses() );
+
 	switch ( $type ) {
 
-		case 'developer':
-			// user has developer license already
-			if ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
-				wp_die( 'You already have a Developer\'s license', '', array( 'back_link' => true ) );
-			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
-				// Has a business license
+		case 'ultimate':
+			// user has an ultimate license already
+			if ( $has_ultimate_license ) {
+				wp_die( 'You already have an Ultimate license', '', array( 'back_link' => true, 'response' => 405 ) );
+			} elseif ( $has_professional_license ) {
+				$discount = 199;
+			} elseif ( $has_plus_license ) {
 				$discount = 99;
-			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id ) ) {
-				// Has a personal license
+			} elseif ( $has_personal_license ) {
 				$discount = 49;
-			} 
-			else {
+			} else {
+				// Hasn't purchased, so go back to pricing
+				wp_redirect( home_url( '/pricing' ) ); exit;
+			}
+
+			$price_id = 3;
+
+			break;
+
+		case 'professional':
+			// user has professional license already
+			if ( $has_professional_license ) {
+				wp_die( 'You already have a professional license', '', array( 'back_link' => true, 'response' => 405 ) );
+			} elseif ( $has_plus_license ) {
+				$discount = 99;
+			} elseif ( $has_personal_license ) {
+				$discount = 49;
+			} else {
 				// Hasn't purchased, so go back to pricing
 				wp_redirect( home_url( '/pricing' ) ); exit;
 			}
@@ -156,13 +201,11 @@ function affwp_process_license_upgrade() {
 
 			break;
 
-		case 'business':
-			// user has developer license already
-			if ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 1 ) ) {
-				wp_die( 'You already have a Business license', '', array( 'back_link' => true ) );
-			} 
-			elseif ( edd_has_user_purchased( get_current_user_id(), $affwp_id, 0 ) ) {
-				// Has a personal license
+		case 'plus':
+			// user has plus license already
+			if ( $has_plus_license ) {
+				wp_die( 'You already have a Plus license', '', array( 'back_link' => true, 'response' => 405 ) );
+			} elseif ( $has_personal_license ) {
 				$discount = 49;
 			}
 			else {
@@ -182,13 +225,64 @@ function affwp_process_license_upgrade() {
 	// Add the correct license
 	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id ) );
 
-	EDD()->fees->add_fee( $discount * -1, 'License Upgrade Discount' );
-	//EDD()->session->set( 'is_upgrade', '1' );
+	EDD()->session->set( 'is_upgrade', '1' );
+	EDD()->session->set( 'upgrade_price_id', $price_id );
+	EDD()->session->set( 'upgrade_discount', $discount );
 
 	wp_redirect( edd_get_checkout_uri() ); exit;
 
 }
 add_action( 'edd_upgrade_affwp_license', 'affwp_process_license_upgrade' );
+
+/**
+ * Sets the discount amount based on the upgrade fee
+ *
+ * @param $discount float The discount amount
+ * @param $item array the cart item array
+ * @return float
+ */
+function affwp_cart_details_item_discount( $discount, $item ) {
+
+	if( ! function_exists( 'EDD' ) ) {
+		return $discount;
+	}
+
+	if( ! EDD()->session->get( 'is_upgrade' ) ) {
+		return $discount;
+	}
+
+	$price_id = EDD()->session->get( 'upgrade_price_id' );
+	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
+
+	if( $upgrade_discount ) {
+
+		$discount = $upgrade_discount;
+	}
+
+	return $discount;
+}
+add_filter( 'edd_get_cart_content_details_item_discount_amount', 'affwp_cart_details_item_discount', 10, 2 );
+
+/**
+ * Displays the upgrade discount row on the cart
+ *
+ * @return void
+ */
+function affwp_cart_items_upgrade_row() {
+
+	if( ! EDD()->session->get( 'is_upgrade' ) ) {
+		return;
+	}
+
+	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
+
+?>
+	<tr class="edd_cart_footer_row edd_sl_renewal_row">
+		<td colspan="3"><?php printf( __( 'License upgrade discount: $%s', 'edd_sl' ), $upgrade_discount ); ?></td>
+	</tr>
+<?php
+}
+add_action( 'edd_cart_items_after', 'affwp_cart_items_upgrade_row' );
 
 /**
  * Process add-on Downloads
@@ -215,10 +309,11 @@ function affwp_process_add_on_download() {
 		return;
 	}
 
-	$affwp_id = affwp_get_affiliatewp_id();
+	$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
+	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
 
-	if( ! edd_has_user_purchased( get_current_user_id(), $affwp_id, 2 ) ) {
-		wp_die( 'You need to have a Developer\'s license key to download this add-on' );
+	if ( ! ( $has_ultimate_license || $has_professional_license ) ) {
+		wp_die( 'You need either an Ultimate or Professional license to download this add-on' );
 	}
 
 	$user_info = array();
@@ -332,7 +427,56 @@ function affwp_process_add_on_download() {
 }
 add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
 
+/**
+ * Get a user's download IDs that they have access to, based on their license keys
+ *
+ * @since  1.9
+ */
+function affwp_get_users_licenses( $user_id = 0 ) {
 
+	if ( ! $user_id ) {
+		$user_id = get_current_user_id();
+	}
+
+	$args = array(
+		'author'         => $user_id,
+		'posts_per_page' => -1,
+		'post_type'      => 'edd_license',
+	);
+
+	$payment_ids = get_posts( $args );
+	$payment_ids = wp_list_pluck( $payment_ids, 'ID' );
+
+	$download_ids = array();
+
+	if ( $payment_ids ) {
+		foreach ( $payment_ids as $payment_id ) {
+			$download_ids[] = (int) get_post_meta( $payment_id, '_edd_sl_download_price_id', true ); 
+		}
+	}
+
+	$download_ids = array_values( array_unique( $download_ids ) );
+
+	$licenses = array();
+
+	if ( in_array( 0, $download_ids ) ) {
+		$licenses[] = 'personal';
+	}
+
+	if ( in_array( 1, $download_ids ) ) {
+		$licenses[] = 'plus';
+	}
+
+	if ( in_array( 2, $download_ids ) ) {
+		$licenses[] = 'professional';
+	}
+
+	if ( in_array( 3, $download_ids ) ) {
+		$licenses[] = 'ultimate';
+	}
+
+	return $licenses;
+}
 
 
 
@@ -360,14 +504,18 @@ function affwp_add_on_info( $position = '' ) {
 		<?php if ( $version ) : ?>
 			<p><span>Version</span> v<?php echo esc_attr( $version ); ?>
 			<?php if ( $changelog ) : ?>
-				<br /><a id="show-changelog" href="#changelog">View changelog</a>
-
-				<div id="changelog" class="entry-content" style="display: none;">
-					<h1>Changelog</h1>
-					<?php echo $changelog; ?>
-				</div>
+				<br /><a href="#changelog" class="popup-content" data-effect="mfp-move-from-bottom">View changelog</a>
 			<?php endif; ?>
 			</p>
+
+			<?php if ( $changelog ) : ?>
+			<div id="changelog" class="popup entry-content mfp-with-anim mfp-hide">
+
+				<h1>Changelog</h1>
+				<?php echo $changelog; ?>
+			</div>
+			<?php endif; ?>
+
 		<?php endif; ?>	
 
 		<?php if ( $requires ) : ?>
@@ -426,32 +574,45 @@ function affwp_add_on_info( $position = '' ) {
 			<a title="Download Now" target="_blank" href="<?php echo esc_url( $external_download_url ); ?>" class="button">Download Now</a>
 		<?php endif; ?>
 
-		
+		<?php if ( has_term( 'pro-add-ons', 'download_category' ) ) : ?>
+
+			<?php 
+				$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
+				$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
+				$has_plus_license         = in_array( 'plus', affwp_get_users_licenses() );
+				$has_personal_license     = in_array( 'personal', affwp_get_users_licenses() );
+			?>
 
 
-		<?php if ( has_term( 'developer-add-ons', 'download_category' ) ) : ?>
-
-				<?php if ( is_user_logged_in() && edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 2 ) ) : ?>
-
-					<?php if ( edd_get_download_files( get_the_ID() ) ) : ?>
-						<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
-					<?php endif; ?>
-				<?php
-					// if the user is logged and has purchased a lower license, show a link to upgrade their license 
-					elseif ( is_user_logged_in() && 
-						edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 0 )  ||
-						edd_has_user_purchased( get_current_user_id(), array( affwp_get_affiliatewp_id() ), 1 ) )
-				: ?>
+			<?php if ( edd_get_download_files( get_the_ID() ) ) : // must have files attached before a download button can show ?>
+				
+				<?php if ( $has_ultimate_license || $has_professional_license ) : // user has either ultimate or professional license so can download pro add-ons ?>
+					<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
+				<?php elseif ( $has_plus_license || $has_personal_license ) : // user must upgrade to download add-on ?>	
 					
-					<a title="License Upgrade Required" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>" class="button">License Upgrade Required</a>
-					<p>This add-on will become immediately available to you after you <a title="Upgrade Your License" href="<?php echo affwp_get_license_upgrade_url( 'developer' ); ?>">upgrade your license</a>.</p>
-				<?php else : // user is logged in and has not purchased, or is logged out. Direct link to purchase dev license 
-					$purchase_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id() .'&amp;edd_options[price_id]=2';
-				?>
+					<p>
+						<a href="#upgrade" title="Upgrade License" class="button popup-content" data-effect="mfp-move-from-bottom">Upgrade license</a>
+					</p>
+
+					<p>This add-on is only available to ultimate or professional license holders.</p>
+					<p>Upgrade your license to download this add-on for free.</p>
+
+					<?php affwp_upgrade_license_modal(); ?>
 					
-					<a title="Buy Developer License" class="button" href="<?php echo $purchase_url; ?>">Buy Developer License</a>
-					<p>This add-on is only available to <a title="Developer License" href="<?php echo site_url( 'pricing' ); ?>">Developer License</a> holders</p>
+
+				<?php else : // user does not have any license, provide links to purchase ?>
+
+					<?php
+						$download_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id();
+					?>
+					<p>This add-on is available free to <a href="<?php echo $download_url; ?>&amp;edd_options[price_id]=3">ultimate</a> or <a href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">professional</a> license holders.</p>
 				<?php endif; ?>
+
+			<?php endif; ?>	
+
+
+
+			
 
 		<?php endif; ?>
 		
@@ -461,37 +622,35 @@ function affwp_add_on_info( $position = '' ) {
 	<?php
 }
 
-/**
- * Changelog
- */
-function affwp_add_on_changelog() {
 
-	$changelog = get_post_meta( get_the_ID(), '_edd_sl_changelog', true );
-
-	if ( ! is_singular( 'download' ) || ! $changelog ) {
-		return;
-	}
-
+function affwp_upgrade_license_modal() {
 	?>
-	<script type="text/javascript">
-			jQuery(document).ready(function() {
-				jQuery("#show-changelog").fancybox({
-					type: 'inline',
-				//	padding: 32,
-					maxWidth: 820,
-					helpers: {
-				    overlay: null
-				  },
-				openEffect	: 'elastic',
-				closeEffect	: 'elastic'
-				});
-			});
-		</script>
+	<div id="upgrade" class="popup entry-content mfp-with-anim mfp-hide">
+
+		<h1>Upgrade your license</h1>
+		<p>Pro add-ons are only available to <strong>ultimate</strong> or <strong>professional</strong> license holders.</p>
+		<p>Once you upgrade your license you'll have access to all pro add-ons (including this one), as well as any future pro add-ons we build.</p>
+
+		<div class="affwp-license">
+			<h2>Ultimate License</h2>
+			<p><strong>Unlimited</strong> site licenses, <strong>unlimited</strong> updates, <strong>unlimited support.</p>
+			
+			<a href="<?php echo affwp_get_license_upgrade_url( 'ultimate' ); ?>" title="Upgrade to Ultimate" class="button">Upgrade to Ultimate</a>
+			
+		</div>
+
+		<div class="affwp-license">
+			<h2>Professional License</h2>
+			<p><strong>Unlimited</strong> site licenses, 1 year of updates, 1 year of support.</p>
+			
+			<a href="<?php echo affwp_get_license_upgrade_url( 'professional' ); ?>" title="Upgrade to Professional" class="button">Upgrade to Professional</a><br/>
+			
+		</div>
+
+	</div>
 
 	<?php
 }
-add_action( 'wp_footer', 'affwp_add_on_changelog', 100 );
-
 
 
 function affwp_edd_optimizely_revenue_tracking() {

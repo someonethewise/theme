@@ -9,6 +9,9 @@ section.docs {
 	padding: 0 2rem;
 }
 
+
+
+.single-docs,
 .tax-doc_category,
 .documentation {
 
@@ -54,7 +57,7 @@ section.section.docs {
 		display: none;
 	}
 
-	#docs-container.list .item {
+	.docs-container.list .item {
 		margin-bottom: 1rem;
 	}
 
@@ -94,7 +97,11 @@ section.section.docs {
 
 /* Flex box progressive enhancements: */
 
-#docs-container {
+.docs-container {
+	margin-bottom: 5rem;
+}
+
+.docs-container {
 	display: -webkit-flex;
 	-webkit-flex-flow: row wrap;
 	-webkit-justify-content: space-between;
@@ -105,16 +112,16 @@ section.section.docs {
  * List Styles
  */
 
-#docs-container.list {
+.docs-container.list {
 	max-width: 1220px;
 	margin: 0 auto;
 }
 
-#docs-container.list .item {
+.docs-container.list .item {
   width: 100%;
 }
 
-#docs-container.list .item:before {
+.docs-container.list .item:before {
   padding-top: 40px;
 }
 
