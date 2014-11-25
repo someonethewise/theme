@@ -38,10 +38,6 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 			<?php echo stripslashes( wpautop( $refund_policy->post_content, true ) ); ?>
 		</div>
 
-		<div id="stripe-checkout-wrap" style="display:none;">
-			<?php echo edd_get_purchase_link( array( 'download_id' => affwp_get_affiliatewp_id(), 'direct' => true ) ); ?>
-		</div>
-
 		<p class="clause">* You must renew the license after one calendar year for continued updates and support. Discounted renewal rates available. See information below for details. All purchases are subject to our terms and condition of use.</p>
 
 		
