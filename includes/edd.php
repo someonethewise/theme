@@ -439,39 +439,41 @@ function affwp_get_users_licenses( $user_id = 0 ) {
 	}
 
 	$args = array(
-		'author'         => $user_id,
 		'posts_per_page' => -1,
 		'post_type'      => 'edd_license',
+		'meta_key'       => '_edd_sl_user_id',
+		'meta_value'     => $user_id
 	);
 
-	$payment_ids = get_posts( $args );
-	$payment_ids = wp_list_pluck( $payment_ids, 'ID' );
+	$licenses = get_posts( $args );
 
-	$download_ids = array();
+	$license_ids = wp_list_pluck( $licenses, 'ID' );
 
-	if ( $payment_ids ) {
-		foreach ( $payment_ids as $payment_id ) {
-			$download_ids[] = (int) get_post_meta( $payment_id, '_edd_sl_download_price_id', true ); 
+	$download_price_ids = array();
+
+	if ( $license_ids ) {
+		foreach ( $license_ids as $id ) {
+			$download_price_ids[] = (int) get_post_meta( $id, '_edd_sl_download_price_id', true );
 		}
 	}
-
-	$download_ids = array_values( array_unique( $download_ids ) );
+	
+	$download_price_ids = array_values( array_unique( $download_price_ids ) );
 
 	$licenses = array();
 
-	if ( in_array( 0, $download_ids ) ) {
+	if ( in_array( 0, $download_price_ids ) ) {
 		$licenses[] = 'personal';
 	}
 
-	if ( in_array( 1, $download_ids ) ) {
+	if ( in_array( 1, $download_price_ids ) ) {
 		$licenses[] = 'plus';
 	}
 
-	if ( in_array( 2, $download_ids ) ) {
+	if ( in_array( 2, $download_price_ids ) ) {
 		$licenses[] = 'professional';
 	}
 
-	if ( in_array( 3, $download_ids ) ) {
+	if ( in_array( 3, $download_price_ids ) ) {
 		$licenses[] = 'ultimate';
 	}
 

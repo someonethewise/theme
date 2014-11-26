@@ -129,7 +129,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 							<?php endif; ?>
 						<?php endif; ?>
 
-					<?php endif; ?>
+					<?php endif; // edd_get_download_files ?>
 				</td>
 			</tr>
 			
