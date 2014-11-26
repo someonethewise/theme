@@ -434,11 +434,8 @@ add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
  */
 function affwp_get_users_licenses( $user_id = 0 ) {
 
-	//var_dump( get_current_user_id() );
-
 	if ( ! $user_id ) {
 		$user_id = get_current_user_id();
-	//	var_dump( $user_id );
 	}
 
 	$args = array(
@@ -449,8 +446,6 @@ function affwp_get_users_licenses( $user_id = 0 ) {
 	);
 
 	$licenses = get_posts( $args );
-
-//	var_dump( $licenses );
 
 	$license_ids = wp_list_pluck( $licenses, 'ID' );
 
@@ -463,9 +458,6 @@ function affwp_get_users_licenses( $user_id = 0 ) {
 	}
 	
 	$download_price_ids = array_values( array_unique( $download_price_ids ) );
-
-//	var_dump( $download_price_ids );
-
 
 	$licenses = array();
 
