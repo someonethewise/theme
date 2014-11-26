@@ -12,6 +12,8 @@ function affwp_account() { ?>
 	$has_plus_license         = in_array( 'plus', affwp_get_users_licenses() );
 	$has_personal_license     = in_array( 'personal', affwp_get_users_licenses() );
 
+
+	//var_dump( affwp_get_users_licenses() );
 /**
  * Logout message
  */
@@ -129,7 +131,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 							<?php endif; ?>
 						<?php endif; ?>
 
-					<?php endif; ?>
+					<?php endif; // edd_get_download_files ?>
 				</td>
 			</tr>
 			
