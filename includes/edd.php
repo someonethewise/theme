@@ -166,10 +166,8 @@ function affwp_process_license_upgrade() {
 	switch ( $type ) {
 
 		case 'ultimate':
-			// user has an ultimate license already
-			if ( $has_ultimate_license ) {
-				wp_die( 'You already have an Ultimate license', '', array( 'back_link' => true, 'response' => 405 ) );
-			} elseif ( $has_professional_license ) {
+
+			if ( $has_professional_license ) {
 				$discount = 199;
 			} elseif ( $has_plus_license ) {
 				$discount = 99;
@@ -185,10 +183,8 @@ function affwp_process_license_upgrade() {
 			break;
 
 		case 'professional':
-			// user has professional license already
-			if ( $has_professional_license ) {
-				wp_die( 'You already have a professional license', '', array( 'back_link' => true, 'response' => 405 ) );
-			} elseif ( $has_plus_license ) {
+			
+			if ( $has_plus_license ) {
 				$discount = 99;
 			} elseif ( $has_personal_license ) {
 				$discount = 49;
@@ -202,10 +198,8 @@ function affwp_process_license_upgrade() {
 			break;
 
 		case 'plus':
-			// user has plus license already
-			if ( $has_plus_license ) {
-				wp_die( 'You already have a Plus license', '', array( 'back_link' => true, 'response' => 405 ) );
-			} elseif ( $has_personal_license ) {
+			
+			if ( $has_personal_license ) {
 				$discount = 49;
 			}
 			else {
@@ -428,7 +422,7 @@ function affwp_process_add_on_download() {
 add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
 
 /**
- * Get a user's download IDs that they have access to, based on their license keys
+ * Get a user's download price IDs that they have access to
  *
  * @since  1.9
  */
@@ -447,42 +441,26 @@ function affwp_get_users_licenses( $user_id = 0 ) {
 
 	$licenses = get_posts( $args );
 
-	$license_ids = wp_list_pluck( $licenses, 'ID' );
-
-	$download_price_ids = array();
-
-	if ( $license_ids ) {
-		foreach ( $license_ids as $id ) {
-			$download_price_ids[] = (int) get_post_meta( $id, '_edd_sl_download_price_id', true );
-		}
-	}
+	if ( $licenses ) {
+		$license_ids = wp_list_pluck( $licenses, 'ID' );
 	
-	$download_price_ids = array_values( array_unique( $download_price_ids ) );
+		$download_price_ids = array();
 
-	$licenses = array();
+		if ( $license_ids ) {
+			foreach ( $license_ids as $id ) {
+				$download_price_ids[] = (int) get_post_meta( $id, '_edd_sl_download_price_id', true );
+			}
 
-	if ( in_array( 0, $download_price_ids ) ) {
-		$licenses[] = 'personal';
+			$download_price_ids = array_values( $download_price_ids );
+
+			return $download_price_ids;
+
+		}
+	
 	}
 
-	if ( in_array( 1, $download_price_ids ) ) {
-		$licenses[] = 'plus';
-	}
-
-	if ( in_array( 2, $download_price_ids ) ) {
-		$licenses[] = 'professional';
-	}
-
-	if ( in_array( 3, $download_price_ids ) ) {
-		$licenses[] = 'ultimate';
-	}
-
-	return $licenses;
+	return array();
 }
-
-
-
-
 
 /**
  * Add-on info box
@@ -579,10 +557,10 @@ function affwp_add_on_info( $position = '' ) {
 		<?php if ( has_term( 'pro-add-ons', 'download_category' ) ) : ?>
 
 			<?php 
-				$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
-				$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
-				$has_plus_license         = in_array( 'plus', affwp_get_users_licenses() );
-				$has_personal_license     = in_array( 'personal', affwp_get_users_licenses() );
+				$has_ultimate_license     = in_array( 3, affwp_get_users_licenses() );
+				$has_professional_license = in_array( 2, affwp_get_users_licenses() );
+				$has_plus_license         = in_array( 1, affwp_get_users_licenses() );
+				$has_personal_license     = in_array( 0, affwp_get_users_licenses() );
 			?>
 
 
