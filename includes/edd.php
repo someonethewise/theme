@@ -307,7 +307,7 @@ function affwp_process_add_on_download() {
 	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
 
 	if ( ! ( $has_ultimate_license || $has_professional_license ) ) {
-		wp_die( 'You need either an Ultimate or Professional license to download this add-on' );
+		wp_die( 'You need either an Ultimate or Professional license to download this add-on', 'Error', array( 'response' => 403 ) );
 	}
 
 	$user_info = array();
