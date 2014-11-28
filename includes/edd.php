@@ -238,32 +238,32 @@ add_action( 'edd_upgrade_affwp_license', 'affwp_process_license_upgrade' );
  */
 function affwp_cart_item_discounted_amount( $discounted_price, $discounts, $item, $price ) {
 
-	if( ! function_exists( 'EDD' ) ) {
-		return $discounted_price;
-	}
+        if( ! function_exists( 'EDD' ) ) {
+                return $discounted_price;
+        }
 
-	if( ! EDD()->session->get( 'is_upgrade' ) ) {
-		return $discounted_price;
-	}
+        if( ! EDD()->session->get( 'is_upgrade' ) ) {
+                return $discounted_price;
+        }
 
-	$price_id         = EDD()->session->get( 'upgrade_price_id' );
-	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
-	$cart_discounts   = edd_get_cart_discounts();
+        $price_id         = EDD()->session->get( 'upgrade_price_id' );
+        $upgrade_discount = EDD()->session->get( 'upgrade_discount' );
+        $cart_discounts   = edd_get_cart_discounts();
 
-	if( $upgrade_discount && edd_cart_has_discounts() ) {
+        if( $upgrade_discount && edd_cart_has_discounts() ) {
 
-		$discounted_price = $price - $upgrade_discount;
+                $discounted_price = $price - $upgrade_discount;
+                foreach( $cart_discounts as $discount ) {
 
-		foreach( $cart_discounts as $discount ) {
+                        $discounted_price = edd_get_discounted_amount( $discount, $discounted_price );
 
-			$discounted_price = edd_get_discounted_amount( $discount, $discounted_price );
+                }
+        }
 
-		}
-	}
-
-	return $discounted_price;
+        return $discounted_price;
 }
-add_filter( 'edd_get_cart_item_discounted_amount', 'ed_amountaffwp_cart_item_discount', 10, 4 );
+add_filter( 'edd_get_cart_item_discounted_amount', 'affwp_cart_item_discounted_amount', 10, 4 );
+
 
 /**
  * Sets the discount amount based on the upgrade fee
