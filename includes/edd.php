@@ -158,10 +158,10 @@ function affwp_process_license_upgrade() {
 
 	$affwp_id = affwp_get_affiliatewp_id();
 
-	$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
-	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
-	$has_plus_license         = in_array( 'plus', affwp_get_users_licenses() );
-	$has_personal_license     = in_array( 'personal', affwp_get_users_licenses() );
+	$has_ultimate_license     = in_array( 3, affwp_get_users_licenses() );
+	$has_professional_license = in_array( 2, affwp_get_users_licenses() );
+	$has_plus_license         = in_array( 1, affwp_get_users_licenses() );
+	$has_personal_license     = in_array( 0, affwp_get_users_licenses() );
 
 	switch ( $type ) {
 
@@ -303,8 +303,8 @@ function affwp_process_add_on_download() {
 		return;
 	}
 
-	$has_ultimate_license     = in_array( 'ultimate', affwp_get_users_licenses() );
-	$has_professional_license = in_array( 'professional', affwp_get_users_licenses() );
+	$has_ultimate_license     = in_array( 3, affwp_get_users_licenses() );
+	$has_professional_license = in_array( 2, affwp_get_users_licenses() );
 
 	if ( ! ( $has_ultimate_license || $has_professional_license ) ) {
 		wp_die( 'You need either an Ultimate or Professional license to download this add-on', 'Error', array( 'response' => 403 ) );
