@@ -28,24 +28,32 @@ get_header(); ?>
 				    	</h2>
 
 				    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
-				    		  	
+				    	
+				    	<div class="post-thumbnail">
+				    		<?php if ( current_user_can( 'manage_options' ) ) : ?>
+				    			<?php affwp_post_thumbnail( 'thumbnail', true ); ?>
+				    		<?php else : ?>
+				    			<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
+				    		<?php endif; ?>	
+				    		
+				    	</div>
+
 			    		<h2><?php the_title(); ?></h2>
-			    		<div class="post-thumbnail">
-			    			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-			    				<?php the_post_thumbnail(); ?>
-			    			<?php else : ?>
-			    				<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
-			    			<?php endif; ?>	
-			    			
-			    		</div>
+			    		
 
 					<?php endif; ?>	
 
 			       	<?php the_excerpt(); ?>
 			    </div>
+			    	<?php if ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+			    		<span class="coming-soon">Coming Soon</span>
+			    	<?php else : ?>	
+
 			       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
 	 		    		Learn More  &rarr;
 	 		    	</a>
+
+	 		    	<?php endif; ?>	
 			</article>
 
 		<?php endwhile; ?>
