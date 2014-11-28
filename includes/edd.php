@@ -256,7 +256,7 @@ function affwp_cart_item_discounted_amount( $discounted_price, $discounts, $item
 
 		foreach( $cart_discounts as $discount ) {
 
-			$discounted_price -= edd_get_discounted_amount( $discount, $discounted_price );
+			$discounted_price = edd_get_discounted_amount( $discount, $discounted_price );
 
 		}
 	}
