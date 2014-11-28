@@ -157,11 +157,12 @@ function affwp_process_license_upgrade() {
 	}
 
 	$affwp_id = affwp_get_affiliatewp_id();
+	$licenses = affwp_get_users_licenses();
 
-	$has_ultimate_license     = in_array( 3, affwp_get_users_licenses() );
-	$has_professional_license = in_array( 2, affwp_get_users_licenses() );
-	$has_plus_license         = in_array( 1, affwp_get_users_licenses() );
-	$has_personal_license     = in_array( 0, affwp_get_users_licenses() );
+	$has_ultimate_license     = in_array( 3, $licenses );
+	$has_professional_license = in_array( 2, $licenses );
+	$has_plus_license         = in_array( 1, $licenses );
+	$has_personal_license     = in_array( 0, $licenses );
 
 	switch ( $type ) {
 
