@@ -151,7 +151,7 @@ function affwp_process_license_upgrade() {
 	// get type. plus, professional or ultimate
 	$type = isset( $_GET['type'] ) ? strtolower( $_GET['type'] ) : '';
 
-	if ( ! is_user_logged_in() || ! ( 'plus' == $type && 'professional' == $type && 'ultimate' == $type ) ) {
+	if ( ! is_user_logged_in() || ( 'plus' !== $type && 'professional' !== $type && 'ultimate' !== $type ) ) {
 		// Isn't logged in, so go back to pricing
 		wp_redirect( home_url( '/pricing' ) ); exit;
 	}
