@@ -3,6 +3,24 @@
  * EDD Modifications
  */
 
+
+
+/**
+ * Change download labels
+ */
+function affwp_edd_download_labels( $labels ) {
+
+	$labels = array(
+	   'singular' => __( 'Add-on', 'affwp' ),
+	   'plural'   => __( 'Add-ons', 'affwp')
+	);
+
+	return $labels;
+
+}
+add_filter( 'edd_default_downloads_name', 'affwp_edd_download_labels' );
+
+
 /**
  * Add sad alf to failed transaction page
  */
