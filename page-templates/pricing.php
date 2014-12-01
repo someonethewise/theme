@@ -6,7 +6,7 @@
 
 get_header(); 
 
-$professional_add_ons  = affwp_get_add_on_count( 'pro-add-ons' );
+$professional_add_ons  = affwp_get_pro_add_on_count();
 $official_free_add_ons = affwp_get_add_on_count( 'official-free' );
 $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 ?>

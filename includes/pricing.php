@@ -58,13 +58,10 @@ function affwp_add_on_popups() {
 		<p>Pro add-ons are only available with a purchase of either the <strong>ultimate</strong> or <strong>professional</strong> license.</p>
 		<?php if ( $wp_query->have_posts() ) : ?>
 		    
-		    <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
-			    $coming_soon = affwp_addon_is_coming_soon( get_the_ID() ) ? 'coming-soon' : '';
-		    ?>  
+		    <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>  
 		      
-		        <article <?php post_class( array( $coming_soon ) ); ?>> 
-		        		    
-					<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) || current_user_can( 'manage_options' ) ) : ?>
+		        <article>     
+					<?php if ( ! affwp_addon_is_coming_soon( get_the_ID() ) ) : // don't show coming soon add-ons ?>
 
 			    		<h2><?php the_title(); ?></h2>
 				    	
@@ -79,21 +76,6 @@ function affwp_add_on_popups() {
 					    		</div>
 					    	</div>	
 				    	</div>
-
-				    <?php elseif ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
-				    	
-				    	<h2><?php the_title(); ?></h2>
-
-			    	 	<?php the_excerpt(); ?>
-
-			    		<div class="post-thumbnail">
-			    			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-			    				<?php affwp_post_thumbnail( 'thumbnail', false ); ?>
-			    			<?php else : ?>
-			    				<img alt="<?php the_title(); ?> - Coming Soon" src="<?php echo get_stylesheet_directory_uri() . '/images/add-ons-coming-soon.png'; ?>">
-			    			<?php endif; ?>	
-			    			
-			    		</div>
 
 					<?php endif; ?>	
 
@@ -266,9 +248,7 @@ function affwp_add_on_popups() {
  * Pricing options
  */
 function affwp_pricing_options() {
-	$professional_add_ons  = affwp_get_add_on_count( 'pro-add-ons' );
-	
-	
+	$professional_add_ons  = affwp_get_pro_add_on_count();
 
 	$download_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id();
 

@@ -47,6 +47,29 @@ function affwp_failed_transaction_excerpt( $sub_heading ) {
 }
 add_filter( 'affwp_excerpt', 'affwp_failed_transaction_excerpt' );
 
+/**
+ * Get number of add-ons in the pro add-ons category
+ * Excludes any add-ons that are coming soon
+ *
+ * @since  1.9.3
+ * @return int number of add-ons
+ */
+function affwp_get_pro_add_on_count() {
+	
+	$args = array(
+		'post_type' => 'download',
+		'download_category' => 'pro-add-ons',
+		'meta_key' => '_affwp_addon_coming_soon',
+		'meta_value' => true, 
+		'meta_compare' => 'NOT EXISTS',
+		'posts_per_page' => -1,
+	); 
+
+	$add_ons = new WP_Query( $args );
+
+	return (int) $add_ons->found_posts;
+
+}
 
 
 /**
