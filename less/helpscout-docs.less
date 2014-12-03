@@ -25,9 +25,23 @@ body {
 }
 
 // nav links
-.navbar .nav li a, 
+
 .navbar .icon-private-w {
 	color: @heading-color;
+}
+
+
+.navbar .brand,
+.navbar .nav .active a,
+.navbar .nav li a,
+.navbar .nav li a:focus, 
+.navbar .nav .active a:focus {
+	color: @heading-color;
+}
+
+.navbar .nav li a:hover,
+.navbar .nav .active a:hover {
+	color: @primary-color;
 }
 
 #content:after {
