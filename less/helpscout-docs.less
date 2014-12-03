@@ -5,7 +5,7 @@
 
 body {
 	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-	background: @light-grey;
+	background: #fff;
 }
 
 
@@ -27,6 +27,17 @@ body {
 .navbar .nav li a, 
 .navbar .icon-private-w {
 	color: #fff;
+}
+
+#content:after {
+    background: none repeat scroll 0 0 #f7f7f7;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 // link colors
