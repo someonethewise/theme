@@ -56,7 +56,8 @@ module.exports = function(grunt) {
         },
         files: {
           "style.css": "less/style.less",
-          "css/editor-style.css": "less/editor-style.less"
+          "css/editor-style.css": "less/editor-style.less",
+          "css/docs.css": "less/helpscout-docs.less"
         }
       }
     },
