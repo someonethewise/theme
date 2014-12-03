@@ -2,6 +2,7 @@
 @button-color: #e34f43;
 @link-color: #e44e44;
 @light-grey: #f7f7f7;
+@heading-color: #373737;
 
 body {
 	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
@@ -77,6 +78,11 @@ body {
 	margin-bottom: 1.62em;
 }
 
+// links 
+a:focus {
+	text-decoration: none;
+}
+
 // typography
 
 // main heading on documentation homepage
@@ -106,6 +112,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 	// margin: 0 0 1.5em 0;
 	line-height: 1.5;
+}
+
+.category-list h3 {
+	color: @heading-color;
+	font-weight: 500;
 }
 
 
