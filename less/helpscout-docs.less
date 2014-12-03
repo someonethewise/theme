@@ -1,6 +1,13 @@
 @primary-color: #ed6d62;
 @button-color: #e34f43;
 @link-color: #e44e44;
+@light-grey: #f7f7f7;
+
+body {
+	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	background: @light-grey;
+}
+
 
 // main navigation bar
 .navbar .navbar-inner {
@@ -40,8 +47,8 @@
 }
 
 #docsSearch {
-	background: #f7f7f7;
-	border-bottom: 1px solid darken( #f7f7f7, 3% );
+	background: @light-grey;
+	border-bottom: 1px solid darken( @light-grey, 3% );
 }
 
 #fullArticle p, 
@@ -72,9 +79,7 @@
 	font-weight: 500;
 }
 
-body {
-	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-}
+
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Graphik Web', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
