@@ -1,3 +1,36 @@
+@primary-color: #ed6d62;
+@button-color: #e34f43;
+@link-color: #e44e44;
+
+// main navigation bar
 .navbar .navbar-inner {
-	background: #ed6d62;	
+	background: @primary-color;	
+}
+
+// buttons
+#searchBar button {
+	background: @button-color;
+}
+
+#searchBar button:hover {
+	background: #dc2f21;
+}
+
+// nav links
+.navbar .nav li a, 
+.navbar .icon-private-w {
+	color: #fff;
+}
+
+// link colors
+#serp-dd .result a:hover, 
+#serp-dd .result > li.active, 
+#full-Article strong a, 
+.collection a, 
+.contentWrapper a, 
+.most-pop-articles .popArticles a, 
+.most-pop-articles .popArticles a:hover span, 
+.category-list .category .article-count, 
+.category-list .category:hover .article-count {
+	color: @link-color;
 }
