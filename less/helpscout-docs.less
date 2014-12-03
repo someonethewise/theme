@@ -18,14 +18,22 @@ body {
 // buttons
 #searchBar button {
 	background: @button-color;
+	border: 1px solid darken( @light-grey, 3% );
 }
 
 #searchBar button:hover {
 	background: #dc2f21;
 }
 
-// nav links
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	border: 1px solid darken( @light-grey, 3% );
+}
 
+.navbar .nav .active .caret {
+	border-color: @light-grey;
+}
+
+// nav links
 .navbar .icon-private-w {
 	color: @heading-color;
 }
