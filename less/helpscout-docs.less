@@ -99,7 +99,20 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 	font-size: 17px;
 	color: #787878;
 	font-weight: 300;
-	margin-bottom: 1.62em;
+
+}
+
+#fullArticle p, 
+#fullArticle ul, 
+#fullArticle ol,
+#fullArticle blockquote,
+#fullArticle table {
+  margin-bottom: 1.62em;
+}
+
+
+em {
+  font-weight: 400;
 }
 
 // links 
@@ -116,6 +129,11 @@ a:focus {
 	padding: 5px;
 	vertical-align: middle;
 	font-size: 14px;
+  margin-bottom: 0;
+}
+
+#fullArticle dd {
+  margin-bottom: 1em;
 }
 
 // typography
