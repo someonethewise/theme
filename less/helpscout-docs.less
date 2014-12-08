@@ -29,6 +29,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 	border: 1px solid darken( @light-grey, 3% );
 }
 
+
 .navbar .nav .active .caret {
   border-bottom: 5px solid @light-grey;
   // border-left:5px solid transparent;
@@ -40,7 +41,6 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 	color: @heading-color;
 }
 
-
 .navbar .brand,
 .navbar .nav .active a,
 .navbar .nav li a,
@@ -49,6 +49,12 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 	color: @heading-color;
 }
 
+
+.navbar a:hover .icon-private-w, 
+.navbar a:focus .icon-private-w, 
+.navbar .active a .icon-private-w, 
+.navbar .active a:hover .icon-private-w, 
+.navbar .active a:focus .icon-private-w,
 .navbar .nav li a:hover,
 .navbar .nav .active a:hover {
 	color: @primary-color;

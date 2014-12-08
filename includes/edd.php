@@ -556,6 +556,7 @@ function affwp_add_on_info( $position = '' ) {
 	$updated               = intval ( get_post_meta( get_the_ID(), '_affwp_addon_last_updated', true ) );
 	$edd_version_required  = get_post_meta( get_the_ID(), '_affwp_addon_edd_version_required', true );
 	$external_download_url = get_post_meta( get_the_ID(), '_affwp_addon_download_url', true );
+	$external_doc_url      = get_post_meta( get_the_ID(), '_affwp_addon_doc_url', true );
 	$developer             = get_post_meta( get_the_ID(), '_affwp_addon_developer', true );
 	$developer_url         = get_post_meta( get_the_ID(), '_affwp_addon_developer_url', true );
 
@@ -616,6 +617,9 @@ function affwp_add_on_info( $position = '' ) {
 				wp_reset_postdata();
 				endif;
 			}
+			elseif ( $external_doc_url ) { ?>
+				<p><span>Documentation</span><a href="<?php echo esc_url( $external_doc_url ); ?>">View Documentation</a></p>
+			<?php }
 		endif;
 		?>
 
