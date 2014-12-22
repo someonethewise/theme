@@ -657,7 +657,7 @@ function affwp_add_on_info( $position = '' ) {
 			<?php if ( edd_get_download_files( get_the_ID() ) ) : // must have files attached before a download button can show ?>
 				
 				<?php if ( $has_ultimate_license || $has_professional_license ) : // user has either ultimate or professional license so can download pro add-ons ?>
-					<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Noww</a>
+					<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
 				<?php elseif ( $has_plus_license || $has_personal_license ) : // user must upgrade to download add-on ?>	
 					
 					<p>
