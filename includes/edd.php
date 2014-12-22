@@ -672,10 +672,7 @@ function affwp_add_on_info( $position = '' ) {
 
 				<?php else : // user does not have any license, provide links to purchase ?>
 
-					<?php
-						$download_url = edd_get_checkout_uri() . '?edd_action=add_to_cart&amp;download_id=' . affwp_get_affiliatewp_id();
-					?>
-					<p>This add-on is available free to <a href="<?php echo $download_url; ?>&amp;edd_options[price_id]=3">ultimate</a> or <a href="<?php echo $download_url; ?>&amp;edd_options[price_id]=2">professional</a> license holders.</p>
+					<p>This add-on is available free to <a href="<?php echo site_url( 'pricing' ); ?>">ultimate</a> or <a href="<?php echo site_url( 'pricing' ); ?>">professional</a> license holders.</p>
 				<?php endif; ?>
 
 			<?php endif; ?>	
