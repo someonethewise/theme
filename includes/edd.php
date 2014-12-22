@@ -514,6 +514,11 @@ function affwp_get_users_licenses( $user_id = 0 ) {
 		$user_id = get_current_user_id();
 	}
 
+	// if user is still a guest return an empty array as their ID will be 0
+	if ( ! $user_id ) {
+		return array();
+	}
+
 	$args = array(
 		'posts_per_page' => -1,
 		'post_type'      => 'edd_license',
@@ -649,11 +654,10 @@ function affwp_add_on_info( $position = '' ) {
 				$has_personal_license     = in_array( 0, affwp_get_users_licenses() );
 			?>
 
-
 			<?php if ( edd_get_download_files( get_the_ID() ) ) : // must have files attached before a download button can show ?>
 				
 				<?php if ( $has_ultimate_license || $has_professional_license ) : // user has either ultimate or professional license so can download pro add-ons ?>
-					<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
+					<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Noww</a>
 				<?php elseif ( $has_plus_license || $has_personal_license ) : // user must upgrade to download add-on ?>	
 					
 					<p>
