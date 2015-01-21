@@ -196,6 +196,8 @@ function affwp_body_classes( $classes ) {
 	if ( is_page_template( 'page-templates/about.php' ) )
 		$classes[] = 'about';
 
+	if ( is_page( 'screenshots' ) )
+		$classes[] = 'screenshots';
 
 	if ( is_user_logged_in() && isset( $post->post_content ) && has_shortcode( $post->post_content, 'purchase_history' ) )
 		$classes[] = 'purchase-history';

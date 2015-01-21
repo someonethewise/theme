@@ -72,8 +72,8 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 			</article>
 
 			<article>
-				<h4>Will AffiliateWP work on WordPress.com?</h4>
-				<p>No, AffiliateWP will not work on WordPress.com. It only works on self-hosted WordPress installs.</p>
+				<h4>Can I purchase the Pro Add-ons separately?</h4>
+				<p>The Pro Add-ons are only available to Ultimate or Professional license holders and cannot be purchased separately.</p>
 			</article>
 			
 		</div>
@@ -98,6 +98,11 @@ $third_party_add_ons   = affwp_get_add_on_count( '3rd-party' );
 			<article>
 				<h4>I have other pre-sale questions, can you help?</h4>
 				<p>Yes! You can ask us any question through our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
+			</article>
+
+			<article>
+				<h4>Will AffiliateWP work on WordPress.com?</h4>
+				<p>No, AffiliateWP will not work on WordPress.com. It only works on self-hosted WordPress installs.</p>
 			</article>
 			
 		</div>
