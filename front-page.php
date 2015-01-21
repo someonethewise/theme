@@ -61,7 +61,7 @@ get_header(); ?>
 					<h3>Complete Integration</h3>	
 					<p>AffiliateWP has complete integration with all major WordPress ecommerce and membership plugins. </p>
 				</div>
-				<p><a class="feature-link" title="View all integrations" href="<?php echo site_url( 'docs/section/integrations' ); ?>">View all integrations</a></p>
+				<p><a class="feature-link" title="View all integrations" href="http://docs.affiliatewp.com/category/75-integrations" target="_blank">View all integrations</a></p>
 
 			</div>
 
