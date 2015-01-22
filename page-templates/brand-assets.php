@@ -286,7 +286,7 @@ get_header(); ?>
 <section class="section">
 	<div class="wrapper slim">
 		<h1>Screenshots</h1>
-		<p>We're working hard to put together some screenshots that you can use. Come back soon!</p>
+		<p>We currently have 35 screenshots of the Affiliate Dashboard and WordPress admin area.</p><p>You can either <a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/screenshots.zip'; ?>">download this zip file</a> or <a href="<?php echo site_url( 'screenshots' ); ?>">view and download</a> the screenshots individually.</p>
 	</div>
 </section>
 
