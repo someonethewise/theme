@@ -89,7 +89,10 @@ get_header(); ?>
 
 		<div class="wrapper see-features">
 			<p>
-				<a title="See a full list of features" href="<?php echo site_url( 'features' ); ?>">See a full list of features &rarr;</a>
+				<a href="<?php echo site_url( 'screenshots' ); ?>" class="button" title="View Screenshots">View Screenshots</a>
+			</p>
+			<p>
+				<a href="<?php echo site_url( 'features' ); ?>" title="See a full list of features">Or view a full list of features &rarr;</a>
 			</p>	
 		</div>
 
@@ -155,7 +158,6 @@ get_header(); ?>
 
 	<section class="section">
 		<div class="wrapper">
-
 			<a class="button huge" href="<?php echo site_url( 'pricing' ); ?>">Get Started</a>
 		</div>
 	</section>

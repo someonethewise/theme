@@ -25,6 +25,7 @@
 				<ul class="page-links">
 					<li><a href="<?php echo site_url( 'pricing' ); ?>" title="Pricing">Pricing</a></li>
 					<li><a href="<?php echo site_url( 'features' ); ?>" title="Features">Features</a></li>
+					<li><a href="<?php echo site_url( 'screenshots' ); ?>" title="Screenshots">Screenshots</a></li>
 					<li><a href="<?php echo site_url( 'addons' ); ?>" title="Add-ons">Add-ons</a></li>
 					<li><a href="<?php echo site_url( 'testimonials' ); ?>" title="Testimonials">Testimonials</a></li>
 					<li><a href="<?php echo site_url( 'changelog' ); ?>" title="View the changelog">Changelog</a></li>
