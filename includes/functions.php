@@ -7,7 +7,7 @@
  */
 function affwp_get_affiliatewp_id() {
 
-	$download     = get_page_by_title( 'affiliatewp', '', 'download' );
+	$download     = get_page_by_title( 'affiliatewp', OBJECT, 'download' );
 	$download_id  = $download->ID;
 
 	if ( $download_id ) {
