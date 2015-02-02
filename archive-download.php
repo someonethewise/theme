@@ -121,9 +121,17 @@ get_header(); ?>
 			       	<?php the_excerpt(); ?>
 			    </div>
 
-	       		<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
+
+		    	<?php if ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+		    		<span class="coming-soon">Coming Soon</span>
+		    	<?php else : ?>	
+
+		       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
  		    		Learn More  &rarr;
  		    	</a>
+
+ 		    	<?php endif; ?>	
+
 		</article>
 	       
 	    <?php endwhile; wp_reset_query(); ?>
@@ -197,9 +205,15 @@ get_header(); ?>
 			       	<?php the_excerpt(); ?>
 		       	</div>
 		       	
+		       <?php if ( affwp_addon_is_coming_soon( get_the_ID() ) ) : ?>
+		    		<span class="coming-soon">Coming Soon</span>
+		    	<?php else : ?>	
+
 		       	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="link">
  		    		Learn More  &rarr;
  		    	</a>
+
+ 		    	<?php endif; ?>	
 		</article>
 	       
 	    <?php endwhile; wp_reset_query(); ?>
