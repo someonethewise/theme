@@ -124,14 +124,14 @@ add_action( 'template_redirect', 'affwp_redirect_coming_soon' );
  *
  * @since 1.0.3
  */
-function affwp_pre_add_to_cart( $download_id ) {
+function affwp_pre_add_to_cart( $download_id, $options ) {
 	// let customers buy affiliateWP
-	if ( $download_id === affwp_get_affiliatewp_id() )
+	if ( (int) $download_id === (int) affwp_get_affiliatewp_id() )
 		return; 
 
-	wp_die( __( 'This add-on cannot be purchased', 'affwp' ), '', array( 'back_link' => true ) );
+	wp_die( __( 'This add-on cannot be purchased', 'affwp' ), 'Error', array( 'back_link' => true, 'response' => 403 ) );
 }
-add_action( 'edd_pre_add_to_cart', 'affwp_pre_add_to_cart' );
+add_action( 'edd_pre_add_to_cart', 'affwp_pre_add_to_cart', 10, 2 );
 
 /**
  * Output custom icons - favicon & apple touch icon
