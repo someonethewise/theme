@@ -33,10 +33,10 @@ get_header(); ?>
 	<div class="item right bdr">
 		<h2>Have you seen these?</h2>
 		<ul>
-			<li><a href="/support/documentation/">Documentation</a></li>
-			<li><a href="/docs/section/getting-started/">Getting Started</a></li>
-			<li><a href="/docs/section/integrations/">Integrations</a></li>
-			<li><a href="/docs/section/faq/">FAQ</a></li>
+			<li><a href="http://docs.affiliatewp.com/">Documentation</a></li>
+			<li><a href="http://docs.affiliatewp.com/category/7-getting-started">Getting Started</a></li>
+			<li><a href="http://docs.affiliatewp.com/category/75-integrations">Integrations</a></li>
+			<li><a href="http://docs.affiliatewp.com/category/51-faqs">FAQ</a></li>
 		</ul>
 	</div>
 		

@@ -41,12 +41,12 @@
 				<h3>Support</h3>
 				<ul class="page-links">
 					<li><a href="<?php echo site_url( 'support' ); ?>" title="Support">Contact</a></li>
-					<li><a href="<?php echo site_url( 'support/documentation' ); ?>" title="Documentation">Documentation</a></li>
-					<li><a href="<?php echo site_url( 'docs/section/getting-started' ); ?>" title="Getting Started">Getting Started</a></li>
-					<li><a href="<?php echo site_url( 'docs/section/integrations' ); ?>" title="Integrations">Integrations</a></li>
-					<li><a href="<?php echo site_url( 'docs/section/shortcodes' ); ?>" title="Shortcodes">Shortcodes</a></li>
-					<li><a href="<?php echo site_url( 'docs/section/tutorials' ); ?>" title="Tutorials">Tutorials</a></li>
-					<li><a href="<?php echo site_url( 'docs/section/faq' ); ?>" title="FAQ">FAQ</a></li>
+					<li><a href="http://docs.affiliatewp.com/" title="Documentation">Documentation</a></li>
+					<li><a href="http://docs.affiliatewp.com/category/7-getting-started" title="Getting Started">Getting Started</a></li>
+					<li><a href="http://docs.affiliatewp.com/category/75-integrations" title="Integrations">Integrations</a></li>
+					<li><a href="http://docs.affiliatewp.com/category/65-short-codes" title="Shortcodes">Shortcodes</a></li>
+					<li><a href="http://docs.affiliatewp.com/category/10-tutorials" title="Tutorials">Tutorials</a></li>
+					<li><a href="http://docs.affiliatewp.com/category/51-faqs" title="FAQ">FAQ</a></li>
 
 					<?php /*
 					<li><a href="<?php echo site_url( 'account' ); ?>" title="Account">Account</a></li>
