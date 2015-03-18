@@ -43,6 +43,22 @@ if ( ! isset( $content_width ) ) {
 }
 
 
+
+function affwp_rss_feed_featured_image( $content ) {
+    global $post;
+
+    if ( is_feed() ) {
+        if ( has_post_thumbnail( $post->ID ) ){
+            $image = get_the_post_thumbnail( $post->ID, 'large' );
+            $content = $image . $content;
+        }
+    }
+
+    return $content;
+}
+add_filter( 'the_content', 'affwp_rss_feed_featured_image' );
+
+
 if ( ! function_exists( 'affwp_setup' ) ) :
 /**
  * AffiliateWP setup.
