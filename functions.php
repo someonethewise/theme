@@ -42,23 +42,6 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 585;
 }
 
-
-
-function affwp_rss_feed_featured_image( $content ) {
-    global $post;
-
-    if ( is_feed() ) {
-        if ( has_post_thumbnail( $post->ID ) ){
-            $image = get_the_post_thumbnail( $post->ID, 'large' );
-            $content = $image . $content;
-        }
-    }
-
-    return $content;
-}
-add_filter( 'the_content', 'affwp_rss_feed_featured_image' );
-
-
 if ( ! function_exists( 'affwp_setup' ) ) :
 /**
  * AffiliateWP setup.
@@ -77,6 +60,7 @@ function affwp_setup() {
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
+
 
 	add_post_type_support( 'page', 'excerpt' );
 
