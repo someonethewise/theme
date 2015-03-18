@@ -152,28 +152,6 @@ add_action( 'wp_footer', 'affwp_magnific_popup', 100 );
 
 
 
-
-
-/**
- * Try Disco scripts
- */
-function affwp_try_disco_js() {
-
-	// get purchase session
-	$purchase_session = function_exists( 'edd_get_purchase_session' ) ? edd_get_purchase_session() : '';
-	// get the key
-	$purchase_key     = $purchase_session['purchase_key'];
-	// get the payment ID from the purchase key
-	$payment_id       = edd_get_purchase_id_by_key( $purchase_key );
-	// get payment amount
-	$payment_total    = get_post_meta( $payment_id, '_edd_payment_total', true );
-
-	$amount = edd_is_success_page() ? '?amount=' . $payment_total : '';
- ?>
-	<script src="//trydisco.com/thanks-h.js<?php echo $amount; ?>" async></script>
-<?php }
-add_action( 'wp_footer', 'affwp_try_disco_js', 100 );
-
 /**
  * Home JS
  */

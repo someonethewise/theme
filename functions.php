@@ -4,7 +4,7 @@ if ( ! defined( 'EDD_SLUG' ) )
 	define( 'EDD_SLUG', 'addons' );
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) )
-	define( 'AFFWP_THEME_VERSION', '2.0.1' );
+	define( 'AFFWP_THEME_VERSION', '2.0.2' );
 
 if ( ! defined( 'AFFWP_INCLUDES_DIR' ) )
 	define( 'AFFWP_INCLUDES_DIR', trailingslashit( get_template_directory() ) . 'includes' ); /* Sets the path to the theme's includes directory. */
@@ -33,13 +33,6 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'blog.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'pricing.php' );
 require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'notices.php' );
 
-
-
-
-
-
-
-
 /**
  * Set up the content width value based on the theme's design.
  *
@@ -48,7 +41,6 @@ require_once( trailingslashit( AFFWP_INCLUDES_DIR ) . 'notices.php' );
 if ( ! isset( $content_width ) ) {
 	$content_width = 585;
 }
-
 
 if ( ! function_exists( 'affwp_setup' ) ) :
 /**
@@ -68,6 +60,7 @@ function affwp_setup() {
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
+
 
 	add_post_type_support( 'page', 'excerpt' );
 
