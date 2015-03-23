@@ -31,7 +31,7 @@ get_header();
 
 					<?php if ( $count == 1 ) : ?>
 						<header class="entry-header">
-							<?php affwp_post_thumbnail( 'large' ); ?>
+							<?php affwp_post_thumbnail( 'large', true ); ?>
 							<?php affwp_posted_on(); ?>
 							<h1>
 				            	<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -82,7 +82,7 @@ get_header();
 
 								<p><a href="<?php the_permalink(); ?>" class="">Read more</a></p>
 
-								<?php affwp_post_thumbnail( 'large' ); ?>
+								<?php affwp_post_thumbnail( 'large', true ); ?>
 								
 						</div>
 
