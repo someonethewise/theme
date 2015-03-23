@@ -236,10 +236,6 @@ get_header(); ?>
 		<?php affwp_page_header( '30 Day Money Back Guarantee', '<h2>We stand behind our product 100% - <a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">see our refund policy</a></h2>' ); ?>
 
 		<?php affwp_pricing_options(); ?>
-		
-		<div id="stripe-checkout-wrap" style="display:none;">
-			<?php echo edd_get_purchase_link( array( 'download_id' => affwp_get_affiliatewp_id(), 'direct' => true ) ); ?>
-		</div>
 
 		<p class="clause">* You must renew the license after one calendar year for continued updates and support. Discounted renewal rates available. See information below for details. All purchases are subject to our terms and condition of use.</p>
 
