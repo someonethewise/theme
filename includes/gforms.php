@@ -55,4 +55,4 @@ add_filter( 'gform_submit_button_1', 'affwp_gform_submit_button', 10, 2 );
 function affwp_gform_pre_enqueue_scripts() { ?>
 	<i class="icon icon-mail"></i>
 <?php }
-add_action( 'gform_post_submission', 'affwp_gform_pre_enqueue_scripts' );
+//add_action( 'gform_post_submission', 'affwp_gform_pre_enqueue_scripts' );
