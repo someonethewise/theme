@@ -26,6 +26,8 @@
 }
 
 
+
+
 #affwp-register-form,
 #affwp-login-form,
 .edd_form,
@@ -128,8 +130,29 @@ button {
 
 // gravity forms
 
+.gform_wrapper {
+	margin-bottom: 2rem;
+}
+
+.gform_wrapper .gform_fileupload_multifile .gform_drop_area {
+    border: 2px dashed lighten(#787878, 30%);
+ //   color: #aaa;
+ //   margin-bottom: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
 .gfield_required {
 	display: none;
+}
+
+.gform_drop_instructions {
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.entry-content .gform_wrapper div {
+	margin-bottom: 0;
 }
 
 .entry-content .gform_wrapper ul {
@@ -144,10 +167,6 @@ button {
 	font-weight: 600;
 	color: #fff;
 	text-transform: uppercase;
-}
-
-.ginput_container {
-//	margin-bottom: 0.5rem;
 }
 
 .validation_error {
@@ -189,14 +208,22 @@ button {
 	margin-bottom: 0.5rem;
 }
 
+.ginput_complex span label,
+.gfield_description {
+	font-size: 0.875rem;
+}
+
+
 .ginput_complex span label {
 	color: @label;
 	margin-top: 0.5rem;
 }
 
 .gfield_description {
-	margin-bottom: 0.5rem;
+//	margin-bottom: 0.5rem;
+	margin: 0.5rem 0 0 0;
 	color: @label;
+	
 }
 
 
@@ -263,15 +290,29 @@ button {
 
 
 @media all and ( min-width: 980px ) {
-	.support .gform_wrapper form {
 
-		.ginput_complex span {
-			width: 48%;
-		//	display: inline-block;
-
-			&.ginput_right {
-				float: right;
-			}
-		}
+	.ginput_complex span {
+		width: 48%;
 	}
+
+	.ginput_complex span + span {
+		float: right;
+	}
+
+	// .ginput_complex span.ginput_right {
+		
+	// }
+
+
+	// .support .gform_wrapper form {
+
+	// 	.ginput_complex span {
+	// 		width: 48%;
+	// 	//	display: inline-block;
+
+	// 		&.ginput_right {
+	// 			float: right;
+	// 		}
+	// 	}
+	// }
 }
