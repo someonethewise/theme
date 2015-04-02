@@ -168,13 +168,15 @@ get_header(); ?>
 			<h2>We also <a title="Affiliate system" href="<?php echo site_url( 'account/affiliates' );?>">use it ourselves</a></h2>
 			
 			<ul>
+				<li class="yoast"><img alt="Used by Yoast" src="<?php echo get_stylesheet_directory_uri() . '/images/yoast.png'; ?>"></li>
+				<li class="facetwp last"><img alt="Used by the Rainmaker platform" src="<?php echo get_stylesheet_directory_uri() . '/images/rainmaker-platform.png'; ?>"></li>
 				<li class="ninja-forms"><img alt="Used by Ninja Forms" src="<?php echo get_stylesheet_directory_uri() . '/images/ninja-forms.png'; ?>"></li>
 				<li class="edd"><img alt="Used by Easy Digital Downloads" src="<?php echo get_stylesheet_directory_uri() . '/images/edd.png'; ?>"></li>
 				<li class="searchwp"><img alt="Used by SearchWP" src="<?php echo get_stylesheet_directory_uri() . '/images/searchwp.png'; ?>"></li>
 				<li class="wpsessions"><img alt="Used by WPSessions" src="<?php echo get_stylesheet_directory_uri() . '/images/wpsessions.png'; ?>"></li>
 				<li class="foo-plugins"><img alt="Used by Foo Plugins" src="<?php echo get_stylesheet_directory_uri() . '/images/foo-plugins.png'; ?>"></li>
 				<li class="facetwp"><img alt="Used by FacetWP" src="<?php echo get_stylesheet_directory_uri() . '/images/facetwp.png'; ?>"></li>
-				<li class="facetwp last"><img alt="Used by the Rainmaker platform" src="<?php echo get_stylesheet_directory_uri() . '/images/rainmaker-platform.png'; ?>"></li>
+				
 			</ul>
 
 		</div>	
