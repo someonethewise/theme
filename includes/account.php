@@ -139,28 +139,25 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 
 	<div class="affwp-licenses">
 		<?php
-			$license_heading = count( affwp_get_users_licenses() ) > 1 ? 'Your Licenses' : 'Your license';
+		$licenses = affwp_get_users_licenses();
+		$license_heading = count( $licenses ) > 1 ? 'Your Licenses' : 'Your license';
 		?>
 
 		<h2><?php echo $license_heading; ?></h2>
 
 		<?php
-			$licenses = affwp_get_users_licenses();
-
 			// a customer can happily have more than 1 license of any type
 			if ( $licenses ) : ?>
 
 				<?php foreach ( $licenses as $license ) :
 													
-					$license_limit = $license['limit'];
-
-					if ( $license_limit == 0 ) {
-						$license_limit = 'Unlimited';
+					if ( $license['limit'] == 0 ) {
+						$license['limit'] = 'Unlimited';
 					} else {
-						$license_limit = $license['limit'];
+						$license['limit'] = $license['limit'];
 					}
 													}
-					$license_limit_text = $license_limit > 1 || $license_limit == 'Unlimited' ? ' sites' : ' site';
+					$license_limit_text = $license_limit > 1 || $license['limit'] == 'Unlimited' ? ' sites' : ' site';
 					?>
 					<div class="affwp-license">
 						<p><strong><?php echo edd_get_price_option_name( affwp_get_affiliatewp_id(), $license['price_id'] ); ?></strong> (<?php echo $license_limit . $license_limit_text; ?>)</p>
@@ -193,12 +190,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 			<?php else : ?>
 				<p>You do not have a license yet. <a href="<?php echo site_url( 'pricing' ); ?>">View pricing &rarr;</a></p>
 			<?php endif; ?>
-
 	</div>
-
-
-	
-
 	<?php
 		// purchase history
 		echo '<h2>' . __( 'Purchase History', 'affwp' ) . '</h2>';
@@ -207,8 +199,6 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 		// download history
 		echo '<h2>' . __( 'Download History', 'affwp' ) . '</h2>';
 		echo edd_download_history();
-		
-	
 
 		// profile editor
 		echo '<h2>' . __( 'Edit your profile', 'affwp' ) . '</h2>';
