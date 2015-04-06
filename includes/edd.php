@@ -122,7 +122,7 @@ add_action( 'template_redirect', 'affwp_empty_cart_redirect' );
  */
 function affwp_add_to_cart_if_empty() {
 	$cart = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : false;
- 	
+	
 	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() && ! $cart ) {
 		edd_add_to_cart( affwp_get_affiliatewp_id(), array( 'price_id' => 0 ) );
 	}
@@ -281,29 +281,29 @@ add_action( 'edd_upgrade_affwp_license', 'affwp_process_license_upgrade' );
  */
 function affwp_cart_item_discounted_amount( $discounted_price, $discounts, $item, $price ) {
 
-        if( ! function_exists( 'EDD' ) ) {
-                return $discounted_price;
-        }
+	if( ! function_exists( 'EDD' ) ) {
+		return $discounted_price;
+	}
 
-        if( ! EDD()->session->get( 'is_upgrade' ) ) {
-                return $discounted_price;
-        }
+	if( ! EDD()->session->get( 'is_upgrade' ) ) {
+		return $discounted_price;
+	}
 
-        $price_id         = EDD()->session->get( 'upgrade_price_id' );
-        $upgrade_discount = EDD()->session->get( 'upgrade_discount' );
-        $cart_discounts   = edd_get_cart_discounts();
+	$price_id         = EDD()->session->get( 'upgrade_price_id' );
+	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
+	$cart_discounts   = edd_get_cart_discounts();
 
-        if( $upgrade_discount && edd_cart_has_discounts() ) {
+	if( $upgrade_discount && edd_cart_has_discounts() ) {
 
-                $discounted_price = $price - $upgrade_discount;
-                foreach( $cart_discounts as $discount ) {
+		$discounted_price = $price - $upgrade_discount;
+		foreach( $cart_discounts as $discount ) {
 
-                        $discounted_price = edd_get_discounted_amount( $discount, $discounted_price );
+			$discounted_price = edd_get_discounted_amount( $discount, $discounted_price );
 
-                }
-        }
+		}
+	}
 
-        return $discounted_price;
+	return $discounted_price;
 }
 add_filter( 'edd_get_cart_item_discounted_amount', 'affwp_cart_item_discounted_amount', 10, 4 );
 
@@ -747,8 +747,8 @@ function affwp_edd_optimizely_revenue_tracking() {
 ?>
 <script>
 	var price = <?php echo edd_get_payment_amount( $payment_id ); ?> 
-    window.optimizely = window.optimizely || [];
-    window.optimizely.push(['trackEvent', 'purchase_complete', {'revenue': price * 100}]);
+	window.optimizely = window.optimizely || [];
+	window.optimizely.push(['trackEvent', 'purchase_complete', {'revenue': price * 100}]);
 </script>
 <?php
 }
