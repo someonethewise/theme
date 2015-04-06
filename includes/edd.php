@@ -362,7 +362,14 @@ function affwp_cart_items_upgrade_row() {
 }
 add_action( 'edd_cart_items_after', 'affwp_cart_items_upgrade_row' );
 
-function affwp_post_upgrade_license_updates( $payment_id ) {
+function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_status ) {
+
+	if ( $old_status == 'publish' || $old_status == 'complete' )
+		return; // Make sure that payments are only completed once
+
+	// Make sure the payment completion is only processed when new status is complete
+	if ( $new_status != 'publish' && $new_status != 'complete' )
+		return;
 
 	$edd_sl = edd_software_licensing();
 
@@ -371,7 +378,7 @@ function affwp_post_upgrade_license_updates( $payment_id ) {
 		if( ! empty( $item['item_number']['options']['upgrade'] ) ) {
 
 			// Prevent a new license from being created
-			remove_action( 'edd_complete_download_purchase', array( 'EDD_Software_Licensing', 'generate_license' ) );
+			remove_action( 'edd_complete_download_purchase', array( $edd_sl, 'generate_license' ) );
 		
 			$key     = $item['item_number']['options']['upgrade'];
 			$license = $edd_sl->get_license_by_key( $key );
@@ -384,7 +391,7 @@ function affwp_post_upgrade_license_updates( $payment_id ) {
 	}
 
 }
-add_action( 'edd_complete_purchase', 'affwp_post_upgrade_license_updates', -9999 );
+add_action( 'edd_update_payment_status', 'affwp_post_upgrade_license_updates', -9999, 3 );
 
 /**
  * Process add-on Downloads
