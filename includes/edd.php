@@ -122,7 +122,7 @@ add_action( 'template_redirect', 'affwp_empty_cart_redirect' );
  */
 function affwp_add_to_cart_if_empty() {
 	$cart = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : false;
- 	
+	
 	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() && ! $cart ) {
 		edd_add_to_cart( affwp_get_affiliatewp_id(), array( 'price_id' => 0 ) );
 	}
@@ -190,7 +190,8 @@ function affwp_edd_thank_customer() {
 function affwp_process_license_upgrade() {
 
 	// get type. plus, professional or ultimate
-	$type = isset( $_GET['type'] ) ? strtolower( $_GET['type'] ) : '';
+	$type    = isset( $_GET['type'] ) ? strtolower( $_GET['type'] ) : '';
+	$license = isset( $_GET['key'] ) ? strtolower( $_GET['key'] ) : '';
 
 	if ( ! is_user_logged_in() || ( 'plus' !== $type && 'professional' !== $type && 'ultimate' !== $type ) ) {
 		// Isn't logged in, so go back to pricing
@@ -200,10 +201,10 @@ function affwp_process_license_upgrade() {
 	$affwp_id = affwp_get_affiliatewp_id();
 	$licenses = affwp_get_users_licenses();
 
-	$has_ultimate_license     = in_array( 3, $licenses );
-	$has_professional_license = in_array( 2, $licenses );
-	$has_plus_license         = in_array( 1, $licenses );
-	$has_personal_license     = in_array( 0, $licenses );
+	$has_ultimate_license     = in_array( 3, affwp_get_users_price_ids() );
+	$has_professional_license = in_array( 2, affwp_get_users_price_ids() );
+	$has_plus_license         = in_array( 1, affwp_get_users_price_ids() );
+	$has_personal_license     = in_array( 0, affwp_get_users_price_ids() );
 
 	switch ( $type ) {
 
@@ -259,10 +260,11 @@ function affwp_process_license_upgrade() {
 	edd_empty_cart();
 
 	// Add the correct license
-	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id ) );
+	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id, 'upgrade' => $license ) );
 
 	EDD()->session->set( 'is_upgrade', '1' );
 	EDD()->session->set( 'upgrade_price_id', $price_id );
+	EDD()->session->set( 'upgrade_key', $license );
 	EDD()->session->set( 'upgrade_discount', $discount );
 
 	wp_redirect( edd_get_checkout_uri() ); exit;
@@ -279,29 +281,29 @@ add_action( 'edd_upgrade_affwp_license', 'affwp_process_license_upgrade' );
  */
 function affwp_cart_item_discounted_amount( $discounted_price, $discounts, $item, $price ) {
 
-        if( ! function_exists( 'EDD' ) ) {
-                return $discounted_price;
-        }
+	if( ! function_exists( 'EDD' ) ) {
+		return $discounted_price;
+	}
 
-        if( ! EDD()->session->get( 'is_upgrade' ) ) {
-                return $discounted_price;
-        }
+	if( ! EDD()->session->get( 'is_upgrade' ) ) {
+		return $discounted_price;
+	}
 
-        $price_id         = EDD()->session->get( 'upgrade_price_id' );
-        $upgrade_discount = EDD()->session->get( 'upgrade_discount' );
-        $cart_discounts   = edd_get_cart_discounts();
+	$price_id         = EDD()->session->get( 'upgrade_price_id' );
+	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
+	$cart_discounts   = edd_get_cart_discounts();
 
-        if( $upgrade_discount && edd_cart_has_discounts() ) {
+	if( $upgrade_discount && edd_cart_has_discounts() ) {
 
-                $discounted_price = $price - $upgrade_discount;
-                foreach( $cart_discounts as $discount ) {
+		$discounted_price = $price - $upgrade_discount;
+		foreach( $cart_discounts as $discount ) {
 
-                        $discounted_price = edd_get_discounted_amount( $discount, $discounted_price );
+			$discounted_price = edd_get_discounted_amount( $discount, $discounted_price );
 
-                }
-        }
+		}
+	}
 
-        return $discounted_price;
+	return $discounted_price;
 }
 add_filter( 'edd_get_cart_item_discounted_amount', 'affwp_cart_item_discounted_amount', 10, 4 );
 
@@ -360,6 +362,36 @@ function affwp_cart_items_upgrade_row() {
 }
 add_action( 'edd_cart_items_after', 'affwp_cart_items_upgrade_row' );
 
+function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_status ) {
+
+	if ( $old_status == 'publish' || $old_status == 'complete' )
+		return; // Make sure that payments are only completed once
+
+	// Make sure the payment completion is only processed when new status is complete
+	if ( $new_status != 'publish' && $new_status != 'complete' )
+		return;
+
+	$edd_sl = edd_software_licensing();
+
+	$items = edd_get_payment_meta_cart_details( $payment_id );
+	foreach( $items as $index => $item ) {
+		if( ! empty( $item['item_number']['options']['upgrade'] ) ) {
+
+			// Prevent a new license from being created
+			remove_action( 'edd_complete_download_purchase', array( $edd_sl, 'generate_license' ), 0 );
+		
+			$key     = $item['item_number']['options']['upgrade'];
+			$license = $edd_sl->get_license_by_key( $key );
+			update_post_meta( $license, '_edd_sl_download_price_id', $item['item_number']['options']['price_id'] );
+			update_post_meta( $license, '_edd_sl_cart_index', $index );
+			add_post_meta( $license, '_edd_sl_payment_id', $payment_id );
+
+		}
+	}
+
+}
+add_action( 'edd_update_payment_status', 'affwp_post_upgrade_license_updates', -9999, 3 );
+
 /**
  * Process add-on Downloads
  *
@@ -385,8 +417,8 @@ function affwp_process_add_on_download() {
 		return;
 	}
 
-	$has_ultimate_license     = in_array( 3, affwp_get_users_licenses() );
-	$has_professional_license = in_array( 2, affwp_get_users_licenses() );
+	$has_ultimate_license     = in_array( 3, affwp_get_users_price_ids() );
+	$has_professional_license = in_array( 2, affwp_get_users_price_ids() );
 
 	if ( ! ( $has_ultimate_license || $has_professional_license ) ) {
 		wp_die( 'You need either an Ultimate or Professional license to download this add-on', 'Error', array( 'response' => 403 ) );
@@ -523,30 +555,43 @@ function affwp_get_users_licenses( $user_id = 0 ) {
 		'posts_per_page' => -1,
 		'post_type'      => 'edd_license',
 		'meta_key'       => '_edd_sl_user_id',
-		'meta_value'     => $user_id
+		'meta_value'     => $user_id,
+		'fields'         => 'ids'
 	);
 
+	$keys     = array();
 	$licenses = get_posts( $args );
 
-	if ( $licenses ) {
-		$license_ids = wp_list_pluck( $licenses, 'ID' );
-	
-		$download_price_ids = array();
-
-		if ( $license_ids ) {
-			foreach ( $license_ids as $id ) {
-				$download_price_ids[] = (int) get_post_meta( $id, '_edd_sl_download_price_id', true );
-			}
-
-			$download_price_ids = array_values( $download_price_ids );
-
-			return $download_price_ids;
-
+	if ( $licenses ) {	
+		foreach( $licenses as $key ) {
+			$keys[ $key ] = array(
+				'license'  => get_post_meta( $key, '_edd_sl_key', true ),
+				'price_id' => get_post_meta( $key, '_edd_sl_download_price_id', true ),
+				'limit'    => edd_software_licensing()->get_license_limit( affwp_get_affiliatewp_id(), $key ),
+				'expires'  => edd_software_licensing()->get_license_expiration( $key )
+			);
 		}
-	
 	}
 
-	return array();
+	return $keys;
+}
+
+function affwp_get_users_price_ids( $user_id = 0 ) {
+
+	if ( ! $user_id ) {
+		$user_id = get_current_user_id();
+	}
+
+	$keys = affwp_get_users_licenses( $user_id );
+
+	if( $keys ) {
+		$keys = wp_list_pluck( $keys, 'price_id' );
+	} else {
+		$keys = array();
+	}
+
+	return $keys;
+
 }
 
 /**
@@ -648,10 +693,10 @@ function affwp_add_on_info( $position = '' ) {
 		<?php if ( has_term( 'pro-add-ons', 'download_category' ) ) : ?>
 
 			<?php 
-				$has_ultimate_license     = in_array( 3, affwp_get_users_licenses() );
-				$has_professional_license = in_array( 2, affwp_get_users_licenses() );
-				$has_plus_license         = in_array( 1, affwp_get_users_licenses() );
-				$has_personal_license     = in_array( 0, affwp_get_users_licenses() );
+				$has_ultimate_license     = in_array( 3, affwp_get_users_price_ids() );
+				$has_professional_license = in_array( 2, affwp_get_users_price_ids() );
+				$has_plus_license         = in_array( 1, affwp_get_users_price_ids() );
+				$has_personal_license     = in_array( 0, affwp_get_users_price_ids() );
 			?>
 
 			<?php if ( edd_get_download_files( get_the_ID() ) ) : // must have files attached before a download button can show ?>
@@ -732,8 +777,8 @@ function affwp_edd_optimizely_revenue_tracking() {
 ?>
 <script>
 	var price = <?php echo edd_get_payment_amount( $payment_id ); ?> 
-    window.optimizely = window.optimizely || [];
-    window.optimizely.push(['trackEvent', 'purchase_complete', {'revenue': price * 100}]);
+	window.optimizely = window.optimizely || [];
+	window.optimizely.push(['trackEvent', 'purchase_complete', {'revenue': price * 100}]);
 </script>
 <?php
 }
