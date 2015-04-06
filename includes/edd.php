@@ -376,7 +376,7 @@ function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_stat
 	$items = edd_get_payment_meta_cart_details( $payment_id );
 	foreach( $items as $index => $item ) {
 		if( ! empty( $item['item_number']['options']['upgrade'] ) ) {
-
+			echo 'test'; exit;
 			// Prevent a new license from being created
 			remove_action( 'edd_complete_download_purchase', array( $edd_sl, 'generate_license' ) );
 		
