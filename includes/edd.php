@@ -378,7 +378,7 @@ function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_stat
 		if( ! empty( $item['item_number']['options']['upgrade'] ) ) {
 
 			// Prevent a new license from being created
-			remove_action( 'edd_complete_download_purchase', array( 'EDD_Software_Licensing', 'generate_license' ) );
+			remove_action( 'edd_complete_download_purchase', array( $edd_sl, 'generate_license' ), 0 );
 		
 			$key     = $item['item_number']['options']['upgrade'];
 			$license = $edd_sl->get_license_by_key( $key );
