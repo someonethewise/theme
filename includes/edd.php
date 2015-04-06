@@ -190,7 +190,8 @@ function affwp_edd_thank_customer() {
 function affwp_process_license_upgrade() {
 
 	// get type. plus, professional or ultimate
-	$type = isset( $_GET['type'] ) ? strtolower( $_GET['type'] ) : '';
+	$type    = isset( $_GET['type'] ) ? strtolower( $_GET['type'] ) : '';
+	$license = isset( $_GET['key'] ) ? strtolower( $_GET['key'] ) : '';
 
 	if ( ! is_user_logged_in() || ( 'plus' !== $type && 'professional' !== $type && 'ultimate' !== $type ) ) {
 		// Isn't logged in, so go back to pricing
@@ -263,7 +264,7 @@ function affwp_process_license_upgrade() {
 
 	EDD()->session->set( 'is_upgrade', '1' );
 	EDD()->session->set( 'upgrade_price_id', $price_id );
-	EDD()->session->set( 'upgrade_key', $license_key );
+	EDD()->session->set( 'upgrade_key', $license );
 	EDD()->session->set( 'upgrade_discount', $discount );
 
 	wp_redirect( edd_get_checkout_uri() ); exit;

@@ -145,51 +145,42 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 		<h2><?php echo $license_heading; ?></h2>
 
 		<?php
-			$download_price_ids = affwp_get_users_price_ids();
+			$licenses = affwp_get_users_licenses();
 
 			// a customer can happily have more than 1 license of any type
-			if ( $download_price_ids ) : ?>
+			if ( $licenses ) : ?>
 
-				<?php foreach ( $download_price_ids as $id ) : ?>
-					
-					<?php 
-						foreach ( edd_get_variable_prices( affwp_get_affiliatewp_id() ) as $key ) {
+				<?php foreach ( $licenses as $license ) :
+													
+					$license_limit = $license['limit'];
 
-							if ( $key['name'] == edd_get_price_option_name( affwp_get_affiliatewp_id(), $id ) ) {
-								
-								$license_limit = $key['license_limit'];
-
-								if ( $license_limit == 0 ) {
-									$license_limit = 'Unlimited';
-								} else {
-									$license_limit = $key['license_limit'];
-								}
-								
-							}
-						}
-
-						$license_limit_text = $license_limit > 1 || $license_limit == 'Unlimited' ? ' sites' : ' site';
+					if ( $license_limit == 0 ) {
+						$license_limit = 'Unlimited';
+					} else {
+						$license_limit = $license['limit'];
+					}
+													}
+					$license_limit_text = $license_limit > 1 || $license_limit == 'Unlimited' ? ' sites' : ' site';
 					?>
-
 					<div class="affwp-license">
-						<p><strong><?php echo edd_get_price_option_name( affwp_get_affiliatewp_id(), $id ); ?></strong> (<?php echo $license_limit . $license_limit_text; ?>)</p>
+						<p><strong><?php echo edd_get_price_option_name( affwp_get_affiliatewp_id(), $license['price_id'] ); ?></strong> (<?php echo $license_limit . $license_limit_text; ?>)</p>
 
-						<?php if ( $id != 3 ) : // only provide upgrade if not ultimate ?>
+						<?php if ( $license['price_id'] != 3 ) : // only provide upgrade if not ultimate ?>
 
 							<ul>
-								<?php if ( $id == 0 ) : // personal ?>
-									<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate' ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
-									<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'professional' ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
-									<li><a title="Upgrade to Plus license" href="<?php echo affwp_get_license_upgrade_url( 'plus' ); ?>">Upgrade to Plus license (3 sites)</a></li>
+								<?php if ( $license['price_id'] == 0 ) : // personal ?>
+									<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate', $license['license'] ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
+									<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'professional', $license['license'] ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
+									<li><a title="Upgrade to Plus license" href="<?php echo affwp_get_license_upgrade_url( 'plus', $license['license'] ); ?>">Upgrade to Plus license (3 sites)</a></li>
 								<?php endif; ?>
 
-								<?php if ( $id == 1 ) : // plus ?>
-									<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate' ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
-									<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'professional' ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
+								<?php if ( $license['price_id'] == 1 ) : // plus ?>
+									<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate', $license['license'] ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
+									<li><a title="Upgrade to Professional license" href="<?php echo affwp_get_license_upgrade_url( 'professional', $license['license'] ); ?>">Upgrade to Professional license (unlimited sites)</a></li>
 								<?php endif; ?>
 
-								<?php if ( $id == 2 ) : // professional ?>
-									<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate' ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
+								<?php if ( $license['price_id'] == 2 ) : // professional ?>
+									<li><a title="Upgrade to Ultimate license" href="<?php echo affwp_get_license_upgrade_url( 'ultimate', $license['license'] ); ?>">Upgrade to Ultimate license (unlimited sites)</a></li>
 								<?php endif; ?>
 							</ul>
 

@@ -623,7 +623,7 @@ function affwp_post_thumbnail( $size = 'thumbnail', $link = false ) {
  *
  * @return string
 */
-function affwp_get_license_upgrade_url( $type = '' ) {
+function affwp_get_license_upgrade_url( $type = '', $key = '' ) {
 
 	if ( ! function_exists( 'edd_get_checkout_uri' ) || ! $type ) {
 		return home_url( '/pricing' );
@@ -631,7 +631,8 @@ function affwp_get_license_upgrade_url( $type = '' ) {
 
 	$args = array(
 		'edd_action' => 'upgrade_affwp_license',
-		'type'		 => $type
+		'type'		 => $type,
+		'key'        => $key
 	);
 
 	return add_query_arg( $args, edd_get_checkout_uri() );
