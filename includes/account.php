@@ -156,10 +156,10 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 					} else {
 						$license['limit'] = $license['limit'];
 					}
-					$license_limit_text = $license_limit > 1 || $license['limit'] == 'Unlimited' ? ' sites' : ' site';
+					$license_limit_text = $license['limit'] > 1 || $license['limit'] == 'Unlimited' ? ' sites' : ' site';
 					?>
 					<div class="affwp-license">
-						<p><strong><?php echo edd_get_price_option_name( affwp_get_affiliatewp_id(), $license['price_id'] ); ?></strong> (<?php echo $license_limit . $license_limit_text; ?>)</p>
+						<p><strong><?php echo edd_get_price_option_name( affwp_get_affiliatewp_id(), $license['price_id'] ); ?></strong> (<?php echo $license['limit'] . $license_limit_text; ?>) - <?php echo $license['license']; ?></p>
 
 						<?php if ( $license['price_id'] != 3 ) : // only provide upgrade if not ultimate ?>
 
