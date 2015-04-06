@@ -7,10 +7,10 @@ function affwp_account() { ?>
 	
 	<?php
 
-	$has_ultimate_license     = in_array( 3, affwp_get_users_licenses() );
-	$has_professional_license = in_array( 2, affwp_get_users_licenses() );
-	$has_plus_license         = in_array( 1, affwp_get_users_licenses() );
-	$has_personal_license     = in_array( 0, affwp_get_users_licenses() );
+	$has_ultimate_license     = in_array( 3, affwp_get_users_price_ids() );
+	$has_professional_license = in_array( 2, affwp_get_users_price_ids() );
+	$has_plus_license         = in_array( 1, affwp_get_users_price_ids() );
+	$has_personal_license     = in_array( 0, affwp_get_users_price_ids() );
 
 /**
  * Logout message
@@ -145,7 +145,7 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 		<h2><?php echo $license_heading; ?></h2>
 
 		<?php
-			$download_price_ids = affwp_get_users_licenses();
+			$download_price_ids = affwp_get_users_price_ids();
 
 			// a customer can happily have more than 1 license of any type
 			if ( $download_price_ids ) : ?>
