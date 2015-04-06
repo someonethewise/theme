@@ -260,7 +260,7 @@ function affwp_process_license_upgrade() {
 	edd_empty_cart();
 
 	// Add the correct license
-	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id ) );
+	edd_add_to_cart( $affwp_id, array( 'price_id' => $price_id, 'upgrade' => $license ) );
 
 	EDD()->session->set( 'is_upgrade', '1' );
 	EDD()->session->set( 'upgrade_price_id', $price_id );
@@ -361,6 +361,30 @@ function affwp_cart_items_upgrade_row() {
 <?php
 }
 add_action( 'edd_cart_items_after', 'affwp_cart_items_upgrade_row' );
+
+function affwp_post_upgrade_license_updates( $payment_id ) {
+
+	$edd_sl = edd_software_licensing();
+
+	$items = edd_get_payment_meta_cart_details( $payment_id );
+	foreach( $items as $index => $item ) {
+		if( ! empty( $item['item_number']['options']['upgrade'] ) ) {
+
+			// Prevent a new license from being created
+			remove_action( 'edd_complete_download_purchase', array( $edd_sl, 'generate_license' ) );
+		
+			$key     = $item['item_number']['options']['upgrade'];
+			$license = $edd_sl->get_license_by_key( $key );
+
+			update_post_meta( $license->ID, '_edd_sl_download_price_id', $item['item_number']['options']['price_id'] );
+			update_post_meta( $license->ID, '_edd_sl_cart_index', $index );
+			add_post_meta( $license->ID, '_edd_sl_payment_id', $payment_id );
+
+		}
+	}
+
+}
+add_action( 'edd_complete_purchase', 'affwp_post_upgrade_license_updates', -9999 );
 
 /**
  * Process add-on Downloads
