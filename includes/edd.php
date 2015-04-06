@@ -554,7 +554,13 @@ function affwp_get_users_price_ids( $user_id = 0 ) {
 
 	$keys = affwp_get_users_licenses( $user_id );
 
-	return wp_list_pluck( $keys, 'price_id' );
+	if( $keys ) {
+		$keys = wp_list_pluck( $keys, 'price_id' );
+	} else {
+		$keys = array();
+	}
+
+	return $keys;
 
 }
 

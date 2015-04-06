@@ -156,7 +156,6 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 					} else {
 						$license['limit'] = $license['limit'];
 					}
-													}
 					$license_limit_text = $license_limit > 1 || $license['limit'] == 'Unlimited' ? ' sites' : ' site';
 					?>
 					<div class="affwp-license">
