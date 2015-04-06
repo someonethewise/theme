@@ -382,10 +382,9 @@ function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_stat
 		
 			$key     = $item['item_number']['options']['upgrade'];
 			$license = $edd_sl->get_license_by_key( $key );
-
-			update_post_meta( $license->ID, '_edd_sl_download_price_id', $item['item_number']['options']['price_id'] );
-			update_post_meta( $license->ID, '_edd_sl_cart_index', $index );
-			add_post_meta( $license->ID, '_edd_sl_payment_id', $payment_id );
+			update_post_meta( $license, '_edd_sl_download_price_id', $item['item_number']['options']['price_id'] );
+			update_post_meta( $license, '_edd_sl_cart_index', $index );
+			add_post_meta( $license, '_edd_sl_payment_id', $payment_id );
 
 		}
 	}
