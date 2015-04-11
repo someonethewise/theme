@@ -190,6 +190,45 @@ if ( isset( $_GET['logout'] ) && $_GET['logout'] == 'success' ) { ?>
 				<p>You do not have a license yet. <a href="<?php echo site_url( 'pricing' ); ?>">View pricing &rarr;</a></p>
 			<?php endif; ?>
 	</div>
+
+	
+	<?php 
+
+	// get current user's purchases
+	$purchases      = edd_get_users_purchases( '', -1 );
+	$purchase_ids   = array();
+	$discount_codes = array();
+
+	if ( $purchases ) {
+		$purchase_ids = wp_list_pluck( $purchases, 'ID' );
+	}
+
+	if ( $purchase_ids ) {
+		foreach ( $purchase_ids as $id ) {
+			$discount_code = get_post_meta( $id, '_edd_purchase_rewards_discount', true );
+
+			if ( $discount_code && edd_is_discount_active( $discount_code ) && ! ( function_exists( 'edd_purchase_rewards' ) && edd_purchase_rewards()->discounts->discount_code_used( $discount_code ) ) ) {
+				$discount_codes[] = edd_get_discount_code( $discount_code );
+			}
+		}
+	}
+	
+	?>
+
+	<?php if ( $discount_codes ) : ?>
+		<h2>Available Discount Codes</h2>
+		<p>Click a discount below and it will be applied to checkout.</p>
+	<ul class="edd-pr-discounts">
+		<?php foreach ( $discount_codes as $code ) : ?>
+			<li>
+				<a href="<?php echo add_query_arg( 'discount', $code, site_url( '/account/' ) ); ?>">
+				<?php echo $code; ?>
+				</a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php endif; ?>
+
 	<?php
 		// purchase history
 		echo '<h2>' . __( 'Purchase History', 'affwp' ) . '</h2>';

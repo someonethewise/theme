@@ -364,6 +364,10 @@ add_action( 'edd_cart_items_after', 'affwp_cart_items_upgrade_row' );
 
 function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_status ) {
 
+	if ( ! function_exists( 'edd_software_licensing' ) ) {
+		return;
+	}
+
 	if ( $old_status == 'publish' || $old_status == 'complete' )
 		return; // Make sure that payments are only completed once
 
