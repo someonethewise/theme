@@ -329,15 +329,17 @@ function affwp_cart_details_item_discount( $discount, $item ) {
 		return $discount;
 	}
 
-	$price_id = EDD()->session->get( 'upgrade_price_id' );
+	$price_id         = EDD()->session->get( 'upgrade_price_id' );
 	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
-	
-	if( $upgrade_discount ) {
 
+	$item_price_id = isset( $item['options']['price_id'] ) ? $item['options']['price_id'] : '';
+
+	if ( $upgrade_discount & ( $item_price_id == $price_id ) ) {
 		$discount = $upgrade_discount;
 	}
 
 	return $discount;
+
 }
 add_filter( 'edd_get_cart_content_details_item_discount_amount', 'affwp_cart_details_item_discount', 10, 2 );
 
@@ -348,12 +350,30 @@ add_filter( 'edd_get_cart_content_details_item_discount_amount', 'affwp_cart_det
  */
 function affwp_cart_items_upgrade_row() {
 
-	if( ! EDD()->session->get( 'is_upgrade' ) ) {
+	if ( ! EDD()->session->get( 'is_upgrade' ) ) {
 		return;
 	}
 
 	$upgrade_discount = EDD()->session->get( 'upgrade_discount' );
+	$upgrade_price_id = EDD()->session->get( 'upgrade_price_id' );
 
+	$cart_contents = edd_get_cart_contents();
+	$show_discount = false;
+
+	if ( $cart_contents ) {
+		foreach ( $cart_contents as $download ) {
+			$price_id = isset( $download['options']['price_id'] ) ? $download['options']['price_id'] : '';
+
+			 if ( $price_id == $upgrade_price_id ) {
+			 	$show_discount = true;
+			 	break;
+			 }
+		}
+	}
+
+	if ( ! $show_discount ) {
+		return;
+	}
 ?>
 	<tr class="edd_cart_footer_row edd_sl_renewal_row">
 		<td colspan="3"><?php printf( __( 'License upgrade discount: $%s', 'edd_sl' ), $upgrade_discount ); ?></td>
@@ -362,6 +382,11 @@ function affwp_cart_items_upgrade_row() {
 }
 add_action( 'edd_cart_items_after', 'affwp_cart_items_upgrade_row' );
 
+/**
+ * Update payment status
+ *
+ * @return void
+ */
 function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_status ) {
 
 	if ( ! function_exists( 'edd_software_licensing' ) ) {
@@ -545,6 +570,10 @@ add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
  * @since  1.9
  */
 function affwp_get_users_licenses( $user_id = 0 ) {
+
+	if ( ! function_exists( 'edd_software_licensing' ) ) {
+		return;
+	}
 
 	if ( ! $user_id ) {
 		$user_id = get_current_user_id();
