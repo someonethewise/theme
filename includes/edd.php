@@ -29,7 +29,7 @@ function affwp_pricing_text() {
 		return;
 	?>
 	<img id="mascot-sad" alt="" src="<?php echo get_stylesheet_directory_uri() . '/images/alf-sad.png'; ?>">
-	
+
 	<?php
 }
 add_action( 'affwp_page_header_after', 'affwp_pricing_text' );
@@ -55,15 +55,15 @@ add_filter( 'affwp_excerpt', 'affwp_failed_transaction_excerpt' );
  * @return int number of add-ons
  */
 function affwp_get_pro_add_on_count() {
-	
+
 	$args = array(
 		'post_type' => 'download',
 		'download_category' => 'pro-add-ons',
 		'meta_key' => '_affwp_addon_coming_soon',
-		'meta_value' => true, 
+		'meta_value' => true,
 		'meta_compare' => 'NOT EXISTS',
 		'posts_per_page' => -1,
-	); 
+	);
 
 	$add_ons = new WP_Query( $args );
 
@@ -77,7 +77,7 @@ function affwp_get_pro_add_on_count() {
  * @return string number of add-ons
  */
 function affwp_get_add_on_count( $add_on_category = '' ) {
-	
+
 	if ( ! $add_on_category ) {
 		return;
 	}
@@ -85,7 +85,7 @@ function affwp_get_add_on_count( $add_on_category = '' ) {
 	$args = array(
 		'type'     => 'download',
 		'taxonomy' => 'download_category',
-	); 
+	);
 
 	$categories = get_categories( $args );
 
@@ -96,7 +96,7 @@ function affwp_get_add_on_count( $add_on_category = '' ) {
 		}
 	}
 
-	
+
 }
 
 
@@ -107,9 +107,9 @@ function affwp_get_add_on_count( $add_on_category = '' ) {
 function affwp_empty_cart_redirect() {
 	$cart     = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : false;
 	$redirect = site_url('pricing');
- 
+
 	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() && ! $cart ) {
-		wp_redirect( $redirect, 301 ); 
+		wp_redirect( $redirect, 301 );
 		exit;
 	}
 }
@@ -122,7 +122,7 @@ add_action( 'template_redirect', 'affwp_empty_cart_redirect' );
  */
 function affwp_add_to_cart_if_empty() {
 	$cart = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : false;
-	
+
 	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() && ! $cart ) {
 		edd_add_to_cart( affwp_get_affiliatewp_id(), array( 'price_id' => 0 ) );
 	}
@@ -176,7 +176,7 @@ function affwp_edd_thank_customer() {
 		return;
 
 	$message = '<h2>Your purchase was successful</h2>';
-	
+
 	if ( $message )
 		return $message;
 
@@ -226,7 +226,7 @@ function affwp_process_license_upgrade() {
 			break;
 
 		case 'professional':
-			
+
 			if ( $has_plus_license ) {
 				$discount = 99;
 			} elseif ( $has_personal_license ) {
@@ -241,7 +241,7 @@ function affwp_process_license_upgrade() {
 			break;
 
 		case 'plus':
-			
+
 			if ( $has_personal_license ) {
 				$discount = 49;
 			}
@@ -408,7 +408,7 @@ function affwp_post_upgrade_license_updates( $payment_id, $new_status, $old_stat
 
 			// Prevent a new license from being created
 			remove_action( 'edd_complete_download_purchase', array( $edd_sl, 'generate_license' ), 0 );
-		
+
 			$key     = $item['item_number']['options']['upgrade'];
 			$license = $edd_sl->get_license_by_key( $key );
 			update_post_meta( $license, '_edd_sl_download_price_id', $item['item_number']['options']['price_id'] );
@@ -512,7 +512,7 @@ function affwp_process_add_on_download() {
 
 			} else if( defined( 'UPLOADS' ) && strpos( $requested_file, UPLOADS ) !== false ) {
 
-				/** 
+				/**
 				 * This is a local file given by URL so we need to figure out the path
 				 * UPLOADS is always relative to ABSPATH
 				 * site_url() is the URL to where WordPress is installed
@@ -520,7 +520,7 @@ function affwp_process_add_on_download() {
 				$file_path  = str_replace( site_url(), '', $requested_file );
 				$file_path  = realpath( ABSPATH . $file_path );
 				$direct     = true;
-				
+
 			} else if( strpos( $requested_file, WP_CONTENT_URL ) !== false ) {
 
 				/** This is a local file given by URL so we need to figure out the path */
@@ -565,6 +565,58 @@ function affwp_process_add_on_download() {
 add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
 
 /**
+ * Check an individual license to see if it has expired
+ */
+function affwp_has_license_expired( $license = '' ) {
+
+	if ( ! $license ) {
+		return false;
+	}
+
+	$check_license = edd_software_licensing()->check_license(
+		array(
+			'key'     => $license,
+			'item_id' => affwp_get_affiliatewp_id()
+		)
+	);
+
+	if ( $check_license === 'expired' ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
+ * Check if any of the user's license has expired
+ */
+function affwp_has_users_license_expired() {
+
+	if ( ! function_exists( 'edd_software_licensing' ) ) {
+		return;
+	}
+
+	$edd_sl      = edd_software_licensing();
+	$licenses    = affwp_get_users_licenses();
+	$has_expired = false;
+
+	if ( $licenses ) {
+
+		foreach ( $licenses as $license ) {
+
+			if ( affwp_has_license_expired( $license['license'] ) ) {
+				$has_expired = true;
+				break;
+			}
+
+		}
+
+	}
+
+	return $has_expired;
+}
+
+/**
  * Get a user's download price IDs that they have access to
  *
  * @since  1.9
@@ -595,7 +647,7 @@ function affwp_get_users_licenses( $user_id = 0 ) {
 	$keys     = array();
 	$licenses = get_posts( $args );
 
-	if ( $licenses ) {	
+	if ( $licenses ) {
 		foreach( $licenses as $key ) {
 			$keys[ $key ] = array(
 				'license'  => get_post_meta( $key, '_edd_sl_key', true ),
@@ -646,7 +698,7 @@ function affwp_add_on_info( $position = '' ) {
 	$changelog = stripslashes( wpautop( get_post_meta( get_the_ID(), '_edd_sl_changelog', true ), true ) );
 ?>
 	<aside class="add-on-info<?php echo ' ' . $position; ?>">
-		
+
 		<?php if ( $version ) : ?>
 			<p><span>Version</span> v<?php echo esc_attr( $version ); ?>
 			<?php if ( $changelog ) : ?>
@@ -662,7 +714,7 @@ function affwp_add_on_info( $position = '' ) {
 			</div>
 			<?php endif; ?>
 
-		<?php endif; ?>	
+		<?php endif; ?>
 
 		<?php if ( $requires ) : ?>
 			<p><span>Requires AffiliateWP</span> v<?php echo esc_attr( $requires ); ?></p>
@@ -679,7 +731,7 @@ function affwp_add_on_info( $position = '' ) {
 		<?php if ( $updated ) : ?>
 		<p><span>Last Updated</span><?php echo date( 'F j, Y', $updated ); ?></p>
 		<?php endif; ?>
-		
+
 		<?php
 		if ( function_exists('p2p_register_connection_type') ) :
 
@@ -710,7 +762,7 @@ function affwp_add_on_info( $position = '' ) {
 
 			<?php if ( $developer_url ) : ?>
 				<p><span>Developer </span><a href="<?php echo esc_url( $developer_url ); ?>" title="<?php echo esc_attr( $developer ); ?>" target="_blank"><?php echo esc_attr( $developer ); ?></a></p>
-			
+
 			<?php else : ?>
 				<p><span>Developer </span><?php echo esc_attr( $developer ); ?></p>
 			<?php endif; ?>
@@ -725,7 +777,7 @@ function affwp_add_on_info( $position = '' ) {
 
 		<?php if ( has_term( 'pro-add-ons', 'download_category' ) ) : ?>
 
-			<?php 
+			<?php
 				$has_ultimate_license     = in_array( 3, affwp_get_users_price_ids() );
 				$has_professional_license = in_array( 2, affwp_get_users_price_ids() );
 				$has_plus_license         = in_array( 1, affwp_get_users_price_ids() );
@@ -733,11 +785,11 @@ function affwp_add_on_info( $position = '' ) {
 			?>
 
 			<?php if ( edd_get_download_files( get_the_ID() ) ) : // must have files attached before a download button can show ?>
-				
+
 				<?php if ( $has_ultimate_license || $has_professional_license ) : // user has either ultimate or professional license so can download pro add-ons ?>
 					<a title="Get this add-on" href="<?php echo affwp_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
-				<?php elseif ( $has_plus_license || $has_personal_license ) : // user must upgrade to download add-on ?>	
-					
+				<?php elseif ( $has_plus_license || $has_personal_license ) : // user must upgrade to download add-on ?>
+
 					<p>
 						<a href="#upgrade" title="Upgrade License" class="button popup-content" data-effect="mfp-move-from-bottom">Upgrade license</a>
 					</p>
@@ -746,22 +798,22 @@ function affwp_add_on_info( $position = '' ) {
 					<p>Upgrade your license to download this add-on for free.</p>
 
 					<?php affwp_upgrade_license_modal(); ?>
-					
+
 
 				<?php else : // user does not have any license, provide links to purchase ?>
 
 					<p>This add-on is available free to <a href="<?php echo site_url( 'pricing' ); ?>">ultimate</a> or <a href="<?php echo site_url( 'pricing' ); ?>">professional</a> license holders.</p>
 				<?php endif; ?>
 
-			<?php endif; ?>	
+			<?php endif; ?>
 
 
 
-			
+
 
 		<?php endif; ?>
-		
-		
+
+
 
 	</aside>
 	<?php
@@ -779,17 +831,17 @@ function affwp_upgrade_license_modal() {
 		<div class="affwp-license">
 			<h2>Ultimate License</h2>
 			<p><strong>Unlimited</strong> site licenses, <strong>unlimited</strong> updates, <strong>unlimited support.</p>
-			
+
 			<a href="<?php echo affwp_get_license_upgrade_url( 'ultimate' ); ?>" title="Upgrade to Ultimate" class="button">Upgrade to Ultimate</a>
-			
+
 		</div>
 
 		<div class="affwp-license">
 			<h2>Professional License</h2>
 			<p><strong>Unlimited</strong> site licenses, 1 year of updates, 1 year of support.</p>
-			
+
 			<a href="<?php echo affwp_get_license_upgrade_url( 'professional' ); ?>" title="Upgrade to Professional" class="button">Upgrade to Professional</a><br/>
-			
+
 		</div>
 
 	</div>
@@ -809,7 +861,7 @@ function affwp_edd_optimizely_revenue_tracking() {
 
 ?>
 <script>
-	var price = <?php echo edd_get_payment_amount( $payment_id ); ?> 
+	var price = <?php echo edd_get_payment_amount( $payment_id ); ?>
 	window.optimizely = window.optimizely || [];
 	window.optimizely.push(['trackEvent', 'purchase_complete', {'revenue': price * 100}]);
 </script>
