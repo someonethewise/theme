@@ -565,9 +565,32 @@ function affwp_process_add_on_download() {
 add_action( 'edd_add_on_download', 'affwp_process_add_on_download', 100 );
 
 /**
+ * Check an individual license to see if it has expired
+ */
+function affwp_has_license_expired( $license = '' ) {
+
+	if ( ! $license ) {
+		return false;
+	}
+
+	$check_license = edd_software_licensing()->check_license(
+		array(
+			'key'     => $license,
+			'item_id' => affwp_get_affiliatewp_id()
+		)
+	);
+
+	if ( $check_license === 'expired' ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
  * Check if any of the user's license has expired
  */
-function affwp_has_license_expired() {
+function affwp_has_users_license_expired() {
 
 	if ( ! function_exists( 'edd_software_licensing' ) ) {
 		return;
@@ -578,17 +601,20 @@ function affwp_has_license_expired() {
 	$has_expired = false;
 
 	if ( $licenses ) {
+
 		foreach ( $licenses as $license ) {
-			if ( $license['expires'] < time() ) {
+
+			if ( affwp_has_license_expired( $license['license'] ) ) {
 				$has_expired = true;
 				break;
 			}
+
 		}
+
 	}
 
 	return $has_expired;
 }
-add_action( 'template_redirect', 'affwp_has_license_expired' );
 
 /**
  * Get a user's download price IDs that they have access to

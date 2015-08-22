@@ -25,7 +25,8 @@ function affwp_display_notice() {
 
 	$expired = get_page_by_title( 'License expired', 'OBJECT', 'notices' );
 
-	if ( $expired && ! affwp_has_license_expired() ) {
+	// exclude notice if license has not expired
+	if ( $expired && ! affwp_has_users_license_expired() ) {
 		$notice_args['exclude'] = array( $expired->ID );
 	}
 
@@ -59,11 +60,11 @@ function affwp_display_notice() {
 								   <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svg-defs.svg#icon-announcement'; ?>"></use>
 								</svg>
 
-								<?php echo do_shortcode(wpautop($notice->post_content)); ?>
+								<?php echo do_shortcode( wpautop( $notice->post_content ) ); ?>
 
 							</div>
 
-							<?php if(!get_post_meta($notice->ID, '_hide_close', true)) { ?>
+							<?php if( ! get_post_meta($notice->ID, '_hide_close', true)) { ?>
 
 							<a class="remove-notice" href="#" id="remove-notice" rel="<?php echo $notice->ID; ?>">
 							<svg width="24px" height="24px">
