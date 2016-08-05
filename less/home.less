@@ -1,0 +1,639 @@
+// simple news section
+
+section.news {
+	p {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+}
+
+
+.feature-highlights-slider .slick-slide {
+	padding-top: 8rem;
+}
+
+.feature-highlights .slick-slide img {
+    display: block;
+    margin: 0 auto;
+    .box-shadow( 0 30px 30px 0 rgba( 0, 0, 0, 0.1 ) );
+}
+
+
+
+
+
+// integrations
+
+section.integrations .grid-item-inner {
+	border: none;
+}
+
+.hidden-integrations {
+//	.transition ( all 0.25s linear );
+//	transition: all 2s cubic-bezier( .31,1.12,.53,1.16 );
+	overflow: hidden;
+	height: 660px;
+	position: relative;
+}
+
+
+.hidden-integrations.reveal {
+//	max-height: 3100px;
+	overflow: none;
+	height: auto;
+}
+
+
+@media only screen and ( min-width: @screen-lg-min ) {
+	.hidden-integrations.reveal {
+	//	max-height: 3100px;
+
+	}
+
+}
+
+.hidden-integrations.reveal:after {
+//	background: none;
+	height: 0;
+}
+
+
+.hidden-integrations:after {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,f4f7f8+50,f4f7f8+100&0+0,1+50,1+100 */
+	background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(244,247,248,1) 75%, rgba(244,247,248,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(244,247,248,1) 75%,rgba(244,247,248,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(244,247,248,1) 75%,rgba(244,247,248,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#f4f7f8',GradientType=0 ); /* IE6-9 */
+
+//	z-index: 100;
+	content: '';
+	position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 220px;
+//	.transition ( all 2s linear );
+}
+
+
+#show-integrations {
+	margin-top: -5rem;
+	position: relative;
+}
+
+// features
+section.features svg {
+	margin-bottom: 0.5rem;
+}
+
+section.integrations a.post-thumbnail {
+	background: #fff;
+}
+
+section.integrations img {
+	width: 100%;
+}
+
+section.integrations .grid-item-inner {
+	padding: 0;
+}
+
+#graph {
+	position: absolute;
+	// display: block;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+//	z-index: 100;
+
+	// opacity: 0.5;
+	//
+	// img {
+	// 	display: block;
+	// 	top: 10%;
+	// 	position: relative;
+	// }
+}
+
+
+
+
+
+// 227 / 79 / 67
+.ct-grid {
+	stroke: rgba( 227, 79, 67, 0.75);
+//	stroke: @accent-color;
+	stroke-width: 1px;
+	stroke-dasharray: 5px;
+}
+
+foreignobject {
+	position: relative;
+}
+
+// .ct-point {
+//   stroke-width: 10px;
+//   stroke-linecap: round;
+// }
+
+// .circle {
+// 	opacity: 1;
+// 	display: block;
+// }
+
+// .ct-series-b .ct-line {
+// 	stroke: #fff;
+// }
+
+// .ct-area {
+// 	fill: none;
+// }
+
+@-webkit-keyframes raise {
+  0% {
+	-webkit-transform: scaleY(0);
+			transform: scaleY(0);
+  }
+  75% {
+	-webkit-transform: scaleY(1.1);
+			transform: scaleY(1.1);
+  }
+  100% {
+	-webkit-transform: scaleY(1);
+			transform: scaleY(1);
+  }
+}
+
+@keyframes raise {
+
+  0% {
+	-webkit-transform: scaleY(0.01);
+			transform: scaleY(0.01);
+  }
+  75% {
+	-webkit-transform: scaleY(1.05);
+			transform: scaleY(1.05);
+  }
+  100% {
+	-webkit-transform: scaleY(1);
+			transform: scaleY(1);
+  }
+}
+
+// .ct-series {
+// 	-webkit-transform: translate(100%) scale(0.2);
+// 	transform: translate(100%) scale(0.2);
+// }
+
+
+
+// enable this
+
+// .ct-series {
+// 	-webkit-transform-origin: bottom center;
+// 	-ms-transform-origin: bottom center;
+// 	transform-origin: bottom center;
+// 	-moz-transform-origin: 350px 620px; // fix firefox
+//
+// 	-webkit-transform: scaleY(0);
+// 	-ms-transform: scaleY(0);
+// 	transform: scaleY(0);
+// }
+//
+// .loaded .ct-series {
+// 	opacity: 1;
+// 	-webkit-animation: raise 0.75s ease 0.2s forwards;
+// 	animation: raise 0.75s ease 0.2s forwards;
+// }
+//
+// .loaded .ct-series-a {
+// 	-webkit-animation-delay: 1.6s;
+// 	animation-delay: 1.6s;
+// }
+//
+// .loaded .ct-series-b {
+// 	-webkit-animation-delay: 0.3s;
+// 	animation-delay: 0.3s;
+// }
+
+// fade out the lower graph when hovering over the call to action
+.ct-series-a {
+	.transition ( all 0.5s linear );
+	opacity: 100;
+}
+
+.cta .ct-series-a {
+	opacity: 0;
+}
+
+.cta .ct-series-b .circle-blip {
+	stroke-width: 15px;
+	fill: @accent-color;
+	-webkit-animation: blip 1s ease-out;
+	animation: blip 1s ease-out;
+
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+path {
+	.transition ( all 0.25s linear );
+}
+
+.ct-circle {
+	.transition ( all 0.25s linear );
+}
+
+.home .ct-circle {
+	fill: @primary-color;
+}
+
+.highlight.action {
+	fill: lighten( @secondary-color, 5% );
+}
+
+.ct-circle {
+
+	/*stroke-dasharray: 2;*/
+	stroke-width: 4px;
+	stroke-miterlimit: 10;
+//	stroke: #d63434;
+
+}
+
+// line A
+.home .ct-series-a {
+	@color: darken( @accent-color, 10% );
+
+	.ct-circle {
+		stroke: @color;
+	}
+
+	.ct-line {
+		stroke: @color;
+	}
+
+	.ct-area {
+		fill: @color;
+		fill-opacity: 0.5;
+	}
+}
+
+
+.highlight.action .ct-series-a {
+	@color: darken( @secondary-color, 10% );
+
+	.ct-circle {
+		stroke: @color;
+	}
+
+	.ct-line {
+		stroke: @color;
+	}
+
+	.ct-area {
+		fill: @color;
+		fill-opacity: 0.5;
+	}
+}
+
+.highlight.action .button,
+.highlight.action p,
+.highlight.action h2 {
+	z-index: 1;
+	position: relative;
+}
+
+
+// .highlight.action {
+// 	@gradient1: @secondary-color;
+// 	@gradient2: #4796AB;
+//
+// 	background: @secondary-color; // fallback for older browsers, including IE9
+// 	// background: -moz-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+// 	// background: -webkit-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+// 	// background: -o-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+// 	// background: -ms-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+// 	background: linear-gradient(343deg, @gradient1 0%, @gradient2 90%);
+//
+// }
+
+
+// .ct-area {
+//   stroke: none;
+//   fill-opacity: 0.1; }
+
+
+// AffiliateWP
+
+// .ct-chart-line {
+// 	opacity: 0;
+// }
+
+
+.ct-chart-line {
+	opacity: 0;
+	.transition ( all 0.5s linear );
+}
+
+.loaded .ct-chart-line {
+	opacity: 1;
+}
+
+.ct-series-b {
+
+	.ct-circle {
+		stroke: @accent-color;
+	}
+
+	.ct-line {
+		stroke: @accent-color;
+	//	 stroke-dasharray: 30px 5px;
+	}
+
+	.ct-area {
+		fill: @accent-color;
+		fill-opacity: 0.5;
+	}
+}
+
+
+// .ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
+//   stroke: #d70206; }
+// .ct-series-a .ct-slice-pie, .ct-series-a .ct-area {
+//   fill: #d70206; }
+
+
+// .graph-line-circle {
+//
+// }
+
+
+.hero {
+	width: 100%;
+	position: relative;
+//	padding-bottom: 5rem;
+//	background: rgba(0, 0, 0, 0) linear-gradient(0deg, #ED5044, #ed6d62 35%, #ed6d62 65%, #ed6d62) repeat scroll 0 0;
+}
+
+.hero p {
+//	-webkit-font-smoothing: antialiased;
+}
+
+.hero h1,
+.hero p,
+.hero .button {
+	position: relative;
+	z-index: 1;
+	 -webkit-transform: translate3d(0, 0, 0);
+}
+
+.hero .col-xs-12 {
+
+//	-webkit-perspective: 1000;
+//	backface-visibility: hidden;
+//	transform: translate3d(0, 0, 0);
+//      transform-style: preserve-3d;
+
+
+//  -moz-transform: translate3d(0, 0, 0);
+//  -ms-transform: translate3d(0, 0, 0);
+//  transform: translate3d(0, 0, 0);
+
+//-webkit-font-smoothing: antialiased;
+
+// -webkit-transform: translateZ(0);
+//  -moz-transform: translateZ(0);
+//  -ms-transform: translateZ(0);
+//  -o-transform: translateZ(0);
+//   transform: translateZ(0);
+
+ // -webkit-transform: translate3d(250px,250px,250px)
+ //  rotate3d(250px,250px,250px,-120deg)
+ //  scale3d(0.5, 0.5, 0.5);
+
+// backface-visibility: hidden;
+// transform: translate3d(0, 0, 0);
+// transform-style: preserve-3d;
+
+//visibility:hidden;
+//	 -webkit-backface-visibility: hidden;
+// -webkit-transform:translate3d(0,0,0);
+
+}
+
+.hero {
+	// turn ths on
+	background: @primary-color; // fallback for older browsers, including IE9
+	//height: 80%;
+
+// background: -moz-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+// background: -webkit-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+// background: -o-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+// background: -ms-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+
+	// turn this on
+//	background: linear-gradient(343deg, #ED5044 0%, #ed6d62 90%);
+
+//	background: #fff;
+
+	position: relative;
+//	overflow: hidden;
+//	background: @primary-color url("images/svgs/line-graph.svg" ) no-repeat 50% 100%;
+
+
+}
+
+
+
+#masthead {
+	z-index: 20;
+}
+
+.hero section {
+//	z-index: 10;
+}
+
+#masthead,
+.hero section {
+	position: relative;
+}
+
+
+#home-graph {
+	display: none;
+}
+
+.blip-wrap {
+	position: relative;
+	height: 80px;
+	width: 80px;
+}
+
+.ct-series-b .circle-blip {
+//	content: '';
+	border: 3px solid @accent-color;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -15px 0 0 -15px;
+	opacity: 0;
+}
+
+.ct-series-b .circle-blip.animated {
+	stroke-width: 15px;
+	fill: @accent-color;
+	-webkit-animation: blip 1s ease-out;
+	animation: blip 1s ease-out;
+
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+}
+
+@media only screen and ( min-width: @screen-lg-min ) {
+
+
+
+	// .ct-circle {
+	// 	-webkit-animation: blip 1s ease-out;
+	// 	animation: blip 1s ease-out;
+	//
+	// 	-webkit-animation-iteration-count: 1;
+	// 	animation-iteration-count: 1;
+	// }
+
+
+	// .ct-circle:after {
+	// 	-webkit-animation: blip 1s ease-out;
+	// 	animation: blip 1s ease-out;
+	//
+	//     -webkit-animation-iteration-count: 1;
+	// 	animation-iteration-count: 1;
+	// }
+
+	.graph-line {
+		stroke-dasharray: 1000;
+		 stroke-dashoffset: 1000;
+		 stroke-dasharray: 10;
+		 animation: dash 40s linear forwards;
+
+	}
+
+	.ct-series-b .ct-line {
+		stroke-dasharray: 1000;
+		 stroke-dashoffset: 1000;
+		 stroke-dasharray: 10;
+		 animation: dash 40s linear forwards;
+	}
+
+
+	.graph-line-circle {
+		stroke-dasharray: 1000;
+		 stroke-dashoffset: 1000;
+		 animation: dash 15s linear forwards;
+	}
+
+
+
+
+		@keyframes dash {
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		.ct-series-b .ct-circle {
+			// stroke-dasharray: 1000;
+			//  stroke-dashoffset: 1000;
+			//  animation: dash 15s linear forwards;
+		}
+
+		// .graph-line-circle {
+		// 	fill: none;
+		// 	/*stroke-dasharray: 2;*/
+		// 	stroke-width: 4px;
+		// 	stroke-miterlimit: 10;
+		// 	stroke: #d63434;
+		// }
+
+		/*.graph-line,
+		.graph-line-circle {
+			fill: #fff;
+		}*/
+
+		// .graph-line {
+		// 	fill: none;
+		// 	stroke: #d63434;
+		// 	stroke-miterlimit: 10;
+		// 	stroke-width: 3px;
+		// }
+
+	  /*.cls-1 {
+		fill: none;
+		stroke: #000;
+		stroke-miterlimit: 10;
+		stroke-width: 4px;
+	  }*/
+
+
+	// #home-graph {
+	// 	position: absolute;
+	// 	display: block;
+	// 	top: -13%;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	z-index: 0;
+	// 	opacity: 0.5;
+	//
+	// 	img {
+	// 		display: block;
+	// 		top: 10%;
+	// 		position: relative;
+	// 	}
+	// }
+
+}
+
+// .hero {
+// 	background: #ed6d62;
+// 	width: 100%;
+// 	position: relative;
+// }
+
+.hero .row h1 {
+	font-weight: 600;
+	color: #fff;
+	font-size: 3rem;
+}
+
+.hero .row p {
+	color: #fff;
+}
+
+.hero .row p.intro {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0 auto 5rem;
+    max-width: 1100px;
+}
+
+.hero .row .button {
+//	background: @accent-color;
+	background: hsla( 5, 74%, 58%, 0.5);
+	border: 4px solid #fff;
+	font-size: 1.3rem;
+	position: relative;
+	font-weight: 500;
+//	border-radius: 4px;
+//	text-transform: uppercase;
+	line-height: 1.3;
+}

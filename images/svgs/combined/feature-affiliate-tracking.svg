@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.04 23.04">
+  <title>feature-affiliate-tracking</title>
+  <g>
+    <circle cx="8.65" cy="14.4" r="0.48" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+    <circle cx="8.65" cy="14.4" r="2.4" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+    <circle cx="8.65" cy="14.4" r="5.27" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+    <circle cx="8.65" cy="14.4" r="8.15" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+    <line x1="8.65" y1="14.4" x2="20.15" y2="2.9" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+    <path d="M20.63,3.38H23S20.63,11,16.79,7.21,20.63,1,20.63,1v2.4Z" transform="translate(-0.48 -0.48)" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+    <line x1="17.75" y1="5.29" x2="17.75" y2="1.55" style="fill: none;stroke: #60B9B3;stroke-linejoin: round"/>
+    <line x1="0.5" y1="22.54" x2="2.9" y2="20.15" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+    <line x1="14.4" y1="20.15" x2="16.79" y2="22.54" style="fill: none;stroke: #60B9B3;stroke-linecap: round;stroke-linejoin: round"/>
+  </g>
+  <g id="invisible_shape" data-name="invisible shape">
+    <rect x="0.02" y="0.02" width="23" height="23" style="fill: none"/>
+  </g>
+</svg>

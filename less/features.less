@@ -1,0 +1,63 @@
+.features .row p {
+	font-size: 1rem;
+}
+
+.features .grid-item-image {
+	margin: 0 0 2rem 0;
+}
+
+.single-features .post-thumbnail {
+	max-width: 64px;
+}
+
+
+// make all svgs that are featured images 60px wide
+// does not affect svgs on single add-on pages
+// img.attachment-post-thumbnail[src$=".svg"] {
+// 	width: 60px;
+// 	display: block;
+// }
+
+.has-image {
+	display: block;
+}
+
+.attachment-post-thumbnail {
+	display: block;
+}
+
+
+
+.features .content-area section {
+	border-bottom: 1px solid @light-grey;
+}
+
+.features .full-width {
+	.odd .col-md-4 {
+		padding-left: 4rem;
+	}
+
+	.even .col-md-4 {
+		padding-right: 4rem;
+	}
+
+}
+
+// .home .wp-post-image {
+// 	margin-bottom: 1rem;
+// }
+
+.odd .row div:first-child {
+	order: 2;
+}
+
+.odd .row div {
+	order: 1;
+}
+
+
+.page-template-list-subpages {
+	h2 a {
+		border-bottom: none;
+	}
+}

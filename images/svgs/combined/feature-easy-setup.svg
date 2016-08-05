@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <clipPath id="_clip1">
+        <rect id="Artboard1" x="0" y="0" width="48" height="48"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g id="XMLID_1_" transform="matrix(1,0,0,1,7.02233,5.4781)">
+            <g id="XMLID_9_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M11,11.5L21.3,21.8C21.7,22.2 22.3,22.2 22.7,21.8L22.8,21.7C23.2,21.3 23.2,20.7 22.8,20.3L11,8.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            </g>
+            <g id="XMLID_8_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M3.5,0.5L4,4L0.5,5.5L4,7L3.5,10.5L6.5,8.5L9.5,10.5L9,7L12.5,5.5L9,4L9.5,0.5L6.5,2.5L3.5,0.5Z" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            </g>
+            <g id="XMLID_7_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M6.5,1C6.2,1 6,0.8 6,0.5C6,0.2 6.2,0 6.5,0C6.8,0 7,0.2 7,0.5C7,0.8 6.8,1 6.5,1Z" style="fill:rgb(96,186,178);fill-rule:nonzero;"/>
+            </g>
+            <g id="XMLID_6_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M11.5,3C11.2,3 11,2.8 11,2.5C11,2.2 11.2,2 11.5,2C11.8,2 12,2.2 12,2.5C12,2.8 11.8,3 11.5,3Z" style="fill:rgb(96,186,178);fill-rule:nonzero;"/>
+            </g>
+            <g id="XMLID_5_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M1.5,3C1.2,3 1,2.8 1,2.5C1,2.2 1.2,2 1.5,2C1.8,2 2,2.2 2,2.5C2,2.8 1.8,3 1.5,3Z" style="fill:rgb(96,186,178);fill-rule:nonzero;"/>
+            </g>
+            <g id="XMLID_4_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M6.5,11C6.2,11 6,10.8 6,10.5C6,10.2 6.2,10 6.5,10C6.8,10 7,10.2 7,10.5C7,10.8 6.8,11 6.5,11Z" style="fill:rgb(96,186,178);fill-rule:nonzero;"/>
+            </g>
+            <g id="XMLID_3_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M1.5,9C1.2,9 1,8.8 1,8.5C1,8.2 1.2,8 1.5,8C1.8,8 2,8.2 2,8.5C2,8.8 1.8,9 1.5,9Z" style="fill:rgb(96,186,178);fill-rule:nonzero;"/>
+            </g>
+            <g id="XMLID_2_" transform="matrix(1.94361,0,0,1.94361,-5.95695,-2.955)">
+                <path d="M18,16L17,17" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            </g>
+        </g>
+    </g>
+</svg>

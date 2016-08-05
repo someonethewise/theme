@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <clipPath id="_clip1">
+        <rect id="Artboard1" x="0" y="0" width="48" height="48"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g id="referral link generator" transform="matrix(1.91304,0,0,1.91304,0.826087,1.04348)">
+            <path id="XMLID_10_" d="M8.5,0.5L8.5,2.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_9_" d="M14.5,8.5L16.5,8.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_8_" d="M2.5,8.5L0.5,8.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_7_" d="M12.7,4.3L14.2,2.8" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_6_" d="M4.3,4.3L2.8,2.8" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <g id="XMLID_3_">
+                <path id="XMLID_5_" d="M9.5,15.5L11.1,14.4C11.9,13.9 12.9,14.1 13.5,14.8C13.8,15.2 13.8,15.7 13.4,16.1L9.4,20.5C8.8,21.1 8,21.5 7.2,21.5L5.5,21.5C3.3,21.5 1.5,19.7 1.5,17.5L1.5,13.5C1.5,12.9 1.9,12.5 2.5,12.5C3.1,12.5 3.5,12.9 3.5,13.5L3.5,14L3.5,12.5C3.5,11.9 3.9,11.5 4.5,11.5C5.1,11.5 5.5,11.9 5.5,12.5L5.5,14L5.5,11.5C5.5,10.9 5.9,10.5 6.5,10.5C7.1,10.5 7.5,10.9 7.5,11.5L7.5,14L7.5,8.5C7.5,7.9 7.9,7.5 8.5,7.5C9.1,7.5 9.5,7.9 9.5,8.5L9.5,15.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+                <path id="XMLID_4_" d="M2.5,23.5L2.5,21.5L9.5,21.5L9.5,23.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            </g>
+            <path id="XMLID_2_" d="M5.5,8.5C5.5,6.8 6.8,5.5 8.5,5.5C10.2,5.5 11.5,6.8 11.5,8.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,195 @@
+// pricing calculator
+
+.pricing-calculator {
+	@gradient1: @secondary-color;
+	@gradient2: #4796AB;
+
+	background: @secondary-color; // fallback for older browsers, including IE9
+	// background: -moz-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+	// background: -webkit-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+	// background: -o-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+	// background: -ms-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
+	background: linear-gradient(343deg, @gradient1 0%, @gradient2 90%);
+
+	svg {
+		margin-bottom: 0.5rem;
+	}
+	svg path {
+		stroke: #AAFFF2 !important;
+	}
+}
+
+#pricing-calculator {
+	.gfield {
+		margin-bottom: 2rem;
+	}
+}
+
+
+.home .pricing-calculator {
+	p, h2, .button {
+		color: #fff;
+	}
+
+	.button {
+		border-color: #fff;
+	}
+}
+
+
+.pricing-table {
+	li a {
+		color: @accent-color;
+	}
+}
+
+
+
+
+
+.page-template-pricing .entry-header {
+	text-align: center;
+}
+
+.pricing-table .themedd-notice {
+	max-width: 720px;
+}
+
+.pricing-footer .text {
+	vertical-align: middle;
+}
+
+.pricing-footer object {
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	margin-left: 0.25rem;
+	pointer-events: none;
+}
+
+// add external icon to pricing button
+a.external {
+	.icon-external {
+		margin-left: 0.5rem;
+	}
+}
+
+.length {
+		display: block;
+	    font-size: 1rem;
+	    font-weight: 400;
+	    margin-top: 0.25rem;
+		color: @body-text-color;
+	}
+
+// the price
+.table-option li.pricing {
+    color: #222;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+	padding: 0.5rem 0 2rem 0;
+
+}
+
+.pricing .price {
+    position: relative;
+    font-weight: 500;
+}
+
+.pricing .price.old {
+     margin-right: 1rem;
+     color: #999;
+     position: absolute;
+     right: 130%;
+     top: 20%;
+}
+
+.pricing .price.old,
+.pricing .price.old .currency {
+    font-size: 50%;
+}
+
+.pricing .price.old .currency {
+    top: 3px;
+}
+
+.pricing .currency {
+    font-size: 2rem;
+    position: absolute;
+    top: 4px;
+    right: 105%;
+	font-weight: 300;
+}
+
+.pricing .button {
+	text-transform: uppercase;
+}
+
+
+.pricing > .best-value {
+    flex-flow: wrap;
+}
+
+.pricing-table .table-row > div {
+    padding: 0 1rem;
+}
+
+
+.table-option > span {
+    background: @accent-color;
+    color: #fff;
+    font-weight: 600;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+	position: absolute;
+    margin-left: -4px;
+    margin-right: -4px;
+    padding: 1rem;
+    display: block;
+}
+
+
+
+.best-value .table-option {
+    border: 4px solid @accent-color;
+//	background: #fcf4f4;
+}
+
+.best-value .table-option li {
+//	border-color: darken( #fcf4f4, 2.5% );
+}
+
+.link-highlight {
+	font-size: 1.6rem;
+}
+
+.in-cart .table-option > span {
+    background: @accent-color;
+}
+
+.in-cart .table-option {
+    border: 4px solid @accent-color;
+}
+
+// .in-cart .button {
+//     background: @accent-color;
+// }
+
+// .in-cart .button:focus,
+// .in-cart .button:hover {
+//     background: darken( @primary-color, 8% );
+// }
+
+@media only screen and ( min-width: @screen-sm-min ) {
+
+    .row.pricing {
+    //    margin-top: 6rem;
+    }
+
+	.table-option > span {
+
+	}
+
+}

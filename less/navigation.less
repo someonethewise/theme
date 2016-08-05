@@ -1,0 +1,330 @@
+// keeps the homepage menu item white when hovering over links
+// .home li a,
+// .home li:hover a,
+// .home li:active a,
+// .home li:focus a {
+//
+// }
+
+.home .main-navigation li a,
+.home .main-navigation li:hover a,
+.home .main-navigation li:focus a,
+.home .main-navigation li:active a {
+    color: #fff;
+}
+
+@media only screen and ( max-width: @nav-sm-max ) {
+
+    .cart-icon-text {
+        display: none;
+    }
+
+}
+
+// .sub-menu {}
+
+// hide all icons to begin with
+li.menu-item div  {
+    display: none;
+}
+
+.nav-cart.mobile div {
+    width: 100%;
+}
+
+ul.menu > li > a.button {
+  color: #fff;
+}
+
+ul.menu > li.action:hover > a {
+  color: #fff;
+}
+
+// checkout/buy button
+li.menu-item.checkout a {
+    color: #fff;
+}
+
+// svgs
+
+g.icon path,
+g.icon circle,
+g.icon polygon,
+g.icon line,
+g.icon rect {
+    stroke: @accent-color;
+    stroke-width: 1.25;
+    fill:none;
+}
+
+// .icon {
+//     stroke: @accent-color;
+//     stroke-width: 1.5;
+//     // stroke-linecap:round;
+//     // stroke-linejoin:round;
+//     // stroke-miterlimit:10;
+//     fill:none;
+// }
+
+.home g.icon path,
+.home g.icon circle,
+.home g.icon polygon,
+.home g.icon line,
+.home g.icon rect {
+    stroke: #fff;
+}
+
+.shape {
+    fill:none;
+}
+
+// body.home .icon {
+//     stroke: #fff;
+// }
+
+@media only screen and ( min-width: @screen-sm-min ) {
+
+
+
+
+
+}
+
+@media only screen and ( min-width: @screen-lg-min ) {
+
+    // show icons
+    li.menu-item div  {
+        display: block;
+    }
+
+    .main-navigation .menu-item-has-children > a:after {
+        margin-top: 8px;
+    }
+
+    li.menu-item a {
+        display: block;
+        padding-top: 3rem;
+    }
+
+    li.menu-item div {
+        text-align: center;
+        position: relative;
+    }
+
+    // li.menu-item svg {
+    //     width: 2rem;
+    // }
+
+
+    // svg animation
+//    li.menu-item:not(:last-child) svg {
+    li.menu-item div svg {
+        position: absolute;
+        bottom: 1rem;
+        display: block;
+        left: 50%;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        width: 2rem;
+        opacity: 0;
+        margin-left: -1rem;
+    }
+
+    // .home li.menu-item.action a {
+    //     background: hsla( 5, 74%, 58%, 0.7);
+    // }
+
+    // purchase/checkout menu item
+
+    li.menu-item.action {
+        margin-left: 1rem;
+    }
+
+    li.menu-item.action a {
+        padding-top: 3rem;
+        background: @accent-color;
+    }
+
+    li.menu-item.action svg {
+        opacity: 1;
+
+    }
+    // hover effect for icons
+    li.menu-item:hover div svg {
+        bottom: 0.5rem;
+        opacity: 1;
+    }
+
+    li.menu-item.checkout div svg {
+        bottom: 0.5rem;
+    }
+
+    // li.menu-item a:hover svg {
+    //     bottom: 0.5rem;
+    //     opacity: 1;
+    // }
+    //
+    // li.menu-item:focus svg {
+    //     bottom: 0.5rem;
+    //      opacity: 1;
+    // }
+
+
+
+
+
+
+
+    li.menu-item.current-menu-ancestor svg,
+    li.menu-item.current-menu-item svg {
+        bottom: 0.5rem;
+        opacity: 1;
+    }
+
+
+
+    // li.menu-item > a:before {
+    // //  font-weight: bold;
+    //   font-size: 2rem;
+    //   font-family: "affiliatewp" !important;
+    //   speak: none;
+    //   line-height: 1;
+    //   display: block;
+    //   text-align: center;
+    //   -webkit-font-smoothing: antialiased;
+    //   -moz-osx-font-smoothing: grayscale;
+    //   position: relative;
+    //    bottom: 1rem;
+    //    opacity: 0;
+    //    color: #E44E44;
+    //   -webkit-transition: all 0.25s ease-in-out;
+    //   -moz-transition: all 0.25s ease-in-out;
+    //   -o-transition: all 0.25s ease-in-out;
+    //   transition: all 0.25s ease-in-out;
+    //
+    // }
+
+
+
+    // icon glyphs
+    // li.home > a:before {
+    //   content: "\e005";
+    // }
+    //
+    // li.about > a:before {
+    //  content: "\e004";
+    // }
+
+    // li.pricing > a:before {
+    //   content: "\e00a";
+    // }
+
+    // li.support > a:before {
+    //   content: "\e002";
+    // }
+    //
+    // li.blog > a:before {
+    //   content: "\e003";
+    // }
+    //
+    // li.account > a:before {
+    //   content: "\e006";
+    // }
+    //
+    // li.purchase > a:before {
+    //    content: "\e008";
+    // }
+    //
+    // li.checkout > a:before {
+    //    content: "\e009";
+    // }
+    //
+    //
+    // li.add-ons > a:before {
+    //   content: "\e01c";
+    // }
+    //
+    // li.screenshots > a:before {
+    //   content: "\e021";
+    // }
+
+}
+
+@media only screen and ( min-width: @screen-sm-min ) {
+
+
+  // purchase/checkout button
+  // #main ul.menu > li.action {
+  //   margin-left: 1rem;
+  // }
+  //
+  //
+  // #main ul.menu li {
+  //   float: left;
+  // }
+
+
+
+
+  // checkout icon should always be visible
+  // li.menu-item.purchase > a:before,
+  // li.menu-item.checkout > a:before {
+  //   color: #fff;
+  //   opacity: 1;
+  //   bottom: 0.5rem;
+  // }
+
+
+  // li.menu-item.checkout:hover > a:before {
+  //   -webkit-transform:rotate( 15deg );
+  //   -moz-transform:rotate( 15deg );
+  //   -ms-transform:rotate( 15deg );
+  //   -o-transform:rotate( 15deg );
+  //   transform:rotate( 15deg );
+  // }
+
+
+
+  // hover effect for icons
+  // li:hover > a:before {
+  //   color: #E44E44;
+  //   bottom: 0.5rem;
+  //   opacity: 1;
+  // }
+
+
+  // set icons to white on the homepage
+  // .home .main-navigation li:hover > a:before,
+  // li.has-sub-menu:hover > a:before {
+  //   color: #fff;
+  // }
+
+  // show icon when page is selected
+  // li.current-menu-ancestor > a:before,
+  // li.current-menu-item > a:before {
+  //   opacity: 1;
+  //   color: #E44E44;
+  //   bottom: 0.5rem;
+  // }
+
+
+  // #main .button {
+  // 	background: #e44e44;
+  // }
+  //
+  // .home #main ul.menu > li > a {
+  //   color: #fff;
+  // }
+
+
+  // #main ul.menu > li > a.button {
+  //   color: #fff;
+  // }
+  //
+  // #main ul.menu > li.action:hover > a {
+  //   color: #fff;
+  // }
+
+}

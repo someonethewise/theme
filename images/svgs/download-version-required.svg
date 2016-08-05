@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g id="Outline_Icons_1_" transform="matrix(1,0,0,1,1,0)">
+        <path d="M11.5,16.806L11.5,9.153" style="fill:none;stroke-width:2px;stroke:rgb(117,117,118);"/>
+        <path d="M22.5,23.5L0.5,23.5L11.5,1.5L22.5,23.5Z" style="fill:none;stroke-width:2px;stroke:rgb(117,117,118);"/>
+        <g transform="matrix(3,0,0,3,-23,-40)">
+            <path d="M12,20C12,20.276 11.776,20.5 11.5,20.5C11.224,20.5 11,20.276 11,20C11,19.724 11.224,19.5 11.5,19.5C11.776,19.5 12,19.724 12,20Z" style="fill:rgb(117,117,118);fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>

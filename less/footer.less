@@ -1,0 +1,97 @@
+.site-footer {
+    position: relative;
+    width: 100%;
+    padding-top: 4rem;
+//    overflow: hidden;
+
+    a {
+        font-size: 0.875rem;
+        border-bottom: none;
+        color: @body-text-color;
+        display: block;
+        padding: 0.25rem 0;
+
+        &:hover {
+            color: #222;
+
+        }
+    }
+
+    .footer-links h4 {
+        border-bottom: 2px solid @light-grey;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    // #sign-up {
+    //     position: relative;
+    //     padding: 0;
+    // }
+
+    // #sign-up .wrapper {
+    //    margin: 0;
+    //    padding: 2rem;
+    // }
+
+    // form.mailing-list {
+    //     -webkit-justify-content: flex-start;
+    //     justify-content: flex-start;
+    // }
+
+    // .gform_body {
+    //     flex: 2;
+    // }
+    //
+    // .gform_footer {
+    //     flex: 1;
+    // }
+
+    // input {
+    //     border-color: darken( #EDD3F2, 5% );
+    //     font-size: 0.875rem;
+    //     width: 100%;
+    // }
+
+
+}
+
+.site-info {
+    margin-top: 4rem;
+//    background: @light-grey;
+    text-align: left;
+//    border-top: 1px solid darken( @light-grey, 3% );
+}
+
+@media only screen and ( min-width : 1280px ) {
+   //  .site-footer #sign-up .wrapper {
+   //     max-width: 415px;
+   // }
+}
+
+@media only screen and ( min-width: 720px ) {
+
+	// footer#footer {
+	// 	margin-top: 10rem;
+	// }
+
+
+
+	#mascot-2 {
+		width: 200px;
+		height: 132px;
+		background-size: 200px 264px;
+        bottom: 0;
+		left: 50%;
+		position: absolute;
+		background-image: url('images/mascot-2.png');
+		margin-left: -100px;
+	//	.transition ( all 0.25s cubic-bezier( .12,1.25,.9,1.03 ) );
+	}
+
+
+	.site-footer:hover #mascot-2 { background-position: 0 -132px; }
+
+    // .no-js #mascot-2  {
+    //     bottom: -4px;
+    // }
+}
