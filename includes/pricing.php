@@ -144,9 +144,13 @@ function affwp_theme_modal_content_pricing_calculator() {
 		<p>Answer the questions below and ydjust the values Use the calculator below to work out how many referral sales you'll need to cover the cost of an AffiliateWP license.</p>
 		*/
 		?>
+
 		<?php
+
+			$form_id = RGFormsModel::get_form_id( 'AffiliateWP Pricing Calculator' );
+
 			if ( function_exists( 'gravity_form' ) ) {
-				gravity_form( 1, false, false, false, '', true );
+				gravity_form( $form_id, false, false, false, '', true );
 			}
 		?>
 
