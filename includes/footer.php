@@ -24,7 +24,7 @@ function affwp_theme_footer_menu() {
 								<li><a href="<?php echo site_url( 'pricing' ); ?>">Pricing</a></li>
 								<li><a href="<?php echo site_url( 'features' ); ?>">All features</a></li>
 								<li><a href="<?php echo site_url( 'screenshots' ); ?>">Screenshots</a></li>
-								<li><a href="<?php echo site_url( 'addons' ); ?>">Add-ons</a></li>
+								<li><a href="<?php echo site_url( 'add-ons' ); ?>">Add-ons</a></li>
 								<li><a href="<?php echo site_url( 'testimonials' ); ?>">Testimonials</a></li>
 								<li><a href="<?php echo get_stylesheet_directory_uri() . '/changelog.php'; ?>" id="affwp-changelog" data-effect="mfp-move-from-bottom">Changelog</a></li>
 							</ul>
@@ -35,11 +35,10 @@ function affwp_theme_footer_menu() {
 						<div class="wrap">
 							<h4>Company</h4>
 							<ul>
-								<li><a href="<?php echo esc_url( site_url('why-affiliatewp') ); ?>">Why AffiliateWP?</a></li>
 								<li><a href="<?php echo esc_url( site_url('about') ); ?>">About us</a></li>
 								<li><a href="<?php echo esc_url( site_url('blog') ); ?>">Blog</a></li>
 								<li><a href="<?php echo esc_url( site_url('brand-assets') ); ?>">Brand assets</a></li>
-								<li><a href="<?php echo esc_url( site_url('terms') ); ?>">Refund policy</a></li>
+								<li><a href="<?php echo esc_url( site_url('refund-policy') ); ?>">Refund policy</a></li>
 								<li><a href="https://twitter.com/affwp" target="_blank">Follow us on Twitter</a></li>
 							</ul>
 						</div>
