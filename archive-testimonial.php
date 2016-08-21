@@ -8,12 +8,12 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight3 testimonials">
-	<div class="wrapper full-width">
+	<div class="wrapper wide">
 		<div class="row around-sm mb-xs-2 mb-lg-4">
 			<?php while ( have_posts() ) : the_post();
 				$company = get_post_meta( get_the_ID(), '_affwp_testimonial_company', true );
 			?>
-			<div class="col-xs-12 col-sm-6 col-lg-3">
+			<div class="col-xs-12 col-sm-6 col-lg-4">
 				<div class="testimonial">
 					<blockquote><?php the_content(); ?></blockquote>
 					<footer>
