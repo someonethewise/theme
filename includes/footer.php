@@ -59,8 +59,8 @@ function affwp_theme_footer_menu() {
 						<div class="wrap">
 							<h4>Our Products</h4>
 							<ul>
-								<li><a href="https://restrictcontentpro.com" target="_blank">Restrict Content Pro</a></li>
-								<li><a href="https://easydigitaldownloads.com" target="_blank">Easy Digital Downloads</a></li>
+								<li><a href="https://restrictcontentpro.com/?ref=4570" target="_blank">Restrict Content Pro</a></li>
+								<li><a href="https://easydigitaldownloads.com/?ref=4657" target="_blank">Easy Digital Downloads</a></li>
 							</ul>
 						</div>
 					</div>
