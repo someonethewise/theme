@@ -5,19 +5,19 @@
 
 get_header(); ?>
 
-
+<?php
+	themedd_post_header(
+		array(
+			'title'    => 'Start making more money, risk-free.',
+			'subtitle' => 'Purchase in confidence with our 30 Day Money Back Guarantee ' . affwp_show_refund_policy_link(),
+			'classes'  => array( 'mb-lg-4', 'something-else' )
+		)
+	);
+?>
 
 <section class="mb-xs-2 mb-lg-4">
-	<header class="page-header highlight2 mb-xs-2 mb-lg-4<?php echo themedd_page_header_classes(); ?>">
-		<h1 class="page-title">
-			<!-- <span class="entry-title-primary">Start earning more, risk-free, with our 30 Day Money Back Guarantee</span> -->
-			<span class="entry-title-primary">Start making more money, risk-free.</span>
-			<span class="subtitle">Purchase in confidence with our 30 Day Money Back Guarantee <?php echo affwp_show_refund_policy_link(); ?></span>
-		</h1>
-	</header>
-
 	<div class="wrapper wide">
-		<?php affwp_pricing_table(); ?>
+		<?php affwp_theme_pricing_table(); ?>
 	</div>
 </section>
 
@@ -39,8 +39,8 @@ get_header(); ?>
 */ ?>
 
 <?php
-$count_pro_add_ons           = function_exists( 'affwp_get_add_on_count' ) ? affwp_get_add_on_count( 'pro' ) : '';
-$count_official_free_add_ons = function_exists( 'affwp_get_add_on_count' ) ? affwp_get_add_on_count( 'official-free' ) : '';
+$count_pro_add_ons           = function_exists( 'affwp_theme_get_add_on_count' ) ? affwp_theme_get_add_on_count( 'pro' ) : '';
+$count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' ) ? affwp_theme_get_add_on_count( 'official-free' ) : '';
 ?>
 
 <section class="container-fluid faqs faqs-new">
@@ -143,18 +143,20 @@ $count_official_free_add_ons = function_exists( 'affwp_get_add_on_count' ) ? aff
  * Call to action
  */
 ?>
+
 <section class="tweets container-fluid highlight pv-xs-2 pv-lg-8">
     <div class="wrapper wide center-xs">
-		<?php echo affwp_tweet_slider(); ?>
+		<?php echo affwp_theme_tweet_slider(); ?>
 
 
     </div>
 </section>
 
+
 <section class="container-fluid pv-xs-2 pv-lg-4">
 
 <div class="row center-xs">
-	<div class="col-xs-12 col-sm-8">
+	<div class="col-xs-12 col-sm-8 aligncenter">
 
 		<a href="#pricing" class="scroll button large">Ready to increase sales?</a>
 	</div>

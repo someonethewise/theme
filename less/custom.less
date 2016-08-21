@@ -14,6 +14,19 @@
 // 	height: 100%;
 // }
 
+
+.button,
+button,
+input[type="submit"],
+#submit,
+input,
+textarea {
+	border-radius: @border-radius;
+}
+
+
+
+
 .button.secondary,
 .button.secondary:focus {
 //	background: @secondary-color;
@@ -25,9 +38,9 @@
 	border-color: darken( @secondary-color, 5% );
 }
 
-#main {
-	padding-top: 0;
-}
+// #main {
+// 	padding-top: 0;
+// }
 
 // #secondary {
 // 	padding-right: 0;
@@ -37,6 +50,10 @@
 	background: transparent;
 	border-width: 5px;
 
+}
+
+.button.outline.white {
+	border-color: #fff;
 }
 
 .button.outline.secondary {
@@ -54,6 +71,7 @@
 	display: inline-block;
 	font-size: 1rem;
 	font-weight: 600;
+	border-radius: 2px;
 	margin-right: 1rem;
 	padding: 0.5rem 0.75rem;
 	text-transform: uppercase;
@@ -63,7 +81,8 @@
 
 section.used-by h4 {
 	font-size: 0.875rem;
-	color: #EBFCF7;
+//	color: #EBFCF7;
+
 	text-transform: uppercase;
 	padding-top: 2rem;
 	margin-bottom: 0;
@@ -75,7 +94,7 @@ section.used-by .col-xs img {
 	height: 32px;
 	padding: 0 2rem;
     margin: 1rem 0;
-//	opacity: 0.5;
+	opacity: 0.5;
 	display: inline-block;
     vertical-align: middle;
 }
@@ -102,19 +121,7 @@ section.used-by .col-xs img {
 	background: @secondary-color;
 }
 
-.highlight.action {
-    background: @secondary-color;
-    position: relative; // for graph
 
-    h2, p {
-        color: #fff;
-    }
-
-	.button {
-	//	background: darken( @secondary-color, 10% );
-		border-color: #fff;
-	}
-}
 
 .site-header-menu .nav-cart {
     padding: 1rem;
@@ -130,7 +137,6 @@ section.used-by .col-xs img {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 100%;
-//    padding-bottom: 1rem;
 }
 
 

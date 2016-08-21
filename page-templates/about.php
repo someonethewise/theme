@@ -5,12 +5,7 @@
 
 get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-<header class="highlight page-header mb-xs-4<?php echo themedd_page_header_classes(); ?>">
-	<h1 class="page-title"><?php echo get_the_title( get_the_ID() ); ?></h1>
-</header>
-<?php endwhile; ?>
-
+<?php themedd_post_header(); ?>
 
 <section class="container-fluid">
     <div class="wrapper">
@@ -18,7 +13,7 @@ get_header(); ?>
 
 			<div class="col-xs-12 col-sm-6 col-md-4 mb-xs-2">
                 <img class="profile" alt="Pippin Williamson" src="<?php echo get_stylesheet_directory_uri() . '/images/about/pippin-williamson.jpg'; ?>">
-				<h2>Pippin Williamson</h2>
+				<h2 class="aligncenter">Pippin Williamson</h2>
 				<p class="about-details">
 					<a href="http://pippinsplugins.com" target="_blank">pippinsplugins.com</a><br/>
 					<a href="https://twitter.com/pippinsplugins" class="twitter-follow-button" data-show-count="false">Follow @pippinsplugins</a>
@@ -30,7 +25,7 @@ get_header(); ?>
 
             <div class="col-xs-12 col-sm-6 col-md-4 mb-xs-2">
                 <img class="profile" alt="Andrew Munro" src="<?php echo get_stylesheet_directory_uri() . '/images/about/andrew-munro.jpg'; ?>">
-                <h2>Andrew Munro</h2>
+                <h2 class="aligncenter">Andrew Munro</h2>
 
                 <p class="about-details">
 					<a href="http://sumobi.com" target="_blank">sumobi.com</a><br/>
@@ -47,7 +42,7 @@ get_header(); ?>
 
             <div class="col-xs-12 col-sm-6 col-md-4 mb-xs-2">
                 <img class="profile" alt="Rami Abraham" src="<?php echo get_stylesheet_directory_uri() . '/images/about/rami-abraham.jpg'; ?>">
-				<h2>Rami Abraham</h2>
+				<h2 class="aligncenter">Rami Abraham</h2>
 
 				<p class="about-details">
 					<a href="http://ramiabraham.com" target="_blank">ramiabraham.com</a><br/>
@@ -64,7 +59,7 @@ get_header(); ?>
 
             <div class="col-xs-12 col-sm-6 col-md-4 mb-xs-2">
                 <img class="profile" alt="Lisa Gibson" src="<?php echo get_stylesheet_directory_uri() . '/images/about/lisa-gibson.jpg'; ?>">
-				<h2>Lisa Gibson</h2>
+				<h2 class="aligncenter">Lisa Gibson</h2>
 
 				<p class="about-details">
 					<a href="http://wordmaid.com" target="_blank">wordmaid.com</a><br/>
@@ -82,7 +77,7 @@ get_header(); ?>
             <div class="col-xs-12 col-sm-6 col-md-4 mb-xs-2">
 
 				<img class="profile" alt="Michael Beil" src="<?php echo get_stylesheet_directory_uri() . '/images/about/michael-beil.jpg'; ?>">
-				<h2>Michael Beil</h2>
+				<h2 class="aligncenter">Michael Beil</h2>
 
 				<p class="about-details">
 					<a href="http://michaelbeil.com/" target="_blank">michaelbeil.com</a><br/>
@@ -100,7 +95,7 @@ get_header(); ?>
 
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <img class="profile" alt="Drew Jaynes" src="<?php echo get_stylesheet_directory_uri() . '/images/about/drew-jaynes.jpg'; ?>">
-				<h2>Drew Jaynes</h2>
+				<h2 class="aligncenter">Drew Jaynes</h2>
 
 				<p class="about-details">
 					<a href="http://werdswords.com" target="_blank">werdswords.com</a><br/>

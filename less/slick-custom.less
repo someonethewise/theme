@@ -1,3 +1,95 @@
+// drag
+
+.drag-me {
+
+    background: rgba( 96, 185, 179, 0.75 );
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    color: #fff;
+    vertical-align: middle;
+    display: -webkit-flex;
+    display: flex;
+    font-weight: 500;
+
+    &.hide {
+        -webkit-animation: draghide 0.1s ease-out;
+        animation: draghide 0.1s ease-out;
+        animation-fill-mode: forwards;
+    }
+
+}
+
+.drag-me.animate {
+
+}
+
+.drag-me:after {
+	content: '';
+	border: 3px solid @secondary-color;
+    -webkit-border-radius: 100%;
+	border-radius: 100%;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -40px 0 0 -40px;
+	opacity: 0;
+    -webkit-animation: dragblip 2s ease-out;
+	animation: dragblip 2s ease-out;
+
+    -webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+
+@-webkit-keyframes dragblip {
+    0% {-webkit-transform: scale(1, 1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.5, 1.5); opacity: 0.0;}
+}
+
+@keyframes dragblip {
+    0% {transform: scale(1, 1); opacity: 0.0;}
+    25% {opacity: 1.0;}
+    50% {transform: scale(1.5, 1.5); opacity: 0.0;}
+}
+
+@-webkit-keyframes draghide {
+    0% {-webkit-transform: scale(1, 1); opacity: .75; }
+    100% {-webkit-transform: scale(0, 0); opacity: 0.0; }
+}
+
+@keyframes draghide {
+    0% {transform: scale(1, 1); opacity: .75; }
+    100% {transform: scale(0, 0); opacity: 0.0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.slick-active .image {
+    display: flex;
+    align-items: center;
+}
+
+.slick-slide .image {
+    position: relative;
+}
 
 // slick slider
 
@@ -219,9 +311,13 @@ section.feature-highlights {
         flex-direction: column;
     }
 
-    .slick-slide .image {
+    .image {
         margin: auto 0 0;
     }
+
+    // .slick-slide .image {
+    //     margin: auto 0 0;
+    // }
 
     .slick-nav {
         opacity: 0; // hide arrow navigation
@@ -251,6 +347,25 @@ section.feature-highlights {
 
 }
 
+// show slider when no JS
+.no-js {
+
+	section.feature-highlights .feature-highlights-slider {
+		opacity: 1;
+	}
+
+	section.feature-highlights .feature-highlights-slider > div {
+		display: none;
+	}
+
+	section.feature-highlights .feature-highlights-slider > div:first-child {
+		display: block;
+	}
+
+	section.feature-highlights .slick-nav {
+		display: none;
+	}
+}
 
 
 

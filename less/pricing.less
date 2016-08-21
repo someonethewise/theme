@@ -1,47 +1,11 @@
-// pricing calculator
-
-.pricing-calculator {
-	@gradient1: @secondary-color;
-	@gradient2: #4796AB;
-
-	background: @secondary-color; // fallback for older browsers, including IE9
-	// background: -moz-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
-	// background: -webkit-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
-	// background: -o-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
-	// background: -ms-linear-gradient(107deg, rgb(116, 215, 191) 0%, rgb(7, 36, 96) 90%);
-	background: linear-gradient(343deg, @gradient1 0%, @gradient2 90%);
-
-	svg {
-		margin-bottom: 0.5rem;
-	}
-	svg path {
-		stroke: #AAFFF2 !important;
-	}
-}
-
-#pricing-calculator {
-	.gfield {
-		margin-bottom: 2rem;
-	}
-}
 
 
-.home .pricing-calculator {
-	p, h2, .button {
-		color: #fff;
-	}
 
-	.button {
-		border-color: #fff;
-	}
-}
-
-
-.pricing-table {
-	li a {
-		color: @accent-color;
-	}
-}
+// .pricing-table {
+// 	li a {
+// 		color: @accent-color;
+// 	}
+// }
 
 
 
@@ -124,6 +88,12 @@ a.external {
 
 .pricing .button {
 	text-transform: uppercase;
+	background: @accent-color;
+	border-color: @accent-color;
+
+	&:hover {
+		background: darken( @accent-color, 8% );
+	}
 }
 
 

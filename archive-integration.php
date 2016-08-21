@@ -4,19 +4,12 @@
  */
 get_header(); ?>
 
-
-<header class="page-header highlight mb-xs-2 mb-lg-4<?php echo themedd_page_header_classes(); ?>">
-	<h1 class="page-title">
-		<span class="entry-title-primary"><?php post_type_archive_title(); ?></span>
-		<!-- <span class="subtitle">AffiliateWP integrates seamlessly with your favorite eCommerce system, Membership platform, or Forms plugin.</span> -->
-		<span class="subtitle">AffiliateWP integrates seamlessly with popular eCommerce, Membership, Form, and Invoice WordPress plugins.</span>
-	</h1>
-</header>
+<?php themedd_post_header( array( 'title' => post_type_archive_title( '', false ), 'subtitle' => 'AffiliateWP integrates seamlessly with popular eCommerce, Membership, Form, and Invoice WordPress plugins.' ) ); ?>
 
 <?php if ( have_posts() ) : ?>
-<section class="container-fluid">
-    <div class="wrapper container-fluid">
-		<div class="grid row mb-xs-4 has-overlay">
+<section class="container-fluid highlight">
+    <div class="wrapper wide container-fluid">
+		<div class="grid row has-overlay">
 			<?php while ( have_posts() ) : the_post();
 			global $post;
 			?>
@@ -40,12 +33,6 @@ get_header(); ?>
 							<footer><span>Learn more</span></footer>
 						</a>
 					</div>
-
-					<?php /*
-					<div class="grid-item-content">
-						<h3 class="grid-item-title"><?php the_title(); ?></h3>
-					</div>
-					*/ ?>
 
 				</div>
 			</div>

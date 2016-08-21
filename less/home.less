@@ -19,66 +19,132 @@ section.news {
 }
 
 
+#how-it-works.popup {
+	background: @primary-color;
 
+	h1 {
+		color: #fff;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+}
 
 
 // integrations
 
-section.integrations .grid-item-inner {
-	border: none;
+section.integrations {
+//	background: @secondary-color;
+
+	.row.grid {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 }
+
+.integrations h1,
+.integrations p {
+	color: #fff;
+}
+
+// section.integrations .grid-item-inner {
+// 	border: none;
+// }
+
+
+
 
 .hidden-integrations {
 //	.transition ( all 0.25s linear );
 //	transition: all 2s cubic-bezier( .31,1.12,.53,1.16 );
-	overflow: hidden;
-	height: 660px;
-	position: relative;
+	// overflow: hidden;
+	// height: 660px;
+	// position: relative;
 }
 
+// hide all integrations after the 6th one
+.grid-item.integration-hidden {
+	display: none;
+//	visibility: hidden;
 
-.hidden-integrations.reveal {
+}
+
+.grid-item {
 //	max-height: 3100px;
-	overflow: none;
-	height: auto;
+//	overflow: none;
+//	height: auto;
+//visibility: visible;
+//.transition ( all 5s linear );
 }
 
 
 @media only screen and ( min-width: @screen-lg-min ) {
+
+	@gradient1: @secondary-color;
+	@gradient2: #124E66;
+
+	section.integrations {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#377a95+0,60b9b3+49,60b9b3+100 */
+	// background: rgb(55,122,149);
+	// background: -moz-linear-gradient(top, rgba(55,122,149,1) 0%, rgba(96,185,179,1) 49%, rgba(96,185,179,1) 100%);
+	// background: -webkit-linear-gradient(top, rgba(55,122,149,1) 0%,rgba(96,185,179,1) 49%,rgba(96,185,179,1) 100%);
+//	background: linear-gradient(135deg, rgba(121,234,221,1) 0%,rgba(96,185,179,0) 25%), linear-gradient(to bottom, rgba(55,122,149,1) 0%,rgba(96,185,179,1) 49%,rgba(96,185,179,1) 100%);
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#377a95', endColorstr='#60b9b3',GradientType=0 );
+
+//	background: linear-gradient(to bottom, rgba(55,122,149,1) 0%,rgba(96,185,179,1) 49%,rgba(96,185,179,1) 100%);
+
+//	background: @secondary-color; // fallback for older browsers, including IE9
+
+
+	}
+
 	.hidden-integrations.reveal {
 	//	max-height: 3100px;
 
 	}
 
+
+
 }
 
 .hidden-integrations.reveal:after {
 //	background: none;
-	height: 0;
+//	height: 0;
 }
 
 
 .hidden-integrations:after {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,f4f7f8+50,f4f7f8+100&0+0,1+50,1+100 */
-	background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(244,247,248,1) 75%, rgba(244,247,248,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(244,247,248,1) 75%,rgba(244,247,248,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(244,247,248,1) 75%,rgba(244,247,248,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#f4f7f8',GradientType=0 ); /* IE6-9 */
+	// background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(244,247,248,1) 75%, rgba(244,247,248,1) 100%); /* FF3.6-15 */
+	// background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(244,247,248,1) 75%,rgba(244,247,248,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	// background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(244,247,248,1) 75%,rgba(244,247,248,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#f4f7f8',GradientType=0 ); /* IE6-9 */
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#60b9b3+0,60b9b3+50,60b9b3+100&0+0,1+50,1+100 */
+// background: -moz-linear-gradient(top, rgba(96,185,179,0) 0%, rgba(96,185,179,1) 75%, rgba(96,185,179,1) 100%); /* FF3.6-15 */
+// background: -webkit-linear-gradient(top, rgba(96,185,179,0) 0%,rgba(96,185,179,1) 75%,rgba(96,185,179,1) 100%); /* Chrome10-25,Safari5.1-6 */
+// background: linear-gradient(to bottom, rgba(96,185,179,0) 0%,rgba(96,185,179,1) 75%,rgba(96,185,179,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0060b9b3', endColorstr='#60b9b3',GradientType=0 ); /* IE6-9 */
+//
+// content: '';
+// position: absolute;
+// bottom: 0;
+// right: 0;
+// left: 0;
+// height: 220px;
+
+
+
+
 
 //	z-index: 100;
-	content: '';
-	position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 220px;
+
 //	.transition ( all 2s linear );
 }
 
 
 #show-integrations {
-	margin-top: -5rem;
-	position: relative;
+	// margin-top: -5rem;
+	// position: relative;
 }
 
 // features
@@ -106,6 +172,7 @@ section.integrations .grid-item-inner {
 	width: 100%;
 	height: 100%;
 	z-index: 0;
+	overflow: hidden;
 //	z-index: 100;
 
 	// opacity: 0.5;
@@ -218,6 +285,41 @@ foreignobject {
 // 	animation-delay: 0.3s;
 // }
 
+// animate the pricing graph blips
+
+// .cta-get-started, .ct-series {
+// 	overflow: hidden;
+// 	position: relative;
+// }
+
+#graph2 {
+	position: absolute;
+	// display: block;
+	bottom: 0;
+//	overflow: hidden;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+//	z-index: 100;
+
+	// opacity: 0.5;
+	//
+	// img {
+	// 	display: block;
+	// 	top: 10%;
+	// 	position: relative;
+	// }
+}
+
+
+
+// .cta-get-started .blip-2.blip-hover {
+// 	-webkit-animation-delay: 1.6s;
+//  	animation-delay: 1.6s;
+// }
+
+
 // fade out the lower graph when hovering over the call to action
 .ct-series-a {
 	.transition ( all 0.5s linear );
@@ -238,6 +340,16 @@ foreignobject {
 	animation-iteration-count: infinite;
 }
 
+// .cta .ct-series-b .circle-blip {
+// 	stroke-width: 15px;
+// 	fill: @accent-color;
+// 	-webkit-animation: blip 1s ease-out;
+// 	animation: blip 1s ease-out;
+//
+// 	-webkit-animation-iteration-count: infinite;
+// 	animation-iteration-count: infinite;
+// }
+
 path {
 	.transition ( all 0.25s linear );
 }
@@ -250,9 +362,7 @@ path {
 	fill: @primary-color;
 }
 
-.highlight.action {
-	fill: lighten( @secondary-color, 5% );
-}
+
 
 .ct-circle {
 
@@ -282,29 +392,9 @@ path {
 }
 
 
-.highlight.action .ct-series-a {
-	@color: darken( @secondary-color, 10% );
 
-	.ct-circle {
-		stroke: @color;
-	}
 
-	.ct-line {
-		stroke: @color;
-	}
 
-	.ct-area {
-		fill: @color;
-		fill-opacity: 0.5;
-	}
-}
-
-.highlight.action .button,
-.highlight.action p,
-.highlight.action h2 {
-	z-index: 1;
-	position: relative;
-}
 
 
 // .highlight.action {

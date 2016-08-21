@@ -9,122 +9,85 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 */
 
 /**
- * Add documentation icon
- */
-function rcp_download_meta_icon_documentation() {
-	?>
-
-	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-documentation.svg'; ?>" width="24" />
-
-	<?php
-}
-//add_action( 'edd_download_meta_documentation', 'rcp_download_meta_icon_documentation' );
-
-/**
- * Add last updated icon
- */
-function rcp_download_meta_icon_last_updated() {
-	?>
-
-	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-last-updated.svg'; ?>" width="24" />
-
-	<?php
-}
-//add_action( 'edd_download_meta_last_updated', 'rcp_download_meta_icon_last_updated' );
-
-/**
- * Add release date icon
- */
-function rcp_download_meta_icon_release_date() {
-	?>
-
-	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-released.svg'; ?>" width="24" />
-
-	<?php
-}
-//add_action( 'edd_download_meta_release_date', 'rcp_download_meta_icon_release_date' );
-
-/**
  * Add changelog icon
+ *
+ * @since 1.0.0
  */
-function rcp_download_meta_icon_changelog() {
+function affwp_theme_download_meta_icon_changelog() {
 	?>
 
 	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-changelog.svg'; ?>" width="24" />
 
 	<?php
 }
-add_action( 'edd_download_meta_changelog', 'rcp_download_meta_icon_changelog' );
-
-/**
- * Add version icon
- */
-function rcp_download_meta_icon_version() {
-	?>
-
-	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-version.svg'; ?>" width="24" />
-
-	<?php
-}
-//add_action( 'edd_download_meta_version', 'rcp_download_meta_icon_version' );
+add_action( 'edd_download_meta_changelog', 'affwp_theme_download_meta_icon_changelog' );
 
 /**
  * Downloads icon
+ *
+ * @since 1.0.0
  */
-function affwp_download_meta_icon_downloads() {
+function affwp_theme_download_meta_icon_downloads() {
 	?>
 
 	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-downloads.svg'; ?>" width="24" />
 
 	<?php
 }
-add_action( 'edd_download_meta_downloads', 'affwp_download_meta_icon_downloads' );
+add_action( 'edd_download_meta_downloads', 'affwp_theme_download_meta_icon_downloads' );
 
 /**
  * Active installs icon
+ *
+ * @since 1.0.0
  */
-function affwp_download_meta_icon_active_installs() {
+function affwp_theme_download_meta_icon_active_installs() {
 	?>
 
 	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-active-installs.svg'; ?>" width="24" />
 
 	<?php
 }
-add_action( 'edd_download_meta_active_installs', 'affwp_download_meta_icon_active_installs' );
+add_action( 'edd_download_meta_active_installs', 'affwp_theme_download_meta_icon_active_installs' );
 
 
 /**
  * Add-on type
+ *
+ * @since 1.0.0
  */
-function affwp_download_meta_icon_add_on_type() {
+function affwp_theme_download_meta_icon_add_on_type() {
 	?>
 
 	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-add-on-type.svg'; ?>" width="24" />
 
 	<?php
 }
-add_action( 'edd_download_meta_add_on_type', 'affwp_download_meta_icon_add_on_type' );
+add_action( 'edd_download_meta_add_on_type', 'affwp_theme_download_meta_icon_add_on_type' );
 
 
 /**
  * AffiliateWP version required
+ *
+ * @since 1.0.0
  */
-function affwp_download_meta_icon_version_required() {
+function affwp_theme_download_meta_icon_version_required() {
 	?>
 
 	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-version-required.svg'; ?>" width="24" />
 
 	<?php
 }
-add_action( 'edd_download_meta_version_required', 'affwp_download_meta_icon_version_required' );
+add_action( 'edd_download_meta_version_required', 'affwp_theme_download_meta_icon_version_required' );
 
 
 
 /**
  * Add new fields
+ *
  * @since 1.0.0
 */
-function rcp_download_meta_add_fields() {
+function affwp_theme_download_meta_add_fields() {
 	?>
 
 	<p><strong><?php _e( 'AffiliateWP Version Required', 'themedd' ); ?></strong></p>
@@ -152,14 +115,14 @@ function rcp_download_meta_add_fields() {
 	</p>
 
 <?php }
-add_action( 'edd_download_meta_add_fields', 'rcp_download_meta_add_fields' );
+add_action( 'edd_download_meta_add_fields', 'affwp_theme_download_meta_add_fields' );
 
 /**
  * Save the new fields
  *
  * @since 1.0.0
  */
-function rcp_download_meta_save( $fields ) {
+function affwp_theme_download_meta_save( $fields ) {
 
 	$new_fields = array(
 		'edd_download_meta_affwp_version_required',
@@ -170,14 +133,14 @@ function rcp_download_meta_save( $fields ) {
 	return array_merge( $fields, $new_fields );
 
 }
-add_filter( 'edd_download_meta_save', 'rcp_download_meta_save' );
+add_filter( 'edd_download_meta_save', 'affwp_theme_download_meta_save' );
 
 /**
  * Sanitize fields
  *
  * @since 1.0.0
  */
-function rcp_download_meta_santize( $new, $field ) {
+function affwp_theme_download_meta_santize( $new, $field ) {
 
 	if ( $field == 'edd_download_meta_developer_url' ) {
 	    $new = esc_url_raw( $_POST[ $field ] );
@@ -185,14 +148,14 @@ function rcp_download_meta_santize( $new, $field ) {
 
 	return $new;
 }
-add_filter( 'themedd_download_meta_save_fields', 'rcp_download_meta_santize', 10, 2 );
+add_filter( 'themedd_download_meta_save_fields', 'affwp_theme_download_meta_santize', 10, 2 );
 
 /**
  * Download last updated
  *
  * @since 1.0.0
  */
-function rcp_download_developer() {
+function affwp_theme_download_developer() {
 
     $developer     = get_post_meta( get_the_ID(), '_edd_download_meta_developer', true );
 	$developer_url = get_post_meta( get_the_ID(), '_edd_download_meta_developer_url', true );
@@ -215,14 +178,14 @@ function rcp_download_developer() {
 
 	<?php endif; ?>
 <?php }
-add_action( 'edd_download_meta', 'rcp_download_developer' );
+add_action( 'edd_download_meta', 'affwp_theme_download_developer' );
 
 /**
  * Changelog
  *
  * @since 1.0.0
  */
-function affwp_download_meta_changelog() {
+function affwp_theme_download_meta_changelog() {
 
 	$post         = get_post( get_the_ID() );
 	$post_slug    = $post->post_name;
@@ -263,17 +226,24 @@ function affwp_download_meta_changelog() {
 		<?php endif; ?>
 
 <?php }
-add_action( 'edd_download_meta', 'affwp_download_meta_changelog', 10 );
+add_action( 'edd_download_meta', 'affwp_theme_download_meta_changelog', 10 );
 
 // remove the version, we're going to build our own
-remove_action( 'edd_download_meta', array( edd_download_meta()->meta, 'version' ), 5 );
+$download_meta = function_exists( 'edd_download_meta' ) ? edd_download_meta() : false;
+
+if ( $download_meta ) {
+	remove_action( 'edd_download_meta', array( $download_meta->meta, 'version' ), 5 );
+}
+
 
 /**
  * Show the version number
+ *
+ * @since 1.0.0
  */
-function affwp_download_meta_version() {
+function affwp_theme_download_meta_version() {
 
-	$wp_repo_version = affwp_get_plugin_info( array( 'info' => 'version' ) );
+	$wp_repo_version = affwp_theme_get_plugin_info( array( 'info' => 'version' ) );
 
 	if ( $wp_repo_version ) {
 		$version = $wp_repo_version;
@@ -296,12 +266,14 @@ function affwp_download_meta_version() {
 
 
 <?php }
-add_action( 'edd_download_meta', 'affwp_download_meta_version', 1 );
+add_action( 'edd_download_meta', 'affwp_theme_download_meta_version', 1 );
 
 /**
  * Required AffiliateWP version
+ *
+ * @since 1.0.0
  */
-function affwp_download_meta_affwp_version_required() {
+function affwp_theme_download_meta_affwp_version_required() {
 
 	$old_meta = get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
 	$new_meta = get_post_meta( get_the_ID(), '_edd_download_meta_affwp_version_required', true );
@@ -322,18 +294,16 @@ function affwp_download_meta_affwp_version_required() {
 	<?php endif; ?>
 
 <?php }
-add_action( 'edd_download_meta', 'affwp_download_meta_affwp_version_required', 2 );
-
-
-
-
+add_action( 'edd_download_meta', 'affwp_theme_download_meta_affwp_version_required', 2 );
 
 /**
  * Get plugin information
+ *
+ * @since 1.0.0
  */
-function affwp_get_plugin_info( $args ) {
+function affwp_theme_get_plugin_info( $args ) {
 
-	if ( affwp_is_pro_add_on() ) {
+	if ( affwp_theme_is_pro_add_on() ) {
 		return;
 	}
 
@@ -383,12 +353,12 @@ function affwp_get_plugin_info( $args ) {
  *
  * @since 1.0.0
  */
-function affwp_download_meta_wp_repo() {
+function affwp_theme_download_meta_wp_repo() {
 
-	$downloads       = affwp_get_plugin_info( array( 'info' => 'downloaded' ) );
-	$active_installs = affwp_get_plugin_info( array( 'info' => 'active_installs' ) );
-	$last_updated    = affwp_get_plugin_info( array( 'info' => 'last_updated' ) );
-	$released        = affwp_get_plugin_info( array( 'info' => 'added' ) );
+	$downloads       = affwp_theme_get_plugin_info( array( 'info' => 'downloaded' ) );
+	$active_installs = affwp_theme_get_plugin_info( array( 'info' => 'active_installs' ) );
+	$last_updated    = affwp_theme_get_plugin_info( array( 'info' => 'last_updated' ) );
+	$released        = affwp_theme_get_plugin_info( array( 'info' => 'added' ) );
 
 ?>
 
@@ -441,4 +411,4 @@ function affwp_download_meta_wp_repo() {
 
 
 <?php }
-add_action( 'edd_download_meta', 'affwp_download_meta_wp_repo', 10 );
+add_action( 'edd_download_meta', 'affwp_theme_download_meta_wp_repo', 10 );

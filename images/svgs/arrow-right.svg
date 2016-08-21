@@ -1,12 +1,9 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g>
-        <g id="XMLID_2_" transform="matrix(0.956522,4.93038e-32,4.93038e-32,0.956522,0.521739,2.91304)">
-            <path d="M14.5,0.5L23.5,9.5L14.5,18.5" style="fill:none;stroke-width:1px;stroke:black;"/>
-        </g>
-        <g id="XMLID_1_" transform="matrix(0.956522,4.93038e-32,4.93038e-32,0.956522,0.521739,2.91304)">
-            <path d="M23.5,9.5L0.5,9.5" style="fill:none;stroke-width:1px;stroke:black;"/>
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(0.958323,0,0,0.958323,0.5,0.49976)">
+        <g>
+            <path d="M22.293,11.5L14.147,3.354C13.952,3.159 13.952,2.842 14.147,2.647C14.342,2.452 14.659,2.452 14.854,2.647L23.854,11.647C24.049,11.842 24.049,12.159 23.854,12.354L14.854,21.354C14.756,21.451 14.628,21.5 14.5,21.5C14.372,21.5 14.244,21.451 14.146,21.354C13.951,21.159 13.951,20.842 14.146,20.647L22.293,12.5L0.5,12.5C0.224,12.5 0,12.276 0,12C0,11.724 0.224,11.5 0.5,11.5L22.293,11.5Z" style="fill:black;"/>
         </g>
     </g>
 </svg>

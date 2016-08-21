@@ -35,7 +35,8 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          "style.css": "less/style.less"
+          "style.css": "less/style.less",
+		  "css/affiliatewp.min.css": "less/compatibility/affiliatewp.less"
         }
       }
     },

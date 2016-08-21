@@ -9,19 +9,14 @@ add_action( 'add_meta_boxes', 'affwp_theme_create_meta_boxes' );
 // Save metabox data.
 add_action( 'save_post', 'affwp_theme_save_meta_boxes', 10, 2 );
 
-
 /**
  * Add Integrations Meta Box.
  *
  * @since 1.0
  */
 function affwp_theme_create_meta_boxes() {
-
 	add_meta_box( 'affwp_theme_metabox', esc_html__( 'Integrations', 'affwp' ), 'affwp_theme_meta_box', array( 'post', 'download' ), 'side', 'core' );
-
 }
-
-
 
 /**
  * Display the integrations meta box.
@@ -34,9 +29,6 @@ function affwp_theme_meta_box( $post_object, $box ) { ?>
 
 	<?php
 		$checked = get_post_meta( $post_object->ID, '_affwp_integration_all', true );
-
-	//$checked = in_array( $integration_id, $current_ids ) ? true : false;
-
 	?>
 	<p>
 		<label for="integrations-all">
@@ -51,16 +43,10 @@ function affwp_theme_meta_box( $post_object, $box ) { ?>
 	 	'posts_per_page'   => -1,
 	 	'post_type'        => 'integration',
 	 	'post_status'      => 'publish',
-	 //	'suppress_filters' => true
 	 );
 	 $integration_posts = get_posts( $args );
 
-//	 var_dump( $integration_posts );
-
-
 	 $integrations = array();
-
-//	 var_dump( $integration_posts );
 
 	 if ( $integration_posts ) {
 		 foreach ($integration_posts as $key => $integration_post ) {
@@ -68,21 +54,8 @@ function affwp_theme_meta_box( $post_object, $box ) { ?>
 		 }
 	 }
 
-//	 var_dump( $integrations );
-
-    // get array of all posts in integrations post type
-    // $integrations = array(
-    //     '84332' => 'Easy Digital Downloads',
-    //     '84333' => 'WooCommerce'
-    // );
-
     if ( $integrations ) {
         foreach ( $integrations as $key => $integration_id ) {
-
-		//	var_dump( get_the_title( $integration_id ) );
-
-		//	var_dump( $post_object );
-		//	$checked_integrations = get_post_meta( $post_object->ID, '_affwp_integration', true );
 
 			$current_ids = get_post_meta( $post_object->ID, '_affwp_integration' );
 
@@ -139,8 +112,6 @@ function affwp_theme_save_meta_boxes( $post_id, $post ) {
 	// Loop through
 	foreach ( $fields as $field ) {
 
-	//	var_dump( $field );
-
 		// create the meta key
 		$meta_key = '_' . $field;
 
@@ -149,27 +120,13 @@ function affwp_theme_save_meta_boxes( $post_id, $post ) {
 			// Integration array that is posted
 			$integrations = isset( $_POST['affwp_integration'] ) ? $_POST['affwp_integration'] : array();
 
-
-
 			// Get an array of the current IDs
 			$current_ids = get_post_meta( $post_id, $meta_key );
-
-		//	var_dump( $integrations );
 
 			// integrations array
 			if ( $integrations ) {
 
 				$ids_to_remove = array_diff( $current_ids, $integrations );
-
-				// echo 'current IDs in DB:';
-				// var_dump( $current_ids );
-				//
-				// echo 'IDs to remove:';
-				// var_dump( $ids_to_remove );
-				//
-				//
-				// echo 'posted integration IDs';
-				// var_dump( $integrations );
 
 				if ( $ids_to_remove ) {
 					foreach( $ids_to_remove as $id ){
@@ -177,12 +134,8 @@ function affwp_theme_save_meta_boxes( $post_id, $post ) {
 					}
 				}
 
-
 				// loop through each integration
 				foreach ( $integrations as $integration_id ) {
-
-					// echo 'the current integration ID posted:';
-					// var_dump( $integration_id );
 
 					// Integration ID hasn't been added yet, let's add it
 					if ( ! in_array( $integration_id, $current_ids ) ) {
@@ -212,10 +165,6 @@ function affwp_theme_save_meta_boxes( $post_id, $post ) {
 		}
 
 
-
-
 	}
-
-//	wp_die();
 
 }

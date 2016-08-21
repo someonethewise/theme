@@ -7,7 +7,7 @@
  */
 function affwp_theme_footer_menu() {
 ?>
-<?php if ( ! ( is_404() || edd_is_failed_transaction_page() ) ) : ?>
+<?php if ( ! ( is_404() || ( function_exists( 'edd_is_failed_transaction_page' ) && edd_is_failed_transaction_page() ) ) ) : ?>
 		<div id="mascot-2"></div>
 		<?php endif; ?>
 
@@ -24,7 +24,7 @@ function affwp_theme_footer_menu() {
 								<li><a href="<?php echo site_url( 'pricing' ); ?>">Pricing</a></li>
 								<li><a href="<?php echo site_url( 'features' ); ?>">All features</a></li>
 								<li><a href="<?php echo site_url( 'screenshots' ); ?>">Screenshots</a></li>
-								<li><a href="<?php echo site_url( 'add-ons' ); ?>">Add-ons</a></li>
+								<li><a href="<?php echo site_url( 'addons' ); ?>">Add-ons</a></li>
 								<li><a href="<?php echo site_url( 'testimonials' ); ?>">Testimonials</a></li>
 								<li><a href="<?php echo get_stylesheet_directory_uri() . '/changelog.php'; ?>" id="affwp-changelog" data-effect="mfp-move-from-bottom">Changelog</a></li>
 							</ul>

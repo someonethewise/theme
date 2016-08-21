@@ -85,7 +85,7 @@ img.profile {
 .faqs-new .faq {
 	background: @light-grey;
 	margin: 0 1rem 2rem;
-//	border-radius: 4px;
+	border-radius: @border-radius;
     padding: 2rem;
 
     p:last-child {
@@ -118,6 +118,12 @@ img.profile {
 // EDD checkout
 .edd-checkout .site-branding {
     margin: 0 auto;
+	padding: 0;
+}
+
+// pro add-ons table on account page
+#pro-add-ons .subtitle {
+	font-size: 1rem;
 }
 
 // homepage
@@ -212,10 +218,6 @@ body.screenshots {
 
 
 
-// .feature-highlights .slide-1 {
-//     padding-top: 4rem;
-// }
-
 .slide-2 {
     max-width: 1400px;
 }
@@ -226,49 +228,7 @@ body.screenshots {
 
 
 
-// testimonials
-section.testimonials {
-    background: @light-grey;
-}
 
-section.testimonials blockquote,
-section.testimonials blockquote p {
-    color: @body-text-color;
-}
-
-section.testimonials blockquote {
-    margin: 0;
-    padding-left: 0;
-    border-left: none;
-}
-
-.testimonials {
-    position: relative;
-}
-
-.testimonials .wrapper {
-    position: relative;
-}
-
-.testimonials .avatar {
-    border-radius: 100%;
-    margin-bottom: 1rem;
-}
-
-.testimonials .flickity-page-dots {
-    margin-top: 2rem;
-}
-
-// slider
-.gallery-cell {
-    width: 100%;
-}
-
-
-.testimonials .gallery-cell {
-    text-align: center;
-    padding-bottom: 4rem;
-}
 
 .title-rule {
     text-transform: uppercase;

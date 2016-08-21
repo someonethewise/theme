@@ -12,3 +12,16 @@ h2 a,
 h2 a:hover {
 	border-bottom: none;
 }
+
+// https://helpx.adobe.com/typekit/using/font-events.html
+.wf-loading {
+	h1, h2, h3, h4, li, span, p:not(.site-title), .button, #site-navigation {
+		visibility: hidden;
+	}
+}
+
+.wf-active, .wf-inactive {
+	h1, h2, h3, h4, li, span, p:not(.site-title), .button, #site-navigation {
+		visibility: visible;
+	}
+}

@@ -1,11 +1,11 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g>
-        <path d="M8.5,12.3C6.6,13.7 6.8,16.3 7.5,17.4C8,17 8.4,16.5 8.5,15.9C10.2,16.6 11.1,17.9 11.1,19.5C11.1,21.8 9.3,23.6 7,23.6C4.7,23.6 2.9,21.8 2.9,19.5C2.9,16.1 5.3,13 8.5,12.3Z" style="fill:none;stroke-width:1px;stroke:rgb(227,79,67);"/>
-        <path d="M7.6,19C7.3,19.9 8.6,20.8 8.6,21.9C8.6,22.8 7.9,23.5 7,23.5C6.1,23.5 5.4,22.8 5.4,21.9C5.3,20.6 6.3,19.3 7.6,19Z" style="fill:none;stroke-width:1px;stroke:rgb(227,79,67);"/>
-        <path d="M3.3,13.8L2.3,12.8L14.6,0.5L21.8,7.7L12.4,17.1" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:rgb(227,79,67);"/>
-        <path d="M10.647,8.769C11.428,7.989 12.695,7.988 13.476,8.769C14.256,9.549 14.256,10.817 13.476,11.597C12.696,12.378 11.428,12.378 10.648,11.598C9.867,10.817 9.867,9.55 10.647,8.769Z" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:rgb(227,79,67);"/>
-        <path d="M13.1,4.8L14.6,3.4" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:rgb(227,79,67);"/>
+    <g transform="matrix(0.952381,0,0,0.952381,0.52381,0.52381)">
+        <path d="M8.5,12.3C6.6,13.7 6.8,16.3 7.5,17.4C8,17 8.4,16.5 8.5,15.9C10.2,16.6 11.1,17.9 11.1,19.5C11.1,21.8 9.3,23.6 7,23.6C4.7,23.6 2.9,21.8 2.9,19.5C2.9,16.1 5.3,13 8.5,12.3Z" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+        <path d="M7.6,19C7.3,19.9 8.6,20.8 8.6,21.9C8.6,22.8 7.9,23.5 7,23.5C6.1,23.5 5.4,22.8 5.4,21.9C5.3,20.6 6.3,19.3 7.6,19Z" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+        <path d="M3.3,13.8L2.3,12.8L14.6,0.5L21.8,7.7L12.4,17.1" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:rgb(96,186,178);"/>
+        <path d="M10.647,8.769C11.428,7.989 12.695,7.988 13.476,8.769C14.256,9.549 14.256,10.817 13.476,11.597C12.696,12.378 11.428,12.378 10.648,11.598C9.867,10.817 9.867,9.55 10.647,8.769Z" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:rgb(96,186,178);"/>
+        <path d="M13.1,4.8L14.6,3.4" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:rgb(96,186,178);"/>
     </g>
 </svg>

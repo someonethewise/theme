@@ -12,6 +12,7 @@
 }
 
 
+
 .grid-item,
 .edd_download {
     display: -webkit-flex;
@@ -21,11 +22,24 @@
 
 .grid-item-inner {
     padding: 1.5rem;
+	background: #fff;
+}
 
+.grid-item-inner h3 a {
+	color: @grid-item-inner-link-color;
+	font-size: @grid-item-inner-font-size;
+
+	&:hover {
+		color: @grid-item-inner-link-hover-color;
+	}
 }
 
 .edd_download {
 	margin-bottom: 2rem;
+}
+
+.grid-item-inner .post-thumbnail {
+	margin: 0;
 }
 
 .grid-item-inner,
@@ -44,9 +58,9 @@
     font-size: 1rem;
 }
 
-.grid-item-inner p {
-    font-size: 1rem;
-}
+// .grid-item-inner p {
+//     font-size: 1rem;
+// }
 
 .grid-item-title {
     font-size: 1rem;
@@ -75,10 +89,7 @@
 
 
 
-.overlay footer span {
-    padding: 1rem 1.5rem;
-    display: none;
-}
+
 
 // .grid-item.woocommerce .overlay {
 //     a { background: #a46497; }
@@ -97,10 +108,9 @@
 }
 
 .overlay footer span {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     display: none;
 }
-
 
 
 

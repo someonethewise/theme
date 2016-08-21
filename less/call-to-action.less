@@ -1,0 +1,180 @@
+// generic call to action
+.action {
+	background: @secondary-color;
+	// make the button text slightly larger
+	.button {
+		font-size: 1.5rem;
+		border-radius: @border-radius;
+		border-color: #fff;
+	}
+
+	h1 {
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+	}
+
+	// prevent flickering in Safari
+	h1, p, .button {
+		position: relative;
+		z-index: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+	}
+
+	.header, p {
+        color: #fff;
+    }
+
+	p { margin-bottom: 0; }
+
+	.button:hover {
+	//	box-shadow: 0 0 0 2px #fff;
+		background: #fff;
+		color: @secondary-color;
+	}
+	
+}
+
+
+// get started call to action
+.cta-get-started {
+	// graph styling
+	fill: lighten( @secondary-color, 5% );
+	position: relative;
+
+	.circle-blip {
+		border: 3px solid darken( @secondary-color, 10% );
+		-webkit-border-radius: 100%;
+		border-radius: 100%;
+		height: 30px;
+		width: 30px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -15px 0 0 -15px;
+		opacity: 0;
+	}
+
+	.circle-blip.blip-hover {
+		stroke-width: 15px;
+		fill: darken( @secondary-color, 10% );
+		-webkit-animation: blip 1s ease-out;
+		animation: blip 1s ease-out;
+
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+	}
+
+	.button,
+	p,
+	h1 {
+		z-index: 1;
+		position: relative;
+	}
+
+	.ct-series {
+		@color: darken( @secondary-color, 10% );
+
+		.ct-circle {
+			stroke: @color;
+		}
+
+		.ct-line {
+			stroke: @color;
+		}
+
+		.ct-area {
+			fill: @color;
+			fill-opacity: 0.5;
+		}
+	}
+}
+
+.cta-get-started-bottom {
+	p {
+		margin-bottom: 0;
+
+	}
+
+	svg {
+		margin-right: 0.5rem;
+	}
+
+	svg, p {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	a {
+		font-weight: 500;
+	}
+
+}
+
+// pricing calculator
+.pricing-calculator {
+
+//	background: @secondary-color url('images/svgs/original/calculator.svg') 0 0 no-repeat;
+	svg {
+		margin-right: 0.5rem;
+		float: left;
+	}
+
+	svg path {
+		stroke: #AAFFF2 !important;
+	}
+
+	.header, p {
+		display: inline-block;
+	}
+
+
+
+}
+
+#pricing-calculator {
+
+	.gfield {
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	ul.gform_fields {
+		list-style-type: decimal;
+
+		li {
+			border-bottom: 2px solid @light-grey;
+		}
+	}
+
+	.gfield_required {
+		display: none;
+	}
+
+	input, select {
+		width: 200px;
+	}
+
+	label {
+		color: @secondary-color;
+		font-weight: 500;
+	}
+
+	.mfp-close {
+		color: #fff !important;
+	}
+
+	#pricing-result {
+		background: @secondary-color;
+		margin: -4rem -4rem 2rem -4rem;
+		padding: 4rem;
+
+
+		p, h2 {
+			color: #fff;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
