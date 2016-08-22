@@ -420,6 +420,16 @@ function affwp_themedd_call_to_action() {
 }
 add_action( 'themedd_content_end', 'affwp_themedd_call_to_action' );
 
+/**
+ * Determine the value of the pro add-ons included with the Professional or Ultimate license
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_pro_add_ons_value() {
+	return 60 * affwp_theme_get_add_on_count( 'pro' );
+}
+
+
 
 /**
  * Pricing table
@@ -468,12 +478,17 @@ function affwp_theme_pricing_table() {
 								<span class="price"><span class="currency">$</span>449</span>
 								<span class="length">one-time payment</span>
 							</li>
-							<li class="feature"><strong><a href="#modal-pro-add-ons" class="popup-content link-highlight" data-effect="mfp-move-from-bottom"><?php echo $count_pro_add_ons; ?> pro add-ons</a></strong><br/>+ any we release in the future!</li>
+							<li class="feature price">
+								<a href="#modal-pro-add-ons" class="popup-content link-highlight" data-effect="mfp-move-from-bottom"><strong><?php echo $count_pro_add_ons; ?> pro add-ons</strong></a>
+								<span class="add-on-value">(a massive <span>$<?php echo affwp_theme_pro_add_ons_value(); ?></span> value!)</span>
+							</li>
+							<li class="feature"><span class="plus">PLUS</span> all future pro add-ons</li>
 							<li class="feature"><strong><a href="#modal-offical-free-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $count_official_free_add_ons; ?> official free add-ons</a></strong></li>
                             <li class="feature"><strong>Lifetime plugin updates</strong></li>
                             <li class="feature"><strong>Lifetime email support</strong></li>
 							<li class="feature"><strong>Unlimited sites</strong></li>
-							<li class="feature">All features included</li>
+							<li class="feature">All core features included</li>
+
 
                         </ul>
 
@@ -525,12 +540,16 @@ function affwp_theme_pricing_table() {
 										<span class="length">per year</span>
 								</li>
 
-								<li class="feature"><strong><a href="#modal-pro-add-ons" class="popup-content link-highlight" data-effect="mfp-move-from-bottom"><?php echo $count_pro_add_ons; ?> pro add-ons</a></strong><br/>+ any we release in the future!</li>
+								<li class="feature price">
+									<a href="#modal-pro-add-ons" class="popup-content link-highlight" data-effect="mfp-move-from-bottom"><strong><?php echo $count_pro_add_ons; ?> pro add-ons</strong></a>
+									<span class="add-on-value">(a massive <span>$<?php echo affwp_theme_pro_add_ons_value(); ?></span> value!)</span>
+								</li>
+								<li class="feature"><span class="plus">PLUS</span> all future pro add-ons</li>
 								<li class="feature"><strong><a href="#modal-offical-free-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $count_official_free_add_ons; ?> official free add-ons</a></strong></li>
 	                            <li class="feature">Plugin updates *</li>
 	                            <li class="feature">Email support *</li>
 								<li class="feature"><strong>Unlimited sites</strong></li>
-								<li class="feature">All features included</li>
+								<li class="feature">All core features included</li>
 	                        </ul>
 
 							<div class="footer">
@@ -571,7 +590,7 @@ function affwp_theme_pricing_table() {
 	                            <li class="feature">Plugin updates *</li>
 	                            <li class="feature">Email support *</li>
 								<li class="feature">3 sites</li>
-								<li class="feature">All features included</li>
+								<li class="feature">All core features included</li>
 	                        </ul>
 
 							<div class="footer">
@@ -613,7 +632,7 @@ function affwp_theme_pricing_table() {
 								<li class="feature">Plugin updates *</li>
 	                            <li class="feature">Email support *</li>
 								<li class="feature">1 site</li>
-								<li class="feature">All features included</li>
+								<li class="feature">All core features included</li>
 	                        </ul>
 
 							<div class="footer">
@@ -636,7 +655,7 @@ function affwp_theme_pricing_table() {
 
 			<div class="row center-sm">
 				<div class="col-xs-12 col-sm-10">
-					<p class="mb-xs-0">* Plugin updates and email support are provided for the duration of your current subscription. Renewals discounted at 30%. Pro add-ons are only available with Professional and Ultimate licenses. <?php if( is_page('pricing') ) { echo 'See FAQs below for details.'; } ?> All purchases are subject to our terms of use.</p>
+					<p class="mb-xs-0">* Plugin updates and email support are provided for the duration of your current subscription. Renewals discounted at 30%. <br/><span class="add-on-clause">Pro add-ons are only available with Professional and Ultimate licenses.</span> <?php if( is_page('pricing') ) { echo 'See FAQs below for details.'; } ?> All purchases are subject to our terms of use.</p>
 				</div>
 			</div>
 
