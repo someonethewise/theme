@@ -245,17 +245,9 @@ jQuery('.feature-highlights-slider').on('setPosition', function () {
 ?>
 
 <?php if ( $gallery ) : ?>
-<section class="container-fluid pv-xs-2 pv-lg-2 screenshots aligncenter">
-<div class="wrapper">
-	<h1>See AffiliateWP</h1>
-	<p class="subtitle"><a href="<?php echo site_url( 'screenshots'); ?>" class="button outline secondary">View all <?php echo affwp_theme_screenshot_count(); ?> screenshots</a></p>
-
-	<?php
-		// show 3 images from the screenshots page
-		$gallery_ids = implode( ', ', wp_list_pluck( $gallery, 'ID' ) );
-		echo do_shortcode( '[gallery size="thumbnail" ids="' . $gallery_ids . '"]' );
-	?>
-
+<section class="container-fluid pv-xs-2 pv-lg-4 screenshots aligncenter">
+	<div class="wrapper">
+		<a href="<?php echo site_url( 'screenshots'); ?>" class="button large outline secondary">See all <?php echo affwp_theme_screenshot_count(); ?> screenshots</a>
     </div>
 </section>
 <?php endif; ?>
@@ -265,7 +257,7 @@ jQuery('.feature-highlights-slider').on('setPosition', function () {
  * Features
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-lg-8 features">
+<section class="container-fluid pv-xs-2 pv-lg-4 features">
 	<div class="wrapper">
 
 		<div class="row mb-xs-2 center-xs aligncenter">

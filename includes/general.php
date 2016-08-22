@@ -22,7 +22,7 @@ function affwp_theme_screenshot_count() {
 	$args = array(
 		'post_mime_type' => 'image',
 		'numberposts'    => -1,
-		'post_parent'    => 84497,
+		'post_parent'    => $page->ID,
 		'post_type'      => 'attachment',
 	);
 
