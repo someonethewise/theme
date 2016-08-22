@@ -21,12 +21,11 @@ add_filter( 'gform_ajax_spinner_url', 'affwp_theme_gform_ajax_spinner_url', 10, 
  *
  * @since 1.0.0
  */
-add_filter( 'gform_submit_button_1', '__return_false' );
+add_filter( 'gform_submit_button_' . affwp_theme_pricing_calculator_form_id(), '__return_false' );
 
 /**
  * Get form ID of pricing calculator
- * @todo make dynamic
  */
 function affwp_theme_pricing_calculator_form_id() {
-	return 1;
+	return RGFormsModel::get_form_id( 'AffiliateWP Pricing Calculator' );
 }

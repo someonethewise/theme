@@ -147,10 +147,8 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 		<?php
 
-			$form_id = RGFormsModel::get_form_id( 'AffiliateWP Pricing Calculator' );
-
 			if ( function_exists( 'gravity_form' ) ) {
-				gravity_form( $form_id, false, false, false, '', true );
+				gravity_form( affwp_theme_pricing_calculator_form_id(), false, false, false, '', true );
 			}
 		?>
 
@@ -173,9 +171,10 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 	<script>
 		jQuery(document).ready(function($) {
+			var formID = '<?php echo affwp_theme_pricing_calculator_form_id(); ?>';
 
-			var licenseType = jQuery( "#input_<?php echo $form_id;?>_3" ).find(":selected").text();
-			var referralSaleCount = jQuery("#input_<?php echo $form_id;?>_9").val();
+			var licenseType = jQuery( "#input_" + formID + "_3" ).find(":selected").text();
+			var referralSaleCount = jQuery("#input_" + formID + "_9").val();
 			var roundedReferralSaleCount = Math.round(referralSaleCount);
 
 			var saleText;
@@ -200,9 +199,9 @@ function affwp_theme_modal_content_pricing_calculator() {
 			jQuery('input[name="affwp_calculation"]').html(roundedReferralSaleCount);
 
 			// update text when the answers have been changed
-			jQuery( "#input_<?php echo $form_id;?>_9" ).change(function() {
+			jQuery( "#input_" + formID + "_9" ).change(function() {
 
-				var referralSaleCount = jQuery("#input_<?php echo $form_id;?>_9").val();
+				var referralSaleCount = jQuery("#input_" + formID + "_9").val();
 				var roundedReferralSaleCount = Math.round(referralSaleCount);
 
 				if ( roundedReferralSaleCount === 1 ) {
@@ -213,7 +212,7 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 				var referralSaleCount = jQuery(this).val();
 				var roundedReferralSaleCount = Math.round(referralSaleCount);
-				var licenseType = jQuery( "#input_<?php echo $form_id;?>_3" ).find(":selected").text();
+				var licenseType = jQuery( "#input_" + formID + "_3" ).find(":selected").text();
 
 				jQuery('.rounded-referral-sale-count').html(roundedReferralSaleCount + ' ' + saleText );
 				jQuery('.referral-sale-count').html(referralSaleCount + ' ' + saleText);
@@ -228,7 +227,7 @@ function affwp_theme_modal_content_pricing_calculator() {
 			gform.addFilter( 'gform_calculation_formula', function( formula, formulaField, formId, calcObj ) {
 
 				// modify the formula if flat rate is chosen
-				if ( formId == '1' && jQuery('#input_<?php echo $form_id;?>_4').val() === 'Flat dollar amount ($)' ) {
+				if ( formId == '1' && jQuery("#input_" + formID + "_4").val() === 'Flat dollar amount ($)' ) {
 
 					// {Which license are you interested in?:3} / ( {Average price of your product/s:1} - ( ( {Average price of your product/s:1} * {How much commission will your affiliates earn:2} ) / 100 ) )
 					formula = '{:3} / ( {:1} - {:2} )';
