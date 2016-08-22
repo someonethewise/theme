@@ -1,11 +1,12 @@
-// .post-type-archive-integration #content {
-//     background: @light-grey;
-// }
+// Integrations
+
+.single-integration img[src$=".svg"] {
+	width: 100%;
+}
 
 .grid-item.easy-digital-downloads .overlay {
     a {
         background: #2794da;
-    //    box-shadow: 0px 0px 0px 10px darken( #2794da, 5% ) inset;
     }
 
     a, p { color: #fff; }
@@ -16,7 +17,6 @@
 .grid-item.woocommerce .overlay {
     a {
         background: #a46497;
-    //    box-shadow: 0px 0px 0px 10px darken( #a46497, 5% ) inset;
     }
 
     a, p { color: #fff; }
@@ -25,14 +25,9 @@
 
 }
 
-
-
-
-
 .grid-item.ninja-forms .overlay {
     a {
         background: #ED494D;
-    //    box-shadow: 0px 0px 0px 10px darken( #365666, 5% ) inset;
     }
 
     a, p { color: #fff; }
@@ -129,4 +124,11 @@
 
     a, p { color: #fff; }
     footer span { background: darken( #3A3B3D, 5% ); }
+}
+
+.grid-item.lifterlms .overlay {
+    a { background: #2295ff; }
+
+    a, p { color: #fff; }
+    footer span { background: darken( #2295ff, 5% ); }
 }
