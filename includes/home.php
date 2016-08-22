@@ -30,7 +30,7 @@ function affwp_theme_home_hero_section() {
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-lg-12 pv-xs-2 pv-sm-8 aligncenter">
 						<h1 class="ph-lg-5 mb-xs-2">Affiliate marketing that works</h1>
-						<p class="intro">AffiliateWP is an affiliate marketing plugin for WordPress that helps you run a succesful affiliate program.</p>
+						<p class="intro">AffiliateWP is an affiliate marketing plugin for WordPress that helps you run a successful affiliate program.</p>
 						<div id="cta">
 							<a href="#section-pricing" class="scroll button large">Start Earning More</a>
 						</div>
