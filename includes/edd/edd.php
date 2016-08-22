@@ -31,7 +31,7 @@ function affwp_theme_edd_profile_updated( $user_id, $userdata ) {
 	wp_safe_redirect( add_query_arg( 'updated', 'true', '#tabs=3' ) );
 	exit;
 }
-//add_action( 'edd_user_profile_updated', 'affwp_theme_edd_profile_updated', 10, 2 );
+add_action( 'edd_user_profile_updated', 'affwp_theme_edd_profile_updated', 10, 2 );
 
 /**
  * Redirect to the second account tab when clicking the update payment method link
