@@ -8,6 +8,26 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 /**
+ * Remove Help Scout Beacon from EDD checkout
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_remove_beacon() {
+
+	if (
+		is_front_page() ||
+		edd_is_checkout() ||
+		is_page( 'pricing' ) ||
+		is_page( 'account' )
+	) {
+		wp_dequeue_script( 'beacon' );
+	}
+
+}
+add_action( 'wp_enqueue_scripts', 'affwp_theme_remove_beacon' );
+
+
+/**
  * Remove header on checkout page
  *
  * @since 1.0.0
