@@ -57,3 +57,23 @@ function affwp_theme_twitter_scripts() {
 
 }
 add_action( 'wp_footer', 'affwp_theme_twitter_scripts' );
+
+/**
+ * Remove Help Scout Beacon from EDD checkout
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_remove_beacon() {
+
+	if (
+		is_front_page() ||
+		edd_is_checkout() ||
+		is_page( 'pricing' ) ||
+		is_page( 'account' ) ||
+		is_page( 'support' )
+	) {
+		wp_dequeue_script( 'beacon' );
+	}
+
+}
+add_action( 'wp_enqueue_scripts', 'affwp_theme_remove_beacon' );
