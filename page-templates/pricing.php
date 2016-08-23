@@ -10,7 +10,7 @@ get_header(); ?>
 		array(
 			'title'    => 'Start making more money, risk-free.',
 			'subtitle' => 'Purchase in confidence with our 30 Day Money Back Guarantee ' . affwp_show_refund_policy_link(),
-			'classes'  => array( 'mb-lg-4', 'something-else' )
+			'classes'  => array( 'mb-sm-4' )
 		)
 	);
 ?>

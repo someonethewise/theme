@@ -24,27 +24,21 @@ textarea {
 	border-radius: @border-radius;
 }
 
-
-
+// anchor links displayed inside notices, eg support form
+.notice a {
+	color: #fff;
+	text-decoration: underline;
+}
 
 .button.secondary,
 .button.secondary:focus {
-//	background: @secondary-color;
 	border-color: @secondary-color;
 }
 
 .button.secondary:hover {
-//	background: darken( @secondary-color, 5% );
 	border-color: darken( @secondary-color, 5% );
 }
 
-// #main {
-// 	padding-top: 0;
-// }
-
-// #secondary {
-// 	padding-right: 0;
-// }
 
 .button.outline {
 	background: transparent;
@@ -110,11 +104,6 @@ section.used-by .col-xs img {
 	border-bottom: 1px solid darken( @light-grey, 3% );
 }
 
-.highlight {
-    // border-top: 1px solid darken( @light-grey, 2% );
-    // border-bottom: 1px solid darken( @light-grey, 2% );
-}
-
 .highlight-alt {
 	// #60B9B3
 	// #6FC4BC
@@ -126,8 +115,6 @@ section.used-by .col-xs img {
 .site-header-menu .nav-cart {
     padding: 1rem;
 }
-
-
 
 .site-header-wrap {
     display: -webkit-flex;
@@ -161,13 +148,10 @@ section.used-by .col-xs img {
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
+
 // arrow
 
-
 @media only screen and ( min-width: @screen-lg-min ) {
-
-
-
 
 	.site-title {
 	    padding: 40px 0 0.5rem;
