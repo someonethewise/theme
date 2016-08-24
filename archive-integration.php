@@ -8,7 +8,7 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-4">
-    <div class="wrapper wide container-fluid">
+    <div class="wrapper wide container-fluid mb-xs-2 mb-lg-4">
 		<div class="grid row has-overlay">
 			<?php while ( have_posts() ) : the_post();
 			global $post;
@@ -39,7 +39,19 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 		</div>
+
+
+
     </div>
+
+	<div class="wrapper">
+		<div class="row center-xs aligncenter">
+			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+				<p>Is your eCommerce, membership or form plugin not listed? We may still support it through our generic referral tracking script. <a href="http://docs.affiliatewp.com/article/66-generic-referral-tracking-script" target="_blank">Learn more &rarr;</a></p>
+			</div>
+		</div>
+	</div>
+
 </section>
 <?php endif; ?>
 
