@@ -243,30 +243,108 @@ function affwp_theme_upgrade_or_purchase_modal() {
  */
 function affwp_theme_edd_download_pro_add_on() {
 
-	if ( ! has_term( 'pro', 'download_category' ) || ! edd_get_download_files( get_the_ID() ) ) {
-		return;
-	}
-
 	?>
 	<aside>
-		<?php
+		<?php if ( has_term( 'pro', 'download_category' ) && edd_get_download_files( get_the_ID() ) ) :
+
 			$has_ultimate_license     = in_array( 4, affwp_theme_get_users_price_ids() );
 			$has_professional_license = in_array( 3, affwp_theme_get_users_price_ids() );
 
 			if ( $has_ultimate_license || $has_professional_license ) : ?>
-				<a href="<?php echo affwp_theme_get_add_on_download_url( get_the_ID() ); ?>" class="button">Download Now</a>
+				<a href="<?php echo affwp_theme_get_add_on_download_url( get_the_ID() ); ?>" class="button download">Download Now</a>
 			<?php else :  ?>
-				<a href="#no-access" class="button wide popup-content" data-effect="mfp-move-from-bottom">Download Now</a>
+				<a href="#no-access" class="button wide popup-content download" data-effect="mfp-move-from-bottom">Download Now</a>
 				<?php affwp_theme_upgrade_or_purchase_modal();
 			endif;
-		?>
+
+			?>
+
+		<?php endif; ?>
+
+		<?php do_action( 'download_add_on_end' ); ?>
+
 	</aside>
 <?php
 }
 add_action( 'themedd_sidebar_download', 'affwp_theme_edd_download_pro_add_on' );
 
+/**
+ * Supported integrations button
+ * Shows on a single download page
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_edd_download_integrations() {
 
+	// get the integrations
+	$integrations = affwp_theme_get_integrations( get_the_ID() );
 
+	if ( ! $integrations ) {
+		return;
+	}
+
+	?>
+	<a id="button-supported-integrations" href="#supported-integrations" class="button wide outline secondary popup-content" data-effect="mfp-move-from-bottom">View supported integrations</a>
+	<?php affwp_theme_add_on_supported_integrations_modal(); ?>
+<?php
+}
+add_action( 'download_add_on_end', 'affwp_theme_edd_download_integrations' );
+
+/**
+ * Supported integrations modal window
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_add_on_supported_integrations_modal() {
+
+	// get the integrations
+	$integrations = affwp_theme_get_integrations( get_the_ID() );
+
+	/**
+	 * Prevent subtitles from showing in the modal
+	 */
+	add_filter( 'subtitle_view_supported', '__return_false' );
+
+	?>
+	<div id="supported-integrations" class="popup wide entry-content mfp-with-anim mfp-hide">
+
+		<h1 class="aligncenter">Supported Integrations</h1>
+		<p class="aligncenter"><?php echo get_the_title(); ?> supports the following integrations.</p>
+
+		<?php if ( $integrations ) : ?>
+        <div class="row grid row mb-xs-2 mb-sm-4 has-overlay">
+
+            <?php foreach ( $integrations as $post_id ) : ?>
+
+                <div class="grid-item col-xs-12 col-sm-6 mb-xs-2 mb-sm-0 type-integration <?php echo get_post( $post_id )->post_name; ?>">
+                    <div class="grid-item-inner">
+
+						<div class="grid-item-image2">
+						<?php echo get_the_post_thumbnail( $post_id, 'post-thumbnail' ); ?>
+						</div>
+
+    					<div class="overlay">
+    						<a href="<?php echo get_the_permalink( $post_id );?>">
+    							<?php if ( get_the_excerpt($post_id) ) : ?>
+    							<p><?php echo get_the_excerpt( $post_id); ?></p>
+    							<?php endif; ?>
+
+    							<footer>
+    								<span>Learn more</span>
+    							</footer>
+    						</a>
+    					</div>
+
+    				</div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+		<?php endif; ?>
+
+	</div>
+
+	<?php
+}
 
 /**
  * Remove pricing from pro add-on single download pages

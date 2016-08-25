@@ -45,6 +45,58 @@ function affwp_theme_get_download_id() {
 }
 
 /**
+ * Get supported integrations for a specific download
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_get_integrations( $download_id = 0 ) {
+
+	if ( ! $download_id ) {
+		return false;
+	}
+
+	// does it support all integrations?
+	$all_integrations = get_post_meta( $download_id, '_affwp_integration_all', true );
+
+	if ( $all_integrations ) {
+		return affwp_theme_get_all_integrations();
+	}
+
+	$integrations = get_post_meta( $download_id, '_affwp_integration' );
+
+	if ( $integrations ) {
+		return $integrations;
+	}
+
+	return false;
+
+}
+
+/**
+ * Get an array of all integration IDs
+ *
+ * @since 1.0.0
+ * @return array $integrations
+ */
+function affwp_theme_get_all_integrations() {
+
+	$args = array(
+		'posts_per_page' => -1,
+		'post_type'      => 'integration',
+		'orderby'        => 'menu_order',
+		'order'          => 'ASC'
+	);
+
+	$integrations = get_posts( $args );
+
+	if ( $integrations ) {
+		return wp_list_pluck( $integrations, 'ID' );
+	}
+
+	return false;
+}
+
+/**
  * Get number of add-ons in the pro add-ons category
  * Excludes any add-ons that are coming soon
  *
