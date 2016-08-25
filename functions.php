@@ -31,7 +31,6 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'pricing.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'icons.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'twitter.php' );
-	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'meta-boxes.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'footer.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'features.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'compatibility.php' );
