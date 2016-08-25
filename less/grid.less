@@ -40,15 +40,19 @@
 		display: -webkit-flex;
 		display: flex;
         height: auto;
-
     }
 }
 
 // tweet slider only
-
 .tweet-slider .slick-track .slick-slide {
 	-webkit-flex-flow: column nowrap;
 	flex-flow: column nowrap;
+}
+
+// companies slider only
+// recenter logos caused by display flex above
+.used-by-slider .slick-track .slick-slide {
+	display: block;
 }
 
 
