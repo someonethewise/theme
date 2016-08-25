@@ -21,8 +21,42 @@
 }
 
 .grid-item-inner {
-    padding: 1.5rem;
 	background: #fff;
+}
+
+.slick-inner {
+	padding: 1.5rem;
+	background: #fff;
+	margin: 1rem;
+	width: 100%;
+}
+
+// full height slides
+.slick-track {
+	display: -webkit-flex;
+	display: flex;
+
+    .slick-slide {
+		display: -webkit-flex;
+		display: flex;
+        height: auto;
+
+    }
+}
+
+// tweet slider only
+
+.tweet-slider .slick-track .slick-slide {
+	-webkit-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+}
+
+
+.slick-inner {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 .grid-item-inner h3 a {
@@ -42,6 +76,9 @@
 	margin: 0;
 }
 
+
+
+
 .grid-item-inner,
 .edd_download_inner {
     display: -webkit-flex;
@@ -52,6 +89,7 @@
 //    margin: 1rem;
 }
 
+.slick-inner footer,
 .edd_download_inner footer,
 .grid-item-inner footer {
     margin: auto 0 0;
@@ -62,13 +100,25 @@
 //     font-size: 1rem;
 // }
 
-.grid-item-title {
-    font-size: 1rem;
+// .grid-item-title {
+//
+// }
+
+.grid-item-title a {
+	color: @edd-download-title-color;
+	font-weight: @edd-download-title-font-weight;
+	font-size: @edd-download-title-font-size;
+	display: block;
+
+	&:hover {
+		color: @edd-download-title-hover-color;
+	}
 }
 
-.grid-title a {
-    border: none;
-}
+
+// .grid-title a {
+//     border: none;
+// }
 
 .grid-item-image {
     margin: 0 0 2rem 0;

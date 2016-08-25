@@ -45,9 +45,9 @@
 		// padding-right: 2rem;
 	}
 
-	.slick-inner {
-		padding: 0 2rem 4rem 2rem;
-	}
+	// .slick-inner {
+	// 	padding: 0 2rem 4rem 2rem;
+	// }
 
 	header h3 {
 		margin-bottom: 0;
@@ -55,8 +55,13 @@
 }
 
 
+#button-supported-integrations {
+	margin-top: 2rem;
+}
 
-
+.single-download .button.download {
+	font-size: 1.5rem;
+}
 
 .single-download #main {
 	background: #fff;
@@ -69,10 +74,23 @@
 	&:hover {
 		background: darken( @secondary-color, 5% );
 		border-color: darken( @secondary-color, 5% );
+
 	}
 }
 
+.download-meta a {
+	color: @secondary-color;
+	border-bottom: none;
+}
 
+.single-download .button.outline {
+	background: transparent;
+	border-width: @border-radius;
+
+	&:hover {
+		color: darken( @secondary-color, 5% );
+	}
+}
 
 @media only screen and ( min-width: @screen-sm-min ) {
 
