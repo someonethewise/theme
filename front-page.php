@@ -293,7 +293,8 @@ if ( $integrations->have_posts() ) : ?>
  ?>
 <section class="container-fluid action pv-xs-4 pv-sm-8 integrations">
     <div class="wrapper wide">
-        <div class="row">
+
+		<div class="row">
             <div class="col-xs center-xs aligncenter mb-xs-2 mb-sm-4">
                 <h1 class="mb-xs-2">Beautifully integrated with your eCommerce, Membership or Form plugin</h1>
                 <p>AffiliateWP integrates seamlessly with <?php echo $integrations->found_posts; ?> popular eCommerce, Membership, Form, and Invoice WordPress plugins.</p>
