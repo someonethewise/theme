@@ -145,19 +145,20 @@ $args = array(
         	<div class="slider">
 
                 <?php foreach ( $pro_add_on_ids as $id ) : ?>
-                    <div class="slick-item">
-                        <div class="slick-inner">
+                    <div class="grid-item slick-item">
+
+						<div class="slick-inner">
 
                             <?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( $id ) ) : ?>
-                                <div class="edd_download_image">
-                                <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
+                                <div class="grid-item-image">
+                                <a href="<?php the_permalink( $id );?>"><?php echo get_the_post_thumbnail( $id, 'large' ); ?></a>
                                 </div>
                             <?php endif; ?>
-                            <h3 class="slick-title">
-                                <?php echo get_the_title( $id ); ?>
+                            <h3 class="grid-item-title">
+								<a href="<?php the_permalink( $id );?>"><?php echo get_the_title( $id ); ?></a>
                             </h3>
 
-                            <div class="slick-item-content">
+                            <div class="grid-item-content">
 
                                 <?php $excerpt_length = apply_filters( 'excerpt_length', 30 ); ?>
 
@@ -167,7 +168,12 @@ $args = array(
 
                             </div>
 
-                        </div>
+							<footer>
+								<a href="<?php the_permalink( $id );?>">Learn more</a>
+							</footer>
+
+						</div>
+
                     </div>
                 <?php endforeach; ?>
 
@@ -205,9 +211,8 @@ $args = array(
          );
 
 
-            $free_add_ons    = get_posts( $args );
-            $free_add_on_ids = wp_list_pluck( $free_add_ons, 'ID' );
-        //    $add_on_ids = implode( ', ', $add_on_ids );
+        $free_add_ons    = get_posts( $args );
+        $free_add_on_ids = wp_list_pluck( $free_add_ons, 'ID' );
 
         ?>
 
@@ -219,27 +224,32 @@ $args = array(
         <div class="slider">
 
             <?php foreach ( $free_add_on_ids as $id ) : ?>
-                <div class="slick-item">
+                <div class="grid-item slick-item">
                     <div class="slick-inner">
 
-                        <?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( $id ) ) : ?>
-                            <div class="edd_download_image">
-                            <?php echo get_the_post_thumbnail( $id, 'large' ); ?>
-                            </div>
-                        <?php endif; ?>
-                        <h3 class="slick-title">
-                            <?php echo get_the_title( $id ); ?>
-                        </h3>
+						<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( $id ) ) : ?>
+							<div class="grid-item-image">
+							<a href="<?php the_permalink( $id );?>"><?php echo get_the_post_thumbnail( $id, 'large' ); ?></a>
+							</div>
+						<?php endif; ?>
 
-                        <div class="slick-item-content">
+						<h3 class="grid-item-title">
+							<a href="<?php the_permalink( $id );?>"><?php echo get_the_title( $id ); ?></a>
+						</h3>
 
-                            <?php $excerpt_length = apply_filters( 'excerpt_length', 30 ); ?>
+						<div class="grid-item-content">
 
-                            <div itemprop="description" class="edd_download_excerpt">
-                                <?php echo apply_filters( 'edd_downloads_excerpt', wp_trim_words( get_post_field( 'post_excerpt', $id ), $excerpt_length ) ); ?>
-                            </div>
+							<?php $excerpt_length = apply_filters( 'excerpt_length', 30 ); ?>
 
-                        </div>
+							<div itemprop="description" class="edd_download_excerpt">
+								<?php echo apply_filters( 'edd_downloads_excerpt', wp_trim_words( get_post_field( 'post_excerpt', $id ), $excerpt_length ) ); ?>
+							</div>
+
+						</div>
+
+						<footer>
+							<a href="<?php the_permalink( $id );?>">Learn more</a>
+						</footer>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -251,83 +261,7 @@ $args = array(
 </section>
 <?php endif; ?>
 
-
-
-
-
-
-
-<?php
-
-function slider_content() {
-    ?>
-
-    <div class="slick-item">
-        <div class="slick-inner">
-            <div class="slick-item-content">
-                <div class="edd_download_image">
-		<a title="Custom Affiliate Slugs" href="http://affwp.rcp.dev/downloads/custom-affiliate-slugs/" class="has-image" tabindex="0">
-			<img width="566" height="283" sizes="(max-width: 566px) 100vw, 566px" srcset="http://affwp.rcp.dev/wp-content/uploads/sites/8/2016/05/add-on-custom-affiliate-slugs-566x283.png 566w, http://affwp.rcp.dev/wp-content/uploads/sites/8/2016/05/add-on-custom-affiliate-slugs-300x150.png 300w, http://affwp.rcp.dev/wp-content/uploads/sites/8/2016/05/add-on-custom-affiliate-slugs-768x384.png 768w, http://affwp.rcp.dev/wp-content/uploads/sites/8/2016/05/add-on-custom-affiliate-slugs-720x360.png 720w, http://affwp.rcp.dev/wp-content/uploads/sites/8/2016/05/add-on-custom-affiliate-slugs.png 880w" alt="add-on-custom-affiliate-slugs" class="attachment-themedd-post-thumbnail size-themedd-post-thumbnail wp-post-image" src="http://affwp.rcp.dev/wp-content/uploads/sites/8/2016/05/add-on-custom-affiliate-slugs-566x283.png">		</a>
-	</div>
-
-                <h3 class="slick-title"><a href="http://rcp.dev/tour/screenshots/">Screenshots</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-            </div>
-
-            <footer>
-                <a href="http://rcp.dev/tour/screenshots/">Learn more</a>
-            </footer>
-        </div>
-    </div>
-    <?php
-}
-?>
-
-<?php
-
-function slider_content2() {
-    ?>
-
-    <div class="slick-item">
-        <div class="slick-inner">
-            <div class="slick-item-content">
-                <h3 class="slick-title"><a href="http://rcp.dev/tour/screenshots/">Screenshots</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam.</p>
-
-            </div>
-
-            <footer>
-                <a href="http://rcp.dev/tour/screenshots/">Learn more</a>
-            </footer>
-        </div>
-    </div>
-    <?php
-}
-?>
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
-
-
-    jQuery('.slider').on('setPosition', function () {
-
-        jQuery(this).find('.slick-slide').height('auto');
-
-        var slickTrack = jQuery(this).find('.slick-track');
-        var slickTrackHeight = jQuery(slickTrack).height();
-
-        jQuery(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
-
-    });
 
   jQuery(document).on('ready', function() {
 
@@ -343,26 +277,19 @@ function slider_content2() {
 		},
         responsive: [
           {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-            }
-          },
-          {
-            breakpoint: 680,
+            breakpoint: 1024, // 1024px and below
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToScroll: 2,
             }
           },
           {
-            breakpoint: 480,
+            breakpoint: 800, // 800px and below
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
             }
-          }
+          },
         ]
     });
 
@@ -403,7 +330,6 @@ $posts = get_posts( $args );
                     <?php echo $post->post_title; ?>
 
                 <?php endforeach; ?>
-
 
             </div>
         </div>
