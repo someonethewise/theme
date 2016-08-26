@@ -176,17 +176,6 @@ get_header(); ?>
 
 <script type="text/javascript">
 
-jQuery('.feature-highlights-slider').on('setPosition', function () {
-
-    jQuery(this).find('.slick-slide').height('auto');
-
-    var slickTrack = jQuery(this).find('.slick-track');
-    var slickTrackHeight = jQuery(slickTrack).height();
-
-    jQuery(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
-
-});
-
 ( function( $ ) {
 
     $( document ).ready( function() {

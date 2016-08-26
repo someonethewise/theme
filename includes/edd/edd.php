@@ -450,11 +450,11 @@ function affwp_theme_show_related_pro_add_ons() {
                                 </div>
                             <?php endif; ?>
 
-                            <h3 class="slick-title">
+                            <h3 class="grid-item-title">
                                 <a href="<?php the_permalink( $id );?>"><?php echo get_the_title( $id ); ?></a>
                             </h3>
 
-                            <div class="slick-item-content">
+                            <div class="grid-item-content">
 
                                 <?php $excerpt_length = apply_filters( 'excerpt_length', 30 ); ?>
 
@@ -479,17 +479,6 @@ function affwp_theme_show_related_pro_add_ons() {
 
 
 	<script type="text/javascript">
-
-    jQuery('.slider').on('setPosition', function () {
-
-        jQuery(this).find('.slick-slide').height('auto');
-
-        var slickTrack = jQuery(this).find('.slick-track');
-        var slickTrackHeight = jQuery(slickTrack).height();
-
-        jQuery(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
-
-    });
 
       jQuery(document).on('ready', function() {
 

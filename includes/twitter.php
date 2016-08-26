@@ -78,17 +78,6 @@ function affwp_theme_tweet_slider() {
 
     <script type="text/javascript">
 
-    jQuery('.tweet-slider').on('setPosition', function () {
-
-        jQuery(this).find('.slick-slide').height('auto');
-
-        var slickTrack = jQuery(this).find('.slick-track');
-        var slickTrackHeight = jQuery(slickTrack).height();
-
-        jQuery(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
-
-    });
-
       jQuery(document).on('ready', function() {
 
         jQuery(".tweet-slider").slick({
