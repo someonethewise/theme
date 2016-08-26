@@ -145,7 +145,7 @@ $args = array(
         	<div class="slider">
 
                 <?php foreach ( $pro_add_on_ids as $id ) : ?>
-                    <div class="grid-item slick-item">
+                    <div class="slick-item">
 
 						<div class="slick-inner">
 
