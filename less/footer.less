@@ -2,7 +2,6 @@
     position: relative;
     width: 100%;
     padding-top: 4rem;
-//    overflow: hidden;
 
     a {
         font-size: 0.875rem;
@@ -23,58 +22,34 @@
         font-size: 1rem;
     }
 
-    // #sign-up {
-    //     position: relative;
-    //     padding: 0;
-    // }
+}
 
-    // #sign-up .wrapper {
-    //    margin: 0;
-    //    padding: 2rem;
-    // }
+.meet-the-family {
 
-    // form.mailing-list {
-    //     -webkit-justify-content: flex-start;
-    //     justify-content: flex-start;
-    // }
+	img {
+		border: 2px solid @light-grey;
+		margin-right: 0.5rem;
+	}
 
-    // .gform_body {
-    //     flex: 2;
-    // }
-    //
-    // .gform_footer {
-    //     flex: 1;
-    // }
+	img, span {
+		vertical-align: middle;
+	}
 
-    // input {
-    //     border-color: darken( #EDD3F2, 5% );
-    //     font-size: 0.875rem;
-    //     width: 100%;
-    // }
+	li a:hover img {
+		border-color: #2794da;
+	}
 
-
+	li + li a:hover img {
+		border-color: #b685c9;
+	}
 }
 
 .site-info {
     margin-top: 4rem;
-//    background: @light-grey;
     text-align: left;
-//    border-top: 1px solid darken( @light-grey, 3% );
-}
-
-@media only screen and ( min-width : 1280px ) {
-   //  .site-footer #sign-up .wrapper {
-   //     max-width: 415px;
-   // }
 }
 
 @media only screen and ( min-width: 720px ) {
-
-	// footer#footer {
-	// 	margin-top: 10rem;
-	// }
-
-
 
 	#mascot-2 {
 		width: 200px;
@@ -85,13 +60,9 @@
 		position: absolute;
 		background-image: url('images/mascot-2.png');
 		margin-left: -100px;
-	//	.transition ( all 0.25s cubic-bezier( .12,1.25,.9,1.03 ) );
 	}
 
 
 	.site-footer:hover #mascot-2 { background-position: 0 -132px; }
 
-    // .no-js #mascot-2  {
-    //     bottom: -4px;
-    // }
 }
