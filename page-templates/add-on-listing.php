@@ -8,7 +8,7 @@ get_header(); ?>
 
 <?php themedd_post_header(); ?>
 
-<section class="container-fluid">
+<section class="container-fluid highlight pv-xs-1">
 	<div class="wrapper">
 		<?php
 		   // Start the Loop.
