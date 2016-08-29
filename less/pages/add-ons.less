@@ -1,36 +1,14 @@
 @box-color: #e34f43;
 
-// section.add-ons .row {
-// 	margin-left: -3rem;
-// 	margin-right: -3rem;
-// }
-
-
 // add-ons grid
 .add-ons {
-    .grid-item-inner {
-        // padding: 5rem;
-        // margin: 0;
 
-        p {
-        //    font-size: 1.2rem;
-        }
-
-
-    }
-
-    // p,
-    // h2 a {
-    //     color: #fff;
-    // }
+	.row {
+		margin-left: -1rem;
+		margin-right: -1rem;
+	}
 
 }
-
-.add-on-listing #content {
-    background: @light-grey;
-}
-
-
 
 // single download page
 
@@ -39,15 +17,6 @@
 	margin-top: 2rem;
 	background: #fff;
 	display: none;
-
-	.slider {
-		// padding-left: 2rem;
-		// padding-right: 2rem;
-	}
-
-	// .slick-inner {
-	// 	padding: 0 2rem 4rem 2rem;
-	// }
 
 	header h3 {
 		margin-bottom: 0;
@@ -92,14 +61,30 @@
 	}
 }
 
+ul#third-party-add-ons {
+	list-style-type: none;
+}
+
+.intro strong {
+	font-weight: 800;
+}
+
+.add-on {
+	border-bottom: 2px solid @light-grey;
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+
+	&:first-child {
+		border-top: 2px solid @light-grey;
+		padding-top: 2rem;
+	}
+
+	h4, p {
+		margin-bottom: 0;
+	}
+}
+
 @media only screen and ( min-width: @screen-sm-min ) {
-
-	// .single-download #main {
-	// 	padding: 2rem;
-	// 	background: #fff;
-	// }
-
-
 
 	.related-add-ons {
 
@@ -114,10 +99,6 @@
 
 @media only screen and ( min-width: @screen-md-min ) {
 
-	// .single-download #primary {
-	// 	padding: 0;
-	// }
-
 	.single-download #content {
 		background: @light-grey;
 	}
@@ -130,34 +111,3 @@
 		padding: 4rem;
 	}
 }
-
-// .box-1 {
-//     @box-1-color: @box-color;
-//
-//     background: @box-1-color;
-//
-//     p, a {
-//     //    color: darken( @box-1-color, 35% );
-//     }
-//
-// }
-//
-// .box-2 {
-//     @box-2-color: lighten( @box-color, 4% );
-//
-//     background: @box-2-color;
-//
-//     p, a {
-//     //    color: darken( @box-2-color, 35% );
-//     }
-// }
-//
-// .box-3 {
-//     @box-3-color: lighten( @box-color, 8% );
-//
-//     background: @box-3-color;
-//
-//     p, a {
-//     //    color: darken( @box-3-color, 35% );
-//     }
-// }
