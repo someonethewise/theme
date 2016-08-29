@@ -4,6 +4,79 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * Redirect requests to single 3rd-party add-on pages to the main 3rd party page
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_redirect_addons() {
+
+	if ( is_singular( 'download' ) && has_term( '3rd-party', 'download_category' ) ) {
+		wp_redirect( site_url( 'add-ons/3rd-party' ), 301 );
+		exit;
+	}
+
+}
+add_action( 'template_redirect', 'affwp_theme_redirect_addons' );
+
+/**
+ * Modify the rewrite option to include the download category
+ * This will be moved into the custom functionality plugin at a later date
+ *
+ * @since 1.0.0
+ */
+function affwpcf_edd_download_post_type_args( $download_args ) {
+
+	// $rewrite  = defined( 'EDD_DISABLE_REWRITE' ) && EDD_DISABLE_REWRITE ? false : array('slug' => $slug, 'with_front' => false);
+	$download_args['rewrite'] = array( 'slug' => 'add-ons/%download_category%' );
+
+	return $download_args;
+}
+add_filter( 'edd_download_post_type_args', 'affwpcf_edd_download_post_type_args' );
+
+/**
+ * Modify the add-on links to includes the download category
+ * This will be moved into the custom functionality plugin at a later date
+ *
+ * @since 1.0.0
+ */
+function affwpcf_edd_addon_links( $post_link, $id = 0 ) {
+
+    $post = get_post( $id );
+
+    if ( is_object( $post ) ) {
+        $terms = wp_get_object_terms( $post->ID, 'download_category' );
+        if ( $terms ) {
+            return str_replace( '%download_category%' , $terms[0]->slug , $post_link );
+        }
+    }
+
+    return $post_link;
+
+}
+add_filter( 'post_type_link', 'affwpcf_edd_addon_links', 1, 3 );
+
+/**
+ * Pre get post queries
+ *
+ * @since 1.0.0
+ */
+function affwpcf_pre_get_posts( $query ) {
+
+    if ( $query->is_main_query() && ! is_admin() ) {
+
+		// show all downloads on /add-ons/pro
+		if ( $query->is_tax( 'download_category' ) ) {
+			$query->set( 'posts_per_page', -1 );
+		}
+
+    }
+
+}
+add_action( 'pre_get_posts', 'affwpcf_pre_get_posts' );
+
+
+
+/**
  * Modify EDD download price
  *
  * 10.00 becomes 10
@@ -235,17 +308,47 @@ function affwp_theme_upgrade_or_purchase_modal() {
 }
 
 /**
+ * Remove pricing from pro add-on single download pages
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_remove_pricing_pro_addons() {
+	remove_action( 'themedd_sidebar_download', 'themedd_edd_pricing' );
+}
+add_action( 'template_redirect', 'affwp_theme_remove_pricing_pro_addons' );
+
+
+/**
+ * EDD Purchase link defaults
+ */
+function affwp_theme_edd_purchase_link_defaults( $args ) {
+
+	// add "download" CSS class to download buttons on official-free addon pages
+	if ( has_term( 'official-free', 'download_category', get_the_ID() ) ) {
+		$args['class'] .= ' download';
+	}
+
+	return $args;
+}
+add_filter( 'edd_purchase_link_defaults', 'affwp_theme_edd_purchase_link_defaults' );
+
+/**
  * Shows a download button for logged-in Professional or Ultimate license holders
  * Shows an upgrade notice for logged-in Personal or Plus license holders
  * Shows a purchase button for logged-out users
  *
  * @since 1.0.0
  */
-function affwp_theme_edd_download_pro_add_on() {
+function affwp_theme_edd_single_download_buttons() {
 
 	?>
 	<aside>
-		<?php if ( has_term( 'pro', 'download_category' ) && edd_get_download_files( get_the_ID() ) ) :
+		<?php
+
+			/**
+			 * The "Download Now" button on a pro add-on page
+			 */
+			if ( has_term( 'pro', 'download_category' ) && edd_get_download_files( get_the_ID() ) ) :
 
 			$has_ultimate_license     = in_array( 4, affwp_theme_get_users_price_ids() );
 			$has_professional_license = in_array( 3, affwp_theme_get_users_price_ids() );
@@ -261,12 +364,21 @@ function affwp_theme_edd_download_pro_add_on() {
 
 		<?php endif; ?>
 
+		<?php
+			/**
+			 * The "Free Download" button on a single download page
+			 */
+			if ( has_term( 'official-free', 'download_category', get_the_ID() ) ) {
+				themedd_edd_purchase_link();
+			}
+		?>
+
 		<?php do_action( 'download_add_on_end' ); ?>
 
 	</aside>
 <?php
 }
-add_action( 'themedd_sidebar_download', 'affwp_theme_edd_download_pro_add_on' );
+add_action( 'themedd_sidebar_download', 'affwp_theme_edd_single_download_buttons' );
 
 /**
  * Supported integrations button
@@ -288,7 +400,7 @@ function affwp_theme_edd_download_integrations() {
 	<?php affwp_theme_add_on_supported_integrations_modal(); ?>
 <?php
 }
-add_action( 'download_add_on_end', 'affwp_theme_edd_download_integrations' );
+add_action( 'download_add_on_end', 'affwp_theme_edd_download_integrations', 100 );
 
 /**
  * Supported integrations modal window
@@ -346,35 +458,7 @@ function affwp_theme_add_on_supported_integrations_modal() {
 	<?php
 }
 
-/**
- * Remove pricing from pro add-on single download pages
- *
- * @since 1.0.0
- */
-function affwp_theme_remove_pricing_pro_addons() {
-	remove_action( 'themedd_sidebar_download', 'themedd_edd_pricing' );
-}
-add_action( 'template_redirect', 'affwp_theme_remove_pricing_pro_addons' );
 
-/**
- * The combined price and purchase button shown on the single download page
- *
- * @since 1.0.0
- */
-function affwp_theme_free_add_on_pricing() {
-
-	if ( ! has_term( 'official-free', 'download_category', get_the_ID() ) ) {
-		return;
-	}
-
-	?>
-	<aside>
-
-		<?php themedd_edd_purchase_link(); ?>
-	</aside>
-<?php
-}
-add_action( 'themedd_sidebar_download', 'affwp_theme_free_add_on_pricing' );
 
 /**
  * Prevent pro addons from being added to cart with ?edd_action=add_to_cart&download_id=XXX
