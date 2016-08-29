@@ -393,9 +393,9 @@ function affwp_theme_download_meta_wp_repo() {
 	<?php
 
 		if ( has_term( 'pro', 'download_category', get_the_ID() ) ) {
-			$link = '<a href=" ' . site_url( 'addons/pro' ) . '">Pro</a>';
+			$link = '<a href=" ' . site_url( 'addons/pro' ) . '">Pro add-on</a>';
 		} elseif( has_term( 'official-free', 'download_category', get_the_ID() ) ) {
-			$link = '<a href=" ' . site_url( 'addons/official-free' ) . '">Official Free</a>';
+			$link = '<a href=" ' . site_url( 'addons/official-free' ) . '">Official free add-on</a>';
 		} else {
 			$link = '';
 		}
