@@ -17,7 +17,7 @@ function affwp_theme_icon_login() {
 ob_start();
 	?>
 	<div>
-		<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 	        <g id="login" class="icon" transform="matrix(1.28093,0,0,1.28093,1.74195,0.692868)" class="icon">
 	            <path d="M12.5,20.5L7.5,20.5C6.4,20.5 5.5,20.102 5.5,19.4L5.5,13.5" />
 	            <path id="XMLID_6_" d="M19.5,0.5L7.5,0.5C6.4,0.5 5.5,1.4 5.5,2.5L5.5,7.5" />
@@ -42,7 +42,7 @@ function affwp_theme_icon_account() {
 ob_start();
 	?>
 	<div>
-		<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<svg width="32" height="32" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 			    <g class="icon" transform="matrix(0.963813,0,0,0.963813,0.449663,0.434242)">
 		        <g>
 		            <circle cx="8.5" cy="15.5" r="3" />
@@ -70,7 +70,7 @@ function affwp_theme_icon_support() {
 ob_start();
 	?>
 	<div>
-		<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<svg width="32" height="32" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 		    <g id="Artboard1" transform="matrix(0.75,0,0,0.75,0,0)" class="icon">
 		        <g transform="matrix(1,0,0,1,0.666667,0.666667)">
 		            <g transform="matrix(1.27536,0,0,1.27536,0.0289855,0.0289855)">
@@ -118,7 +118,7 @@ function affwp_theme_icon_add_ons() {
 ob_start();
 	?>
 	<div>
-		<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<svg width="32" height="32" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 		    <g id="Artboard1" transform="matrix(0.75,0,0,0.75,0,0)" class="icon">
 		        <g transform="matrix(1.26984,0,0,1.26984,0.825397,5.84127)">
 		            <g>
@@ -142,7 +142,7 @@ function affwp_theme_icon_product() {
 ob_start();
 	?>
 	<div>
-		<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<svg width="32" height="32" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 		    <g id="_Group_" transform="matrix(0.956522,0,0,0.956522,1,0.521739)" class="icon">
 		        <path id="_Path_" d="M11.5,23.5L0.5,20.5L0.5,3.5L11.5,0.5L22.5,3.5L22.5,20.5L11.5,23.5" />
 		        <path id="_Path_2_" d="M11.5,23.5L11.5,0.5" />
@@ -168,7 +168,7 @@ function affwp_theme_icon_pricing() {
 ob_start();
 	?>
 	<div>
-		<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<svg width="32" height="32" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 		    <g id="Artboard1" transform="matrix(0.75,0,0,0.75,0,0)" class="icon">
 		        <g transform="matrix(1.27536,0,0,1.27536,0.695652,0.695652)">
 		            <path id="XMLID_5_" d="M8.5,12.7C8,13.3 8.2,14.4 8.9,15.1C9.7,15.9 10.8,16 11.4,15.5C12.3,14.6 11.2,13.3 11,13C10.8,12.7 9.8,11.4 10.6,10.5C11.2,9.9 12.3,10.1 13.1,10.9C13.9,11.7 14,12.7 13.5,13.3" />
@@ -192,7 +192,7 @@ ob_start();
 	?>
 	<div>
 
-		<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 
 		        <g id="blog" transform="matrix(1.27135,6.47112e-32,6.47112e-32,1.27135,0.697659,1.65528)" class="icon">
 		            <g transform="matrix(0.535638,-0.849608,0.845945,0.533328,-2.53223,18.5238)">
