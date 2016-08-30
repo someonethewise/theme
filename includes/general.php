@@ -45,7 +45,7 @@ function affwp_theme_site_branding() {
 
    ?>
 
-   <svg id="logo" viewBox="0 0 175 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+   <svg id="logo" width="175" height="32" viewBox="0 0 175 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
        <g id="Artboard1" transform="matrix(0.767477,1.19172e-16,1.33089e-16,0.313725,0,0)">
            <g id="logo" transform="matrix(1.51782,-5.76563e-16,-6.43895e-16,3.7131,-65.3073,-160.137)">
                <g id="logo-mark" transform="matrix(0.227591,-1.15556e-32,-1.15556e-32,0.227591,34.7879,34.8883)">
