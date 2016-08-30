@@ -1,0 +1,31 @@
+// extra button styles
+
+
+// secondary buttons with outline
+.button.secondary,
+.button.secondary:focus {
+	border-color: @secondary-color;
+}
+
+// hover styles
+.button.secondary:hover {
+	border-color: darken( @secondary-color, 10% );
+}
+
+.button.outline {
+	background: transparent;
+	border-width: @border-radius;
+	transition: all 0.1s linear;
+}
+
+.button.outline.white {
+	border-color: #fff;
+}
+
+.button.outline.secondary {
+	color: @secondary-color;
+
+	&:hover {
+		color: darken( @secondary-color, 10% );
+	}
+}

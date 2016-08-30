@@ -13,6 +13,20 @@
     color: #fff;
 }
 
+.home .dropdown-toggle {
+	color: #fff;
+}
+
+.home .dropdown-toggle:after {
+	border-left: 1px solid #fff;
+}
+
+.home .dropdown-toggle:hover,
+.home .dropdown-toggle:focus {
+	color: #fff;
+}
+
+
 @media only screen and ( max-width: @nav-sm-max ) {
 
     .cart-icon-text {
@@ -21,7 +35,9 @@
 
 }
 
-// .sub-menu {}
+li.menu-item.nav-action a {
+	background: @accent-color;
+}
 
 // hide all icons to begin with
 li.menu-item div  {
@@ -36,7 +52,7 @@ ul.menu > li > a.button {
   color: #fff;
 }
 
-ul.menu > li.action:hover > a {
+ul.menu > li.nav-action:hover > a {
   color: #fff;
 }
 
@@ -132,22 +148,19 @@ g.icon rect {
         margin-left: -1rem;
     }
 
-    // .home li.menu-item.action a {
-    //     background: hsla( 5, 74%, 58%, 0.7);
-    // }
 
     // purchase/checkout menu item
 
-    li.menu-item.action {
+    li.menu-item.nav-action {
         margin-left: 1rem;
     }
 
-    li.menu-item.action a {
+    li.menu-item.nav-action a {
         padding-top: 3rem;
-        background: @accent-color;
+    //    background: @accent-color;
     }
 
-    li.menu-item.action svg {
+    li.menu-item.nav-action svg {
         opacity: 1;
 
     }
