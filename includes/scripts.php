@@ -97,7 +97,7 @@ add_action( 'wp_enqueue_scripts', 'affwp_theme_dequeue_scripts');
 function affwp_theme_edd_template_redirect() {
 
 	// remove HTML from EDD Free Downloads
-	if ( ! is_singular( 'download' ) ) {
+	if ( ! ( is_singular( 'download' ) && has_term( 'official-free', 'download_category' ) ) ) {
 		remove_action( 'wp_footer', 'edd_free_downloads_display_inline' );
 	}
 }
