@@ -1,0 +1,84 @@
+// custom blog styling
+
+.single-post h1 {
+	font-size: 3.2rem;
+}
+
+.single-post .author-meta {
+	display: block;
+}
+
+// make these styles only for single blog posts
+.hero .page-header {
+	position: relative;
+
+	h1 {
+		color: #fff;
+	}
+
+	.post-thumbnail {
+		margin-bottom: 0;
+	}
+}
+
+.blog-featured .bg {
+	padding: 8rem;
+	margin-top: 2rem;
+	opacity: 0.9;
+}
+
+.author-meta {
+	color: lighten( @grid-item-inner-link-color, 30% );
+	margin-top: 0.5rem;
+}
+
+.hero .author-meta {
+	color: rgba( 255, 255, 255, 0.6 );
+}
+
+.single-post .entry-content > p:first-child {
+	font-size: 1.6rem;
+	line-height: 1.4;
+	margin-top: 1rem;
+}
+
+.single-post .twitter-follow-button {
+	margin-top: 1rem;
+}
+
+// Blog header colors
+
+@yellow: #F1C258;
+@blue: #609FD2;
+
+// tutorials
+.category-tutorials {
+	.grid-item-image.has-svg a,
+	.hero {
+		background: @yellow;
+	}
+}
+
+// news
+.category-news {
+	.grid-item-image.has-svg a,
+	.hero {
+		background: @blue;
+	}
+}
+
+// add-ons
+.category-add-ons {
+	.grid-item-image.has-svg a,
+	.hero {
+		background: @primary-color;
+	}
+}
+
+// add-ons
+.category-product {
+	.grid-item-image.has-svg a,
+	.hero {
+		background: @secondary-color;
+	}
+}

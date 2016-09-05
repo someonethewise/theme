@@ -1,38 +1,29 @@
 // keeps the homepage menu item white when hovering over links
-// .home li a,
-// .home li:hover a,
-// .home li:active a,
-// .home li:focus a {
-//
-// }
 
-.home .main-navigation li a,
-.home .main-navigation li:hover a,
-.home .main-navigation li:focus a,
-.home .main-navigation li:active a {
+.hero .main-navigation li a,
+.hero .main-navigation li:hover a,
+.hero .main-navigation li:focus a,
+.hero .main-navigation li:active a {
     color: #fff;
 }
 
-.home .dropdown-toggle {
+.hero .dropdown-toggle {
 	color: #fff;
 }
 
-.home .dropdown-toggle:after {
+.hero .dropdown-toggle:after {
 	border-left: 1px solid #fff;
 }
 
-.home .dropdown-toggle:hover,
-.home .dropdown-toggle:focus {
+.hero .dropdown-toggle:hover,
+.hero .dropdown-toggle:focus {
 	color: #fff;
 }
 
-
 @media only screen and ( max-width: @nav-sm-max ) {
-
     .cart-icon-text {
         display: none;
     }
-
 }
 
 li.menu-item.nav-action a {
@@ -62,7 +53,6 @@ li.menu-item.checkout a {
 }
 
 // svgs
-
 g.icon path,
 g.icon circle,
 g.icon polygon,
@@ -82,16 +72,18 @@ g.icon rect {
 //     fill:none;
 // }
 
-.home g.icon path,
-.home g.icon circle,
-.home g.icon polygon,
-.home g.icon line,
-.home g.icon rect {
-    stroke: #fff;
+.hero g.icon path,
+.hero g.icon circle,
+.hero g.icon polygon,
+.hero g.icon line,
+.hero g.icon rect {
+//    stroke: #fff;
+//	opacity: 0.8;
+	stroke: rgba( 255, 255, 255, 0.8 );
 }
 
 .shape {
-    fill:none;
+    fill: none;
 }
 
 // body.home .icon {
