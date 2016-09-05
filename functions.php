@@ -21,6 +21,9 @@ function affwp_theme_setup() {
 
 	add_post_type_support( 'page', 'excerpt' );
 
+	// add subtitles to downloads
+	add_post_type_support( 'download', 'subtitles' );
+
 	// custom stuff
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'account.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'changelog.php' );
@@ -33,7 +36,9 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'twitter.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'footer.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'features.php' );
-	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'compatibility.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'compatibility/subtitles.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'functions.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'blog.php' );
 
 	// EDD functions
 	if ( function_exists( 'themedd_is_edd_active' ) && themedd_is_edd_active() ) {
