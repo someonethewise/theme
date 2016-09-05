@@ -1,7 +1,6 @@
 <?php
 /**
  * Download category
- *
  */
 
 get_header(); ?>
@@ -23,13 +22,6 @@ get_header(); ?>
 						<?php themedd_post_thumbnail(); ?>
 					</div>
 					<?php endif; ?>
-
-					<?php
-					/**
-					 * Turn off subtitles
-					 */
-					 add_filter( 'subtitle_view_supported', '__return_false' );
-					 ?>
 
 					<h3 class="grid-item-title">
 						<a href="<?php the_permalink( $id );?>"><?php echo get_the_title( $id ); ?></a>
