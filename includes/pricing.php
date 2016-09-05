@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function affwp_theme_pricing_calculator() {
 
 	// Gravity Forms must be installed
-	if ( ! themedd_is_gforms_active() ) {
+	if ( ! affwp_theme_is_gforms_active() ) {
 		return;
 	}
 
@@ -98,7 +98,7 @@ function affwp_theme_modal_content_pricing_calculator() {
 	}
 
 	// Gravity Forms must be installed
-	if ( ! themedd_is_gforms_active() ) {
+	if ( ! affwp_theme_is_gforms_active() ) {
 		return;
 	}
 
@@ -221,7 +221,7 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 			});
 
-			<?php if ( themedd_is_gforms_active() ) : ?>
+			<?php if ( affwp_theme_is_gforms_active() ) : ?>
 
 
 			gform.addFilter( 'gform_calculation_formula', function( formula, formulaField, formId, calcObj ) {
@@ -670,11 +670,6 @@ function affwp_theme_pricing_table() {
  * Addon popups
  */
 function affwp_theme_add_on_popups() {
-
-	/**
-	 * Prevent subtitles from showing in the modal
-	 */
-	add_filter( 'subtitle_view_supported', '__return_false' );
 
 	  $args = array(
 	      'post_type' => 'download',

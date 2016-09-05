@@ -8,35 +8,6 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * Count how many screenshots there are
- * Images must be uploaded directly to post/page and cannot already exist (or the parent ID will be incorrect)
- *
- * @since 1.0.0
- */
-function affwp_theme_screenshot_count() {
-
-	$count = 0;
-
-	$page = get_page_by_title( 'Screenshots' );
-
-	$args = array(
-		'post_mime_type' => 'image',
-		'numberposts'    => -1,
-		'post_parent'    => $page->ID,
-		'post_type'      => 'attachment',
-	);
-
-	$gallery = get_children( $args );
-
-	if ( $gallery ) {
-		$count = count( $gallery );
-	}
-
-	return $count;
-
-}
-
-/**
  * Load our site logo
  *
  * @since 1.0
@@ -92,12 +63,10 @@ function affwp_theme_site_branding() {
 }
 add_action( 'themedd_site_branding_before_site_title', 'affwp_theme_site_branding' );
 
-
-
 /**
  * Page header classes
  *
- * @since 1.0
+ * @since 1.0.0
  */
 function affwp_theme_page_header_classes( $classes ) {
 
@@ -134,7 +103,7 @@ add_action( 'wp_footer', 'affwp_theme_typekit' );
 
 /**
  * Typekit fonts
- * Inserting the wf-loading class as soon as possible
+ * Insert the wf-loading class as soon as possible
  *
  * @link https://helpx.adobe.com/typekit/using/font-events.html
  * @since 1.0
@@ -145,8 +114,6 @@ function affwp_theme_typekit_loading_class() {
 <?php
 }
 add_action( 'wp_head', 'affwp_theme_typekit_loading_class' );
-
-
 
 /**
  * Load lightbox scripts on specific pages
@@ -175,7 +142,7 @@ add_filter( 'themedd_enable_popup', 'affwp_theme_load_lightbox' );
  *
  * @since 1.0.0
  */
-function affwp_theme_remove_comments_on_attachments( $open, $post_id ) {
+function affwp_theme_jetpack_remove_attachment_comments( $open, $post_id ) {
 
 	$post = get_post( $post_id );
 
@@ -186,7 +153,7 @@ function affwp_theme_remove_comments_on_attachments( $open, $post_id ) {
 	return $open;
 
 }
-add_filter( 'comments_open', 'affwp_theme_remove_comments_on_attachments', 10 , 2 );
+add_filter( 'comments_open', 'affwp_theme_jetpack_remove_attachment_comments', 10 , 2 );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -197,10 +164,6 @@ function affwp_theme_body_classes( $classes ) {
 
 	global $post;
 
-	if ( is_page_template( 'page-templates/add-on-listing.php' ) ) {
-		$classes[] = 'no-sidebar add-on-listing';
-	}
-
 	if ( is_page_template( 'page-templates/account.php' ) ) {
 		$classes[] = 'account';
 	}
@@ -209,23 +172,6 @@ function affwp_theme_body_classes( $classes ) {
 
 }
 add_filter( 'body_class', 'affwp_theme_body_classes' );
-
-/**
- * Hide sidebars
- *
- * @since 1.0.0
- */
-function affwp_theme_hide_sidebar( $show ) {
-
-	if ( is_page_template( 'page-templates/add-on-listing.php' ) ) {
-		$show = false;
-	}
-
-	return $show;
-
-}
-add_filter( 'themedd_show_sidebar', 'affwp_theme_hide_sidebar' );
-
 
 /**
  * Custom copyright
