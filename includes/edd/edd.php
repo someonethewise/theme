@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function affwp_theme_redirect_addons() {
 
 	if ( is_singular( 'download' ) && has_term( '3rd-party', 'download_category' ) ) {
-		wp_redirect( site_url( 'add-ons/3rd-party' ), 301 );
+		wp_redirect( site_url( 'add-ons/3rd-party/' ), 301 );
 		exit;
 	}
 
@@ -26,7 +26,6 @@ add_action( 'template_redirect', 'affwp_theme_redirect_addons' );
  */
 function affwpcf_edd_download_post_type_args( $download_args ) {
 
-	// $rewrite  = defined( 'EDD_DISABLE_REWRITE' ) && EDD_DISABLE_REWRITE ? false : array('slug' => $slug, 'with_front' => false);
 	$download_args['rewrite'] = array( 'slug' => 'add-ons/%download_category%' );
 
 	return $download_args;
@@ -60,7 +59,7 @@ add_filter( 'post_type_link', 'affwpcf_edd_addon_links', 1, 3 );
  *
  * @since 1.0.0
  */
-function affwpcf_pre_get_posts( $query ) {
+function affwp_theme_pre_get_posts( $query ) {
 
     if ( $query->is_main_query() && ! is_admin() ) {
 
@@ -72,9 +71,7 @@ function affwpcf_pre_get_posts( $query ) {
     }
 
 }
-add_action( 'pre_get_posts', 'affwpcf_pre_get_posts' );
-
-
+add_action( 'pre_get_posts', 'affwp_theme_pre_get_posts' );
 
 /**
  * Modify EDD download price
@@ -412,11 +409,6 @@ function affwp_theme_add_on_supported_integrations_modal() {
 	// get the integrations
 	$integrations = affwp_theme_get_integrations( get_the_ID() );
 
-	/**
-	 * Prevent subtitles from showing in the modal
-	 */
-	add_filter( 'subtitle_view_supported', '__return_false' );
-
 	?>
 	<div id="supported-integrations" class="popup wide entry-content mfp-with-anim mfp-hide">
 
@@ -535,7 +527,7 @@ function affwp_theme_show_related_pro_add_ons() {
                             <?php endif; ?>
 
                             <h3 class="grid-item-title">
-                                <a href="<?php the_permalink( $id );?>"><?php echo get_the_title( $id ); ?></a>
+                                <a href="<?php the_permalink( $id ); ?>"><?php echo get_the_title( $id ); ?></a>
                             </h3>
 
                             <div class="grid-item-content">
