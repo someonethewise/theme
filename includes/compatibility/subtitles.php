@@ -36,10 +36,10 @@ add_action( 'themedd_post_header_end', 'affwp_theme_post_header_remove_custom' )
  *
  * @since 1.0.0
  */
-function themedd_subtitle_markup( $markup ) {
+function affwp_theme_subtitle_markup( $markup ) {
 
     $markup['before'] = '<span class="subtitle">';
 
     return $markup;
 }
-add_filter( 'subtitle_markup', 'themedd_subtitle_markup' );
+add_filter( 'subtitle_markup', 'affwp_theme_subtitle_markup' );
