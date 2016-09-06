@@ -68,6 +68,8 @@ function affwp_theme_pre_get_posts( $query ) {
 			$query->set( 'posts_per_page', -1 );
 		}
 
+		$query->set( 'posts_per_page', -1 );
+
     }
 
 }
@@ -423,7 +425,7 @@ function affwp_theme_add_on_supported_integrations_modal() {
                 <div class="grid-item col-xs-12 col-sm-6 mb-xs-2 mb-sm-0 type-integration <?php echo get_post( $post_id )->post_name; ?>">
                     <div class="grid-item-inner">
 
-						<div class="grid-item-image2">
+						<div class="grid-item-image">
 						<?php echo get_the_post_thumbnail( $post_id, 'post-thumbnail' ); ?>
 						</div>
 

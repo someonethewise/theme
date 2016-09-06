@@ -24,6 +24,8 @@ function affwp_theme_setup() {
 	// add subtitles to downloads
 	add_post_type_support( 'download', 'subtitles' );
 
+	add_image_size( 'affwp-post-thumbnail', 480, 240, true );
+
 	// custom stuff
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'account.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'changelog.php' );

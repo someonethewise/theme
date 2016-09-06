@@ -25,21 +25,23 @@ get_header(); ?>
 					<div class="grid-item-image<?php echo $class; ?>">
 						<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 							<?php
-								the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
+								the_post_thumbnail( 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
 							?>
 						</a>
 					</div>
 					<?php endif; ?>
 
+					<?php
+						if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
+							themedd_entry_date();
+						}
+					?>
+
+					<h3 class="grid-item-title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					
 					<div class="grid-item-content">
 
-						<?php
-							if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-								themedd_entry_date();
-							}
-						?>
 
-						<h3 class="grid-item-title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
 						<?php if ( the_excerpt() ) : ?>
 						<p><?php echo the_excerpt(); ?></p>
