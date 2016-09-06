@@ -185,3 +185,23 @@ function affwp_theme_copyright( $copyright ) {
 	return $copyright;
 }
 add_filter( 'themedd_copyright', 'affwp_theme_copyright' );
+
+/**
+ * Filter excerpt
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_custom_excerpt_more( $more ) {
+	return '&hellip;';
+}
+add_filter( 'excerpt_more', 'affwp_theme_custom_excerpt_more' );
+
+/**
+ * Limit excerpt length to 20 characters
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'affwp_theme_excerpt_length' );
