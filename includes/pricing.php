@@ -303,7 +303,7 @@ function affwp_themedd_call_to_action() {
 	        <div class="row middle-xs">
 	            <div class="col-xs-12 col-sm-7 mb-xs-2 mb-sm-0 text-center-xs text-left-sm">
 					<h1 class="header">Get more sales with AffiliateWP</h1>
-	                <p>Our customers tell us that AffiliateWP is easy to use, reliable, and <em>just works</em>. They love it, and we think you’ll love it too. Ready to get started? Try AffiliateWP risk-free today, and start growing your business with affiliate marketing!</p>
+	                <p>Our customers tell us that AffiliateWP is easy to use, reliable, and <em>just works</em>. They love it, and we think you’ll love it too. Ready to get started? Try AffiliateWP risk-free today, and start growing your business with affiliate marketing.</p>
 	            </div>
 
 				<div class="col-xs col-sm-5 end-sm text-center-xs text-left-sm">
