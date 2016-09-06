@@ -82,14 +82,14 @@ get_header(); ?>
         ?>
         <div>
             <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-6">
-                    <h1>An affiliate marketing solution that feels like part of WordPress</h1>
+                <div class="col-xs col-lg-7">
+                    <h1>Sophisticated affiliate tracking for WordPress</h1>
                 </div>
             </div>
 
-            <div class="row center-xs aligncenter mb-lg-5">
-                <div class="col-xs col-lg-7">
-                    <p>Every time a customer is referred to your site by an affiliate, and completes their purchase, a referral is instantly created for the referring affiliate. AffiliateWP provides a detailed overview of how much your affiliates have earned for each successful referral.</p>
+            <div class="row center-xs aligncenter mb-xs-5">
+                <div class="col-xs col-lg-8">
+                    <p>Finally, an affiliate marketing solution that feels like WordPress. AffiliateWP provides advanced affiliate and referral tracking, integrated seamlessly with your WordPress site.</p>
                 </div>
             </div>
 
@@ -107,14 +107,37 @@ get_header(); ?>
         ?>
         <div>
             <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-6">
-                    <h1>AffiliateWP makes it easy to manage your affiliates</h1>
+                <div class="col-xs col-lg-7">
+                    <h1>Easily manage your team of affiliates</h1>
                 </div>
             </div>
 
-            <div class="row center-xs aligncenter mb-lg-5">
+            <div class="row center-xs aligncenter mb-xs-5">
                 <div class="col-xs col-lg-7">
-                    <p>Manage all of your affiliates effortlessly. See your top earning affiliates, view an affiliate's reports and moderate affiliate registrations. You can also edit individual affiliate accounts to set per-affiliate referral rates, see their registration date and more.</p>
+                    <p>Effortless affiliate management. View top-earning affiliates, edit affiliate accounts, set per-affiliate referral rates and more.</p>
+                </div>
+            </div>
+
+            <div class="image aligncenter">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/home-2.png'; ?>" />
+            </div>
+        </div>
+
+		<?php
+        /**
+         * Integrations
+         */
+        ?>
+        <div>
+            <div class="row center-xs aligncenter">
+                <div class="col-xs col-lg-9">
+                    <h1>Set up your new affiliate system in just minutes</h1>
+                </div>
+            </div>
+
+            <div class="row center-xs aligncenter mb-xs-5">
+                <div class="col-xs col-lg-7">
+                    <p>Get up and running in minutes. AffiliateWP integrates with your favorite WordPress eCommerce, form and membership plugins with one click.</p>
                 </div>
             </div>
 
@@ -130,14 +153,14 @@ get_header(); ?>
         ?>
         <div>
             <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-6">
+                <div class="col-xs col-lg-7">
                     <h1>A place for your affiliates to call home</h1>
                 </div>
             </div>
 
-            <div class="row center-xs aligncenter mb-lg-5">
+            <div class="row center-xs aligncenter mb-xs-5">
                 <div class="col-xs col-lg-7">
-                    <p>The Affiliate Area is a place for affiliates to log in and see how well they are performing, check their earnings, update their settings, retrieve their referral URL, find creatives to promote your site, and more! AffiliateWP blends seamlessly with the currently installed WordPress theme; your affiliates will feel right at home.</p>
+                    <p>An affiliate dashboard that blends seamlessly with your WordPress theme. Affiliates can view earnings, see their performance statistics, and access creatives.</p>
                 </div>
             </div>
 
@@ -153,14 +176,14 @@ get_header(); ?>
         ?>
         <div>
             <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-6">
-                    <h1>Real Time Reporting</h1>
+                <div class="col-xs col-lg-7">
+                    <h1>View real-time reports and graphs</h1>
                 </div>
             </div>
 
-            <div class="row center-xs aligncenter mb-lg-5">
+            <div class="row center-xs aligncenter mb-xs-5">
                 <div class="col-xs col-lg-7">
-                    <p>View graphs of referrals over time, easily seeing your site's affiliate marketing performance.</p>
+                    <p>Check in on your affiliates’ performance with a detailed overview of referral data, graphs, and export reports.</p>
                 </div>
             </div>
 
