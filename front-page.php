@@ -183,7 +183,7 @@ get_header(); ?>
 
             <div class="row center-xs aligncenter mb-xs-5">
                 <div class="col-xs col-lg-7">
-                    <p>Check in on your affiliates’ performance with a detailed overview of referral data, graphs, and export reports.</p>
+                    <p>Get an overview of your affiliates’ performance in real-time with detailed referral data and graphs.</p>
                 </div>
             </div>
 
