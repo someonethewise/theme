@@ -307,7 +307,7 @@ function affwp_themedd_call_to_action() {
 	            </div>
 
 				<div class="col-xs col-sm-5 end-sm text-center-xs text-left-sm">
-					<a href="<?php echo site_url( 'pricing' ); ?>" class="button outline">Get started now</a>
+					<a href="<?php echo site_url( 'pricing' ); ?>" class="button outline">Get Started Now</a>
 				</div>
 
 	        </div>
