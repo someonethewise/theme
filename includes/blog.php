@@ -17,7 +17,7 @@ function affwp_theme_post_sharing() {
 
 <div class="sharing-icons">
 
-	<span>Share this article:</span>
+	<span>Share this article!</span>
 
 	<a class="twitter" href="https://twitter.com/intent/tweet/?text=<?php echo the_title_attribute(); ?>&amp;url=<?php echo the_permalink(); ?>" target="_blank">
 	    <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
@@ -54,7 +54,7 @@ function affwp_theme_post_sharing() {
 
 	<?php
 }
-add_action( 'themedd_entry_content_end', 'affwp_theme_post_sharing', 1 );
+add_action( 'themedd_entry_content_end', 'affwp_theme_post_sharing', 11 );
 
 /**
  * Add a Twitter Follow button after the author biography on single posts
