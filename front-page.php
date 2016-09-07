@@ -6,7 +6,7 @@ get_header(); ?>
 
 <?php
 /**
- * Latets news
+ * Latest news
  */
 ?>
 <section class="container-fluid news section-grey">
