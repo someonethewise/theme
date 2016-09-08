@@ -61,37 +61,3 @@ function affwp_theme_get_changelog() {
 	}
 
 }
-
-/**
- * Changelog
- *
- * @since 1.0.0
- */
-function affwp_theme_product_changelog() {
-	?>
-    <script type="text/javascript">
-         jQuery(document).ready(function($) {
-
-           $('#affwp-changelog').magnificPopup({
-             type: 'ajax',
-             fixedContentPos: true,
-             alignTop: true,
-             fixedBgPos: true,
-             overflowY: 'scroll', // as we know that popup content is tall we set scroll overflow by default to avoid jump
-             closeBtnInside: true,
-             preloader: false,
-             callbacks: {
-                 beforeOpen: function() {
-                 this.st.mainClass = this.st.el.attr('data-effect');
-                 }
-             },
-             midClick: true,
-             removalDelay: 300
-           });
-
-         });
-       </script>
-
-	<?php
-}
-add_action( 'wp_footer', 'affwp_theme_product_changelog', 100 );
