@@ -275,7 +275,8 @@ function affwp_theme_is_cta_page() {
 		is_post_type_archive( 'integration' ) ||
 		is_singular( 'integration' ) ||
 		is_page( 'screenshots' ) ||
-		is_page( 'features' )
+		is_page( 'features' ) ||
+		is_page( 'changelog' )
 	) {
 		return true;
 	}
