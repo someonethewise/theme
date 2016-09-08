@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'The story so far' ) ); ?>
+<?php themedd_post_header( array( 'title' => 'Our Story' ) ); ?>
 
 <section class="container-fluid mb-xs-4">
     <div class="wrapper slim">

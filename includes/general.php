@@ -70,7 +70,7 @@ add_action( 'themedd_site_branding_before_site_title', 'affwp_theme_site_brandin
  */
 function affwp_theme_page_header_classes( $classes ) {
 
-	if ( is_page( '3rd-party' ) || is_page( 'about' ) ) {
+	if ( is_page( '3rd-party' ) ) {
 		$new_classes = array( 'highlight mb-xs-4' );
 		return array_merge( $classes, $new_classes );
 	}
