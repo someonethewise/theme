@@ -207,3 +207,31 @@ function affwp_theme_post_header_meta() {
 	<?php
 }
 add_action( 'themedd_post_header_end', 'affwp_theme_post_header_meta' );
+
+/**
+ * Change the labels for the paging navigation
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_paging_nav( $defaults ) {
+
+	$defaults['next_posts_link']     = 'Older Articles';
+	$defaults['previous_posts_link'] = 'Newer Articles';
+
+	return $defaults;
+}
+add_filter( 'themedd_paging_nav', 'affwp_theme_paging_nav' );
+
+/**
+ * Add class names to the paging nav links so they can be turned into buttons
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_post_link_attributes( $attr ) {
+
+	$attr = 'class="button small outline secondary"';
+
+	return $attr;
+}
+add_filter( 'next_posts_link_attributes', 'affwp_theme_post_link_attributes' );
+add_filter( 'previous_posts_link_attributes', 'affwp_theme_post_link_attributes' );

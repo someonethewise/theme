@@ -38,15 +38,11 @@ get_header(); ?>
 					?>
 
 					<h3 class="grid-item-title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					
+
 					<div class="grid-item-content">
-
-
-
 						<?php if ( the_excerpt() ) : ?>
 						<p><?php echo the_excerpt(); ?></p>
 						<?php endif; ?>
-
 					</div>
 
 					<footer>
@@ -57,7 +53,10 @@ get_header(); ?>
 			</div>
 
 			<?php endwhile; ?>
+
 		</div>
+
+		<?php themedd_paging_nav(); ?>
 
     </div>
 

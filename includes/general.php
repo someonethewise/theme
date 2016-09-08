@@ -132,7 +132,6 @@ function affwp_theme_load_lightbox( $lightbox ) {
 		$lightbox = true;
 	}
 
-
 	return $lightbox;
 }
 add_filter( 'themedd_enable_popup', 'affwp_theme_load_lightbox' );
