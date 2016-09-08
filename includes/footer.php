@@ -21,11 +21,11 @@ function affwp_theme_footer_menu() {
 
 						<h4>Product</h4>
 						<ul>
-							<li><a href="<?php echo site_url( 'pricing' ); ?>">Pricing</a></li>
-							<li><a href="<?php echo site_url( 'features' ); ?>">All features</a></li>
-							<li><a href="<?php echo site_url( 'screenshots' ); ?>">Screenshots</a></li>
-							<li><a href="<?php echo site_url( 'add-ons' ); ?>">Add-ons</a></li>
-							<li><a href="<?php echo site_url( 'testimonials' ); ?>">Testimonials</a></li>
+							<li><a href="<?php echo site_url( '/pricing/' ); ?>">Pricing</a></li>
+							<li><a href="<?php echo site_url( '/features/' ); ?>">All features</a></li>
+							<li><a href="<?php echo site_url( '/screenshots/' ); ?>">Screenshots</a></li>
+							<li><a href="<?php echo site_url( '/add-ons/' ); ?>">Add-ons</a></li>
+							<li><a href="<?php echo site_url( '/testimonials/' ); ?>">Testimonials</a></li>
 							<li><a href="<?php echo get_stylesheet_directory_uri() . '/changelog.php'; ?>" id="affwp-changelog" data-effect="mfp-move-from-bottom">Changelog</a></li>
 						</ul>
 
@@ -35,10 +35,10 @@ function affwp_theme_footer_menu() {
 
 						<h4>Company</h4>
 						<ul>
-							<li><a href="<?php echo esc_url( site_url('about') ); ?>">About us</a></li>
-							<li><a href="<?php echo esc_url( site_url('blog') ); ?>">Blog</a></li>
-							<li><a href="<?php echo esc_url( site_url('brand-assets') ); ?>">Brand assets</a></li>
-							<li><a href="<?php echo esc_url( site_url('refund-policy') ); ?>">Refund policy</a></li>
+							<li><a href="<?php echo site_url( '/about/' ); ?>">About</a></li>
+							<li><a href="<?php echo site_url( '/blog/' ); ?>">Blog</a></li>
+							<li><a href="<?php echo site_url( '/brand-assets/' ); ?>">Brand assets</a></li>
+							<li><a href="<?php echo site_url( '/refund-policy/' ); ?>">Refund policy</a></li>
 							<li><a href="https://twitter.com/affwp" target="_blank">Follow us on Twitter</a></li>
 						</ul>
 
@@ -48,9 +48,9 @@ function affwp_theme_footer_menu() {
 
 						<h4>Get help</h4>
 						<ul>
-							<li><a href="<?php echo esc_url( site_url('support') ); ?>">Support</a></li>
+							<li><a href="<?php echo site_url( '/support/' ); ?>">Support</a></li>
 							<li><a href="http://docs.affiliatewp.com/" target="_blank">Documentation</a></li>
-							<li><a href="<?php echo esc_url( site_url('consultants') ); ?>">Consultants</a></li>
+							<li><a href="<?php echo site_url( '/consultants/' ); ?>">Consultants</a></li>
 						</ul>
 
 					</div>
@@ -81,10 +81,7 @@ function affwp_theme_footer_menu() {
 				</div>
 			</div>
 
-
-
 		</div>
-
 
 	</div>
 </section>
