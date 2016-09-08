@@ -7,8 +7,8 @@
  */
 function affwp_theme_footer_menu() {
 ?>
-<?php if ( ! ( is_404() || ( function_exists( 'edd_is_failed_transaction_page' ) && edd_is_failed_transaction_page() ) ) ) : ?>
-		<div id="mascot-2"></div>
+<?php if ( ! ( is_page( 'about' ) || is_404() || ( function_exists( 'edd_is_failed_transaction_page' ) && edd_is_failed_transaction_page() ) ) ) : ?>
+		<div id="mascot"></div>
 		<?php endif; ?>
 
 
