@@ -24,26 +24,9 @@ img.profile {
 	width: 150px;
 }
 
-// .about .columns.about .item {
-// 	padding: 0 3rem;
+// .about .item.box {
+// 	background: @light-grey;
 // }
-
-.about .item.box {
-	background: @light-grey;
-}
-
-
-
-// single integration
-
-// .single-integration .grid-item-inner {
-//     padding: 2.5rem;
-// }
-
-// .single-integration .grid-item-inner svg {
-//     margin-bottom: 1rem;
-// }
-
 
 
 
@@ -74,51 +57,12 @@ img.profile {
 
 // homepage
 
-img.icon {
-    height: 64px;
-    margin-bottom: 1rem;
-}
 
 
 .supported-integrations ul {
     margin-bottom: 0;
 }
 
-.table-option h3 {
-    font-weight: 500;
-    position: relative;
-}
-
-.table-option.twitter h3 {
-    background: #55acee;
-    color: #fff;
-}
-
-.table-option img {
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    margin-top: -1rem;
-}
-
-.table-option span {
-    vertical-align: middle;
-}
-
-.table-option.facebook h3 {
-    background: #3b5999;
-    color: #fff;
-}
-
-.table-option.linkedin h3 {
-    background: #0077B5;
-    color: #fff;
-}
-
-.benefits img {
-    height: 64px;
-    margin-bottom: 1.5rem;
-}
 
 
 p.intro {
@@ -137,93 +81,9 @@ p.intro {
     }
 }
 
-// .circle {
-//     background: @accent-color;
-//     border-radius: 100%;
-//     width: 10rem;
-//     height: 10rem;
-//     margin: 0 auto;
-// }
 
 // screenshots slider
 
-body.screenshots {
-    padding: 0;
-    background: @light-grey;
-}
-
-.screenshots .gallery-cell {
-
-    //padding-bottom: 4rem;
-//    text-align: left;
-}
-
-
-
-.slide-2 {
-    max-width: 1400px;
-}
-
-// .screenshots .flickity-page-dots {
-//     bottom: -48px;
-// }
-
-
-
-
-
-.title-rule {
-    text-transform: uppercase;
-    position: relative;
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 1.5rem;
-}
-
-.title-rule::before {
-    content: "";
-    border-top: 2px solid @light-grey;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 50%;
-}
-
-
-
-.title-rule > span {
-    background-color: #fff;
-    padding: 0 2rem;
-    position: relative;
-}
-
-@media only screen and ( min-width: @screen-sm-min ) {
-
-    .slider .wrapper:before {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        bottom: 0;
-        left: 0;
-        pointer-events: none;
-        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), @light-grey 100%);
-        width: 200px;
-        height: 100%;
-    }
-
-    .slider .wrapper:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        bottom: 0;
-        right: 0;
-        pointer-events: none;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), @light-grey 100%);
-        width: 200px;
-        height: 100%;
-    }
-
-}
 
 @media only screen and ( max-width: @screen-xs-max ) {
 
