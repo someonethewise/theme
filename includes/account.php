@@ -56,10 +56,10 @@ function affwp_theme_account_downloads() {
 
 	$price_ids = function_exists( 'affwp_theme_get_users_price_ids' ) ? affwp_theme_get_users_price_ids() : array();
 
-	$has_ultimate_license     = in_array( 4, $price_ids );
-	$has_professional_license = in_array( 3, $price_ids );
-	$has_plus_license         = in_array( 2, $price_ids );
-	$has_personal_license     = in_array( 1, $price_ids );
+	$has_ultimate_license     = in_array( 3, $price_ids );
+	$has_professional_license = in_array( 2, $price_ids );
+	$has_plus_license         = in_array( 1, $price_ids );
+	$has_personal_license     = in_array( 0, $price_ids );
 
 	global $post;
 

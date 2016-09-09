@@ -174,8 +174,8 @@ add_action( 'edd_download_after', 'affwp_theme_learn_more' );
  */
 function affwp_theme_upgrade_or_purchase_modal() {
 
-	$has_plus_license     = in_array( 2, affwp_theme_get_users_price_ids() );
-	$has_personal_license = in_array( 1, affwp_theme_get_users_price_ids() );
+	$has_plus_license     = in_array( 1, affwp_theme_get_users_price_ids() );
+	$has_personal_license = in_array( 0, affwp_theme_get_users_price_ids() );
 	$upgrade_required     = $has_personal_license || $has_plus_license;
 	$professional_add_ons = affwp_theme_get_pro_add_on_count();
 
