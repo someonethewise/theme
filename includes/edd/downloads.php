@@ -28,8 +28,8 @@ function affwp_theme_process_add_on_download() {
 		return;
 	}
 
-	$has_ultimate_license     = in_array( 3, affwp_get_users_price_ids() );
-	$has_professional_license = in_array( 2, affwp_get_users_price_ids() );
+	$has_ultimate_license     = in_array( 3, affwp_theme_get_users_price_ids() );
+	$has_professional_license = in_array( 2, affwp_theme_get_users_price_ids() );
 
 	if ( ! ( $has_ultimate_license || $has_professional_license ) ) {
 		wp_die( 'You need either a Professional or Ultimate license to download this add-on', 'Error', array( 'response' => 403 ) );

@@ -54,7 +54,7 @@ add_filter( 'themedd_account_tabs', 'affwp_theme_account_tabs' );
  */
 function affwp_theme_account_downloads() {
 
-	$price_ids = function_exists( 'affwp_get_users_price_ids' ) ? affwp_get_users_price_ids() : array();
+	$price_ids = function_exists( 'affwp_theme_get_users_price_ids' ) ? affwp_theme_get_users_price_ids() : array();
 
 	$has_ultimate_license     = in_array( 4, $price_ids );
 	$has_professional_license = in_array( 3, $price_ids );
