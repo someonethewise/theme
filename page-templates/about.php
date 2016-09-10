@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'As the saying goes, "If you want something done well, do it yourself."' ) ); ?>
+<?php themedd_post_header( array( 'title' => 'The saying goes, "If you want something done well, do it yourself."' ) ); ?>
 
 <section class="container-fluid mb-xs-4">
     <div class="wrapper slim">
