@@ -22,7 +22,7 @@ get_header(); ?>
 
 <?php
 /**
- * 3 features
+ * Features
  */
 ?>
 <section class="container-fluid pv-xs-2 pv-lg-4">
@@ -84,7 +84,9 @@ get_header(); ?>
             <div class="row center-xs aligncenter">
                 <div class="col-xs col-lg-7">
                     <h1>Sophisticated affiliate tracking for WordPress</h1>
-                </div>
+
+
+				</div>
             </div>
 
             <div class="row center-xs aligncenter mb-xs-5">
@@ -95,7 +97,7 @@ get_header(); ?>
 
             <div class="image aligncenter">
                 <div class="drag-me center-xs middle-xs">Drag</div>
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/home-2.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-1.png'; ?>" />
             </div>
 
         </div>
@@ -119,7 +121,7 @@ get_header(); ?>
             </div>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/home-2.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-2.png'; ?>" />
             </div>
         </div>
 
@@ -142,7 +144,7 @@ get_header(); ?>
             </div>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/home-2.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-3.png'; ?>" />
             </div>
         </div>
 
@@ -165,7 +167,7 @@ get_header(); ?>
             </div>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/home-2.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-4.png'; ?>" />
             </div>
         </div>
 
@@ -188,7 +190,7 @@ get_header(); ?>
             </div>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/home-2.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-5.png'; ?>" />
             </div>
         </div>
 
