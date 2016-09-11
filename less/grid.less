@@ -11,8 +11,6 @@
     }
 }
 
-
-
 .grid-item,
 .edd_download {
     display: -webkit-flex;
@@ -77,11 +75,6 @@
 	margin-bottom: 2rem;
 }
 
-
-
-
-
-
 .grid-item-inner,
 .edd_download_inner {
 
@@ -101,9 +94,6 @@
     font-size: 1rem;
 }
 
-// .grid-item-inner p {
-//     font-size: 1rem;
-// }
 
 .slick-title,
 .grid-item-title {
@@ -121,11 +111,6 @@
 		color: @edd-download-title-hover-color;
 	}
 }
-
-
-// .grid-title a {
-//     border: none;
-// }
 
 .grid-item-inner .post-thumbnail {
 	margin: 0;
@@ -157,44 +142,17 @@
     position: relative;
     overflow: hidden;
     padding: 0;
-    background: #fff;
+    background: transparent;
 }
 
-
-
-
-
-
-
-
-// .grid-item.woocommerce .overlay {
-//     a { background: #a46497; }
-//     a, p { color: #fff; }
-//     footer span { background: darken( #a46497, 5% ); }
-// }
-
-.grid-item.gravity-forms .overlay {
-    a {
-        background: #365666;
-    //    box-shadow: 0px 0px 0px 10px darken( #365666, 5% ) inset;
-    }
-
-    a, p { color: #fff; }
-    footer span { background: darken( #365666, 5% ); }
+.overlay p {
+	font-size: 1rem;
 }
-
-.overlay footer span {
-    padding: 0.5rem 1.5rem;
-    display: none;
-}
-
-
 
 .has-overlay .grid-item-title {
     text-align: center;
     margin-bottom: 0;
 }
-
 
 .has-overlay .overlay footer {
     margin: auto 0 0;
@@ -206,34 +164,42 @@
     border-bottom: none;
 }
 
-.overlay a {
-    position: absolute;
-    display: block;
 
-//    padding: 1.5rem;
-    padding: 2rem 3rem;
-//    left: 0;
-    top: 10%;
-    opacity: 0;
-//    visibility: hidden;
-    height: 100%;
+.overlay {
+	position: absolute;
+	border-radius: @border-radius;
+	top: 10%;
+	height: 100%;
     width: 100%;
-    background: @light-grey;
-    transition: all 0.2s ease-in-out 0s;
-    text-align: center;
-    border-bottom: none;
-    color: @body-text-color;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
+	opacity: 0;
+	transition: all 0.2s ease-in-out 0s;
 }
 
-.has-overlay .grid-item:hover .overlay a {
+.overlay a {
+	padding: 2rem 3rem;
+	display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+	height: 100%;
+    text-align: center;
+    color: @body-text-color;
+}
+
+.has-overlay .grid-item:hover .overlay {
     top: 0;
     opacity: 0.96;
 }
 
+.overlay footer {
+    display: none;
+
+	span {
+		padding: 0.5rem 1.5rem;
+	}
+}
+
 @media only screen and ( min-width: @screen-sm-min ) {
+
 	.grid-item-inner,
 	.edd_download_inner {
 		margin: 1rem;
@@ -244,19 +210,10 @@
 	}
 }
 
+@media only screen and ( min-width: 1366px ) {
 
-@media only screen and ( min-width: @screen-md-min ) {
-
-
-
-
-    .overlay footer span {
+    .overlay footer {
         display: inline-block;
     }
-
-    // .grid-item-inner,
-    // .edd_download_inner {
-    //   padding: 1.5rem;
-    // }
 
 }
