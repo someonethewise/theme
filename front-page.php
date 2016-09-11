@@ -83,7 +83,7 @@ get_header(); ?>
         <div>
             <div class="row center-xs aligncenter">
                 <div class="col-xs col-lg-7">
-                    <h1>Sophisticated affiliate tracking for WordPress</h1>
+                    <h1>Elegant affiliate tracking for WordPress</h1>
 
 
 				</div>
