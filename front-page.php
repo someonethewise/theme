@@ -327,7 +327,7 @@ if ( $integrations->have_posts() ) : ?>
 			$hidden_class = $count > 6 ? 'integration-hidden' : '';
 			?>
 
-                <div <?php post_class( array( 'grid-item', 'col-xs-12 col-sm-6 col-lg-4 mb-xs-2 mb-sm-0', $post->post_name, 'integration-' . $count, $hidden_class ) ); ?>>
+                <div <?php post_class( array( 'grid-item', 'col-xs-12 col-md-6 col-lg-4 mb-xs-2 mb-sm-0', $post->post_name, 'integration-' . $count, $hidden_class ) ); ?>>
                     <div class="grid-item-inner">
 
     					<?php if ( themedd_post_thumbnail() ) : ?>

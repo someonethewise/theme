@@ -39,7 +39,7 @@ function affwp_theme_home_hero_section() {
 						*/ ?>
 
 						<div id="cta">
-							<a href="#section-pricing" class="scroll button large">Start Earning More</a>
+							<a href="#section-pricing" class="scroll button large">Start earning more</a>
 						</div>
 					</div>
 				</div>

@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'Packed full of features', 'subtitle' => 'Yes, these features are all included!' ) ); ?>
+<?php themedd_post_header( array( 'title' => 'Packed full of features', 'subtitle' => 'Yes, <em>all</em> of these features are included!' ) ); ?>
 
 <section class="container-fluid features">
 	<div class="wrapper">

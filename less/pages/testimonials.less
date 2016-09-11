@@ -62,7 +62,7 @@ section.testimonials {
 	.testimonial {
 		background: @light-grey;
 		padding: 3rem;
-		margin: 2rem;
+		margin: 1rem 2rem;
 		border-radius: 3px;
 		border: 1px solid @border-light-grey;
 		width: 100%;
@@ -76,5 +76,11 @@ section.testimonials {
 		padding: 0;
 		display: -webkit-flex;
 		display: flex;
+	}
+}
+
+@media only screen and ( min-width: @screen-sm-min ) {
+	section.testimonials .testimonial {
+		margin: 2rem;
 	}
 }

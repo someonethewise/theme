@@ -13,16 +13,11 @@
   position: relative;
 }
 
-@media all and ( min-width: 1440px ) {
-
-  .popup {
-     max-width: 62%;
-  }
-
-  .popup.wide {
-	  max-width: @page-wrap-max-width;
-  }
-
+// supported integrations
+#supported-integrations.popup {
+	max-width: 100%;
+	padding: 2rem;
+	background: @light-grey;
 }
 
 .mfp-iframe-scaler iframe {
@@ -38,10 +33,10 @@
 .mfp-move-from-bottom {
 
   .mfp-content {
-    padding: 4rem;
+    padding: 1rem;
   }
 
-  /* start state */
+  // start state
   .mfp-with-anim {
     opacity: 0;
     transition: all 0.25s cubic-bezier( .31,1.12,.53,1.16 );
@@ -83,34 +78,53 @@
 
 }
 
-
-
 // zoom images
 
 .mfp-with-zoom.mfp-ready .mfp-container {
-    opacity: 1;
+	opacity: 1;
 }
 .mfp-with-zoom.mfp-ready.mfp-bg {
-    opacity: 0.8;
+	opacity: 0.8;
 }
 
 .mfp-with-zoom.mfp-removing .mfp-container,
 .mfp-with-zoom.mfp-removing.mfp-bg {
-  opacity: 0;
+	opacity: 0;
 }
 
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
-  opacity: 0;
-  -webkit-backface-visibility: hidden;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+	opacity: 0;
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
 }
 
-
-
 .image-source-link {
-  color: #98C3D1;
+	color: #98C3D1;
+}
+
+@media all and ( min-width: 1440px ) {
+
+	.popup {
+		max-width: 62%;
+	}
+
+	.popup.wide {
+		max-width: @page-wrap-max-width;
+	}
+
+}
+
+@media only screen and ( min-width: @screen-lg-min ) {
+	.mfp-move-from-bottom .mfp-content {
+		padding: 4rem;
+	}
+
+	#supported-integrations.popup {
+		padding: 4rem;
+		max-width: 80%;
+	}
 }

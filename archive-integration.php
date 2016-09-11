@@ -14,7 +14,7 @@ get_header(); ?>
 			global $post;
 			?>
 
-			<div <?php post_class( array( 'col-xs-12', 'col-sm-6', 'col-md-4', 'grid-item', 'mb-xs-2', 'mb-sm-0', $post->post_name ) ); ?>>
+			<div <?php post_class( array( 'col-xs-12', 'col-md-6', 'col-lg-4', 'grid-item', 'mb-xs-2', 'mb-sm-0', $post->post_name ) ); ?>>
 
 				<div class="grid-item-inner">
 
