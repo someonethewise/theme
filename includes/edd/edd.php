@@ -3,20 +3,6 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * Redirect requests to single 3rd-party add-on pages to the main 3rd party page
- *
- * @since 1.0.0
- */
-function affwp_theme_redirect_addons() {
-
-	if ( is_singular( 'download' ) && has_term( '3rd-party', 'download_category' ) ) {
-		wp_redirect( site_url( 'add-ons/3rd-party/' ), 301 );
-		exit;
-	}
-
-}
-add_action( 'template_redirect', 'affwp_theme_redirect_addons' );
 
 /**
  * Modify the rewrite option to include the download category
@@ -458,19 +444,37 @@ function affwp_theme_add_on_supported_integrations_modal() {
 
 
 /**
- * Prevent pro addons from being added to cart with ?edd_action=add_to_cart&download_id=XXX
+ * Prevent pro or free addons from being added to cart with ?edd_action=add_to_cart&download_id=XXX
  *
  * @param int $download_id Download Post ID
  * @since 1.0.0
  */
 function affwp_theme_edd_pre_add_to_cart( $download_id, $options ) {
 
-	if ( has_term( 'pro', 'download_category', $download_id ) ) {
+	if (
+		has_term( 'official-free', 'download_category', $download_id ) ||
+		has_term( 'pro', 'download_category', $download_id )
+	) {
 		wp_die( 'This add-on cannot be purchased', 'Error', array( 'back_link' => true, 'response' => 403 ) );
 	}
 
 }
 add_action( 'edd_pre_add_to_cart', 'affwp_theme_edd_pre_add_to_cart', 10, 2 );
+
+/**
+ * Redirect requests to single 3rd-party add-on pages to the main 3rd party page
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_redirect_addons() {
+
+	if ( is_singular( 'download' ) && has_term( '3rd-party', 'download_category' ) ) {
+		wp_redirect( site_url( 'add-ons/3rd-party/' ), 301 );
+		exit;
+	}
+
+}
+add_action( 'template_redirect', 'affwp_theme_redirect_addons' );
 
 
 /**
