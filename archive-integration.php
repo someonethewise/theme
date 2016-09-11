@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => post_type_archive_title( '', false ), 'subtitle' => 'AffiliateWP integrates seamlessly with popular eCommerce, Membership, Form, and Invoice WordPress plugins.' ) ); ?>
+<?php themedd_post_header( array( 'title' => 'One-click integration with your favorite WordPress plugins', 'subtitle' => 'AffiliateWP integrates beautifully with popular eCommerce, membership, form, and invoice plugins for WordPress.' ) ); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-4">

@@ -278,7 +278,6 @@ get_header(); ?>
 					<span class="entry-title-primary">Packed full of features</span>
 					<span class="subtitle">Yes, these features are all included!</span>
 				</h1>
-
 			</div>
 		</div>
 
@@ -312,8 +311,10 @@ if ( $integrations->have_posts() ) : ?>
 
 		<div class="row">
             <div class="col-xs center-xs aligncenter mb-xs-2 mb-sm-4">
-                <h1 class="mb-xs-2">Beautifully integrated with your eCommerce, Membership or Form plugin</h1>
-                <p>AffiliateWP integrates seamlessly with <?php echo $integrations->found_posts; ?> popular eCommerce, Membership, Form, and Invoice WordPress plugins.</p>
+				<h1 class="page-title">
+					<span class="entry-title-primary">Beautifully integrated with your favorite WordPress plugins</span>
+					<span class="subtitle">AffiliateWP integrates seamlessly with <?php echo $integrations->found_posts; ?> popular eCommerce, membership, form, and invoice WordPress plugins.</span>
+				</h1>
             </div>
         </div>
 
