@@ -274,7 +274,11 @@ get_header(); ?>
 
 		<div class="row mb-xs-2 center-xs aligncenter">
 			<div class="col-xs">
-				<h1>Everything you need, nothing you don't</h1>
+				<h1 class="page-title">
+					<span class="entry-title-primary">Packed full of features</span>
+					<span class="subtitle">Yes, these features are all included!</span>
+				</h1>
+
 			</div>
 		</div>
 
