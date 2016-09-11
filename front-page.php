@@ -229,8 +229,6 @@ get_header(); ?>
             },
         });
 
-
-
     });
 
 } )( jQuery );
@@ -276,7 +274,7 @@ get_header(); ?>
 			<div class="col-xs">
 				<h1 class="page-title">
 					<span class="entry-title-primary">Packed full of features</span>
-					<span class="subtitle">Yes, these features are all included!</span>
+					<span class="subtitle">Yes, <em>all</em> of these features are included!</span>
 				</h1>
 			</div>
 		</div>
@@ -400,34 +398,7 @@ if ( $integrations->have_posts() ) : ?>
 
             </div>
 
-    		<ul class="slick-used-by-nav">
-    			<li class="slick-prev">
 
-                    <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-                        <g>
-                            <g id="XMLID_2_">
-                                <path d="M9.5,0.5L0.5,9.5L9.5,18.5" />
-                            </g>
-                            <g id="XMLID_1_">
-                                <path d="M0.5,9.5L23.5,9.5" />
-                            </g>
-                        </g>
-                    </svg>
-                </li>
-    			<li class="slick-next">
-                    <svg width="24" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-                        <g>
-                            <g id="XMLID_2_">
-                                <path d="M14.5,0.5L23.5,9.5L14.5,18.5" />
-                            </g>
-                            <g id="XMLID_1_">
-                                <path d="M23.5,9.5L0.5,9.5" />
-                            </g>
-                        </g>
-                    </svg>
-
-                </li>
-    		</ul>
         </div>
     </div>
 </section>
@@ -439,11 +410,10 @@ if ( $integrations->have_posts() ) : ?>
     jQuery(".used-by-slider").slick({
         dots: false,
         infinite: true,
+		arrows: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-		prevArrow: jQuery('.slick-used-by-nav .slick-prev'),
-        nextArrow: jQuery('.slick-used-by-nav .slick-next'),
     });
 
   });
