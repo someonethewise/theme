@@ -106,44 +106,18 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 	<div id="pricing-calculator" class="popup entry-content mfp-with-anim mfp-hide">
 
-		<?php /*
-		<svg width="80" height="80" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-			<g transform="matrix(0.956522,0,1.54074e-33,0.956522,2.91304,0.521739)">
-				<path d="M18.5,3.114C18.5,1.671 17.329,0.5 15.886,0.5L3.114,0.5C1.671,0.5 0.5,1.671 0.5,3.114L0.5,20.886C0.5,22.329 1.671,23.5 3.114,23.5L15.886,23.5C17.329,23.5 18.5,22.329 18.5,20.886L18.5,3.114Z" style="fill:none;stroke-width:1px;stroke:white;"/>
-				<path d="M16.5,3.43C16.5,2.917 16.083,2.5 15.57,2.5L3.43,2.5C2.917,2.5 2.5,2.917 2.5,3.43L2.5,5.57C2.5,6.083 2.917,6.5 3.43,6.5L15.57,6.5C16.083,6.5 16.5,6.083 16.5,5.57L16.5,3.43Z" style="fill:none;stroke-width:1px;stroke:white;"/>
-				<path d="M0.5,15.5L18.5,15.5" style="fill:none;stroke-width:1px;stroke:white;"/>
-				<path d="M0.5,8.5L18.5,8.5" style="fill:none;stroke-width:1px;stroke:white;"/>
-				<path d="M9.5,8.5L9.5,23.5" style="fill:none;stroke-width:1px;stroke:white;"/>
-				<path d="M3,12.5L6,12.5" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:white;"/>
-				<path d="M12.5,12.5L15.5,12.5" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:white;"/>
-				<path d="M12.5,20.5L15.5,20.5" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:white;"/>
-				<path d="M12.5,18.5L15.5,18.5" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:white;"/>
-				<path d="M4.5,11L4.5,14" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:white;"/>
-				<path d="M3,18L6,21" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:white;"/>
-				<path d="M6,18L3,21" style="fill:none;stroke-width:1px;stroke-linecap:round;stroke:white;"/>
-			</g>
-		</svg>
-		*/ ?>
-
-		<?php /*
-		<h1>AffiliateWP Pricing Calculator</h1>
-		*/ ?>
-
 		<div id="pricing-result">
 
+
 		<h2><span class="rounded-referral-sale-count"></span> is all you need!</h2>
-		<p>Based on the answers below, you'll need just <strong><span class="rounded-referral-sale-count"></span></strong> from affiliates to cover the cost of AffiliateWP's <span class="license-type"></span> license. And that's exactly what AffiliateWP will help you do, make more sales!</p>
+		<p class="intro">Based on the below, you'll need just <strong><span class="rounded-referral-sale-count"></span></strong> from affiliates to cover the cost of <span class="license-type"></span> license.</p>
+		<p>Have a play with our calculator to see how many affiliate-generated sales you need to cover the cost of AffiliateWP! Simply change the figures in the below fields and the calculator will update dynamically.</p>
 
 		<?php /*
 		<p>* Non-rounded number: <span class="referral-sale-count"></span></p>
 		*/ ?>
 
 		</div>
-
-		<?php /*
-		<p>Answer the questions below and ydjust the values Use the calculator below to work out how many referral sales you'll need to cover the cost of an AffiliateWP license.</p>
-		*/
-		?>
 
 		<?php
 
@@ -190,7 +164,15 @@ function affwp_theme_modal_content_pricing_calculator() {
 				saleText = 'sale';
 			}
 
-			jQuery('.license-type').html( licenseType );
+			var joinerText = 'a ';
+
+			console.log( licenseType );
+
+			if ( 'Ultimate ($449)' === licenseType ) {
+				joinerText = 'an ';
+			}
+
+			jQuery('.license-type').html( joinerText + licenseType );
 			jQuery('.rounded-referral-sale-count').html(roundedReferralSaleCount + ' ' + saleText );
 
 
@@ -200,6 +182,8 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 			// update text when the answers have been changed
 			jQuery( "#input_" + formID + "_9" ).change(function() {
+
+
 
 				var referralSaleCount = jQuery("#input_" + formID + "_9").val();
 				var roundedReferralSaleCount = Math.round(referralSaleCount);
@@ -214,10 +198,16 @@ function affwp_theme_modal_content_pricing_calculator() {
 				var roundedReferralSaleCount = Math.round(referralSaleCount);
 				var licenseType = jQuery( "#input_" + formID + "_3" ).find(":selected").text();
 
+				var joinerText = 'a ';
+
+				if ( 'Ultimate ($449)' === licenseType ) {
+					joinerText = 'an ';
+				}
+
 				jQuery('.rounded-referral-sale-count').html(roundedReferralSaleCount + ' ' + saleText );
 				jQuery('.referral-sale-count').html(referralSaleCount + ' ' + saleText);
 				jQuery('input[name="affwp_calculation"]').html(roundedReferralSaleCount);
-				jQuery('.license-type').html( licenseType );
+				jQuery('.license-type').html( joinerText + licenseType );
 
 			});
 

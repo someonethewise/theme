@@ -31,7 +31,7 @@
 		background: #fff;
 		color: @secondary-color;
 	}
-	
+
 }
 
 
@@ -113,7 +113,29 @@
 // pricing calculator
 .pricing-calculator {
 
-//	background: @secondary-color url('images/svgs/original/calculator.svg') 0 0 no-repeat;
+//	background: @secondary-color url("images/svgs/bg-calculator.svg") repeat 0 0;
+//	background-size: 80px auto;
+
+
+
+
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0060b9b3', endColorstr='#60b9b3',GradientType=1 );
+
+	.bg {
+// 		background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(96,185,179,1) 75%);
+// background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(96,185,179,1) 75%);
+// background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(96,185,179,1) 75%);
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#60b9b3',GradientType=1 );
+
+//		padding: 4rem 2rem;
+
+	// 	background: -moz-linear-gradient(top, rgba(96,185,179,0) 0%, rgba(96,185,179,1) 50%);
+	// background: -webkit-linear-gradient(top, rgba(96,185,179,0) 0%,rgba(96,185,179,1) 50%);
+	// background: linear-gradient(to bottom, rgba(96,185,179,0) 0%,rgba(96,185,179,1) 50%);
+
+	}
+
+//#60b9b3 url("images/svgs/bg-calculator.svg") repeat scroll 0 0 / 80px auto
 	svg {
 		margin-right: 0.5rem;
 		float: left;
@@ -134,15 +156,21 @@
 #pricing-calculator {
 
 	.gfield {
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	ul.gform_fields {
 		list-style-type: decimal;
+		margin-bottom: 0;
 
 		li {
 			border-bottom: 2px solid @light-grey;
+
+			&:nth-child(4) {
+				margin-bottom: 0;
+				border-bottom: none;
+			}
 		}
 	}
 
@@ -155,7 +183,6 @@
 	}
 
 	label {
-		color: @secondary-color;
 		font-weight: 500;
 	}
 
@@ -164,16 +191,16 @@
 	}
 
 	#pricing-result {
-		background: @secondary-color;
+		background: @primary-color;
 		margin: -4rem -4rem 2rem -4rem;
-		padding: 4rem;
+		padding: 3rem;
 
 
 		p, h2 {
 			color: #fff;
 		}
 
-		p {
+		p:last-child {
 			margin-bottom: 0;
 		}
 	}
