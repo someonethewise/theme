@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header(); ?>
+<?php themedd_post_header( array( 'title' => 'Take a closer look at AffiliateWP', 'subtitle' => 'Explore AffiliateWP’s core features, supported integrations, and view screenshots of the entire plugin.' ) ); ?>
 
 <section class="container-fluid highlight add-ons pv-xs-4">
 	<div class="container-fluid wrapper">
@@ -21,10 +21,10 @@ get_header(); ?>
 
 					<div>
 						<h3>
-							<a href="<?php echo site_url( 'features' ); ?>">Features</a>
+							<a href="<?php echo site_url( '/features/' ); ?>">Features</a>
 						</h3>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>AffiliateWP provides all the features you need to get your affiliate program up and running within minutes. Configuring AffiliateWP is quick, easy, and hassle-free.</p>
 					</div>
 
 					<footer>
@@ -44,10 +44,10 @@ get_header(); ?>
 
 					<div>
 						<h3>
-							<a href="<?php echo site_url( 'integrations' ); ?>">Integrations</a>
+							<a href="<?php echo site_url( '/integrations/' ); ?>">Integrations</a>
 						</h3>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>Seamless integration with your favorite WordPress plugin is only one click away. Easily set up your preferred eCommerce, membership, form or invoice plugin.</p>
 					</div>
 
 					<footer>
@@ -67,10 +67,10 @@ get_header(); ?>
 
 					<div>
 						<h3>
-							<a href="<?php echo site_url( 'screenshots' ); ?>">Screenshots</a>
+							<a href="<?php echo site_url( '/screenshots/' ); ?>">Screenshots</a>
 						</h3>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>Take a look under the hood at AffiliateWP’s beautiful integration with WordPress. Check out the admin settings, the Affiliate Area, and more.</p>
 					</div>
 
 					<footer>
