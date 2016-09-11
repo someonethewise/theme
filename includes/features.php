@@ -43,7 +43,7 @@ function affwp_theme_features() {
 			'icon'        => 'feature-creatives'
 		),
 		7 => array(
-			'title'       => 'Coupon tracking',
+			'title'       => 'Affiliate coupon tracking',
 			'description' => 'Connect coupon codes to specific affiliate accounts with <a target="_blank" href="http://docs.affiliatewp.com/article/59-affiliate-coupon-tracking">affiliate coupon tracking</a>.',
 			'icon'        => 'feature-coupon-tracking'
 		),
