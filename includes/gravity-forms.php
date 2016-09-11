@@ -29,6 +29,11 @@ add_filter( 'gform_submit_button_' . affwp_theme_pricing_calculator_form_id(), '
  * @since 1.0.0
  */
 function affwp_theme_pricing_calculator_form_id() {
+
+	if ( ! class_exists( 'RGFormsModel' ) ) {
+		return;
+	}
+
 	return RGFormsModel::get_form_id( 'AffiliateWP Pricing Calculator' );
 }
 
@@ -38,6 +43,11 @@ function affwp_theme_pricing_calculator_form_id() {
  * @since 1.0.0
  */
 function affwp_theme_signup_form_id() {
+
+	if ( ! class_exists( 'RGFormsModel' ) ) {
+		return;
+	}
+	
 	return RGFormsModel::get_form_id( 'Signup' );
 }
 
