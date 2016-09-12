@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => post_type_archive_title( '', false ), 'subtitle' => 'What our customers have to say' ) ); ?>
+<?php themedd_post_header( array( 'title' => '"Do you know why I love AffiliateWP? Because they make me look good."', 'subtitle' => 'Don’t just take our word for it, see why our awesome customers love AffiliateWP below.' ) ); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight3 testimonials">
