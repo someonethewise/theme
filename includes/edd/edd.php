@@ -384,7 +384,7 @@ function affwp_theme_edd_download_integrations() {
 	}
 
 	?>
-	<a id="button-supported-integrations" href="#supported-integrations" class="button wide outline secondary popup-content" data-effect="mfp-move-from-bottom">View supported integrations</a>
+	<a id="button-supported-integrations" href="#supported-integrations" class="button wide outline secondary popup-content" data-effect="mfp-move-from-bottom">View compatible integrations</a>
 	<?php affwp_theme_add_on_supported_integrations_modal(); ?>
 <?php
 }
@@ -404,8 +404,8 @@ function affwp_theme_add_on_supported_integrations_modal() {
 	<div id="supported-integrations" class="popup wide entry-content mfp-with-anim mfp-hide">
 
 		<h1 class="page-title aligncenter">
-			<span class="entry-title-primary">Supported Integrations</span>
-			<span class="subtitle"><?php echo get_the_title(); ?> supports the following integrations.</span>
+			<span class="entry-title-primary">Compatible integrations</span>
+			<span class="subtitle"><?php echo get_the_title(); ?> is compatible with the following integrations.</span>
 		</h1>
 
 		<?php if ( $integrations ) : ?>
