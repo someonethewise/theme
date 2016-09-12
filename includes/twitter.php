@@ -57,7 +57,7 @@ function affwp_theme_tweet_slider() {
                             $name        = $user_info['name'];
                             $screen_name = $user_info['screen_name'];
                             $avatar      = $user_info['avatar'];
-
+							$avatar      = preg_replace( "/^http:/i", "https:", $avatar );
                         ?>
                             <li class="tweet aligncenter">
                                 <div class="avatar">
