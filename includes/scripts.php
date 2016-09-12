@@ -82,8 +82,7 @@ function affwp_theme_dequeue_scripts() {
 		is_front_page() ||
 		edd_is_checkout() ||
 		is_page( 'pricing' ) ||
-		is_page( 'account' ) ||
-		is_page( 'support' )
+		is_page( 'account' )
 	) {
 		wp_dequeue_script( 'beacon' );
 	}
