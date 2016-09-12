@@ -149,7 +149,7 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 			var licenseType = jQuery( "#input_" + formID + "_3" ).find(":selected").text();
 			var referralSaleCount = jQuery("#input_" + formID + "_9").val();
-			var roundedReferralSaleCount = Math.round(referralSaleCount);
+			var roundedReferralSaleCount = Math.ceil(referralSaleCount);
 
 			var saleText;
 
@@ -173,18 +173,15 @@ function affwp_theme_modal_content_pricing_calculator() {
 			jQuery('.license-type').html( joinerText + licenseType );
 			jQuery('.rounded-referral-sale-count').html(roundedReferralSaleCount + ' ' + saleText );
 
-
-
 			jQuery('.referral-sale-count').html(referralSaleCount + ' ' + saleText );
 			jQuery('input[name="affwp_calculation"]').html(roundedReferralSaleCount);
 
 			// update text when the answers have been changed
 			jQuery( "#input_" + formID + "_9" ).change(function() {
 
-
-
 				var referralSaleCount = jQuery("#input_" + formID + "_9").val();
-				var roundedReferralSaleCount = Math.round(referralSaleCount);
+
+				var roundedReferralSaleCount = Math.ceil(referralSaleCount);
 
 				if ( roundedReferralSaleCount === 1 ) {
 					saleText = 'sale';
@@ -193,7 +190,6 @@ function affwp_theme_modal_content_pricing_calculator() {
 				}
 
 				var referralSaleCount = jQuery(this).val();
-				var roundedReferralSaleCount = Math.round(referralSaleCount);
 				var licenseType = jQuery( "#input_" + formID + "_3" ).find(":selected").text();
 
 				var joinerText = 'a ';
