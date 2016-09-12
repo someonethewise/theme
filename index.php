@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'Blog' ) ); ?>
+<?php themedd_post_header( array( 'title' => 'Seen our latest articles?', 'subtitle' => 'Check them out below!' ) ); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-1">

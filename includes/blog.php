@@ -215,8 +215,8 @@ add_action( 'themedd_post_header_end', 'affwp_theme_post_header_meta' );
  */
 function affwp_theme_paging_nav( $defaults ) {
 
-	$defaults['next_posts_link']     = 'Older Articles';
-	$defaults['previous_posts_link'] = 'Newer Articles';
+	$defaults['next_posts_link']     = 'Older articles';
+	$defaults['previous_posts_link'] = 'Newer articles';
 
 	return $defaults;
 }
