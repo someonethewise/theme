@@ -47,7 +47,7 @@ function affwp_theme_signup_form_id() {
 	if ( ! class_exists( 'RGFormsModel' ) ) {
 		return;
 	}
-	
+
 	return RGFormsModel::get_form_id( 'Signup' );
 }
 
@@ -79,7 +79,7 @@ function affwp_theme_gform_signup() {
 	<section class="signup box">
 
 	<h4 class="signup-header">Join <span><?php echo $subscriber_count; ?></span> others growing their business with AffiliateWP</h4>
-	<p class="signup-intro">We'll only notify you of new articles, special promotions and updates, no spam!</p>
+	<p class="signup-intro">We'll only notify you of new articles, special promotions and updates. No spam!</p>
 
 	<?php gravity_form( affwp_theme_signup_form_id(), false, false, false, '', true ); ?>
 	</section>
