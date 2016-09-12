@@ -209,7 +209,7 @@ function affwp_theme_site_menu_icons( $item_output, $item, $depth, $args ) {
 		$item_output = str_replace( 'Add-ons', affwp_theme_icon_add_ons() . 'Add-ons', $item_output );
 	}
 
-	if ( $item->title === 'Support' ) {
+	if ( $item->title === 'Support' && $item->type_label === 'Page' ) {
 		$item_output = str_replace( 'Support', affwp_theme_icon_support() . 'Support', $item_output );
 	}
 
