@@ -17,6 +17,7 @@ get_header(); ?>
 				    'orderby'    => 'name',
 					'order'      => 'DESC',
 				    'hide_empty' => 0,
+					'exclude'    => array( 42, 34 )
 				) );
 			?>
 
