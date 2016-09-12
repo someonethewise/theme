@@ -34,7 +34,7 @@ function affwp_theme_get_changelog() {
 	if ( false === ( $html = get_transient( 'affwp_changelog' ) ) ) {
 
         // Get remote HTML file
-		$response = wp_remote_get( 'https://affiliatewp.com/addons/affiliatewp/changelog' );
+		$response = wp_remote_get( 'https://affiliatewp.com/add-ons/affiliatewp/affiliatewp/changelog' );
 
         // Check for error
 		if ( is_wp_error( $response ) ) {
