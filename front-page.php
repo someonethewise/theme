@@ -281,7 +281,7 @@ get_header(); ?>
 			<div class="col-xs">
 				<h1 class="page-title">
 					<span class="entry-title-primary">Packed full of features</span>
-					<span class="subtitle">Yes, <em>all</em> of these features are included!</span>
+					<span class="subtitle">Yes, <em>all</em> of these features are included in AffiliateWP!</span>
 				</h1>
 			</div>
 		</div>
