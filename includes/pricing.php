@@ -166,8 +166,6 @@ function affwp_theme_modal_content_pricing_calculator() {
 
 			var joinerText = 'a ';
 
-			console.log( licenseType );
-
 			if ( 'Ultimate ($449)' === licenseType ) {
 				joinerText = 'an ';
 			}
@@ -391,7 +389,6 @@ function affwp_themedd_call_to_action() {
 			});
 
 			data.element.replace(circle);
-			console.log(data.index);
 		}
 
 	});
