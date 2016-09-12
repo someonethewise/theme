@@ -674,24 +674,29 @@ function affwp_theme_add_on_popups() {
 		<?php if ( $wp_query->have_posts() ) : ?>
 
 		    <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+
 		        <article>
-		    		<h2><?php the_title(); ?></h2>
+
+
 
 					<div class="row">
 						<?php if ( has_post_thumbnail() ) : ?>
-							<div class="col-xs-6">
+							<div class="col-xs-12 col-sm-6">
+								<h3><?php the_title(); ?></h3>
 								<?php the_excerpt(); ?>
 							</div>
-							<div class="col-xs-6">
+							<div class="col-xs-12 col-sm-6">
 								<?php themedd_post_thumbnail( 'thumbnail', false ); ?>
 							</div>
 						<?php else : ?>
 							<div class="col-xs-12">
+								<h3><?php the_title(); ?></h3>
 								<?php the_excerpt(); ?>
 							</div>
 						<?php endif; ?>
 					</div>
 				</article>
+
 		    <?php endwhile; wp_reset_query(); ?>
 
 		<?php endif; ?>
