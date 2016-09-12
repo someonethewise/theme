@@ -33,6 +33,10 @@ section.news {
 	}
 }
 
+.rationale h2 {
+	font-size: 1.7rem;
+}
+
 // integrations
 
 section.integrations {
@@ -71,6 +75,8 @@ section.integrations a.post-thumbnail {
 	height: 100%;
 	z-index: 0;
 	overflow: hidden;
+
+
 }
 
 // 227 / 79 / 67
@@ -210,6 +216,18 @@ foreignobject {
 .home .hero {
 	background: @primary-color; // fallback for older browsers, including IE9
 	position: relative;
+
+
+}
+
+.home-fade {
+	height: 145px;
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	background: -moz-linear-gradient(top, rgba(237,109,98,1) 50%, rgba(237,109,98,0) 100%);
+	background: -webkit-linear-gradient(top, rgba(237,109,98,1) 50%,rgba(237,109,98,0) 100%);
+	background: linear-gradient(to bottom, rgba(237,109,98,1) 50%,rgba(237,109,98,0) 100%);
 }
 
 #masthead {

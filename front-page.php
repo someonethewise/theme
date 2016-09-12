@@ -25,8 +25,14 @@ get_header(); ?>
  * Features
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-lg-4">
+<section class="container-fluid pv-xs-2 pv-lg-4 rationale">
     <div class="wrapper">
+
+		<h1 class="page-title aligncenter mb-xs-4">
+			<span class="entry-title-primary">Affiliate marketing can help grow your business</span>
+			<span class="subtitle">Rank higher. Boost traffic. Earn more money.</span>
+		</h1>
+
 
         <div class="row center-xs mb-xs-4 aligncenter">
             <div class="col-xs-12 col-sm-4">
@@ -81,11 +87,10 @@ get_header(); ?>
          */
         ?>
         <div>
+
             <div class="row center-xs aligncenter">
                 <div class="col-xs col-lg-7">
                     <h1>Elegant affiliate tracking for WordPress</h1>
-
-
 				</div>
             </div>
 

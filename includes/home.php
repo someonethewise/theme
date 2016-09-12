@@ -23,6 +23,7 @@ function affwp_theme_home_hero_section() {
 
 	<div class="hero">
 
+		<div class="home-fade"></div>
 		<?php do_action( 'affwp_theme_hero_start' ); ?>
 
 		<section class="container-fluid">
@@ -95,7 +96,7 @@ function affwp_theme_chartist_js() {
 		labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 		series: [
 			[250, 300, 200, 200, 250, 200, 320, 400, 280, 250],
-			[300, 380, 300, 400, 530, 740, 800, 1000, 1400, 2100],
+			[300, 380, 300, 400, 530, 740, 800, 1000, 1400, 2000],
 		]
 	}, {
 		fullWidth: true,
