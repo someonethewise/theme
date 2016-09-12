@@ -321,7 +321,7 @@ function affwp_themedd_call_to_action() {
 					<svg width="48px" height="48px">
 	                    <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-secure-payment'; ?>"></use>
 	                </svg>
-					<p>Safe &amp; Secure online payment</p>
+					<p>Secure online payment</p>
 				</div>
 
 				<div class="col-xs-12 col-sm-4 end-md">
@@ -330,8 +330,6 @@ function affwp_themedd_call_to_action() {
 	                </svg>
 					<p>Fast and friendly <a href="<?php echo site_url( 'support' ); ?>">support</a></p>
 				</div>
-
-
 
 			</div>
 		</div>
