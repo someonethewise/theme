@@ -29,7 +29,7 @@ get_header(); ?>
     <div class="wrapper">
 
 		<h1 class="page-title aligncenter mb-xs-4">
-			<span class="entry-title-primary">Affiliate marketing can help grow your business</span>
+			<span class="entry-title-primary">Affiliate marketing will grow your business</span>
 			<span class="subtitle">Rank higher. Boost traffic. Earn more money.</span>
 		</h1>
 
@@ -88,17 +88,10 @@ get_header(); ?>
         ?>
         <div>
 
-            <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-7">
-                    <h1>Elegant affiliate tracking for WordPress</h1>
-				</div>
-            </div>
-
-            <div class="row center-xs aligncenter mb-xs-5">
-                <div class="col-xs col-lg-8">
-                    <p>Finally, an affiliate marketing solution that feels like WordPress. AffiliateWP provides advanced affiliate and referral tracking, integrated seamlessly with your WordPress site.</p>
-                </div>
-            </div>
+			<h1 class="page-title aligncenter">
+				<span class="entry-title-primary">Elegant affiliate tracking for WordPress</span>
+				<span class="subtitle">Finally, an affiliate marketing solution that feels like WordPress. AffiliateWP provides advanced affiliate and referral tracking, integrated seamlessly with your WordPress site.</span>
+			</h1>
 
             <div class="image aligncenter">
                 <div class="drag-me center-xs middle-xs">Drag</div>
@@ -113,17 +106,11 @@ get_header(); ?>
          */
         ?>
         <div>
-            <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-7">
-                    <h1>Easily manage your team of affiliates</h1>
-                </div>
-            </div>
 
-            <div class="row center-xs aligncenter mb-xs-5">
-                <div class="col-xs col-lg-7">
-                    <p>Effortless affiliate management. View top-earning affiliates, edit affiliate accounts, set per-affiliate referral rates and more.</p>
-                </div>
-            </div>
+			<h1 class="page-title aligncenter">
+				<span class="entry-title-primary">Easily manage your team of affiliates</span>
+				<span class="subtitle">Effortless affiliate management. View top-earning affiliates, edit affiliate accounts, set per-affiliate referral rates and more.</span>
+			</h1>
 
             <div class="image aligncenter">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-2.png'; ?>" />
@@ -136,17 +123,11 @@ get_header(); ?>
          */
         ?>
         <div>
-            <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-9">
-                    <h1>Set up your new affiliate system in just minutes</h1>
-                </div>
-            </div>
 
-            <div class="row center-xs aligncenter mb-xs-5">
-                <div class="col-xs col-lg-7">
-                    <p>Get up and running in minutes. AffiliateWP integrates with your favorite WordPress eCommerce, form and membership plugins with one click.</p>
-                </div>
-            </div>
+			<h1 class="page-title aligncenter">
+				<span class="entry-title-primary">Set up your new affiliate system in just minutes</span>
+				<span class="subtitle">Get up and running in minutes. AffiliateWP integrates with your favorite WordPress eCommerce, form and membership plugins with one click.</span>
+			</h1>
 
             <div class="image aligncenter">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-3.png'; ?>" />
@@ -159,17 +140,11 @@ get_header(); ?>
          */
         ?>
         <div>
-            <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-7">
-                    <h1>A place for your affiliates to call home</h1>
-                </div>
-            </div>
 
-            <div class="row center-xs aligncenter mb-xs-5">
-                <div class="col-xs col-lg-7">
-                    <p>An affiliate dashboard that blends seamlessly with your WordPress theme. Affiliates can view earnings, see their performance statistics, and access creatives.</p>
-                </div>
-            </div>
+			<h1 class="page-title aligncenter">
+				<span class="entry-title-primary">A place for your affiliates to call home</span>
+				<span class="subtitle">An affiliate dashboard that blends seamlessly with your WordPress theme. Affiliates can view earnings, see their performance statistics, and access creatives.</span>
+			</h1>
 
             <div class="image aligncenter">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-4.png'; ?>" />
@@ -182,17 +157,11 @@ get_header(); ?>
          */
         ?>
         <div>
-            <div class="row center-xs aligncenter">
-                <div class="col-xs col-lg-7">
-                    <h1>View real-time reports and graphs</h1>
-                </div>
-            </div>
 
-            <div class="row center-xs aligncenter mb-xs-5">
-                <div class="col-xs col-lg-7">
-                    <p>Get an overview of your affiliates’ performance in real-time with detailed referral data and graphs.</p>
-                </div>
-            </div>
+			<h1 class="page-title aligncenter">
+				<span class="entry-title-primary">View real-time reports and graphs</span>
+				<span class="subtitle">Get an overview of your affiliates’ performance in real-time with detailed referral data and graphs.</span>
+			</h1>
 
             <div class="image aligncenter">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-5.png'; ?>" />
