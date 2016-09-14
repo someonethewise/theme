@@ -220,7 +220,7 @@ function affwp_theme_get_users_price_ids( $user_id = 0 ) {
 
 	$keys = affwp_theme_get_users_licenses( $user_id );
 
-	if( $keys ) {
+	if ( $keys ) {
 		$keys = wp_list_pluck( $keys, 'price_id' );
 	} else {
 		$keys = array();
@@ -228,22 +228,6 @@ function affwp_theme_get_users_price_ids( $user_id = 0 ) {
 
 	return $keys;
 
-}
-
-/**
- * Returns the URL to download an add on
- *
- * @since 1.0.0
- * @return string
-*/
-function affwp_theme_get_add_on_download_url( $add_on_id = 0 ) {
-
-	$args = array(
-		'edd_action' => 'add_on_download',
-		'add_on'     => $add_on_id,
-	);
-
-	return add_query_arg( $args, home_url() );
 }
 
 /**
@@ -305,6 +289,22 @@ function affwp_theme_edd_download_url( $download_id = 0 ) {
 }
 
 /**
+ * Returns the URL to download an add on
+ *
+ * @since 1.0.0
+ * @return string
+*/
+function affwp_theme_get_add_on_download_url( $add_on_id = 0 ) {
+
+	$args = array(
+		'edd_action' => 'add_on_download',
+		'add_on'     => $add_on_id,
+	);
+
+	return add_query_arg( $args, home_url() );
+}
+
+/**
  * Check an individual license to see if it has expired
  */
 function affwp_theme_has_license_expired( $license = '' ) {
@@ -355,4 +355,47 @@ function affwp_theme_has_users_license_expired() {
 	}
 
 	return $has_expired;
+}
+
+/**
+ * Find out if customer can access pro add-ons
+ * This will return true if the customer at least 1 valid (active and not expired) Pro or Ultimate license
+ */
+function affwp_theme_can_access_pro_add_ons() {
+
+	// set flag to false by default
+	$can_access = false;
+
+	// get users licenses
+	$licenses = affwp_theme_get_users_licenses();
+
+	if ( $licenses ) {
+
+		// loop through licenses
+		foreach ( $licenses as $id => $license ) {
+
+			// user has ultimate license, nothing to see here, let them through.
+			if ( $license['price_id'] === '3' ) {
+				$can_access = true;
+				break;
+			}
+
+			// customer has professional license
+			if ( $license['price_id'] === '2' ) {
+
+				// find at least 1 professional license that hasn't expired
+				if ( ! affwp_theme_has_license_expired( $license['license'] ) ) {
+					// customer can access pro add-ons
+					$can_access = true;
+					break;
+				}
+
+			}
+
+		}
+
+	}
+
+	return $can_access;
+
 }
