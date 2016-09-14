@@ -1,30 +1,6 @@
 // feature highlights
 section.feature-highlights {
     position: relative;
-
-    .slick-slide {
-        display: flex;
-        flex-direction: column;
-		margin: 0 2rem;
-    }
-
-	.slick-slide img {
-		width: 100%;
-	    .box-shadow( 0 30px 30px 0 rgba( 0, 0, 0, 0.1 ) );
-	}
-
-	p {
-		font-size: 1.4rem;
-		margin-bottom: 0;
-	}
-
-    .image {
-        margin: auto auto 0 auto;
-		max-width: 1200px;
-    }
-
-
-
 }
 
 // fade in slider when slick slider has initialized
@@ -45,6 +21,24 @@ section.feature-highlights {
 	&.slick-initialized {
 		opacity: 1;
 	}
+
+	.image {
+        margin: auto auto 0 auto;
+		max-width: 1200px;
+    }
+
+	.slick-slide {
+        display: flex;
+        flex-direction: column;
+		margin: 0 2rem;
+
+		img {
+			width: 100%;
+		    .box-shadow( 0 30px 30px 0 rgba( 0, 0, 0, 0.1 ) );
+			margin: 0 auto;
+		}
+    }
+
 }
 
 
