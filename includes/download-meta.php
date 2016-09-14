@@ -275,16 +275,8 @@ add_action( 'edd_download_meta', 'affwp_theme_download_meta_version', 1 );
  */
 function affwp_theme_download_meta_affwp_version_required() {
 
-	$old_meta = get_post_meta( get_the_ID(), '_affwp_addon_requires', true );
-	$new_meta = get_post_meta( get_the_ID(), '_edd_download_meta_affwp_version_required', true );
-
-	if ( $old_meta ) {
-		$version = $old_meta;
-	} elseif ( $new_meta ) {
-		$version = $new_meta;
-	} else {
-		$version = '';
-	}
+	$version = get_post_meta( get_the_ID(), '_edd_download_meta_affwp_version_required', true );
+	$version = $version ? $version : '';
 
 	if ( $version ) : ?>
 		<div class="download-meta meta-version-required">
