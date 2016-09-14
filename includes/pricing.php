@@ -734,10 +734,10 @@ function affwp_theme_add_on_popups() {
 
 					<div class="row">
 						<?php if ( has_post_thumbnail() ) : ?>
-							<div class="col-xs-6">
+							<div class="col-xs-12 col-sm-6">
 								<?php the_excerpt(); ?>
 							</div>
-							<div class="col-xs-6">
+							<div class="col-xs-12 col-sm-6">
 								<?php themedd_post_thumbnail( 'thumbnail', false ); ?>
 							</div>
 						<?php else : ?>
