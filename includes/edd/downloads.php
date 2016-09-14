@@ -14,17 +14,17 @@
  */
 function affwp_theme_process_add_on_download() {
 
-	if( ! isset( $_GET['add_on'] ) ) {
+	if ( ! isset( $_GET['add_on'] ) ) {
 		return;
 	}
 
-	if( ! is_user_logged_in() ) {
+	if ( ! is_user_logged_in() ) {
 		return;
 	}
 
-	$add_on   = absint( $_GET['add_on'] );
+	$add_on = absint( $_GET['add_on'] );
 
-	if( 'download' != get_post_type( $add_on ) ) {
+	if ( 'download' != get_post_type( $add_on ) ) {
 		return;
 	}
 
@@ -33,6 +33,13 @@ function affwp_theme_process_add_on_download() {
 
 	if ( ! ( $has_ultimate_license || $has_professional_license ) ) {
 		wp_die( 'You need either a Professional or Ultimate license to download this add-on', 'Error', array( 'response' => 403 ) );
+	}
+
+	/**
+	 * Expired professional license
+	 */
+	if ( ! affwp_theme_can_access_pro_add_ons() ) {
+		wp_die( sprintf( 'Your license key has expired. %s to download pro add-ons.', '<a href="/account/">Renew your license key</a>' ), 'Error', array( 'response' => 403 ) );
 	}
 
 	$user_info = array();
@@ -56,7 +63,7 @@ function affwp_theme_process_add_on_download() {
 	}
 
 	@session_write_close();
-	if( function_exists( 'apache_setenv' ) ) @apache_setenv('no-gzip', 1);
+	if ( function_exists( 'apache_setenv' ) ) @apache_setenv('no-gzip', 1);
 	@ini_set( 'zlib.output_compression', 'Off' );
 
 	nocache_headers();
@@ -67,7 +74,8 @@ function affwp_theme_process_add_on_download() {
 	header("Content-Transfer-Encoding: binary");
 
 	$method = edd_get_file_download_method();
-	if( 'x_sendfile' == $method && ( ! function_exists( 'apache_get_modules' ) || ! in_array( 'mod_xsendfile', apache_get_modules() ) ) ) {
+
+	if ( 'x_sendfile' == $method && ( ! function_exists( 'apache_get_modules' ) || ! in_array( 'mod_xsendfile', apache_get_modules() ) ) ) {
 		// If X-Sendfile is selected but is not supported, fallback to Direct
 		$method = 'direct';
 	}
@@ -129,7 +137,7 @@ function affwp_theme_process_add_on_download() {
 
 			} else
 
-			if( $direct ) {
+			if ( $direct ) {
 				edd_deliver_download( $file_path );
 			} else {
 				// The file supplied does not have a discoverable absolute path
