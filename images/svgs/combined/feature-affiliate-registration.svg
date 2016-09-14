@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g id="XMLID_1_" transform="matrix(1.86957,0,0,1.86957,1.56522,1.56522)">
+        <g id="XMLID_16_">
+            <path id="XMLID_18_" d="M13.5,23.5L13.5,21.5L21.5,13.5L23.5,15.5L15.5,23.5L13.5,23.5Z" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_17_" d="M19.5,15.5L21.5,17.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+        </g>
+        <g id="XMLID_2_">
+            <g id="XMLID_12_">
+                <path id="XMLID_14_" d="M11,21.5L0.5,21.5L0.5,6.5L6.5,0.5L17.5,0.5L17.5,14.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+                <path id="XMLID_13_" d="M0.5,6.5L6.5,6.5L6.5,0.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            </g>
+            <path id="XMLID_7_" d="M10.5,8.3C10.6,9 11.4,9.5 12.5,9.5C13.6,9.5 14.5,8.9 14.5,8.3C14.5,7.3 12.9,7.1 12.5,7.1C12.2,7 10.5,6.9 10.5,5.8C10.5,5.1 11.4,4.5 12.5,4.5C13.6,4.5 14.4,5 14.5,5.7" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_6_" d="M2.5,10.5L7.5,10.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_5_" d="M2.5,14.5L13.5,14.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_4_" d="M2.5,18.5L6.5,18.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+            <path id="XMLID_3_" d="M12.5,3.5L12.5,10.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
+        </g>
+    </g>
+</svg>

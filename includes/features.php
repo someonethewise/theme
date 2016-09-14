@@ -77,6 +77,26 @@ function affwp_theme_features() {
 			'description' => 'Choose between flat rate and percentage referral rate types on a global, per-affiliate, and per-product basis.',
 			'icon'        => 'feature-referral-rate-types'
 		),
+		21 => array(
+			'title'       => 'Easy affiliate registration',
+			'description' => 'AffiliateWP ships with a default affiliate registration form so users can register as affiliates instantly.',
+			'icon'        => 'feature-affiliate-registration'
+		),
+		22 => array(
+			'title'       => 'Affiliate URLs',
+			'description' => 'Choose pretty URLs or non-pretty. Affiliates can use their unique Affiliate ID or WordPress username in URLs.',
+			'icon'        => 'feature-affiliate-urls'
+		),
+		23 => array(
+			'title'       => 'Set cookie expiration',
+			'description' => 'Choose how many days should the referral tracking cookie should be valid for.',
+			'icon'        => 'feature-cookie-expiration'
+		),
+		24 => array(
+			'title'       => 'Simple shortcodes',
+			'description' => 'Use WordPress-friendly shortcodes for the affiliate login form, the registration form, URLs, <a href="http://docs.affiliatewp.com/category/65-short-codes" target="_blank">and more</a>.',
+			'icon'        => 'feature-shortcodes'
+		),
 		14 => array(
 			'title'       => 'Customizable emails',
 			'description' => 'Emails for admin notifications, pending affiliate applications, affiliate application approval and rejection, and new referral notifications.',
@@ -113,6 +133,7 @@ function affwp_theme_features() {
 			'icon'        => 'feature-developer-friendly'
 		),
 
+
 	);
 
 	return $features;
@@ -148,7 +169,7 @@ function affwp_theme_features_html( $args = array() ) {
 	}
 ?>
 
-<div class="row start-xs">
+<div class="row center-xs text-center-xs text-left-lg">
 <?php foreach ( affwp_theme_features() as $key => $feature ) :
 
 	$icon        = $feature['icon'];
@@ -156,7 +177,7 @@ function affwp_theme_features_html( $args = array() ) {
 	$description = $feature['description'];
 
 	?>
-	<div class="col-xs-12 col-sm-6 col-lg-<?php echo $columns; ?> mb-lg-2">
+	<div class="col-xs-12 col-sm-6 col-lg-<?php echo $columns; ?> mb-xs-1 mb-lg-2">
 
 		<svg width="48px" height="48px">
 			<use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-' . $icon ?>"></use>

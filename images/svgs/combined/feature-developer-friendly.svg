@@ -1,14 +1,6 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <clipPath id="_clip1">
-        <rect id="Artboard1" x="0" y="0" width="48" height="48"/>
-    </clipPath>
-    <g clip-path="url(#_clip1)">
-        <g id="developer friendly" transform="matrix(1.91304,0,0,1.91304,1.04348,2)">
-            <path id="XMLID_4_" d="M16.5,0.5L7.5,22.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
-            <path id="XMLID_3_" d="M17.5,4.5L23.5,11.5L17.5,18.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
-            <path id="XMLID_2_" d="M6.5,18.5L0.5,11.5L6.5,4.5" style="fill:none;stroke-width:1px;stroke:rgb(96,186,178);"/>
-        </g>
-    </g>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 44.09">
+  <title>feature-developer-friendly</title>
+  <path id="_Path_" data-name="&lt;Path&gt;" d="M32.61,3,15.39,45" transform="translate(-1 -1.96)" style="fill: none;stroke: #60bab2;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2px"/>
+  <path id="_Path_2" data-name="&lt;Path&gt;" d="M34.52,10.61,46,24,34.52,37.39" transform="translate(-1 -1.96)" style="fill: none;stroke: #60bab2;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2px"/>
+  <path id="_Path_3" data-name="&lt;Path&gt;" d="M13.48,37.39,2,24,13.48,10.61" transform="translate(-1 -1.96)" style="fill: none;stroke: #60bab2;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2px"/>
 </svg>
