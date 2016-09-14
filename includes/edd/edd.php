@@ -178,7 +178,7 @@ function affwp_theme_upgrade_or_purchase_modal() {
 		Once you have one of these licenses you'll have access to all <?php echo $professional_add_ons; ?> pro add-ons (including this one), as well as any pro add-ons we build in the future.</p>
 
 		<?php if ( ! $upgrade_required ) : // has personal or plus license ?>
-		<p>If you already have a license that grants you access to the pro add-ons, simply log in to <a href="/account">your account</a> and visit the "downloads" section. Or, come back to this page to download!</p>
+		<p>If you already have a license that grants you access to the pro add-ons, simply log in to <a href="/account/">your account</a> and visit the "downloads" section. Or, come back to this page to download!</p>
 		<?php endif; ?>
 
 		<?php
@@ -338,8 +338,8 @@ function affwp_theme_edd_single_download_buttons() {
 			 */
 			if ( has_term( 'pro', 'download_category' ) && edd_get_download_files( get_the_ID() ) ) :
 
-			$has_ultimate_license     = in_array( 4, affwp_theme_get_users_price_ids() );
-			$has_professional_license = in_array( 3, affwp_theme_get_users_price_ids() );
+			$has_ultimate_license     = in_array( 3, affwp_theme_get_users_price_ids() );
+			$has_professional_license = in_array( 2, affwp_theme_get_users_price_ids() );
 
 			if ( $has_ultimate_license || $has_professional_license ) : ?>
 				<a href="<?php echo affwp_theme_get_add_on_download_url( get_the_ID() ); ?>" class="button download">Download Now</a>
