@@ -14,7 +14,7 @@ function affwp_theme_process_license_upgrade() {
 
 	if ( ! is_user_logged_in() || ( 'plus' !== $type && 'professional' !== $type && 'ultimate' !== $type ) ) {
 		// Isn't logged in, so go back to pricing
-		wp_redirect( home_url( '/pricing' ) ); exit;
+		wp_redirect( home_url( '/pricing/' ) ); exit;
 	}
 
 	$affwp_id = affwp_theme_get_download_id();
@@ -37,7 +37,7 @@ function affwp_theme_process_license_upgrade() {
 				$discount = 49;
 			} else {
 				// Hasn't purchased, so go back to pricing
-				wp_redirect( home_url( '/pricing' ) ); exit;
+				wp_redirect( home_url( '/pricing/' ) ); exit;
 			}
 
 			$price_id = 3;
@@ -52,7 +52,7 @@ function affwp_theme_process_license_upgrade() {
 				$discount = 49;
 			} else {
 				// Hasn't purchased, so go back to pricing
-				wp_redirect( home_url( '/pricing' ) ); exit;
+				wp_redirect( home_url( '/pricing/' ) ); exit;
 			}
 
 			$price_id = 2;
@@ -66,7 +66,7 @@ function affwp_theme_process_license_upgrade() {
 			}
 			else {
 				// Hasn't purchased, so go back to pricing
-				wp_redirect( home_url( '/pricing' ) ); exit;
+				wp_redirect( home_url( '/pricing/' ) ); exit;
 			}
 
 			$price_id = 1;
