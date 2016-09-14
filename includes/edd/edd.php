@@ -162,6 +162,7 @@ function affwp_theme_upgrade_or_purchase_modal() {
 
 	$has_plus_license     = in_array( 1, affwp_theme_get_users_price_ids() );
 	$has_personal_license = in_array( 0, affwp_theme_get_users_price_ids() );
+
 	$upgrade_required     = $has_personal_license || $has_plus_license;
 	$professional_add_ons = affwp_theme_get_pro_add_on_count();
 
@@ -221,11 +222,11 @@ function affwp_theme_upgrade_or_purchase_modal() {
 								) );
 
 								?>
-								<p class="license-expired"><a href="<?php echo esc_url( $renewal_link ); ?>">Your license has expired. Renew your license now and save 40% &rarr;</a></p>
+								<p class="license-expired"><a href="<?php echo esc_url( $renewal_link ); ?>">Your license has expired. Renew your license now and save 30% &rarr;</a></p>
 							<?php endif; ?>
 
 							<ul>
-								<?php if ( $license['price_id'] == 1 || $license['price_id'] == 2 ) : // personal or plus license
+								<?php if ( $license['price_id'] == 0 || $license['price_id'] == 1 ) : // personal or plus license
 
 									// IDs are that of the "License Upgrade Paths" from the download page
 								?>
@@ -264,7 +265,7 @@ function affwp_theme_upgrade_or_purchase_modal() {
 				$purchase_link = edd_sl_get_license_upgrade_url( $id, 2 );
 			} else {
 				// purchase link
-				$purchase_link = $download_url . '&amp;edd_options[price_id]=3';
+				$purchase_link = $download_url . '&amp;edd_options[price_id]=2';
 			}
 
 		?>
@@ -284,7 +285,7 @@ function affwp_theme_upgrade_or_purchase_modal() {
 			$purchase_link = edd_sl_get_license_upgrade_url( $id, 3 );
 		} else {
 			// purchase link
-			$purchase_link = $download_url . '&amp;edd_options[price_id]=4';
+			$purchase_link = $download_url . '&amp;edd_options[price_id]=3';
 		}
 		?>
 
