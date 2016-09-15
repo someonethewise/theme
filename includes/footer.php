@@ -76,7 +76,7 @@ function affwp_theme_footer_menu() {
 							<ul>
 
 								<li>
-									<a href="https://easydigitaldownloads.com/?ref=4657" target="_blank">
+									<a href="https://easydigitaldownloads.com/" target="_blank">
 										<img src="<?php echo get_stylesheet_directory_uri() . '/images/meet-easy-digital-downloads.png'; ?>" alt="" />
 										<span>Easy Digital Downloads</span>
 									</a>
