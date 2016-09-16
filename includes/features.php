@@ -89,7 +89,7 @@ function affwp_theme_features() {
 		),
 		23 => array(
 			'title'       => 'Set cookie expiration',
-			'description' => 'Choose how many days should the referral tracking cookie should be valid for.',
+			'description' => 'Choose how many days the referral tracking cookie should be valid for.',
 			'icon'        => 'feature-cookie-expiration'
 		),
 		24 => array(
