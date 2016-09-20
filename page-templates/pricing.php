@@ -130,6 +130,11 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 				<h4>I have other pre-sale questions, can you help?</h4>
 				<p>Yes! You can ask us any question through our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
 			</div>
+			
+			<div class="faq">
+				<h4>In what currency are your prices?</h4>
+				<p>US Dollars.</p>
+			</div>
 
 		</div>
 
