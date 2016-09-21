@@ -344,7 +344,6 @@ function affwp_themedd_call_to_action() {
 		fullWidth: true,
 		showPoint: true,
 		showArea: true,
-		fullWidth: true,
 		showLabel: false,
 		axisX: {
 			showGrid: false,

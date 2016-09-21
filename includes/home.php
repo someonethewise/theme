@@ -102,7 +102,6 @@ function affwp_theme_chartist_js() {
 		fullWidth: true,
 		showPoint: true,
 		showArea: true,
-		fullWidth: true,
 		showLabel: false,
 		axisX: {
 			showLabel: false,
