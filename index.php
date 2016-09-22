@@ -19,14 +19,22 @@ get_header(); ?>
 				<div class="grid-item-inner">
 
 					<?php
-					$class = affwp_theme_has_svg() ? ' has-svg' : '';
+						$class = '';
 
-					if ( has_post_thumbnail() ) : ?>
+						if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() ) ) {
+							$image = MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() );
+							$class = ' has-featured-icon';
+						} elseif ( has_post_thumbnail() ) {
+							$image = get_the_post_thumbnail( get_the_ID(), 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
+						} else {
+							$image = '';
+						}
+
+					if ( $image ) : ?>
+
 					<div class="grid-item-image<?php echo $class; ?>">
 						<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-							<?php
-								the_post_thumbnail( 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
-							?>
+							<?php echo $image; ?>
 						</a>
 					</div>
 					<?php endif; ?>

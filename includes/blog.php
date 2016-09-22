@@ -95,7 +95,6 @@ function affwp_theme_post_body_classes( $classes ) {
 				$classes[] = 'category-' . $category->category_nicename;
 			}
 		}
-
 	}
 
 	return $classes;
@@ -113,7 +112,7 @@ function affwp_theme_blog_tweaks() {
 	 * The new design is only for posts where the featured image is an SVG
 	 * Going forward we might remove this requirement as we re-do older blog posts
 	 */
-	if ( ! affwp_theme_has_svg() ) {
+	if ( ! affwp_theme_featured_icon() ) {
 		return;
 	}
 
@@ -135,15 +134,14 @@ add_action( 'template_redirect', 'affwp_theme_blog_tweaks' );
 function affwp_theme_blog_header() {
 
 	/**
-	 * The new design is only for posts where the featured image is an SVG
-	 * Going forward we might remove this requirement as we re-do older blog posts
+	 * The new design is only for posts where a featured icon (SVG) has been set
 	 */
-	if ( ! affwp_theme_has_svg() ) {
+	if ( ! affwp_theme_featured_icon() ) {
 		return;
 	}
 
 	if ( is_singular( 'post' ) ) :
-		$image_url = wp_get_attachment_url( get_post_thumbnail_id() );
+
 	?>
 	<div class="hero">
 
@@ -158,7 +156,9 @@ function affwp_theme_blog_header() {
 				</h1>
 
 				<?php do_action( 'themedd_post_header_end' ); ?>
-				<div class="bg" style="background: transparent url('<?php echo $image_url; ?>') no-repeat center center / 880px auto;"></div>
+
+				<?php echo affwp_theme_featured_icon(); ?>
+
 			</div>
 
 		</header>

@@ -17,21 +17,17 @@ function affwp_theme_featured_image_mime_type() {
 }
 
 /**
- * Determine if the blog post image is an SVG image
+ * Retrieve the featured icon
  *
  * @since 1.0.0
  */
-function affwp_theme_has_svg() {
+function affwp_theme_featured_icon() {
 
-	$return = false;
-
-	switch ( affwp_theme_featured_image_mime_type() ) {
-		case 'svg+xml':
-			$return = true;
-			break;
+	if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() ) ) {
+		return MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() );
 	}
 
-	return $return;
+	return false;
 }
 
 /**

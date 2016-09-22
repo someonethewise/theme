@@ -59,6 +59,19 @@
 	margin-top: 1rem;
 }
 
+.has-featured-icon img {
+	width: 100%;
+}
+
+.hero .page-header.blog-featured {
+	padding-bottom: 0;
+}
+
+.blog-featured img {
+	width: 100%;
+	display: block;
+}
+
 // Blog header colors
 
 @yellow: #F1C258;
@@ -66,32 +79,40 @@
 
 // tutorials
 .category-tutorials {
-	.grid-item-image.has-svg a,
+
+	.grid-item-image.has-featured-icon a,
 	.hero {
 		background: @yellow;
 	}
+
 }
 
 // news
 .category-news {
-	.grid-item-image.has-svg a,
+
+	.grid-item-image.has-featured-icon a,
 	.hero {
 		background: @blue;
 	}
+
 }
 
 // add-ons
 .category-add-ons {
-	.grid-item-image.has-svg a,
+
+	.grid-item-image.has-featured-icon a,
 	.hero {
 		background: @primary-color;
 	}
+
 }
 
-// add-ons
+// product
 .category-product {
-	.grid-item-image.has-svg a,
+
+	.grid-item-image.has-featured-icon a,
 	.hero {
 		background: @secondary-color;
 	}
+
 }
