@@ -87,6 +87,10 @@ function affwp_theme_get_all_integrations() {
 		'order'          => 'ASC'
 	);
 
+	if ( current_user_can( 'manage_options' ) ) {
+		$args['post_status'] = array( 'pending', 'draft', 'future', 'publish' );
+	}
+
 	$integrations = get_posts( $args );
 
 	if ( $integrations ) {

@@ -271,6 +271,10 @@ $args = array(
     'order'          => 'ASC',
 );
 
+if ( current_user_can( 'manage_options' ) ) {
+	$args['post_status'] = array( 'pending', 'draft', 'future', 'publish' );
+}
+
 $integrations = new WP_Query( $args );
 
 if ( $integrations->have_posts() ) : ?>
