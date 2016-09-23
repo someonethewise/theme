@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function affwp_theme_enqueue_scripts() {
 
 	// in addition to the parent theme's JS we load our own
-	wp_register_script( 'affwp-js', get_stylesheet_directory_uri() . '/js/affiliatewp.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, false );
+	wp_register_script( 'affwp-js', get_stylesheet_directory_uri() . '/js/affiliatewp.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
 	wp_enqueue_script( 'affwp-js' );
 
 }
