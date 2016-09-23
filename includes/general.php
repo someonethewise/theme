@@ -136,6 +136,44 @@ function affwp_theme_load_lightbox( $lightbox ) {
 }
 add_filter( 'themedd_enable_popup', 'affwp_theme_load_lightbox' );
 
+
+/**
+ * Post Lightboxes
+ */
+function affwp_theme_post_lightbox() {
+
+    if ( ! is_singular( 'post' ) ) {
+        return;
+    }
+
+	?>
+	<script type="text/javascript">
+
+		jQuery(document).ready(function($) {
+
+			$('.has-image:not(.gallery .has-image)').magnificPopup({
+                type: 'image',
+                preloader: true,
+                closeOnContentClick: true,
+                closeBtnInside: false,
+                fixedContentPos: true,
+                mainClass: 'mfp-with-zoom',
+                image: {
+                    verticalFit: true
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300
+                }
+            });
+
+		});
+	</script>
+
+<?php
+}
+add_action( 'wp_footer', 'affwp_theme_post_lightbox', 100 );
+
 /**
  * Disable jetpack carousel comments
  *
