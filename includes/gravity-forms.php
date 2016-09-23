@@ -76,7 +76,7 @@ function affwp_theme_gform_signup() {
 		$subscriber_count = function_exists( 'mailchimp_subscriber_count' ) && mailchimp_subscriber_count()->subscriber_count() ? mailchimp_subscriber_count()->subscriber_count() : '';
 	?>
 
-	<section class="signup box">
+	<section class="signup box" id="sign-up">
 
 	<h4 class="signup-header">Join <span><?php echo $subscriber_count; ?></span> others growing their business with AffiliateWP</h4>
 	<p class="signup-intro">We'll only notify you of new articles, special promotions and updates. No spam!</p>
