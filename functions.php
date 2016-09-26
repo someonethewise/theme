@@ -28,8 +28,6 @@ function affwp_theme_setup() {
 	// add subtitles to downloads
 	add_post_type_support( 'download', 'subtitles' );
 
-	add_image_size( 'affwp-post-thumbnail', 480, 240, true );
-
 	// custom stuff
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'account.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'changelog.php' );
@@ -61,5 +59,21 @@ function affwp_theme_setup() {
 
 	}
 
+	// add a new image size for our screenshots. These are hard cropped from the top left
+	add_image_size( 'affwp-screenshot', 663, 332, array( 'left', 'top' ) );
+
 }
 add_action( 'after_setup_theme', 'affwp_theme_setup' );
+
+
+/**
+ * Add our screenshot image size to WordPress so we can select it
+ */
+function affwp_theme_image_size_names_choose( $sizes ) {
+
+    return array_merge( $sizes, array(
+        'affwp-screenshot' => __( 'Screenshot' ),
+    ) );
+
+}
+add_filter( 'image_size_names_choose', 'affwp_theme_image_size_names_choose' );
