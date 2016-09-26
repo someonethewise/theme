@@ -331,74 +331,14 @@ function affwp_themedd_call_to_action() {
 		</div>
 	</section>
 
-	<script>
-
-	var theData = {
-		labels: [1, 2, 3, 4, 5, 6, 7, 8],
-		series: [
-			[-200, -200, 200, 400, 700, 1500, 2000, 3000],
-		]
-	}
-
-	var options = {
-		fullWidth: true,
-		showPoint: true,
-		showArea: true,
-		showLabel: false,
-		axisX: {
-			showGrid: false,
-			showLabel: false,
-			offset: 0
-		},
-		axisY: {
-			showGrid: false,
-			showLabel: false,
-			offset: 0
-		},
-		chartPadding: 0,
-		high: 2500,
-		low: 0
-	}
-
-	var chart = new Chartist.Line('.ct-chart', theData, options );
-
-	chart.on('draw', function(data) {
-
-		if (data.type === 'point') {
-
-			var circle = new Chartist.Svg('circle', {
-				cx: [data.x],
-				cy: [data.y],
-				r: [8],
-			}, 'ct-circle');
-
-			var foreignObjectHTML = '<div class="blip-wrap"><span class="circle-blip' + ' blip-' + data.index + '"></span></div>';
-
-			data.element.parent().foreignObject(foreignObjectHTML, {
-				width: 80,
-				height: 80,
-				x: data.x - 40,
-				y: data.y - 40
-			});
-
-			data.element.replace(circle);
-		}
-
-	});
-
-	jQuery( ".cta-get-started" ).mouseenter(function() {
-		jQuery('.circle-blip').addClass('blip-hover');
-	});
-
-	jQuery( ".cta-get-started" ).mouseleave(function() {
-		jQuery('.circle-blip').removeClass('blip-hover');
-	});
-
-</script>
-
 	<?php
 }
 add_action( 'themedd_content_end', 'affwp_themedd_call_to_action' );
+
+
+
+
+
 
 /**
  * Determine the value of the pro add-ons included with the Professional or Ultimate license
