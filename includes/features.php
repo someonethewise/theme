@@ -109,7 +109,7 @@ function affwp_theme_features() {
 		),
 		26 => array(
 			'title'       => 'Payout Logs',
-			'description' => 'Easily see which referrals have been paid out to your affiliates in the Payouts screen.',
+			'description' => 'Easily see a detailed log of every payout sent to affiliates from the Payouts screen.',
 			'icon'        => 'feature-payout-logs'
 		),
 		20 => array(
@@ -123,7 +123,7 @@ function affwp_theme_features() {
 			'icon'        => 'feature-rest-api'
 		),
 		28 => array(
-			'title'       => 'WP CLI Integration',
+			'title'       => 'WP-CLI integration',
 			'description' => 'Use our full suite of WP-CLI commands to create, update, delete, and view all data within AffiliateWP.',
 			'icon'        => 'feature-wp-cli-integration'
 		),
@@ -152,7 +152,7 @@ function affwp_theme_features() {
 			'description' => 'If you require assistance, our support is considered the best in the industry. We’re here to help!',
 			'icon'        => 'feature-support'
 		),
-	
+
 	);
 
 	return $features;
@@ -188,7 +188,7 @@ function affwp_theme_features_html( $args = array() ) {
 	}
 ?>
 
-<div class="row center-xs text-center-xs text-left-lg">
+<div class="row text-center-xs text-left-lg">
 <?php foreach ( affwp_theme_features() as $key => $feature ) :
 
 	$icon        = $feature['icon'];
