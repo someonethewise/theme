@@ -95,7 +95,7 @@ get_header(); ?>
 
             <div class="image aligncenter">
                 <div class="drag-me center-xs middle-xs">Drag</div>
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-1.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-referrals.png'; ?>" alt="Elegant affiliate tracking for WordPress" />
             </div>
 
         </div>
@@ -113,7 +113,7 @@ get_header(); ?>
 			</h1>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-2.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-affiliates.png'; ?>" alt="Easily manage your team of affiliates" />
             </div>
         </div>
 
@@ -130,7 +130,7 @@ get_header(); ?>
 			</h1>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-3.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-integrations.png'; ?>" alt="Set up your new affiliate system in just minutes" />
             </div>
         </div>
 
@@ -147,7 +147,7 @@ get_header(); ?>
 			</h1>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-4.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-affiliate-area.png'; ?>" alt="A place for your affiliates to call home" />
             </div>
         </div>
 
@@ -164,7 +164,7 @@ get_header(); ?>
 			</h1>
 
             <div class="image aligncenter">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/home-5.png'; ?>" />
+                <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-referrals.png'; ?>" alt="View real-time reports and graphs" />
             </div>
         </div>
 
