@@ -107,6 +107,31 @@ function affwp_theme_features() {
 			'description' => 'Export affiliate data and referral data to a CSV file for forecasting, bookkeeping, and accounting purposes.',
 			'icon'        => 'feature-export'
 		),
+		26 => array(
+			'title'       => 'Payout Logs',
+			'description' => 'Easily see which referrals have been paid out to your affiliates in the Payouts screen.',
+			'icon'        => 'feature-payout-logs'
+		),
+		20 => array(
+			'title'       => 'Developer-friendly',
+			'description' => 'AffiliateWP is extremely extensible with plenty of hooks and templates to add custom features and functionality.',
+			'icon'        => 'feature-developer-friendly'
+		),
+		27 => array(
+			'title'       => 'REST API',
+			'description' => 'Our complete, read-only REST API allows developers to easily interact with AffiliateWP through remote applications.',
+			'icon'        => 'feature-rest-api'
+		),
+		28 => array(
+			'title'       => 'WP CLI Integration',
+			'description' => 'Use our full suite of WP-CLI commands to create, update, delete, and view all data within AffiliateWP.',
+			'icon'        => 'feature-wp-cli-integration'
+		),
+		25 => array(
+			'title'       => 'Performance-ready',
+			'description' => 'Thoroughly tested and built with speed in mind, AffiliateWP performs beautifully on all sites; from large to small and in-between.',
+			'icon'        => 'feature-performance'
+		),
 		16 => array(
 			'title'       => 'Fully internationalized',
 			'description' => 'AffiliateWP is ready to be translated into your language. As always, translations are welcome!',
@@ -127,13 +152,7 @@ function affwp_theme_features() {
 			'description' => 'If you require assistance, our support is considered the best in the industry. We’re here to help!',
 			'icon'        => 'feature-support'
 		),
-		20 => array(
-			'title'       => 'Developer-friendly',
-			'description' => 'AffiliateWP is extremely extensible with plenty of hooks and templates to add custom features and functionality.',
-			'icon'        => 'feature-developer-friendly'
-		),
-
-
+	
 	);
 
 	return $features;

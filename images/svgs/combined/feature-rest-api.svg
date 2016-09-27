@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g id="Outline_Icons" transform="matrix(1.91181,0,0,1.91181,1.05825,1.05634)">
+        <circle cx="13.499" cy="10.501" r="4" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <circle cx="2" cy="5.501" r="1.5" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <circle cx="22" cy="2.001" r="1.5" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <circle cx="2" cy="22.001" r="1.5" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <circle cx="13.499" cy="22.001" r="1.5" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <path d="M3.06,20.94L10.68,13.339" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <path d="M16.333,7.678L20.938,3.062" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <path d="M3.35,6.151L9.822,8.926" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <path d="M20.562,14.03L16.944,12.535" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <path d="M13.499,20.501L13.499,14.501" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+        <circle cx="22" cy="14.501" r="1.5" style="fill:none;stroke-width:1px;stroke:rgb(96,185,179);"/>
+    </g>
+</svg>
