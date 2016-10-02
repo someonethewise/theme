@@ -260,11 +260,11 @@ function affwp_theme_edd_download_url( $download_id = 0 ) {
 			// get array of all downloads purchased
 			$download_ids = wp_list_pluck( $payment_meta['downloads'], 'id' );
 
-			// need to find the fisrt key that isn't expired
-
 			// download found
 			if ( in_array( $download_id, $download_ids ) ) {
 
+				// get customer's license keys.
+				// we need to find the first "active" license key
 				$licenses = edd_software_licensing()->get_licenses_of_purchase( $purchase->ID );
 
 				if ( $licenses ) {
