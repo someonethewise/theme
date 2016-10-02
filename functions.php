@@ -43,6 +43,7 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'compatibility/subtitles.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'functions.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'blog.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'affiliates.php' );
 
 	// EDD functions
 	if ( function_exists( 'themedd_is_edd_active' ) && themedd_is_edd_active() ) {
