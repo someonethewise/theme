@@ -10,11 +10,9 @@
 
 .docs-search-results {
 	margin-bottom: 2rem;
-
 }
 
 .docs-search-results li {
-//	line-height: 2;
 	padding: 0.5rem 0;
 }
 
@@ -31,50 +29,6 @@
 	margin-left: 0;
 	list-style-type: none;
 }
-
-
-// .home form.mailing-list {
-//     -webkit-justify-content: center;
-//     justify-content: center;
-// }
-
-// form.mailing-list {
-//
-//     display: -webkit-flex;
-//     display: flex;
-//     -webkit-flex-wrap: wrap;
-//     -ms-flex-wrap: wrap;
-//     flex-wrap: wrap;
-//
-//     ul {
-//         margin-bottom: 0;
-//     }
-//
-//     li {
-//         padding: 0;
-//     }
-//
-//    .gform_ajax_spinner {
-//        position: absolute;
-//        left: -3rem;
-//        top: 50%;
-//        margin: -16px 0 0 0;
-//    }
-//
-//    .gform_footer {
-//        position: relative;
-//    }
-//
-//     .gfield_label,
-//     .validation_message {
-//         display: none;
-//     }
-//
-//     .validation_error {
-//         width: 100%;
-//         margin-bottom: 1rem;
-//     }
-// }
 
 .gform_footer .gform_ajax_spinner {
     top: 12px;
@@ -115,42 +69,19 @@
     100% { transform: rotate(360deg) }
 }
 
-// Small Devices, Tablets
-@media only screen and ( min-width : 481px ) {
 
-    // form.mailing-list {
-    //     .gform_body,
-    //     .gform_footer,
-    //     input,
-    //     .ginput_container,
-    //     .gfield,
-    //     .gform_fields {
-    //         display: -webkit-flex;
-    //         display: flex;
-    //     }
-    // }
 
-    .gform_fields,
-    .gfield,
-    .ginput_container {
-        width: 100%;
-    }
 
-}
-
-// Small Devices, Tablets
-@media only screen and ( max-width : 480px ) {
-
-    form.mailing-list {
-        flex-flow: column;
-    }
-
-}
 
 // general styles
 
+.gfield input[type="checkbox"] {
+	margin-right: 0.5rem;
+}
+
+
 .gfield {
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 
 .gform_confirmation_message {
@@ -181,12 +112,18 @@
 	justify-content: space-between;
 }
 
+
 // labels under inputs
 .ginput_complex label,
 .gfield_description {
 	font-size: 0.875rem;
 	margin-bottom: 0.5rem;
 	color: #999;
+}
+
+.gfield_description,
+.ginput_complex label {
+	margin-top: 0.5rem;
 }
 
 .button.gform_button_select_files {
@@ -201,10 +138,6 @@
 // support form
 form.support {
 
-    // ul {
-    //     list-style-type: none;
-	// 	margin-left: 0;
-    // }
 
     .validation_error {
         background: #FFE4E4;
@@ -223,24 +156,6 @@ form.support {
         margin: 1rem 0 0 0;
     }
 
-
-    .gfield.notice {
-        // background: @primary-color;
-        // color: #fff;
-        // line-height: 1.5;
-		//
-        // a {
-        //     color: #fff;
-        //     border-bottom: 1px solid #fff;
-        // }
-    }
-
-
-
-    // .gform_body input:focus,
-    // .gform_body textarea:focus {
-    //     border: 2px solid @primary-color;
-    // }
 
     .gform_body > ul {
         border: 2px solid @light-grey;
@@ -297,6 +212,25 @@ form.support {
 
 }
 
+// Small Devices, Tablets
+@media only screen and ( min-width : 481px ) {
+
+    .gform_fields,
+    .gfield,
+    .ginput_container {
+        width: 100%;
+    }
+
+}
+
+// Small Devices, Tablets
+@media only screen and ( max-width : 480px ) {
+
+    form.mailing-list {
+        flex-flow: column;
+    }
+
+}
 
 // Small Devices, Tablets
 @media only screen and ( min-width : 768px ) {

@@ -1,0 +1,54 @@
+.affiliate-area.logged-out .affiliates-header {
+
+	// layer one
+	background-color: @secondary-color;
+	background-image: url(images/svgs/original/affiliate-bg-2.svg);
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: auto 50%;
+
+	animation: animatedBackground 8s linear 2;
+
+	h1,
+	span,
+	.button.outline.secondary {
+		color: #fff;
+	}
+
+	// layer two
+	.page-header {
+		background-image: url(images/svgs/original/affiliate-bg-1.svg);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: auto 50%;
+		animation: animatedBackground 16s linear 1;
+		padding: 4rem;
+	}
+
+	&.can-hover {
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+
+		animation-play-state: paused;
+
+		.page-header {
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+
+			animation-play-state: paused;
+		}
+
+		&:hover {
+			animation-play-state: running;
+
+			.page-header {
+				animation-play-state: running;
+			}
+		}
+	}
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
