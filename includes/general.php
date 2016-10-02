@@ -76,6 +76,7 @@ function affwp_theme_page_header_classes( $classes ) {
 	}
 
 	return $classes;
+
 }
 add_filter( 'themedd_page_header_classes', 'affwp_theme_page_header_classes' );
 
@@ -204,6 +205,10 @@ function affwp_theme_body_classes( $classes ) {
 	if ( is_page_template( 'page-templates/account.php' ) ) {
 		$classes[] = 'account';
 	}
+
+	if ( ! is_user_logged_in() ) {
+        $classes[] = 'logged-out';
+    }
 
 	return $classes;
 
