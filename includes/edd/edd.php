@@ -3,7 +3,6 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-
 /**
  * Modify the rewrite option to include the download category
  * This will be moved into the custom functionality plugin at a later date
@@ -13,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function affwpcf_edd_download_post_type_args( $download_args ) {
 
 	$download_args['rewrite'] = array( 'slug' => 'add-ons/%download_category%' );
-
 	return $download_args;
+
 }
 add_filter( 'edd_download_post_type_args', 'affwpcf_edd_download_post_type_args' );
 
@@ -26,14 +25,19 @@ add_filter( 'edd_download_post_type_args', 'affwpcf_edd_download_post_type_args'
  */
 function affwpcf_edd_addon_links( $post_link, $id = 0 ) {
 
-    $post = get_post( $id );
+	if ( affwp_theme_get_download_id() !== $id ) {
 
-    if ( is_object( $post ) ) {
-        $terms = wp_get_object_terms( $post->ID, 'download_category' );
-        if ( $terms ) {
-            return str_replace( '%download_category%' , $terms[0]->slug , $post_link );
-        }
-    }
+		$post = get_post( $id );
+
+	    if ( is_object( $post ) ) {
+	        $terms = wp_get_object_terms( $post->ID, 'download_category' );
+
+	        if ( $terms ) {
+	            $post_link = str_replace( '%download_category%', $terms[0]->slug, $post_link );
+	        }
+	    }
+
+	}
 
     return $post_link;
 
