@@ -211,6 +211,7 @@ function affwp_theme_get_users_licenses( $user_id = 0 ) {
 }
 
 
+
 /**
  * Get users price ids
  *
@@ -241,6 +242,10 @@ function affwp_theme_get_users_price_ids( $user_id = 0 ) {
  */
 function affwp_theme_edd_download_url( $download_id = 0 ) {
 
+	if ( ! function_exists( 'edd_software_licensing' ) ) {
+		return;
+	}
+
 	// get user's current purchases
 	$purchases = edd_get_users_purchases( get_current_user_id(), -1, false, 'complete' );
 
@@ -255,12 +260,25 @@ function affwp_theme_edd_download_url( $download_id = 0 ) {
 			// get array of all downloads purchased
 			$download_ids = wp_list_pluck( $payment_meta['downloads'], 'id' );
 
+			// need to find the fisrt key that isn't expired
+
 			// download found
 			if ( in_array( $download_id, $download_ids ) ) {
-				$found_purchase_key = $key;
-				break;
-			}
 
+				$licenses = edd_software_licensing()->get_licenses_of_purchase( $purchase->ID );
+
+				if ( $licenses ) {
+					foreach ( $licenses as $license ) {
+
+						// license must be active
+						if ( 'active' === edd_software_licensing()->get_license_status( $license->ID ) ) {
+							$found_purchase_key = $key;
+							break 2;
+						}
+
+					}
+				}
+			}
 		}
 
 		// get payment meta for the purchase containing the download
@@ -329,36 +347,6 @@ function affwp_theme_has_license_expired( $license = '' ) {
 	}
 
 	return false;
-}
-
-
-/**
- * Check if any of the user's license has expired
- */
-function affwp_theme_has_users_license_expired() {
-
-	if ( ! function_exists( 'edd_software_licensing' ) ) {
-		return;
-	}
-
-	$edd_sl      = edd_software_licensing();
-	$licenses    = affwp_get_users_licenses();
-	$has_expired = false;
-
-	if ( $licenses ) {
-
-		foreach ( $licenses as $license ) {
-
-			if ( affwp_has_license_expired( $license['license'] ) ) {
-				$has_expired = true;
-				break;
-			}
-
-		}
-
-	}
-
-	return $has_expired;
 }
 
 /**
