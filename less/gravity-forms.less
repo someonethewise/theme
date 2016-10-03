@@ -75,6 +75,11 @@
 
 // general styles
 
+textarea.small {
+	height: 112px;
+}
+
+
 .gfield input[type="checkbox"] {
 	margin-right: 0.5rem;
 }
@@ -135,27 +140,25 @@
 	display: block;
 }
 
+.validation_error {
+	background: #FFE4E4;
+	color: #D97A7A;
+	padding: 1rem;
+	border: 2px solid #F8D8D8;
+	margin-bottom: 2rem;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+.gfield_description.validation_message {
+	color: #D97A7A;
+	font-size: 1rem;
+	font-weight: 500;
+	margin: 1rem 0 0 0;
+}
+
 // support form
 form.support {
-
-
-    .validation_error {
-        background: #FFE4E4;
-        color: #D97A7A;
-        padding: 2rem;
-        border: 2px solid #F8D8D8;
-        margin-bottom: 2rem;
-        font-weight: 500;
-        line-height: 1.5;
-    }
-
-    .gfield_description.validation_message {
-        color: #D97A7A;
-        font-size: 1rem;
-        font-weight: 500;
-        margin: 1rem 0 0 0;
-    }
-
 
     .gform_body > ul {
         border: 2px solid @light-grey;
@@ -163,13 +166,10 @@ form.support {
         margin-bottom: 2rem;
     }
 
-
-
     .gform_body > ul > li {
         padding: 1.5rem 2rem;
         border-bottom: 2px solid @light-grey;
     }
-
 
     .gfield_radio {
         li {
@@ -206,9 +206,6 @@ form.support {
         padding: 2rem;
         text-align: center;
     }
-
-    // side by side inputs
-
 
 }
 
