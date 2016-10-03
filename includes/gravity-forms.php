@@ -52,11 +52,11 @@ function affwp_theme_signup_form_id() {
 }
 
 /**
- * Prevent forms from jumping to anchor when submitted
+ * Prevent signup form from jumping to anchor when submitted
  *
  * @since 1.0.0
  */
-add_filter( 'gform_confirmation_anchor', '__return_false' );
+add_filter( 'gform_confirmation_anchor_' . affwp_theme_signup_form_id(), '__return_false' );
 
 /**
  * Load Gravity Form
