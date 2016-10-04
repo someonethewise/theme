@@ -31,9 +31,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 
 <section class="container-fluid">
     <div class="wrapper">
-
 		<?php affiliate_wp()->templates->get_template_part( 'dashboard' ); ?>
-
 	</div>
 </section>
 

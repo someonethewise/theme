@@ -75,12 +75,15 @@ function affwp_theme_dequeue_scripts() {
 		wp_dequeue_style( 'edd-free-downloads' );
 	}
 
-	// Remove Help Scout Beacon from EDD checkout
+	// Remove Help Scout Beacon from specific pages
 	if (
 		is_front_page() ||
 		edd_is_checkout() ||
 		is_page( 'pricing' ) ||
-		is_page( 'account' )
+		is_page( 'account' ) ||
+		is_page( 'affiliates' ) ||
+		is_page( 'affiliates/join' ) ||
+		is_page( 'affiliates/login' )
 	) {
 		wp_dequeue_script( 'beacon' );
 	}
