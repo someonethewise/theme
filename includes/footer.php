@@ -42,6 +42,7 @@ function affwp_theme_footer_menu() {
 								<li><a href="<?php echo site_url( '/add-ons/' ); ?>">Add-ons</a></li>
 								<li><a href="<?php echo site_url( '/testimonials/' ); ?>">Testimonials</a></li>
 								<li><a href="<?php echo site_url( '/changelog/' ); ?>">Changelog</a></li>
+								<li><a href="<?php echo site_url( '/affiliates/' ); ?>">Become an affiliate</a></li>
 							</ul>
 
 						</div>
