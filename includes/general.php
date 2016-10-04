@@ -143,7 +143,7 @@ add_filter( 'themedd_enable_popup', 'affwp_theme_load_lightbox' );
  */
 function affwp_theme_post_lightbox() {
 
-    if ( ! ( is_singular( 'post' ) || is_singular( 'download' ) ) ) {
+    if ( ! ( is_singular( 'post' ) || is_singular( 'download' ) || is_page( 'affiliates' ) ) ) {
         return;
     }
 

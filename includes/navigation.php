@@ -69,7 +69,7 @@ function affwp_theme_nav_account() {
 
 	$account_page 		= '/account';
 	$affiliates_page 	= '/affiliates';
-	$active 			= is_page( 'account' ) || is_page( 'affiliates' ) ? ' current-menu-item' : '';
+	$active 			= is_page( 'account' ) ? ' current-menu-item' : '';
 
 	ob_start();
 	?>
