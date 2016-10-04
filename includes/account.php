@@ -153,3 +153,20 @@ function affwp_theme_account_downloads() {
 	return ob_get_clean();
 
 }
+
+
+remove_action( 'themedd_account_tabs_after', 'themedd_account_tab_affiliate_area' );
+
+/**
+ * Add an "Affiliate Area" link to the bottom of the account section
+ * Shows a "Become an affiliate" link otherwise
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_themedd_account_tab_affiliate_area() {
+	$text = function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ? 'Affiliate Area' : 'Become an affiliate';
+	?>
+	<li class="follow-link affiliates" data-link="affiliate-area"><a href="<?php echo affwp_get_affiliate_area_page_url(); ?>"><?php echo $text; ?></a></li>
+	<?php
+}
+add_action( 'themedd_account_tabs_after', 'affwp_theme_themedd_account_tab_affiliate_area' );

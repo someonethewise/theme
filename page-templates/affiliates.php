@@ -131,7 +131,9 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 <section class="container-fluid mb-xs-4">
     <div class="wrapper slim aligncenter">
 		<a href="<?php echo site_url( '/affiliates/join/' ); ?>" class="button large mb-xs-1">Become an affiliate</a>
+
 		<p>Already an affiliate? <a href="<?php echo site_url( '/affiliates/login' ); ?>">Log in now</a></p>
+		
 	</div>
 </section>
 
