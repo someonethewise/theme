@@ -47,7 +47,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 	<header class="page-header">
 		<h1 class="page-title">
 			<span class="entry-title-primary">Refer customers and earn cash</span>
-			<span class="subtitle">Use and love AffiliateWP? Become an affiliate and earn 20% commission on every new sale you generate!</span>
+			<span class="subtitle">Use and love AffiliateWP? Become an affiliate and earn 20% commission on each successful sale you refer!</span>
 		</h1>
 
 	</header>
@@ -130,7 +130,6 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 
 <section class="container-fluid mb-xs-4">
     <div class="wrapper slim aligncenter">
-
 		<a href="<?php echo site_url( '/affiliates/join/' ); ?>" class="button large mb-xs-1">Become an affiliate</a>
 		<p>Already an affiliate? <a href="<?php echo site_url( '/affiliates/login' ); ?>">Log in now</a></p>
 	</div>
