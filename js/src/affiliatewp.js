@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
         $(this).remove();
     });
 
-	$('.logged-out.page-template-page-templatesaffiliates-php .affiliates-header').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+	$('.page-template-page-templatesaffiliates-php .affiliates-header').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
 		$(this).addClass( 'can-hover' );
 	});
 
