@@ -164,9 +164,36 @@ remove_action( 'themedd_account_tabs_after', 'themedd_account_tab_affiliate_area
  * @since 1.0.0
  */
 function affwp_theme_themedd_account_tab_affiliate_area() {
+
+	if ( ! function_exists( 'affwp_get_affiliate_area_page_url' ) ) {
+		return;
+	}
+
 	$text = function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ? 'Affiliate Area' : 'Become an affiliate';
 	?>
 	<li class="follow-link affiliates" data-link="affiliate-area"><a href="<?php echo affwp_get_affiliate_area_page_url(); ?>"><?php echo $text; ?></a></li>
 	<?php
 }
 add_action( 'themedd_account_tabs_after', 'affwp_theme_themedd_account_tab_affiliate_area' );
+
+/**
+ * Add a welcome message + log out link to the account header
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_welcome_message( $defaults ) {
+
+	if ( ! is_page( 'account' ) ) {
+		return $defaults;
+	}
+
+	if ( is_user_logged_in() ) {
+		$defaults['subtitle'] = sprintf( __( 'Welcome, %s (%s)' , 'themedd' ), wp_get_current_user()->display_name, '<a href="' . wp_logout_url( get_permalink() ) . '">Log out?</a>' );
+	} else {
+		$defaults['subtitle'] = __( 'Come on in!', 'themedd' );
+	}
+
+	return $defaults;
+
+}
+add_filter( 'themedd_header_defaults', 'affwp_theme_welcome_message' );

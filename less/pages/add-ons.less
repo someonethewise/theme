@@ -41,8 +41,16 @@
 	margin-top: 1rem;
 }
 
-.single-download .button.download {
+// make the first button 100% width with larger text
+.single-download #primary-sidebar aside .button:first-child {
 	font-size: 1.5rem;
+	width: 100%;
+
+    // remove spinner from Free Downloads add-on
+    .edd-icon-spinner {
+        display: none;
+    }
+
 }
 
 .single-download #main {
