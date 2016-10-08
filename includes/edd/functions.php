@@ -264,14 +264,15 @@ function affwp_theme_edd_download_url( $download_id = 0 ) {
 			if ( in_array( $download_id, $download_ids ) ) {
 
 				// get customer's license keys.
-				// we need to find the first "active" license key
+				// we need to find the first non-expired license key
 				$licenses = edd_software_licensing()->get_licenses_of_purchase( $purchase->ID );
 
 				if ( $licenses ) {
+
 					foreach ( $licenses as $license ) {
 
-						// license must be active
-						if ( 'active' === edd_software_licensing()->get_license_status( $license->ID ) ) {
+						// license must not be expired (it will be inactive or active)
+						if ( 'expired' !== edd_software_licensing()->get_license_status( $license->ID ) ) {
 							$found_purchase_key = $key;
 							break 2;
 						}
@@ -279,29 +280,31 @@ function affwp_theme_edd_download_url( $download_id = 0 ) {
 					}
 				}
 			}
-		}
+		} // endforeach
 
 		// get payment meta for the purchase containing the download
-		if ( $found_purchase_key ) {
+		// payment key could be int 0
+		if ( is_int( $found_purchase_key ) ) {
+
 			$payment_meta = edd_get_payment_meta( $purchases[$found_purchase_key]->ID );
-		}
 
-		// get the download files for the download
-		$download_files = edd_get_download_files( $download_id );
+			// get the download files for the download
+			$download_files = edd_get_download_files( $download_id );
 
-		if ( ! $download_files ) {
-			// no download file exists
-			return false;
-		}
+			if ( ! $download_files ) {
+				// no download file exists
+				return false;
+			}
 
-		// we want to retrieve the first download file attached
-		$download_index = array_keys( $download_files );
+			// we want to retrieve the first download file attached
+			$download_index = array_keys( $download_files );
 
-		// build the download URL
-		$download_url = edd_get_download_file_url( $payment_meta['key'], $payment_meta['user_info']['email'], $download_index[0], $download_id );
+			// build the download URL
+			$download_url = edd_get_download_file_url( $payment_meta['key'], $payment_meta['user_info']['email'], $download_index[0], $download_id );
 
-		if ( $download_url ) {
-			return $download_url;
+			if ( $download_url ) {
+				return $download_url;
+			}
 		}
 
 	}
