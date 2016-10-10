@@ -44,10 +44,10 @@ add_filter( 'themedd_show_nav_cart', 'affwp_theme_nav_cart' );
  *
  * @since 1.0.0
  */
-function affwp_theme_cart_link_position() {
+function affwp_theme_edd_cart_link_position() {
 	return 'primary_menu';
 }
-add_filter( 'themedd_cart_link_position', 'affwp_theme_cart_link_position' );
+add_filter( 'themedd_edd_cart_link_position', 'affwp_theme_edd_cart_link_position' );
 
 /**
  * Add the account menu just before the cart icon
