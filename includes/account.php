@@ -154,9 +154,6 @@ function affwp_theme_account_downloads() {
 
 }
 
-
-remove_action( 'themedd_account_tabs_after', 'themedd_account_tab_affiliate_area' );
-
 /**
  * Add an "Affiliate Area" link to the bottom of the account section
  * Shows a "Become an affiliate" link otherwise
