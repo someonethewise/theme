@@ -14,7 +14,7 @@ get_header(); ?>
 		<div class="row pv-xs-2">
 			<div class="col-xs-12 aligncenter">
 				<h3 class="label mb-xs-1 mb-sm-0">New</h3>
-				<p>We've just released version 1.9 of AffiliateWP! <a href="<?php echo site_url( '/version-1-9-released/' ); ?>">Check it out &rarr;</a></p>
+				<p>Our affiliate program is now open to our wonderful customers! <a href="<?php echo site_url( '/join-affiliate-program/' ); ?>">Read the post &rarr;</a></p>
 			</div>
 		</div>
 	</div>
