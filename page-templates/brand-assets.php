@@ -454,7 +454,7 @@ themedd_post_header(
 	<div class="row center-xs">
 		<div class="col-xs-12 col-sm-6">
 			<h1>Screenshots</h1>
-			<p class="mb-xs-4">We currently have 35 screenshots of the Affiliate Dashboard and WordPress admin area. You can either <a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/screenshots.zip'; ?>">download this zip file</a> or <a href="<?php echo site_url( 'screenshots' );?>">view and download</a> the screenshots individually.</p>
+			<p class="mb-xs-4">We currently have <?php echo affwp_theme_screenshot_count(); ?> screenshots of the Affiliate Dashboard and WordPress admin area. You can either <a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/screenshots.zip'; ?>">download this zip file</a> or <a href="<?php echo site_url( 'screenshots' );?>">view and download</a> the screenshots individually.</p>
 			<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/screenshots.zip'; ?>" target="_blank" class="button large">Download screenshots</a>
 		</div>
 	</div>
