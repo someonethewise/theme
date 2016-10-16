@@ -18,13 +18,6 @@ remove_action( 'themedd_site_header_main_end', 'themedd_primary_menu' );
 add_action( 'themedd_site_header_main', 'themedd_primary_menu' );
 
 /**
- * Disable the primary menu from showing in the footer at mobile resolutions
- *
- * @since 1.0.0
- */
-add_filter( 'themedd_footer_primary_menu', '__return_false' );
-
-/**
  * Hide the cart when on the pricing page
  *
  * @since 1.0.0
