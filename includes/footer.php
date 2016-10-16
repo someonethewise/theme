@@ -105,4 +105,4 @@ function affwp_theme_footer_menu() {
 
 <?php
 }
-add_action( 'themedd_footer_before_site_info', 'affwp_theme_footer_menu' );
+add_action( 'themedd_footer_start', 'affwp_theme_footer_menu' );
