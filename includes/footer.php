@@ -64,9 +64,9 @@ function affwp_theme_footer_menu() {
 
 							<h4>Get help</h4>
 							<ul>
-								<li><a href="<?php echo site_url( '/support/' ); ?>">Support</a></li>
+								<li><a href="<?php echo site_url( '/support/' ); ?>">Get support</a></li>
 								<li><a href="http://docs.affiliatewp.com/" target="_blank">Documentation</a></li>
-								<li><a href="<?php echo site_url( '/consultants/' ); ?>">Consultants</a></li>
+								<li><a href="<?php echo site_url( '/consultants/' ); ?>">Hire a consultant</a></li>
 							</ul>
 
 						</div>
