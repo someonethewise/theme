@@ -4,14 +4,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * Remove the primary navigation from its default location
- *
- * @since 1.0.0
- */
-remove_action( 'themedd_site_header_main_end', 'themedd_primary_menu' );
-
-/**
- * Add the primary navigation next to the logo
+ * Add primary navigation where secondary navigation is located
  *
  * @since 1.0.0
  */
@@ -128,26 +121,23 @@ function affwp_theme_edd_cart_icon() {
 	<div>
 		<svg width="32" height="32" id="nav-cart-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-		<style type="text/css">
-			.st0{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.5;}
-			.st2{display:inline;fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.5;}
-		</style>
+
 		<g id="cart">
-			<circle class="st0" cx="24.8" cy="29.5" r="2"/>
-			<circle class="st0" cx="9.9" cy="29.5" r="2"/>
-			<polyline class="st0" points="0.5,4.5 4.5,4.5 9.9,27.5 24.8,27.5 	"/>
-			<polyline class="st0" points="9.3,24.8 26.8,24.8 30.8,12.6 6.5,12.6 	"/>
+			<circle class="icon-cart" cx="24.8" cy="29.5" r="2"/>
+			<circle class="icon-cart" cx="9.9" cy="29.5" r="2"/>
+			<polyline class="icon-cart" points="0.5,4.5 4.5,4.5 9.9,27.5 24.8,27.5 	"/>
+			<polyline class="icon-cart" points="9.3,24.8 26.8,24.8 30.8,12.6 6.5,12.6 	"/>
 		</g>
 		<?php if ( $cart_items ) : ?>
 		<g id="cart-contents">
-			<polyline class="st0" points="17.3,12.6 12,7.2 6.5,12.6 	"/>
-			<polyline class="st0" points="24.1,12.6 28.1,3.6 31.5,5.2 28.1,12.6 	"/>
-			<polyline class="st0" points="19.4,12.6 19.4,8.6 13.3,8.6 	"/>
+			<polyline class="icon-cart" points="17.3,12.6 12,7.2 6.5,12.6 	"/>
+			<polyline class="icon-cart" points="24.1,12.6 28.1,3.6 31.5,5.2 28.1,12.6 	"/>
+			<polyline class="icon-cart" points="19.4,12.6 19.4,8.6 13.3,8.6 	"/>
 		</g>
 		<?php else : ?>
 		<g id="arrow-down">
-			<line class="st0" x1="17.4" y1="0.5" x2="17.4" y2="9.9"/>
-			<polyline class="st0" points="13.3,5.9 17.4,9.9 21.4,5.9 	"/>
+			<line class="icon-cart" x1="17.4" y1="0.5" x2="17.4" y2="9.9"/>
+			<polyline class="icon-cart" points="13.3,5.9 17.4,9.9 21.4,5.9 	"/>
 		</g>
 		<?php endif; ?>
 		</svg>
