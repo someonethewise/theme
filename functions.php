@@ -13,7 +13,7 @@ if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
 }
 
 if ( ! defined( 'THEMEDD_VERSION' ) ) {
-	define( 'THEMEDD_VERSION', '1.1.8' );
+	define( 'THEMEDD_VERSION', '1.1.9' );
 }
 
 /**
