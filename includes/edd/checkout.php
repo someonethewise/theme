@@ -56,8 +56,11 @@ function affwp_theme_remove_checkout_navigation() {
 		return;
 	}
 
+    // remove the primary navigation
 	remove_action( 'themedd_site_header_main', 'themedd_primary_menu' );
 
+    // remove the mobile menu
+    remove_action( 'themedd_site_header_main', 'themedd_menu_toggle' );
 }
 add_action( 'template_redirect', 'affwp_theme_remove_checkout_navigation' );
 

@@ -9,11 +9,11 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.1.3' );
+	define( 'AFFWP_THEME_VERSION', '1.1.4' );
 }
 
 if ( ! defined( 'THEMEDD_VERSION' ) ) {
-	define( 'THEMEDD_VERSION', '1.2.1' );
+	define( 'THEMEDD_VERSION', '1.2.2' );
 }
 
 /**
