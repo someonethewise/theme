@@ -47,7 +47,7 @@
 
 //@wrapper-slim: 784px;
 @wrapper-wide: 1440px;
-//@page-max-width: 1280px;
+@page-max-width: none;
 @page-wrap-max-width: 1316px;
 
 // headings
@@ -124,7 +124,12 @@
 @nav-footer-hover-color: #222;
 @nav-footer-active-color: #222;
 
-// @menu-toggle-color: #fff;
+// menu toggle
+@menu-toggle-bg-color: @accent-color;
+@menu-toggle-border: 1px solid @menu-toggle-bg-color;
+@menu-toggle-color: #fff;
+
+//@menu-toggle-color: #fff;
 // @menu-toggle-hover-color: @menu-toggle-color;
 // @menu-toggle-on-background-color: rgba(255, 255, 255, 0.2);
 // @menu-toggle-on-border-color: #fff;
@@ -158,7 +163,9 @@
 @menu-toggle-color: #fff;
 // @menu-toggle-hover-color: @menu-toggle-color;
 // @menu-toggle-on-color: #fff;
-@menu-toggle-border: 1px solid @accent-color;
+
+//@menu-toggle-border: 1px solid @accent-color;
+
 // @menu-toggle-hover-border: @menu-toggle-border;
 @menu-toggle-border-top: none;
 //@menu-toggle-footer-border-top: @menu-toggle-border-top;

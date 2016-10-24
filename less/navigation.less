@@ -11,10 +11,6 @@
 	color: #fff;
 }
 
-.hero .dropdown-toggle:after {
-	border-left: 1px solid #fff;
-}
-
 .hero .dropdown-toggle:hover,
 .hero .dropdown-toggle:focus {
 	color: #fff;
@@ -35,9 +31,7 @@ li.menu-item div  {
     display: none;
 }
 
-.nav-cart.mobile div {
-    width: 100%;
-}
+
 
 ul.menu > li > a.button {
   color: #fff;
@@ -92,7 +86,28 @@ g.icon rect {
 
 @media only screen and ( min-width: @screen-sm-min ) {
 
+    // arrow on navigation
+    .main-navigation ul ul:before {
+    	top: -9px;
+    	left: 14px;
+    	border-width: 0 10px 10px;
+    	border-color: @nav-sub-arrow-border-color transparent;
+    }
 
+    .main-navigation ul ul:after {
+    	top: -7px;
+    	left: 1rem;
+    	border-width: 0 8px 8px;
+    	border-color: @nav-sub-arrow-color transparent;
+    }
+
+    .main-navigation ul ul:before,
+    .main-navigation ul ul:after {
+        content: "";
+        border-style: solid;
+        position: absolute;
+    }
+    // end arrow navigation
 
 
 

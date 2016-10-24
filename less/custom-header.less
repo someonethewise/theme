@@ -1,0 +1,60 @@
+.icon-cart {
+	stroke: #fff;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+    stroke-width:1.5;
+}
+
+// adds a border left to the dropdown toggle buttons
+// .dropdown-toggle:after {
+// 	border-left: @dropdown-toggle-border-left;
+// }
+
+@media only screen and ( max-width: @nav-sm-max ) {
+    .icon-cart {
+    	stroke: @body-text-color;
+    }
+
+    .home .icon-cart {
+    	stroke: #fff;
+    }
+}
+
+// show desktop nav
+@media only screen and ( min-width: @desktop-nav ) {
+
+    // remove the "real" main navigation that exists below the logo
+    // we added our new nav so it appears next to the logo, where the secondary navigation used to be
+    .site-header-wrap + .site-header-menu {
+        display: none;
+    }
+
+	// remove the padding from left and right sides since the main navigation is no longer underneath the logo
+	.main-navigation {
+		padding: 0;
+	}
+
+    // reset the negative margins on the primary menu
+    .main-navigation .primary-menu {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media only screen and ( min-width: @screen-lg-min ) {
+
+    .site-header-wrap {
+        padding-top: 0;
+    }
+
+	.site-title {
+	    padding: 40px 0 0.5rem;
+
+		a {
+			display: block;
+		}
+	}
+
+}
