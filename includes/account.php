@@ -168,7 +168,9 @@ function affwp_theme_themedd_account_tab_affiliate_area() {
 
 	$text = function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ? 'Affiliate Area' : 'Become an affiliate';
 	?>
-	<li class="follow-link affiliates" data-link="affiliate-area"><a href="<?php echo affwp_get_affiliate_area_page_url(); ?>"><?php echo $text; ?></a></li>
+	<ul>
+		<li><a href="<?php echo affwp_get_affiliate_area_page_url(); ?>"><?php echo $text; ?></a></li>
+	</ul>
 	<?php
 }
 add_action( 'themedd_account_tabs_after', 'affwp_theme_themedd_account_tab_affiliate_area' );
