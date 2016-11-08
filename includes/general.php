@@ -246,3 +246,37 @@ function affwp_theme_excerpt_length( $length ) {
 	return 20;
 }
 add_filter( 'excerpt_length', 'affwp_theme_excerpt_length' );
+
+/**
+ * Adjust primary column widths
+ *
+ * @since 1.1.5
+ */
+function affwp_theme_themedd_adjust_primary_column_widths( $classes ) {
+
+	if ( is_singular( 'download' ) ) {
+		// reset the array
+		$classes = array();
+		// add our new classes
+		$classes[] = 'col-xs-12 col-md-8';
+	}
+
+	return $classes;
+}
+add_filter( 'themedd_primary_classes', 'affwp_theme_themedd_adjust_primary_column_widths' );
+
+/**
+ * Adjust secondary column widths
+ *
+ * @since 1.1.5
+ */
+function affwp_themedd_secondary_column_widths( $classes ) {
+
+	if ( is_singular( 'download' ) ) {
+		$classes = array();
+		$classes[] = 'col-xs-12 col-md-4';
+	}
+
+	return $classes;
+}
+add_filter( 'themedd_secondary_classes', 'affwp_themedd_secondary_column_widths' );
