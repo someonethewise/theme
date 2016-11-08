@@ -44,7 +44,7 @@ add_filter( 'themedd_edd_cart_link_position', 'affwp_theme_edd_cart_link_positio
 function affwp_account_menu( $items ) {
     return $items . affwp_theme_nav_account();
 }
-add_filter( 'themedd_wp_nav_menu_items', 'affwp_account_menu');
+add_filter( 'themedd_wp_nav_menu_items', 'affwp_account_menu' );
 
 /**
  * Append account to main navigation
