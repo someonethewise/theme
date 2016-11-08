@@ -40,6 +40,7 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'twitter.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'footer.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'features.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'notices.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'compatibility/subtitles.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'functions.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'blog.php' );
