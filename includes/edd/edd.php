@@ -4,6 +4,26 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * Load the post header on the single download pages
+ * We don't want the header showing the default position
+ *
+ * @since 1.1.5
+ */
+function affwp_theme_themedd_single_download_post_header() {
+
+	if ( is_singular( 'download' ) ) {
+		themedd_post_header();
+	}
+
+}
+add_action( 'themedd_content_start', 'affwp_theme_themedd_single_download_post_header' );
+
+/**
+ * Remove sidebar download info
+ */
+remove_action( 'themedd_sidebar_download', 'themedd_edd_download_info' );
+
+/**
  * Modify the rewrite option to include the download category
  * This will be moved into the custom functionality plugin at a later date
  *

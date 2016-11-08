@@ -353,6 +353,36 @@ function affwp_theme_has_license_expired( $license = '' ) {
 }
 
 /**
+ * Check if any of the user's license has expired
+ * @since 1.3
+ */
+function affwp_theme_has_users_license_expired() {
+
+	if ( ! function_exists( 'edd_software_licensing' ) ) {
+		return;
+	}
+
+	$edd_sl      = edd_software_licensing();
+	$licenses    = affwp_theme_get_users_licenses();
+	$has_expired = false;
+
+	if ( $licenses ) {
+
+		foreach ( $licenses as $license ) {
+
+			if ( affwp_theme_has_license_expired( $license['license'] ) ) {
+				$has_expired = true;
+				break;
+			}
+
+		}
+
+	}
+
+	return $has_expired;
+}
+
+/**
  * Find out if customer can access pro add-ons
  * This will return true if the customer at least 1 valid (active and not expired) Pro or Ultimate license
  */
