@@ -235,3 +235,19 @@ function affwp_theme_post_link_attributes( $attr ) {
 }
 add_filter( 'next_posts_link_attributes', 'affwp_theme_post_link_attributes' );
 add_filter( 'previous_posts_link_attributes', 'affwp_theme_post_link_attributes' );
+
+/**
+ * Remove standard post header on single posts
+ *
+ * @since 1.1.5
+ */
+function affwp_theme_remove_post_header( $ret ) {
+
+	if ( is_singular( 'post' ) ) {
+		$ret = false;
+	}
+
+	return $ret;
+
+}
+add_filter( 'themedd_post_header', 'affwp_theme_remove_post_header' );
