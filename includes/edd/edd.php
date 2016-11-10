@@ -24,6 +24,11 @@ add_action( 'themedd_content_start', 'affwp_theme_themedd_single_download_post_h
 remove_action( 'themedd_sidebar_download', 'themedd_edd_download_info' );
 
 /**
+ * Remove download info from beginning of content
+ */
+remove_action( 'themedd_entry_content_start', 'themedd_edd_download_info' );
+
+/**
  * Modify the rewrite option to include the download category
  * This will be moved into the custom functionality plugin at a later date
  *
