@@ -8,7 +8,7 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-4">
-    <div class="wrapper wide container-fluid mb-xs-2 mb-lg-4">
+    <div class="wrapper wide mb-xs-2 mb-lg-4">
 		<div class="grid row has-overlay">
 			<?php while ( have_posts() ) : the_post();
 			global $post;
