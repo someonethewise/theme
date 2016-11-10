@@ -55,7 +55,7 @@ function affwp_theme_display_notice() {
 
 			if ( $can_view ) {
 
-				if ( pippin_check_notice_is_read( $notice->ID, $user_ID ) != true ) { ?>
+				if ( function_exists( 'pippin_check_notice_is_read' ) && pippin_check_notice_is_read( $notice->ID, $user_ID ) != true ) { ?>
 
 					<div id="notification-area" class="snp-hidden">
 
