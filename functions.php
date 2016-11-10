@@ -9,7 +9,7 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.1.7' );
+	define( 'AFFWP_THEME_VERSION', '1.1.8' );
 }
 
 if ( ! defined( 'THEMEDD_VERSION' ) ) {
