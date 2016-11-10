@@ -243,7 +243,10 @@ add_filter( 'previous_posts_link_attributes', 'affwp_theme_post_link_attributes'
  */
 function affwp_theme_remove_post_header( $ret ) {
 
-	if ( is_singular( 'post' ) ) {
+	/**
+	 * The new design is only for posts where a featured icon (SVG) has been set
+	 */
+	if ( affwp_theme_featured_icon() && is_singular( 'post' ) ) {
 		$ret = false;
 	}
 
