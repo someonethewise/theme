@@ -14,7 +14,7 @@ get_header(); ?>
 		<div class="row pv-xs-2">
 			<div class="col-xs-12 aligncenter">
 				<h3 class="label mb-xs-1 mb-sm-0">New</h3>
-				<p>Our affiliate program is now open to our wonderful customers! <a href="<?php echo site_url( '/join-affiliate-program/' ); ?>">Read the post &rarr;</a></p>
+				<p>Connect AffiliateWP to over 700 web services with Zapier! <a href="<?php echo site_url( '/connect-affiliatewp-700-web-services-zapier/' ); ?>">Read the post &rarr;</a></p>
 			</div>
 		</div>
 	</div>
