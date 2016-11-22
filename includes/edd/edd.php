@@ -4,6 +4,18 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * Clears the changelog transient when the Affiliate download is saved.
+ */
+function affwp_theme_delete_changelog_transient( $post_id ) {
+
+	if ( affwp_theme_get_download_id() == $post_id ) {
+		delete_site_transient( 'affwp_changelog' );
+	}
+
+}
+add_action( 'save_post_download', 'affwp_theme_delete_changelog_transient' );
+
+/**
  * Load the post header on the single download pages
  * We don't want the header showing the default position
  *
