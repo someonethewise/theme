@@ -183,7 +183,7 @@ if ( affwp_theme_was_sale() ) : ?>
 </p>
 <?php endif; ?>
 
-<?php if ( $purchase_session || ( isset( $_GET['payment_key'] ) && $_GET['payment_key'] ) ) : ?>
+<?php if ( ! ( isset( $_GET['payment_key'] ) && $_GET['payment_key'] ) ) : ?>
 
 <p>Your purchase means a lot to us. In just a few moments you'll receive an email containing a download link for AffiliateWP. You can also download AffiliateWP from <a href="<?php echo site_url( '/account/' ); ?>">your account</a> or at the bottom of this page.</p>
 
