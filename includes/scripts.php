@@ -23,6 +23,7 @@ function affwp_theme_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'affwp_theme_enqueue_scripts' );
 
 
+
 /**
  * Load Twitter JS on about page
  *
@@ -30,7 +31,7 @@ add_action( 'wp_enqueue_scripts', 'affwp_theme_enqueue_scripts' );
  */
 function affwp_theme_twitter_scripts() {
 
-	if ( ! ( is_page( 'about' ) || is_singular( 'post' ) ) ) {
+	if ( ! ( is_page( 'about' ) || is_singular( 'post' ) || affwp_theme_was_sale() ) ) {
 		return;
 	}
 
