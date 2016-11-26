@@ -81,6 +81,7 @@ function affwp_theme_was_sale() {
 	// is active?
 	$is_discount_active = edd_is_discount_active( edd_get_discount_id_by_code( 'BFCM2016' ) );
 
+	// is discounted started?
 	$is_discount_started = edd_is_discount_started( edd_get_discount_id_by_code( 'BFCM2016' ) );
 
 	$purchase_session = edd_get_purchase_session();
@@ -106,6 +107,7 @@ function affwp_theme_was_sale() {
 		$payment   = new EDD_Payment( $payment_id );
 		$discounts = $payment->discounts;
 
+		// purchase must contain discount, discount must be started, active, and not expired
 		if ( 'BFCM2016' === $discounts && $is_discount_started && $is_discount_active && ! $is_discount_expired ) {
 			return true;
 		}
