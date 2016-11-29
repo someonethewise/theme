@@ -211,7 +211,7 @@ if ( affwp_theme_was_sale() ) :
 
 <?php
 }
-add_action( 'affwp_theme_edd_success_page_the_content', 'affwp_theme_edd_share_purchase' );
+//add_action( 'affwp_theme_edd_success_page_the_content', 'affwp_theme_edd_share_purchase' );
 
 /**
  * Add a subtitle to the purchase confirmation page
