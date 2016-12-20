@@ -61,3 +61,16 @@ function affwp_theme_get_changelog() {
 	}
 
 }
+
+/**
+ * Clears the changelog transient when the AffiliateWP download is saved.
+ * @since 1.2.6
+ */
+function affwp_theme_delete_changelog_transient( $post_id ) {
+
+	if ( affwp_theme_get_download_id() == $post_id ) {
+		delete_transient( 'affwp_changelog' );
+	}
+
+}
+add_action( 'save_post_download', 'affwp_theme_delete_changelog_transient' );
