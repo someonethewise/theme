@@ -424,3 +424,51 @@ function affwp_theme_can_access_pro_add_ons() {
 	return $can_access;
 
 }
+
+/**
+ * Can the user become an affiliate?
+ * Customer can apply to become an affiliate after 45 days
+ */
+function affwp_theme_can_become_affiliate() {
+
+	$purchases = edd_get_users_purchases( get_current_user_id(), -1, false, 'complete' );
+
+	if ( $purchases ) {
+
+		foreach ( $purchases as $purchase ) {
+
+			$payment = get_post_meta( $purchase->ID, '_edd_payment_meta', true );
+
+			$downloads = $payment['downloads'];
+
+			foreach ( $downloads as $download ) {
+
+				if ( $download['id'] === affwp_theme_get_download_id() ) {
+
+					// AffiliateWP was purchased, get the data and exit out of loop
+					$purchase_date = get_post_meta( $purchase->ID, '_edd_completed_date', true );
+					break 2;
+				}
+			}
+
+		}
+
+		// f the current time is 45 days past the compelted date, return true;
+		$current_blog_time = current_time( 'mysql' );
+
+		$date1 = new DateTime( $purchase_date );
+		$date2 = new DateTime( $current_blog_time );
+
+		$days_since_purchase = $date2->diff( $date1 )->format("%a");
+
+		$days_to_wait = 45;
+
+		if ( $days_since_purchase >= $days_to_wait ) {
+			return true;
+		}
+
+		return false;
+
+	}
+
+}

@@ -166,11 +166,20 @@ function affwp_theme_themedd_account_tab_affiliate_area() {
 		return;
 	}
 
-	$text = function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ? 'Affiliate Area' : 'Become an affiliate';
-	?>
-	<ul>
-		<li><a href="<?php echo affwp_get_affiliate_area_page_url(); ?>"><?php echo $text; ?></a></li>
-	</ul>
+	if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
+
+		<ul>
+			<li><a href="<?php echo affwp_get_affiliate_area_page_url(); ?>">Affiliate Area</a></li>
+		</ul>
+
+	<?php elseif ( affwp_theme_can_become_affiliate() ) : ?>
+
+		<ul>
+			<li><a href="<?php echo affwp_get_affiliate_area_page_url(); ?>">Become an affiliate</a></li>
+		</ul>
+
+	<?php endif; ?>
+
 	<?php
 }
 add_action( 'themedd_account_tabs_after', 'affwp_theme_themedd_account_tab_affiliate_area' );
