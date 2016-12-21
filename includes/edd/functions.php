@@ -427,11 +427,17 @@ function affwp_theme_can_access_pro_add_ons() {
 
 /**
  * Can the user become an affiliate?
+ *
  * Customer can apply to become an affiliate after 45 days
  */
 function affwp_theme_can_become_affiliate() {
 
+	$can_become_affiliate = false;
+
 	$purchases = edd_get_users_purchases( get_current_user_id(), -1, false, 'complete' );
+
+	// reverse the array so it looks at oldest purchases first
+	$purchases = array_reverse( $purchases );
 
 	if ( $purchases ) {
 
@@ -452,8 +458,10 @@ function affwp_theme_can_become_affiliate() {
 			}
 
 		}
+	}
 
-		// f the current time is 45 days past the compelted date, return true;
+	if ( $purchase_date ) {
+		// if the current time is 45 days past the compelted date, return true;
 		$current_blog_time = current_time( 'mysql' );
 
 		$date1 = new DateTime( $purchase_date );
@@ -464,11 +472,11 @@ function affwp_theme_can_become_affiliate() {
 		$days_to_wait = 45;
 
 		if ( $days_since_purchase >= $days_to_wait ) {
-			return true;
+			$can_become_affiliate = true;
 		}
-
-		return false;
-
 	}
 
+	return $can_become_affiliate;
+
 }
+add_action( 'template_redirect', 'affwp_theme_can_become_affiliate' );
