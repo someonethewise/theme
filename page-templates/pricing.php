@@ -92,7 +92,10 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 
 		<div class="col-xs-12 col-sm-6 ph-xs-0">
 
-
+			<div class="faq">
+				<h4>Do you offer a trial?</h4>
+				<p>We don't offer a trial but we do have a <strong>30 Day Money Back Guarantee</strong> so you can try AffiliateWP risk-free on your own website.</p>
+			</div>
 
 			<div class="faq">
 				<h4>Do I need to renew my license?</h4>
