@@ -5,16 +5,23 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    // concat
-    concat: {
-         js: {
-           options: {
-             separator: ';'
-           },
-           src: ['js/src/**/*.js'],
-           dest: 'js/<%= pkg.name %>.min.js'
-         },
-       },
+	// concat
+	concat: {
+		main: {
+			options: {
+				separator: ';'
+			},
+			src: ['js/src/**/*.js'],
+			dest: 'js/<%= pkg.name %>.min.js'
+		},
+		account: {
+			options: {
+				separator: ';'
+			},
+			src: ['js/account/**/*.js'],
+			dest: 'js/account.min.js'
+		}
+	},
 
     // uglify
     uglify: {
@@ -23,10 +30,12 @@ module.exports = function(grunt) {
         },
         js: {
           files: {
-            'js/<%= pkg.name %>.min.js': ['js/<%= pkg.name %>.min.js']
+            'js/<%= pkg.name %>.min.js': ['js/<%= pkg.name %>.min.js'],
+			'js/account.min.js': ['js/account.min.js']
           }
         }
       },
+
 
     // LESS CSS
     less: {
@@ -91,8 +100,8 @@ module.exports = function(grunt) {
     watch: {
       // JS
       js: {
-        files: ['js/src/**/*.js'],
-        tasks: ['concat:js', 'uglify:js'],
+        files: ['js/src/**/*.js', 'js/account/**/*.js'],
+        tasks: ['concat:js', 'concat:account', 'uglify:js'],
       },
        svgstore: {
          files: ['images/svgs/combined/*.svg'],

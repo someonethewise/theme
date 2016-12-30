@@ -58,3 +58,20 @@ function affwp_theme_affiliate_redirect() {
 
 }
 add_action( 'template_redirect', 'affwp_theme_affiliate_redirect' );
+
+/**
+ * Back to account link
+ *
+ * @since 1.2.8
+ * @return void
+ */
+function affwp_theme_dashboard_tabs( $affiliate_id, $active_tab ) {
+	?>
+
+	<li class="affwp-affiliate-dashboard-tab">
+		<a href="<?php echo esc_url( site_url( 'account' ) ); ?>"><?php _e( '&larr; Back to Account', 'affiliate-wp' ); ?></a>
+	</li>
+
+	<?php
+}
+add_action( 'affwp_affiliate_dashboard_tabs', 'affwp_theme_dashboard_tabs', 10, 2 );
