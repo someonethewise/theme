@@ -87,6 +87,10 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 				<p>Yes! Top-notch customer support is key for a quality product, so we’ll do our very best to resolve any issues you encounter via our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
 			</div>
 
+			<div class="faq">
+				<h4>What currency is your pricing in?</h4>
+				<p>Our prices are listed in US Dollars.</p>
+			</div>
 
 		</div>
 
@@ -112,17 +116,10 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 				<p>Yes, you can easily upgrade your license from your <a href="<?php echo site_url( 'account' ); ?>" title="Account" >account</a> page.</p>
 			</div>
 
-
-
 			<div class="faq">
 				<h4>I don't want a subscription</h4>
 				<p>Your subscription can be cancelled at anytime after purchase. Once cancelled, your license key will not renew automatically and will expire on the expiration date. Once expired, you will no longer receive automatic updates or have access to support. You may manually renew your license at any time to reactivate your subscription.</p>
 			</div>
-
-
-
-
-
 
 			<div class="faq">
 				<h4>Will AffiliateWP work on WordPress.com?</h4>
@@ -132,11 +129,6 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 			<div class="faq">
 				<h4>I have other pre-sale questions, can you help?</h4>
 				<p>Yes! You can ask us any question through our <a title="Support" href="<?php echo site_url( 'support' ); ?>">support page</a>.</p>
-			</div>
-			
-			<div class="faq">
-				<h4>In what currency are your prices?</h4>
-				<p>US Dollars.</p>
 			</div>
 
 		</div>
