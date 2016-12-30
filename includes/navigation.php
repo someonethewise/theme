@@ -166,7 +166,7 @@ add_filter( 'themedd_edd_cart_icon', 'affwp_theme_edd_cart_icon' );
 function affwp_theme_edd_cart_link_defaults( $defaults ) {
 
 	// Remove animate class from cart icon
-	$defaults['classes']   = '';
+	$defaults['classes'] = '';
 
 	return $defaults;
 }
