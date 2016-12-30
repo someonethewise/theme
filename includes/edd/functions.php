@@ -433,11 +433,11 @@ function affwp_theme_can_access_pro_add_ons() {
 function affwp_theme_can_become_affiliate() {
 
 	$can_become_affiliate = false;
-
-	$purchases = edd_get_users_purchases( get_current_user_id(), -1, false, 'complete' );
+	$purchase_date        = '';
+	$purchases            = edd_get_users_purchases( get_current_user_id(), -1, false, 'complete' );
 
 	// reverse the array so it looks at oldest purchases first
-	$purchases = array_reverse( $purchases );
+	$purchases = $purchases ? array_reverse( $purchases ) : '';
 
 	if ( $purchases ) {
 
