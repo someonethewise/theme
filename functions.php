@@ -9,12 +9,15 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.2.6' );
+	define( 'AFFWP_THEME_VERSION', '1.2.8' );
 }
 
-if ( ! defined( 'THEMEDD_VERSION' ) ) {
-	define( 'THEMEDD_VERSION', '1.3.2' );
+function themedd_styles() {
+	// Theme stylesheet.
+	wp_enqueue_style( 'affwp', get_stylesheet_uri(), array(), AFFWP_THEME_VERSION );
 }
+add_action( 'wp_enqueue_scripts', 'themedd_styles' );
+
 
 /**
  * Setup
