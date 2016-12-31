@@ -88,7 +88,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 			</div>
 
 			<div class="faq">
-				<h4>What currency is your pricing in?</h4>
+				<h4>What currency is your pricing listed in?</h4>
 				<p>Our prices are listed in US Dollars.</p>
 			</div>
 
