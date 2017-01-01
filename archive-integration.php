@@ -8,13 +8,23 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-4">
-    <div class="wrapper wide mb-xs-2 mb-lg-4">
-		<div class="grid row has-overlay">
+
+	<div class="wrapper wide integration-filter aligncenter">
+		<a class="button small" href="#" data-filter="all">All</a>
+		<a class="button small" href="#" data-filter=".ecommerce">eCommerce</a>
+		<a class="button small" href="#" data-filter=".form">Form</a>
+		<a class="button small" href="#" data-filter=".invoice">Invoice</a>
+		<a class="button small" href="#" data-filter=".lms">LMS</a>
+		<a class="button small" href="#" data-filter=".membership">Membership</a>
+	</div>
+
+	<div class="wrapper wide mb-xs-2 mb-lg-4">
+		<div class="integration-grid grid row has-overlay">
 			<?php while ( have_posts() ) : the_post();
 			global $post;
 			?>
 
-			<div <?php post_class( array( 'col-xs-12', 'col-md-6', 'col-lg-4', 'grid-item', 'mb-xs-2', 'mb-sm-0', $post->post_name ) ); ?>>
+			<div data-order="<?php echo $post->menu_order;?>" <?php post_class( array( 'mix', 'col-xs-12', 'col-md-6', 'col-lg-4', 'grid-item', 'mb-xs-2', 'mb-sm-0', $post->post_name ) ); ?>>
 
 				<div class="grid-item-inner">
 
@@ -53,6 +63,7 @@ get_header(); ?>
 	</div>
 
 </section>
+
 <?php endif; ?>
 
 <?php get_footer(); ?>

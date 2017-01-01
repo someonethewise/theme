@@ -9,7 +9,7 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.2.8' );
+	define( 'AFFWP_THEME_VERSION', '1.2.9' );
 }
 
 function themedd_styles() {
@@ -36,6 +36,7 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'changelog.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'home.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'gravity-forms.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'integrations.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'scripts.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'general.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'pricing.php' );

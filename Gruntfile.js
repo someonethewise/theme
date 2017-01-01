@@ -101,7 +101,7 @@ module.exports = function(grunt) {
       // JS
       js: {
         files: ['js/src/**/*.js', 'js/account/**/*.js'],
-        tasks: ['concat:js', 'concat:account', 'uglify:js'],
+        tasks: ['concat:main', 'concat:account', 'uglify:js'],
       },
        svgstore: {
          files: ['images/svgs/combined/*.svg'],
