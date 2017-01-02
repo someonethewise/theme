@@ -11,11 +11,11 @@ get_header(); ?>
 
 	<div class="wrapper wide integration-filter aligncenter">
 		<a class="button small" href="#" data-filter="all">All</a>
-		<a class="button small" href="#" data-filter=".ecommerce">eCommerce</a>
-		<a class="button small" href="#" data-filter=".form">Form</a>
-		<a class="button small" href="#" data-filter=".invoice">Invoice</a>
-		<a class="button small" href="#" data-filter=".lms">LMS</a>
-		<a class="button small" href="#" data-filter=".membership">Membership</a>
+		<a class="button small" href="#" data-filter=".type-ecommerce">eCommerce</a>
+		<a class="button small" href="#" data-filter=".type-form">Form</a>
+		<a class="button small" href="#" data-filter=".type-invoice">Invoice</a>
+		<a class="button small" href="#" data-filter=".type-lms">LMS</a>
+		<a class="button small" href="#" data-filter=".type-membership">Membership</a>
 	</div>
 
 	<div class="wrapper wide mb-xs-2 mb-lg-4">
@@ -50,17 +50,9 @@ get_header(); ?>
 			<?php endwhile; ?>
 		</div>
 
-
-
     </div>
 
-	<div class="wrapper">
-		<div class="row center-xs aligncenter">
-			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
-				<p>Is your eCommerce, membership or form plugin not listed? We may still support it through our generic referral tracking script. <a href="http://docs.affiliatewp.com/article/66-generic-referral-tracking-script" target="_blank">Learn more &rarr;</a></p>
-			</div>
-		</div>
-	</div>
+	<?php echo affwp_theme_integration_notice(); ?>
 
 </section>
 
