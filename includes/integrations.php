@@ -48,58 +48,40 @@ function affwp_theme_integration_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'affwp_theme_integration_enqueue_scripts' );
 
 /**
- * Add post classes to each integration so we can filter them
+ * Add breadcrumb to the "type" taxonomy page above the title
+ *
+ * @since 1.3.0
  */
-function affwp_theme_integration_post_classes( $classes ) {
-
-	global $post;
-
-	switch ( $post->post_name ) {
-		case 'caldera-forms':
-		case 'formidable-pro':
-		case 'gravity-forms':
-		case 'ninja-forms':
-		case 'give':
-		case 'contact-form-7':
-			$classes[] = 'form';
-			break;
-
-		case 'ithemes-exchange':
-		case 'jigoshop':
-		case 'marketpress':
-		case 'shopp':
-		case 'wp-easycart':
-		case 'wp-ecommerce':
-		case 'easy-digital-downloads':
-		case 'woocommerce':
-		case 'paypal':
-			$classes[] = 'ecommerce';
-			break;
-
-
-		case 'membermouse':
-		case 'memberpress':
-		case 'paid-memberships-pro':
-		case 's2member':
-		case 'restrict-content-pro':
-		case 'optimizemember':
-		case 'paid-memberships-pro':
-			$classes[] = 'membership';
-			break;
-
-		case 'sprout-invoices':
-		case 'wp-invoice':
-			$classes[] = 'invoice';
-			break;
-
-		case 'lifterlms':
-		case 'zippy-courses':
-			$classes[] = 'lms';
-			break;
-
+function affwp_theme_integration_taxonomy_breadcrumb() {
+	// only show this on the taxonomy page
+	if ( ! is_tax( 'type' ) ) {
+		return;
 	}
 
-	return $classes;
+	?>
+	<div class="breadcrumb">
+		<a href="<?php echo get_post_type_archive_link( 'integration' ); ?>">Integrations</a>
+	</div>
 
+	<?php
 }
-add_filter( 'post_class', 'affwp_theme_integration_post_classes' );
+add_action( 'themedd_post_header_wrapper_start', 'affwp_theme_integration_taxonomy_breadcrumb' );
+
+/**
+ * Integration not supported notice
+ *
+ * @since 1.3.0
+ */
+function affwp_theme_integration_notice() {
+	?>
+
+	<div class="wrapper">
+		<div class="row center-xs aligncenter">
+			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+				<p>Is your preferred plugin not listed? We may still support it through our generic referral tracking script. <a href="http://docs.affiliatewp.com/article/66-generic-referral-tracking-script" target="_blank">Learn more &rarr;</a></p>
+			</div>
+		</div>
+	</div>
+
+	<?php
+}
