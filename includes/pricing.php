@@ -220,6 +220,7 @@ function affwp_theme_modal_content_pricing_calculator() {
 				return formula;
 
 			});
+
 			<?php endif; ?>
 
 		});
@@ -260,7 +261,8 @@ function affwp_theme_is_cta_page() {
 		is_singular( 'integration' ) ||
 		is_page( 'screenshots' ) ||
 		is_page( 'features' ) ||
-		is_page( 'changelog' )
+		is_page( 'changelog' ) ||
+		is_tax( 'type' )
 	) {
 		return true;
 	}
