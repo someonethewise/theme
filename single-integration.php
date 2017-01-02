@@ -19,6 +19,23 @@ $integration_name = get_the_title( get_the_ID() );
     <div class="wrapper">
 
     	<div class="content-area">
+
+			<?php
+
+			$terms = get_the_terms( get_the_ID(), 'type' );
+
+			if ( ! empty( $terms ) ) :
+
+			    // get the first term
+			    $term = array_shift( $terms );
+				$term_name = $term->name;
+				$term_slug = $term->slug;
+			?>
+
+			<div class="breadcrumb"><a href="<?php echo get_post_type_archive_link( 'integration' ); ?>">Integrations</a> / <a href="<?php echo get_term_link( $term->term_id, 'type' ); ?>"><?php echo $term_name ;?></a></div>
+
+			<?php endif; ?>
+
             <h1 class="page-title"><?php echo $integration_name; ?></h1>
 
     		<?php
@@ -66,34 +83,99 @@ $integration_name = get_the_title( get_the_ID() );
 </section>
 
 <?php
-$terms = get_the_terms( get_the_ID(), 'feature' );
+/**
+ * 2 layouts
+ */
 
-if ( $terms && ! is_wp_error( $terms ) ) : ?>
+$how_it_works = get_post_meta( get_the_ID(), '_affwp_integration_how_it_works', true );
+
+?>
+
+<?php if ( ! empty( $how_it_works ) ): // new layout with how it works on left, and featues on right ?>
+
 <section class="container-fluid pv-xs-2 pv-lg-4">
-    <div class="wrapper">
-        <h3 class="aligncenter mb-lg-4">Integration-specific features</h3>
 
-		<div class="row start-xs">
-		<?php foreach ( $terms as $term ) :
+	<div class="wrapper slim entry-content">
+		<div class="row center-xs">
 
-			?>
-			<div class="col-xs-12 col-sm-6 col-lg-4 mb-lg-2">
+			<div class="col-xs-12 col-md-7">
 
-				<svg width="48px" height="48px">
-					<use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-' . $term->slug; ?>"></use>
-				</svg>
+				<h1 class="page-title">
+					<span class="entry-title-primary">How it integrates with AffiliateWP</span>
+				</h1>
+				<?php echo apply_filters( 'the_content', $how_it_works ); ?>
+			</div>
 
-				<h3 class="grid-item-title"><?php echo $term->name; ?></h3>
-				<p><?php echo $term->description; ?></p>
+
+			<div class="col-xs-12 col-md-4 col-lg-offset-1">
+
+				<?php
+				$terms = get_the_terms( get_the_ID(), 'feature' );
+
+				if ( $terms && ! is_wp_error( $terms ) ) : ?>
+
+
+					<div class="wrapper">
+						<h3 class="">Integration features</h3>
+
+						<ul class="integration-features">
+						<?php foreach ( $terms as $term ) : ?>
+							<li>
+
+								<svg width="32px" height="32px">
+									<use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-tick';?>"></use>
+								</svg>
+
+								<p>
+									<span class="title"><?php echo $term->name; ?></span>
+									<span class="description"><?php echo $term->description; ?></span>
+								</p>
+
+							</li>
+						<?php endforeach; ?>
+					</ul>
+
+					</div>
+				<?php endif; ?>
 
 			</div>
-		<?php endforeach; ?>
+
 		</div>
-
-    </div>
+	</div>
 </section>
-<?php endif; ?>
 
+<?php else : // old layout ?>
+
+
+	<?php
+	$terms = get_the_terms( get_the_ID(), 'feature' );
+
+	if ( $terms && ! is_wp_error( $terms ) ) : ?>
+	<section class="container-fluid pv-xs-2 pv-lg-4">
+
+	    <div class="wrapper">
+	        <h3 class="aligncenter mb-lg-4">Integration-specific features</h3>
+
+			<div class="row start-xs">
+			<?php foreach ( $terms as $term ) : ?>
+				<div class="col-xs-12 col-sm-6 col-lg-4 mb-lg-2">
+
+					<svg width="48px" height="48px">
+						<use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-' . $term->slug; ?>"></use>
+					</svg>
+
+					<h3 class="grid-item-title"><?php echo $term->name; ?></h3>
+					<p><?php echo $term->description; ?></p>
+
+				</div>
+			<?php endforeach; ?>
+			</div>
+
+	    </div>
+	</section>
+	<?php endif; ?>
+
+<?php endif; ?>
 
 <?php
 /**
