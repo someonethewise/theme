@@ -1,22 +1,47 @@
 // Integrations
 
+.mixitup-control-active {
+	background: @button-background-hover-color;
+	border: @button-border-hover;
+}
+
+.breadcrumb {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
 .integration-features {
 	list-style-type: none;
-	margin-left: 0;
+	margin-left: 3rem;
 
 	li {
 		margin-bottom: 1rem;
+		position: relative;
 	}
-	 p {
-		 display: inline-block;
-		 margin-bottom: 0;
-		 vertical-align: middle;
-	 }
 
-	 svg {
-		 vertical-align: middle;
-		 margin-right: 0.5rem;
-	 }
+	p {
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		vertical-align: middle;
+	}
+
+	svg {
+		vertical-align: middle;
+		margin-right: 0.5rem;
+		position: absolute;
+		left: -48px;
+		top: 0;
+	}
+
+	.title {
+		font-size: 1.2rem;
+		margin-bottom: 0.25rem;
+		color: @heading-color;
+	}
+	.description {
+		font-size: 1rem;
+		display: block;
+	}
 }
 
 // integration filter
@@ -27,6 +52,12 @@
 		margin: 0.25rem;
 	}
 }
+
+// hide filters when no JS
+.no-js .integration-filter {
+	display: none;
+}
+
 
 #supported-integrations .grid-item-inner {
 	box-shadow: none;
