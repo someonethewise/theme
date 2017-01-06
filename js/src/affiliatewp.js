@@ -19,6 +19,9 @@ jQuery(document).ready(function($) {
         $(this).remove();
     });
 
+	// add class to imagess so we can open modal window
+	$("a[href$='.jpg'], a[href$='.png'], a[href$='.gif']").addClass( 'enlarge' );
+
 	// animates the affiliate header when the mouse enters the header
 	$('.page-template-page-templatesaffiliates-php .affiliates-header').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
 		$(this).addClass( 'can-hover' );

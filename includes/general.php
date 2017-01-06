@@ -151,7 +151,7 @@ function affwp_theme_post_lightbox() {
 
 		jQuery(document).ready(function($) {
 
-			$('.has-image:not(.gallery .has-image)').magnificPopup({
+			$('.has-image:not(.gallery .has-image), .enlarge').magnificPopup({
                 type: 'image',
                 preloader: true,
                 closeOnContentClick: true,
