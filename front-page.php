@@ -7,14 +7,25 @@ get_header(); ?>
 <?php
 /**
  * Latest news
- */
+*/
+
+$args = array(
+	'numberposts' => 1,
+	'orderby'     => 'post_date',
+	'order'       => 'DESC',
+	'post_type'   => 'post',
+	'post_status' => 'publish'
+);
+
+$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+
 ?>
 <section class="container-fluid news section-grey">
     <div class="wrapper">
 		<div class="row pv-xs-2">
 			<div class="col-xs-12 aligncenter">
 				<h3 class="label mb-xs-1 mb-sm-0">New</h3>
-				<p>Connect AffiliateWP to over 700 web services with Zapier! <a href="<?php echo site_url( '/connect-affiliatewp-700-web-services-zapier/' ); ?>">Read the post &rarr;</a></p>
+				<p><?php echo $recent_posts[0]['post_title'];?> <a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>">Read the post &rarr;</a></p>
 			</div>
 		</div>
 	</div>
