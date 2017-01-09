@@ -80,6 +80,19 @@ function affwp_theme_page_header_classes( $classes ) {
 add_filter( 'themedd_page_header_classes', 'affwp_theme_page_header_classes' );
 
 /**
+ * Inserts a wf-loading CSS class as soon as possible
+ *
+ * @link https://helpx.adobe.com/typekit/using/font-events.html
+ * @since 1.0
+ */
+function affwp_theme_webfont_loading_class() {
+?>
+<script>document.documentElement.className += ' wf-loading';</script>
+<?php
+}
+//add_action( 'wp_head', 'affwp_theme_webfont_loading_class' );
+
+/**
  * Typekit fonts
  * Loaded in the footer for best performance. Uses Typekit's advanced embed code
  *
@@ -99,21 +112,19 @@ function affwp_theme_typekit() {
 </script>
 <?php
 }
-add_action( 'wp_footer', 'affwp_theme_typekit' );
+//add_action( 'wp_footer', 'affwp_theme_typekit' );
 
 /**
- * Typekit fonts
- * Insert the wf-loading class as soon as possible
+ * Typography
  *
- * @link https://helpx.adobe.com/typekit/using/font-events.html
  * @since 1.0
  */
-function affwp_theme_typekit_loading_class() {
+function affwp_theme_typography() {
 ?>
-<script>document.documentElement.className += ' wf-loading';</script>
+<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6988232/608824/css/fonts.css" />
 <?php
 }
-add_action( 'wp_head', 'affwp_theme_typekit_loading_class' );
+add_action( 'wp_head', 'affwp_theme_typography' );
 
 /**
  * Load lightbox scripts on specific pages

@@ -576,7 +576,7 @@ function affwp_theme_pricing_table() {
 	        </div>
 
 			<div class="row center-sm">
-				<div class="col-xs-12 col-sm-10">
+				<div class="col-xs-12">
 					<p class="mb-xs-0">* Plugin updates and email support are provided for the duration of your current subscription. Renewals discounted at 30%. <br/><span class="add-on-clause">Pro add-ons are only available with Professional and Ultimate licenses.</span> <?php if( is_page('pricing') ) { echo 'See FAQs below for details.'; } ?> All purchases are subject to our terms of use.</p>
 				</div>
 			</div>
