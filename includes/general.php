@@ -80,41 +80,6 @@ function affwp_theme_page_header_classes( $classes ) {
 add_filter( 'themedd_page_header_classes', 'affwp_theme_page_header_classes' );
 
 /**
- * Inserts a wf-loading CSS class as soon as possible
- *
- * @link https://helpx.adobe.com/typekit/using/font-events.html
- * @since 1.0
- */
-function affwp_theme_webfont_loading_class() {
-?>
-<script>document.documentElement.className += ' wf-loading';</script>
-<?php
-}
-//add_action( 'wp_head', 'affwp_theme_webfont_loading_class' );
-
-/**
- * Typekit fonts
- * Loaded in the footer for best performance. Uses Typekit's advanced embed code
- *
- * @since 1.0
- */
-function affwp_theme_typekit() {
-	?>
-	<script>
-  (function(d) {
-    var config = {
-      kitId: 'gjm4ojr',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
-<?php
-}
-//add_action( 'wp_footer', 'affwp_theme_typekit' );
-
-/**
  * Typography
  *
  * @since 1.0
