@@ -25,7 +25,7 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 		<div class="row pv-xs-2">
 			<div class="col-xs-12 aligncenter">
 				<h3 class="label mb-xs-1 mb-sm-0">New</h3>
-				<p><?php echo $recent_posts[0]['post_title'];?> <a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>">Read the post &rarr;</a></p>
+				<p><?php echo $recent_posts[0]['post_title'];?>. <a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>">Read the post &rarr;</a></p>
 			</div>
 		</div>
 	</div>
@@ -423,7 +423,7 @@ if ( $integrations->have_posts() ) : ?>
 	<div class="wrapper wide">
 
         <h1 class="page-title aligncenter mb-xs-4 mb-sm-8">
-            <span class="entry-title-primary">Start making more money, risk-free.</span>
+            <span class="entry-title-primary">Start making more money, risk-free</span>
             <span class="subtitle">Purchase in confidence with our 30 Day Money Back Guarantee <?php echo affwp_show_refund_policy_link(); ?></span>
         </h1>
 

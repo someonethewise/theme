@@ -23,7 +23,7 @@ function affwp_theme_pricing_calculator() {
 		<div class="wrapper">
 			<div class="row middle-xs">
 				<div class="col-xs-12 col-md-7 mb-xs-2 mb-md-0">
-					<h1 class="header">AffiliateWP pays for itself, fast.</h1>
+					<h1 class="header">AffiliateWP pays for itself, fast</h1>
 					<p>Use the pricing calculator to find out how many referral sales you'll need to cover the cost of AffiliateWP.</p>
 				</div>
 				<div class="col-xs col-md-5 end-md">
@@ -45,7 +45,7 @@ function affwp_show_refund_policy_link() {
 	ob_start();
 	?>
 
-	- <a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">see our refund policy</a>
+	- <a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">see our refund policy</a>.
 
 	<?php
 
