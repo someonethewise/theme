@@ -25,16 +25,10 @@
 	color: #fff;
 }
 
-li.menu-item.nav-action a {
-	background: @accent-color;
-}
-
 // hide all icons to begin with
 li.menu-item div  {
     display: none;
 }
-
-
 
 ul.menu > li > a.button {
   color: #fff;
@@ -60,32 +54,17 @@ g.icon rect {
     fill:none;
 }
 
-// .icon {
-//     stroke: @accent-color;
-//     stroke-width: 1.5;
-//     // stroke-linecap:round;
-//     // stroke-linejoin:round;
-//     // stroke-miterlimit:10;
-//     fill:none;
-// }
-
 .hero g.icon path,
 .hero g.icon circle,
 .hero g.icon polygon,
 .hero g.icon line,
 .hero g.icon rect {
-//    stroke: #fff;
-//	opacity: 0.8;
 	stroke: rgba( 255, 255, 255, 0.8 );
 }
 
 .shape {
     fill: none;
 }
-
-// body.home .icon {
-//     stroke: #fff;
-// }
 
 @media only screen and ( min-width: @screen-sm-min ) {
 
@@ -160,14 +139,12 @@ g.icon rect {
 
 
     // purchase/checkout menu item
-
     li.menu-item.nav-action {
         margin-left: 1rem;
     }
 
     li.menu-item.nav-action a {
         padding-top: 3rem;
-    //    background: @accent-color;
     }
 
     li.menu-item.nav-action svg {
@@ -184,21 +161,6 @@ g.icon rect {
         bottom: 0.5rem;
     }
 
-    // li.menu-item a:hover svg {
-    //     bottom: 0.5rem;
-    //     opacity: 1;
-    // }
-    //
-    // li.menu-item:focus svg {
-    //     bottom: 0.5rem;
-    //      opacity: 1;
-    // }
-
-
-
-
-
-
 
     li.menu-item.current-menu-ancestor svg,
     li.menu-item.current-menu-item svg {
@@ -206,147 +168,14 @@ g.icon rect {
         opacity: 1;
     }
 
-
-
-    // li.menu-item > a:before {
-    //   font-size: 2rem;
-    //   font-family: "affiliatewp" !important;
-    //   speak: none;
-    //   line-height: 1;
-    //   display: block;
-    //   text-align: center;
-    //   -webkit-font-smoothing: antialiased;
-    //   -moz-osx-font-smoothing: grayscale;
-    //   position: relative;
-    //    bottom: 1rem;
-    //    opacity: 0;
-    //    color: #E44E44;
-    //   -webkit-transition: all 0.25s ease-in-out;
-    //   -moz-transition: all 0.25s ease-in-out;
-    //   -o-transition: all 0.25s ease-in-out;
-    //   transition: all 0.25s ease-in-out;
-    //
-    // }
-
-
-
-    // icon glyphs
-    // li.home > a:before {
-    //   content: "\e005";
-    // }
-    //
-    // li.about > a:before {
-    //  content: "\e004";
-    // }
-
-    // li.pricing > a:before {
-    //   content: "\e00a";
-    // }
-
-    // li.support > a:before {
-    //   content: "\e002";
-    // }
-    //
-    // li.blog > a:before {
-    //   content: "\e003";
-    // }
-    //
-    // li.account > a:before {
-    //   content: "\e006";
-    // }
-    //
-    // li.purchase > a:before {
-    //    content: "\e008";
-    // }
-    //
-    // li.checkout > a:before {
-    //    content: "\e009";
-    // }
-    //
-    //
-    // li.add-ons > a:before {
-    //   content: "\e01c";
-    // }
-    //
-    // li.screenshots > a:before {
-    //   content: "\e021";
-    // }
-
 }
 
 @media only screen and ( min-width: @screen-sm-min ) {
 
 
-  // purchase/checkout button
-  // #main ul.menu > li.action {
-  //   margin-left: 1rem;
-  // }
-  //
-  //
-  // #main ul.menu li {
-  //   float: left;
-  // }
+	li.menu-item.nav-action a {
+		background: @accent-color;
+	}
 
-
-
-
-  // checkout icon should always be visible
-  // li.menu-item.purchase > a:before,
-  // li.menu-item.checkout > a:before {
-  //   color: #fff;
-  //   opacity: 1;
-  //   bottom: 0.5rem;
-  // }
-
-
-  // li.menu-item.checkout:hover > a:before {
-  //   -webkit-transform:rotate( 15deg );
-  //   -moz-transform:rotate( 15deg );
-  //   -ms-transform:rotate( 15deg );
-  //   -o-transform:rotate( 15deg );
-  //   transform:rotate( 15deg );
-  // }
-
-
-
-  // hover effect for icons
-  // li:hover > a:before {
-  //   color: #E44E44;
-  //   bottom: 0.5rem;
-  //   opacity: 1;
-  // }
-
-
-  // set icons to white on the homepage
-  // .home .main-navigation li:hover > a:before,
-  // li.has-sub-menu:hover > a:before {
-  //   color: #fff;
-  // }
-
-  // show icon when page is selected
-  // li.current-menu-ancestor > a:before,
-  // li.current-menu-item > a:before {
-  //   opacity: 1;
-  //   color: #E44E44;
-  //   bottom: 0.5rem;
-  // }
-
-
-  // #main .button {
-  // 	background: #e44e44;
-  // }
-  //
-  // .home #main ul.menu > li > a {
-  //   color: #fff;
-  // }
-
-
-  // #main ul.menu > li > a.button {
-  //   color: #fff;
-  // }
-  //
-  // #main ul.menu > li.action:hover > a {
-  //   color: #fff;
-  // }
 
 }

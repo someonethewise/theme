@@ -1,3 +1,17 @@
+body {
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// make the first paragraph unique
+.single-download .entry-content div > p:first-child,
+.single-post .entry-content > p:first-child {
+	font-size: 1.3rem;
+	line-height: 1.4;
+	margin-top: 1rem;
+}
+
 // adjust feature headers
 .feature h4 {
 //	font-weight: 500;
@@ -27,19 +41,9 @@ h2 a:hover {
 }
 
 
-// new typography
-
-body {
-	text-rendering: geometricPrecision;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-
 .gform_confirmation_message {
     font-weight: 300;
 }
-
 
 // font-weight: 400
 p,
@@ -58,6 +62,7 @@ h3,
 h4,
 h5,
 h6,
+.mobile-navigation ul,
 #site-navigation ul,
 .cta-get-started-bottom a,
 #pricing-calculator label,
@@ -103,4 +108,17 @@ section.testimonials .name,
 .plus,
 .table-option > span {
 	font-weight: 600;
+}
+
+@media only screen and ( min-width: @screen-sm-min ) {
+
+	.single-post h1 {
+		font-size: 3.2rem;
+	}
+
+	// make the first paragraph unique
+	.single-download .entry-content div > p:first-child,
+	.single-post .entry-content > p:first-child {
+		font-size: 1.6rem;
+	}
 }
