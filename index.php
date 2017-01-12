@@ -29,7 +29,7 @@ if ( affwp_theme_is_blog_page() ) : ?>
 		<header class="page-header col-xs-12 blog-featured pv-xs-4">
 			<div class="wrapper">
 
-				<span>Featured article</span>
+				<span class="featured-article">Featured article</span>
 
 				<h1 class="<?php echo get_post_type(); ?>-title">
 					<?php echo $recent_posts[0]['post_title']; ?>

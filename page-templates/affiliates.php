@@ -98,7 +98,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 		<div class="row">
 
 			<div class="col-xs-12 col-lg-7 mb-xs-2 mb-lg-0">
-				<a class="has-image" href="<?php echo get_stylesheet_directory_uri() . '/images/affiliate-program-affiliate-area.png'; ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/images/affiliate-program-affiliate-area.png'; ?>" alt="The affiliate area" /></a>
+				<a class="enlarge" href="<?php echo get_stylesheet_directory_uri() . '/images/affiliate-program-affiliate-area.png'; ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/images/affiliate-program-affiliate-area.png'; ?>" alt="The affiliate area" /></a>
 			</div>
 
 			<div class="col-xs-12 col-lg-5">
