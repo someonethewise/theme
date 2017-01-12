@@ -2,11 +2,50 @@
 /**
  * Index
  */
-get_header(); ?>
+get_header();
 
-<?php themedd_post_header( array( 'title' => 'Seen our latest articles?', 'subtitle' => 'Check them out below!' ) ); ?>
+global $wp_query;
+
+$args = array(
+	'numberposts' => 1,
+	'orderby'     => 'post_date',
+	'order'       => 'DESC',
+	'post_type'   => 'post',
+	'post_status' => 'publish'
+);
+
+$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+
+if ( affwp_theme_is_blog_page() ) : ?>
+
+	<div class="hero <?php echo affwp_theme_blog_hero_classes( $recent_posts[0]['ID'] ); ?>">
+
+		<a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>" title="Read now" class="read-now">
+			<div>
+				<span class="button large">Read now</span>
+			</div>
+		</a>
+
+		<header class="page-header col-xs-12 blog-featured pv-xs-4">
+			<div class="wrapper">
+
+				<span>Featured article</span>
+
+				<h1 class="<?php echo get_post_type(); ?>-title">
+					<?php echo $recent_posts[0]['post_title']; ?>
+				</h1>
+
+				<?php echo affwp_theme_featured_icon( $recent_posts[0]['ID'] ); ?>
+
+			</div>
+		</header>
+
+	</div>
+
+<?php endif; ?>
 
 <?php if ( have_posts() ) : ?>
+
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-1">
     <div class="wrapper mb-xs-2 mb-lg-4">
 		<div class="grid row">

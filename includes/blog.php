@@ -88,6 +88,7 @@ function affwp_theme_post_body_classes( $classes ) {
 	global $post;
 
 	if ( is_singular( 'post' ) ) {
+
 		$categories = get_the_category( $post->ID );
 
 		if ( $categories ) {
@@ -123,8 +124,37 @@ function affwp_theme_blog_tweaks() {
 		// remove the post header from the default location
 		remove_action( 'themedd_single_start', 'themedd_load_post_header' );
 	}
+
 }
 add_action( 'template_redirect', 'affwp_theme_blog_tweaks' );
+
+/**
+ * Get the category class for the blog page and single posts
+ *
+ * @since 1.3.5
+ */
+function affwp_theme_blog_hero_classes( $post_id = 0 ) {
+
+	global $post;
+
+	$classes = array();
+
+	if ( affwp_theme_featured_icon( $post_id ) ) {
+		$classes[] = 'has-image';
+	}
+
+	$categories = get_the_category( $post_id );
+
+	if ( $categories ) {
+		foreach ( $categories as $category ) {
+			$classes[] = 'category-' . $category->category_nicename;
+		}
+	}
+
+	$classes = implode( ' ', $classes );
+
+	return $classes;
+}
 
 /**
  * New header design for single blog images
@@ -143,7 +173,7 @@ function affwp_theme_blog_header() {
 	if ( is_singular( 'post' ) ) :
 
 	?>
-	<div class="hero">
+	<div class="hero <?php echo affwp_theme_blog_hero_classes( get_the_ID() ); ?>">
 
 		<?php do_action( 'affwp_theme_hero_start' ); ?>
 
@@ -254,3 +284,74 @@ function affwp_theme_remove_post_header( $ret ) {
 
 }
 add_filter( 'themedd_post_header', 'affwp_theme_remove_post_header' );
+
+/**
+ * Handle the post offset on the blog page
+ *
+ * @since 1.3.5
+ */
+function affwp_theme_blog_query_offset( &$query ) {
+
+    // Return if not home
+    if ( ! $query->is_home() ) {
+        return;
+    }
+
+	// Return if not on main query
+	if ( ! $query->is_main_query() ) {
+        return;
+    }
+
+    // Desired offset
+    $offset = 1;
+
+    // Get posts per page
+    $posts_per_page = get_option( 'posts_per_page' );
+
+    // Detect and handle pagination
+    if ( $query->is_paged ) {
+
+        // Manually determine page query offset (offset + current page (minus one) x posts per page)
+        $page_offset = $offset + ( ( $query->query_vars['paged'] -1 ) * $posts_per_page );
+
+        // Apply adjust page offset
+        $query->set('offset', $page_offset );
+
+    }
+    else {
+        // This is the first page. Just use the offset.
+        $query->set( 'offset', $offset );
+    }
+
+}
+add_action( 'pre_get_posts', 'affwp_theme_blog_query_offset', 1 );
+
+/**
+ * Handle the post offset on the blog page
+ *
+ * @since 1.3.5
+ */
+function affwp_theme_blog_adjust_offset_pagination( $found_posts, $query ) {
+
+    // Define offset again
+    $offset = 1;
+
+    // Ensure we're modifying the right query object
+    if ( $query->is_home() ) {
+        // Reduce WordPress' found_posts count by the offset
+        return $found_posts - $offset;
+    }
+
+    return $found_posts;
+}
+add_filter('found_posts', 'affwp_theme_blog_adjust_offset_pagination', 1, 2 );
+
+/**
+ * Check if we're on the blog page
+ *
+ * @since 1.3.5
+ */
+function affwp_theme_is_blog_page() {
+	global $wp_query;
+	return $wp_query->query_vars['pagename'] === 'blog';
+}

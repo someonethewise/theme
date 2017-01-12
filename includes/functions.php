@@ -21,10 +21,12 @@ function affwp_theme_featured_image_mime_type() {
  *
  * @since 1.0.0
  */
-function affwp_theme_featured_icon() {
+function affwp_theme_featured_icon( $post_id = 0 ) {
 
-	if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() ) ) {
-		return MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() );
+	$post_id = ! empty( $post_id ) ? $post_id : get_the_ID();
+
+	if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', $post_id ) ) {
+		return MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', $post_id );
 	}
 
 	return false;
