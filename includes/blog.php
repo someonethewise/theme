@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE' ) ) {
+	define( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE', 9 );
+}
+
 /**
  * Sharing icons
  * Shown on single blog posts
@@ -308,13 +312,13 @@ function affwp_theme_blog_query_offset( &$query ) {
     $offset = 1;
 
     // Get posts per page
-    $posts_per_page = get_option( 'posts_per_page' );
+    $posts_per_page = AFFWP_THEME_BLOG_POSTS_PER_PAGE;
 
     // Detect and handle pagination
     if ( $query->is_paged ) {
 
         // Manually determine page query offset (offset + current page (minus one) x posts per page)
-        $page_offset = $offset + ( ( $query->query_vars['paged'] -1 ) * $posts_per_page );
+        $page_offset = $offset + ( ( $query->query_vars['paged'] - 1 ) * $posts_per_page );
 
         // Apply adjust page offset
         $query->set('offset', $page_offset );

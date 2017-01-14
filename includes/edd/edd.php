@@ -83,9 +83,9 @@ function affwp_theme_pre_get_posts( $query ) {
 			$query->set( 'posts_per_page', -1 );
 		}
 
-		// limit blog posts to 10 perpage
+		// posts for blog page
 		if ( $query->is_home ) {
-			$query->set( 'posts_per_page', 9 );
+			$query->set( 'posts_per_page', AFFWP_THEME_BLOG_POSTS_PER_PAGE );
 		}
 
     }
