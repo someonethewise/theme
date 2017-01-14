@@ -20,24 +20,20 @@ if ( affwp_theme_is_blog_page() ) : ?>
 
 	<div class="hero <?php echo affwp_theme_blog_hero_classes( $recent_posts[0]['ID'] ); ?>">
 
-		<a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>" title="Read now" class="read-now">
-			<div>
-				<span class="button large">Read now</span>
-			</div>
-		</a>
-
 		<header class="page-header col-xs-12 blog-featured pv-xs-4">
-			<div class="wrapper">
+			<a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>" title="Read now" class="read-now">
+				<div class="wrapper">
+					<span class="featured-article">Featured article</span>
 
-				<span class="featured-article">Featured article</span>
+					<h1 class="<?php echo get_post_type(); ?>-title">
+						<?php echo $recent_posts[0]['post_title']; ?>
+					</h1>
 
-				<h1 class="<?php echo get_post_type(); ?>-title">
-					<?php echo $recent_posts[0]['post_title']; ?>
-				</h1>
+					<?php echo affwp_theme_featured_icon( $recent_posts[0]['ID'] ); ?>
 
-				<?php echo affwp_theme_featured_icon( $recent_posts[0]['ID'] ); ?>
-
-			</div>
+					<span class="button large outline white">Read now</span>
+				</div>
+			</a>
 		</header>
 
 	</div>

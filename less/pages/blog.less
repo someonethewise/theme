@@ -61,6 +61,14 @@ body.single-post #content .page-header .wrapper {
 	padding-bottom: 0;
 }
 
+.hero.no-image .button {
+	margin-top: 4rem;
+}
+
+.blog .hero .page-header {
+	padding-bottom: 4rem;
+}
+
 .blog-featured img {
 	width: 720px;
 	display: block;
@@ -98,57 +106,8 @@ body.single-post #content .page-header .wrapper {
 	background: @secondary-color;
 }
 
-body.blog .hero.category-tutorials .page-header,
-body.blog .hero.category-news .page-header,
-body.blog .hero.category-add-ons .page-header,
-body.blog .hero.category-product .page-header {
-	transition: opacity 0.1s linear;
-}
-
-body.blog .hero.category-tutorials:hover .page-header,
-body.blog .hero.category-news:hover .page-header,
-body.blog .hero.category-add-ons:hover .page-header,
-body.blog .hero.category-product:hover .page-header {
-	opacity: 0.25;
-}
-
 .read-now {
 	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-
-	div {
-		width: 100%;
-		height: 100%;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-align-items: center;
-		align-items: center;
-		-webkit-justify-content: center;
-		justify-content: center;
-	}
-
-	span {
-		background: #fff;
-		border: none;
-		color: @secondary-color;
-		transition: opacity 0.1s linear;
-		opacity: 0;
-
-		&:hover {
-			background: #fff;
-			border: none;
-			color: @secondary-color;
-		}
-	}
-
-	&:hover {
-		span {
-			opacity: 1;
-		}
-	}
 }
 
 // news

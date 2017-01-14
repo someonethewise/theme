@@ -141,6 +141,8 @@ function affwp_theme_blog_hero_classes( $post_id = 0 ) {
 
 	if ( affwp_theme_featured_icon( $post_id ) ) {
 		$classes[] = 'has-image';
+	} else {
+		$classes[] = 'no-image';
 	}
 
 	$categories = get_the_category( $post_id );
