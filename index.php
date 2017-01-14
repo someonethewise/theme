@@ -106,4 +106,7 @@ if ( affwp_theme_is_blog_page() ) : ?>
 </section>
 <?php endif; ?>
 
+<section class="container-fluid">
+	<?php echo affwp_theme_get_signup(); ?>
+</section>
 <?php get_footer(); ?>

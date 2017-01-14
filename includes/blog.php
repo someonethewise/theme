@@ -350,7 +350,7 @@ function affwp_theme_blog_adjust_offset_pagination( $found_posts, $query ) {
 
     return $found_posts;
 }
-add_filter('found_posts', 'affwp_theme_blog_adjust_offset_pagination', 1, 2 );
+add_filter( 'found_posts', 'affwp_theme_blog_adjust_offset_pagination', 1, 2 );
 
 /**
  * Check if we're on the blog page

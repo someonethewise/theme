@@ -59,7 +59,7 @@ function affwp_theme_signup_form_id() {
 add_filter( 'gform_confirmation_anchor_' . affwp_theme_signup_form_id(), '__return_false' );
 
 /**
- * Load Gravity Form
+ * Load Gravity Form on single posts
  *
  * @since 1.0.0
  */
@@ -69,6 +69,17 @@ function affwp_theme_gform_signup() {
 	if ( ! is_singular( 'post' ) ) {
 		return;
 	}
+
+	echo affwp_theme_get_signup();
+
+}
+add_action( 'themedd_entry_content_end', 'affwp_theme_gform_signup', 15 );
+
+/**
+ * Get the sign up box
+ * @since 1.0.0
+ */
+function affwp_theme_get_signup() {
 
 	if ( function_exists( 'gravity_form' ) ) : ?>
 
@@ -85,9 +96,8 @@ function affwp_theme_gform_signup() {
 	</section>
 	<?php endif;
 
-
 }
-add_action( 'themedd_entry_content_end', 'affwp_theme_gform_signup', 15 );
+
 
 /**
  * Gravity Forms - remove validation message
