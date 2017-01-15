@@ -9,13 +9,20 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-4">
 
+	<?php
+	$terms = get_terms( 'type', array(
+	    'hide_empty' => true,
+	) );
+
+	?>
+
 	<div class="wrapper wide integration-filter aligncenter">
+	<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
 		<a class="button small" href="#" data-filter="all">All</a>
-		<a class="button small" href="#" data-filter=".type-ecommerce">eCommerce</a>
-		<a class="button small" href="#" data-filter=".type-form">Form</a>
-		<a class="button small" href="#" data-filter=".type-invoice">Invoice</a>
-		<a class="button small" href="#" data-filter=".type-lms">LMS</a>
-		<a class="button small" href="#" data-filter=".type-membership">Membership</a>
+		<?php foreach ( $terms as $term ) : ?>
+		<a class="button small" href="#" data-filter=".type-<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
+		<?php endforeach; ?>
+	<?php endif; ?>
 	</div>
 
 	<div class="wrapper wide mb-xs-2 mb-lg-4">
