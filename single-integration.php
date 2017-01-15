@@ -25,14 +25,13 @@ $integration_name = get_the_title( get_the_ID() );
 			$terms = get_the_terms( get_the_ID(), 'type' );
 
 			if ( ! empty( $terms ) ) :
-
 			    // get the first term
 			    $term = array_shift( $terms );
 				$term_name = $term->name;
 				$term_slug = $term->slug;
 			?>
 
-			<div class="breadcrumb"><a href="<?php echo get_post_type_archive_link( 'integration' ); ?>">Integrations</a> / <a href="<?php echo get_term_link( $term->term_id, 'type' ); ?>"><?php echo $term_name ;?></a></div>
+			<div class="breadcrumb"><a href="<?php echo get_post_type_archive_link( 'integration' ); ?>">Integrations</a> / <a href="<?php echo get_term_link( $term->term_id, 'type' ); ?>"><?php echo $term_name; ?></a></div>
 
 			<?php endif; ?>
 

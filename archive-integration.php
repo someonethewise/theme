@@ -10,6 +10,7 @@ get_header(); ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-4">
 
 	<?php
+
 	$terms = get_terms( 'type', array(
 	    'hide_empty' => true,
 	) );
@@ -41,11 +42,23 @@ get_header(); ?>
 					</div>
 					<?php endif; ?>
 
+					<?php
+
+					$terms = get_the_terms( get_the_ID(), 'type' );
+
+					if ( ! empty( $terms ) ) {
+						// get the first term
+					    $term = array_shift( $terms );
+						$term_name = $term->name;
+						$term_slug = $term->slug;
+					}
+
+					?>
 					<div class="overlay">
-						<a href="<?php the_permalink();?>">
-							<?php if ( the_excerpt() ) : ?>
-							<p><?php echo the_excerpt(); ?></p>
-							<?php endif; ?>
+						<a href="<?php the_permalink(); ?>">
+
+							<span class="integration-title"><?php the_title(); ?></span>
+							<span class="integration-type"><?php echo $term_name; ?> integration</span>
 
 							<footer><span>Learn more</span></footer>
 						</a>
