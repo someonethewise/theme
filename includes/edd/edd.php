@@ -69,29 +69,7 @@ function affwpcf_edd_addon_links( $post_link, $id = 0 ) {
 }
 add_filter( 'post_type_link', 'affwpcf_edd_addon_links', 1, 3 );
 
-/**
- * Pre get post queries
- *
- * @since 1.0.0
- */
-function affwp_theme_pre_get_posts( $query ) {
 
-    if ( $query->is_main_query() && ! is_admin() ) {
-
-		// show all downloads on /add-ons/pro
-		if ( $query->is_tax( 'download_category' ) ) {
-			$query->set( 'posts_per_page', -1 );
-		}
-
-		// posts for blog page
-		if ( $query->is_home ) {
-			$query->set( 'posts_per_page', AFFWP_THEME_BLOG_POSTS_PER_PAGE );
-		}
-
-    }
-
-}
-add_action( 'pre_get_posts', 'affwp_theme_pre_get_posts' );
 
 /**
  * Modify EDD download price
