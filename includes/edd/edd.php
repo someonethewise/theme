@@ -428,17 +428,27 @@ function affwp_theme_add_on_supported_integrations_modal() {
 						<?php echo get_the_post_thumbnail( $post_id, 'post-thumbnail' ); ?>
 						</div>
 
-    					<div class="overlay">
-    						<a href="<?php echo get_the_permalink( $post_id );?>">
-    							<?php if ( get_the_excerpt($post_id) ) : ?>
-    							<p><?php echo get_the_excerpt( $post_id); ?></p>
-    							<?php endif; ?>
+						<div class="overlay">
+							<a href="<?php the_permalink( $post_id ); ?>">
 
-    							<footer>
-    								<span>Learn more</span>
-    							</footer>
-    						</a>
-    					</div>
+								<span class="integration-title"><?php echo get_the_title( $post_id ); ?></span>
+
+								<?php
+
+								$terms = get_the_terms( $post_id, 'type' );
+
+								if ( ! empty( $terms ) ) :
+									$term = array_shift( $terms );
+									$term_name = $term->name;
+									$term_slug = $term->slug;
+								?>
+								<span class="integration-type"><?php echo $term_name; ?> integration</span>
+
+								<?php endif; ?>
+
+								<footer><span>Learn more</span></footer>
+							</a>
+						</div>
 
     				</div>
                 </div>
