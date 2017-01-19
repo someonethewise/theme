@@ -277,7 +277,7 @@ function affwp_theme_pre_get_posts( $query ) {
 		}
 
 		// Show all integrations on type taxonomy pages regardless of post status for site admins
-		if ( $query->is_tax( 'type' ) && current_user_can( 'manage_options' ) ) {
+		if ( ( $query->is_tax( 'download_category' ) || $query->is_tax( 'type' ) ) && current_user_can( 'manage_options' ) ) {
 			$query->set( 'post_status', array( 'pending', 'draft', 'future', 'publish' ) );
 		}
 
