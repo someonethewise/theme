@@ -9,7 +9,7 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.4.3' );
+	define( 'AFFWP_THEME_VERSION', '1.4.4' );
 }
 
 function themedd_styles() {
@@ -83,3 +83,50 @@ function affwp_theme_image_size_names_choose( $sizes ) {
 
 }
 add_filter( 'image_size_names_choose', 'affwp_theme_image_size_names_choose' );
+
+/**
+ * Display an optional post thumbnail.
+ *
+ * Wraps the post thumbnail in an anchor element on index views, or a div
+ * element when on single views.
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'themedd_post_thumbnail' ) ) :
+function themedd_post_thumbnail() {
+
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+
+	if ( is_singular() ) : ?>
+
+	<div class="post-thumbnail">
+
+		<?php
+		if ( affwp_theme_featured_icon( get_the_ID() ) ) {
+			echo affwp_theme_featured_icon( get_the_ID() );
+		} else {
+			the_post_thumbnail();
+		}
+		?>
+
+	</div>
+
+	<?php else : ?>
+
+		<?php
+		if ( affwp_theme_featured_icon( get_the_ID() ) ) {
+			$image = affwp_theme_featured_icon( get_the_ID() );
+		} else {
+			$image = get_the_post_thumbnail( get_the_ID(), 'post-thumbnail', array( 'alt' => get_the_title() ) );
+		}
+		?>
+
+	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+		<?php echo $image; ?>
+	</a>
+
+	<?php endif; // End is_singular()
+}
+endif;
