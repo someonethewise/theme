@@ -72,8 +72,10 @@ function affwp_theme_featured_icon_animation( $post_id = 0 ) {
 	}
 
 	if ( is_singular() ) {
-		echo affwp_theme_animation_get_image( $post_id );
+		// objects are loaded on single posts since they might be animated
+		echo affwp_theme_animation_get_image( $post_id, 'object' );
 	} else {
+		// the default img (SVG) is loaded since it must be clickable
 		return affwp_theme_animation_get_image( $post_id );
 	}
 
@@ -82,31 +84,41 @@ add_action( 'themedd_post_header_end', 'affwp_theme_featured_icon_animation' );
 
 /**
  * Get the SVG objects
- * Each SVG object will be loaded here
  *
  * @since 1.4.5
  */
-function affwp_theme_animation_get_image( $post_id = 0 ) {
+function affwp_theme_animation_get_image( $post_id = 0, $type = 'img' ) {
 
 	if ( empty( $post_id ) ) {
 		return;
 	}
 
-	$post = get_post( $post_id );
+	$post  = get_post( $post_id );
+	$image = '';
 
 	ob_start();
 
-	if ( 'Introducing the Extended REST API add-on' === $post->post_title ) { ?>
-		<object id="main-svg" data="<?php echo get_stylesheet_directory_uri() . '/images/svgs/animation/add-on-rest-api.svg'; ?>" type="image/svg+xml" ></object>
-	<?php }
+	switch ( $post->post_title ) {
 
-	if (
-		'Version 2.0 released!' === $post->post_title ||
-		'Version 1.9 released!' === $post->post_title ||
-		'Version 1.8 released!' === $post->post_title
-	) { ?>
-		<object id="main-svg" data="<?php echo get_stylesheet_directory_uri() . '/images/svgs/animation/product-update.svg'; ?>" type="image/svg+xml" ></object>
-	<?php }
+		case 'Introducing the Extended REST API add-on':
+		case 'Extended REST API':
+			$image = 'add-on-rest-api';
+			break;
+
+		case 'Version 2.0 released!':
+		case 'Version 1.9 released!':
+		case 'Version 1.8 released!':
+			$image = 'product-update';
+
+	}
+
+	if ( 'img' === $type ) : // image for use on blog listings etc or whenever it can be clicked ?>
+		<img id="main-svg" src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/animation/' . $image . '.svg'; ?>" />
+	<?php elseif( 'object' === $type ) : // object (animated) for use on single post pages ?>
+		<object id="main-svg" data="<?php echo get_stylesheet_directory_uri() . '/images/svgs/animation/' . $image . '.svg'; ?>" type="image/svg+xml" ></object>
+	<?php endif; ?>
+
+	<?php
 
 	$content = ob_get_contents();
 

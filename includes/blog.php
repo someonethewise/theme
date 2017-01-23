@@ -47,7 +47,7 @@ function affwp_theme_blog_header() {
 
 		<?php do_action( 'affwp_theme_hero_start' ); ?>
 
-		<header class="page-header col-xs-12 blog-featured pv-xs-4">
+		<header class="page-header col-xs-12 blog-featured pv-xs-2 pv-sm-4">
 			<div class="wrapper">
 
 				<?php do_action( 'themedd_post_header_start' ); ?>

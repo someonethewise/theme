@@ -9,7 +9,7 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.4.5' );
+	define( 'AFFWP_THEME_VERSION', '1.4.6' );
 }
 
 function themedd_styles() {
@@ -125,6 +125,8 @@ function themedd_post_thumbnail() {
 		<?php
 		if ( affwp_theme_featured_icon( get_the_ID() ) ) {
 			$image = affwp_theme_featured_icon( get_the_ID() );
+		} elseif ( apply_filters( 'affwp_theme_post_animation', false ) ) {
+			$image = affwp_theme_animation_get_image( get_the_ID() );
 		} else {
 			$image = get_the_post_thumbnail( get_the_ID(), 'post-thumbnail', array( 'alt' => get_the_title() ) );
 		}
