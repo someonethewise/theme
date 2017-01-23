@@ -1,23 +1,8 @@
 <?php
 
 /**
- * Get mime type of featured image
- *
- * @since 1.0.0
- */
-function affwp_theme_featured_image_mime_type() {
-
-	$id        = get_post_thumbnail_id();
-	$type      = get_post_mime_type( $id );
-
-	$mime_type = explode( '/', $type );
-	$type      = isset( $mime_type['1'] ) ? $mime_type['1'] : '';
-
-	return $type;
-}
-
-/**
  * Retrieve the featured icon
+ * Featured icons can be shown on single posts and downloads
  *
  * @since 1.0.0
  */

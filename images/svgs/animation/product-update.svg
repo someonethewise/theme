@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1024 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:100;">
+	<g id="Featured-icon-image---Facebook--" transform="matrix(1,0,0,1,80,-415)">
+        <rect x="-80" y="415" width="1024" height="512" style="fill:none;"/>
+        <g id="product--update">
+            <g id="box" transform="matrix(5.97723,0,0,5.97723,243.717,498.253)">
+                <g transform="matrix(0.365387,0,0,0.429614,-279.854,9.03127)">
+                    <path d="M797.889,26L797.889,107L909,107L909,26" style="fill:rgb(238,181,89);"/>
+                    <clipPath id="_clip1">
+                        <path d="M797.889,26L797.889,107L909,107L909,26"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip1)">
+                        <g id="shadow" transform="matrix(-0.52521,4.44815e-17,-5.23004e-17,-0.446691,1241.97,194.105)">
+                            <rect x="605" y="176" width="51.5" height="238" style="fill:rgb(235,164,58);"/>
+                        </g>
+                        <g id="highlight" transform="matrix(0.494763,0,0,0.446691,595.538,-68.1029)">
+                            <rect x="353" y="210.667" width="69" height="210.333" style="fill:rgb(243,204,142);"/>
+                        </g>
+                    </g>
+                    <path d="M797.889,26L797.889,107L909,107L909,26" style="fill:none;stroke:rgb(57,57,57);stroke-width:3.36px;"/>
+                </g>
+                <g id="box-flaps" transform="matrix(1,0,0,1,0,0.501905)">
+                    <g id="box-flap-side" transform="matrix(0.966632,0,0,0.966632,1.05109,1.33333)">
+                        <path d="M8.978,9L1,9L11,19L53,19L63,9L55.618,9" style="fill:rgb(235,164,58);fill-rule:nonzero;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:butt;stroke-miterlimit:1.41421;"/>
+                    </g>
+                    <g id="box-flap-main" transform="matrix(0.966632,0,0,0.966632,1.05109,2.00254)">
+                        <path d="M57,1L7,1L11,19L53,19L57,1Z" style="fill:rgb(238,181,89);fill-rule:nonzero;"/>
+                        <clipPath id="_clip2">
+                            <path d="M57,1L7,1L11,19L53,19L57,1Z" clip-rule="nonzero"/>
+                        </clipPath>
+                        <g clip-path="url(#_clip2)">
+                            <g id="shadow1" transform="matrix(0.0295708,-0.196315,0.196315,0.0295708,30.3592,112.207)">
+                                <path d="M661,20L372,20L372,103L661,103L661,20Z" style="fill:rgb(235,165,58);"/>
+                            </g>
+                            <g id="highlight1" transform="matrix(0.198529,0,0,0.198529,-69.75,-20.8382)">
+                                <path d="M394,83L423,221L371,221L371,83L394,83Z" style="fill:rgb(243,204,142);"/>
+                            </g>
+                            <path id="line" d="M11,5L53,5" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:round;stroke-miterlimit:1.41421;"/>
+                        </g>
+                        <path d="M57,1L7,1L11,19L53,19L57,1Z" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:butt;stroke-miterlimit:1.41421;"/>
+                    </g>
+                </g>
+                <g id="label-group">
+                    <g id="label">
+                        <g id="label-main" transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                            <path d="M43,36L43,44L21,44L21,30L43,30" style="fill:rgb(246,246,246);fill-rule:nonzero;"/>
+                        </g>
+                        <g id="label-border" transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                            <path d="M43,36L43,44L21,44L21,30L35,30" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:butt;stroke-miterlimit:1.41421;"/>
+                        </g>
+                    </g>
+                    <g id="tick" transform="matrix(0.167302,0,0,0.167302,-54.1585,-13.9283)">
+                        <path d="M491.778,290.667L520.667,319.556L584.222,256" style="fill:none;stroke:rgb(57,57,57);stroke-width:8px;stroke-linecap:round;"/>
+                    </g>
+                </g>
+                <g id="small-squares">
+                    <g transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                        <path d="M20,26L22,26" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:butt;stroke-miterlimit:1.41421;"/>
+                    </g>
+                    <g transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                        <path d="M24,26L26,26" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:butt;stroke-miterlimit:1.41421;"/>
+                    </g>
+                    <g transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                        <path d="M28,26L30,26" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:butt;stroke-miterlimit:1.41421;"/>
+                    </g>
+                </g>
+            </g>
+            <g id="wind" transform="matrix(5.97723,0,0,5.97723,243.717,498.253)">
+                <g id="wind-5" transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                    <path d="M8,51L2,51" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:round;stroke-miterlimit:1.41421;"/>
+                </g>
+                <g id="wind-4" transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                    <path d="M14,44L4,44" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:round;stroke-miterlimit:1.41421;"/>
+                </g>
+                <g id="wind-3" transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                    <path d="M8,37L0,37" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:round;stroke-miterlimit:1.41421;"/>
+                </g>
+                <g id="wind-2" transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                    <path d="M16,30L2,30" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:round;stroke-miterlimit:1.41421;"/>
+                </g>
+                <g id="wind-1" transform="matrix(0.966632,0,0,0.966632,1.05109,1.83524)">
+                    <path d="M8,24L0,24" style="fill:none;stroke:rgb(57,57,57);stroke-width:1.39px;stroke-linecap:round;stroke-miterlimit:1.41421;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

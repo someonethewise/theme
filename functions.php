@@ -9,7 +9,7 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.4.4' );
+	define( 'AFFWP_THEME_VERSION', '1.4.5' );
 }
 
 function themedd_styles() {
@@ -17,7 +17,6 @@ function themedd_styles() {
 	wp_enqueue_style( 'affwp', get_stylesheet_uri(), array(), AFFWP_THEME_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'themedd_styles' );
-
 
 /**
  * Setup
@@ -48,6 +47,7 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'compatibility/subtitles.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'functions.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'blog.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'animation.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'affiliates.php' );
 
 	// EDD functions
@@ -104,11 +104,18 @@ function themedd_post_thumbnail() {
 	<div class="post-thumbnail">
 
 		<?php
+
 		if ( affwp_theme_featured_icon( get_the_ID() ) ) {
 			echo affwp_theme_featured_icon( get_the_ID() );
-		} else {
+		} elseif ( ! apply_filters( 'affwp_theme_post_animation', false ) ) {
 			the_post_thumbnail();
 		}
+
+		/**
+		 * Load SVG animation if there's one available for the single download
+		 */
+		echo affwp_theme_featured_icon_animation_single_download();
+
 		?>
 
 	</div>
@@ -123,9 +130,9 @@ function themedd_post_thumbnail() {
 		}
 		?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php echo $image; ?>
-	</a>
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<?php echo $image; ?>
+		</a>
 
 	<?php endif; // End is_singular()
 }

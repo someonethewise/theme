@@ -20,6 +20,13 @@ module.exports = function(grunt) {
 			},
 			src: ['js/account/**/*.js'],
 			dest: 'js/account.min.js'
+		},
+		animation: {
+			options: {
+				separator: ';'
+			},
+			src: ['js/animation/**/*.js'],
+			dest: 'js/animation.min.js'
 		}
 	},
 
@@ -31,7 +38,8 @@ module.exports = function(grunt) {
         js: {
           files: {
             'js/<%= pkg.name %>.min.js': ['js/<%= pkg.name %>.min.js'],
-			'js/account.min.js': ['js/account.min.js']
+			'js/account.min.js': ['js/account.min.js'],
+			'js/animation.min.js': ['js/animation.min.js']
           }
         }
       },
@@ -100,8 +108,8 @@ module.exports = function(grunt) {
     watch: {
       // JS
       js: {
-        files: ['js/src/**/*.js', 'js/account/**/*.js'],
-        tasks: ['concat:main', 'concat:account', 'uglify:js'],
+        files: ['js/src/**/*.js', 'js/account/**/*.js', 'js/animation/**/*.js'],
+        tasks: ['concat:main', 'concat:account', 'concat:animation', 'uglify:js'],
       },
        svgstore: {
          files: ['images/svgs/combined/*.svg'],

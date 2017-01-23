@@ -4,6 +4,106 @@ if ( ! defined( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE' ) ) {
 	define( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE', 9 );
 }
 
+
+/**
+ * Remove standard post header on single posts
+ *
+ * @since 1.1.5
+ */
+function affwp_theme_remove_post_header( $ret ) {
+
+	/**
+	 * The new design is only for posts where a featured icon (SVG) has been set
+	 */
+	if ( ( affwp_theme_featured_icon( get_the_ID() ) || apply_filters( 'affwp_theme_post_animation', false ) ) && is_singular( 'post' ) ) {
+		$ret = false;
+	}
+
+	return $ret;
+
+}
+add_filter( 'themedd_post_header', 'affwp_theme_remove_post_header' );
+
+
+/**
+ * New header design for single blog images
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_blog_header() {
+
+	/**
+	 * The new design is only for posts where a featured icon (SVG) has been set
+	 */
+
+	if ( ! ( affwp_theme_featured_icon( get_the_ID() ) || apply_filters( 'affwp_theme_post_animation', false ) ) ) {
+		return;
+	}
+
+	if ( is_singular( 'post' ) ) :
+
+	?>
+	<div class="hero <?php echo affwp_theme_blog_hero_classes( get_the_ID() ); ?>">
+
+		<?php do_action( 'affwp_theme_hero_start' ); ?>
+
+		<header class="page-header col-xs-12 blog-featured pv-xs-4">
+			<div class="wrapper">
+
+				<?php do_action( 'themedd_post_header_start' ); ?>
+
+				<h1 class="<?php echo get_post_type(); ?>-title">
+					<?php echo get_the_title(); ?>
+				</h1>
+
+				<?php
+				/**
+				 * SVG animation will load on this hook if present
+				 */
+				do_action( 'themedd_post_header_end', get_the_ID() );
+				?>
+
+				<?php
+				/**
+				 * Load the featured icon (SVG set in admin) if present
+				 */
+				echo affwp_theme_featured_icon( get_the_ID() );
+				?>
+
+			</div>
+
+		</header>
+	</div>
+<?php endif;
+}
+add_action( 'themedd_single_start', 'affwp_theme_blog_header' );
+
+/**
+ * Tweaks to the blog post
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_blog_tweaks() {
+
+	/**
+	 * The new design is only for posts where the featured image is an SVG
+	 * Going forward we might remove this requirement as we re-do older blog posts
+	 */
+	if ( ! affwp_theme_featured_icon( get_the_ID() ) ) {
+		return;
+	}
+
+	if ( is_singular( 'post' ) ) {
+		//remove the post thumbnail from the default location
+		remove_action( 'themedd_article_start', 'themedd_load_post_thumbnail' );
+
+		// remove the post header from the default location
+		remove_action( 'themedd_single_start', 'themedd_load_post_header' );
+	}
+
+}
+add_action( 'template_redirect', 'affwp_theme_blog_tweaks' );
+
 /**
  * Sharing icons
  * Shown on single blog posts
@@ -112,32 +212,6 @@ function affwp_theme_post_body_classes( $classes ) {
 add_filter( 'body_class', 'affwp_theme_post_body_classes' );
 
 /**
- * Tweaks to the blog post
- *
- * @since 1.0.0
- */
-function affwp_theme_blog_tweaks() {
-
-	/**
-	 * The new design is only for posts where the featured image is an SVG
-	 * Going forward we might remove this requirement as we re-do older blog posts
-	 */
-	if ( ! affwp_theme_featured_icon() ) {
-		return;
-	}
-
-	if ( is_singular( 'post' ) ) {
-		//remove the post thumbnail from the default location
-		remove_action( 'themedd_article_start', 'themedd_load_post_thumbnail' );
-
-		// remove the post header from the default location
-		remove_action( 'themedd_single_start', 'themedd_load_post_header' );
-	}
-
-}
-add_action( 'template_redirect', 'affwp_theme_blog_tweaks' );
-
-/**
  * Get the category class for the blog page and single posts
  *
  * @since 1.3.5
@@ -148,7 +222,8 @@ function affwp_theme_blog_hero_classes( $post_id = 0 ) {
 
 	$classes = array();
 
-	if ( affwp_theme_featured_icon( $post_id ) ) {
+	// add has-image CSS if the post has an SVG icon or animation
+	if ( affwp_theme_featured_icon( $post_id ) || affwp_theme_animation_get_image( $post_id ) ) {
 		$classes[] = 'has-image';
 	} else {
 		$classes[] = 'no-image';
@@ -166,47 +241,6 @@ function affwp_theme_blog_hero_classes( $post_id = 0 ) {
 
 	return $classes;
 }
-
-/**
- * New header design for single blog images
- *
- * @since 1.0.0
- */
-function affwp_theme_blog_header() {
-
-	/**
-	 * The new design is only for posts where a featured icon (SVG) has been set
-	 */
-	if ( ! affwp_theme_featured_icon() ) {
-		return;
-	}
-
-	if ( is_singular( 'post' ) ) :
-
-	?>
-	<div class="hero <?php echo affwp_theme_blog_hero_classes( get_the_ID() ); ?>">
-
-		<?php do_action( 'affwp_theme_hero_start' ); ?>
-
-		<header class="page-header col-xs-12 blog-featured pv-xs-4">
-			<div class="wrapper">
-
-				<?php do_action( 'themedd_post_header_start' ); ?>
-				<h1 class="<?php echo get_post_type(); ?>-title">
-					<?php echo get_the_title(); ?>
-				</h1>
-
-				<?php do_action( 'themedd_post_header_end' ); ?>
-
-				<?php echo affwp_theme_featured_icon(); ?>
-
-			</div>
-
-		</header>
-	</div>
-<?php endif;
-}
-add_action( 'themedd_single_start', 'affwp_theme_blog_header' );
 
 /**
  * Output the author and date published
@@ -278,25 +312,6 @@ add_filter( 'next_posts_link_attributes', 'affwp_theme_post_link_attributes' );
 add_filter( 'previous_posts_link_attributes', 'affwp_theme_post_link_attributes' );
 
 /**
- * Remove standard post header on single posts
- *
- * @since 1.1.5
- */
-function affwp_theme_remove_post_header( $ret ) {
-
-	/**
-	 * The new design is only for posts where a featured icon (SVG) has been set
-	 */
-	if ( affwp_theme_featured_icon() && is_singular( 'post' ) ) {
-		$ret = false;
-	}
-
-	return $ret;
-
-}
-add_filter( 'themedd_post_header', 'affwp_theme_remove_post_header' );
-
-/**
  * Handle the post offset on the blog page
  *
  * @since 1.3.5
@@ -354,6 +369,7 @@ function affwp_theme_blog_adjust_offset_pagination( $found_posts, $query ) {
     }
 
     return $found_posts;
+
 }
 add_filter( 'found_posts', 'affwp_theme_blog_adjust_offset_pagination', 1, 2 );
 

@@ -22,6 +22,11 @@ body.single-post #content .page-header .wrapper {
 	display: block;
 }
 
+// hide the animated SVG initially
+.single #main-svg {
+	visibility: hidden;
+}
+
 .posted-on a {
 	color: darken( @light-grey, 25% );
 }
@@ -69,8 +74,10 @@ body.single-post #content .page-header .wrapper {
 	padding-bottom: 4rem;
 }
 
-.blog-featured img {
+.blog-featured img,
+.blog-featured object {
 	width: 720px;
+	max-width: 100%;
 	display: block;
 	margin: 0 auto;
 }

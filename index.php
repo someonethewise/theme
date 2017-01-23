@@ -29,7 +29,22 @@ if ( affwp_theme_is_blog_page() ) : ?>
 						<?php echo $recent_posts[0]['post_title']; ?>
 					</h1>
 
-					<?php echo affwp_theme_featured_icon( $recent_posts[0]['ID'] ); ?>
+					<?php
+						if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', $recent_posts[0]['ID'] ) ) {
+							$image = MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', $recent_posts[0]['ID'] );
+						} elseif ( apply_filters( 'affwp_theme_post_animation', false, $recent_posts[0]['ID'] ) ) {
+							$image = affwp_theme_featured_icon_animation( $recent_posts[0]['ID'] );
+						} elseif ( has_post_thumbnail() ) {
+							$image = get_the_post_thumbnail( $recent_posts[0]['ID'], 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
+						} else {
+							$image = '';
+						}
+
+					if ( $image ) : ?>
+
+					<?php echo $image; ?>
+
+					<?php endif; ?>
 
 					<span class="button large outline white">Read now</span>
 				</div>
@@ -59,10 +74,14 @@ if ( affwp_theme_is_blog_page() ) : ?>
 						if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() ) ) {
 							$image = MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() );
 							$class = ' has-featured-icon';
+						} elseif ( apply_filters( 'affwp_theme_post_animation', false ) ) {
+							$image = affwp_theme_featured_icon_animation( get_the_ID() );
+							$class = ' has-featured-icon';
 						} elseif ( has_post_thumbnail() ) {
 							$image = get_the_post_thumbnail( get_the_ID(), 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
 						} else {
 							$image = '';
+
 						}
 
 					if ( $image ) : ?>
