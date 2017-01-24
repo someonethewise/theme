@@ -313,7 +313,7 @@ if ( $integrations->have_posts() ) : ?>
             <?php while ( $integrations->have_posts() ) : $integrations->the_post();
 			global $post;
 			$count++;
-			$hidden_class = $count > 6 ? 'integration-hidden' : '';
+			$hidden_class = $count > 9 ? 'integration-hidden' : '';
 			?>
 
                 <div <?php post_class( array( 'grid-item', 'col-xs-12 col-md-6 col-lg-4 mb-xs-2 mb-sm-0', $post->post_name, 'integration-' . $count, $hidden_class ) ); ?>>
