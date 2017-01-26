@@ -4,38 +4,40 @@
  */
 get_header();
 
-global $wp_query;
-
-$args = array(
-	'numberposts' => 1,
-	'orderby'     => 'post_date',
-	'order'       => 'DESC',
-	'post_type'   => 'post',
-	'post_status' => 'publish'
-);
-
-$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
-
 if ( affwp_theme_is_blog_page() ) : ?>
 
-	<div class="hero <?php echo affwp_theme_blog_hero_classes( $recent_posts[0]['ID'] ); ?>">
+<?php
+
+$args = array(
+	'posts_per_page'      => 1,
+	'post__in'            => get_option( 'sticky_posts' ),
+	'ignore_sticky_posts' => 1
+);
+
+$query = new WP_Query( $args );
+
+if ( $query->have_posts() ) : ?>
+
+	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+	<div class="hero <?php echo affwp_theme_blog_hero_classes( get_the_ID() ); ?>">
 
 		<header class="page-header col-xs-12 blog-featured pv-xs-4">
-			<a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>" title="Read now" class="read-now">
+			<a href="<?php echo the_permalink(); ?>" title="Read now" class="read-now">
 				<div class="wrapper">
 					<span class="featured-article">Featured article</span>
 
 					<h1 class="<?php echo get_post_type(); ?>-title">
-						<?php echo $recent_posts[0]['post_title']; ?>
+						<?php the_title(); ?>
 					</h1>
 
 					<?php
-						if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', $recent_posts[0]['ID'] ) ) {
-							$image = MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', $recent_posts[0]['ID'] );
-						} elseif ( apply_filters( 'affwp_theme_post_animation', false, $recent_posts[0]['ID'] ) ) {
-							$image = affwp_theme_featured_icon_animation( $recent_posts[0]['ID'] );
+						if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() ) ) {
+							$image = MultiPostThumbnails::get_the_post_thumbnail( get_post_type(), 'feature-icon', get_the_ID() );
+						} elseif ( apply_filters( 'affwp_theme_post_animation', false, get_the_ID() ) ) {
+							$image = affwp_theme_featured_icon_animation( get_the_ID() );
 						} elseif ( has_post_thumbnail() ) {
-							$image = get_the_post_thumbnail( $recent_posts[0]['ID'], 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
+							$image = get_the_post_thumbnail( get_the_ID(), 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
 						} else {
 							$image = '';
 						}
@@ -52,6 +54,10 @@ if ( affwp_theme_is_blog_page() ) : ?>
 		</header>
 
 	</div>
+	<?php endwhile; ?>
+	<?php wp_reset_postdata(); ?>
+
+	<?php endif; ?>
 
 <?php endif; ?>
 
@@ -81,7 +87,6 @@ if ( affwp_theme_is_blog_page() ) : ?>
 							$image = get_the_post_thumbnail( get_the_ID(), 'affwp-post-thumbnail', array( 'alt' => get_the_title() ) );
 						} else {
 							$image = '';
-
 						}
 
 					if ( $image ) : ?>

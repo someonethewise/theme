@@ -271,11 +271,6 @@ function affwp_theme_pre_get_posts( $query ) {
 			$query->set( 'posts_per_page', -1 );
 		}
 
-		// Set posts per page for blog
-		if ( $query->is_home ) {
-			$query->set( 'posts_per_page', AFFWP_THEME_BLOG_POSTS_PER_PAGE );
-		}
-
 		// Show all integrations on type taxonomy pages regardless of post status for site admins
 		if ( ( $query->is_tax( 'download_category' ) || $query->is_tax( 'type' ) ) && current_user_can( 'manage_options' ) ) {
 			$query->set( 'post_status', array( 'pending', 'draft', 'future', 'publish' ) );

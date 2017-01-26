@@ -345,8 +345,14 @@ function affwp_theme_blog_query_offset( &$query ) {
 
     }
     else {
-        // This is the first page. Just use the offset.
-        $query->set( 'offset', $offset );
+
+		if ( ! get_option( 'sticky_posts' ) ) {
+			// This is the first page. Just use the offset (if no sticky post)
+			$query->set( 'offset', $offset );
+		}
+
+		$query->set( 'post__not_in', get_option( 'sticky_posts' ) );
+
     }
 
 }

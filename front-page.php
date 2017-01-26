@@ -10,26 +10,28 @@ get_header(); ?>
 */
 
 $args = array(
-	'numberposts' => 1,
-	'orderby'     => 'post_date',
-	'order'       => 'DESC',
-	'post_type'   => 'post',
-	'post_status' => 'publish'
+	'posts_per_page'      => 1,
+	'post__in'            => get_option( 'sticky_posts' ),
+	'ignore_sticky_posts' => 1
 );
 
-$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+$query = new WP_Query( $args );
 
-?>
+if ( $query->have_posts() ) : ?>
 <section class="container-fluid news section-grey">
     <div class="wrapper">
 		<div class="row pv-xs-2">
 			<div class="col-xs-12 aligncenter">
 				<h3 class="label mb-xs-1 mb-sm-0">New</h3>
-				<p><?php echo $recent_posts[0]['post_title'];?>. <a href="<?php echo get_permalink( $recent_posts[0]['ID'] ); ?>">Read the post &rarr;</a></p>
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<p><?php the_title(); ?> <a href="<?php the_permalink(); ?>">Read the post &rarr;</a></p>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
 			</div>
 		</div>
 	</div>
 </section>
+<?php endif; ?>
 
 <?php
 /**
