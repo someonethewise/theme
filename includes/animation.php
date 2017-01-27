@@ -50,8 +50,8 @@ function affwp_theme_animation_post_titles() {
 
 	// allowed post titles
 	$post_titles = array(
-		'Introducing the Extended REST API add-on',
-		'Extended REST API',
+		'Introducing the REST API Extended add-on',
+		'REST API Extended',
 		'Version 2.0 released!',
 		'Version 1.9 released!',
 		'Version 1.8 released!',
@@ -100,8 +100,8 @@ function affwp_theme_animation_get_image( $post_id = 0, $type = 'img' ) {
 
 	switch ( $post->post_title ) {
 
-		case 'Introducing the Extended REST API add-on':
-		case 'Extended REST API':
+		case 'Introducing the REST API Extended add-on':
+		case 'REST API Extended':
 			$image = 'add-on-rest-api';
 			break;
 
@@ -140,7 +140,7 @@ function affwp_theme_featured_icon_animation_single_download() {
 
 	$post = get_post( get_the_ID() );
 
-	if ( 'Extended REST API' === $post->post_title ) { ?>
+	if ( 'REST API Extended' === $post->post_title ) { ?>
 		<object id="main-svg" class="animated" data="<?php echo get_stylesheet_directory_uri() . '/images/svgs/animation/add-on-rest-api.svg'; ?>" type="image/svg+xml" ></object>
 	<?php }
 
@@ -168,7 +168,7 @@ function affwp_theme_enqueue_animation_scripts() {
 add_action( 'wp_enqueue_scripts', 'affwp_theme_enqueue_animation_scripts' );
 
 /**
- * Loads the animation code for the "Introducing the Extended REST API add-on" post and the "Extended REST API" download page
+ * Loads the animation code for the "Introducing the REST API Extended add-on" post and the "REST API Extended" download page
  *
  * @since 1.4.5
  */
@@ -177,8 +177,8 @@ function affwp_theme_animation_rest_api_add_on() {
 	$post = get_post( get_the_ID() );
 
 	if ( ! (
-		'Introducing the Extended REST API add-on' === $post->post_title ||
-		'Extended REST API' === $post->post_title )
+		'Introducing the REST API Extended add-on' === $post->post_title ||
+		'REST API Extended' === $post->post_title )
 	) {
 		return;
 	}
@@ -242,7 +242,7 @@ function affwp_theme_animation_rest_api_add_on() {
 add_action( 'wp_footer', 'affwp_theme_animation_rest_api_add_on', 100 );
 
 /**
- * Loads the animation code for the "Introducing the Extended REST API add-on" post and the "Extended REST API" download page
+ * Loads the animation code for the "Introducing the REST API Extended add-on" post and the "Extended REST API" download page
  */
 function affwp_theme_animation_product_update() {
 
