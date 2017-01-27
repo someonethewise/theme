@@ -131,8 +131,22 @@ function affwp_theme_licenses_upgrade_notice() {
 
 	?>
 	<p class="notice">Upgrade your license and receive a pro-rated discount. Click the "View Upgrades" link below to continue.</p>
+<?php
+}
+add_action( 'themedd_licenses_tab', 'affwp_theme_licenses_upgrade_notice', 1 );
 
-	<?php
+
+/**
+ * Show notice if customer needs to upgrade their payment information in the case of failing subscription renewals
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_licenses_update_payment_information() {
+
+	// don't show on actual upgrade page
+	if ( isset( $_GET['view'] ) ) {
+		return;
+	}
 
 	$subscriber            = new EDD_Recurring_Subscriber( get_current_user_id(), true );
 	$failing_subscriptions = $subscriber->get_subscriptions( 0, 'failing' );
@@ -174,7 +188,7 @@ function affwp_theme_licenses_upgrade_notice() {
 	}
 
 }
-add_action( 'themedd_licenses_tab', 'affwp_theme_licenses_upgrade_notice', 1 );
+add_action( 'themedd_licenses_tab', 'affwp_theme_licenses_update_payment_information', 2 );
 
 /**
  * Add "downloads" tab to account area
