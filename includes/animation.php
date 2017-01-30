@@ -109,6 +109,7 @@ function affwp_theme_animation_get_image( $post_id = 0, $type = 'img' ) {
 		case 'Version 1.9 released!':
 		case 'Version 1.8 released!':
 			$image = 'product-update';
+			break;
 
 	}
 
@@ -242,7 +243,7 @@ function affwp_theme_animation_rest_api_add_on() {
 add_action( 'wp_footer', 'affwp_theme_animation_rest_api_add_on', 100 );
 
 /**
- * Loads the animation code for the "Introducing the REST API Extended add-on" post and the "Extended REST API" download page
+ * Loads the animation code for the product update posts
  */
 function affwp_theme_animation_product_update() {
 
