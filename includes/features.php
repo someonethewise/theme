@@ -119,7 +119,7 @@ function affwp_theme_features() {
 		),
 		27 => array(
 			'title'       => 'REST API',
-			'description' => 'Our complete, read-only REST API allows developers to easily interact with AffiliateWP through remote applications.',
+			'description' => 'AffiliateWP includes a full, read-only REST API and an extended API with CRUD operations available as a <a href="/add-ons/pro/rest-api-extended/">pro add-on</a>.',
 			'icon'        => 'feature-rest-api'
 		),
 		28 => array(
