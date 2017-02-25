@@ -191,9 +191,13 @@ function affwp_theme_download_meta_changelog() {
 	$post_slug    = $post->post_name;
 	$wp_repo_slug = 'affiliatewp-' . $post_slug;
 
-	// WP.org changelog
-	$show_plugin_info = function_exists( 'show_plugin_info' ) ? show_plugin_info() : '';
-	$wp_changelog     = $show_plugin_info ? $show_plugin_info->get_info( $wp_repo_slug, 'changelog' ) : '';
+	if ( has_term( 'official-free', 'download_category', get_the_ID() ) ) {
+		// WP.org changelog
+		$show_plugin_info = function_exists( 'show_plugin_info' ) ? show_plugin_info() : '';
+		$wp_changelog     = $show_plugin_info ? $show_plugin_info->get_info( $wp_repo_slug, 'changelog' ) : '';
+	} else {
+		$wp_changelog     = '';
+	}
 
 	// SL changelog
 	$sl_changelog = function_exists( 'edd_download_meta_has_edd_sl_enabled' ) && edd_download_meta_has_edd_sl_enabled() ? stripslashes( wpautop( get_post_meta( get_the_ID(), '_edd_sl_changelog', true ), true ) ) : '';
@@ -208,7 +212,7 @@ function affwp_theme_download_meta_changelog() {
 
 ?>
 
-	<?php if ( $changelog ) : ?>
+	<?php if ( ! empty( $changelog ) ) : ?>
 		<div class="download-meta">
 
 			<?php do_action( 'edd_download_meta_changelog' ); ?>
