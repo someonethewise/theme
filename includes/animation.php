@@ -55,6 +55,8 @@ function affwp_theme_animation_post_titles() {
 		'Version 2.0 released!',
 		'Version 1.9 released!',
 		'Version 1.8 released!',
+		'Affiliate Landing Pages',
+		'New pro add-on! Affiliate Landing Pages'
 	);
 
 	return $post_titles;
@@ -111,6 +113,11 @@ function affwp_theme_animation_get_image( $post_id = 0, $type = 'img' ) {
 			$image = 'product-update';
 			break;
 
+		case 'New pro add-on! Affiliate Landing Pages':
+		case 'Affiliate Landing Pages':
+			$image = 'add-on-affiliate-landing-pages';
+			break;
+
 	}
 
 	if ( 'img' === $type ) : // image for use on blog listings etc or whenever it can be clicked ?>
@@ -145,6 +152,10 @@ function affwp_theme_featured_icon_animation_single_download() {
 		<object id="main-svg" class="animated" data="<?php echo get_stylesheet_directory_uri() . '/images/svgs/animation/add-on-rest-api.svg'; ?>" type="image/svg+xml" ></object>
 	<?php }
 
+	if ( 'Affiliate Landing Pages' === $post->post_title ) { ?>
+		<object id="main-svg" class="animated" data="<?php echo get_stylesheet_directory_uri() . '/images/svgs/animation/add-on-affiliate-landing-pages.svg'; ?>" type="image/svg+xml" ></object>
+	<?php }
+
 }
 
 /**
@@ -167,6 +178,95 @@ function affwp_theme_enqueue_animation_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'affwp_theme_enqueue_animation_scripts' );
+
+/**
+ * Loads the animation code for the "Affiliate Landing Pages" download page
+ *
+ * @since 1.4.5
+ */
+function affwp_theme_animation_affiliate_landing_pages_add_on() {
+
+	$post = get_post( get_the_ID() );
+
+	if ( ! (
+		'Affiliate Landing Pages' === $post->post_title ||
+		'New pro add-on! Affiliate Landing Pages' === $post->post_title
+	) ) {
+		return;
+	}
+
+	?>
+	<script>
+
+	/**
+	 * Get Timeline
+	 */
+	function getTimeline() {
+		<?php if ( affwp_theme_animation_can_debug() ) : ?>
+			var	tl = new TimelineMax({ onUpdate: updateFunction, onUpdateParams:["{self}"] });
+		<?php else : ?>
+			var	tl = new TimelineMax();
+		<?php endif; ?>
+
+		return tl;
+	}
+
+	window.addEventListener('load',function() {
+
+		tl = getTimeline();
+
+		var svgDocument = document.getElementById("main-svg");
+
+		// get the inner DOM of the SVG
+		var $this = svgDocument.contentDocument;
+
+		// Set up variables.
+		var browser        = $this.getElementById('window-main'),
+			browserDivider = $this.getElementById('window-divider'),
+			browserDots    = $this.querySelectorAll('#dots circle'),
+			target         = $this.getElementById('target'),
+			targetStripes  = $this.querySelectorAll('#target circle'),
+			arrow          = $this.getElementById('arrow');
+
+		// show the SVG
+		TweenLite.set("#main-svg", {visibility:"visible"});
+
+		TweenLite.set( arrow, {transformOrigin:"0% 100%"});
+
+		// Draw the outer browser window.
+		tl.fromTo( browser, 1, {drawSVG:"0%"}, {drawSVG:"100%", ease:Power3.easeInOut })
+
+		// Draw the browser's divider line.
+		.fromTo( browserDivider, 1, {drawSVG:"0%"}, {drawSVG:"100%", ease:Power3.easeInOut }, "browserDivider" )
+
+		// Animate the browser dots.
+		.staggerFrom( browserDots, 1, {scale: 0, opacity:0, ease:Elastic.easeOut, force3D:true, transformOrigin:"50% 50%" }, 0.1 )
+
+		// Animate the target's stripes
+		.staggerFrom( targetStripes, 1, {scale: 0, opacity:0, ease:Power3.easeOut, force3D:true, transformOrigin:"50% 50%" }, 0.1, "browserDivider -=0.25" )
+
+		// Bring the arrow in and hit the target
+		.from(arrow, 0.1, {x: '+=2000px', y: '-=1000px', ease:Power4.easeInOut }, "arrowHit" )
+
+		// Shake the arrow as it hits the target
+		.to( arrow, 0.1, {rotation:-3} )
+		.to( arrow, 0.1, {rotation:3} )
+		.to( arrow, 0.1, {rotation:-3} )
+		.to( arrow, 0.1, {rotation:3} )
+		.to( arrow, 0.1, {rotation:0} )
+
+		// Shake the target
+		.to( target, 0.1, {scale: 0.9, ease:Power4.easeOut, force3D:true, transformOrigin:"50% 50%" }, "-=0.5" )
+		.to( target, 0.1, {scale: 1, ease:Power4.easeOut, force3D:true, transformOrigin:"50% 50%" }, "-=0.4" )
+
+	}); // end window.load
+
+	</script>
+
+	<?php
+
+}
+add_action( 'wp_footer', 'affwp_theme_animation_affiliate_landing_pages_add_on', 100 );
 
 /**
  * Loads the animation code for the "Introducing the REST API Extended add-on" post and the "REST API Extended" download page

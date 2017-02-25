@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+    <rect id="svg" x="0" y="0" width="2000" height="1000" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0" y="0" width="2000" height="1000"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <rect x="0" y="0" width="2000" height="1000" style="fill:#ed6d62;"/>
+        <g id="affiliate-landing-pages">
+            <g id="browser-window">
+                <path id="window-divider" d="M608.641,341.401L1378.53,341.401" style="fill:none;stroke:#fff;stroke-width:23.14px;"/>
+                <path id="window-main" d="M608.641,266.726C608.641,229.771 638.6,199.779 675.588,199.779L1311.58,199.779C1348.57,199.779 1378.53,229.771 1378.53,266.726L1378.53,735.355C1378.53,772.31 1348.57,802.302 1311.58,802.302L675.588,802.302C638.6,802.302 608.641,772.31 608.641,735.355L608.641,266.726Z" style="fill:none;stroke:#fff;stroke-width:23.1px;"/>
+                <g id="dots">
+                    <circle id="dot-1" cx="708.168" cy="273.174" r="23.175" style="fill:#fff;"/>
+                    <circle id="dot-2" cx="786.656" cy="273.174" r="23.175" style="fill:#fff;"/>
+                    <circle id="dot-3" cx="865.145" cy="273.174" r="23.175" style="fill:#fff;"/>
+                </g>
+            </g>
+            <g id="target-group">
+                <g id="target">
+                    <circle cx="991.322" cy="575.063" r="147.196" style="fill:none;stroke:#fff;stroke-width:23.18px;stroke-miterlimit:1.5;"/>
+                    <circle cx="991.322" cy="575.063" r="51.321" style="fill:none;stroke:#fff;stroke-width:23.18px;stroke-miterlimit:1.5;"/>
+                    <circle cx="991.322" cy="575.063" r="97.968" style="fill:none;stroke:#fff;stroke-width:23.18px;stroke-miterlimit:1.5;"/>
+                </g>
+                <g id="arrow">
+                    <path d="M1181.34,459.229L991.322,575.063" style="fill:none;stroke:#ed6d62;stroke-width:61.8px;"/>
+                    <path d="M1242.56,421.908L991.322,575.063" style="fill:none;stroke:#fff;stroke-width:23.18px;"/>
+                    <path d="M1201.27,447.897L1259.31,469.369L1208.15,498.486L1136.66,484.545L1158.3,415.013L1208.21,383.782L1199.6,445.067" style="fill:none;stroke:#fff;stroke-width:23.18px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
