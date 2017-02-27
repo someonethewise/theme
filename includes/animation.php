@@ -56,7 +56,7 @@ function affwp_theme_animation_post_titles() {
 		'Version 1.9 released!',
 		'Version 1.8 released!',
 		'Affiliate Landing Pages',
-		'New pro add-on! Affiliate Landing Pages'
+		'Affiliate Landing Pages add-on released!'
 	);
 
 	return $post_titles;
@@ -113,7 +113,7 @@ function affwp_theme_animation_get_image( $post_id = 0, $type = 'img' ) {
 			$image = 'product-update';
 			break;
 
-		case 'New pro add-on! Affiliate Landing Pages':
+		case 'Affiliate Landing Pages add-on released!':
 		case 'Affiliate Landing Pages':
 			$image = 'add-on-affiliate-landing-pages';
 			break;
@@ -190,7 +190,7 @@ function affwp_theme_animation_affiliate_landing_pages_add_on() {
 
 	if ( ! (
 		'Affiliate Landing Pages' === $post->post_title ||
-		'New pro add-on! Affiliate Landing Pages' === $post->post_title
+		'Affiliate Landing Pages add-on released!' === $post->post_title
 	) ) {
 		return;
 	}
