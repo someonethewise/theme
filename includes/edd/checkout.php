@@ -95,13 +95,18 @@ add_filter( 'the_title', 'affwp_theme_show_the_title', 10, 2 );
 function affwp_edd_terms_agreement() {
 	global $edd_options;
 
-	if ( isset( $edd_options['show_agree_to_terms'] ) ) : ?>
+	// Does the cart contain a recurring subscription?
+	$cart_contains_recurring = function_exists( 'EDD_Recurring' ) && EDD_Recurring()->cart_contains_recurring() ? true: false;
 
+	// Tweak the agreement text if a subscription in being purchased.
+	$extra_text = $cart_contains_recurring ? ' am purchasing a subscription and' : '';
+
+	if ( isset( $edd_options['show_agree_to_terms'] ) ) : ?>
 
 	<fieldset id="edd_terms_agreement">
 		<input name="edd_agree_to_terms" class="required" type="checkbox" id="edd_agree_to_terms" value="1" />
 		<label for="edd_agree_to_terms">
-			I acknowledge and agree that I am purchasing a subscription and have read the <?php echo '<a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">purchase terms and refund policy</a>'; ?>
+			I acknowledge and agree that I<?php echo $extra_text; ?> have read the <?php echo '<a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">purchase terms and refund policy</a>'; ?>
 		</label>
 	</fieldset>
 
