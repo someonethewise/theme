@@ -397,7 +397,7 @@ function affwp_theme_pricing_table() {
 
                         <ul class="mb-xs-2">
                             <li class="pricing">
-								<span class="price"><span class="currency">$</span>449</span>
+								<span class="price"><span class="currency">$</span>499</span>
 								<span class="length">one-time payment</span>
 							</li>
 							<li class="feature price">
@@ -458,7 +458,7 @@ function affwp_theme_pricing_table() {
 	                            <li class="pricing">
 
 									<span class="price">
-										<span class="currency">$</span>199</span>
+										<span class="currency">$</span>249</span>
 										<span class="length">per year</span>
 								</li>
 
@@ -504,7 +504,7 @@ function affwp_theme_pricing_table() {
 	                        <ul class="mb-xs-2">
 
 								<li class="pricing">
-									<span class="price"><span class="currency">$</span>99</span>
+									<span class="price"><span class="currency">$</span>149</span>
 									<span class="length">per year</span>
 								</li>
 								<li class="feature"><strong><a href="#modal-offical-free-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $count_official_free_add_ons; ?> official free add-ons</a></strong></li>
@@ -545,7 +545,7 @@ function affwp_theme_pricing_table() {
 	                        <ul class="mb-xs-2">
 
 								<li class="pricing">
-									<span class="price"><span class="currency">$</span>49</span>
+									<span class="price"><span class="currency">$</span>99</span>
 									<span class="length">per year</span>
 								</li>
 
@@ -577,7 +577,7 @@ function affwp_theme_pricing_table() {
 
 			<div class="row center-sm">
 				<div class="col-xs-12">
-					<p class="mb-xs-0">* Plugin updates and email support are provided for the duration of your current subscription. Renewals discounted at 30%. <br/><span class="add-on-clause">Pro add-ons are only available with Professional and Ultimate licenses.</span> <?php if( is_page('pricing') ) { echo 'See FAQs below for details.'; } ?> All purchases are subject to our terms of use.</p>
+					<p class="mb-xs-0">* Plugin updates and email support are provided for the duration of your current subscription.<br/><span class="add-on-clause">Pro add-ons are only available with Professional and Ultimate licenses.</span> <?php if( is_page('pricing') ) { echo '<br/>See FAQs below for details.'; } ?> All purchases are subject to our terms of use.</p>
 				</div>
 			</div>
 

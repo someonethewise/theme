@@ -103,7 +103,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 
 			<div class="faq">
 				<h4>Do I need to renew my license?</h4>
-				<p>Your license key is valid for one year from the purchase date. You need an active license key for continued access to automatic updates and support. License keys automatically renew at a <strong>30% discount</strong> from the purchase price.</p>
+				<p>Your license key is valid for one year from the purchase date. You need an active license key for continued access to automatic updates and support.</p>
 			</div>
 
 			<div class="faq">
